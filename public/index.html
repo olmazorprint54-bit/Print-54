@@ -649,3 +649,52 @@ renderBinding();
 </script>
 </body>
 </html>
+/* ================================================================
+   BUYURTMALARIM TAB LOGIC
+   ================================================================ */
+async function loadMyOrders(){
+  const container = document.getElementById('myOrdersList');
+  container.innerHTML = '<div class="status-msg">Yuklanmoqda...</div>';
+  try{
+    const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+    if(!tgUser){
+      container.innerHTML = '<div class="status-msg">Foydalanuvchi aniqlanmadi.</div>';
+      return;
+    }
+    const res = await fetch('/api/my-orders', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ userId: tgUser.id })
+    });
+    const data = await res.json();
+    if(!data.ok) throw new Error(data.error || 'Xatolik');
+    if(!data.orders || data.orders.length === 0){
+      container.innerHTML = '<div class="status-msg">Hali buyurtmalar yo\'q.</div>';
+      return;
+    }
+    container.innerHTML = data.orders.map(orderCardHtml).join('');
+  }catch(err){
+    console.error(err);
+    container.innerHTML = '<div class="status-msg">Yuklab bo\'lmadi, birozdan so\'ng qayta urinib ko\'ring.</div>';
+  }
+}
+
+function orderCardHtml(o){
+  const date = new Date(o.created_at).toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
+  const serviceLabel = { paper:"Qog'oz chop etish", book:'Kitob chiqarish', binding:'Pereplyot' }[o.service] || o.service;
+  let detail = '';
+  if(o.service === 'paper'){
+    detail = `${o.color === 'bw' ? 'Oq-qora' : 'Rangli'} · ${o.side === 'single' ? 'bir tomonlama' : 'ikki tomonlama'} · ${o.qty} varaq`;
+  } else if(o.service === 'book'){
+    detail = `${String(o.format).toUpperCase()} · ${o.color === 'bw' ? 'oq-qora' : 'rangli'} · ${o.qty} bet`;
+  } else if(o.service === 'binding'){
+    detail = `${String(o.format).toUpperCase()} · ${o.qty} dona`;
+  }
+  return `
+    <div class="receipt glass" style="margin-bottom:12px;">
+      <div class="receipt-line"><span>${serviceLabel}</span><span>${date}</span></div>
+      <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
+      <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${fmt(o.total)}</span></div>
+    </div>
+  `;
+}
