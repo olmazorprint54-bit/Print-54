@@ -469,7 +469,6 @@ function openOwnerChat(){
 }
 document.getElementById('btnOther').addEventListener('click', ()=>{
   document.querySelectorAll('.tabs .pill-btn').forEach(t=>t.classList.remove('active'));
-  document.querySelector('.tabs .pill-btn[data-tab="myorders"]').classList.add('active');
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.getElementById('panel-myorders').classList.add('active');
   loadMyOrders();
