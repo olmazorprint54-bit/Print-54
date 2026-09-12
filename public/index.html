@@ -552,15 +552,21 @@ function renderBook(){
 /* ================================================================
    BINDING TAB LOGIC
    ================================================================ */
-let bindingState = { qty: 1 };
+let bindingState = { format: 'a4', qty: 1 };
 wireQtyBox('bindingQty');
+document.getElementById('bindingFormatChoice').addEventListener('click', e=>{
+  const el = e.target.closest('.pill-btn'); if(!el) return;
+  bindingState.format = el.dataset.value;
+  selectInGroup(document.getElementById('bindingFormatChoice'), el);
+  renderBinding();
+});
 document.getElementById('bindingQty').addEventListener('input', e=>{
   const v = parseInt(e.target.value, 10);
   bindingState.qty = Number.isFinite(v) && v > 0 ? v : 1;
   renderBinding();
 });
 function renderBinding(){
-  const total = PRICING.binding.a4 * bindingState.qty;
+  const total = PRICING.binding[bindingState.format] * bindingState.qty;
   document.getElementById('bindingTotal').textContent = fmt(total);
 }
 
