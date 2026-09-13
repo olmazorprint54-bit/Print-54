@@ -54,11 +54,12 @@ async function editTelegramMessage(messageId, text) {
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+        body: JSON.stringify({
       chat_id: chatId,
       message_id: messageId,
       text,
       parse_mode: "HTML",
+      reply_markup: { inline_keyboard: [] },
     }),
   });
 
