@@ -674,7 +674,6 @@ async function loadMyOrders(){
     container.innerHTML = '<div class="status-msg">Yuklab bo\'lmadi, birozdan so\'ng qayta urinib ko\'ring.</div>';
   }
 }
-
 function orderCardHtml(o){
   const date = new Date(o.created_at).toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
   const serviceLabel = { paper:"Qog'oz chop etish", book:'Kitob chiqarish', binding:'Pereplyot' }[o.service] || o.service;
@@ -686,12 +685,47 @@ function orderCardHtml(o){
   } else if(o.service === 'binding'){
     detail = `${String(o.format).toUpperCase()} · ${o.qty} dona`;
   }
+  const cancelled = o.status === 'cancelled';
+  const cardStyle = cancelled ? 'opacity:0.55; text-decoration: line-through;' : '';
+  const actionHtml = cancelled
+    ? `<div class="status-msg" style="margin-top:8px; text-decoration:none;">Bekor qilindi</div>`
+    : `<button type="button" class="cancel-order-btn" data-id="${o.id}" style="width:100%; margin-top:10px; padding:10px; border:none; border-radius: var(--radius-pill); background: rgba(255,80,80,0.15); color:#ff8080; font-size:13px; font-weight:600; cursor:pointer;">Bekor qilish</button>`;
   return `
-    <div class="receipt glass" style="margin-bottom:12px;">
+    <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
       <div class="receipt-line"><span>${serviceLabel}</span><span>${date}</span></div>
       <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
       <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${fmt(o.total)}</span></div>
+      ${actionHtml}
     </div>
+  `;
+}
+
+document.getElementById('myOrdersList').addEventListener('click', async (e)=>{
+  const btn = e.target.closest('.cancel-order-btn');
+  if(!btn) return;
+  const orderId = btn.dataset.id;
+  const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+  if(!tgUser) return;
+
+  btn.disabled = true;
+  btn.textContent = 'Bekor qilinmoqda...';
+
+  try{
+    const res = await fetch('/api/cancel-order', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ orderId, userId: tgUser.id })
+    });
+    const data = await res.json();
+    if(!data.ok) throw new Error(data.error || 'Xatolik');
+    loadMyOrders();
+  }catch(err){
+    console.error(err);
+    btn.disabled = false;
+    btn.textContent = 'Bekor qilish';
+    alert("Bekor qilib bo'lmadi, qayta urinib ko'ring.");
+  }
+});    </div>
   `;
 }
 </script>
