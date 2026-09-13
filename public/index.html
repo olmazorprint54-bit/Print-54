@@ -687,7 +687,9 @@ function orderCardHtml(o){
   }
   const cancelled = o.status === 'cancelled';
   const completed = o.status === 'completed';
+  const isFinal = cancelled || completed;
   const cardStyle = cancelled ? 'opacity:0.55;' : '';
+
   let actionHtml;
   if (completed) {
     actionHtml = `<div class="status-msg" style="margin-top:8px; color:#4ADE80; font-weight:700;">✅ Bajarildi</div>`;
@@ -696,9 +698,14 @@ function orderCardHtml(o){
   } else {
     actionHtml = `<button type="button" class="cancel-order-btn" data-id="${o.id}" style="width:100%; margin-top:10px; padding:10px; border:none; border-radius: var(--radius-pill); background: rgba(255,80,80,0.15); color:#ff8080; font-size:13px; font-weight:600; cursor:pointer;">Bekor qilish</button>`;
   }
+
+  const trashHtml = isFinal
+    ? `<button type="button" class="delete-order-btn" data-id="${o.id}" style="background:none;border:none;color:var(--ink-soft);cursor:pointer;margin-left:8px;font-size:14px;vertical-align:middle;padding:0;">🗑️</button>`
+    : '';
+
   return `
     <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
-      <div class="receipt-line"><span>${serviceLabel}</span><span>${date}</span></div>
+      <div class="receipt-line"><span>${serviceLabel}</span><span>${date}${trashHtml}</span></div>
       <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
       <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${fmt(o.total)}</span></div>
       ${actionHtml}
