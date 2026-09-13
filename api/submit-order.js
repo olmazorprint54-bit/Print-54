@@ -6,6 +6,8 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY
 );
 
+const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
+
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -14,7 +16,8 @@ function escapeHtml(str) {
 }
 
 function orderText(body) {
-  const lines = [`🧾 <b>Yangi buyurtma</b> (${escapeHtml(body.service)})`];
+  const label = SERVICE_LABELS[body.service] || body.service;
+  const lines = [`🧾 <b>Yangi buyurtma</b> — ${escapeHtml(label)}`];
 
   if (body.service === "paper") {
     lines.push(`Rang: ${body.color === "bw" ? "Oq-qora" : "Rangli"}`);
