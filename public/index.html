@@ -620,7 +620,7 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
       const { total } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
       payload = { service:'book', ...bookState, total };
     } else {
-      payload = { service:'binding', qty: bindingState.qty, total: PRICING.binding.a4 * bindingState.qty };
+      payload = { service:'binding', format: bindingState.format, qty: bindingState.qty, total: PRICING.binding[bindingState.format] * bindingState.qty };
     }
     sendOrder(payload);
   });
