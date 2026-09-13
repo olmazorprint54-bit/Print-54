@@ -28,6 +28,7 @@ module.exports = async (req, res) => {
       .from("orders")
       .select("*")
       .eq("telegram_user_id", userId)
+      .eq("hidden_by_customer", false)
       .order("created_at", { ascending: false })
       .limit(50);
 
