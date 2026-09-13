@@ -686,10 +686,16 @@ function orderCardHtml(o){
     detail = `${String(o.format).toUpperCase()} · ${o.qty} dona`;
   }
   const cancelled = o.status === 'cancelled';
-  const cardStyle = cancelled ? 'opacity:0.55; text-decoration: line-through;' : '';
-  const actionHtml = cancelled
-    ? `<div class="status-msg" style="margin-top:8px; text-decoration:none;">Bekor qilindi</div>`
-    : `<button type="button" class="cancel-order-btn" data-id="${o.id}" style="width:100%; margin-top:10px; padding:10px; border:none; border-radius: var(--radius-pill); background: rgba(255,80,80,0.15); color:#ff8080; font-size:13px; font-weight:600; cursor:pointer;">Bekor qilish</button>`;
+  const completed = o.status === 'completed';
+  const cardStyle = cancelled ? 'opacity:0.55;' : '';
+  let actionHtml;
+  if (completed) {
+    actionHtml = `<div class="status-msg" style="margin-top:8px; color:#4ADE80; font-weight:700;">✅ Bajarildi</div>`;
+  } else if (cancelled) {
+    actionHtml = `<div class="status-msg" style="margin-top:8px;">Bekor qilindi</div>`;
+  } else {
+    actionHtml = `<button type="button" class="cancel-order-btn" data-id="${o.id}" style="width:100%; margin-top:10px; padding:10px; border:none; border-radius: var(--radius-pill); background: rgba(255,80,80,0.15); color:#ff8080; font-size:13px; font-weight:600; cursor:pointer;">Bekor qilish</button>`;
+  }
   return `
     <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
       <div class="receipt-line"><span>${serviceLabel}</span><span>${date}</span></div>
