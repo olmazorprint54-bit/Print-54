@@ -78,10 +78,13 @@ module.exports = async (req, res) => {
           reply_markup: { inline_keyboard: [] },
         });
 
+         // Mijozga alohida xabar yuboramiz
         if (order.telegram_user_id) {
+          const label = SERVICE_LABELS[order.service] || order.service;
           await callTelegram("sendMessage", {
             chat_id: order.telegram_user_id,
-            text: "🎉 Buyurtmangiz tayyor! Do'konimizdan olib ketishingiz mumkin.",
+            text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm\n\nDo'konimizdan olib ketishingiz mumkin.`,
+            parse_mode: "HTML",
           });
         }
       }
