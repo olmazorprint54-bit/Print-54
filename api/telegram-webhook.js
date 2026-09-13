@@ -7,6 +7,7 @@ const supabase = createClient(
 );
 
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
+const LOCATION_URL = "https://maps.google.com/maps?q=41.349872,69.214325&ll=41.349872,69.214325&z=16";
 
 function escapeHtml(str) {
   return String(str)
@@ -78,13 +79,15 @@ module.exports = async (req, res) => {
           reply_markup: { inline_keyboard: [] },
         });
 
-         // Mijozga alohida xabar yuboramiz
         if (order.telegram_user_id) {
           const label = SERVICE_LABELS[order.service] || order.service;
           await callTelegram("sendMessage", {
             chat_id: order.telegram_user_id,
             text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm\n\nDo'konimizdan olib ketishingiz mumkin.`,
             parse_mode: "HTML",
+            reply_markup: {
+              inline_keyboard: [[{ text: "📍 Manzilni ko'rish", url: LOCATION_URL }]],
+            },
           });
         }
       }
