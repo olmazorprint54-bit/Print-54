@@ -681,9 +681,9 @@ function orderCardHtml(o){
   if(o.service === 'paper'){
     detail = `${o.color === 'bw' ? 'Oq-qora' : 'Rangli'} · ${o.side === 'single' ? 'bir tomonlama' : 'ikki tomonlama'} · ${o.qty} varaq`;
   } else if(o.service === 'book'){
-    detail = `${String(o.format).toUpperCase()} · ${o.color === 'bw' ? 'oq-qora' : 'rangli'} · ${o.qty} bet`;
+    detail = `Kitob (${String(o.format).toUpperCase()}) · ${o.color === 'bw' ? 'oq-qora' : 'rangli'} · ${o.qty} bet`;
   } else if(o.service === 'binding'){
-    detail = `${o.format ? String(o.format).toUpperCase() : '—'} · ${o.qty} dona`;
+    detail = `Pereplyot (${o.format ? String(o.format).toUpperCase() : '—'}) · ${o.qty} dona`;
   }
   const cancelled = o.status === 'cancelled';
   const completed = o.status === 'completed';
