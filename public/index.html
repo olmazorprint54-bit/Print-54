@@ -462,8 +462,9 @@ document.getElementById('btnHelp').addEventListener('click', ()=>{
   helpPanel.classList.toggle('open');
 });
 
-function openOwnerChat(){
-  const url = `https://t.me/${CONFIG.OWNER_TELEGRAM}`;
+function openOwnerChat(prefillText){
+  let url = `https://t.me/${CONFIG.OWNER_TELEGRAM}`;
+  if (prefillText) url += `?text=${encodeURIComponent(prefillText)}`;
   if (tg && tg.openTelegramLink) tg.openTelegramLink(url);
   else window.open(url, '_blank');
 }
@@ -586,7 +587,18 @@ function renderBinding(){
    BUYURTMA YUBORISH
    ================================================================ */
 const statusMsg = document.getElementById('statusMsg');
-
+function orderSummaryText(payload){
+  const serviceLabel = { paper:"Qog'oz chop etish", book:"Kitob chiqarish", binding:"Pereplyot" }[payload.service] || payload.service;
+  let detail = '';
+  if(payload.service === 'paper'){
+    detail = `${payload.color === 'bw' ? 'Oq-qora' : 'Rangli'} · ${payload.side === 'single' ? 'bir tomonlama' : 'ikki tomonlama'} · ${payload.qty} varaq`;
+  } else if(payload.service === 'book'){
+    detail = `${String(payload.format).toUpperCase()} · ${payload.color === 'bw' ? 'oq-qora' : 'rangli'} · ${payload.qty} bet`;
+  } else if(payload.service === 'binding'){
+    detail = `${String(payload.format).toUpperCase()} · ${payload.qty} dona`;
+  }
+  return `Salom! Men mini ilova orqali buyurtma berdim:\n\n🧾 ${serviceLabel}\n${detail}\n💰 ${fmt(payload.total)}\n\nBuyurtmamni tasdiqlab bera olasizmi?`;
+}
 async function sendOrder(payload){
   statusMsg.textContent = "Yuborilmoqda...";
   try{
@@ -603,7 +615,7 @@ async function sendOrder(payload){
 
     statusMsg.textContent = "Buyurtma qabul qilindi! Tez orada bog'lanamiz.";
     if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
-    setTimeout(()=>{ openOwnerChat(); }, 900);
+    setTimeout(()=>{ openOwnerChat(orderSummaryText(payload)); }, 900);
   } catch(err){
     statusMsg.textContent = "Xatolik yuz berdi, birozdan so'ng qayta urinib ko'ring.";
     console.error(err);
