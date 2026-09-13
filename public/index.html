@@ -479,8 +479,8 @@ document.getElementById('btnLocation').addEventListener('click', ()=>{
 });
 
 const helpPanel = document.getElementById('helpPanel');
-document.getElementById('closeHelpPanel').addEventListener('click', ()=>{
-  helpPanel.classList.remove('open');
+document.getElementById('btnHelp').addEventListener('click', ()=>{
+  helpPanel.classList.toggle('open');
 });
 document.getElementById('closeHelpPanel').addEventListener('click', ()=>{
   helpPanel.classList.remove('open');
