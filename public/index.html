@@ -482,7 +482,9 @@ const helpPanel = document.getElementById('helpPanel');
 document.getElementById('closeHelpPanel').addEventListener('click', ()=>{
   helpPanel.classList.remove('open');
 });
-
+document.getElementById('closeHelpPanel').addEventListener('click', ()=>{
+  helpPanel.classList.remove('open');
+});
 function openOwnerChat(prefillText){
   let url = `https://t.me/${CONFIG.OWNER_TELEGRAM}`;
   if (prefillText) url += `?text=${encodeURIComponent(prefillText)}`;
