@@ -1,17 +1,12 @@
 // api/telegram-webhook.js
-// ---------------------------------------------------------------
-// Telegram'dan kelgan yangilanishlarni (bosilgan tugmalarni) qabul
-// qiladi. Hozircha faqat "✅ Buyurtma tayyor" tugmasini qayta
-// ishlaydi: buyurtmani "completed" deb belgilaydi va xabarni
-// yangilaydi.
-// ---------------------------------------------------------------
-
 const { createClient } = require("@supabase/supabase-js");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_KEY
 );
+
+const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 
 function escapeHtml(str) {
   return String(str)
@@ -21,7 +16,8 @@ function escapeHtml(str) {
 }
 
 function orderText(o) {
-  const lines = [`🧾 <b>Yangi buyurtma</b> (${escapeHtml(o.service)})`];
+  const label = SERVICE_LABELS[o.service] || o.service;
+  const lines = [`🧾 <b>Yangi buyurtma</b> — ${escapeHtml(label)}`];
 
   if (o.service === "paper") {
     lines.push(`Rang: ${o.color === "bw" ? "Oq-qora" : "Rangli"}`);
@@ -81,6 +77,13 @@ module.exports = async (req, res) => {
           parse_mode: "HTML",
           reply_markup: { inline_keyboard: [] },
         });
+
+        if (order.telegram_user_id) {
+          await callTelegram("sendMessage", {
+            chat_id: order.telegram_user_id,
+            text: "🎉 Buyurtmangiz tayyor! Do'konimizdan olib ketishingiz mumkin.",
+          });
+        }
       }
 
       await callTelegram("answerCallbackQuery", {
@@ -92,6 +95,6 @@ module.exports = async (req, res) => {
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);
-    res.status(200).json({ ok: true }); // Telegram qayta urinmasligi uchun har doim 200 qaytaramiz
+    res.status(200).json({ ok: true });
   }
 };
