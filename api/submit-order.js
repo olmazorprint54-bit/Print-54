@@ -1,12 +1,4 @@
 // api/submit-order.js
-// ---------------------------------------------------------------
-// Mini app'dan kelgan buyurtmani qabul qiladi:
-//   1) Supabase'ga yozadi
-//   2) Sizning Telegram akkountingizga xabar yuboradi
-//   3) Yuborilgan xabarning ID'sini saqlaydi (keyinchalik bekor
-//      qilinganda o'sha xabarni tahrirlash uchun kerak bo'ladi)
-// ---------------------------------------------------------------
-
 const { createClient } = require("@supabase/supabase-js");
 
 const supabase = createClient(
@@ -49,7 +41,7 @@ function orderText(body) {
   return lines.join("\n");
 }
 
-async function sendTelegramMessage(text) {
+async function sendTelegramMessage(text, orderId) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.OWNER_CHAT_ID;
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
@@ -57,7 +49,14 @@ async function sendTelegramMessage(text) {
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id: chatId, text, parse_mode: "HTML" }),
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [[{ text: "✅ Buyurtma tayyor", callback_data: `done:${orderId}` }]],
+      },
+    }),
   });
 
   const data = await res.json();
@@ -97,7 +96,7 @@ module.exports = async (req, res) => {
 
     if (error) throw error;
 
-    const messageId = await sendTelegramMessage(orderText(body));
+    const messageId = await sendTelegramMessage(orderText(body), inserted.id);
 
     await supabase
       .from("orders")
