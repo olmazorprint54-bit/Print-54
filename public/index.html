@@ -683,7 +683,7 @@ function orderCardHtml(o){
   } else if(o.service === 'book'){
     detail = `${String(o.format).toUpperCase()} · ${o.color === 'bw' ? 'oq-qora' : 'rangli'} · ${o.qty} bet`;
   } else if(o.service === 'binding'){
-    detail = `${String(o.format).toUpperCase()} · ${o.qty} dona`;
+    detail = `${o.format ? String(o.format).toUpperCase() : '—'} · ${o.qty} dona`;
   }
   const cancelled = o.status === 'cancelled';
   const completed = o.status === 'completed';
