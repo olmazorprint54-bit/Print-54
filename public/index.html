@@ -269,6 +269,7 @@
       <br><br>
       <b>Boshqa xizmatlar kerakmi?</b><br>
       Agar sizga kerakli xizmat shu ilovada yo'q bo'lsa (masalan boshqa maxsus buyurtma turi), pastdagi "Boshqa xizmatlar" tugmasini bosing — bu sizni to'g'ridan-to'g'ri biz bilan shaxsiy suhbatga olib boradi, u yerda batafsil gaplashishimiz mumkin.
+      <button type="button" id="closeHelpPanel" style="width:100%; margin-top:16px; padding:11px; border:none; border-radius: var(--radius-pill); background: rgba(255,255,255,0.1); color: var(--ink); font-size:13px; font-weight:600; cursor:pointer;">Yopish</button>
     </div>
   </div>
   
@@ -478,8 +479,8 @@ document.getElementById('btnLocation').addEventListener('click', ()=>{
 });
 
 const helpPanel = document.getElementById('helpPanel');
-document.getElementById('btnHelp').addEventListener('click', ()=>{
-  helpPanel.classList.toggle('open');
+document.getElementById('closeHelpPanel').addEventListener('click', ()=>{
+  helpPanel.classList.remove('open');
 });
 
 function openOwnerChat(prefillText){
