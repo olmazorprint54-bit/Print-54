@@ -175,7 +175,7 @@ async function handleMessage(msg) {
 
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nMini ilova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi Menu tugmasini bosing.",
+    text: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nMini ilova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi Hisoblash tugmasini bosing.",
   });
 }
 
