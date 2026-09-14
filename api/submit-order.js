@@ -23,6 +23,7 @@ function orderText(body) {
     lines.push(`Rang: ${body.color === "bw" ? "Oq-qora" : "Rangli"}`);
     lines.push(`Tur: ${body.side === "single" ? "Bir tomonlama" : "Ikki tomonlama"}`);
     lines.push(`Miqdor: ${body.qty} varaq`);
+    if (body.freePagesUsed) lines.push(`🎁 Bepul varaqlardan foydalanildi: ${body.freePagesUsed}`);
   } else if (body.service === "book") {
     lines.push(`Format: ${escapeHtml(String(body.format).toUpperCase())}`);
     lines.push(`Rang: ${body.color === "bw" ? "Oq-qora" : "Rangli"}`);
@@ -78,6 +79,15 @@ module.exports = async (req, res) => {
   try {
     const body = req.body || {};
 
+    const validServices = ["paper", "book", "binding"];
+    const total = Number(body.total);
+    if (!validServices.includes(body.service) || !Number.isFinite(total) || total <= 0 || !body.qty) {
+      res.status(400).json({ ok: false, error: "Noto'g'ri so'rov" });
+      return;
+    }
+
+    const freePagesUsed = Math.max(0, parseInt(body.freePagesUsed, 10) || 0);
+
     const { data: inserted, error } = await supabase
       .from("orders")
       .insert({
@@ -87,6 +97,7 @@ module.exports = async (req, res) => {
         format: body.format || null,
         qty: body.qty || null,
         total: body.total || null,
+        free_pages_used: freePagesUsed,
         telegram_user_id: body.user ? body.user.id : null,
         telegram_username: body.user ? body.user.username : null,
         telegram_name: body.user
@@ -98,6 +109,22 @@ module.exports = async (req, res) => {
       .single();
 
     if (error) throw error;
+
+    if (freePagesUsed > 0 && body.user && body.user.id) {
+      const { data: userRow } = await supabase
+        .from("users")
+        .select("free_pages")
+        .eq("telegram_user_id", body.user.id)
+        .single();
+
+      if (userRow) {
+        const newBalance = Math.max(0, (userRow.free_pages || 0) - freePagesUsed);
+        await supabase
+          .from("users")
+          .update({ free_pages: newBalance })
+          .eq("telegram_user_id", body.user.id);
+      }
+    }
 
     const messageId = await sendTelegramMessage(orderText(body), inserted.id);
 
