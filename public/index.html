@@ -327,6 +327,7 @@
       <div class="receipt glass">
         <div class="receipt-line"><span>Xizmat</span><span id="paperLineDesc">Oq-qora · bir tomonlama</span></div>
         <div class="receipt-line"><span>Miqdor</span><span id="paperLineQty">1 varaq</span></div>
+        <div class="receipt-line" id="paperFreeLine" style="display:none; color:#4ADE80;"><span>🎁 Bepul varaqlar</span><span></span></div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="paperTotal">0 so'm</span></div>
       </div>
       <button class="order-btn" data-order="paper">Buyurtma berish</button>
@@ -588,12 +589,27 @@ function calcPaperTotal(color, side, qty){
 
 function renderPaper(){
   const { color, side, qty } = paperState;
-  const total = calcPaperTotal(color, side, qty);
+  const rawTotal = calcPaperTotal(color, side, qty);
   const colorLabel = color === 'bw' ? 'Oq-qora' : 'Rangli';
   const sideLabel = side === 'single' ? 'bir tomonlama' : 'ikki tomonlama';
+
+  const freeUsed = Math.min(myFreePages, qty);
+  const avgPerPage = rawTotal / qty;
+  const discount = Math.round(freeUsed * avgPerPage);
+  const finalTotal = Math.max(0, rawTotal - discount);
+
   document.getElementById('paperLineDesc').textContent = `${colorLabel} · ${sideLabel}`;
   document.getElementById('paperLineQty').textContent = `${qty} varaq`;
-  document.getElementById('paperTotal').textContent = fmt(total);
+
+  const freeLineEl = document.getElementById('paperFreeLine');
+  if (freeUsed > 0) {
+    freeLineEl.style.display = 'flex';
+    freeLineEl.querySelector('span:last-child').textContent = `-${freeUsed} varaq (-${fmt(discount)})`;
+  } else {
+    freeLineEl.style.display = 'none';
+  }
+
+  document.getElementById('paperTotal').textContent = fmt(finalTotal);
 }
 
 /* ================================================================
@@ -700,8 +716,12 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const type = btn.dataset.order;
     let payload;
-    if (type === 'paper'){
-      payload = { service:'paper', ...paperState, total: calcPaperTotal(paperState.color, paperState.side, paperState.qty) };
+     if (type === 'paper'){
+      const rawTotal = calcPaperTotal(paperState.color, paperState.side, paperState.qty);
+      const freeUsed = Math.min(myFreePages, paperState.qty);
+      const discount = Math.round(freeUsed * (rawTotal / paperState.qty));
+      const finalTotal = Math.max(0, rawTotal - discount);
+      payload = { service:'paper', ...paperState, freePagesUsed: freeUsed, total: finalTotal };
     } else if (type === 'book'){
       const { total } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
       payload = { service:'book', ...bookState, total };
