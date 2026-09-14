@@ -175,7 +175,7 @@ async function handleMessage(msg) {
 
   await callTelegram("sendPhoto", {
     chat_id: msg.chat.id,
-    photo: "https://print-54.vercel.app/assets/start-guide.png",
+    photo: "https://raw.githubusercontent.com/olmazorprint54-bit/Print-54/main/public/assets/start-guide.png",
     caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nMini ilova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"Hisoblash\" tugmasini bosing (rasmda ko'rsatilganidek).",
   });
 }
