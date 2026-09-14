@@ -53,6 +53,7 @@ async function callTelegram(method, payload) {
   return res.json();
 }
 
+/* ============ BUYURTMA TAYYOR TUGMASI ============ */
 async function handleCallbackQuery(cq) {
   if (cq.data && cq.data.startsWith("done:")) {
     const orderId = cq.data.split(":")[1];
@@ -95,6 +96,7 @@ async function handleCallbackQuery(cq) {
   }
 }
 
+/* ============ REFERAL MUKOFOTLARI ============ */
 async function grantReferralReward(referrerId) {
   const { data: user } = await supabase
     .from("users")
@@ -113,7 +115,7 @@ async function grantReferralReward(referrerId) {
     await supabase.from("users").update({ reward_3_given: true }).eq("telegram_user_id", referrerId);
     message = `🎉 Tabriklaymiz! Sizda 3 ta referal bor va bizdan 15 ta list tekinga chiqarishingiz mumkin.\n\nYana 2 ta yangi referal qo'shsangiz, jami 20 taga yetadi!`;
   } else if (count === 5 && !user.reward_5_given) {
-    addPages = 5;
+    addPages = 5; // 15 ustiga +5 = jami 20
     await supabase.from("users").update({ reward_5_given: true }).eq("telegram_user_id", referrerId);
     message = `🎉 Ajoyib! 5 ta referalga yetdingiz — endi jami 20 ta list tekinga chiqarishingiz mumkin.\n\nBundan keyingi har bir yangi referal uchun +3 tadan qo'shiladi!`;
   } else if (count > 5) {
@@ -133,6 +135,7 @@ async function grantReferralReward(referrerId) {
   }
 }
 
+/* ============ /start VA REFERAL KUZATISH ============ */
 async function handleMessage(msg) {
   if (!msg.text || !msg.text.startsWith("/start")) return;
 
@@ -140,6 +143,8 @@ async function handleMessage(msg) {
   const referrerId = parts.length > 1 ? parseInt(parts[1], 10) : null;
   const newUserId = msg.from.id;
 
+  // Avval shu foydalanuvchi bazada bor-yo'qligini (ya'ni haqiqatan
+  // yangimi yoki avvaldan mijozmi) tekshiramiz
   const { data: existingUser } = await supabase
     .from("users")
     .select("telegram_user_id")
@@ -148,6 +153,7 @@ async function handleMessage(msg) {
 
   const isNewUser = !existingUser;
 
+  // Foydalanuvchini users jadvaliga yozib/yangilab qo'yamiz
   await supabase.from("users").upsert(
     {
       telegram_user_id: newUserId,
@@ -158,11 +164,15 @@ async function handleMessage(msg) {
     { onConflict: "telegram_user_id" }
   );
 
+  // Referal FAQAT haqiqiy yangi foydalanuvchi uchun hisoblanadi —
+  // avvaldan mijoz bo'lgan odam referal havolasi orqali qayta kirsa,
+  // hisobga olinmaydi
   if (isNewUser && referrerId && referrerId !== newUserId) {
     const { error: insertError } = await supabase
       .from("referrals")
       .insert({ referrer_id: referrerId, referred_id: newUserId });
 
+    // insertError bo'lmasa — bu haqiqatan yangi referal (avval qo'shilmagan)
     if (!insertError) {
       const { data: referrer } = await supabase
         .from("users")
@@ -176,6 +186,13 @@ async function handleMessage(msg) {
         .from("users")
         .update({ referral_count: newCount })
         .eq("telegram_user_id", referrerId);
+
+      // Har bir yangi referalda darhol xabar beramiz (do'stning ismi bilan)
+      const referredName = msg.from.first_name || (msg.from.username ? "@" + msg.from.username : "Yangi foydalanuvchi");
+      await callTelegram("sendMessage", {
+        chat_id: referrerId,
+        text: `🎉 ${referredName} sizning referal havolangiz orqali muvaffaqiyatli qo'shildi!\n\nHozirda sizda ${newCount} ta referal bor.`,
+      });
 
       await grantReferralReward(referrerId);
     }
