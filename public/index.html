@@ -408,6 +408,12 @@
   </div>
     <!-- ============ MY ORDERS TAB ============ -->
   <div class="panel" id="panel-myorders">
+    <div class="receipt glass" style="margin-bottom:18px;">
+      <div class="receipt-line"><span>🎁 Bepul varaqlaringiz</span><span id="rewardFreePages" style="color:#4ADE80; font-weight:700;">0</span></div>
+      <div class="receipt-line"><span>👥 Taklif qilingan do'stlar</span><span id="rewardReferralCount">0</span></div>
+      <div class="status-msg" style="margin-top:6px; text-align:left;">3 ta do'st taklif qiling — 15 ta bepul varaq oling! 5 tada jami 20 ta, undan keyin har biriga +3 tadan.</div>
+      <button type="button" id="shareReferralBtn" style="width:100%; margin-top:10px; padding:11px; border:none; border-radius: var(--radius-pill); background: linear-gradient(180deg, #5FB4FF, #3D8FE0); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">📤 Do'stlarni taklif qilish</button>
+    </div>
     <div class="field-title">Sizning buyurtmalaringiz</div>
     <div id="myOrdersList"></div>
   </div>
@@ -420,9 +426,10 @@
    SOZLAMALAR — shu yerlarni to'ldiring / o'zgartiring
    ================================================================ */
 const CONFIG = {
-  ORDER_ENDPOINT: "/api/submit-order", // Vercel'da shu papkaning o'zida ishlaydi, o'zgartirish shart emas
+  ORDER_ENDPOINT: "/api/submit-order",
   TRACK_ENDPOINT: "/api/track-visit",
   OWNER_TELEGRAM: "Print_54",
+  BOT_USERNAME: "Print54web_bot",
   LOCATION_URL: "https://maps.google.com/maps?q=41.349872,69.214325&ll=41.349872,69.214325&z=16"
 };
 
