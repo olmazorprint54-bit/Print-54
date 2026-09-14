@@ -140,6 +140,14 @@ async function handleMessage(msg) {
   const referrerId = parts.length > 1 ? parseInt(parts[1], 10) : null;
   const newUserId = msg.from.id;
 
+  const { data: existingUser } = await supabase
+    .from("users")
+    .select("telegram_user_id")
+    .eq("telegram_user_id", newUserId)
+    .single();
+
+  const isNewUser = !existingUser;
+
   await supabase.from("users").upsert(
     {
       telegram_user_id: newUserId,
@@ -150,7 +158,7 @@ async function handleMessage(msg) {
     { onConflict: "telegram_user_id" }
   );
 
-  if (referrerId && referrerId !== newUserId) {
+  if (isNewUser && referrerId && referrerId !== newUserId) {
     const { error: insertError } = await supabase
       .from("referrals")
       .insert({ referrer_id: referrerId, referred_id: newUserId });
