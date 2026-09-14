@@ -705,6 +705,7 @@ async function sendOrder(payload){
 
     statusMsg.textContent = "Buyurtma qabul qilindi! Tez orada bog'lanamiz.";
     if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+    refreshMyRewards();
     setTimeout(()=>{ openOwnerChat(orderSummaryText(payload)); }, 900);
   } catch(err){
     statusMsg.textContent = "Xatolik yuz berdi, birozdan so'ng qayta urinib ko'ring.";
@@ -751,7 +752,9 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
    ================================================================ */
 renderPaper();
 renderBook();
-renderBinding();/* ================================================================
+renderBinding();
+refreshMyRewards();
+/* ================================================================
    BUYURTMALARIM TAB LOGIC
    ================================================================ */
 async function loadMyOrders(){
