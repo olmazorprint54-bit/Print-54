@@ -445,7 +445,40 @@ const PRICING = {
   },
 binding: { a4: 7000, a5: 5000 }
 };
+/* ================================================================
+   REFERAL / BEPUL VARAQLAR
+   ================================================================ */
+let myFreePages = 0;
 
+async function refreshMyRewards(){
+  try{
+    const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+    if(!tgUser) return;
+    const res = await fetch('/api/my-rewards', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ userId: tgUser.id })
+    });
+    const data = await res.json();
+    if(!data.ok) return;
+    myFreePages = data.free_pages || 0;
+    const fpEl = document.getElementById('rewardFreePages');
+    const rcEl = document.getElementById('rewardReferralCount');
+    if(fpEl) fpEl.textContent = myFreePages;
+    if(rcEl) rcEl.textContent = data.referral_count || 0;
+    renderPaper();
+  }catch(e){ console.error(e); }
+}
+
+document.getElementById('shareReferralBtn').addEventListener('click', ()=>{
+  const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+  if(!tgUser) return;
+  const link = `https://t.me/${CONFIG.BOT_USERNAME}?start=${tgUser.id}`;
+  const text = "Print 54 — chop etish xizmatidan foydalaning! Men orqali kirsangiz, ikkalamizga ham bonus bo'ladi 🎁";
+  const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(text)}`;
+  if (tg && tg.openTelegramLink) tg.openTelegramLink(shareUrl);
+  else window.open(shareUrl, '_blank');
+});
 /* ================================================================
    TELEGRAM WEBAPP
    ================================================================ */
