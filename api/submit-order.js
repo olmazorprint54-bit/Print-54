@@ -81,7 +81,7 @@ module.exports = async (req, res) => {
 
     const validServices = ["paper", "book", "binding"];
     const total = Number(body.total);
-    if (!validServices.includes(body.service) || !Number.isFinite(total) || total <= 0 || !body.qty) {
+if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 0 || !body.qty) {
       res.status(400).json({ ok: false, error: "Noto'g'ri so'rov" });
       return;
     }
