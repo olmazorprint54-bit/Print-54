@@ -53,6 +53,31 @@ async function callTelegram(method, payload) {
   return res.json();
 }
 
+/* ============ XARID BONUSI (har bir bajarilgan buyurtma uchun) ============ */
+async function grantPurchaseBonus(order) {
+  if (!order.telegram_user_id) return 0;
+
+  const total = Number(order.total) || 0;
+  if (total <= 0) return 0; // to'liq bepul buyurtmaga bonus berilmaydi
+
+  const bonusPages = total > 6000 ? 2 : 1;
+
+  const { data: userRow } = await supabase
+    .from("users")
+    .select("free_pages")
+    .eq("telegram_user_id", order.telegram_user_id)
+    .single();
+
+  const newBalance = (userRow ? userRow.free_pages || 0 : 0) + bonusPages;
+
+  await supabase
+    .from("users")
+    .update({ free_pages: newBalance })
+    .eq("telegram_user_id", order.telegram_user_id);
+
+  return bonusPages;
+}
+
 /* ============ BUYURTMA TAYYOR TUGMASI ============ */
 async function handleCallbackQuery(cq) {
   if (cq.data && cq.data.startsWith("done:")) {
@@ -77,10 +102,15 @@ async function handleCallbackQuery(cq) {
       });
 
       if (order.telegram_user_id) {
+        const bonusPages = await grantPurchaseBonus(order);
         const label = SERVICE_LABELS[order.service] || order.service;
+        const bonusLine = bonusPages > 0
+          ? `\n\n🎁 Ushbu buyurtma uchun ${bonusPages} ta bepul list hisobingizga qo'shildi!`
+          : "";
+
         await callTelegram("sendMessage", {
           chat_id: order.telegram_user_id,
-          text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm\n\nDo'konimizdan olib ketishingiz mumkin.`,
+          text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm\n\nDo'konimizdan olib ketishingiz mumkin.${bonusLine}`,
           parse_mode: "HTML",
           reply_markup: {
             inline_keyboard: [[{ text: "📍 Manzilni ko'rish", url: LOCATION_URL }]],
