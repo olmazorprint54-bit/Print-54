@@ -107,28 +107,36 @@ async function grantReferralReward(referrerId) {
   if (!user) return;
 
   const count = user.referral_count;
-  let addPages = 0;
-  let message = null;
+  const currentPages = user.free_pages || 0;
 
-  if (count === 3 && !user.reward_3_given) {
-    addPages = 15;
-    await supabase.from("users").update({ reward_3_given: true }).eq("telegram_user_id", referrerId);
-    message = `🎉 Tabriklaymiz! Sizda 3 ta referal bor va bizdan 15 ta list tekinga chiqarishingiz mumkin.\n\nYana 2 ta yangi referal qo'shsangiz, jami 20 taga yetadi!`;
-  } else if (count === 5 && !user.reward_5_given) {
-    addPages = 5; // 15 ustiga +5 = jami 20
-    await supabase.from("users").update({ reward_5_given: true }).eq("telegram_user_id", referrerId);
-    message = `🎉 Ajoyib! 5 ta referalga yetdingiz — endi jami 20 ta list tekinga chiqarishingiz mumkin.\n\nBundan keyingi har bir yangi referal uchun +3 tadan qo'shiladi!`;
-  } else if (count > 5) {
-    addPages = 3;
-    message = `🎉 Yana bir do'stingiz qo'shildi! Endi jami ${user.free_pages + addPages} ta list tekinga chiqarishingiz mumkin.`;
+  function expectedFreePages(c) {
+    if (c < 3) return 0;
+    if (c < 5) return 15;
+    return 20 + (c - 5) * 3;
   }
 
-  if (addPages > 0) {
-    await supabase
-      .from("users")
-      .update({ free_pages: user.free_pages + addPages })
-      .eq("telegram_user_id", referrerId);
+  const expected = expectedFreePages(count);
+  const addPages = expected - currentPages;
+
+  if (addPages <= 0) return; // yangi bonus yo'q
+
+  let message;
+  if (count >= 5) {
+    message = !user.reward_5_given
+      ? `🎉 Ajoyib! ${count} ta do'stni taklif qildingiz — endi jami ${expected} ta list bepul chiqarishingiz mumkin!\n\nBundan keyingi har bir yangi referal uchun +3 tadan qo'shiladi.`
+      : `🎁 Yana bir do'stingiz qo'shildi! Endi jami ${expected} ta list bepul chiqarishingiz mumkin.`;
+  } else if (count >= 3) {
+    message = `🎉 Tabriklaymiz! ${count} ta do'stni taklif qildingiz — sizga ${expected} ta list bepul chiqarish imkoniyati berildi!\n\nYana ${5 - count} ta referal qo'shsangiz, jami 20 ta bo'ladi.`;
   }
+
+  const updates = { free_pages: expected };
+  if (count >= 3) updates.reward_3_given = true;
+  if (count >= 5) updates.reward_5_given = true;
+
+  await supabase
+    .from("users")
+    .update(updates)
+    .eq("telegram_user_id", referrerId);
 
   if (message) {
     await callTelegram("sendMessage", { chat_id: referrerId, text: message });
