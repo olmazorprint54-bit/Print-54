@@ -3,7 +3,9 @@
 // Mijoz "Buyurtmalarim" bo'limidan o'z buyurtmasini bekor qiladi:
 //   1) Buyurtma haqiqatan shu mijozniki ekanini tekshiradi
 //   2) Supabase'da statusni "cancelled" qiladi
-//   3) Sizga yuborilgan Telegram xabarini "bekor qilindi" deb
+//   3) Agar buyurtmada bepul varaqlar ishlatilgan bo'lsa, ularni
+//      mijozning balansiga qaytarib qo'shadi
+//   4) Sizga yuborilgan Telegram xabarini "bekor qilindi" deb
 //      tahrirlaydi (matn ustidan chiziq bilan)
 // ---------------------------------------------------------------
 
@@ -110,6 +112,24 @@ module.exports = async (req, res) => {
       .eq("id", orderId);
 
     if (updateError) throw updateError;
+
+    // Agar bu buyurtmada bepul varaqlar ishlatilgan bo'lsa,
+    // ularni mijozning balansiga qaytarib qo'shamiz
+    const usedFree = order.free_pages_used || 0;
+    if (usedFree > 0) {
+      const { data: userRow } = await supabase
+        .from("users")
+        .select("free_pages")
+        .eq("telegram_user_id", userId)
+        .single();
+
+      if (userRow) {
+        await supabase
+          .from("users")
+          .update({ free_pages: (userRow.free_pages || 0) + usedFree })
+          .eq("telegram_user_id", userId);
+      }
+    }
 
     if (order.telegram_message_id) {
       const strikedText = `<s>${orderText(order)}</s>\n\n❌ <b>Mijoz tomonidan bekor qilindi</b>`;
