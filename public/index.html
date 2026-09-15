@@ -222,6 +222,7 @@
     transition: transform 0.15s ease, box-shadow 0.2s ease;
   }
   .order-btn:active{ transform: scale(0.98); box-shadow: 0 0 22px -2px var(--accent-glow); }
+  .order-btn:disabled{ opacity:0.5; cursor:not-allowed; }
 
   .other-services-btn{
     width:100%; margin-top: 22px; padding:14px;
@@ -295,7 +296,7 @@
     <section>
       <div class="field-title">Rang turi</div>
       <div class="img-choice-row" id="paperColorChoice">
-        <div class="img-choice glass active" data-value="bw">
+        <div class="img-choice glass" data-value="bw">
           <div class="thumb"><img src="assets/sample-bw.jpg" alt="Oq-qora"></div>
           <div class="thumb-label">Oq-qora</div>
         </div>
@@ -309,7 +310,7 @@
     <section>
       <div class="field-title">Chop etish turi</div>
       <div class="choice-row" id="paperSideChoice">
-        <div class="pill-btn glass active" data-value="single">Bir tomonlama</div>
+        <div class="pill-btn glass" data-value="single">Bir tomonlama</div>
         <div class="pill-btn glass" data-value="double">Ikki tomonlama</div>
       </div>
     </section>
@@ -339,7 +340,7 @@
     <section>
       <div class="field-title">Format</div>
       <div class="img-choice-row" id="bookFormatChoice">
-        <div class="img-choice glass active" data-value="a4">
+        <div class="img-choice glass" data-value="a4">
           <div class="thumb"><img src="assets/a4-book.png" alt="A4"></div>
           <div class="thumb-label">A4</div>
         </div>
@@ -353,7 +354,7 @@
     <section>
       <div class="field-title">Rang turi</div>
       <div class="choice-row" id="bookColorChoice">
-        <div class="pill-btn glass active" data-value="bw">Oq-qora</div>
+        <div class="pill-btn glass" data-value="bw">Oq-qora</div>
         <div class="pill-btn glass" data-value="color">Rangli</div>
       </div>
     </section>
@@ -389,7 +390,7 @@
       </div>
       <div class="field-title">Format</div>
       <div class="choice-row" id="bindingFormatChoice">
-        <div class="pill-btn glass active" data-value="a4">A4 — 7 000 so'm</div>
+        <div class="pill-btn glass" data-value="a4">A4 — 7 000 so'm</div>
         <div class="pill-btn glass" data-value="a5">A5 — 5 000 so'm</div>
       </div>
       <div class="field-title">Nechta dona</div>
@@ -554,7 +555,7 @@ document.getElementById('btnOtherBottom').addEventListener('click', openOwnerCha
 /* ================================================================
    PAPER TAB LOGIC
    ================================================================ */
-let paperState = { color:'bw', side:'single', qty:1 };
+let bookState = { format:'a4', color:'bw', qty:50 };
 wireQtyBox('paperQty');
 
 document.getElementById('paperColorChoice').addEventListener('click', e=>{
@@ -615,7 +616,7 @@ function renderPaper(){
 /* ================================================================
    BOOK TAB LOGIC
    ================================================================ */
-let bookState = { format:'a4', color:'bw', qty:50 };
+let bookState = { format:null, color:null, qty:50 };
 wireQtyBox('bookQty');
 
 document.getElementById('bookFormatChoice').addEventListener('click', e=>{
@@ -655,7 +656,7 @@ function renderBook(){
 /* ================================================================
    BINDING TAB LOGIC
    ================================================================ */
-let bindingState = { format: 'a4', qty: 1 };
+let bindingState = { format: null, qty: 1 };
 wireQtyBox('bindingQty');
 document.getElementById('bindingFormatChoice').addEventListener('click', e=>{
   const el = e.target.closest('.pill-btn'); if(!el) return;
