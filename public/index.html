@@ -750,15 +750,18 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
     const type = btn.dataset.order;
     let payload;
      if (type === 'paper'){
+      if (!paperState.color || !paperState.side) return;
       const rawTotal = calcPaperTotal(paperState.color, paperState.side, paperState.qty);
       const freeUsed = Math.min(myFreePages, paperState.qty);
       const discount = Math.round(freeUsed * (rawTotal / paperState.qty));
       const finalTotal = Math.max(0, rawTotal - discount);
       payload = { service:'paper', ...paperState, freePagesUsed: freeUsed, total: finalTotal };
     } else if (type === 'book'){
+      if (!bookState.format || !bookState.color) return;
       const { total } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
       payload = { service:'book', ...bookState, total };
     } else {
+      if (!bindingState.format) return;
       payload = { service:'binding', format: bindingState.format, qty: bindingState.qty, total: PRICING.binding[bindingState.format] * bindingState.qty };
     }
     sendOrder(payload);
