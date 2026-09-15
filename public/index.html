@@ -258,6 +258,26 @@
     text-align:center; font-size:12.5px; color: var(--ink-soft);
     margin-top:10px; min-height:16px;
   }
+
+  /* ---------- toggle switch ---------- */
+  .switch{ position:relative; display:inline-block; width:40px; height:24px; flex-shrink:0; }
+  .switch input{ opacity:0; width:0; height:0; }
+  .switch .slider{
+    position:absolute; cursor:pointer; inset:0;
+    background: rgba(255,255,255,0.18);
+    transition: 0.2s;
+    border-radius: 999px;
+  }
+  .switch .slider:before{
+    position:absolute; content:"";
+    height:18px; width:18px;
+    left:3px; bottom:3px;
+    background:#fff;
+    transition:0.2s;
+    border-radius:50%;
+  }
+  .switch input:checked + .slider{ background: #4ADE80; }
+  .switch input:checked + .slider:before{ transform: translateX(16px); }
 </style>
 </head>
 <body>
@@ -353,7 +373,16 @@
       <div class="receipt glass">
         <div class="receipt-line"><span>Xizmat</span><span id="paperLineDesc">Oq-qora · bir tomonlama</span></div>
         <div class="receipt-line"><span>Miqdor</span><span id="paperLineQty">1 varaq</span></div>
-        <div class="receipt-line" id="paperFreeLine" style="display:none; color:#4ADE80;"><span>🎁 Bepul varaqlar</span><span></span></div>
+        <div class="receipt-line" id="paperFreeLine" style="display:none; color:#4ADE80; align-items:center;">
+          <span>🎁 Bepul varaqlar</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span id="paperFreeAmount"></span>
+            <label class="switch">
+              <input type="checkbox" id="paperFreeToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="paperTotal">0 so'm</span></div>
       </div>
       <button class="order-btn" data-order="paper">Buyurtma berish</button>
@@ -580,8 +609,13 @@ document.getElementById('btnOtherBottom').addEventListener('click', openOwnerCha
 /* ================================================================
    PAPER TAB LOGIC
    ================================================================ */
-let paperState = { color:null, side:null, qty:1 };
+let paperState = { color:null, side:null, qty:1, useFree:true };
 wireQtyBox('paperQty');
+
+document.getElementById('paperFreeToggle').addEventListener('change', e=>{
+  paperState.useFree = e.target.checked;
+  renderPaper();
+});
 
 document.getElementById('paperColorChoice').addEventListener('click', e=>{
   const el = e.target.closest('.img-choice'); if(!el) return;
@@ -614,7 +648,7 @@ function calcPaperTotal(color, side, qty){
 }
 
 function renderPaper(){
-  const { color, side, qty } = paperState;
+  const { color, side, qty, useFree } = paperState;
   const orderBtn = document.querySelector('#panel-paper .order-btn');
 
   if (!color || !side) {
@@ -631,7 +665,7 @@ function renderPaper(){
   const colorLabel = color === 'bw' ? 'Oq-qora' : 'Rangli';
   const sideLabel = side === 'single' ? 'bir tomonlama' : 'ikki tomonlama';
 
-  const freeUsed = Math.min(myFreePages, qty);
+  const freeUsed = useFree ? Math.min(myFreePages, qty) : 0;
   const avgPerPage = rawTotal / qty;
   const discount = Math.round(freeUsed * avgPerPage);
   const finalTotal = Math.max(0, rawTotal - discount);
@@ -640,9 +674,13 @@ function renderPaper(){
   document.getElementById('paperLineQty').textContent = `${qty} varaq`;
 
   const freeLineEl = document.getElementById('paperFreeLine');
-  if (freeUsed > 0) {
+  const amountEl = document.getElementById('paperFreeAmount');
+  const toggleEl = document.getElementById('paperFreeToggle');
+
+  if (myFreePages > 0) {
     freeLineEl.style.display = 'flex';
-    freeLineEl.querySelector('span:last-child').textContent = `-${freeUsed} varaq (-${fmt(discount)})`;
+    toggleEl.checked = useFree;
+    amountEl.textContent = freeUsed > 0 ? `-${freeUsed} varaq (-${fmt(discount)})` : '';
   } else {
     freeLineEl.style.display = 'none';
   }
@@ -777,10 +815,10 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
      if (type === 'paper'){
       if (!paperState.color || !paperState.side) return;
       const rawTotal = calcPaperTotal(paperState.color, paperState.side, paperState.qty);
-      const freeUsed = Math.min(myFreePages, paperState.qty);
+      const freeUsed = paperState.useFree ? Math.min(myFreePages, paperState.qty) : 0;
       const discount = Math.round(freeUsed * (rawTotal / paperState.qty));
       const finalTotal = Math.max(0, rawTotal - discount);
-      payload = { service:'paper', ...paperState, freePagesUsed: freeUsed, total: finalTotal };
+      payload = { service:'paper', color: paperState.color, side: paperState.side, qty: paperState.qty, freePagesUsed: freeUsed, total: finalTotal };
     } else if (type === 'book'){
       if (!bookState.format || !bookState.color) return;
       const { total } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
