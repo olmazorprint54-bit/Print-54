@@ -239,7 +239,7 @@ async function handleMessage(msg) {
   await callTelegram("sendPhoto", {
     chat_id: msg.chat.id,
     photo: "https://raw.githubusercontent.com/olmazorprint54-bit/Print-54/main/public/assets/start-guide.png",
-    caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin!",
+    caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.",
   });
 }
 
