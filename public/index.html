@@ -657,6 +657,18 @@ function calcBookTotal(format, color, pages){
 
 function renderBook(){
   const { format, color, qty } = bookState;
+  const orderBtn = document.querySelector('#panel-book .order-btn');
+
+  if (!format || !color) {
+    document.getElementById('bookLineDesc').textContent = '—';
+    document.getElementById('bookLinePages').textContent = `${qty} bet`;
+    document.getElementById('bookLineCover').textContent = fmt(0);
+    document.getElementById('bookTotal').textContent = fmt(0);
+    if (orderBtn) orderBtn.disabled = true;
+    return;
+  }
+  if (orderBtn) orderBtn.disabled = false;
+
   const { total, cover } = calcBookTotal(format, color, qty);
   document.getElementById('bookLineDesc').textContent = `${format.toUpperCase()} · ${color === 'bw' ? 'oq-qora' : 'rangli'}`;
   document.getElementById('bookLinePages').textContent = `${qty} bet`;
