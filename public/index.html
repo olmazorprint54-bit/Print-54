@@ -590,6 +590,18 @@ function calcPaperTotal(color, side, qty){
 
 function renderPaper(){
   const { color, side, qty } = paperState;
+  const orderBtn = document.querySelector('#panel-paper .order-btn');
+
+  if (!color || !side) {
+    document.getElementById('paperLineDesc').textContent = '—';
+    document.getElementById('paperLineQty').textContent = `${qty} varaq`;
+    document.getElementById('paperFreeLine').style.display = 'none';
+    document.getElementById('paperTotal').textContent = fmt(0);
+    if (orderBtn) orderBtn.disabled = true;
+    return;
+  }
+  if (orderBtn) orderBtn.disabled = false;
+
   const rawTotal = calcPaperTotal(color, side, qty);
   const colorLabel = color === 'bw' ? 'Oq-qora' : 'Rangli';
   const sideLabel = side === 'single' ? 'bir tomonlama' : 'ikki tomonlama';
@@ -612,7 +624,6 @@ function renderPaper(){
 
   document.getElementById('paperTotal').textContent = fmt(finalTotal);
 }
-
 /* ================================================================
    BOOK TAB LOGIC
    ================================================================ */
