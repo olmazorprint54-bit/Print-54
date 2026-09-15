@@ -173,9 +173,64 @@ async function grantReferralReward(referrerId) {
   }
 }
 
+/* ============ OMMAVIY XABAR (faqat do'kon egasi uchun) ============ */
+async function handleBroadcast(msg) {
+  const ownerId = process.env.OWNER_CHAT_ID;
+  if (String(msg.from.id) !== String(ownerId)) return; // faqat egasi ishlata oladi
+
+  const text = msg.text.slice("/elon".length).trim();
+  if (!text) {
+    await callTelegram("sendMessage", {
+      chat_id: msg.chat.id,
+      text: "Xabar matnini shu tarzda yozing:\n/elon Ertaga aksiya! 1 list — 200 so'm!",
+    });
+    return;
+  }
+
+  const { data: users, error } = await supabase.from("users").select("telegram_user_id");
+  if (error || !users || users.length === 0) {
+    await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "Foydalanuvchilar ro'yxatini olishda xatolik yoki ro'yxat bo'sh." });
+    return;
+  }
+
+  await callTelegram("sendMessage", {
+    chat_id: msg.chat.id,
+    text: `📤 Yuborish boshlandi... (${users.length} ta foydalanuvchi)`,
+  });
+
+  let sent = 0;
+  let failed = 0;
+
+  for (const u of users) {
+    try {
+      const res = await callTelegram("sendMessage", {
+        chat_id: u.telegram_user_id,
+        text,
+      });
+      if (res.ok) sent++; else failed++;
+    } catch (e) {
+      failed++;
+    }
+    // Telegram limitidan xavfsiz turish uchun har xabar orasida kichik pauza
+    await new Promise((r) => setTimeout(r, 40));
+  }
+
+  await callTelegram("sendMessage", {
+    chat_id: msg.chat.id,
+    text: `✅ Yakunlandi!\n\nYuborildi: ${sent} ta\nXato (bloklagan/o'chirilgan va h.k.): ${failed} ta`,
+  });
+}
+
 /* ============ /start VA REFERAL KUZATISH ============ */
 async function handleMessage(msg) {
-  if (!msg.text || !msg.text.startsWith("/start")) return;
+  if (!msg.text) return;
+
+  if (msg.text.startsWith("/elon")) {
+    await handleBroadcast(msg);
+    return;
+  }
+
+  if (!msg.text.startsWith("/start")) return;
 
   const parts = msg.text.split(" ");
   const referrerId = parts.length > 1 ? parseInt(parts[1], 10) : null;
@@ -239,7 +294,7 @@ async function handleMessage(msg) {
   await callTelegram("sendPhoto", {
     chat_id: msg.chat.id,
     photo: "https://raw.githubusercontent.com/olmazorprint54-bit/Print-54/main/public/assets/start-guide.png",
-    caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! \n\n🎁 Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.",
+    caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nMini ilova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"Hisoblash\" tugmasini bosing (rasmda ko'rsatilganidek).\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.",
   });
 }
 
