@@ -693,10 +693,18 @@ document.getElementById('bindingQty').addEventListener('input', e=>{
   renderBinding();
 });
 function renderBinding(){
+  const orderBtn = document.querySelector('#panel-binding .order-btn');
+
+  if (!bindingState.format) {
+    document.getElementById('bindingTotal').textContent = fmt(0);
+    if (orderBtn) orderBtn.disabled = true;
+    return;
+  }
+  if (orderBtn) orderBtn.disabled = false;
+
   const total = PRICING.binding[bindingState.format] * bindingState.qty;
   document.getElementById('bindingTotal').textContent = fmt(total);
 }
-
 /* ================================================================
    BUYURTMA YUBORISH
    ================================================================ */
