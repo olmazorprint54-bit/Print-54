@@ -821,7 +821,7 @@ function orderSummaryText(payload){
   } else if(payload.service === 'binding'){
     detail = `${String(payload.format).toUpperCase()} · ${payload.qty} dona`;
   }
-  return `Salom! Men mini ilova orqali buyurtma berdim:\n\n🧾 ${serviceLabel}\n${detail}\n💰 ${fmt(payload.total)}\n\nBuyurtmamni tasdiqlab bera olasizmi?`;
+  return `Salom! Men web ilova orqali buyurtma berdim:\n\n🧾 ${serviceLabel}\n${detail}\n💰 ${fmt(payload.total)}\n\nBuyurtmamni tasdiqlab bera olasizmi?`;
 }
 async function sendOrder(payload){
   statusMsg.textContent = "Yuborilmoqda...";
