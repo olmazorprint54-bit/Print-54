@@ -426,7 +426,17 @@
       <div class="receipt glass">
         <div class="receipt-line"><span>Xizmat</span><span id="bookLineDesc">A4 · oq-qora</span></div>
         <div class="receipt-line"><span>Sahifalar</span><span id="bookLinePages">50 bet</span></div>
-        <div class="receipt-line"><span>Muqova (qoshimcha)</span><span id="bookLineCover">7 000 so'm</span></div>
+             <div class="receipt-line"><span>Muqova (qoshimcha)</span><span id="bookLineCover">7 000 so'm</span></div>
+        <div class="receipt-line" id="bookFreeLine" style="display:none; color:#4ADE80; align-items:center;">
+          <span>🎁 Bepul varaqlar</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span id="bookFreeAmount"></span>
+            <label class="switch">
+              <input type="checkbox" id="bookFreeToggle">
+              <span class="slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="bookTotal">0 so'm</span></div>
       </div>
       <button class="order-btn" data-order="book">Buyurtma berish</button>
