@@ -533,6 +533,7 @@ async function refreshMyRewards(){
     if(fpEl) fpEl.textContent = myFreePages;
     if(rcEl) rcEl.textContent = data.referral_count || 0;
     renderPaper();
+    renderBook();
   }catch(e){ console.error(e); }
 }
 
@@ -700,9 +701,13 @@ function renderPaper(){
 /* ================================================================
    BOOK TAB LOGIC
    ================================================================ */
-let bookState = { format:null, color:null, qty:50 };
+let bookState = { format:null, color:null, qty:50, useFree:false };
 wireQtyBox('bookQty');
 
+document.getElementById('bookFreeToggle').addEventListener('change', e=>{
+  bookState.useFree = e.target.checked;
+  renderBook();
+});
 document.getElementById('bookFormatChoice').addEventListener('click', e=>{
   const el = e.target.closest('.img-choice'); if(!el) return;
   bookState.format = el.dataset.value;
@@ -729,24 +734,48 @@ function calcBookTotal(format, color, pages){
 }
 
 function renderBook(){
-  const { format, color, qty } = bookState;
+  const { format, color, qty, useFree } = bookState;
   const orderBtn = document.querySelector('#panel-book .order-btn');
 
   if (!format || !color) {
     document.getElementById('bookLineDesc').textContent = '—';
     document.getElementById('bookLinePages').textContent = `${qty} bet`;
     document.getElementById('bookLineCover').textContent = fmt(0);
+    document.getElementById('bookFreeLine').style.display = 'none';
     document.getElementById('bookTotal').textContent = fmt(0);
     if (orderBtn) orderBtn.disabled = true;
     return;
   }
   if (orderBtn) orderBtn.disabled = false;
 
-  const { total, cover } = calcBookTotal(format, color, qty);
+  const { total: rawTotal, cover } = calcBookTotal(format, color, qty);
+  const perPage = PRICING.book[format][color];
+
+  // 1 varaq (A4 list) necha kitob sahifasiga teng: A5 — 4 ta, A4 — 2 ta
+  const pagesPerSheet = format === 'a5' ? 4 : 2;
+  const neededSheets = Math.ceil(qty / pagesPerSheet);
+  const sheetsUsed = useFree ? Math.min(myFreePages, neededSheets) : 0;
+  const freeBookPages = Math.min(qty, sheetsUsed * pagesPerSheet);
+  const discount = Math.round(freeBookPages * perPage);
+  const finalTotal = Math.max(0, rawTotal - discount);
+
   document.getElementById('bookLineDesc').textContent = `${format.toUpperCase()} · ${color === 'bw' ? 'oq-qora' : 'rangli'}`;
   document.getElementById('bookLinePages').textContent = `${qty} bet`;
   document.getElementById('bookLineCover').textContent = fmt(cover);
-  document.getElementById('bookTotal').textContent = fmt(total);
+
+  const freeLineEl = document.getElementById('bookFreeLine');
+  const amountEl = document.getElementById('bookFreeAmount');
+  const toggleEl = document.getElementById('bookFreeToggle');
+
+  if (myFreePages > 0) {
+    freeLineEl.style.display = 'flex';
+    toggleEl.checked = useFree;
+    amountEl.textContent = sheetsUsed > 0 ? `-${sheetsUsed} varaq (${freeBookPages} bet, -${fmt(discount)})` : '';
+  } else {
+    freeLineEl.style.display = 'none';
+  }
+
+  document.getElementById('bookTotal').textContent = fmt(finalTotal);
 }
 
 /* ================================================================
@@ -831,8 +860,15 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
       payload = { service:'paper', color: paperState.color, side: paperState.side, qty: paperState.qty, freePagesUsed: freeUsed, total: finalTotal };
     } else if (type === 'book'){
       if (!bookState.format || !bookState.color) return;
-      const { total } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
-      payload = { service:'book', ...bookState, total };
+      const { total: rawTotal } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
+      const perPage = PRICING.book[bookState.format][bookState.color];
+      const pagesPerSheet = bookState.format === 'a5' ? 4 : 2;
+      const neededSheets = Math.ceil(bookState.qty / pagesPerSheet);
+      const sheetsUsed = bookState.useFree ? Math.min(myFreePages, neededSheets) : 0;
+      const freeBookPages = Math.min(bookState.qty, sheetsUsed * pagesPerSheet);
+      const discount = Math.round(freeBookPages * perPage);
+      const finalTotal = Math.max(0, rawTotal - discount);
+      payload = { service:'book', format: bookState.format, color: bookState.color, qty: bookState.qty, freePagesUsed: sheetsUsed, total: finalTotal };
     } else {
       if (!bindingState.format) return;
       payload = { service:'binding', format: bindingState.format, qty: bindingState.qty, total: PRICING.binding[bindingState.format] * bindingState.qty };
