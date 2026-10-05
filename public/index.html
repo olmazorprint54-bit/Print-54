@@ -279,6 +279,7 @@
   .switch input:checked + .slider{ background: #4ADE80; }
   .switch input:checked + .slider:before{ transform: translateX(16px); }
 </style>
+<link rel="stylesheet" href="ai/ai.css">
 </head>
 <body>
 
@@ -318,6 +319,9 @@
       <b>Buyurtma qanday amalga oshadi?</b><br>
       Kerakli bo'limni tanlab, xizmat va miqdorni belgilaganingizdan so'ng "Buyurtma berish" tugmasini bosing. Ma'lumotlar avtomatik bizga yetib boradi, shuningdek shaxsiy chatimiz tayyor matn bilan ochiladi — shunchaki "Yuborish" tugmasini bossangiz kifoya.
       <br><br>
+      <b>AI xizmatlar</b><br>
+      Yuqoridagi "AI xizmatlar" bo'limida taqdimot, mustaqil ish, dars ishlanma, test, savollar va krossvord tayyorlatishingiz mumkin. Mavzu va shablonni tanlab so'rov qoldirasiz — tayyor hujjat bot orqali yuboriladi va xohlasangiz shu yerning o'zida chop etib beramiz.
+      <br><br>
       <b>Buyurtmalarim</b><br>
       Yuqoridagi hujjat belgisi orqali barcha buyurtmalaringiz tarixini — ularning holatini (kutilmoqda, bajarildi yoki bekor qilindi) — ko'rishingiz, va agar kerak bo'lsa hali bajarilmagan buyurtmani bekor qilishingiz mumkin.
       <br><br>
@@ -329,7 +333,13 @@
       <button type="button" id="closeHelpPanel" style="width:100%; margin-top:16px; padding:11px; border:none; border-radius: var(--radius-pill); background: rgba(255,255,255,0.1); color: var(--ink); font-size:13px; font-weight:600; cursor:pointer;">Yopish</button>
     </div>
   </div>
-  
+
+  <div class="mode-switch">
+    <div class="mode-btn active" data-mode="print">🖨 Chop etish</div>
+    <div class="mode-btn" data-mode="ai">✨ AI xizmatlar <span class="new-badge">Yangi</span></div>
+  </div>
+  <div class="ai-root" id="aiRoot"></div>
+
   <div class="tabs">
     <div class="pill-btn glass active" data-tab="paper">Chop etish</div>
     <div class="pill-btn glass" data-tab="book">Kitob chiqarish</div>
@@ -1041,7 +1051,9 @@ async function updateOrdersBadge(){
     }
   }catch(e){ console.error(e); }
 }
-updateOrdersBadge();  
+updateOrdersBadge();
   </script>
+  <script src="ai/config.js"></script>
+  <script src="ai/ai.js"></script>
  </body>
   </html>
