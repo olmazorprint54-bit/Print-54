@@ -941,7 +941,7 @@ async function loadMyOrders(){
 function orderCardHtml(o){
   const date = new Date(o.created_at).toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
   const AI_SVC = {
-    presentation: ['✨ Taqdimot', 'slayd'], essay: ['✨ Mustaqil ish', 'bet'], lesson: ['✨ Dars ishlanma', ''],
+    presentation: ['✨ Taqdimot', 'slayd'], essay: ['✨ Mustaqil ish', 'bet'], referat: ['✨ Referat', 'bet'], resume: ['✨ Resume / CV', ''], lesson: ['✨ Dars ishlanma', ''],
     test: ['✨ Test', 'savol'], questions: ['✨ Savollar', 'savol'], crossword: ['✨ Krossvord', "so'z"],
   };
   const ai = AI_SVC[o.service];

@@ -20,17 +20,19 @@ const supabase = createClient(
 const SERVICE_LABELS = {
   presentation: "Taqdimot",
   essay: "Mustaqil ish",
+  referat: "Referat",
   lesson: "Dars ishlanma",
   test: "Test tuzish",
   questions: "Savollar tuzish",
   crossword: "Krossvord",
+  resume: "Resume / CV",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
-const QTY_FIELD = { presentation: "slides", essay: "pages", test: "count", questions: "count", crossword: "words" };
+const QTY_FIELD = { presentation: "slides", essay: "pages", referat: "pages", test: "count", questions: "count", crossword: "words" };
 
 const MAX_LINES = 40;
-const MAX_VALUE = 600;
+const MAX_VALUE = 900; // resume tajribasi kabi uzun maydonlar uchun
 const MAX_MESSAGE = 4000; // Telegram chegarasi 4096
 
 function escapeHtml(str) {
@@ -43,6 +45,11 @@ function escapeHtml(str) {
 function clean(value, max) {
   const s = String(value == null ? "" : value).replace(/\s+/g, " ").trim();
   return s.length > max ? s.slice(0, max - 1) + "…" : s;
+}
+
+// Buyurtmalarim'da ko'rinadigan qisqa nom (resume uchun — ism va lavozim)
+function topicOf(fields) {
+  return clean(fields.topic || [fields.name, fields.position].filter(Boolean).join(" — "), 200);
 }
 
 function cleanSummary(summary) {
@@ -136,7 +143,7 @@ module.exports = async (req, res) => {
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
         status: "active",
-        details: { topic: clean(fields.topic, 200), summary },
+        details: { topic: topicOf(fields), summary },
       })
       .select()
       .single();
@@ -149,7 +156,7 @@ module.exports = async (req, res) => {
     if (orderId) {
       await supabase
         .from("orders")
-        .update({ telegram_message_id: messageId, details: { topic: clean(fields.topic, 200), summary, text } })
+        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, text } })
         .eq("id", orderId);
     }
 
