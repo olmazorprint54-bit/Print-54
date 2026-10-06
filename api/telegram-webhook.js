@@ -221,8 +221,79 @@ async function handleBroadcast(msg) {
   });
 }
 
+/* ============ AI BUYURTMA: EGA TAYYOR FAYLNI YUBORADI ============ */
+// Ega buyurtma xabariga javob (reply) qilib fayl yuborsa — fayl
+// buyurtmaga biriktiriladi va mijozga bot orqali yuboriladi.
+const AI_LABELS = {
+  presentation: "Taqdimot",
+  essay: "Mustaqil ish",
+  lesson: "Dars ishlanma",
+  test: "Test",
+  questions: "Savollar",
+  crossword: "Krossvord",
+};
+
+async function handleOwnerFile(msg) {
+  const reply = (text) =>
+    callTelegram("sendMessage", { chat_id: msg.chat.id, text, reply_to_message_id: msg.message_id });
+
+  const { data: order } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("telegram_message_id", msg.reply_to_message.message_id)
+    .single();
+
+  if (!order || !AI_LABELS[order.service]) {
+    await reply("⚠️ Bu xabar AI buyurtmaga tegishli emas. Faylni buyurtma xabariga javob qilib yuboring.");
+    return;
+  }
+  if (order.status === "cancelled") {
+    await reply(`⚠️ #${order.id} buyurtma mijoz tomonidan bekor qilingan, fayl yuborilmadi.`);
+    return;
+  }
+
+  const doc = msg.document;
+  await supabase
+    .from("orders")
+    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || null })
+    .eq("id", order.id);
+
+  const topic = order.details && order.details.topic ? `\n«${escapeHtml(order.details.topic)}»` : "";
+  let delivered = false;
+  if (order.telegram_user_id) {
+    const sent = await callTelegram("sendDocument", {
+      chat_id: order.telegram_user_id,
+      document: doc.file_id,
+      caption: `🎉 <b>Buyurtmangiz tayyor!</b>\n${AI_LABELS[order.service]}${topic}\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.`,
+      parse_mode: "HTML",
+    });
+    delivered = !!sent.ok;
+  }
+
+  if (order.details && order.details.text) {
+    await callTelegram("editMessageText", {
+      chat_id: msg.chat.id,
+      message_id: order.telegram_message_id,
+      text: `${order.details.text}\n\n✅ <b>Fayl yuborildi</b>`,
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+    });
+  }
+
+  await reply(
+    delivered
+      ? `✅ #${order.id} — fayl mijozga yuborildi.`
+      : `⚠️ #${order.id} — fayl saqlandi, lekin mijozga yuborib bo'lmadi (botni bloklagan bo'lishi mumkin). U "Buyurtmalarim"dan olishi mumkin.`
+  );
+}
+
 /* ============ /start VA REFERAL KUZATISH ============ */
 async function handleMessage(msg) {
+  if (msg.document && msg.reply_to_message && String(msg.from.id) === String(process.env.OWNER_CHAT_ID)) {
+    await handleOwnerFile(msg);
+    return;
+  }
+
   if (!msg.text) return;
 
   if (msg.text.startsWith("/elon")) {

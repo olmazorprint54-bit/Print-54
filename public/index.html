@@ -940,8 +940,18 @@ async function loadMyOrders(){
 }
 function orderCardHtml(o){
   const date = new Date(o.created_at).toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
-  const serviceLabel = { paper:"Qog'oz chop etish", book:'Kitob chiqarish', binding:'Pereplyot' }[o.service] || o.service;
+  const AI_SVC = {
+    presentation: ['✨ Taqdimot', 'slayd'], essay: ['✨ Mustaqil ish', 'bet'], lesson: ['✨ Dars ishlanma', ''],
+    test: ['✨ Test', 'savol'], questions: ['✨ Savollar', 'savol'], crossword: ['✨ Krossvord', "so'z"],
+  };
+  const ai = AI_SVC[o.service];
+  const serviceLabel = ai ? ai[0] : ({ paper:"Qog'oz chop etish", book:'Kitob chiqarish', binding:'Pereplyot' }[o.service] || o.service);
   let detail = '';
+  if (ai) {
+    const topic = o.details && o.details.topic ? o.details.topic : '';
+    detail = [topic, o.qty && ai[1] ? `${o.qty} ${ai[1]}` : ''].filter(Boolean).join(' · ') || '—';
+    detail = detail.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
   if(o.service === 'paper'){
     detail = `${o.color === 'bw' ? 'Oq-qora' : 'Rangli'} · ${o.side === 'single' ? 'bir tomonlama' : 'ikki tomonlama'} · ${o.qty} varaq`;
   } else if(o.service === 'book'){
@@ -955,13 +965,16 @@ function orderCardHtml(o){
   const cardStyle = cancelled ? 'opacity:0.55;' : '';
 
   let actionHtml;
-  if (completed) {
+  if (completed && ai) {
+    actionHtml = `<div class="status-msg" style="margin-top:8px; color:#4ADE80; font-weight:700;">✅ Tayyor</div>` +
+      (o.file_id ? `<button type="button" class="get-file-btn" data-id="${o.id}" style="width:100%; margin-top:8px; padding:11px; border:none; border-radius: var(--radius-pill); background: rgba(74,222,128,0.16); color:#4ADE80; font-size:13.5px; font-weight:700; cursor:pointer;">📥 Faylni olish</button>` : '');
+  } else if (completed) {
     actionHtml = `<div class="status-msg" style="margin-top:8px; color:#4ADE80; font-weight:700;">✅ Bajarildi</div>`;
   } else if (cancelled) {
     actionHtml = `<div class="status-msg" style="margin-top:8px;">Bekor qilindi</div>`;
   } else {
     actionHtml = `
-      <div class="status-msg" style="margin-top:8px; color:#FBBF24;">⏳ Kutilmoqda</div>
+      <div class="status-msg" style="margin-top:8px; color:#FBBF24;">⏳ ${ai ? 'Tayyorlanmoqda' : 'Kutilmoqda'}</div>
       <button type="button" class="cancel-order-btn" data-id="${o.id}" style="width:100%; margin-top:8px; padding:10px; border:none; border-radius: var(--radius-pill); background: rgba(255,80,80,0.15); color:#ff8080; font-size:13px; font-weight:600; cursor:pointer;">Bekor qilish</button>
     `;
   }
@@ -973,7 +986,7 @@ const trashHtml = isFinal
     <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
       <div class="receipt-line"><span>${serviceLabel}</span><span>${date}${trashHtml}</span></div>
       <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
-      <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${fmt(o.total)}</span></div>
+      <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${o.total == null ? 'Kelishiladi' : fmt(o.total)}</span></div>
       ${actionHtml}
     </div>
   `;
@@ -1028,6 +1041,31 @@ document.getElementById('myOrdersList').addEventListener('click', async (e)=>{
     console.error(err);
     if (card) card.style.opacity = '1';
     alert("O'chirib bo'lmadi, qayta urinib ko'ring.");
+  }
+});
+// AI buyurtma: tayyor faylni bot chatiga qayta yuborish
+document.getElementById('myOrdersList').addEventListener('click', async (e)=>{
+  const btn = e.target.closest('.get-file-btn');
+  if(!btn) return;
+  const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+  if(!tgUser) return;
+  btn.disabled = true;
+  btn.textContent = 'Yuborilmoqda...';
+  try{
+    const res = await fetch('/api/order-file', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ orderId: btn.dataset.id, userId: tgUser.id })
+    });
+    const data = await res.json();
+    if(!data.ok) throw new Error(data.error || 'Xatolik');
+    btn.textContent = '✅ Fayl bot chatiga yuborildi';
+    if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+  }catch(err){
+    console.error(err);
+    btn.disabled = false;
+    btn.textContent = '📥 Faylni olish';
+    alert("Faylni yuborib bo'lmadi, qayta urinib ko'ring.");
   }
 });
 async function updateOrdersBadge(){
