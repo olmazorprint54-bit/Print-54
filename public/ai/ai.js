@@ -231,7 +231,9 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
-    const amount = { presentation: `${v.slides || "10"} ta slayd`, essay: v.pages && `${v.pages} bet`, test: v.count && `${v.count} ta savol`, questions: v.count && `${v.count} ta savol`, crossword: v.words && `${v.words} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
+    const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
+    const amount = { presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       ["Mavzu", pick("topic") || "—"],
