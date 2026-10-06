@@ -287,6 +287,11 @@
       const st = getCat(current);
       st.cat = catChip.dataset.cat;
       st.manual = true;
+      // mijoz shablonni o'zi tanlamagan bo'lsa — toifaning birinchisini belgilaymiz
+      const fid = catChip.parentElement.dataset.cats;
+      const set = current.fields.find((x) => x.id === fid)?.set;
+      const first = st.cat !== "all" && !st.tplManual && set && CFG.templates[set].find((t) => t.category === st.cat);
+      if (first) v[fid] = first.id;
       const row = root.querySelector(`[data-tpl="${catChip.parentElement.dataset.cats}"]`);
       if (row) row.scrollLeft = 0;
       tick();
