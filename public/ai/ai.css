@@ -1,0 +1,169 @@
+/* ================================================================
+   AI XIZMATLAR — USLUBLAR (asosiy ilova uslubiga mos)
+   ================================================================ */
+
+/* ---------- rejim almashtirgich ---------- */
+.mode-switch{
+  display:flex; gap:4px; padding:4px; margin-bottom:14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+}
+.mode-btn{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:6px;
+  padding:11px 6px; border-radius: var(--radius-pill);
+  font-size:13.5px; font-weight:700; color: var(--ink-soft);
+  cursor:pointer; user-select:none; transition: background .15s ease, color .15s ease;
+}
+.mode-btn.active{ background: var(--glass-active); color: var(--ink); box-shadow: 0 2px 10px -2px rgba(0,0,0,.35); }
+.mode-btn[data-mode="ai"].active{
+  background: linear-gradient(135deg, rgba(79,168,255,.35), rgba(167,139,250,.35));
+  box-shadow: 0 0 22px -6px rgba(167,139,250,.8);
+}
+.new-badge{
+  font-size:10px; font-weight:800; padding:2px 7px; border-radius:999px;
+  background: linear-gradient(135deg,#F472B6,#A78BFA); color:#fff; letter-spacing:.02em;
+}
+
+/* AI rejimida chop etish bo'limlari yashiriladi */
+body.ai-mode .tabs,
+body.ai-mode .panel,
+body.ai-mode #btnOtherBottom{ display:none !important; }
+.ai-root{ display:none; }
+body.ai-mode .ai-root{ display:block; }
+
+/* ---------- kirish kartasi ---------- */
+.ai-hero{
+  border-radius: var(--radius-card); padding:16px 18px; margin-bottom:16px;
+  background:
+    radial-gradient(260px 120px at 100% 0%, rgba(167,139,250,.28), transparent 70%),
+    radial-gradient(240px 120px at 0% 100%, rgba(79,168,255,.22), transparent 70%),
+    var(--glass);
+}
+.ai-hero h2{ margin:0 0 4px; font-size:17px; }
+.ai-hero p{ margin:0; font-size:12.5px; line-height:1.5; color: var(--ink-soft); }
+.ai-hero .ai-note{
+  margin-top:10px; font-size:12px; color:#FBBF24; display:flex; gap:6px; align-items:flex-start;
+}
+
+/* ---------- xizmatlar to'ri ---------- */
+.ai-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.ai-card{
+  border-radius: var(--radius-card); padding:14px 14px 13px; cursor:pointer;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.ai-card:active{ transform: scale(.97); }
+.ai-card .ic{
+  width:42px; height:42px; border-radius:13px; display:grid; place-items:center; margin-bottom:10px;
+}
+.ai-card .ic svg{ width:22px; height:22px; stroke:#0B0D12; }
+.ai-card .t{ font-size:14.5px; font-weight:700; }
+.ai-card .s{ font-size:11.5px; color: var(--ink-soft); margin-top:2px; }
+.ai-card .p{ font-size:11.5px; color: var(--accent); margin-top:8px; font-weight:600; }
+
+/* ---------- shakl ---------- */
+.ai-top{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.ai-back{
+  width:40px; height:40px; border-radius:50%; display:grid; place-items:center; cursor:pointer; flex-shrink:0;
+}
+.ai-back svg{ width:18px; height:18px; stroke: var(--ink); }
+.ai-top .ic{ width:38px; height:38px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; }
+.ai-top .ic svg{ width:20px; height:20px; stroke:#0B0D12; }
+.ai-top .t{ font-size:16px; font-weight:700; }
+.ai-top .s{ font-size:11.5px; color: var(--ink-soft); }
+
+.ai-field{ margin-bottom:16px; }
+.ai-heading{ font-size:13.5px; font-weight:700; margin:22px 0 12px; padding-top:14px; border-top:1px dashed rgba(255,255,255,.14); }
+.ai-req{ color:#F472B6; margin-left:3px; }
+.ai-input{
+  width:100%; padding:13px 16px; border-radius:16px; font-size:14.5px;
+  color: var(--ink); font-family: inherit; outline:none;
+  background: var(--glass); border:1px solid var(--glass-border);
+}
+.ai-input::placeholder{ color: rgba(243,244,246,.38); }
+.ai-input:focus{ border-color: rgba(79,168,255,.6); box-shadow: 0 0 0 3px rgba(79,168,255,.18); }
+.ai-input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+.ai-input[type=number]::-webkit-outer-spin-button, .ai-input[type=number]::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
+.ai-field.error .ai-input{ border-color:#F87171; }
+.ai-err{ font-size:11.5px; color:#F87171; margin-top:6px; display:none; }
+.ai-field.error .ai-err{ display:block; }
+.ai-count{ font-size:11px; color: var(--ink-soft); text-align:right; margin-top:4px; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:7px; }
+.chip{
+  padding:9px 14px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; user-select:none;
+  background: var(--glass); border:1px solid var(--glass-border); color: var(--ink);
+  transition: background .15s ease, box-shadow .2s ease, border-color .15s ease;
+}
+.chips.compact{ display:grid; grid-template-columns: repeat(6, 1fr); }
+.chips.compact .chip{ text-align:center; padding:9px 0; }
+.chip.active{ background: var(--glass-active); border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
+.chip.multi.active::before{ content:"✓ "; color:#4ADE80; }
+
+.switch-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:12px 16px; border-radius:16px; font-size:13.5px;
+}
+
+/* ---------- shablonlar galereyasi ---------- */
+.tpl-cats{ margin-bottom:10px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+.tpl-cats::-webkit-scrollbar{ display:none; }
+.tpl-cats .chip{ flex:none; padding:7px 13px; font-size:12.5px; }
+.tpl-row{
+  display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory;
+  padding:2px 2px 8px; margin:0 -2px; scrollbar-width:none;
+}
+.tpl-row::-webkit-scrollbar{ display:none; }
+.tpl-card{
+  flex:0 0 46%; scroll-snap-align:start; border-radius:16px; padding:6px; cursor:pointer;
+  transition: box-shadow .2s ease, border-color .15s ease;
+}
+.tpl-row.doc .tpl-card{ flex-basis:31%; }
+.tpl-card.active{ border-color: rgba(74,222,128,.6); box-shadow: 0 0 26px -6px rgba(74,222,128,.6); }
+.tpl-name{ font-size:12px; font-weight:600; text-align:center; margin-top:7px; }
+.tpl-card.active .tpl-name::before{ content:"✓ "; color:#4ADE80; }
+.tpl-more{
+  margin-top:6px; width:100%; padding:10px; border-radius:999px; font-size:12.5px; font-weight:600;
+  text-align:center; cursor:pointer;
+}
+
+/* Slayd ko'rinishi (o'lchamlar konteynerga nisbatan — cqw) */
+.slide-box{ container-type: inline-size; }
+.slide{
+  position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:2.4cqw;
+  border:1px solid rgba(255,255,255,.12);
+}
+.slide .el{ position:absolute; }
+
+/* Hujjat sahifasi ko'rinishi */
+.page-box{ container-type: inline-size; }
+.page{
+  position:relative; aspect-ratio: 1 / 1.414; overflow:hidden; border-radius:2cqw;
+  background:#fff; color:#1f2937; font-family: "Times New Roman", Georgia, serif;
+}
+.page .el{ position:absolute; }
+
+/* ---------- katta ko'rish oynasi ---------- */
+.ai-modal{
+  position:fixed; inset:0; z-index:50; display:none; flex-direction:column;
+  background: rgba(5,6,10,.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  padding: 18px 14px 20px;
+}
+.ai-modal.open{ display:flex; }
+.ai-modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; max-width:480px; width:100%; margin-left:auto; margin-right:auto; }
+.ai-modal-head .t{ font-size:15px; font-weight:700; }
+.ai-modal-head .x{ width:38px; height:38px; border-radius:50%; display:grid; place-items:center; cursor:pointer; font-size:20px; }
+.ai-modal-body{ flex:1; overflow-y:auto; max-width:480px; width:100%; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+.ai-modal-body .cap{ font-size:11.5px; color: var(--ink-soft); margin:-4px 0 4px; text-align:center; }
+.ai-modal .order-btn{ max-width:480px; margin:12px auto 0; }
+
+/* ---------- yakuniy qism ---------- */
+.ai-summary .receipt-line span:last-child{ text-align:right; max-width:62%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ai-disclaimer{ font-size:11.5px; color: var(--ink-soft); line-height:1.5; margin-top:10px; }
+.ai-done{
+  border-radius: var(--radius-card); padding:22px 18px; text-align:center;
+}
+.ai-done .big{ font-size:40px; }
+.ai-done h3{ margin:8px 0 6px; font-size:17px; }
+.ai-done p{ margin:0 0 14px; font-size:13px; color: var(--ink-soft); line-height:1.5; }
