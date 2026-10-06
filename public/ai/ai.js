@@ -251,7 +251,14 @@
         const before = getCat(svc).cat;
         autoCategory(svc, f, v);
         const cats = root.querySelector(`[data-cats="${f.id}"]`);
-        if (cats) cats.innerHTML = categoryChips(svc, f);
+        if (cats) {
+          const sl = cats.scrollLeft;
+          cats.innerHTML = categoryChips(svc, f);
+          cats.scrollLeft = sl;
+          // toifa o'zi almashganda tanlangan tugmani ko'rinadigan joyga suramiz
+          const act = getCat(svc).cat !== before && cats.querySelector(".chip.active");
+          if (act) cats.scrollLeft += act.getBoundingClientRect().left - cats.getBoundingClientRect().left - (cats.clientWidth - act.offsetWidth) / 2;
+        }
         if (getCat(svc).cat !== before) row.scrollLeft = 0;
         if (sum) sum.innerHTML = summaryHtml(svc, v);
       }
