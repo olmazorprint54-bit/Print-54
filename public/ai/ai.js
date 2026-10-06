@@ -100,18 +100,18 @@
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <input class="ai-input" data-input="${f.id}" maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
+      case "number":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+          <input class="ai-input" data-input="${f.id}" type="number" inputmode="numeric" min="${f.min}" max="${f.max}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
+          <div class="ai-err">${f.min} dan ${f.max} gacha son kiriting</div></div>`;
       case "textarea":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <textarea class="ai-input" data-input="${f.id}" maxlength="${f.max || 1000}" placeholder="${esc(f.placeholder || "")}">${esc(v[f.id])}</textarea>
           <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div></div>`;
-      case "chips": {
-        // f.custom = {min, max} bo'lsa, oxirida sonni qo'lda yozish katagi chiqadi
-        const own = f.custom && v[f.id] && !f.options.some((o) => optV(o) === v[f.id]);
-        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
+      case "chips":
+        return `<div class="ai-field">${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
-          ${f.custom ? `<input class="chip-input${own ? " active" : ""}" data-custom="${f.id}" type="number" inputmode="numeric" min="${f.custom.min}" max="${f.custom.max}" placeholder="Boshqa" value="${own ? esc(v[f.id]) : ""}">` : ""}
-          </div>${f.custom ? `<div class="ai-err">${f.custom.min} dan ${f.custom.max} gacha son kiriting</div>` : ""}</div>`;
-      }
+          </div></div>`;
       case "multichips":
         return `<div class="ai-field">${label(f)}<div class="chips" data-multi="${f.id}">
           ${f.options.map((o) => `<div class="chip multi${v[f.id].includes(optV(o)) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
@@ -231,7 +231,7 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
-    const amount = { presentation: v.slides && `${v.slides} ta slayd`, essay: v.pages && `${v.pages} bet`, test: v.count && `${v.count} ta savol`, questions: v.count && `${v.count} ta savol`, crossword: v.words && `${v.words} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { presentation: `${v.slides || "10"} ta slayd`, essay: v.pages && `${v.pages} bet`, test: v.count && `${v.count} ta savol`, questions: v.count && `${v.count} ta savol`, crossword: v.words && `${v.words} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       ["Mavzu", pick("topic") || "—"],
@@ -310,8 +310,6 @@
       if (single) {
         v[single] = chip.dataset.v;
         chip.parentElement.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === chip));
-        const own = chip.parentElement.querySelector("[data-custom]");
-        if (own) { own.value = ""; own.classList.remove("active"); chip.closest(".ai-field").classList.remove("error"); }
       } else if (multi) {
         const arr = v[multi];
         const i = arr.indexOf(chip.dataset.v);
@@ -351,27 +349,7 @@
       const counter = root.querySelector(`[data-count="${id}"]`);
       if (counter) counter.textContent = `${e.target.value.length} / ${e.target.maxLength}`;
       refreshLiveSoon(current);
-      return;
     }
-    const cid = e.target.dataset.custom;
-    if (cid) {
-      const f = current.fields.find((x) => x.id === cid);
-      const raw = e.target.value.trim();
-      const box = e.target.parentElement;
-      const field = e.target.closest(".ai-field");
-      // bo'sh qoldirilsa — standart qiymatga qaytamiz
-      v[cid] = raw ? String(parseInt(raw, 10)) : f.default;
-      e.target.classList.toggle("active", !!raw);
-      box.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", !raw && c.dataset.v === v[cid]));
-      if (!raw || customOk(f, v[cid])) field.classList.remove("error");
-      refreshLiveSoon(current);
-    }
-  });
-  root.addEventListener("focusout", (e) => {
-    const cid = e.target.dataset && e.target.dataset.custom;
-    if (!cid || !current) return;
-    const f = current.fields.find((x) => x.id === cid);
-    e.target.closest(".ai-field").classList.toggle("error", !!e.target.value.trim() && !customOk(f, getValues(current)[cid]));
   });
 
   root.addEventListener("change", (e) => {
@@ -383,13 +361,13 @@
   /* ---------------------------------------------------------------
      YUBORISH
      --------------------------------------------------------------- */
-  const customOk = (f, val) => { const n = Number(val); return Number.isInteger(n) && n >= f.custom.min && n <= f.custom.max; };
-
   function validate(svc, v) {
     let firstBad = null;
     svc.fields.forEach((f) => {
-      if (!f.required && !f.custom) return;
-      const ok = f.custom ? customOk(f, v[f.id]) : String(v[f.id] || "").trim().length > 0;
+      // son maydoni: bo'sh bo'lsa standart qiymat olinadi, yozilgan bo'lsa chegarada bo'lishi kerak
+      const num = f.type === "number" && String(v[f.id] || "").trim();
+      if (!f.required && !num) return;
+      const ok = num ? Number.isInteger(+num) && +num >= f.min && +num <= f.max : String(v[f.id] || "").trim().length > 0;
       const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
       if (el) el.classList.toggle("error", !ok);
       if (!ok && !firstBad) firstBad = el;
@@ -409,6 +387,7 @@
       return;
     }
 
+    svc.fields.forEach((f) => { if (f.fallback && !String(v[f.id] || "").trim()) v[f.id] = f.fallback; });
     btn.disabled = true;
     status.textContent = "Yuborilmoqda...";
     try {

@@ -82,6 +82,8 @@ body.ai-mode .ai-root{ display:block; }
 }
 .ai-input::placeholder{ color: rgba(243,244,246,.38); }
 .ai-input:focus{ border-color: rgba(79,168,255,.6); box-shadow: 0 0 0 3px rgba(79,168,255,.18); }
+.ai-input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+.ai-input[type=number]::-webkit-outer-spin-button, .ai-input[type=number]::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
 textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-field.error .ai-input{ border-color:#F87171; }
 .ai-err{ font-size:11.5px; color:#F87171; margin-top:6px; display:none; }
@@ -98,17 +100,6 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .chips.compact .chip{ text-align:center; padding:9px 0; }
 .chip.active{ background: var(--glass-active); border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
 .chip.multi.active::before{ content:"✓ "; color:#4ADE80; }
-/* sonni qo'lda yozish katagi — chip ko'rinishida */
-.chip-input{
-  width:88px; padding:9px 12px; border-radius:999px; font:inherit; font-size:13px; font-weight:600;
-  text-align:center; color: var(--ink); outline:none; -moz-appearance:textfield; appearance:textfield;
-  background: var(--glass); border:1px dashed rgba(255,255,255,.28);
-  transition: border-color .15s ease, box-shadow .2s ease;
-}
-.chip-input::placeholder{ color: var(--ink-soft); font-weight:600; }
-.chip-input::-webkit-outer-spin-button, .chip-input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
-.chip-input:focus, .chip-input.active{ border-style:solid; border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
-.ai-field.error .chip-input{ border-color:#F87171; }
 
 .switch-row{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
