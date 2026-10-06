@@ -137,7 +137,7 @@
           { id: "difficulty", type: "chips", label: "Qiyinlik", options: [{ v: "easy", l: "Oson" }, { v: "medium", l: "O'rta" }, { v: "hard", l: "Qiyin" }, { v: "mixed", l: "Aralash" }], default: "mixed" },
           { id: "variants", type: "chips", label: "Nechta variant (nusxa)", options: ["1", "2", "4"], default: "2" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
-          { id: "template", type: "templates", label: "Varaq shakli", set: "test", default: "ts-kok" },
+          { id: "template", type: "templates", label: "Varaq shakli", set: "test", default: "classic" },
           { id: "key", type: "switch", label: "Javoblar kaliti alohida varaqda", default: true },
           { id: "format", type: "chips", label: "Natija", options: [{ v: "docx", l: "Word" }, { v: "pdf", l: "PDF" }, { v: "quiz", l: "Telegram quiz" }], default: "pdf" },
           PRINT_FIELD,
@@ -168,7 +168,7 @@
           { id: "grade", type: "text", label: "Kim uchun", placeholder: "Masalan: 4-sinf o'quvchilari", max: 60 },
           { id: "custom", type: "textarea", label: "O'z so'zlaringiz (ixtiyoriy)", placeholder: "Har bir so'zni yangi qatordan yozing. Bo'sh qoldirsangiz, so'zlarni AI tanlaydi", max: 1500 },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
-          { id: "template", type: "templates", label: "Ko'rinishi", set: "crossword", default: "kr-kapalak" },
+          { id: "template", type: "templates", label: "Ko'rinishi", set: "crossword", default: "classic" },
           { id: "key", type: "switch", label: "Javoblar varaqasi ham bo'lsin", default: true },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "png", l: "Rasm (PNG)" }, { v: "docx", l: "Word" }], default: "pdf" },
           PRINT_FIELD,
@@ -190,7 +190,7 @@
           { id: "langs", type: "multichips", label: "Qaysi tillarni bilasiz", options: ["O'zbek", "Rus", "Ingliz", "Turk", "Koreys", "Nemis", "Arab"], default: ["O'zbek", "Rus"] },
           { id: "photo", type: "switch", label: "Rasm bilan (rasmingizni keyin botga yuborasiz)", default: true },
           { id: "lang", type: "chips", label: "Resume tili", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "ru", l: "Rus" }, { v: "en", l: "Ingliz" }], default: "uz_lat" },
-          { id: "template", type: "templates", label: "Dizayn", set: "resume", default: "rez-kulrang" },
+          { id: "template", type: "templates", label: "Dizayn", set: "resume", default: "classic" },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "docx", l: "Word (.docx)" }], default: "pdf" },
           PRINT_FIELD,
         ],
@@ -414,6 +414,15 @@
         { id: "modern", name: "Zamonaviy", style: "modern" },
       ],
       lesson: [
+        // Canva kutubxonasidan dars ishlanma shablonlari
+        { id: "di-kok", name: "Ko'k jadval", kind: "canva", lib: true, page: true, pages: 1 },
+        { id: "di-binafsha", name: "Binafsha", kind: "canva", lib: true, page: true, pages: 1 },
+        { id: "di-45", name: "45 daqiqalik dars", kind: "canva", lib: true, page: true, pages: 1, ratio: "1/1.294" },
+        { id: "di-moviy", name: "Moviy", kind: "canva", lib: true, page: true, pages: 1 },
+        { id: "di-sariq", name: "Sariq banner", kind: "canva", lib: true, page: true, pages: 1, ratio: "1/1.294" },
+        { id: "di-sodda", name: "Sodda sariq", kind: "canva", lib: true, page: true, pages: 1 },
+        { id: "di-kunlik", name: "Kunlik reja", kind: "canva", lib: true, page: true, pages: 1, ratio: "1/1.294" },
+        { id: "di-yashil", name: "Yashil", kind: "canva", lib: true, page: true, pages: 1 },
         { id: "table", name: "Klassik jadval", style: "table" },
         { id: "techmap", name: "Texnologik xarita", style: "techmap" },
         { id: "notes", name: "Qisqa konspekt", style: "notes" },
@@ -469,4 +478,9 @@
       ],
     },
   };
+  // O'zimiz yaratgan dizaynlar (lib belgisi yo'qlar) har doim ro'yxat boshida turadi,
+  // Canva kutubxonasidan olinganlar — ulardan keyin (tartib saqlanadi)
+  // 0 — oddiy (HTML) dizaynlar, 1 — biz Canva'da yasaganlar, 2 — Canva kutubxonasidan
+  const rank = (t) => (t.lib ? 2 : t.kind === "canva" ? 1 : 0);
+  Object.values(window.AI_CONFIG.templates).forEach((list) => list.sort((a, b) => rank(a) - rank(b)));
 })();
