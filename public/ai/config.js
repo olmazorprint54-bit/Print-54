@@ -160,7 +160,7 @@
     /* Taqdimot shablonlari toifalari. "keys" — "Fan" yoki "Mavzu"
        maydonida shu so'zlar uchrasa, toifa avtomatik tanlanadi. */
     categories: [
-      { v: "diplom", l: "Diplom himoyasi", keys: ["diplom", "bitiruv", "dissertatsiya", "magistrlik", "malakaviy", "kurs ishi", "диплом", "диссертац"] },
+      { v: "umumiy", l: "Umumiy", keys: [] },
       { v: "tarix", l: "Tarix", keys: ["tarix", "history", "истори", "temur", "sulola", "xonlik", "qadimgi", "urush", "mustaqillik"] },
       { v: "tabiat", l: "Tabiat", keys: ["tabiat", "ekolog", "o'rmon", "suv", "okean", "dengiz", "daryo", "iqlim", "nature", "природ"] },
       { v: "geografiya", l: "Geografiya", keys: ["geografiya", "xarita", "materik", "relyef", "geography", "географ"] },
@@ -184,7 +184,6 @@
       { v: "turizm", l: "Turizm", keys: ["turizm", "sayohat", "mehmonxona", "туризм"] },
       { v: "qishloq", l: "Qishloq xo'jaligi", keys: ["qishloq xo'jal", "agro", "dehqon", "fermer", "paxta", "g'alla", "сельск"] },
       { v: "bogcha", l: "Bog'cha", keys: ["bog'cha", "maktabgacha", "bolalar bog", "детский сад", "дошкол"] },
-      { v: "umumiy", l: "Umumiy", keys: [] },
     ],
 
     templates: {
@@ -274,10 +273,10 @@
         { id: "umumiy-minimal", name: "Minimal portfolio", kind: "canva", lib: true, category: "umumiy", pages: 7 },
         { id: "umumiy-bayram", name: "Bayram", kind: "canva", lib: true, category: "umumiy", pages: 7 },
         // yangi toifalar (Canva kutubxonasidan)
-        { id: "diplom-yashil", name: "Yashil himoya", kind: "canva", lib: true, category: "diplom", pages: 7 },
-        { id: "diplom-bej", name: "Bej himoya", kind: "canva", lib: true, category: "diplom", pages: 7 },
-        { id: "diplom-jigarrang", name: "Jigarrang himoya", kind: "canva", lib: true, category: "diplom", pages: 7 },
-        { id: "diplom-kok", name: "Ko'k himoya", kind: "canva", lib: true, category: "diplom", pages: 7 },
+        { id: "diplom-yashil", name: "Yashil himoya", kind: "canva", lib: true, category: "umumiy", pages: 7 },
+        { id: "diplom-bej", name: "Bej himoya", kind: "canva", lib: true, category: "umumiy", pages: 7 },
+        { id: "diplom-jigarrang", name: "Jigarrang himoya", kind: "canva", lib: true, category: "umumiy", pages: 7 },
+        { id: "diplom-kok", name: "Ko'k himoya", kind: "canva", lib: true, category: "umumiy", pages: 7 },
         { id: "pedagogika-psixologiya", name: "Psixologiya", kind: "canva", lib: true, category: "pedagogika", pages: 7 },
         { id: "pedagogika-pushti", name: "Pushti psixologiya", kind: "canva", lib: true, category: "pedagogika", pages: 7 },
         { id: "pedagogika-loyiha", name: "Psixologiya loyihasi", kind: "canva", lib: true, category: "pedagogika", pages: 7 },
