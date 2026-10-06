@@ -132,7 +132,9 @@ module.exports = async (req, res) => {
     }
 
     if (order.telegram_message_id) {
-      const strikedText = `<s>${orderText(order)}</s>\n\n❌ <b>Mijoz tomonidan bekor qilindi</b>`;
+      // AI buyurtmalarda egaga yuborilgan asl matn details.text da saqlanadi
+      const original = order.details && order.details.text ? order.details.text : orderText(order);
+      const strikedText = `<s>${original}</s>\n\n❌ <b>Mijoz tomonidan bekor qilindi</b>`;
       await editTelegramMessage(order.telegram_message_id, strikedText);
     }
 
