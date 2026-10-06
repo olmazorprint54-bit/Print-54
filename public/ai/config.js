@@ -161,6 +161,7 @@
        maydonida shu so'zlar uchrasa, toifa avtomatik tanlanadi. */
     categories: [
       { v: "umumiy", l: "Umumiy", keys: [] },
+      { v: "powerpoint", l: "PowerPoint", keys: [] }, // shablonlar/PowerPoint papkasidagi dizaynlar
       { v: "tarix", l: "Tarix", keys: ["tarix", "history", "истори", "temur", "sulola", "xonlik", "qadimgi", "urush", "mustaqillik"] },
       { v: "tabiat", l: "Tabiat", keys: ["tabiat", "ekolog", "o'rmon", "suv", "okean", "dengiz", "daryo", "iqlim", "nature", "природ"] },
       { v: "geografiya", l: "Geografiya", keys: ["geografiya", "xarita", "materik", "relyef", "geography", "географ"] },
