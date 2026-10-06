@@ -484,7 +484,7 @@
       const caps = tpl.lib ? [] : ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
       const n = tpl.pages || 1;
       const cap = (i) => tpl.page ? (n > 1 ? `${i + 1}-sahifa` : "") : caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
-      pages = [`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
+      pages = [`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : svc.id === "lesson" ? "Namunadagi matnlar o'rniga sizning darsingiz bo'yicha o'zbekcha matn yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
         .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`));
     } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
