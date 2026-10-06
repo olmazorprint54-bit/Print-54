@@ -455,9 +455,12 @@
     const chips = `<div class="chips">${list.map((t) => `<div class="chip${t.id === tpl.id ? " active" : ""}" data-mpick="${t.id}">${esc(t.name)}</div>`).join("")}</div>`;
     let pages;
     if (tpl.kind === "canva") {
-      const caps = ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
-      pages = [`<div class="cap">[SARLAVHA] va [MATN] o'rniga sizning mavzuingiz bo'yicha matn yoziladi</div>`]
-        .concat(Array.from({ length: tpl.pages || 1 }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${caps[i] || ""}</div>`));
+      // kutubxona shablonlarida slayd turlari har xil — umumiy izoh yoziladi
+      const caps = tpl.lib ? [] : ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
+      const n = tpl.pages || 1;
+      const cap = (i) => caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
+      pages = [`<div class="cap">Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi</div>`]
+        .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`));
     } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
