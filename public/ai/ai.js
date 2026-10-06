@@ -117,6 +117,7 @@
           <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
+          ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
           <div class="tpl-row${f.set === "presentation" ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
       default:
@@ -124,10 +125,56 @@
     }
   }
 
+  /* ---------------------------------------------------------------
+     SHABLON TOIFALARI (fan bo'yicha filtr)
+     --------------------------------------------------------------- */
+  const catState = {}; // xizmat id -> { cat, manual, tplManual }
+  const getCat = (svc) => (catState[svc.id] = catState[svc.id] || { cat: "all", manual: false, tplManual: false });
+  const hasCategories = (f) => f.set === "presentation" && Array.isArray(CFG.categories);
+
+  function detectCategory(v) {
+    const text = `${v.subject || ""} ${v.topic || ""}`.toLowerCase();
+    if (!text.trim()) return null;
+    const hit = CFG.categories.find((c) => c.keys.some((k) => text.includes(k)));
+    return hit ? hit.v : null;
+  }
+
+  function categoryChips(svc, f) {
+    const used = new Set(CFG.templates[f.set].map((t) => t.category));
+    const cats = [{ v: "all", l: "Barchasi" }].concat(CFG.categories.filter((c) => used.has(c.v)));
+    const st = getCat(svc);
+    return cats.map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)}</div>`).join("");
+  }
+
+  function templateList(svc, f, v) {
+    const all = CFG.templates[f.set];
+    if (!hasCategories(f)) return all;
+    const st = getCat(svc);
+    if (st.cat !== "all") return all.filter((t) => t.category === st.cat);
+    const det = detectCategory(v);
+    return det ? all.filter((t) => t.category === det).concat(all.filter((t) => t.category !== det)) : all;
+  }
+
+  // Mavzu yoki fan yozilganda mos toifani avtomatik tanlaydi
+  function autoCategory(svc, f, v) {
+    const st = getCat(svc);
+    if (st.manual) return;
+    const det = detectCategory(v);
+    const next = det && CFG.templates[f.set].some((t) => t.category === det) ? det : "all";
+    if (next === st.cat) return;
+    st.cat = next;
+    if (!st.tplManual && next !== "all") {
+      const first = CFG.templates[f.set].find((t) => t.category === next);
+      if (first) v[f.id] = first.id;
+    }
+  }
+
+  const canvaImg = (t, n) => `<div class="slide-box"><div class="slide"><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
+
   function templateCards(svc, f, v) {
-    return CFG.templates[f.set].map((t) => `
+    return templateList(svc, f, v).map((t) => `
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}">
-        ${f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
+        ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
         <div class="tpl-name">${esc(t.name)}</div>
       </div>`).join("");
   }
@@ -200,6 +247,14 @@
     svc.fields.filter((f) => f.type === "templates").forEach((f) => {
       const row = root.querySelector(`[data-tpl="${f.id}"]`);
       if (!row) return;
+      if (hasCategories(f)) {
+        const before = getCat(svc).cat;
+        autoCategory(svc, f, v);
+        const cats = root.querySelector(`[data-cats="${f.id}"]`);
+        if (cats) cats.innerHTML = categoryChips(svc, f);
+        if (getCat(svc).cat !== before) row.scrollLeft = 0;
+        if (sum) sum.innerHTML = summaryHtml(svc, v);
+      }
       const scroll = row.scrollLeft;
       row.innerHTML = templateCards(svc, f, v);
       row.scrollLeft = scroll;
@@ -219,6 +274,18 @@
     if (e.target.closest("[data-contact]")) { contactOwner(); return; }
     if (!current) return;
     const v = getValues(current);
+
+    const catChip = e.target.closest("[data-cat]");
+    if (catChip) {
+      const st = getCat(current);
+      st.cat = catChip.dataset.cat;
+      st.manual = true;
+      const row = root.querySelector(`[data-tpl="${catChip.parentElement.dataset.cats}"]`);
+      if (row) row.scrollLeft = 0;
+      tick();
+      refreshLive(current);
+      return;
+    }
 
     const chip = e.target.closest(".chip");
     if (chip) {
@@ -242,6 +309,7 @@
     if (card) {
       const fid = card.parentElement.dataset.tpl;
       v[fid] = card.dataset.v;
+      getCat(current).tplManual = true;
       card.parentElement.querySelectorAll(".tpl-card").forEach((c) => c.classList.toggle("active", c === card));
       tick();
       refreshLive(current);
@@ -382,9 +450,15 @@
     const tpl = CFG.templates[f.set].find((t) => t.id === pick) || CFG.templates[f.set][0];
     document.getElementById("aiModalTitle").textContent = f.label;
 
-    const chips = `<div class="chips">${CFG.templates[f.set].map((t) => `<div class="chip${t.id === tpl.id ? " active" : ""}" data-mpick="${t.id}">${esc(t.name)}</div>`).join("")}</div>`;
+    let list = templateList(svc, f, v);
+    if (!list.includes(tpl)) list = [tpl].concat(list);
+    const chips = `<div class="chips">${list.map((t) => `<div class="chip${t.id === tpl.id ? " active" : ""}" data-mpick="${t.id}">${esc(t.name)}</div>`).join("")}</div>`;
     let pages;
-    if (f.set === "presentation") {
+    if (tpl.kind === "canva") {
+      const caps = ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
+      pages = [`<div class="cap">[SARLAVHA] va [MATN] o'rniga sizning mavzuingiz bo'yicha matn yoziladi</div>`]
+        .concat(Array.from({ length: tpl.pages || 1 }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${caps[i] || ""}</div>`));
+    } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
     } else {
@@ -401,6 +475,7 @@
     if (mp && modalCtx) { modalCtx.pick = mp.dataset.mpick; tick(); drawModal(); return; }
     if (e.target.closest("#aiModalPick") && modalCtx) {
       getValues(modalCtx.svc)[modalCtx.f.id] = modalCtx.pick;
+      getCat(modalCtx.svc).tplManual = true;
       const svc = modalCtx.svc;
       closeModal();
       refreshLive(svc);

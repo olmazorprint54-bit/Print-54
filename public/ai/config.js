@@ -157,16 +157,35 @@
        Taqdimot shablonlari: ranglar, shrift va bezak turi.
        Hujjat shablonlari: ko'rinish uslubi (preview + generatsiya).
        ------------------------------------------------------------ */
+    /* Taqdimot shablonlari toifalari. "keys" — "Fan" yoki "Mavzu"
+       maydonida shu so'zlar uchrasa, toifa avtomatik tanlanadi. */
+    categories: [
+      { v: "tarix", l: "Tarix", keys: ["tarix", "history", "истори", "temur", "sulola", "xonlik", "qadimgi", "urush", "mustaqillik"] },
+      { v: "tabiat", l: "Tabiat", keys: ["tabiat", "geografiya", "ekolog", "o'rmon", "suv", "okean", "dengiz", "daryo", "iqlim", "nature", "природ"] },
+      { v: "kimyo", l: "Kimyo", keys: ["kimyo", "chemistry", "хими"] },
+      { v: "biologiya", l: "Biologiya", keys: ["biolog", "hujayra", "genetika", "anatomiya", "биолог"] },
+      { v: "matematika", l: "Matematika", keys: ["matematika", "algebra", "geometriya", "fizika", "математ"] },
+      { v: "adabiyot", l: "Adabiyot", keys: ["adabiyot", "she'r", "navoiy", "roman", "ona tili", "литератур"] },
+      { v: "umumiy", l: "Umumiy", keys: [] },
+    ],
+
     templates: {
+      // kind: "canva" — Canva'da yasalgan shablon (rasmlari: ai/templates/<id>/1..7.jpg,
+      // asl PPTX: shablonlar/<toifa>/). Qolganlari — HTML ko'rinishli oddiy mavzular.
       presentation: [
-        { id: "classic", name: "Klassik ko'k", bg: "#FFFFFF", title: "#1F3A93", text: "#334155", accent: "#2E6BE6", font: "sans", deco: "bar" },
-        { id: "minimal", name: "Minimal", bg: "#FAFAF7", title: "#111111", text: "#444444", accent: "#111111", font: "serif", deco: "line" },
-        { id: "night", name: "Tun", bg: "linear-gradient(135deg,#0F172A,#1E293B)", title: "#FFFFFF", text: "#CBD5E1", accent: "#38BDF8", font: "sans", deco: "glow" },
-        { id: "nature", name: "Tabiat", bg: "#F1F8F2", title: "#1B5E20", text: "#2E3B2F", accent: "#43A047", font: "sans", deco: "leaf" },
-        { id: "academic", name: "Akademik", bg: "#FFFDF7", title: "#7B1E1E", text: "#333333", accent: "#C9A227", font: "serif", deco: "frame" },
-        { id: "gradient", name: "Gradient", bg: "linear-gradient(135deg,#6D28D9,#DB2777)", title: "#FFFFFF", text: "#F5F3FF", accent: "#FDE68A", font: "sans", deco: "circles" },
-        { id: "kids", name: "Bolalar uchun", bg: "#FFF8E1", title: "#E65100", text: "#4E342E", accent: "#29B6F6", font: "round", deco: "dots" },
-        { id: "cmyk", name: "Print 54 CMYK", bg: "#FFFFFF", title: "#111111", text: "#333333", accent: "#E6007E", font: "sans", deco: "cmyk" },
+        { id: "tarix-qolyozma", name: "Qadimiy qo'lyozma", kind: "canva", category: "tarix", pages: 7 },
+        { id: "tarix-temuriylar", name: "Temuriylar va Ipak yo'li", kind: "canva", category: "tarix", pages: 7 },
+        { id: "tarix-yangi", name: "Yangi tarix", kind: "canva", category: "tarix", pages: 7 },
+        { id: "tabiat-akvarel", name: "Akvarel o'rmon", kind: "canva", category: "tabiat", pages: 7 },
+        { id: "tabiat-okean", name: "Okean va suv", kind: "canva", category: "tabiat", pages: 7 },
+        { id: "classic", name: "Klassik ko'k", category: "umumiy", bg: "#FFFFFF", title: "#1F3A93", text: "#334155", accent: "#2E6BE6", font: "sans", deco: "bar" },
+        { id: "minimal", name: "Minimal", category: "umumiy", bg: "#FAFAF7", title: "#111111", text: "#444444", accent: "#111111", font: "serif", deco: "line" },
+        { id: "night", name: "Tun", category: "umumiy", bg: "linear-gradient(135deg,#0F172A,#1E293B)", title: "#FFFFFF", text: "#CBD5E1", accent: "#38BDF8", font: "sans", deco: "glow" },
+        { id: "nature", name: "Yashil", category: "tabiat", bg: "#F1F8F2", title: "#1B5E20", text: "#2E3B2F", accent: "#43A047", font: "sans", deco: "leaf" },
+        { id: "academic", name: "Akademik", category: "umumiy", bg: "#FFFDF7", title: "#7B1E1E", text: "#333333", accent: "#C9A227", font: "serif", deco: "frame" },
+        { id: "gradient", name: "Gradient", category: "umumiy", bg: "linear-gradient(135deg,#6D28D9,#DB2777)", title: "#FFFFFF", text: "#F5F3FF", accent: "#FDE68A", font: "sans", deco: "circles" },
+        { id: "kids", name: "Bolalar uchun", category: "umumiy", bg: "#FFF8E1", title: "#E65100", text: "#4E342E", accent: "#29B6F6", font: "round", deco: "dots" },
+        { id: "cmyk", name: "Print 54 CMYK", category: "umumiy", bg: "#FFFFFF", title: "#111111", text: "#333333", accent: "#E6007E", font: "sans", deco: "cmyk" },
       ],
       essay: [
         { id: "otm", name: "OTM standart", style: "otm" },
