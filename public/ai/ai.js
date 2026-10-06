@@ -173,7 +173,10 @@
     }
   }
 
-  const canvaImg = (t, n) => `<div class="slide-box"><div class="slide"><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
+  // t.page — A4 hujjat (resume), aks holda 16:9 slayd
+  const canvaImg = (t, n) => t.page
+    ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
+    : `<div class="slide-box"><div class="slide"><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
 
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
@@ -480,8 +483,8 @@
       // kutubxona shablonlarida slayd turlari har xil — umumiy izoh yoziladi
       const caps = tpl.lib ? [] : ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
       const n = tpl.pages || 1;
-      const cap = (i) => caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
-      pages = [`<div class="cap">Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi</div>`]
+      const cap = (i) => tpl.page ? (n > 1 ? `${i + 1}-sahifa` : "") : caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
+      pages = [`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
         .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`));
     } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
