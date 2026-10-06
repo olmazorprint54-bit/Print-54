@@ -29,6 +29,8 @@
     lesson: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>',
     test: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 8 1.5 1.5L12 7M8 14l1.5 1.5L12 13M14.5 8.5H17M14.5 14.5H17"/></svg>',
     questions: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M10 9.5a2.2 2.2 0 1 1 3 2c-.6.3-1 .8-1 1.5M12 16h.01"/></svg>',
+    referat: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 14h7M9 17h4"/></svg>',
+    resume: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="9" r="2.6"/><path d="M8 16.5c.8-1.9 2.2-2.8 4-2.8s3.2.9 4 2.8"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -40,10 +42,12 @@
     prices: {
       presentation: null,
       essay: null,
+      referat: null,
       lesson: null,
       test: null,
       questions: null,
       crossword: null,
+      resume: null,
     },
 
     services: [
@@ -63,7 +67,7 @@
         ],
       },
       {
-        id: "essay", title: "Mustaqil ish", sub: "Referat, kurs ishi",
+        id: "essay", title: "Mustaqil ish", sub: "OTM va maktab uchun",
         icon: ICONS.essay, color: "#A78BFA",
         fields: [
           { id: "topic", type: "text", label: "Mavzu", placeholder: "Masalan: Amir Temur davlatining boshqaruv tizimi", required: true, max: 200 },
@@ -79,6 +83,26 @@
           { id: "teacher", type: "text", label: "Qabul qildi (o'qituvchi)", placeholder: "Ixtiyoriy", max: 120 },
           { id: "city", type: "text", label: "Shahar", placeholder: "Toshkent", max: 60 },
           { id: "parts", type: "multichips", label: "Tarkibi", options: [{ v: "plan", l: "Reja" }, { v: "intro", l: "Kirish" }, { v: "main", l: "Asosiy qism" }, { v: "conclusion", l: "Xulosa" }, { v: "refs", l: "Adabiyotlar" }], default: ["plan", "intro", "main", "conclusion", "refs"] },
+          { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "docx", l: "Word (.docx)" }, { v: "pdf", l: "PDF" }], default: "docx" },
+          PRINT_FIELD,
+        ],
+      },
+      {
+        id: "referat", title: "Referat", sub: "Mavzu bo'yicha qisqa ish",
+        icon: ICONS.referat, color: "#60A5FA",
+        fields: [
+          { id: "topic", type: "text", label: "Mavzu", placeholder: "Masalan: Alisher Navoiy ijodi", required: true, max: 200 },
+          { id: "subject", type: "text", label: "Fan", placeholder: "Masalan: Adabiyot", required: true, max: 120 },
+          { id: "level", type: "chips", label: "Ta'lim bosqichi", options: [{ v: "school", l: "Maktab" }, { v: "college", l: "Kollej / litsey" }, { v: "bachelor", l: "OTM (bakalavr)" }, { v: "master", l: "Magistratura" }], default: "school" },
+          { id: "pages", type: "number", label: "Hajmi (bet)", placeholder: "Masalan: 10", min: 3, max: 50, fallback: "10" },
+          { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
+          { id: "template", type: "templates", label: "Titul varag'i shabloni", set: "referat", default: "school" },
+          { id: "_h1", type: "heading", label: "Titul varag'i uchun ma'lumotlar" },
+          { id: "institution", type: "text", label: "Muassasa nomi", placeholder: "Masalan: 54-maktab", max: 160 },
+          { id: "student", type: "text", label: "Bajardi (F.I.Sh)", placeholder: "Ism familiya", max: 120 },
+          { id: "group", type: "text", label: "Guruh / sinf", placeholder: "Masalan: 9-B", max: 40 },
+          { id: "teacher", type: "text", label: "Qabul qildi (o'qituvchi)", placeholder: "Ixtiyoriy", max: 120 },
+          { id: "city", type: "text", label: "Shahar", placeholder: "Toshkent", max: 60 },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "docx", l: "Word (.docx)" }, { v: "pdf", l: "PDF" }], default: "docx" },
           PRINT_FIELD,
         ],
@@ -147,6 +171,27 @@
           { id: "template", type: "templates", label: "Ko'rinishi", set: "crossword", default: "classic" },
           { id: "key", type: "switch", label: "Javoblar varaqasi ham bo'lsin", default: true },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "png", l: "Rasm (PNG)" }, { v: "docx", l: "Word" }], default: "pdf" },
+          PRINT_FIELD,
+        ],
+      },
+      {
+        id: "resume", title: "Resume / CV", sub: "Ishga joylashish uchun",
+        icon: ICONS.resume, color: "#F59E0B",
+        fields: [
+          { id: "name", type: "text", label: "Ism familiya", placeholder: "Masalan: Aliyev Sardor", required: true, max: 120 },
+          { id: "position", type: "text", label: "Qaysi lavozimga", placeholder: "Masalan: Buxgalter", required: true, max: 120 },
+          { id: "phone", type: "text", label: "Telefon", placeholder: "+998 __ ___ __ __", max: 40 },
+          { id: "email", type: "text", label: "Email", placeholder: "Ixtiyoriy", max: 120 },
+          { id: "city", type: "text", label: "Shahar", placeholder: "Toshkent", max: 60 },
+          { id: "birth", type: "text", label: "Tug'ilgan yil", placeholder: "Masalan: 1998", max: 20 },
+          { id: "experience", type: "textarea", label: "Ish tajribasi", placeholder: "Qayerda, qaysi yillarda, qanday lavozimda ishlagansiz. Tajriba bo'lmasa, bo'sh qoldiring", max: 800 },
+          { id: "education", type: "textarea", label: "Ma'lumoti", placeholder: "Masalan: 2016–2020, TDIU, Buxgalteriya hisobi (bakalavr)", max: 600 },
+          { id: "skills", type: "textarea", label: "Ko'nikmalar", placeholder: "Masalan: 1C, Excel, hujjatlar bilan ishlash, muloqot", max: 600 },
+          { id: "langs", type: "multichips", label: "Qaysi tillarni bilasiz", options: ["O'zbek", "Rus", "Ingliz", "Turk", "Koreys", "Nemis", "Arab"], default: ["O'zbek", "Rus"] },
+          { id: "photo", type: "switch", label: "Rasm bilan (rasmingizni keyin botga yuborasiz)", default: true },
+          { id: "lang", type: "chips", label: "Resume tili", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "ru", l: "Rus" }, { v: "en", l: "Ingliz" }], default: "uz_lat" },
+          { id: "template", type: "templates", label: "Dizayn", set: "resume", default: "classic" },
+          { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "docx", l: "Word (.docx)" }], default: "pdf" },
           PRINT_FIELD,
         ],
       },
@@ -363,6 +408,11 @@
         { id: "school", name: "Maktab", style: "school" },
         { id: "modern", name: "Zamonaviy", style: "modern" },
       ],
+      referat: [
+        { id: "school", name: "Maktab", style: "school" },
+        { id: "otm", name: "OTM standart", style: "otm" },
+        { id: "modern", name: "Zamonaviy", style: "modern" },
+      ],
       lesson: [
         { id: "table", name: "Klassik jadval", style: "table" },
         { id: "techmap", name: "Texnologik xarita", style: "techmap" },
@@ -380,6 +430,11 @@
       crossword: [
         { id: "classic", name: "Klassik", style: "classic" },
         { id: "color", name: "Rangli (bolalar)", style: "color" },
+      ],
+      resume: [
+        { id: "classic", name: "Klassik", style: "classic" },
+        { id: "modern", name: "Zamonaviy (yon panel)", style: "modern" },
+        { id: "minimal", name: "Minimal", style: "minimal" },
       ],
     },
   };

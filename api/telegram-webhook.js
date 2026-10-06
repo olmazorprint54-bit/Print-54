@@ -227,10 +227,12 @@ async function handleBroadcast(msg) {
 const AI_LABELS = {
   presentation: "Taqdimot",
   essay: "Mustaqil ish",
+  referat: "Referat",
   lesson: "Dars ishlanma",
   test: "Test",
   questions: "Savollar",
   crossword: "Krossvord",
+  resume: "Resume / CV",
 };
 
 async function handleOwnerFile(msg) {
@@ -287,10 +289,33 @@ async function handleOwnerFile(msg) {
   );
 }
 
+async function forwardCustomerMedia(msg) {
+  const ownerId = process.env.OWNER_CHAT_ID;
+  const u = msg.from;
+  const name = escapeHtml([u.first_name, u.last_name].filter(Boolean).join(" ") || "Mijoz");
+  await callTelegram("sendMessage", {
+    chat_id: ownerId,
+    text: `📷 <b>Mijoz fayl yubordi</b>\n👤 <a href="tg://user?id=${parseInt(u.id, 10)}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`,
+    parse_mode: "HTML",
+  });
+  await callTelegram("copyMessage", { chat_id: ownerId, from_chat_id: msg.chat.id, message_id: msg.message_id });
+  await callTelegram("sendMessage", {
+    chat_id: msg.chat.id,
+    text: "✅ Qabul qilindi! Faylingiz Print 54 ga yuborildi.",
+    reply_to_message_id: msg.message_id,
+  });
+}
+
 /* ============ /start VA REFERAL KUZATISH ============ */
 async function handleMessage(msg) {
   if (msg.document && msg.reply_to_message && String(msg.from.id) === String(process.env.OWNER_CHAT_ID)) {
     await handleOwnerFile(msg);
+    return;
+  }
+
+  // Mijoz rasm yoki fayl yuborsa (masalan, resume uchun rasmi) — egaga yetkazamiz
+  if ((msg.photo || msg.document) && String(msg.from.id) !== String(process.env.OWNER_CHAT_ID)) {
+    await forwardCustomerMedia(msg);
     return;
   }
 

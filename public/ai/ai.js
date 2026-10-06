@@ -52,7 +52,7 @@
     root.innerHTML = `
       <div class="ai-hero glass">
         <h2>✨ AI xizmatlar</h2>
-        <p>Taqdimot, mustaqil ish, dars ishlanma, test va krossvordni sun'iy intellekt yordamida tayyorlang — va shu yerning o'zida chop ettiring.</p>
+        <p>Taqdimot, mustaqil ish, referat, dars ishlanma, test, krossvord va resume'ni sun'iy intellekt yordamida tayyorlang — va shu yerning o'zida chop ettiring.</p>
         <div class="ai-note">⏳ <span>Xizmat sinov bosqichida: so'rovingizni qoldiring, tayyor hujjatni shu bot orqali yuboramiz.</span></div>
       </div>
       <div class="ai-grid">
@@ -233,10 +233,10 @@
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, referat: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
-      ["Mavzu", pick("topic") || "—"],
+      [svc.id === "resume" ? "Lavozim" : "Mavzu", pick("topic") || pick("position") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
       ["Til", pick("lang")],
@@ -487,7 +487,7 @@
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
     } else {
-      const kinds = { essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
+      const kinds = { essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], referat: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], resume: [["main", "Resume"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
       if ((svc.id === "test" || svc.id === "crossword") && v.key) kinds.push(["key", "Javoblar"]);
       pages = kinds.map(([k, cap]) => `${pageHtml(svc.id, tpl, k, d)}<div class="cap">${cap}</div>`);
     }
@@ -512,8 +512,8 @@
      NAMUNA MA'LUMOTLAR (ko'rinish uchun)
      --------------------------------------------------------------- */
   function sampleData(svc, v) {
-    const subjectDefault = { presentation: "Astronomiya", essay: "O'zbekiston tarixi", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
-    const topicDefault = { presentation: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
+    const subjectDefault = { presentation: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
+    const topicDefault = { presentation: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
     return {
       topic: String(v.topic || "").trim() || topicDefault,
       subject: String(v.subject || "").trim() || subjectDefault,
@@ -525,6 +525,17 @@
       city: String(v.city || "").trim() || "Toshkent",
       grade: String(v.grade || "").trim(),
       answers: parseInt(v.answers, 10) || 4,
+      docType: svc.id === "referat" ? "REFERAT" : "MUSTAQIL ISH",
+      // resume uchun
+      name: String(v.name || "").trim() || "Aliyev Sardor",
+      position: String(v.position || "").trim() || "Buxgalter",
+      phone: String(v.phone || "").trim() || "+998 90 123 45 67",
+      email: String(v.email || "").trim(),
+      experience: String(v.experience || "").trim(),
+      education: String(v.education || "").trim(),
+      skills: String(v.skills || "").trim(),
+      langs: Array.isArray(v.langs) ? v.langs : [],
+      photo: v.photo !== false,
     };
   }
 
@@ -619,7 +630,59 @@
     return `<div class="page-box"><div class="page">${inner}</div></div>`;
   }
 
+  // Resume: kiritilgan matnni qatorlarga bo'lib, namuna ko'rinishida chizamiz
+  const rLines = (txt, fb) => (txt ? txt.split(/\n+/).filter(Boolean).slice(0, 4) : fb).map((x) => esc(clip(x, 60)));
+  function resumeBody(d, accent, sec) {
+    const exp = rLines(d.experience, ["2021–hozir — «Ipak Yo'li» MChJ, buxgalter", "2019–2021 — «Baraka» savdo, yordamchi buxgalter"]);
+    const edu = rLines(d.education, ["2015–2019 — TDIU, Buxgalteriya hisobi"]);
+    const skills = d.skills ? d.skills.split(/[,\n]+/).map((x) => x.trim()).filter(Boolean).slice(0, 6) : ["1C", "Excel", "Hisobotlar", "Muloqot"];
+    const item = (x) => `<div style="font-size:2.7cqw;margin-top:1.4cqw">• ${x}</div>`;
+    return `${sec("Ish tajribasi")}${exp.map(item).join("")}
+      ${sec("Ma'lumoti")}${edu.map(item).join("")}
+      ${sec("Ko'nikmalar")}<div style="display:flex;flex-wrap:wrap;gap:1.2cqw;margin-top:1.6cqw">${skills.map((x) => `<span style="font-size:2.4cqw;padding:.6cqw 1.8cqw;border-radius:3cqw;background:${accent}1f;color:${accent}">${esc(clip(x, 20))}</span>`).join("")}</div>
+      ${d.langs.length ? sec("Tillar") + `<div style="font-size:2.7cqw;margin-top:1.4cqw">${esc(d.langs.join(", "))}</div>` : ""}`;
+  }
+  const photoBox = (d, size, c) => d.photo ? `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c};display:grid;place-items:center;font-size:${size * 0.45}cqw;color:#fff">👤</div>` : "";
+
   const PAGES = {
+    resume(style, kind, d) {
+      const contact = [d.phone, d.email, d.city].filter(Boolean).map(esc);
+      if (style === "modern") {
+        const a = "#2563EB";
+        const sec = (t) => `<div style="margin-top:4cqw;font-size:3cqw;font-weight:800;color:${a};text-transform:uppercase;letter-spacing:.08em">${t}</div>`;
+        return `<div class="el" style="left:0;top:0;bottom:0;width:33%;background:#1E293B;color:#E2E8F0;padding:8cqw 4cqw;font-family:Arial,sans-serif">
+            ${photoBox(d, 18, "#334155")}
+            <div style="margin-top:4cqw;font-size:2.6cqw;font-weight:700;color:#93C5FD">ALOQA</div>
+            ${contact.map((x) => `<div style="font-size:2.3cqw;margin-top:1.4cqw;word-break:break-all">${x}</div>`).join("")}
+          </div>
+          <div class="el" style="left:37%;right:6cqw;top:8cqw;font-family:Arial,sans-serif">
+            <div style="font-size:6cqw;font-weight:800;line-height:1.1">${esc(clip(d.name, 30))}</div>
+            <div style="font-size:3.2cqw;color:${a};margin-top:1cqw">${esc(clip(d.position, 40))}</div>
+            ${resumeBody(d, a, sec)}
+          </div>`;
+      }
+      if (style === "minimal") {
+        const sec = (t) => `<div style="margin-top:4cqw;padding-bottom:.8cqw;border-bottom:.3cqw solid #e5e7eb;font-size:2.8cqw;letter-spacing:.2em;color:#6b7280">${t.toUpperCase()}</div>`;
+        return `<div style="padding:10cqw 10cqw;font-family:Georgia,serif">
+            <div style="text-align:center;font-size:6.4cqw;letter-spacing:.06em">${esc(clip(d.name, 30))}</div>
+            <div style="text-align:center;font-size:3cqw;color:#6b7280;margin-top:1cqw">${esc(clip(d.position, 40))}</div>
+            <div style="text-align:center;font-size:2.4cqw;color:#6b7280;margin-top:1.6cqw">${contact.join(" · ")}</div>
+            ${resumeBody(d, "#111827", sec)}
+          </div>`;
+      }
+      const a = "#0F766E";
+      const sec = (t) => `<div style="margin-top:4cqw;font-size:3.1cqw;font-weight:700;color:${a}">${t}</div>`;
+      return `<div style="padding:8cqw 8cqw;font-family:Arial,sans-serif">
+          <div style="display:flex;gap:4cqw;align-items:center;padding-bottom:3cqw;border-bottom:.6cqw solid ${a}">
+            ${photoBox(d, 16, a)}
+            <div><div style="font-size:6cqw;font-weight:800;line-height:1.1">${esc(clip(d.name, 30))}</div>
+              <div style="font-size:3.2cqw;color:${a};margin-top:1cqw">${esc(clip(d.position, 40))}</div>
+              <div style="font-size:2.4cqw;color:#6b7280;margin-top:1.2cqw">${contact.join(" · ")}</div></div>
+          </div>
+          ${resumeBody(d, a, sec)}
+        </div>`;
+    },
+    referat(style, kind, d) { return PAGES.essay(style, kind, d); },
     essay(style, kind, d) {
       if (kind === "inner") {
         return `<div style="padding:9cqw 9cqw">
@@ -635,7 +698,7 @@
           <div class="el" style="left:7cqw;top:0;width:30cqw;height:2cqw;background:#A78BFA"></div>
           <div style="padding:14cqw 9cqw 0 16cqw">
             <div style="font-size:2.8cqw;color:#6b7280;font-family:Arial,sans-serif">${blank(d.institution, "Muassasa nomi")}</div>
-            <div style="margin-top:22cqw;font-size:3cqw;letter-spacing:.3em;color:#4FA8FF;font-weight:700;font-family:Arial,sans-serif">MUSTAQIL ISH</div>
+            <div style="margin-top:22cqw;font-size:3cqw;letter-spacing:.3em;color:#4FA8FF;font-weight:700;font-family:Arial,sans-serif">${d.docType}</div>
             <div style="margin-top:3cqw;font-size:7cqw;font-weight:800;line-height:1.15;font-family:Arial,sans-serif">${esc(clip(d.topic, 60))}</div>
             <div style="margin-top:3cqw;font-size:3.2cqw;color:#4b5563;font-family:Arial,sans-serif">Fan: ${esc(d.subject)}</div>
           </div>
@@ -650,7 +713,7 @@
         return `<div class="el" style="inset:4cqw;border:.6cqw double #1f2937"></div>
           <div style="padding:12cqw 10cqw 0">
             ${C(blank(d.institution, "___-sonli umumiy o'rta ta'lim maktabi"), 3.4, 700)}
-            ${C("MUSTAQIL ISH", 8, 800, 26)}
+            ${C(d.docType, 8, 800, 26)}
             ${C(`Fan: ${esc(d.subject)}`, 3.6, 400, 4)}
             ${C(`Mavzu: «${esc(clip(d.topic, 70))}»`, 4.2, 700, 3)}
           </div>
@@ -665,7 +728,7 @@
           ${C(ministry, 2.9, 700)}
           ${C(blank(d.institution, "OLIY TA'LIM MUASSASASI NOMI"), 3.2, 700, 3, "text-transform:uppercase")}
           ${C(`«${esc(d.subject)}» fanidan`, 3.2, 400, 18)}
-          ${C("MUSTAQIL ISH", 8, 800, 4)}
+          ${C(d.docType, 8, 800, 4)}
           ${C(`Mavzu: «${esc(clip(d.topic, 70))}»`, 4, 700, 5)}
         </div>
         <div class="el" style="right:10cqw;bottom:22cqw;font-size:3.2cqw;line-height:1.7">
