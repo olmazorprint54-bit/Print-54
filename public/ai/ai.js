@@ -49,21 +49,24 @@
      XIZMATLAR TO'RI
      --------------------------------------------------------------- */
   function renderGrid() {
-    root.innerHTML = `
+    // Umumiy AI ilova (public/app) o'z bosh qismini beradi
+    const APP = window.AI_APP || {};
+    root.innerHTML = APP.heroHtml ? `${APP.heroHtml}<div class="ai-grid">${gridCards()}</div>` : `
       <div class="ai-hero glass">
         <h2>✨ AI xizmatlar</h2>
         <p>Taqdimot, mustaqil ish, referat, dars ishlanma, test, krossvord va resume'ni sun'iy intellekt yordamida tayyorlang — va shu yerning o'zida chop ettiring.</p>
         <div class="ai-note">⏳ <span>Xizmat sinov bosqichida: so'rovingizni qoldiring, tayyor hujjatni shu bot orqali yuboramiz.</span></div>
       </div>
-      <div class="ai-grid">
-        ${CFG.services.map((s) => `
+      <div class="ai-grid">${gridCards()}</div>`;
+  }
+  function gridCards() {
+    return CFG.services.map((s) => `
           <div class="ai-card glass" data-open="${s.id}">
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
             <div class="s">${esc(s.sub)}</div>
             <div class="p">${esc(priceText(s.id))}</div>
-          </div>`).join("")}
-      </div>`;
+          </div>`).join("");
   }
 
   function openGrid() {
@@ -72,6 +75,7 @@
     syncBackButton();
     window.scrollTo(0, 0);
   }
+  window.aiOpenGrid = openGrid; // umumiy ilova pastki menyusi uchun
 
   /* ---------------------------------------------------------------
      SHAKL
@@ -764,6 +768,7 @@
     if (typeof window.updateOrdersBadge === "function") window.updateOrdersBadge();
   }
 
+  window.aiContactOwner = () => contactOwner();
   function contactOwner() {
     if (typeof window.openOwnerChat === "function") { window.openOwnerChat(); return; }
     const url = "https://t.me/Print_54";
