@@ -3,9 +3,8 @@
 // Resume buyurtmasini AI'siz, avtomatik PDF qiladi:
 //   1) buyurtmadagi maydonlardan A4 sahifa (api/_lib/resume-html.js)
 //   2) Chrome (serverda @sparticuz/chromium) orqali PDF
-//   3) PDF egasiga buyurtma xabariga javob bo'lib, "✅ Mijozga
-//      yuborish" tugmasi bilan boradi. Ega tekshirib tugmani bossa,
-//      telegram-webhook.js faylni mijozga yetkazadi.
+//   3) PDF to'g'ridan-to'g'ri mijozga boradi, buyurtma bajariladi.
+//      Ega faqat chop etish so'ralganda yoki xato bo'lganda xabar oladi.
 // Faqat ai-request.js chaqiradi (ichki imzo bilan).
 // ---------------------------------------------------------------
 
@@ -68,17 +67,64 @@ async function telegram(method, body) {
   return res.json();
 }
 
-async function sendPdfToOwner(order, pdf, name) {
+function pdfForm(chatId, pdf, name, caption, replyTo) {
   const form = new FormData();
-  form.append("chat_id", String(process.env.OWNER_CHAT_ID));
+  form.append("chat_id", String(chatId));
   form.append("document", new Blob([pdf], { type: "application/pdf" }), fileName(name));
-  form.append("caption", `🤖 Resume avtomatik tayyorlandi — #${order.id}\n\nTekshirib chiqing. Hammasi to'g'ri bo'lsa, tugmani bosing — fayl mijozga boradi. Tuzatish kerak bo'lsa, o'zingiz tayyorlab, buyurtma xabariga javob qilib yuboring.`);
-  form.append("reply_markup", JSON.stringify({ inline_keyboard: [[{ text: "✅ Mijozga yuborish", callback_data: `aisend:${order.id}` }]] }));
-  if (order.telegram_message_id) {
-    form.append("reply_parameters", JSON.stringify({ message_id: order.telegram_message_id, allow_sending_without_reply: true }));
+  form.append("caption", caption);
+  form.append("parse_mode", "HTML");
+  if (replyTo) form.append("reply_parameters", JSON.stringify({ message_id: replyTo, allow_sending_without_reply: true }));
+  return form;
+}
+
+// Tayyor PDF to'g'ridan-to'g'ri mijozga boradi; buyurtma bajarilgan bo'ladi.
+// Chop etish so'ralgan bo'lsa yoki mijozga yetmasa — nusxa egaga ham boradi.
+async function deliver(order, pdf, name) {
+  const fields = order.details.fields;
+  const wantsPrint = fields.print && fields.print !== "none";
+  let doc = null;
+  if (order.telegram_user_id) {
+    const sent = await telegram("sendDocument", pdfForm(order.telegram_user_id, pdf, name,
+      `🎉 <b>Resume'ingiz tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`));
+    if (sent.ok) doc = sent.result.document;
   }
-  const out = await telegram("sendDocument", form);
-  if (!out.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(out));
+
+  if (wantsPrint || !doc) {
+    const sent = await telegram("sendDocument", pdfForm(process.env.OWNER_CHAT_ID, pdf, name,
+      doc
+        ? `🖨 <b>Chop etish uchun</b> — #${order.id} (${fields.print === "color" ? "rangli" : "oq-qora"})\nResume avtomatik tayyorlanib, mijozga yuborildi.`
+        : `⚠️ #${order.id} — resume tayyor, lekin mijozga yuborib bo'lmadi (botni bloklagan bo'lishi mumkin). U "Buyurtmalarim"dan olishi mumkin.`,
+      order.telegram_message_id));
+    if (!doc && sent.ok) doc = sent.result.document;
+  }
+  if (!doc) throw new Error("PDF hech kimga yuborilmadi");
+
+  await supabase
+    .from("orders")
+    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || fileName(name) })
+    .eq("id", order.id);
+}
+
+// Avtomatik bo'lmadi — buyurtma egaga oddiy (qo'lda bajariladigan) ko'rinishda boradi
+async function fallbackToOwner(orderId, order) {
+  const manual = order && order.details && order.details.manualText;
+  const warn = `⚠️ <b>Resume'ni avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.`;
+  if (manual && !order.telegram_message_id) {
+    const sent = await telegram("sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `${warn}\n\n${manual}`, parse_mode: "HTML", disable_web_page_preview: true });
+    if (sent.ok) {
+      await supabase
+        .from("orders")
+        .update({ telegram_message_id: sent.result.message_id, details: { ...order.details, text: manual } })
+        .eq("id", order.id);
+    }
+    return;
+  }
+  await telegram("sendMessage", {
+    chat_id: process.env.OWNER_CHAT_ID,
+    text: `${warn}\n#${orderId} — tayyor faylni buyurtma xabariga javob qilib yuboring.`,
+    parse_mode: "HTML",
+    ...(order && order.telegram_message_id ? { reply_parameters: { message_id: order.telegram_message_id, allow_sending_without_reply: true } } : {}),
+  });
 }
 
 module.exports = async (req, res) => {
@@ -99,19 +145,18 @@ module.exports = async (req, res) => {
     const found = await supabase.from("orders").select("*").eq("id", orderId).single();
     order = found.data;
     if (!order || order.service !== "resume" || !order.details || !order.details.fields) throw new Error("Resume buyurtma topilmadi: " + orderId);
+    if (order.status === "cancelled") {
+      res.status(200).json({ ok: true, skipped: "cancelled" });
+      return;
+    }
 
     const d = resumeData(order.details.fields, await photoUrl(order));
     const pdf = await renderPdf(resumeHtml(d));
-    await sendPdfToOwner(order, pdf, d.name);
+    await deliver(order, pdf, d.name);
     res.status(200).json({ ok: true, size: pdf.length });
   } catch (err) {
     console.error(err);
-    // Avtomatik bo'lmadi — ega qo'lda tayyorlaydi
-    await telegram("sendMessage", {
-      chat_id: process.env.OWNER_CHAT_ID,
-      text: `⚠️ #${orderId} resume'ni avtomatik tayyorlab bo'lmadi. Iltimos, qo'lda tayyorlab, buyurtma xabariga javob qilib yuboring.`,
-      ...(order && order.telegram_message_id ? { reply_parameters: { message_id: order.telegram_message_id, allow_sending_without_reply: true } } : {}),
-    }).catch(() => {});
+    await fallbackToOwner(orderId, order).catch((e) => console.error(e));
     res.status(500).json({ ok: false });
   }
 };
