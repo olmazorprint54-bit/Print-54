@@ -14,6 +14,10 @@
 const { createClient } = require("@supabase/supabase-js");
 const { waitUntil } = require("@vercel/functions");
 const { canAutoResume } = require("./_lib/resume-html");
+const { canAutoObyektivka } = require("./_lib/obyektivka-docx");
+
+// AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
+const AUTO = { resume: canAutoResume, obyektivka: canAutoObyektivka };
 const { internalKey } = require("./_lib/internal-key");
 
 const supabase = createClient(
@@ -30,6 +34,7 @@ const SERVICE_LABELS = {
   questions: "Savollar tuzish",
   crossword: "Krossvord",
   resume: "Resume / CV",
+  obyektivka: "Obyektivka",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
@@ -57,7 +62,7 @@ function clean(value, max) {
 
 // Buyurtmalarim'da ko'rinadigan qisqa nom (resume uchun — ism va lavozim)
 function topicOf(fields) {
-  return clean(fields.topic || [fields.name, fields.position].filter(Boolean).join(" — "), 200);
+  return clean(fields.topic || fields.fio || [fields.name, fields.position].filter(Boolean).join(" — "), 200);
 }
 
 function cleanSummary(summary) {
@@ -94,7 +99,7 @@ function requestText(body, summary, orderId) {
 
   if (orderId && body.autoResume) {
     lines.push("");
-    lines.push("🤖 <i>Resume avtomatik tayyorlanib, mijozga o'zi yuboriladi. Chop etish uchun PDF nusxasi shu yerga keladi.</i>");
+    lines.push("🤖 <i>Fayl avtomatik tayyorlanib, mijozga o'zi yuboriladi. Chop etish uchun nusxasi shu yerga keladi.</i>");
   } else if (orderId) {
     lines.push("");
     lines.push("📎 <i>Tayyor faylni shu xabarga javob (Reply) qilib yuboring — mijozga avtomatik boradi.</i>");
@@ -126,9 +131,19 @@ async function sendToOwner(text) {
 function cleanFields(fields) {
   const out = {};
   for (const [k, v] of Object.entries(fields || {}).slice(0, 40)) {
-    if (typeof v === "string") out[k] = v.slice(0, 1500);
+    if (typeof v === "string") out[k] = v.slice(0, 2500);
     else if (typeof v === "boolean" || typeof v === "number") out[k] = v;
-    else if (Array.isArray(v)) out[k] = v.filter((x) => typeof x === "string").slice(0, 20).map((x) => x.slice(0, 200));
+    else if (Array.isArray(v) && v.length && v.every((x) => x && typeof x === "object")) {
+      // qatorlar ro'yxati (masalan, obyektivkadagi qarindoshlar)
+      out[k] = v.slice(0, 20).map((row) => {
+        const r = {};
+        for (const [rk, rv] of Object.entries(row).slice(0, 12)) {
+          if (typeof rv === "string") r[rk] = rv.slice(0, 300);
+          else if (typeof rv === "boolean") r[rk] = rv;
+        }
+        return r;
+      });
+    } else if (Array.isArray(v)) out[k] = v.filter((x) => typeof x === "string").slice(0, 20).map((x) => x.slice(0, 200));
   }
   return out;
 }
@@ -195,7 +210,7 @@ module.exports = async (req, res) => {
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
-    body.autoResume = body.service === "resume" && canAutoResume(saved);
+    body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.

@@ -279,7 +279,7 @@
   .switch input:checked + .slider{ background: #4ADE80; }
   .switch input:checked + .slider:before{ transform: translateX(16px); }
 </style>
-<link rel="stylesheet" href="ai/ai.css?v=13">
+<link rel="stylesheet" href="ai/ai.css?v=17">
 </head>
 <body>
 
@@ -941,7 +941,7 @@ async function loadMyOrders(){
 function orderCardHtml(o){
   const date = new Date(o.created_at).toLocaleString('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
   const AI_SVC = {
-    presentation: ['✨ Taqdimot', 'slayd'], essay: ['✨ Mustaqil ish', 'bet'], referat: ['✨ Referat', 'bet'], resume: ['✨ Resume / CV', ''], lesson: ['✨ Dars ishlanma', ''],
+    presentation: ['✨ Taqdimot', 'slayd'], essay: ['✨ Mustaqil ish', 'bet'], referat: ['✨ Referat', 'bet'], resume: ['✨ Resume / CV', ''], obyektivka: ['📋 Obyektivka', ''], lesson: ['✨ Dars ishlanma', ''],
     test: ['✨ Test', 'savol'], questions: ['✨ Savollar', 'savol'], crossword: ['✨ Krossvord', "so'z"],
   };
   const ai = AI_SVC[o.service];
@@ -1091,7 +1091,8 @@ async function updateOrdersBadge(){
 }
 updateOrdersBadge();
   </script>
-  <script src="ai/config.js?v=13"></script>
-  <script src="ai/ai.js?v=13"></script>
+  <script src="ai/translit.js?v=17"></script>
+  <script src="ai/config.js?v=17"></script>
+  <script src="ai/ai.js?v=17"></script>
  </body>
   </html>

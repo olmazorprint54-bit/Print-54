@@ -81,7 +81,7 @@
       const v = {};
       svc.fields.forEach((f) => {
         if (f.type === "heading") return;
-        if (Array.isArray(f.default)) v[f.id] = f.default.slice();
+        if (Array.isArray(f.default)) v[f.id] = f.default.map((x) => (x && typeof x === "object" ? { ...x } : x));
         else if (f.default !== undefined) v[f.id] = f.default;
         else v[f.id] = f.type === "switch" ? false : "";
       });
@@ -90,7 +90,8 @@
     return valuesBy[svc.id];
   }
 
-  const label = (f) => `<div class="field-title">${esc(f.label)}${f.required ? '<span class="ai-req">*</span>' : ""}</div>`;
+  const label = (f) => `<div class="field-title">${esc(f.label)}${f.required ? '<span class="ai-req">*</span>' : ""}</div>` +
+    (f.hint && f.type !== "photos" && f.type !== "relatives" ? `<div class="ai-hint">${esc(f.hint)}</div>` : "");
 
   function fieldHtml(svc, f, v) {
     switch (f.type) {
@@ -98,7 +99,7 @@
         return `<div class="ai-heading">${esc(f.label)}</div>`;
       case "text":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
-          <input class="ai-input" data-input="${f.id}" maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
+          <input class="ai-input" data-input="${f.id}"${f.inputmode ? ` inputmode="${f.inputmode}"` : ""} maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "number":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
@@ -107,7 +108,8 @@
       case "textarea":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <textarea class="ai-input" data-input="${f.id}" maxlength="${f.max || 1000}" placeholder="${esc(f.placeholder || "")}">${esc(v[f.id])}</textarea>
-          <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div></div>`;
+          <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div>
+          <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "chips":
         return `<div class="ai-field">${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
@@ -119,6 +121,12 @@
       case "switch":
         return `<div class="ai-field"><label class="switch-row glass"><span>${esc(f.label)}</span>
           <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label></div>`;
+      case "relatives":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+          <div class="ai-hint">${esc(f.hint || "")}</div>
+          <div class="rel-list" data-rel="${f.id}">${relCards(svc, f, v)}</div>
+          <div class="tpl-more glass" data-rel-add="${f.id}">+ Qarindosh qo'shish</div>
+          <div class="ai-err">Qarindoshlar bo'limidagi qizil maydonlarni to'g'rilang</div></div>`;
       case "photos":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <div class="ai-hint">${esc(f.hint || "")}</div>
@@ -167,20 +175,26 @@
   }
 
   // Katta rasmni 1600px gacha kichraytirib JPEG qilamiz (+ kichik ko'rinish)
-  function shrinkImage(file) {
+  function shrinkImage(file, aspect) {
     return new Promise((resolve, reject) => {
       const url = URL.createObjectURL(file);
       const img = new Image();
       img.onload = () => {
         const draw = (maxSide, q) => {
-          const k = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+          // aspect (kenglik/balandlik) berilsa — markazdan qirqiladi (3x4 = 0.75)
+          let sw = img.naturalWidth, sh = img.naturalHeight, sx = 0, sy = 0;
+          if (aspect) {
+            if (sw / sh > aspect) { sx = (sw - sh * aspect) / 2; sw = sh * aspect; }
+            else { sy = (sh - sw / aspect) / 2; sh = sw / aspect; }
+          }
+          const k = Math.min(1, maxSide / Math.max(sw, sh));
           const c = document.createElement("canvas");
-          c.width = Math.max(1, Math.round(img.naturalWidth * k));
-          c.height = Math.max(1, Math.round(img.naturalHeight * k));
+          c.width = Math.max(1, Math.round(sw * k));
+          c.height = Math.max(1, Math.round(sh * k));
           const ctx = c.getContext("2d");
           ctx.fillStyle = "#fff";
           ctx.fillRect(0, 0, c.width, c.height);
-          ctx.drawImage(img, 0, 0, c.width, c.height);
+          ctx.drawImage(img, sx, sy, sw, sh, 0, 0, c.width, c.height);
           return c.toDataURL("image/jpeg", q);
         };
         const out = { full: draw(1600, 0.85), thumb: draw(240, 0.7) };
@@ -218,7 +232,7 @@
       if (!/^image\//.test(file.type) && !/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name)) continue;
       const p = { key: "p" + ++photoSeq, thumb: "", path: null, status: "up" };
       try {
-        const { full, thumb } = await shrinkImage(file);
+        const { full, thumb } = await shrinkImage(file, f.aspect);
         p.thumb = thumb;
         list.push(p);
         syncPhotos(svc);
@@ -228,6 +242,87 @@
         haptic("error");
       }
     }
+  }
+
+  /* ---------------------------------------------------------------
+     TEKSHIRUVLAR (obyektivka: to'liq F.I.Sh., sana, qisqartmalar)
+     --------------------------------------------------------------- */
+  const ABBR_RE = /(^|[\s,(])(vil|tum|sh|sh-|mah|ko['‘’ʻ]?ch|kuch|r-n|obl|resp|res)\.(?=\s|,|$)/i;
+  function checkText(kind, value, required) {
+    const s = String(value || "").trim();
+    if (!s) return required ? "Iltimos, shu maydonni to'ldiring" : "";
+    if (kind === "fio" && s.split(/\s+/).length < 3) return "Familiya, ism va otasining ismini to'liq yozing — masalan: Karimov Anvar Rustamovich";
+    if (kind === "date" && !/^\d{2}\.\d{2}\.\d{4}$/.test(s)) return "Sanani kun.oy.yil ko'rinishida yozing — masalan: 14.03.1985";
+    if (kind === "year" && !/\b(19|20)\d{2}\b/.test(s)) return "Yilni to'liq yozing — masalan: 1965 yil, Samarqand viloyati, Urgut tumani";
+    if (kind === "work") {
+      const bad = s.split(/\n+/).map((x) => x.trim()).filter(Boolean).find((x) => !/^(19|20)\d{2}/.test(x));
+      if (bad) return `Har bir qator yil bilan boshlansin: «${clip(bad, 30)}» — masalan: 2009-2018 yy. - ...`;
+    }
+    const m = kind && s.match(ABBR_RE);
+    if (m) return `Qisqartirmang: «${m[2]}.» o'rniga to'liq yozing (viloyati, tumani, shahri, mahallasi, ko'chasi)`;
+    return "";
+  }
+
+  /* ---------------------------------------------------------------
+     QARINDOSHLAR (obyektivka)
+     --------------------------------------------------------------- */
+  const REL_TYPES = ["Otasi", "Onasi", "Akasi", "Ukasi", "Opasi", "Singlisi", "Turmush o'rtog'i", "O'g'li", "Qizi", "Qaynotasi", "Qaynonasi"];
+  const relErrors = {}; // xizmat id -> [{ maydon: xato }]
+  const REL_INPUTS = [
+    ["name", "Familiyasi, ismi, otasining ismi", "Masalan: Karimov Rustam Aliyevich"],
+    ["birth", "Tug'ilgan yili va joyi", "Masalan: 1958 yil, Samarqand viloyati, Urgut tumani"],
+  ];
+  const REL_ALIVE = [
+    ["work", "Ish joyi va lavozimi (pensiyada bo'lsa: «Pensiyada (oldingi lavozimi)»)", "Masalan: Urgut tumani 3-maktab o'qituvchisi"],
+    ["address", "Turar joyi (to'liq manzil)", "Masalan: Urgut tumani, Navbahor ko'chasi, 12-uy"],
+  ];
+  const REL_DEAD = [
+    ["deathYear", "Vafot etgan yili", "Masalan: 2015"],
+    ["lastJob", "Oxirgi kasbi", "Masalan: maktab o'qituvchisi"],
+  ];
+
+  function relCards(svc, f, v) {
+    const errs = relErrors[svc.id] || [];
+    const input = (i, r, [k, lbl, ph]) => {
+      const e = (errs[i] || {})[k];
+      return `<div class="rel-in${e ? " bad" : ""}"><div class="rel-lbl">${esc(lbl)}</div>
+        <input class="ai-input" data-rin="${i}" data-k="${k}" placeholder="${esc(ph)}" value="${esc(r[k] || "")}"${k === "deathYear" ? ' inputmode="numeric" maxlength="4"' : ' maxlength="300"'}>
+        ${e ? `<div class="rel-err">${esc(e)}</div>` : ""}</div>`;
+    };
+    return (v[f.id] || []).map((r, i) => `<div class="rel-card glass">
+        <div class="rel-head"><b>${i + 1}. ${esc(r.rel || "Qarindosh")}</b><span class="rel-x" data-rel-del="${i}">×</span></div>
+        <div class="chips rel-chips${(errs[i] || {}).rel ? " bad" : ""}" data-relchips="${i}">${REL_TYPES.map((t) => `<div class="chip${r.rel === t ? " active" : ""}" data-v="${esc(t)}">${esc(t)}</div>`).join("")}</div>
+        ${REL_INPUTS.map((x) => input(i, r, x)).join("")}
+        <label class="switch-row rel-dead"><span>Vafot etgan</span><span class="switch"><input type="checkbox" data-rsw="${i}"${r.dead ? " checked" : ""}><span class="slider"></span></span></label>
+        ${(r.dead ? REL_DEAD : REL_ALIVE).map((x) => input(i, r, x)).join("")}
+      </div>`).join("");
+  }
+
+  function redrawRelatives(svc) {
+    const f = svc.fields.find((x) => x.type === "relatives");
+    const list = f && root.querySelector(`[data-rel="${f.id}"]`);
+    if (list) list.innerHTML = relCards(svc, f, getValues(svc));
+  }
+
+  // true — xato bor
+  function validateRelatives(svc, v, f) {
+    const rows = v[f.id] || [];
+    const errs = rows.map((r) => {
+      const e = {};
+      if (!r.rel) e.rel = "Qarindoshligini tanlang";
+      const put = (k, msg) => { if (msg) e[k] = msg; };
+      put("name", checkText("fio", r.name, true));
+      put("birth", checkText("year", r.birth, true) || checkText("noabbr", r.birth, true));
+      if (r.dead) put("deathYear", /^(19|20)\d{2}$/.test(String(r.deathYear || "").trim()) ? "" : "Yilni yozing — masalan: 2015");
+      else {
+        put("work", checkText("noabbr", r.work, true));
+        put("address", checkText("noabbr", r.address, true));
+      }
+      return e;
+    });
+    relErrors[svc.id] = errs;
+    redrawRelatives(svc);
+    return !rows.length || errs.some((e) => Object.keys(e).length);
   }
 
   /* ---------------------------------------------------------------
@@ -335,6 +430,7 @@
     if (f.type === "multichips") return val.map((x) => { const o = f.options.find((y) => optV(y) === x); return o ? optL(o) : x; }).join(", ");
     if (f.type === "switch") return val ? "Ha" : "Yo'q";
     if (f.type === "photos") return val && val.length ? `${val.length} ta rasm` : "";
+    if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     return String(val || "").trim();
   }
@@ -356,13 +452,14 @@
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, referat: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, referat: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
-      [svc.id === "resume" ? "Lavozim" : "Mavzu", pick("topic") || pick("position") || "—"],
+      [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
+      ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
@@ -416,6 +513,39 @@
     if (e.target.closest("[data-contact]")) { contactOwner(); return; }
     if (!current) return;
     const v = getValues(current);
+
+    // obyektivka: qarindosh qo'shish / o'chirish / qarindoshlik turi
+    const relAdd = e.target.closest("[data-rel-add]");
+    if (relAdd) {
+      const list = v[relAdd.dataset.relAdd] || (v[relAdd.dataset.relAdd] = []);
+      if (list.length < 20) list.push({ rel: "" });
+      (relErrors[current.id] || []).push({});
+      tick();
+      redrawRelatives(current);
+      refreshLive(current);
+      return;
+    }
+    const relDel = e.target.closest("[data-rel-del]");
+    if (relDel) {
+      const f = current.fields.find((x) => x.type === "relatives");
+      v[f.id].splice(+relDel.dataset.relDel, 1);
+      (relErrors[current.id] || []).splice(+relDel.dataset.relDel, 1);
+      tick();
+      redrawRelatives(current);
+      refreshLive(current);
+      return;
+    }
+    const relChip = e.target.closest("[data-relchips] .chip");
+    if (relChip) {
+      const i = +relChip.parentElement.dataset.relchips;
+      const f = current.fields.find((x) => x.type === "relatives");
+      v[f.id][i].rel = relChip.dataset.v;
+      const er = (relErrors[current.id] || [])[i];
+      if (er) delete er.rel;
+      tick();
+      redrawRelatives(current);
+      return;
+    }
 
     const phAdd = e.target.closest("[data-ph-add]");
     if (phAdd) {
@@ -488,6 +618,21 @@
   root.addEventListener("input", (e) => {
     if (!current) return;
     const v = getValues(current);
+    const ri = e.target.dataset.rin;
+    if (ri !== undefined) {
+      const f = current.fields.find((x) => x.type === "relatives");
+      v[f.id][+ri][e.target.dataset.k] = e.target.value;
+      // yozishni boshlaganda qizil belgi olib tashlanadi
+      const box = e.target.closest(".rel-in");
+      if (box && box.classList.contains("bad")) {
+        box.classList.remove("bad");
+        const er = box.querySelector(".rel-err");
+        if (er) er.remove();
+        const errs = (relErrors[current.id] || [])[+ri];
+        if (errs) delete errs[e.target.dataset.k];
+      }
+      return;
+    }
     const id = e.target.dataset.input;
     if (id) {
       v[id] = e.target.value;
@@ -503,6 +648,14 @@
     if (!current) return;
     const id = e.target.dataset.switch;
     if (id) { getValues(current)[id] = e.target.checked; tick(); applyShowIf(current); refreshLive(current); return; }
+    const rsw = e.target.dataset.rsw;
+    if (rsw !== undefined) {
+      const f = current.fields.find((x) => x.type === "relatives");
+      getValues(current)[f.id][+rsw].dead = e.target.checked;
+      tick();
+      redrawRelatives(current);
+      return;
+    }
     const pid = e.target.dataset.photoInput;
     if (pid) {
       const f = current.fields.find((x) => x.id === pid);
@@ -518,6 +671,23 @@
   function validate(svc, v) {
     let firstBad = null;
     svc.fields.forEach((f) => {
+      const el0 = root.querySelector(`.ai-field[data-f="${f.id}"]`);
+      if (f.type === "relatives") {
+        const bad = validateRelatives(svc, v, f);
+        if (el0) el0.classList.toggle("error", bad);
+        if (bad && !firstBad) firstBad = root.querySelector(".rel-in.bad, .rel-chips.bad") || el0;
+        return;
+      }
+      if (f.check) {
+        const msg = checkText(f.check, v[f.id], f.required);
+        if (el0) {
+          el0.classList.toggle("error", !!msg);
+          const er = el0.querySelector(".ai-err");
+          if (er && msg) er.textContent = msg;
+        }
+        if (msg && !firstBad) firstBad = el0;
+        return;
+      }
       // son maydoni: bo'sh bo'lsa standart qiymat olinadi, yozilgan bo'lsa chegarada bo'lishi kerak
       const num = f.type === "number" && String(v[f.id] || "").trim();
       if (!f.required && !num) return;
@@ -584,7 +754,7 @@
       <div class="ai-done glass">
         <div class="big">✅</div>
         <h3>So'rovingiz qabul qilindi!</h3>
-        <p>${auto ? "Resume'ingiz avtomatik tayyorlanmoqda — bir daqiqa ichida PDF fayl shu botga xabar bo'lib keladi. Uni «Buyurtmalarim» bo'limidan ham olishingiz mumkin." : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
+        <p>${auto ? `«${esc(svc.title)}» avtomatik tayyorlanmoqda — bir daqiqa ichida fayl shu botga xabar bo'lib keladi.` : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
         <button type="button" class="order-btn" data-again="1">Yana so'rov qoldirish</button>
         <div class="pill-btn glass" data-contact="1" style="margin-top:10px;">Biz bilan bog'lanish</div>
       </div>`;
@@ -648,7 +818,7 @@
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
     } else {
-      const kinds = { essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], referat: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], resume: [["main", "Resume"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
+      const kinds = { essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], referat: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], resume: [["main", "Resume"]], obyektivka: [["main", "Ma'lumotnoma"], ["rel", "Qarindoshlar haqida ma'lumot"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
       if ((svc.id === "test" || svc.id === "crossword") && v.key) kinds.push(["key", "Javoblar"]);
       pages = kinds.map(([k, cap]) => `${pageHtml(svc.id, tpl, k, d)}<div class="cap">${cap}</div>`);
     }
@@ -697,6 +867,18 @@
       skills: String(v.skills || "").trim(),
       langs: Array.isArray(v.langs) ? v.langs : [],
       photo: v.photo !== false,
+      // obyektivka uchun
+      cyr: v.lang !== "lat",
+      fio: String(v.fio || "").trim() || "Karimov Anvar Rustamovich",
+      job: String(v.job || "").trim() || "Urgut tumani 5-umumta'lim maktabi direktori",
+      since: String(v.since || "").trim() || "06.09.2018",
+      birthDate: String(v.birthDate || "").trim() || "14.03.1985",
+      birthPlace: String(v.birthPlace || "").trim() || "Samarqand viloyati, Urgut tumani",
+      eduLevel: v.eduLevel || "oliy",
+      graduated: String(v.graduated || "").trim().split(/\n+/)[0] || "2007 yil Samarqand davlat universiteti",
+      nation: String(v.nation || "").trim() || "o'zbek",
+      work: String(v.work || "").trim() || "2003-2007 yy. - Samarqand davlat universiteti talabasi\n2009-2018 yy. - Urgut tumani 5-maktab o'qituvchisi\n2018 y. - h.v. - Urgut tumani 5-maktab direktori",
+      relatives: (v.relatives || []).filter((r) => r.name).length ? v.relatives : [{ rel: "Otasi", name: "Karimov Rustam Aliyevich", birth: "1958 yil, Urgut tumani", work: "Pensiyada", address: "Urgut tumani" }, { rel: "Onasi", name: "Karimova Zuhra Salimovna", birth: "1961 yil, Samarqand shahri", dead: true, deathYear: "2019", lastJob: "uy bekasi" }],
       photoUrl: (photosOf(svc).find((p) => p.status !== "err" && p.thumb) || {}).thumb || "",
     };
   }
@@ -847,6 +1029,32 @@
         </div>`;
     },
     referat(style, kind, d) { return PAGES.essay(style, kind, d); },
+    obyektivka(style, kind, d) {
+      const T = (s) => (d.cyr && window.uzCyr ? window.uzCyr(s) : s);
+      // 06.09.2018 -> "2018 yil 06 sentabrdan:" (serverdagi obyektivka-docx.js bilan bir xil)
+      const sinceLine = (x) => {
+        const m = x.since.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+        if (!m || +m[2] < 1 || +m[2] > 12) return sm(x.since + ":");
+        const mon = (x.cyr ? ["январ", "феврал", "март", "апрел", "май", "июн", "июл", "август", "сентябр", "октябр", "ноябр", "декабр"] : ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"])[+m[2] - 1];
+        return sm(`${m[3]} yil ${m[1].padStart(2, "0")} ${mon}dan:`);
+      };
+      const sm = (txt, b) => `<div style="font-size:2.3cqw;${b ? "font-weight:700;" : ""}line-height:1.3">${esc(T(txt))}</div>`;
+      if (kind === "rel") {
+        const cell = (t, b) => `<td style="border:.2cqw solid #333;padding:.6cqw;font-size:2cqw;text-align:center;${b ? "font-weight:700" : ""}">${esc(T(t))}</td>`;
+        return `<div style="padding:8cqw 7cqw 0 9cqw">${sm(d.fio + "ning yaqin qarindoshlari haqida", true).replace("<div", '<div align="center"')}${sm("MA'LUMOT", true).replace("<div", '<div align="center"')}
+          <table style="width:100%;border-collapse:collapse;margin-top:2cqw"><tr>${["Qarindoshligi", "F.I.Sh.", "Tug'ilgan yili va joyi", "Ish joyi va lavozimi", "Turar joyi"].map((h) => cell(h, true)).join("")}</tr>
+          ${d.relatives.slice(0, 8).map((r) => `<tr>${cell(r.rel || "", true)}${cell(r.name || "")}${cell(r.birth || "")}${r.dead ? `<td colspan="2" style="border:.2cqw solid #333;padding:.6cqw;font-size:2cqw;text-align:center">${esc(T((r.deathYear || "") + " yilda vafot etgan" + (r.lastJob ? " (" + r.lastJob + ")" : "")))}</td>` : cell(r.work || "") + cell(r.address || "")}</tr>`).join("")}</table></div>`;
+      }
+      const pairRow = (a, av, b, bv) => `<div style="display:flex;gap:3cqw;margin-top:1.6cqw"><div style="flex:1">${sm(a, true)}${sm(av)}</div><div style="flex:1.1">${b ? sm(b, true) + sm(bv) : ""}</div></div>`;
+      return `<div style="padding:7cqw 5cqw 0 9cqw">
+        <div style="text-align:center">${sm("MA'LUMOTNOMA", true)}${sm(d.fio, true)}</div>
+        <div style="display:flex;gap:3cqw;margin-top:2cqw"><div style="flex:1">${sinceLine(d)}${sm(d.job, true)}
+          ${pairRow("Tug'ilgan yili:", d.birthDate, "Tug'ilgan joyi:", d.birthPlace)}${pairRow("Millati:", d.nation, "Partiyaviyligi:", "yo'q")}</div>
+          <div style="flex:none;width:16cqw;height:21cqw;border:.25cqw solid #333;${d.photoUrl ? `background:url(${d.photoUrl}) center/cover` : "display:grid;place-items:center;font-size:2cqw;color:#666"}">${d.photoUrl ? "" : "3x4"}</div></div>
+        ${pairRow("Ma'lumoti:", d.eduLevel, "Tamomlagan:", d.graduated)}
+        <div style="text-align:center;margin-top:3cqw">${sm("MEHNAT FAOLIYATI", true)}</div>
+        ${d.work.split(/\n+/).slice(0, 6).map((x) => sm(x)).join("")}</div>`;
+    },
     essay(style, kind, d) {
       if (kind === "inner") {
         return `<div style="padding:9cqw 9cqw">
