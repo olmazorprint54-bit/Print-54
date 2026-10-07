@@ -119,6 +119,12 @@
       case "switch":
         return `<div class="ai-field"><label class="switch-row glass"><span>${esc(f.label)}</span>
           <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label></div>`;
+      case "photos":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+          <div class="ai-hint">${esc(f.hint || "")}</div>
+          <div class="ph-grid" data-photos="${f.id}">${photoTiles(svc, f)}</div>
+          <input type="file" accept="image/*" multiple hidden data-photo-input="${f.id}">
+          <div class="ai-err">Rasmlar hali yuklanmoqda — biroz kuting</div></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
@@ -126,6 +132,101 @@
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
       default:
         return "";
+    }
+  }
+
+  /* ---------------------------------------------------------------
+     MIJOZ RASMLARI (telefonda kichraytirilib, serverga yuklanadi)
+     --------------------------------------------------------------- */
+  const photoState = {}; // xizmat id -> [{ key, thumb, path, status: "up" | "ok" | "err" }]
+  const photosOf = (svc) => (photoState[svc.id] = photoState[svc.id] || []);
+  let photoSeq = 0;
+
+  function photoTiles(svc, f) {
+    const list = photosOf(svc);
+    return list.map((p) => `<div class="ph-tile ${p.status}" data-ph="${p.key}">
+        <img src="${p.thumb}" alt="">
+        ${p.status === "up" ? '<div class="ph-spin"></div>' : ""}
+        ${p.status === "err" ? '<div class="ph-bad">Yuklanmadi</div>' : ""}
+        <div class="ph-x" data-ph-del="${p.key}">×</div>
+      </div>`).join("") +
+      (list.length < f.max ? `<div class="ph-add glass" data-ph-add="${f.id}"><b>+</b><span>Rasm qo'shish</span></div>` : "");
+  }
+
+  function syncPhotos(svc) {
+    const f = svc.fields.find((x) => x.type === "photos");
+    if (!f) return;
+    getValues(svc)[f.id] = photosOf(svc).filter((p) => p.status === "ok").map((p) => p.path);
+    const grid = root.querySelector(`[data-photos="${f.id}"]`);
+    if (grid && current === svc) grid.innerHTML = photoTiles(svc, f);
+    if (!photosOf(svc).some((p) => p.status === "up")) {
+      const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
+      if (el) el.classList.remove("error");
+    }
+    if (current === svc) refreshLive(svc);
+  }
+
+  // Katta rasmni 1600px gacha kichraytirib JPEG qilamiz (+ kichik ko'rinish)
+  function shrinkImage(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const draw = (maxSide, q) => {
+          const k = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+          const c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(img.naturalWidth * k));
+          c.height = Math.max(1, Math.round(img.naturalHeight * k));
+          const ctx = c.getContext("2d");
+          ctx.fillStyle = "#fff";
+          ctx.fillRect(0, 0, c.width, c.height);
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          return c.toDataURL("image/jpeg", q);
+        };
+        const out = { full: draw(1600, 0.85), thumb: draw(240, 0.7) };
+        URL.revokeObjectURL(url);
+        resolve(out);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("Rasmni ochib bo'lmadi")); };
+      img.src = url;
+    });
+  }
+
+  async function uploadPhoto(svc, p, full) {
+    try {
+      const res = await fetch(CFG.uploadEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
+      p.path = data.path;
+      p.status = "ok";
+    } catch (err) {
+      console.error(err);
+      p.status = "err";
+      haptic("error");
+    }
+    syncPhotos(svc);
+  }
+
+  async function addPhotos(svc, f, files) {
+    const list = photosOf(svc);
+    const room = f.max - list.length;
+    for (const file of Array.from(files).slice(0, Math.max(0, room))) {
+      if (!/^image\//.test(file.type) && !/\.(jpe?g|png|webp|heic|heif)$/i.test(file.name)) continue;
+      const p = { key: "p" + ++photoSeq, thumb: "", path: null, status: "up" };
+      try {
+        const { full, thumb } = await shrinkImage(file);
+        p.thumb = thumb;
+        list.push(p);
+        syncPhotos(svc);
+        uploadPhoto(svc, p, full);
+      } catch (err) {
+        console.error(err);
+        haptic("error");
+      }
     }
   }
 
@@ -186,6 +287,16 @@
       </div>`).join("");
   }
 
+  // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
+  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || !f.showIf || !!v[f.showIf]; };
+  function applyShowIf(svc) {
+    const v = getValues(svc);
+    svc.fields.filter((f) => f.showIf).forEach((f) => {
+      const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
+      if (el) el.hidden = !v[f.showIf];
+    });
+  }
+
   function renderForm(svc) {
     const v = getValues(svc);
     root.innerHTML = `
@@ -210,6 +321,7 @@
     if (!svc) return;
     current = svc;
     renderForm(svc);
+    applyShowIf(svc);
     syncBackButton();
     window.scrollTo(0, 0);
   }
@@ -221,6 +333,7 @@
     if (f.type === "chips") { const o = f.options.find((x) => optV(x) === val); return o ? optL(o) : val; }
     if (f.type === "multichips") return val.map((x) => { const o = f.options.find((y) => optV(y) === x); return o ? optL(o) : x; }).join(", ");
     if (f.type === "switch") return val ? "Ha" : "Yo'q";
+    if (f.type === "photos") return val && val.length ? `${val.length} ta rasm` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     return String(val || "").trim();
   }
@@ -242,6 +355,9 @@
       [svc.id === "resume" ? "Lavozim" : "Mavzu", pick("topic") || pick("position") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
+      ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
+      ...(v.charts ? [["Diagramma", "Ha"]] : []),
+      ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
       ["Chop etish", pick("print")],
     ];
@@ -290,6 +406,22 @@
     if (e.target.closest("[data-contact]")) { contactOwner(); return; }
     if (!current) return;
     const v = getValues(current);
+
+    const phAdd = e.target.closest("[data-ph-add]");
+    if (phAdd) {
+      const input = root.querySelector(`[data-photo-input="${phAdd.dataset.phAdd}"]`);
+      if (input) input.click();
+      return;
+    }
+    const phDel = e.target.closest("[data-ph-del]");
+    if (phDel) {
+      const list = photosOf(current);
+      const i = list.findIndex((p) => p.key === phDel.dataset.phDel);
+      if (i >= 0) list.splice(i, 1);
+      tick();
+      syncPhotos(current);
+      return;
+    }
 
     const catChip = e.target.closest("[data-cat]");
     if (catChip) {
@@ -360,7 +492,14 @@
   root.addEventListener("change", (e) => {
     if (!current) return;
     const id = e.target.dataset.switch;
-    if (id) { getValues(current)[id] = e.target.checked; tick(); }
+    if (id) { getValues(current)[id] = e.target.checked; tick(); applyShowIf(current); refreshLive(current); return; }
+    const pid = e.target.dataset.photoInput;
+    if (pid) {
+      const f = current.fields.find((x) => x.id === pid);
+      const files = e.target.files;
+      if (f && files && files.length) addPhotos(current, f, files);
+      e.target.value = "";
+    }
   });
 
   /* ---------------------------------------------------------------
@@ -384,7 +523,12 @@
     const v = getValues(svc);
     const status = document.getElementById("aiStatus");
     const btn = document.getElementById("aiSubmit");
-    const bad = validate(svc, v);
+    let bad = validate(svc, v);
+    const phField = svc.fields.find((x) => x.type === "photos");
+    if (!bad && phField && shown(svc, v, phField.id) && photosOf(svc).some((p) => p.status === "up")) {
+      bad = root.querySelector(`.ai-field[data-f="${phField.id}"]`);
+      if (bad) bad.classList.add("error");
+    }
     if (bad) {
       haptic("error");
       bad.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -393,6 +537,8 @@
     }
 
     svc.fields.forEach((f) => { if (f.fallback && !String(v[f.id] || "").trim()) v[f.id] = f.fallback; });
+    const visible = { ...v };
+    svc.fields.forEach((f) => { if (!shown(svc, v, f.id)) visible[f.id] = Array.isArray(v[f.id]) ? [] : ""; });
     btn.disabled = true;
     status.textContent = "Yuborilmoqda...";
     try {
@@ -402,8 +548,8 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           service: svc.id,
-          fields: v,
-          summary: summaryPairs(svc, v),
+          fields: visible,
+          summary: summaryPairs(svc, visible),
           price: CFG.prices[svc.id],
           user,
           initData: tg ? tg.initData : null,
@@ -422,6 +568,8 @@
   }
 
   function renderDone(svc) {
+    photoState[svc.id] = [];
+    syncPhotos(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">✅</div>
@@ -539,6 +687,7 @@
       skills: String(v.skills || "").trim(),
       langs: Array.isArray(v.langs) ? v.langs : [],
       photo: v.photo !== false,
+      photoUrl: (photosOf(svc).find((p) => p.status !== "err" && p.thumb) || {}).thumb || "",
     };
   }
 
@@ -645,7 +794,9 @@
       ${sec("Ko'nikmalar")}<div style="display:flex;flex-wrap:wrap;gap:1.2cqw;margin-top:1.6cqw">${skills.map((x) => `<span style="font-size:2.4cqw;padding:.6cqw 1.8cqw;border-radius:3cqw;background:${accent}1f;color:${accent}">${esc(clip(x, 20))}</span>`).join("")}</div>
       ${d.langs.length ? sec("Tillar") + `<div style="font-size:2.7cqw;margin-top:1.4cqw">${esc(d.langs.join(", "))}</div>` : ""}`;
   }
-  const photoBox = (d, size, c) => d.photo ? `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c};display:grid;place-items:center;font-size:${size * 0.45}cqw;color:#fff">👤</div>` : "";
+  const photoBox = (d, size, c) => !d.photo ? "" : d.photoUrl
+    ? `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c} url(${d.photoUrl}) center/cover"></div>`
+    : `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c};display:grid;place-items:center;font-size:${size * 0.45}cqw;color:#fff">👤</div>`;
 
   const PAGES = {
     resume(style, kind, d) {

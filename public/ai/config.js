@@ -36,6 +36,7 @@
 
   window.AI_CONFIG = {
     endpoint: "/api/ai-request",
+    uploadEndpoint: "/api/ai-upload",
 
     // Narxlar (so'm). null — "kelishiladi" deb ko'rsatiladi.
     // Narxni belgilash uchun raqam yozing, masalan: presentation: 15000
@@ -61,6 +62,9 @@
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
           { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "classic" },
           { id: "images", type: "switch", label: "Slaydlarga mavzuga mos rasmlar qo'shilsin", default: true },
+          { id: "photos", type: "photos", label: "O'z rasmlaringiz", hint: "Ixtiyoriy — yuklagan rasmlaringiz slaydlarga qo'yiladi (10 tagacha)", max: 10, default: [] },
+          { id: "charts", type: "switch", label: "📊 Diagramma qo'shilsin", default: false },
+          { id: "tables", type: "switch", label: "📋 Jadval qo'shilsin", default: false },
           { id: "author", type: "text", label: "Muallif (F.I.Sh)", placeholder: "Birinchi slaydda ko'rsatiladi", max: 120 },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pptx", l: "PowerPoint (.pptx)" }, { v: "pdf", l: "PDF" }], default: "pptx" },
           PRINT_FIELD,
@@ -188,7 +192,8 @@
           { id: "education", type: "textarea", label: "Ma'lumoti", placeholder: "Masalan: 2016–2020, TDIU, Buxgalteriya hisobi (bakalavr)", max: 600 },
           { id: "skills", type: "textarea", label: "Ko'nikmalar", placeholder: "Masalan: 1C, Excel, hujjatlar bilan ishlash, muloqot", max: 600 },
           { id: "langs", type: "multichips", label: "Qaysi tillarni bilasiz", options: ["O'zbek", "Rus", "Ingliz", "Turk", "Koreys", "Nemis", "Arab"], default: ["O'zbek", "Rus"] },
-          { id: "photo", type: "switch", label: "Rasm bilan (rasmingizni keyin botga yuborasiz)", default: true },
+          { id: "photo", type: "switch", label: "Resume rasm bilan bo'lsin", default: true },
+          { id: "photos", type: "photos", label: "Rasmingiz", hint: "Yuzingiz aniq ko'rinadigan rasm (hujjat rasmiga o'xshash). Hozir yuklamasangiz, keyin botga yuborishingiz mumkin", max: 1, default: [], showIf: "photo" },
           { id: "lang", type: "chips", label: "Resume tili", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "ru", l: "Rus" }, { v: "en", l: "Ingliz" }], default: "uz_lat" },
           { id: "template", type: "templates", label: "Dizayn", set: "resume", default: "classic" },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "docx", l: "Word (.docx)" }], default: "pdf" },
