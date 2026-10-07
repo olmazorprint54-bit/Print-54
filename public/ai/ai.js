@@ -574,7 +574,7 @@
       <div class="ai-done glass">
         <div class="big">✅</div>
         <h3>So'rovingiz qabul qilindi!</h3>
-        <p>${auto ? "Resume'ingiz avtomatik tayyorlanmoqda. Tekshiruvdan so'ng PDF fayl shu botga xabar bo'lib keladi." : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
+        <p>${auto ? "Resume'ingiz avtomatik tayyorlanmoqda — bir daqiqa ichida PDF fayl shu botga xabar bo'lib keladi. Uni «Buyurtmalarim» bo'limidan ham olishingiz mumkin." : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
         <button type="button" class="order-btn" data-again="1">Yana so'rov qoldirish</button>
         <div class="pill-btn glass" data-contact="1" style="margin-top:10px;">Biz bilan bog'lanish</div>
       </div>`;

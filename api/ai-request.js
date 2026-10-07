@@ -94,7 +94,7 @@ function requestText(body, summary, orderId) {
 
   if (orderId && body.autoResume) {
     lines.push("");
-    lines.push("🤖 <i>Resume avtomatik tayyorlanmoqda — bir daqiqada PDF shu yerga keladi.</i>");
+    lines.push("🤖 <i>Resume avtomatik tayyorlanib, mijozga o'zi yuboriladi. Chop etish uchun PDF nusxasi shu yerga keladi.</i>");
   } else if (orderId) {
     lines.push("");
     lines.push("📎 <i>Tayyor faylni shu xabarga javob (Reply) qilib yuboring — mijozga avtomatik boradi.</i>");
@@ -217,18 +217,29 @@ module.exports = async (req, res) => {
     if (error) console.error("AI buyurtmani bazaga yozib bo'lmadi:", error);
     else orderId = inserted.id;
 
-    const text = requestText(body, summary, orderId);
-    const messageId = await sendToOwner(text);
+    // Avtomatik resume egaga kelmaydi — faqat chop etish so'ralsa (yoki
+    // avtomatik bo'lmasa, resume-pdf.js manualText ni yuboradi)
+    const auto = !!(orderId && body.autoResume);
+    const wantsPrint = !!(fields.print && fields.print !== "none");
+    const details = { topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) };
+    if (auto) details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
+
+    let messageId = null;
+    if (!auto || wantsPrint) {
+      details.text = requestText(body, summary, orderId);
+      messageId = await sendToOwner(details.text);
+    }
 
     if (orderId) {
       await supabase
         .from("orders")
-        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, fields: saved, text, ...(photos.length ? { photos } : {}) } })
+        .update({ telegram_message_id: messageId, details })
         .eq("id", orderId);
     }
 
-    // Rasmlar yuborilmasa ham buyurtma qabul qilingan bo'ladi
-    if (photos.length) {
+    // Rasmlar yuborilmasa ham buyurtma qabul qilingan bo'ladi (avtomatik
+    // resume'da rasm PDF ichida — alohida yuborilmaydi)
+    if (photos.length && !auto) {
       try {
         await sendPhotosToOwner(photos, orderId, messageId);
       } catch (err) {
@@ -236,9 +247,9 @@ module.exports = async (req, res) => {
       }
     }
 
-    if (orderId && body.autoResume) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
+    if (auto) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
 
-    res.status(200).json({ ok: true, orderId, auto: !!(orderId && body.autoResume) });
+    res.status(200).json({ ok: true, orderId, auto });
   } catch (err) {
     console.error(err);
     res.status(500).json({ ok: false, error: "So'rovni yuborib bo'lmadi" });
