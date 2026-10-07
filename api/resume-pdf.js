@@ -21,14 +21,14 @@ const supabase = createClient(
 const BUCKET = "ai-uploads";
 
 
+// Ikkala paket ham ESM — require() o'rniga import() (Vercel'dagi Node
+// versiyasi ESM ni require() bilan yuklay olmaydi)
 async function launchBrowser() {
-  const puppeteer = require("puppeteer-core");
+  const { default: puppeteer } = await import("puppeteer-core");
   if (process.env.LOCAL_CHROME) {
     return puppeteer.launch({ executablePath: process.env.LOCAL_CHROME, headless: true });
   }
-  // paket ESM — require() da asosiy obyekt .default ichida bo'ladi
-  const mod = require("@sparticuz/chromium");
-  const chromium = mod.default || mod;
+  const { default: chromium } = await import("@sparticuz/chromium");
   chromium.setGraphicsMode = false;
   return puppeteer.launch({
     args: await puppeteer.defaultArgs({ args: chromium.args, headless: "shell" }),
