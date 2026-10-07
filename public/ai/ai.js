@@ -284,6 +284,7 @@
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}">
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
         <div class="tpl-name">${esc(t.name)}</div>
+        ${t.auto ? '<div class="tpl-badge">⚡ 1 daqiqada</div>' : ""}
       </div>`).join("");
   }
 
@@ -345,6 +346,12 @@
       .filter((p) => p.value !== "");
   }
 
+  // Server (api/_lib/resume-html.js canAutoResume) bilan bir xil shart
+  const isAutoResume = (v) => {
+    const t = CFG.templates.resume.find((x) => x.id === v.template);
+    return !!(t && t.auto && v.format !== "docx");
+  };
+
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
@@ -355,6 +362,7 @@
       [svc.id === "resume" ? "Lavozim" : "Mavzu", pick("topic") || pick("position") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
+      ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),

@@ -149,6 +149,7 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .tpl-card.active{ border-color: rgba(74,222,128,.6); box-shadow: 0 0 26px -6px rgba(74,222,128,.6); }
 .tpl-name{ font-size:12px; font-weight:600; text-align:center; margin-top:7px; }
 .tpl-card.active .tpl-name::before{ content:"✓ "; color:#4ADE80; }
+.tpl-badge{ margin:5px auto 1px; width:max-content; padding:2px 8px; border-radius:999px; font-size:10.5px; font-weight:700; color:#0B0D12; background: linear-gradient(135deg,#FBBF24,#F472B6); }
 .tpl-more{
   margin-top:6px; width:100%; padding:10px; border-radius:999px; font-size:12.5px; font-weight:600;
   text-align:center; cursor:pointer;
