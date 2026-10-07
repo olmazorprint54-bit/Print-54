@@ -163,8 +163,7 @@
       const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
       if (el) el.classList.remove("error");
     }
-    const sum = document.getElementById("aiSummary");
-    if (sum && current === svc) sum.innerHTML = summaryHtml(svc, getValues(svc));
+    if (current === svc) refreshLive(svc);
   }
 
   // Katta rasmni 1600px gacha kichraytirib JPEG qilamiz (+ kichik ko'rinish)
@@ -288,6 +287,16 @@
       </div>`).join("");
   }
 
+  // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
+  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || !f.showIf || !!v[f.showIf]; };
+  function applyShowIf(svc) {
+    const v = getValues(svc);
+    svc.fields.filter((f) => f.showIf).forEach((f) => {
+      const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
+      if (el) el.hidden = !v[f.showIf];
+    });
+  }
+
   function renderForm(svc) {
     const v = getValues(svc);
     root.innerHTML = `
@@ -312,6 +321,7 @@
     if (!svc) return;
     current = svc;
     renderForm(svc);
+    applyShowIf(svc);
     syncBackButton();
     window.scrollTo(0, 0);
   }
@@ -345,7 +355,7 @@
       [svc.id === "resume" ? "Lavozim" : "Mavzu", pick("topic") || pick("position") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
-      ...(v.photos && v.photos.length ? [["O'z rasmlari", `${v.photos.length} ta`]] : []),
+      ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
@@ -482,7 +492,7 @@
   root.addEventListener("change", (e) => {
     if (!current) return;
     const id = e.target.dataset.switch;
-    if (id) { getValues(current)[id] = e.target.checked; tick(); refreshLive(current); return; }
+    if (id) { getValues(current)[id] = e.target.checked; tick(); applyShowIf(current); refreshLive(current); return; }
     const pid = e.target.dataset.photoInput;
     if (pid) {
       const f = current.fields.find((x) => x.id === pid);
@@ -515,7 +525,7 @@
     const btn = document.getElementById("aiSubmit");
     let bad = validate(svc, v);
     const phField = svc.fields.find((x) => x.type === "photos");
-    if (!bad && phField && photosOf(svc).some((p) => p.status === "up")) {
+    if (!bad && phField && shown(svc, v, phField.id) && photosOf(svc).some((p) => p.status === "up")) {
       bad = root.querySelector(`.ai-field[data-f="${phField.id}"]`);
       if (bad) bad.classList.add("error");
     }
@@ -527,6 +537,8 @@
     }
 
     svc.fields.forEach((f) => { if (f.fallback && !String(v[f.id] || "").trim()) v[f.id] = f.fallback; });
+    const visible = { ...v };
+    svc.fields.forEach((f) => { if (!shown(svc, v, f.id)) visible[f.id] = Array.isArray(v[f.id]) ? [] : ""; });
     btn.disabled = true;
     status.textContent = "Yuborilmoqda...";
     try {
@@ -536,8 +548,8 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           service: svc.id,
-          fields: v,
-          summary: summaryPairs(svc, v),
+          fields: visible,
+          summary: summaryPairs(svc, visible),
           price: CFG.prices[svc.id],
           user,
           initData: tg ? tg.initData : null,
@@ -675,6 +687,7 @@
       skills: String(v.skills || "").trim(),
       langs: Array.isArray(v.langs) ? v.langs : [],
       photo: v.photo !== false,
+      photoUrl: (photosOf(svc).find((p) => p.status !== "err" && p.thumb) || {}).thumb || "",
     };
   }
 
@@ -781,7 +794,9 @@
       ${sec("Ko'nikmalar")}<div style="display:flex;flex-wrap:wrap;gap:1.2cqw;margin-top:1.6cqw">${skills.map((x) => `<span style="font-size:2.4cqw;padding:.6cqw 1.8cqw;border-radius:3cqw;background:${accent}1f;color:${accent}">${esc(clip(x, 20))}</span>`).join("")}</div>
       ${d.langs.length ? sec("Tillar") + `<div style="font-size:2.7cqw;margin-top:1.4cqw">${esc(d.langs.join(", "))}</div>` : ""}`;
   }
-  const photoBox = (d, size, c) => d.photo ? `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c};display:grid;place-items:center;font-size:${size * 0.45}cqw;color:#fff">👤</div>` : "";
+  const photoBox = (d, size, c) => !d.photo ? "" : d.photoUrl
+    ? `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c} url(${d.photoUrl}) center/cover"></div>`
+    : `<div style="flex:none;width:${size}cqw;height:${size * 1.2}cqw;border-radius:1.5cqw;background:${c};display:grid;place-items:center;font-size:${size * 0.45}cqw;color:#fff">👤</div>`;
 
   const PAGES = {
     resume(style, kind, d) {
