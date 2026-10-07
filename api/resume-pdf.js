@@ -26,7 +26,9 @@ async function launchBrowser() {
   if (process.env.LOCAL_CHROME) {
     return puppeteer.launch({ executablePath: process.env.LOCAL_CHROME, headless: true });
   }
-  const chromium = require("@sparticuz/chromium");
+  // paket ESM — require() da asosiy obyekt .default ichida bo'ladi
+  const mod = require("@sparticuz/chromium");
+  const chromium = mod.default || mod;
   chromium.setGraphicsMode = false;
   return puppeteer.launch({
     args: await puppeteer.defaultArgs({ args: chromium.args, headless: "shell" }),
@@ -106,9 +108,10 @@ async function deliver(order, pdf, name) {
 }
 
 // Avtomatik bo'lmadi — buyurtma egaga oddiy (qo'lda bajariladigan) ko'rinishda boradi
-async function fallbackToOwner(orderId, order) {
+async function fallbackToOwner(orderId, order, reason) {
   const manual = order && order.details && order.details.manualText;
-  const warn = `⚠️ <b>Resume'ni avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.`;
+  const why = reason ? `\n<i>Sabab: ${String(reason).replace(/[<>&]/g, "").slice(0, 200)}</i>` : "";
+  const warn = `⚠️ <b>Resume'ni avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.${why}`;
   if (manual && !order.telegram_message_id) {
     const sent = await telegram("sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `${warn}\n\n${manual}`, parse_mode: "HTML", disable_web_page_preview: true });
     if (sent.ok) {
@@ -156,7 +159,7 @@ module.exports = async (req, res) => {
     res.status(200).json({ ok: true, size: pdf.length });
   } catch (err) {
     console.error(err);
-    await fallbackToOwner(orderId, order).catch((e) => console.error(e));
+    await fallbackToOwner(orderId, order, err && err.message).catch((e) => console.error(e));
     res.status(500).json({ ok: false });
   }
 };
