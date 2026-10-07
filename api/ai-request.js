@@ -31,6 +31,10 @@ const SERVICE_LABELS = {
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
 const QTY_FIELD = { presentation: "slides", essay: "pages", referat: "pages", test: "count", questions: "count", crossword: "words" };
 
+const BUCKET = "ai-uploads"; // mijoz rasmlari (api/ai-upload.js)
+const MAX_PHOTOS = 10;
+const LINK_TTL = 7 * 24 * 60 * 60; // rasm havolasi 7 kun amal qiladi
+
 const MAX_LINES = 40;
 const MAX_VALUE = 900; // resume tajribasi kabi uzun maydonlar uchun
 const MAX_MESSAGE = 4000; // Telegram chegarasi 4096
@@ -111,6 +115,37 @@ async function sendToOwner(text) {
   return data.result.message_id;
 }
 
+// Mijoz yuklagan rasmlar yo'li faqat o'zining papkasidan bo'lishi kerak
+function cleanPhotos(photos, userId) {
+  if (!userId || !Array.isArray(photos)) return [];
+  const re = new RegExp("^" + parseInt(userId, 10) + "/[\\w-]+\\.jpg$");
+  return [...new Set(photos.filter((p) => typeof p === "string" && re.test(p)))].slice(0, MAX_PHOTOS);
+}
+
+// Rasmlarni egasiga buyurtma xabariga javob qilib, albom ko'rinishida yuboradi
+async function sendPhotosToOwner(paths, orderId, replyTo) {
+  const { data, error } = await supabase.storage.from(BUCKET).createSignedUrls(paths, LINK_TTL);
+  if (error) throw error;
+  const urls = data.map((x) => x.signedUrl).filter(Boolean);
+  if (!urls.length) return;
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const res = await fetch(`https://api.telegram.org/bot${token}/sendMediaGroup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: process.env.OWNER_CHAT_ID,
+      media: urls.map((url, i) => ({
+        type: "photo",
+        media: url,
+        ...(i === 0 ? { caption: `📷 Mijoz rasmlari${orderId ? " — #" + orderId : ""} (${urls.length} ta)` } : {}),
+      })),
+      ...(replyTo ? { reply_parameters: { message_id: replyTo, allow_sending_without_reply: true } } : {}),
+    }),
+  });
+  const out = await res.json();
+  if (!out.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(out));
+}
+
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false, error: "Method not allowed" });
@@ -129,6 +164,7 @@ module.exports = async (req, res) => {
     const u = body.user && body.user.id ? body.user : null;
     const price = Number(body.price);
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
+    const photos = cleanPhotos(fields.photos, u && u.id);
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -143,7 +179,7 @@ module.exports = async (req, res) => {
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
         status: "active",
-        details: { topic: topicOf(fields), summary },
+        details: { topic: topicOf(fields), summary, ...(photos.length ? { photos } : {}) },
       })
       .select()
       .single();
@@ -156,8 +192,17 @@ module.exports = async (req, res) => {
     if (orderId) {
       await supabase
         .from("orders")
-        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, text } })
+        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, text, ...(photos.length ? { photos } : {}) } })
         .eq("id", orderId);
+    }
+
+    // Rasmlar yuborilmasa ham buyurtma qabul qilingan bo'ladi
+    if (photos.length) {
+      try {
+        await sendPhotosToOwner(photos, orderId, messageId);
+      } catch (err) {
+        console.error("Mijoz rasmlarini yuborib bo'lmadi:", err);
+      }
     }
 
     res.status(200).json({ ok: true, orderId });

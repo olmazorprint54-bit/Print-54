@@ -103,6 +103,30 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .chip.active{ background: var(--glass-active); border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
 .chip.multi.active::before{ content:"✓ "; color:#4ADE80; }
 
+/* ---------- mijoz rasmlari ---------- */
+.ai-hint{ font-size:11.5px; color: var(--ink-soft); margin:-4px 0 10px; line-height:1.45; }
+.ph-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; }
+.ph-tile, .ph-add{ position:relative; aspect-ratio:1; border-radius:14px; overflow:hidden; }
+.ph-tile img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ph-tile.up img, .ph-tile.err img{ opacity:.45; }
+.ph-tile.err{ outline:2px solid #F87171; outline-offset:-2px; }
+.ph-x{
+  position:absolute; top:4px; right:4px; width:22px; height:22px; border-radius:50%;
+  display:grid; place-items:center; font-size:15px; line-height:1; cursor:pointer;
+  background: rgba(5,6,10,.72); color:#fff;
+}
+.ph-spin{
+  position:absolute; inset:0; margin:auto; width:22px; height:22px; border-radius:50%;
+  border:2.5px solid rgba(255,255,255,.3); border-top-color:#fff; animation: ph-spin .8s linear infinite;
+}
+@keyframes ph-spin{ to{ transform: rotate(360deg); } }
+.ph-bad{ position:absolute; left:0; right:0; bottom:0; padding:3px 0; font-size:10px; font-weight:700; text-align:center; background: rgba(248,113,113,.85); color:#fff; }
+.ph-add{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; cursor:pointer;
+  border:1.5px dashed rgba(255,255,255,.22); color: var(--ink-soft); font-size:10.5px; text-align:center;
+}
+.ph-add b{ font-size:24px; font-weight:400; line-height:1; color: var(--ink); }
+
 .switch-row{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
   padding:12px 16px; border-radius:16px; font-size:13.5px;

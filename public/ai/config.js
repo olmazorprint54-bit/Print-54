@@ -36,6 +36,7 @@
 
   window.AI_CONFIG = {
     endpoint: "/api/ai-request",
+    uploadEndpoint: "/api/ai-upload",
 
     // Narxlar (so'm). null — "kelishiladi" deb ko'rsatiladi.
     // Narxni belgilash uchun raqam yozing, masalan: presentation: 15000
@@ -61,6 +62,9 @@
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
           { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "classic" },
           { id: "images", type: "switch", label: "Slaydlarga mavzuga mos rasmlar qo'shilsin", default: true },
+          { id: "photos", type: "photos", label: "O'z rasmlaringiz", hint: "Ixtiyoriy — yuklagan rasmlaringiz slaydlarga qo'yiladi (10 tagacha)", max: 10, default: [] },
+          { id: "charts", type: "switch", label: "📊 Diagramma qo'shilsin", default: false },
+          { id: "tables", type: "switch", label: "📋 Jadval qo'shilsin", default: false },
           { id: "author", type: "text", label: "Muallif (F.I.Sh)", placeholder: "Birinchi slaydda ko'rsatiladi", max: 120 },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pptx", l: "PowerPoint (.pptx)" }, { v: "pdf", l: "PDF" }], default: "pptx" },
           PRINT_FIELD,
