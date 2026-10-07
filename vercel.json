@@ -7,5 +7,11 @@
       "maxDuration": 60,
       "includeFiles": "node_modules/@sparticuz/chromium/bin/**"
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cleanup-uploads",
+      "schedule": "0 3 * * *"
+    }
+  ]
 }

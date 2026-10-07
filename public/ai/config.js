@@ -38,7 +38,7 @@
     endpoint: "/api/ai-request",
     uploadEndpoint: "/api/ai-upload",
 
-    // Narxlar (so'm). null — "kelishiladi" deb ko'rsatiladi.
+    // Narxlar (so'm). null — "kelishiladi", 0 — "Tekin" deb ko'rsatiladi.
     // Narxni belgilash uchun raqam yozing, masalan: presentation: 15000
     prices: {
       presentation: null,
@@ -48,7 +48,7 @@
       test: null,
       questions: null,
       crossword: null,
-      resume: null,
+      resume: 0,
     },
 
     services: [

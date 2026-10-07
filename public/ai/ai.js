@@ -16,7 +16,7 @@
   const optL = (o) => (typeof o === "object" ? o.l : o);
   const clip = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
   const fmt = (n) => Math.round(n).toLocaleString("ru-RU") + " so'm";
-  const priceText = (id) => (CFG.prices[id] == null ? "Narxi kelishiladi" : fmt(CFG.prices[id]));
+  const priceText = (id) => (CFG.prices[id] == null ? "Narxi kelishiladi" : CFG.prices[id] === 0 ? "Tekin" : fmt(CFG.prices[id]));
   const haptic = (kind) => { try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred(kind); } catch (e) {} };
   const tick = () => { try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch (e) {} };
 
@@ -370,7 +370,9 @@
       ["Chop etish", pick("print")],
     ];
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
-      `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${CFG.prices[svc.id] == null ? "16px" : "23px"}">${esc(priceText(svc.id))}</span></div>`;
+      // tekin xizmatda chop etish alohida hisoblanadi
+      (() => { const t = CFG.prices[svc.id] === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : priceText(svc.id);
+        return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${t.length > 12 ? "16px" : "23px"}">${esc(t)}</span></div>`; })();
   }
 
   function refreshLive(svc) {

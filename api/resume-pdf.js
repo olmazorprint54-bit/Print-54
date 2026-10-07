@@ -37,10 +37,22 @@ async function launchBrowser() {
   });
 }
 
+// Chrome'ni ishga tushirish eng ko'p CPU oladi — server "issiq" turgan
+// paytda keyingi buyurtmalar ochiq brauzerdan foydalanadi
+let browserPromise = null;
+async function getBrowser() {
+  if (browserPromise) {
+    const b = await browserPromise.catch(() => null);
+    if (b && b.connected) return b;
+  }
+  browserPromise = launchBrowser();
+  return browserPromise;
+}
+
 async function renderPdf(html) {
-  const browser = await launchBrowser();
+  const browser = await getBrowser();
+  const page = await browser.newPage();
   try {
-    const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "networkidle0", timeout: 25000 });
     await page.evaluate(async () => {
       await document.fonts.ready;
@@ -49,7 +61,12 @@ async function renderPdf(html) {
     });
     return Buffer.from(await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true }));
   } finally {
-    await browser.close();
+    await page.close().catch(() => {});
+    // lokal sinovlarda jarayon tugashi uchun brauzer yopiladi
+    if (process.env.LOCAL_CHROME) {
+      browserPromise = null;
+      await browser.close();
+    }
   }
 }
 
@@ -158,6 +175,10 @@ module.exports = async (req, res) => {
     const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
     const pdf = await renderPdf(resumeHtml(d, origin));
     await deliver(order, pdf, d.name);
+    // rasm PDF ichida — omborda saqlash shart emas (bepul joy 1 GB)
+    if (order.details.photos && order.details.photos.length) {
+      await supabase.storage.from(BUCKET).remove(order.details.photos).catch((e) => console.error(e));
+    }
     res.status(200).json({ ok: true, size: pdf.length });
   } catch (err) {
     console.error(err);
