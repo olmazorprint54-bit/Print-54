@@ -230,7 +230,7 @@
           { id: "_h3", type: "heading", label: "Mehnat faoliyati" },
           { id: "work", type: "textarea", label: "Mehnat faoliyati", placeholder: "Masalan:\n2003-2007 yy. - Samarqand davlat universiteti talabasi\n2009-2018 yy. - Urgut tumani 5-maktab matematika o'qituvchisi\n2018 y. - h.v. - Urgut tumani 5-maktab direktori", hint: "Har bir qator yil bilan boshlansin. Hozirgi ish: «2018 y. - h.v. - ...» (h.v. — hozirgi vaqtgacha)", required: true, check: "work", max: 2000 },
           { id: "relatives", type: "relatives", label: "Yaqin qarindoshlar", hint: "Ota-ona, aka-uka, opa-singil, turmush o'rtog'i, farzandlar, qaynota va qaynona — hammasini yozing", default: [{ rel: "Otasi" }, { rel: "Onasi" }] },
-          { id: "lang", type: "chips", label: "Hujjat alifbosi", options: [{ v: "cyr", l: "Kirill (rasmiy)" }, { v: "lat", l: "Lotin" }], default: "cyr" },
+          { id: "lang", type: "chips", label: "Hujjat alifbosi", options: [{ v: "lat", l: "Lotin" }, { v: "cyr", l: "Kirill" }], default: "lat" },
           { id: "template", type: "templates", label: "Namuna", set: "obyektivka", default: "rasmiy" },
           PRINT_FIELD,
         ],

@@ -5,7 +5,7 @@
 // Talablar (namuna izohidan): Times New Roman 11 (sarlavhalar 14/12),
 // hoshiyalar: yuqori 1,5 sm, past 1 sm, o'ng 1 sm, chap 2 sm,
 // fayl nomi — to'liq F.I.Sh., 3x4 rasm.
-// Hujjat kirill (rasmiy) yoki lotin alifbosida; lotinda yozilgan matn
+// Hujjat lotin (asosiy) yoki kirill alifbosida; lotinda yozilgan matn
 // kirillga public/ai/translit.js bilan o'giriladi.
 // ---------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const CELL_LINES = { top: LINE, bottom: LINE, left: LINE, right: LINE };
 const canAutoObyektivka = (fields) => !!(fields && clean(fields.fio, 200).split(" ").length >= 3);
 
 function obyektivkaData(f) {
-  const cyr = f.lang !== "lat";
+  const cyr = f.lang === "cyr";
   const T = cyr ? uzCyr : (x) => x;
   const t = (v, max) => T(clean(v, max));
   const rels = (Array.isArray(f.relatives) ? f.relatives : []).slice(0, 20).map((r) => ({
