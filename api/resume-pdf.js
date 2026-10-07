@@ -44,6 +44,7 @@ async function renderPdf(html) {
     await page.setContent(html, { waitUntil: "networkidle0", timeout: 25000 });
     await page.evaluate(async () => {
       await document.fonts.ready;
+      if (window.__fit) window.__fit();
       await Promise.all([...document.images].map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
     });
     return Buffer.from(await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true }));
@@ -130,7 +131,29 @@ async function fallbackToOwner(orderId, order, reason) {
   });
 }
 
+// VAQTINCHA: serverda Canva dizaynlari PDF ga aylanishini tekshirish.
+// Faqat joriy deploy ID si bilan ishlaydi; tekshiruvdan so'ng olib tashlanadi.
+async function selfTest(req, res) {
+  const dep = String(process.env.VERCEL_DEPLOYMENT_ID || "").replace(/^dpl_/, "");
+  if (!dep || String(req.query.selftest).replace(/^dpl_/, "") !== dep) {
+    res.status(403).json({ ok: false });
+    return;
+  }
+  const t = Date.now();
+  try {
+    const d = resumeData({ name: "Sinov Resume", position: "Buxgalter", phone: "+998 90 000 00 00", email: "sinov@mail.uz", city: "Toshkent", about: "Sinov matni.", experience: "2021–hozir — Bank, kassir", education: "2015–2019 — TDIU", skills: "1C, Excel", langs: ["O'zbek", "Rus"], template: String(req.query.t || "rez-toq"), lang: "uz_lat" }, "");
+    const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
+    const pdf = await renderPdf(resumeHtml(d, origin));
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("X-Render-Ms", String(Date.now() - t));
+    res.status(200).send(pdf);
+  } catch (err) {
+    res.status(500).json({ ok: false, error: String((err && err.stack) || err).slice(0, 1500) });
+  }
+}
+
 module.exports = async (req, res) => {
+  if (req.method === "GET" && req.query && req.query.selftest) return selfTest(req, res);
   if (req.method !== "POST") {
     res.status(405).json({ ok: false });
     return;
@@ -154,7 +177,8 @@ module.exports = async (req, res) => {
     }
 
     const d = resumeData(order.details.fields, await photoUrl(order));
-    const pdf = await renderPdf(resumeHtml(d));
+    const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
+    const pdf = await renderPdf(resumeHtml(d, origin));
     await deliver(order, pdf, d.name);
     res.status(200).json({ ok: true, size: pdf.length });
   } catch (err) {

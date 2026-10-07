@@ -7,12 +7,14 @@
 // AI ishlatilmaydi: matn mijoz yozganidek joylanadi.
 // ---------------------------------------------------------------
 
+const { rezHtml, loadSpec, REZ_IDS } = require("./rez-html");
+
 const STYLES = ["classic", "modern", "minimal"];
 
 const LABELS = {
-  uz_lat: { exp: "Ish tajribasi", edu: "Ma'lumoti", skills: "Ko'nikmalar", langs: "Tillar", contact: "Aloqa", born: "Tug'ilgan yil" },
-  ru: { exp: "Опыт работы", edu: "Образование", skills: "Навыки", langs: "Языки", contact: "Контакты", born: "Год рождения" },
-  en: { exp: "Work experience", edu: "Education", skills: "Skills", langs: "Languages", contact: "Contact", born: "Born" },
+  uz_lat: { about: "Men haqimda", exp: "Ish tajribasi", edu: "Ma'lumoti", skills: "Ko'nikmalar", langs: "Tillar", contact: "Aloqa", born: "Tug'ilgan yil" },
+  ru: { about: "Обо мне", exp: "Опыт работы", edu: "Образование", skills: "Навыки", langs: "Языки", contact: "Контакты", born: "Год рождения" },
+  en: { about: "About me", exp: "Work experience", edu: "Education", skills: "Skills", langs: "Languages", contact: "Contact", born: "Born" },
 };
 
 const LANG_NAMES = {
@@ -40,6 +42,8 @@ function resumeData(fields, photoUrl) {
   const names = LANG_NAMES[lang] || {};
   return {
     style: STYLES.includes(f.template) ? f.template : "classic",
+    template: STYLES.includes(f.template) || REZ_IDS.includes(f.template) ? f.template : "classic",
+    about: text(f.about, 700),
     lang,
     name: text(f.name, 80),
     position: text(f.position, 120),
@@ -55,16 +59,21 @@ function resumeData(fields, photoUrl) {
   };
 }
 
-const canAutoResume = (fields) => !!(fields && STYLES.includes(fields.template) && fields.format !== "docx" && text(fields.name, 80));
+// O'zimizning 3 dizayn va Canva'dan o'tkazilgan 12 dizayn — hammasi avtomatik
+const canAutoResume = (fields) => !!(fields && (STYLES.includes(fields.template) || REZ_IDS.includes(fields.template)) && fields.format !== "docx" && text(fields.name, 80));
 
 function itemsHtml(list) {
   return list.map((it) => `<div class="item">${it.date ? `<div class="date">${esc(it.date)}</div>` : ""}<div class="body">${esc(it.body)}</div></div>`).join("");
 }
 
-function resumeHtml(d) {
+// origin — Canva dizaynlari foni shu manzildan yuklanadi (https://print-54.vercel.app)
+function resumeHtml(d, origin) {
+  const spec = loadSpec(d.template);
+  if (spec) return rezHtml(d, spec, origin);
   const L = LABELS[d.lang];
   const contact = [d.phone, d.email, d.city, d.birth && `${L.born}: ${d.birth}`].filter(Boolean);
   const sec = (title, inner) => (inner ? `<section><h2>${esc(title)}</h2>${inner}</section>` : "");
+  const about = sec(L.about, d.about ? `<p class="body">${esc(d.about)}</p>` : "");
   const exp = sec(L.exp, itemsHtml(d.experience));
   const edu = sec(L.edu, itemsHtml(d.education));
   const skills = sec(L.skills, d.skills.length ? `<div class="chips">${d.skills.map((s) => `<span>${esc(s)}</span>`).join("")}</div>` : "");
@@ -79,11 +88,11 @@ function resumeHtml(d) {
         ${d.skills.length ? `<h3>${esc(L.skills)}</h3>${d.skills.map((s) => `<p>• ${esc(s)}</p>`).join("")}` : ""}
         ${d.langs.length ? `<h3>${esc(L.langs)}</h3><p>${esc(d.langs.join(", "))}</p>` : ""}
       </aside>
-      <main>${head}${exp}${edu}</main>`;
+      <main>${head}${about}${exp}${edu}</main>`;
   } else if (d.style === "minimal") {
-    body = `<header>${photo}${head}<div class="contact">${contact.map(esc).join(" · ")}</div></header>${exp}${edu}${skills}${langs}`;
+    body = `<header>${photo}${head}<div class="contact">${contact.map(esc).join(" · ")}</div></header>${about}${exp}${edu}${skills}${langs}`;
   } else {
-    body = `<header>${photo}<div>${head}<div class="contact">${contact.map(esc).join(" · ")}</div></div></header>${exp}${edu}${skills}${langs}`;
+    body = `<header>${photo}<div>${head}<div class="contact">${contact.map(esc).join(" · ")}</div></div></header>${about}${exp}${edu}${skills}${langs}`;
   }
 
   return `<!doctype html><html lang="${d.lang === "ru" ? "ru" : d.lang === "en" ? "en" : "uz"}"><head><meta charset="utf-8">
