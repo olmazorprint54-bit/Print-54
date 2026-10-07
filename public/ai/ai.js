@@ -868,7 +868,7 @@
       langs: Array.isArray(v.langs) ? v.langs : [],
       photo: v.photo !== false,
       // obyektivka uchun
-      cyr: v.lang !== "lat",
+      cyr: v.lang === "cyr",
       fio: String(v.fio || "").trim() || "Karimov Anvar Rustamovich",
       job: String(v.job || "").trim() || "Urgut tumani 5-umumta'lim maktabi direktori",
       since: String(v.since || "").trim() || "06.09.2018",
