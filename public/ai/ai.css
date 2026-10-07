@@ -103,6 +103,22 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .chip.active{ background: var(--glass-active); border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
 .chip.multi.active::before{ content:"✓ "; color:#4ADE80; }
 
+/* ---------- obyektivka: qarindoshlar ---------- */
+.rel-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:10px; }
+.rel-card{ border-radius:16px; padding:12px; }
+.rel-head{ display:flex; justify-content:space-between; align-items:center; font-size:13.5px; margin-bottom:8px; }
+.rel-x{ width:26px; height:26px; border-radius:50%; display:grid; place-items:center; font-size:17px; cursor:pointer; background: rgba(255,255,255,.08); }
+.rel-chips{ margin-bottom:8px; }
+.rel-chips .chip{ padding:6px 10px; font-size:12px; }
+.rel-chips.bad{ outline:1.5px solid #F87171; outline-offset:3px; border-radius:12px; }
+.rel-in{ margin-top:8px; }
+.rel-lbl{ font-size:11.5px; color: var(--ink-soft); margin-bottom:4px; }
+.rel-in .ai-input{ padding:11px 13px; font-size:13.5px; }
+.rel-in.bad .ai-input{ border-color:#F87171; box-shadow: 0 0 0 3px rgba(248,113,113,.15); }
+.rel-err{ font-size:11.5px; color:#F87171; margin-top:5px; }
+.rel-dead{ margin-top:10px; padding:9px 12px; font-size:13px; background: rgba(255,255,255,.04); }
+.ai-field.error > .field-title{ color:#F87171; }
+
 /* ---------- mijoz rasmlari ---------- */
 .ai-hint{ font-size:11.5px; color: var(--ink-soft); margin:-4px 0 10px; line-height:1.45; }
 .ph-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; }

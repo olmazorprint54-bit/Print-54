@@ -12,6 +12,10 @@ const crypto = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
 const { resumeData, resumeHtml } = require("./_lib/resume-html");
 const { internalKey } = require("./_lib/internal-key");
+const { buildObyektivka } = require("./_lib/obyektivka-docx");
+
+// Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
+const READY = { resume: "Resume'ingiz", obyektivka: "Obyektivkangiz" };
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -87,41 +91,43 @@ async function telegram(method, body) {
   return res.json();
 }
 
-function pdfForm(chatId, pdf, name, caption, replyTo) {
+// file: { buffer, name, mime }
+function docForm(chatId, file, caption, replyTo) {
   const form = new FormData();
   form.append("chat_id", String(chatId));
-  form.append("document", new Blob([pdf], { type: "application/pdf" }), fileName(name));
+  form.append("document", new Blob([file.buffer], { type: file.mime }), file.name);
   form.append("caption", caption);
   form.append("parse_mode", "HTML");
   if (replyTo) form.append("reply_parameters", JSON.stringify({ message_id: replyTo, allow_sending_without_reply: true }));
   return form;
 }
 
-// Tayyor PDF to'g'ridan-to'g'ri mijozga boradi; buyurtma bajarilgan bo'ladi.
+// Tayyor fayl to'g'ridan-to'g'ri mijozga boradi; buyurtma bajarilgan bo'ladi.
 // Chop etish so'ralgan bo'lsa yoki mijozga yetmasa — nusxa egaga ham boradi.
-async function deliver(order, pdf, name) {
+async function deliver(order, file) {
+  const what = READY[order.service] || "Faylingiz";
   const fields = order.details.fields;
   const wantsPrint = fields.print && fields.print !== "none";
   let doc = null;
   if (order.telegram_user_id) {
-    const sent = await telegram("sendDocument", pdfForm(order.telegram_user_id, pdf, name,
-      `🎉 <b>Resume'ingiz tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`));
+    const sent = await telegram("sendDocument", docForm(order.telegram_user_id, file,
+      `🎉 <b>${what} tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`));
     if (sent.ok) doc = sent.result.document;
   }
 
   if (wantsPrint || !doc) {
-    const sent = await telegram("sendDocument", pdfForm(process.env.OWNER_CHAT_ID, pdf, name,
+    const sent = await telegram("sendDocument", docForm(process.env.OWNER_CHAT_ID, file,
       doc
-        ? `🖨 <b>Chop etish uchun</b> — #${order.id} (${fields.print === "color" ? "rangli" : "oq-qora"})\nResume avtomatik tayyorlanib, mijozga yuborildi.`
-        : `⚠️ #${order.id} — resume tayyor, lekin mijozga yuborib bo'lmadi (botni bloklagan bo'lishi mumkin). U "Buyurtmalarim"dan olishi mumkin.`,
+        ? `🖨 <b>Chop etish uchun</b> — #${order.id} (${fields.print === "color" ? "rangli" : "oq-qora"})\nFayl avtomatik tayyorlanib, mijozga yuborildi.`
+        : `⚠️ #${order.id} — fayl tayyor, lekin mijozga yuborib bo'lmadi (botni bloklagan bo'lishi mumkin). U "Buyurtmalarim"dan olishi mumkin.`,
       order.telegram_message_id));
     if (!doc && sent.ok) doc = sent.result.document;
   }
-  if (!doc) throw new Error("PDF hech kimga yuborilmadi");
+  if (!doc) throw new Error("Fayl hech kimga yuborilmadi");
 
   await supabase
     .from("orders")
-    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || fileName(name) })
+    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || file.name })
     .eq("id", order.id);
 }
 
@@ -129,7 +135,7 @@ async function deliver(order, pdf, name) {
 async function fallbackToOwner(orderId, order, reason) {
   const manual = order && order.details && order.details.manualText;
   const why = reason ? `\n<i>Sabab: ${String(reason).replace(/[<>&]/g, "").slice(0, 200)}</i>` : "";
-  const warn = `⚠️ <b>Resume'ni avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.${why}`;
+  const warn = `⚠️ <b>Avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.${why}`;
   if (manual && !order.telegram_message_id) {
     const sent = await telegram("sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `${warn}\n\n${manual}`, parse_mode: "HTML", disable_web_page_preview: true });
     if (sent.ok) {
@@ -165,21 +171,30 @@ module.exports = async (req, res) => {
   try {
     const found = await supabase.from("orders").select("*").eq("id", orderId).single();
     order = found.data;
-    if (!order || order.service !== "resume" || !order.details || !order.details.fields) throw new Error("Resume buyurtma topilmadi: " + orderId);
+    if (!order || !READY[order.service] || !order.details || !order.details.fields) throw new Error("Avtomatik buyurtma topilmadi: " + orderId);
     if (order.status === "cancelled") {
       res.status(200).json({ ok: true, skipped: "cancelled" });
       return;
     }
 
-    const d = resumeData(order.details.fields, await photoUrl(order));
-    const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
-    const pdf = await renderPdf(resumeHtml(d, origin));
-    await deliver(order, pdf, d.name);
+    let file;
+    if (order.service === "obyektivka") {
+      // Word fayl — Chrome kerak emas; 3x4 rasm hujjat ichiga joylanadi
+      const url = await photoUrl(order);
+      const photo = url ? Buffer.from(await (await fetch(url)).arrayBuffer()) : null;
+      const doc = await buildObyektivka(order.details.fields, photo);
+      file = { buffer: doc.buffer, name: doc.fileName, mime: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" };
+    } else {
+      const d = resumeData(order.details.fields, await photoUrl(order));
+      const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
+      file = { buffer: await renderPdf(resumeHtml(d, origin)), name: fileName(d.name), mime: "application/pdf" };
+    }
+    await deliver(order, file);
     // rasm PDF ichida — omborda saqlash shart emas (bepul joy 1 GB)
     if (order.details.photos && order.details.photos.length) {
       await supabase.storage.from(BUCKET).remove(order.details.photos).catch((e) => console.error(e));
     }
-    res.status(200).json({ ok: true, size: pdf.length });
+    res.status(200).json({ ok: true, size: file.buffer.length });
   } catch (err) {
     console.error(err);
     await fallbackToOwner(orderId, order, err && err.message).catch((e) => console.error(e));

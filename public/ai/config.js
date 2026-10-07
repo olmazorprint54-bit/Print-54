@@ -31,6 +31,7 @@
     questions: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M10 9.5a2.2 2.2 0 1 1 3 2c-.6.3-1 .8-1 1.5M12 16h.01"/></svg>',
     referat: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 14h7M9 17h4"/></svg>',
     resume: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="9" r="2.6"/><path d="M8 16.5c.8-1.9 2.2-2.8 4-2.8s3.2.9 4 2.8"/></svg>',
+    obyektivka: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="13" y="6" width="4" height="5" rx=".6"/><path d="M7 7h4M7 10h4M7 14h10M7 17h7"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -49,6 +50,7 @@
       questions: null,
       crossword: null,
       resume: 0,
+      obyektivka: 0,
     },
 
     services: [
@@ -198,6 +200,38 @@
           { id: "lang", type: "chips", label: "Resume tili", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "ru", l: "Rus" }, { v: "en", l: "Ingliz" }], default: "uz_lat" },
           { id: "template", type: "templates", label: "Dizayn", set: "resume", default: "classic" },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "docx", l: "Word (.docx)" }], default: "pdf" },
+          PRINT_FIELD,
+        ],
+      },
+      {
+        // Rasmiy shakl (ma'lumotnoma). check: fio | date | noabbr | work — ai.js dagi tekshiruvlar
+        id: "obyektivka", title: "Obyektivka", sub: "Ma'lumotnoma — rasmiy shakl",
+        icon: ICONS.obyektivka, color: "#22C55E",
+        fields: [
+          { id: "_h0", type: "heading", label: "Shaxsiy ma'lumotlar" },
+          { id: "fio", type: "text", label: "Familiyasi, ismi, otasining ismi", placeholder: "Masalan: Karimov Anvar Rustamovich", hint: "Pasportdagidek to'liq yozing — otasining ismi bilan", required: true, check: "fio", max: 120 },
+          { id: "birthDate", type: "text", label: "Tug'ilgan sanasi", placeholder: "Masalan: 14.03.1985", hint: "Kun.oy.yil ko'rinishida", required: true, check: "date", max: 10, inputmode: "decimal" },
+          { id: "birthPlace", type: "text", label: "Tug'ilgan joyi", placeholder: "Masalan: Samarqand viloyati, Urgut tumani", hint: "Viloyat va tumanni to'liq yozing — «vil.», «tum.» kabi qisqartirmang", required: true, check: "noabbr", max: 160 },
+          { id: "nation", type: "text", label: "Millati", placeholder: "Masalan: o'zbek", required: true, max: 40 },
+          { id: "photos", type: "photos", label: "3x4 rasm", hint: "Oxirgi 3 oy ichida olingan rangli rasm, rasmiy kiyimda. Rasm 3x4 o'lchamga avtomatik qirqiladi", max: 1, default: [], aspect: 0.75 },
+          { id: "_h1", type: "heading", label: "Hozirgi ish (o'qish) joyi" },
+          { id: "job", type: "text", label: "Ish joyi va lavozimi", placeholder: "Masalan: Urgut tumani 5-umumta'lim maktabi direktori", hint: "Tashkilot nomi va lavozimni to'liq yozing. Talaba bo'lsangiz: «Samarqand davlat universiteti 3-kurs talabasi»", required: true, check: "noabbr", max: 300 },
+          { id: "since", type: "text", label: "Qachondan beri", placeholder: "Masalan: 06.09.2018", hint: "Shu lavozimga (o'qishga) kirgan sana", required: true, check: "date", max: 10, inputmode: "decimal" },
+          { id: "party", type: "text", label: "Partiyaviyligi", placeholder: "Masalan: yo'q", hint: "Partiya a'zosi bo'lmasangiz «yo'q» qoldiring", default: "yo'q", max: 160 },
+          { id: "_h2", type: "heading", label: "Ma'lumoti" },
+          { id: "eduLevel", type: "chips", label: "Ma'lumoti", options: ["oliy", "tugallanmagan oliy", "o'rta maxsus", "o'rta"], default: "oliy" },
+          { id: "graduated", type: "textarea", label: "Tamomlagan o'quv yurtlari", placeholder: "Masalan:\n2007 yil Samarqand davlat universiteti (bakalavriat)\n2009 yil Samarqand davlat universiteti (magistratura)", hint: "Har birini yangi qatordan: yili va o'quv yurtining to'liq nomi", required: true, check: "noabbr", max: 800 },
+          { id: "specialty", type: "text", label: "Ma'lumoti bo'yicha mutaxassisligi", placeholder: "Masalan: matematika", required: true, max: 160 },
+          { id: "degree", type: "text", label: "Ilmiy darajasi", placeholder: "Masalan: yo'q", default: "yo'q", max: 160 },
+          { id: "academicTitle", type: "text", label: "Ilmiy unvoni", placeholder: "Masalan: yo'q", default: "yo'q", max: 160 },
+          { id: "foreignLangs", type: "text", label: "Qaysi chet tillarini biladi", placeholder: "Masalan: rus, ingliz tillari", hint: "Faqat mukammal biladigan tillarni yozing; lug'at yordamida bilsangiz yozilmaydi", default: "yo'q", max: 160 },
+          { id: "awards", type: "text", label: "Davlat mukofotlari", placeholder: "Masalan: yo'q", hint: "Bo'lsa nomini to'liq yozing", default: "yo'q", max: 300 },
+          { id: "deputy", type: "text", label: "Deputatlik (saylanadigan organlar a'zoligi)", placeholder: "Masalan: yo'q", default: "yo'q", max: 300 },
+          { id: "_h3", type: "heading", label: "Mehnat faoliyati" },
+          { id: "work", type: "textarea", label: "Mehnat faoliyati", placeholder: "Masalan:\n2003-2007 yy. - Samarqand davlat universiteti talabasi\n2009-2018 yy. - Urgut tumani 5-maktab matematika o'qituvchisi\n2018 y. - h.v. - Urgut tumani 5-maktab direktori", hint: "Har bir qator yil bilan boshlansin. Hozirgi ish: «2018 y. - h.v. - ...» (h.v. — hozirgi vaqtgacha)", required: true, check: "work", max: 2000 },
+          { id: "relatives", type: "relatives", label: "Yaqin qarindoshlar", hint: "Ota-ona, aka-uka, opa-singil, turmush o'rtog'i, farzandlar, qaynota va qaynona — hammasini yozing", default: [{ rel: "Otasi" }, { rel: "Onasi" }] },
+          { id: "lang", type: "chips", label: "Hujjat alifbosi", options: [{ v: "cyr", l: "Kirill (rasmiy)" }, { v: "lat", l: "Lotin" }], default: "cyr" },
+          { id: "template", type: "templates", label: "Namuna", set: "obyektivka", default: "rasmiy" },
           PRINT_FIELD,
         ],
       },
@@ -450,6 +484,9 @@
       questions: [
         { id: "list", name: "Ro'yxat", style: "list" },
         { id: "cards", name: "Kesiladigan kartochkalar", style: "cards" },
+      ],
+      obyektivka: [
+        { id: "rasmiy", name: "Rasmiy shakl", style: "rasmiy", auto: true },
       ],
       crossword: [
         // Canva kutubxonasidan krossvord varaqlari

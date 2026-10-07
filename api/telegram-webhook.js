@@ -241,6 +241,7 @@ const AI_LABELS = {
   questions: "Savollar",
   crossword: "Krossvord",
   resume: "Resume / CV",
+  obyektivka: "Obyektivka",
 };
 
 // Tayyor AI faylini mijozga yetkazadi va buyurtmani "bajarildi" qiladi.
