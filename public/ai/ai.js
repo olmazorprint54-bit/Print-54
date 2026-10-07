@@ -558,7 +558,7 @@
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
       haptic("success");
-      renderDone(svc);
+      renderDone(svc, data.auto);
     } catch (err) {
       console.error(err);
       haptic("error");
@@ -567,14 +567,14 @@
     }
   }
 
-  function renderDone(svc) {
+  function renderDone(svc, auto) {
     photoState[svc.id] = [];
     syncPhotos(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">✅</div>
         <h3>So'rovingiz qabul qilindi!</h3>
-        <p>«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi. Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
+        <p>${auto ? "Resume'ingiz avtomatik tayyorlanmoqda. Tekshiruvdan so'ng PDF fayl shu botga xabar bo'lib keladi." : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
         <button type="button" class="order-btn" data-again="1">Yana so'rov qoldirish</button>
         <div class="pill-btn glass" data-contact="1" style="margin-top:10px;">Biz bilan bog'lanish</div>
       </div>`;

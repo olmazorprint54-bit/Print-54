@@ -7,10 +7,14 @@
 //      xabarga javob (reply) qilib yuborsa, telegram-webhook.js uni
 //      mijozga yetkazadi.
 // Hozircha AI chaqirilmaydi — API kalit ulangach, shu yerda hujjat
-// yaratiladi.
+// yaratiladi. Resume (o'zimizning 3 dizayn, PDF) esa AI'siz,
+// avtomatik tayyorlanadi — api/resume-pdf.js.
 // ---------------------------------------------------------------
 
 const { createClient } = require("@supabase/supabase-js");
+const { waitUntil } = require("@vercel/functions");
+const { canAutoResume } = require("./_lib/resume-html");
+const { internalKey } = require("./_lib/internal-key");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -88,7 +92,10 @@ function requestText(body, summary, orderId) {
     lines.push(`👤 Mijoz: <a href="tg://user?id=${id}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`);
   }
 
-  if (orderId) {
+  if (orderId && body.autoResume) {
+    lines.push("");
+    lines.push("🤖 <i>Resume avtomatik tayyorlanmoqda — bir daqiqada PDF shu yerga keladi.</i>");
+  } else if (orderId) {
     lines.push("");
     lines.push("📎 <i>Tayyor faylni shu xabarga javob (Reply) qilib yuboring — mijozga avtomatik boradi.</i>");
   }
@@ -113,6 +120,28 @@ async function sendToOwner(text) {
   const data = await res.json();
   if (!data.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(data));
   return data.result.message_id;
+}
+
+// Buyurtma maydonlarining nusxasi (avtomatik tayyorlash uchun)
+function cleanFields(fields) {
+  const out = {};
+  for (const [k, v] of Object.entries(fields || {}).slice(0, 40)) {
+    if (typeof v === "string") out[k] = v.slice(0, 1500);
+    else if (typeof v === "boolean" || typeof v === "number") out[k] = v;
+    else if (Array.isArray(v)) out[k] = v.filter((x) => typeof x === "string").slice(0, 20).map((x) => x.slice(0, 200));
+  }
+  return out;
+}
+
+// Resume PDF ni alohida funksiyada yasatamiz (Chrome og'ir — buyurtma kutmasin)
+async function startResumePdf(req, orderId) {
+  const proto = req.headers["x-forwarded-proto"] || "https";
+  const res = await fetch(`${proto}://${req.headers.host}/api/resume-pdf`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-internal-key": internalKey(orderId) },
+    body: JSON.stringify({ orderId }),
+  });
+  if (!res.ok) console.error("resume-pdf xatosi:", res.status);
 }
 
 // Mijoz yuklagan rasmlar yo'li faqat o'zining papkasidan bo'lishi kerak
@@ -165,6 +194,8 @@ module.exports = async (req, res) => {
     const price = Number(body.price);
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
+    const saved = cleanFields({ ...fields, photos });
+    body.autoResume = body.service === "resume" && canAutoResume(saved);
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -179,7 +210,7 @@ module.exports = async (req, res) => {
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
         status: "active",
-        details: { topic: topicOf(fields), summary, ...(photos.length ? { photos } : {}) },
+        details: { topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) },
       })
       .select()
       .single();
@@ -192,7 +223,7 @@ module.exports = async (req, res) => {
     if (orderId) {
       await supabase
         .from("orders")
-        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, text, ...(photos.length ? { photos } : {}) } })
+        .update({ telegram_message_id: messageId, details: { topic: topicOf(fields), summary, fields: saved, text, ...(photos.length ? { photos } : {}) } })
         .eq("id", orderId);
     }
 
@@ -205,7 +236,9 @@ module.exports = async (req, res) => {
       }
     }
 
-    res.status(200).json({ ok: true, orderId });
+    if (orderId && body.autoResume) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
+
+    res.status(200).json({ ok: true, orderId, auto: !!(orderId && body.autoResume) });
   } catch (err) {
     console.error(err);
     res.status(500).json({ ok: false, error: "So'rovni yuborib bo'lmadi" });

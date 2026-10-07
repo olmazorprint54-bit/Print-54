@@ -80,6 +80,14 @@ async function grantPurchaseBonus(order) {
 
 /* ============ BUYURTMA TAYYOR TUGMASI ============ */
 async function handleCallbackQuery(cq) {
+  if (cq.data && cq.data.startsWith("aisend:")) {
+    await handleAiSend(cq);
+    return;
+  }
+  if (cq.data === "noop") {
+    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id });
+    return;
+  }
   if (cq.data && cq.data.startsWith("done:")) {
     const orderId = cq.data.split(":")[1];
 
@@ -235,26 +243,9 @@ const AI_LABELS = {
   resume: "Resume / CV",
 };
 
-async function handleOwnerFile(msg) {
-  const reply = (text) =>
-    callTelegram("sendMessage", { chat_id: msg.chat.id, text, reply_to_message_id: msg.message_id });
-
-  const { data: order } = await supabase
-    .from("orders")
-    .select("*")
-    .eq("telegram_message_id", msg.reply_to_message.message_id)
-    .single();
-
-  if (!order || !AI_LABELS[order.service]) {
-    await reply("⚠️ Bu xabar AI buyurtmaga tegishli emas. Faylni buyurtma xabariga javob qilib yuboring.");
-    return;
-  }
-  if (order.status === "cancelled") {
-    await reply(`⚠️ #${order.id} buyurtma mijoz tomonidan bekor qilingan, fayl yuborilmadi.`);
-    return;
-  }
-
-  const doc = msg.document;
+// Tayyor AI faylini mijozga yetkazadi va buyurtmani "bajarildi" qiladi.
+// true — mijozga yetib bordi.
+async function deliverAiFile(order, doc, ownerChatId) {
   await supabase
     .from("orders")
     .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || null })
@@ -274,13 +265,58 @@ async function handleOwnerFile(msg) {
 
   if (order.details && order.details.text) {
     await callTelegram("editMessageText", {
-      chat_id: msg.chat.id,
+      chat_id: ownerChatId,
       message_id: order.telegram_message_id,
       text: `${order.details.text}\n\n✅ <b>Fayl yuborildi</b>`,
       parse_mode: "HTML",
       disable_web_page_preview: true,
     });
   }
+  return delivered;
+}
+
+// Avtomatik tayyorlangan faylning "✅ Mijozga yuborish" tugmasi
+async function handleAiSend(cq) {
+  const answer = (text) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text, show_alert: true });
+  if (String(cq.from.id) !== String(process.env.OWNER_CHAT_ID)) return answer("Bu tugma faqat do'kon egasi uchun.");
+  const doc = cq.message && cq.message.document;
+  const orderId = parseInt(cq.data.split(":")[1], 10);
+  const { data: order } = await supabase.from("orders").select("*").eq("id", orderId).single();
+  if (!order || !doc) return answer("Buyurtma topilmadi.");
+  if (order.status === "cancelled") return answer(`#${order.id} buyurtma mijoz tomonidan bekor qilingan.`);
+  if (order.status === "completed") return answer(`#${order.id} allaqachon yuborilgan.`);
+
+  const delivered = await deliverAiFile(order, doc, cq.message.chat.id);
+  await callTelegram("editMessageReplyMarkup", {
+    chat_id: cq.message.chat.id,
+    message_id: cq.message.message_id,
+    reply_markup: { inline_keyboard: [[{ text: delivered ? "✅ Mijozga yuborildi" : "⚠️ Saqlandi (mijozga yetmadi)", callback_data: "noop" }]] },
+  });
+  return answer(delivered
+    ? `✅ #${order.id} — fayl mijozga yuborildi.`
+    : `⚠️ #${order.id} — fayl saqlandi, lekin mijozga yuborib bo'lmadi. U "Buyurtmalarim"dan olishi mumkin.`);
+}
+
+async function handleOwnerFile(msg) {
+  const reply = (text) =>
+    callTelegram("sendMessage", { chat_id: msg.chat.id, text, reply_to_message_id: msg.message_id });
+
+  const { data: order } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("telegram_message_id", msg.reply_to_message.message_id)
+    .single();
+
+  if (!order || !AI_LABELS[order.service]) {
+    await reply("⚠️ Bu xabar AI buyurtmaga tegishli emas. Faylni buyurtma xabariga javob qilib yuboring.");
+    return;
+  }
+  if (order.status === "cancelled") {
+    await reply(`⚠️ #${order.id} buyurtma mijoz tomonidan bekor qilingan, fayl yuborilmadi.`);
+    return;
+  }
+
+  const delivered = await deliverAiFile(order, msg.document, msg.chat.id);
 
   await reply(
     delivered
