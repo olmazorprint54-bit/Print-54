@@ -477,9 +477,10 @@
         { id: "rez-yashil", name: "Yashil talaba", kind: "canva", lib: true, page: true, pages: 1 },
         { id: "rez-jigarrang", name: "Jigarrang", kind: "canva", lib: true, page: true, pages: 1 },
         { id: "rez-biznes", name: "Biznes ko'k", kind: "canva", lib: true, page: true, pages: 1 },
-        { id: "classic", name: "Klassik", style: "classic" },
-        { id: "modern", name: "Zamonaviy (yon panel)", style: "modern" },
-        { id: "minimal", name: "Minimal", style: "minimal" },
+        // auto — PDF avtomatik, bir daqiqada tayyor (api/resume-pdf.js)
+        { id: "classic", name: "Klassik", style: "classic", auto: true },
+        { id: "modern", name: "Zamonaviy (yon panel)", style: "modern", auto: true },
+        { id: "minimal", name: "Minimal", style: "minimal", auto: true },
       ],
     },
   };
