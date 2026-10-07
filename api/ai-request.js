@@ -81,9 +81,9 @@ function requestText(body, summary, orderId) {
     lines.push(escapeHtml(String(longText).slice(0, 1500)));
   }
 
-  const price = Number(body.price);
+  const price = body.price == null ? NaN : Number(body.price);
   lines.push("");
-  lines.push(`💰 Narx: ${Number.isFinite(price) && price > 0 ? price.toLocaleString("ru-RU") + " so'm" : "kelishiladi"}`);
+  lines.push(`💰 Narx: ${Number.isFinite(price) && price > 0 ? price.toLocaleString("ru-RU") + " so'm" : price === 0 ? "tekin" : "kelishiladi"}`);
 
   const u = body.user;
   if (u && u.id) {
@@ -191,7 +191,7 @@ module.exports = async (req, res) => {
     const summary = cleanSummary(body.summary);
     const fields = body.fields || {};
     const u = body.user && body.user.id ? body.user : null;
-    const price = Number(body.price);
+    const price = body.price == null ? NaN : Number(body.price); // null — kelishiladi, 0 — tekin
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
@@ -205,7 +205,7 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: Number.isFinite(price) && price > 0 ? price : null,
+        total: Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,

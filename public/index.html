@@ -279,7 +279,7 @@
   .switch input:checked + .slider{ background: #4ADE80; }
   .switch input:checked + .slider:before{ transform: translateX(16px); }
 </style>
-<link rel="stylesheet" href="ai/ai.css?v=12">
+<link rel="stylesheet" href="ai/ai.css?v=13">
 </head>
 <body>
 
@@ -986,7 +986,7 @@ const trashHtml = isFinal
     <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
       <div class="receipt-line"><span>${serviceLabel}</span><span>${date}${trashHtml}</span></div>
       <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
-      <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${o.total == null ? 'Kelishiladi' : fmt(o.total)}</span></div>
+      <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${o.total == null ? 'Kelishiladi' : Number(o.total) === 0 ? 'Tekin' : fmt(o.total)}</span></div>
       ${actionHtml}
     </div>
   `;
@@ -1091,7 +1091,7 @@ async function updateOrdersBadge(){
 }
 updateOrdersBadge();
   </script>
-  <script src="ai/config.js?v=12"></script>
-  <script src="ai/ai.js?v=12"></script>
+  <script src="ai/config.js?v=13"></script>
+  <script src="ai/ai.js?v=13"></script>
  </body>
   </html>
