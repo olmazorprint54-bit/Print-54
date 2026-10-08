@@ -62,7 +62,7 @@
           { id: "subject", type: "text", label: "Fan yoki yo'nalish", placeholder: "Masalan: Astronomiya", max: 120 },
           { id: "slides", type: "number", label: "Slaydlar soni", placeholder: "Masalan: 10", min: 3, max: 60, fallback: "10" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
-          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "classic" },
+          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "umumiy-kok" },
           { id: "images", type: "switch", label: "Slaydlarga mavzuga mos rasmlar qo'shilsin", default: true },
           { id: "photos", type: "photos", label: "O'z rasmlaringiz", hint: "Ixtiyoriy — yuklagan rasmlaringiz slaydlarga qo'yiladi (10 tagacha)", max: 10, default: [] },
           { id: "charts", type: "switch", label: "📊 Diagramma qo'shilsin", default: false },
