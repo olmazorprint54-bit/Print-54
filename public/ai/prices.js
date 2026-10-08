@@ -19,6 +19,7 @@
     questions: { base: 13000, upTo: 30, field: "count", fallback: 15, step: 300 },
     crossword: { base: 13000 },
     lesson:    { base: 15000, extra: { duration: { "80": 5000 } } },
+    article:   { base: 20000, upTo: 5, field: "pages", fallback: 6, step: 2000 },
     referat:   { base: 15000, upTo: 10, field: "pages", fallback: 10, step: 1000 },
     essay:     { base: 20000, upTo: 15, field: "pages", fallback: 15, step: 1000 },
     resume:    { base: 0 },

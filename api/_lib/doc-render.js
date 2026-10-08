@@ -30,7 +30,7 @@ function blocksToHtml(blocks, o = {}) {
         return `<section class="title">${b.lines.map((l) => `<div style="text-align:${l.align || "center"};font-size:${l.size || size}pt;font-weight:${l.bold ? 700 : 400}${l.gap ? `;margin-top:${l.gap}mm` : ""}">${esc(l.text)}</div>`).join("")}</section>`;
       case "h1": return `<h1>${esc(b.text)}</h1>`;
       case "h2": return `<h2>${esc(b.text)}</h2>`;
-      case "p": return `<p class="${b.indent === false ? "" : "ind"}">${esc(b.text)}</p>`;
+      case "p": return `<p class="${b.indent === false || b.align ? "" : "ind"}" style="${b.align ? `text-align:${b.align};` : ""}${b.bold ? "font-weight:700;" : ""}${b.italic ? "font-style:italic;" : ""}${b.small ? "font-size:.9em;" : ""}">${b.label ? `<b>${esc(b.label)}</b> ` : ""}${esc(b.text)}</p>`;
       case "list": return `<${b.ordered ? "ol" : "ul"}>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</${b.ordered ? "ol" : "ul"}>`;
       case "table":
         return `<table class="tbl">${b.head ? `<thead><tr>${b.head.map((h, i) => `<th style="${b.widths ? `width:${b.widths[i]}%` : ""}">${esc(h)}</th>`).join("")}</tr></thead>` : ""}<tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c).replace(/\n/g, "<br>")}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
@@ -81,14 +81,14 @@ async function blocksToDocx(blocks, o = {}) {
   const FONT = o.font || "Times New Roman";
   const SIZE = (o.size || 14) * 2;
   const LINE = Math.round((o.lineHeight || 1.5) * 240);
-  const run = (text, x = {}) => new TextRun({ text: String(text), font: FONT, size: x.size || SIZE, bold: x.bold });
+  const run = (text, x = {}) => new TextRun({ text: String(text), font: FONT, size: x.size || SIZE, bold: x.bold, italics: x.italic });
   const para = (text, x = {}) => new Paragraph({
     alignment: x.align === "left" ? AlignmentType.LEFT : x.align === "right" ? AlignmentType.RIGHT : x.align === "center" ? AlignmentType.CENTER : AlignmentType.JUSTIFIED,
     spacing: { line: x.line || LINE, before: x.before || 0, after: x.after == null ? 0 : x.after },
     indent: x.indent ? { firstLine: Math.round(1.25 * CM) } : undefined,
     keepNext: x.keepNext,
     pageBreakBefore: x.pageBreakBefore,
-    children: String(text).split("\n").flatMap((line, i) => (i ? [new TextRun({ break: 1 }), run(line, x)] : [run(line, x)])),
+    children: [...(x.label ? [run(x.label + " ", { ...x, bold: true })] : []), ...String(text).split("\n").flatMap((line, i) => (i ? [new TextRun({ break: 1 }), run(line, x)] : [run(line, x)]))],
   });
   const LINEB = { style: BorderStyle.SINGLE, size: 4, color: "000000" };
   const DASH = { style: BorderStyle.DASHED, size: 4, color: "555555" };
@@ -110,7 +110,7 @@ async function blocksToDocx(blocks, o = {}) {
         break;
       case "h1": push(para(b.text, { align: "center", bold: true, size: SIZE + 2, after: 120, keepNext: true })); break;
       case "h2": push(para(b.text, { align: "left", bold: true, before: 120, after: 60, keepNext: true })); break;
-      case "p": push(para(b.text, { indent: b.indent !== false })); break;
+      case "p": push(para(b.text, { indent: b.indent !== false && !b.align, align: b.align, bold: b.bold, italic: b.italic, label: b.label, size: b.small ? SIZE - 4 : undefined })); break;
       case "list": b.items.forEach((it, i) => push(para(`${b.ordered ? `${i + 1}. ` : "• "}${it}`, { align: "left" }))); break;
       case "table": {
         const widths = b.widths || b.rows[0].map(() => Math.floor(100 / b.rows[0].length));

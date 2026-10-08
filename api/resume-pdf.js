@@ -24,7 +24,7 @@ const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", referat: "Referatingiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -120,6 +120,7 @@ const costTitle = (s, f) => ({
   test: `Test — ${f.count || 20} savol, ${f.variants || 1} variant`,
   essay: `Mustaqil ish — ${f.pages || 15} bet`,
   referat: `Referat — ${f.pages || 10} bet`,
+  article: `Maqola (${{ scientific: "ilmiy", thesis: "tezis", popular: "ommabop" }[f.kind] || "ilmiy"}) — ${f.pages || 6} bet`,
   lesson: `Dars ishlanma — ${f.duration || 45} daqiqa`,
   questions: `Savollar — ${f.count || 15} ta`,
   crossword: `Krossvord — ${f.words || 15} so'z`,

@@ -14,6 +14,7 @@ const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic sc
 const AUTO_STYLES = {
   essay: ["otm", "school", "modern"],
   referat: ["otm", "school", "modern"],
+  article: ["oak", "conf", "modern"],
   lesson: ["table", "techmap", "notes"],
   questions: ["list", "cards"],
   crossword: ["classic", "color"],
@@ -452,7 +453,101 @@ Give ${want + 6} candidate answers (single words, 3–12 letters, no spaces, hyp
   };
 }
 
+/* =================== MAQOLA =================== */
+const ART = {
+  uz_lat: { ann: "Annotatsiya.", kw: "Kalit so'zlar:", refs: "Foydalanilgan adabiyotlar", sci: ["Kirish", "Mavzuga oid adabiyotlar tahlili", "Tadqiqot metodologiyasi", "Tahlil va natijalar", "Xulosa va takliflar"] },
+  uz_cyr: { ann: "Аннотация.", kw: "Калит сўзлар:", refs: "Фойдаланилган адабиётлар", sci: ["Кириш", "Мавзуга оид адабиётлар таҳлили", "Тадқиқот методологияси", "Таҳлил ва натижалар", "Хулоса ва таклифлар"] },
+  ru: { ann: "Аннотация.", kw: "Ключевые слова:", refs: "Список литературы", sci: ["Введение", "Обзор литературы", "Методология исследования", "Анализ и результаты", "Выводы и предложения"] },
+  en: { ann: "Abstract.", kw: "Keywords:", refs: "References", sci: ["Introduction", "Literature review", "Research methodology", "Analysis and results", "Conclusion and recommendations"] },
+};
+const ANN = { uz: ["Annotatsiya.", "Kalit so'zlar:", "Uzbek (Latin script)"], ru: ["Аннотация.", "Ключевые слова:", "Russian"], en: ["Abstract.", "Keywords:", "English"] };
+
+async function generateArticle(f) {
+  const lang = langOf(f);
+  const A = ART[lang];
+  const kind = ["scientific", "thesis", "popular"].includes(f.kind) ? f.kind : "scientific";
+  const d = {
+    topic: clean(f.topic, 220), subject: clean(f.subject, 120), lang, kind,
+    pages: clamp(parseInt(f.pages, 10), 2, kind === "thesis" ? 4 : 15, kind === "thesis" ? 3 : 6),
+    author: clean(f.author, 200), degree: clean(f.degree, 160), org: clean(f.org, 200), email: clean(f.email, 100),
+    style: ["oak", "conf", "modern"].includes(f.template) ? f.template : "oak",
+    annLangs: f.annotation === false || kind === "popular" ? [] : (Array.isArray(f.annLangs) && f.annLangs.length ? f.annLangs : ["uz", "ru", "en"]).filter((x) => ANN[x]),
+  };
+  const words = Math.max(500, d.pages * 280 - (d.annLangs.length ? 150 * d.annLangs.length : 0));
+  const ctx = `Article type: ${{ scientific: "scientific journal article (Higher Attestation Commission of Uzbekistan / OAK requirements)", thesis: "conference abstract (thesis)", popular: "popular-science / journalistic article for a newspaper or magazine" }[kind]}
+Field: ${d.subject}
+Topic: ${d.topic}
+Language of the article: ${LANG_NAMES[lang]}`;
+  const ARTW = WRITER + `\n- Scientific style for articles: precise terms, logical argumentation, references to laws/decrees of the Republic of Uzbekistan and known research where relevant. Never invent statistics: give only well-known figures, otherwise describe qualitatively.`;
+  let cost = null;
+
+  // 1) sarlavha, annotatsiyalar, kalit so'zlar, bo'limlar
+  const sections = kind === "scientific" ? A.sci : kind === "thesis" ? ["", "", ""] : null;
+  const meta = await askJson({
+    model: MODEL, system: ARTW, effort: "medium", maxTokens: 6000,
+    schema: obj({
+      title: STR,
+      annotations: { type: "array", items: obj({ lang: { type: "string", enum: ["uz", "ru", "en"] }, text: STR, keywords: STRS }) },
+      sections: STRS,
+    }),
+    prompt: `${ctx}
+
+Return:
+- "title": the article title in ${LANG_NAMES[lang]} (precise, academic, ≤ 15 words).
+- "annotations": ${d.annLangs.length ? `one item for each of these languages: ${d.annLangs.map((x) => ANN[x][2]).join(", ")} — "text" 60–110 words summarising aim, methods and results; "keywords" 5–7 keywords in the same language.` : "an empty array."}
+- "sections": ${kind === "popular" ? "3–4 short, engaging subheadings for the body (in the article language)." : "an empty array."}`,
+  });
+  cost = addCost(cost, meta);
+  const parts = kind === "popular" ? ["", ...meta.data.sections.slice(0, 4).map((x) => clean(x, 120))] : sections;
+  const share = kind === "scientific" ? [0.12, 0.18, 0.12, 0.38, 0.2] : kind === "thesis" ? [0.25, 0.5, 0.25] : parts.map((_, i) => (i ? 0.85 / (parts.length - 1) : 0.15));
+  const roles = kind === "scientific"
+    ? ["introduction: relevance of the topic, aim and objectives of the research", "literature review: views of Uzbek and foreign scholars on the topic (name real, well-known researchers and works only)", "research methodology: methods used (analysis, synthesis, comparison, statistical analysis, survey etc.)", "analysis and results: the main findings with concrete arguments and examples", "conclusion and practical recommendations as a short numbered list inside the text"]
+    : kind === "thesis"
+      ? ["relevance of the problem and the aim", "main part: key ideas and arguments", "conclusion"]
+      : parts.map((p, i) => (i ? `section "${p}"` : "lead paragraph that hooks the reader"));
+
+  // 2) matn (bo'limlar parallel) + adabiyotlar
+  const tasks = parts.map((p, i) => () => askJson({
+    model: MODEL, system: ARTW, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: STRS }),
+    prompt: `${ctx}\nTitle: ${meta.data.title}\n\nWrite the ${roles[i]} — about ${Math.round(words * share[i])} words. Do not write the section heading.`,
+  }));
+  if (kind !== "popular") tasks.push(() => askJson({
+    model: MODEL, system: ARTW, effort: "low", maxTokens: 3000, schema: obj({ references: STRS }),
+    prompt: `${ctx}\n\nList ${kind === "thesis" ? "3–5" : "8–14"} references in standard bibliographic format (authors, title, journal/publisher, year, pages). Real, well-known sources only: laws and decrees of the Republic of Uzbekistan (lex.uz), textbooks, monographs, journal articles by known authors. Do not invent sources.`,
+  }));
+  const res = await pool(tasks, 3);
+  res.forEach((r) => { cost = addCost(cost, r); });
+
+  // 3) hujjat
+  const blocks = [];
+  blocks.push({ t: "h1", text: clean(meta.data.title, 300) || d.topic });
+  const whoAlign = d.style === "modern" ? "left" : "right";
+  if (d.author) blocks.push({ t: "p", text: d.author, align: whoAlign, bold: true });
+  if (d.degree) blocks.push({ t: "p", text: d.degree, align: whoAlign, italic: true, small: true });
+  if (d.org) blocks.push({ t: "p", text: d.org, align: whoAlign, italic: true, small: true });
+  if (d.email) blocks.push({ t: "p", text: d.email, align: whoAlign, small: true });
+  for (const a of (meta.data.annotations || []).filter((x) => d.annLangs.includes(x.lang))) {
+    blocks.push({ t: "p", indent: false, small: true, label: ANN[a.lang][0], text: clean(a.text, 1500) });
+    blocks.push({ t: "p", indent: false, small: true, label: ANN[a.lang][1], text: (a.keywords || []).map((k) => clean(k, 60)).filter(Boolean).join(", ") });
+  }
+  parts.forEach((p, i) => {
+    if (p) blocks.push({ t: "h2", text: p });
+    (res[i].data.paragraphs || []).map((x) => clean(x, 4000)).filter(Boolean).forEach((text) => blocks.push({ t: "p", text }));
+  });
+  if (kind !== "popular") {
+    blocks.push({ t: "h2", text: A.refs });
+    blocks.push({ t: "list", ordered: true, items: (res[parts.length].data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 15) });
+  }
+  return {
+    blocks,
+    render: d.style === "modern" ? { font: "Noto Sans", size: 12, lineHeight: 1.4, css: "h1{text-align:left}" } : { size: 14, lineHeight: d.style === "conf" ? 1.15 : 1.5, capsH1: true },
+    name: fileSafe(`Maqola - ${d.topic}`),
+    ai: cost,
+  };
+}
+
 const GENERATORS = {
+  article: generateArticle,
   essay: (f) => generatePaper("essay", f),
   referat: (f) => generatePaper("referat", f),
   lesson: generateLesson,
