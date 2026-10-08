@@ -63,7 +63,8 @@ async function loadTemplate(id) {
 function layoutsOf(spec) {
   return spec.slides
     .map((s) => ({ ...s, editable: s.slots.filter((t) => t.kind !== "fixed") }))
-    .filter((s) => s.editable.length);
+    // 12 tadan ko'p mayda matn joyi (jadval, kalendar) — AI uchun noqulay, ishlatilmaydi
+    .filter((s) => s.editable.length && s.editable.length <= 12);
 }
 
 function describe(layouts) {
@@ -210,17 +211,17 @@ function fillText(sp, text, slot, lang) {
   // Sig'magan matn: shrift kichraytiriladi.
   //  matn — maydon ikki o'lchamli: sig'im shrift kvadratiga teskari;
   //  sarlavha/yorliq — namunadagidek qatorlar soni va eng uzun so'z qutiga sig'sin
-  const caps = slot.text && slot.text === slot.text.toUpperCase();
-  const perLine = Math.max(4, (slot.perLine || slot.max) * (caps ? 0.85 : 1));
+  // cpl — shu shriftda bir qatorga sig'adigan harf (tools/pptx-shablon/analyze.py o'lchaydi),
+  // lines — namunadagi qatorlar soni: matn shundan oshsa pastdagi elementlarga chiqib ketadi
+  const cpl = Math.max(4, slot.perLine || slot.max);
+  const rows = Math.max(1, slot.lines || Math.ceil((slot.chars || 1) / cpl));
+  // zaxira: so'zlar qator oxirida bo'linmaydi; sarlavha/yorliqda katta harflar kengroq
+  const len = Math.max(text.length, 1) * (slot.kind === "text" ? 1.08 : 1.2);
   const longest = Math.max(...text.split(/\s+/).map((w) => w.length), 1);
-  let k = 1;
-  if (slot.kind === "text") {
-    if (text.length > Math.max(slot.max, 10) * 1.05) k = Math.sqrt(Math.max(slot.max, 10) / text.length);
-    k = Math.min(k, perLine / longest);
-  } else {
-    const lines = Math.max(1, Math.ceil((slot.chars || 1) / perLine));
-    k = Math.min(1, (perLine * lines) / Math.max(text.length, 1), perLine / longest);
-  }
+  let k = slot.kind === "text"
+    ? Math.min(1, Math.sqrt((cpl * rows) / len)) // maydon: shrift kichrayganda qatorlar ham ko'payadi
+    : Math.min(1, (cpl * rows) / len);
+  k = Math.min(k, cpl / longest);
   if (k < 0.97) {
     k = Math.max(0.35, k);
     const scale = (s) => s.replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * k)}"`).replace(/<a:spcPts val="(\d+)"\/>/g, (_, v) => `<a:spcPts val="${Math.round(v * k)}"/>`);
