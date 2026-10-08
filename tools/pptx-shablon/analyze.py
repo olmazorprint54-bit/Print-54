@@ -123,8 +123,11 @@ def analyze(path):
                     sz = max(sizes) / 100
                     ln = tx.find(".//a:lnSpc/a:spcPts", NS)
                     line_h = (int(ln.get("val")) / 100 if ln is not None else sz * 1.2) * EMU_PT
+                    rprs = list(tx.iter("{%s}rPr" % NS["a"]))
+                    bold = any(r.get("b") in ("1", "true") for r in rprs)
+                    caps = any(r.get("cap") == "all" for r in rprs) or (full == full.upper() and any(c.isalpha() for c in full))
                     slots.append({"id": sid, "text": full, "chars": len(full), "paras": len([p for p in paras if p.strip()]),
-                                  "sz": sz, "x": ax, "y": ay, "w": aw, "h": ah, "lineH": line_h})
+                                  "sz": sz, "x": ax, "y": ay, "w": aw, "h": ah, "lineH": line_h, "bold": bold, "caps": caps})
                     return
             blip = el.find(".//a:blip", NS)
             if blip is not None and blip.find(".//{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip") is None:
@@ -156,21 +159,34 @@ def analyze(path):
                     s["kind"] = "label"
         # Sig'im (harf): namuna matn uzunligi; sarlavha/yorliq — kamida quti enidagi bir qator;
         # [MATN] belgisi — quti eni va pastgacha bo'lgan joy
+        # cpl — bir qatorga sig'adigan harf: namuna matn 2+ qator bo'lsa — o'sha shriftda
+        # o'lchangan (eng aniq), aks holda quti eni va shrift turi (KATTA/qalin — kengroq)
         for s in slots:
-            per_line = max(6, int(s["w"] / (s["sz"] * EMU_PT * 0.5)))
             placeholder = s["text"].strip().startswith("[")
+            lines = max(1, round(s["h"] / max(s["lineH"], 1)))
+            f = (0.62 if s["caps"] else 0.5) + (0.06 if s["bold"] else 0)
+            cpl_w = s["w"] / (s["sz"] * EMU_PT * f)
+            # namuna matn haqiqatan bir necha qatorga o'ralgan bo'lsagina (quti matndan baland bo'lishi mumkin)
+            if lines >= 2 and s["chars"] >= 20 and not placeholder and s["chars"] > cpl_w * 0.9:
+                cpl = min(cpl_w * 1.1, s["chars"] / lines)
+            else:
+                cpl = cpl_w
+            cpl = max(4, cpl)
             if s["kind"] == "text" and placeholder:
                 lines = max(2, min(12, int((cy * 0.93 - s["y"]) / max(s["lineH"], 1))))
-                s["max"] = per_line * lines
+                s["max"] = cpl * lines
             elif s["kind"] in ("title", "label"):
-                s["max"] = max(s["chars"] if not placeholder else 0, per_line * (2 if placeholder else 1), 10)
+                if placeholder:
+                    lines = 2
+                s["max"] = max(cpl * lines, 8)
             else:
-                s["max"] = max(s["chars"], 12)
-            s["perLine"] = per_line
+                s["max"] = max(s["chars"], cpl * lines, 12)
+            s["perLine"] = cpl
+            s["lines"] = lines
         low = " ".join(s["text"].lower() for s in slots)
         role = "title" if n == 1 else "end" if n == len(order) and re.search(r"thank|rahmat|e.tibor|спасибо|savol", low) else "content"
         slides.append({"n": n, "part": part, "role": role, "slots": [
-            {k: (round(s[k]) if k in ("max", "perLine") else s[k]) for k in ("id", "kind", "chars", "max", "perLine", "sz", "paras", "text")}
+            {k: (round(s[k], 1) if k == "perLine" else round(s[k]) if k == "max" else s[k]) for k in ("id", "kind", "chars", "max", "perLine", "lines", "caps", "sz", "paras", "text")}
             for s in slots
         ], "photos": photos})
     return {"size": [cx, cy], "slides": slides}
