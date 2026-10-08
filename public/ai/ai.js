@@ -361,18 +361,22 @@
 
   function categoryChips(svc, f) {
     const used = new Set(CFG.templates[f.set].map((t) => t.category));
-    const cats = [{ v: "all", l: "Barchasi" }].concat(CFG.categories.filter((c) => used.has(c.v)));
+    const hasAuto = CFG.templates[f.set].some((t) => t.auto);
+    const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], CFG.categories.filter((c) => used.has(c.v)));
     const st = getCat(svc);
     return cats.map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)}</div>`).join("");
   }
 
+  // AI tayyorlaydigan shablonlar (auto) har doim ro'yxat boshida
+  const autoFirst = (list) => list.filter((t) => t.auto).concat(list.filter((t) => !t.auto));
   function templateList(svc, f, v) {
     const all = CFG.templates[f.set];
     if (!hasCategories(f)) return all;
     const st = getCat(svc);
-    if (st.cat !== "all") return all.filter((t) => t.category === st.cat);
+    if (st.cat === "ai") return all.filter((t) => t.auto);
+    if (st.cat !== "all") return autoFirst(all.filter((t) => t.category === st.cat));
     const det = detectCategory(v);
-    return det ? all.filter((t) => t.category === det).concat(all.filter((t) => t.category !== det)) : all;
+    return det ? autoFirst(all.filter((t) => t.category === det)).concat(autoFirst(all.filter((t) => t.category !== det))) : autoFirst(all);
   }
 
   // Mavzu yoki fan yozilganda mos toifani avtomatik tanlaydi
@@ -384,7 +388,9 @@
     if (next === st.cat) return;
     st.cat = next;
     if (!st.tplManual && next !== "all") {
-      const first = CFG.templates[f.set].find((t) => t.category === next);
+      const inCat = CFG.templates[f.set].filter((t) => t.category === next);
+      const cur = CFG.templates[f.set].find((t) => t.id === v[f.id]);
+      const first = inCat.find((t) => t.auto) || (cur && cur.auto ? null : inCat[0]);
       if (first) v[f.id] = first.id;
     }
   }
