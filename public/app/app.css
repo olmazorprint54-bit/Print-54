@@ -124,6 +124,7 @@ section{ margin-bottom:18px; }
 .app-search::placeholder{ color: var(--ink-soft); }
 .app-sec{ margin:18px 2px 10px; font-weight:800; font-size:15.5px; }
 .app .ai-card{ border-radius:18px; padding:13px; }
+.app .ai-card.soon{ opacity:.45; filter:grayscale(.6); }
 .app .ai-card .ic{ width:40px; height:40px; border-radius:12px; }
 .app .ai-card .ic svg{ stroke:#fff; }
 :root[data-theme="dark"] .app .ai-card .ic svg{ stroke:#0B0B14; }

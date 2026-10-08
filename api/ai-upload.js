@@ -11,13 +11,9 @@
 // ---------------------------------------------------------------
 
 const crypto = require("crypto");
-const { createClient } = require("@supabase/supabase-js");
 const { authUser, verifyInitData } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
 const MAX_BYTES = 3 * 1024 * 1024;

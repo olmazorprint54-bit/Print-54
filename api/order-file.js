@@ -6,13 +6,9 @@
 // berilgan bot orqali boradi.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 const { authUser, orderBot, botKey, sendFile } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {

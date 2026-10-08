@@ -4,8 +4,11 @@
   "functions": {
     "api/resume-pdf.js": {
       "memory": 1024,
-      "maxDuration": 60,
+      "maxDuration": 300,
       "includeFiles": "node_modules/@sparticuz/chromium/bin/**"
+    },
+    "api/ai-request.js": {
+      "maxDuration": 300
     }
   },
   "crons": [

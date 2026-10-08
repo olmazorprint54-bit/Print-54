@@ -25,7 +25,7 @@ async function connectBots(host) {
     const hook = await telegram(bot, "setWebhook", {
       url: hookUrl(host, bot),
       secret_token: webhookSecret(bot),
-      allowed_updates: ["message", "callback_query"],
+      allowed_updates: ["message", "callback_query", "pre_checkout_query"],
     });
     const menu = await telegram(bot, "setChatMenuButton", {
       menu_button: { type: "web_app", text: "Ilova", web_app: { url: appUrl(host, bot) } },

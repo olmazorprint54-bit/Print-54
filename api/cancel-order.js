@@ -10,14 +10,10 @@
 //      tahrirlaydi (matn ustidan chiziq bilan)
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 
 const { authUser, orderBot, botKey, telegram } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 function escapeHtml(str) {
   return String(str)

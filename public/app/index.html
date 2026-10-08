@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../ai/ai.css?v=19">
-<link rel="stylesheet" href="app.css?v=2">
+<link rel="stylesheet" href="app.css?v=3">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -67,20 +67,27 @@
 
   <script src="bots.js?v=2"></script>
   <script src="../ai/translit.js?v=19"></script>
-  <script src="../ai/config.js?v=19"></script>
+  <script src="../ai/config.js?v=24"></script>
+  <script src="../ai/prices.js?v=2"></script>
   <script>
     // Bu ilovada chop etish yo'q — "chop etilsinmi?" maydoni olib tashlanadi
     window.AI_CONFIG.services.forEach(function (s) {
       s.fields = s.fields.filter(function (f) { return f.id !== "print"; });
     });
+    // AI botda Canva dizaynlari (qo'lda tayyorlanadigan) ko'rsatilmaydi
+    ["test", "lesson", "crossword"].forEach(function (k) {
+      window.AI_CONFIG.templates[k] = window.AI_CONFIG.templates[k].filter(function (t) { return t.kind !== "canva"; });
+    });
     // ai.js bosh sahifasi uchun (chop etish haqidagi gaplarsiz)
     window.AI_APP = {
       bot: window.APP_BOT_KEY,
+      // AI bilan hali avtomatik bo'lmaganlari — ko'rinadi, lekin buyurtma berilmaydi
+      soon: ["presentation"],
       heroHtml: '<div class="app-hero"><h2>Bugun nima tayyorlaymiz?</h2><p>Taqdimot, mustaqil ish, test, resume va obyektivka — bir necha daqiqada.</p>' +
         '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
     };
   </script>
-  <script src="../ai/ai.js?v=21"></script>
+  <script src="../ai/ai.js?v=26"></script>
   <script src="app.js?v=2"></script>
 </body>
 </html>

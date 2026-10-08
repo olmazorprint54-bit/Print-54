@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.132.1",
     "@sparticuz/chromium": "153.0.0",
     "@supabase/supabase-js": "^2.45.0",
     "@vercel/functions": "^3.9.11",

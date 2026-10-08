@@ -5,14 +5,10 @@
 // Mijoz Telegram imzosi (initData) bo'yicha aniqlanadi.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 
 const { authUser } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {

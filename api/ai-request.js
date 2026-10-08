@@ -11,20 +11,24 @@
 // avtomatik tayyorlanadi — api/resume-pdf.js.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 const { waitUntil } = require("@vercel/functions");
 const { canAutoResume } = require("./_lib/resume-html");
 const { canAutoObyektivka } = require("./_lib/obyektivka-docx");
+const { canAutoTest } = require("./_lib/test-gen");
+const { canAutoDoc } = require("./_lib/doc-gen");
+const { priceOf, TRIAL } = require("../public/ai/prices");
+const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
-const AUTO = { resume: canAutoResume, obyektivka: canAutoObyektivka };
+const AUTO = {
+  resume: canAutoResume, obyektivka: canAutoObyektivka, test: canAutoTest,
+  essay: (f) => canAutoDoc("essay", f), referat: (f) => canAutoDoc("referat", f), lesson: (f) => canAutoDoc("lesson", f),
+  questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
+};
 const { internalKey } = require("./_lib/internal-key");
 const { MAIN, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const SERVICE_LABELS = {
   presentation: "Taqdimot",
@@ -157,6 +161,13 @@ async function startResumePdf(req, orderId) {
   if (!res.ok) console.error("resume-pdf xatosi:", res.status);
 }
 
+// To'lovsiz sinov rejimida mijozning so'nggi 24 soatdagi bepul AI buyurtmalari
+async function trialsToday(userId) {
+  const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+  const { data } = await supabase.from("orders").select("id, details").eq("telegram_user_id", userId).gte("created_at", since);
+  return (data || []).filter((o) => o.details && o.details.trial).length;
+}
+
 // Mijoz yuklagan rasmlar yo'li faqat o'zining papkasidan bo'lishi kerak
 function cleanPhotos(photos, userId) {
   if (!userId || !Array.isArray(photos)) return [];
@@ -210,11 +221,30 @@ module.exports = async (req, res) => {
 
     const summary = cleanSummary(body.summary);
     const fields = body.fields || {};
-    const price = body.price == null ? NaN : Number(body.price); // null — kelishiladi, 0 — tekin
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
     body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
+
+    // Narx serverda hisoblanadi (public/ai/prices.js) — mijoz yuborganiga ishonilmaydi.
+    // null — kelishiladi (qo'lda), 0 — tekin.
+    const known = priceOf(body.service, saved);
+    const price = known != null
+      ? (known === 0 || body.autoResume ? known : NaN)
+      : body.price == null ? NaN : Number(body.price);
+    body.price = Number.isFinite(price) ? price : null;
+
+    // Pullik avtomatik xizmat: avval to'lov (Click/Payme). To'lov ulanmagan
+    // bo'lsa — sinov rejimi: to'lovsiz, lekin mijozga kuniga FREE_DAILY ta.
+    const paid = !!(body.autoResume && price > 0);
+    if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
+    const payNow = paid && !!u && !!providerToken() && !TRIAL;
+    const trial = paid && !!u && !payNow;
+    if (trial && (await trialsToday(u.id)) >= FREE_DAILY) {
+      res.status(429).json({ ok: false, error: `Bugungi bepul limit (${FREE_DAILY} ta) tugadi. Ertaga yana urinib ko'ring.` });
+      return;
+    }
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -224,23 +254,35 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: Number.isFinite(price) && price >= 0 ? price : null,
+        total: trial ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
         status: "active",
-        details: { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) },
+        details: { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags },
       })
       .select()
       .single();
     if (error) console.error("AI buyurtmani bazaga yozib bo'lmadi:", error);
     else orderId = inserted.id;
 
+    // To'lov kutilmoqda: egaga hech narsa yuborilmaydi; to'lov o'tgach
+    // telegram-webhook.js AI'ni ishga tushiradi
+    if (payNow) {
+      if (!orderId) throw new Error("Buyurtmani bazaga yozib bo'lmadi");
+      const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
+      details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
+      const link = await createInvoice(bot, { id: orderId, service: body.service, details }, price);
+      await supabase.from("orders").update({ details: { ...details, invoice: link } }).eq("id", orderId);
+      res.status(200).json({ ok: true, orderId, auto: true, pay: link, price });
+      return;
+    }
+
     // Avtomatik resume egaga kelmaydi — faqat chop etish so'ralsa (yoki
     // avtomatik bo'lmasa, resume-pdf.js manualText ni yuboradi)
     const auto = !!(orderId && body.autoResume);
     const wantsPrint = !!(fields.print && fields.print !== "none");
-    const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) };
+    const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
     if (auto) details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
 
     let messageId = null;

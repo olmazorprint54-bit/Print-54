@@ -10,14 +10,13 @@
 // asosiy bot ham faqat AI bot (chop etishsiz, referalsiz) bo'ladi.
 // ---------------------------------------------------------------
 const crypto = require("crypto");
-const { createClient } = require("@supabase/supabase-js");
 const { MAIN, AI_MODE, botKey, orderBot, telegram, sendFile, webhookSecret } = require("./_lib/bots");
 const { connectBots, appUrl } = require("./_lib/setup");
+const { waitUntil } = require("@vercel/functions");
+const { orderIdOf } = require("./_lib/pay");
+const { internalKey } = require("./_lib/internal-key");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 const LOCATION_URL = "https://maps.google.com/maps?q=41.349872,69.214325&ll=41.349872,69.214325&z=16";
@@ -518,6 +517,36 @@ async function handleMessage(msg, bot, host) {
   });
 }
 
+/* ============ TO'LOV (Click / Payme) ============ */
+// To'lovdan oldingi tekshiruv: buyurtma bor, to'lanmagan, summa va mijoz to'g'ri
+async function handlePreCheckout(q, bot) {
+  const answer = (ok, error) => callTelegram("answerPreCheckoutQuery", { pre_checkout_query_id: q.id, ok, ...(ok ? {} : { error_message: error }) }, bot);
+  const id = orderIdOf(q.invoice_payload);
+  const { data: order } = id ? await supabase.from("orders").select("*").eq("id", id).single() : { data: null };
+  if (!order || orderBot(order) !== bot || !order.details || !order.details.awaitingPayment || order.status !== "active") return answer(false, "Buyurtma topilmadi yoki allaqachon to'langan. Ilovadan qaytadan buyurtma bering.");
+  if (String(order.telegram_user_id) !== String(q.from.id)) return answer(false, "Bu buyurtma boshqa foydalanuvchiga tegishli.");
+  if (q.currency !== "UZS" || Number(q.total_amount) !== Math.round(Number(order.total) * 100)) return answer(false, "Summa mos kelmadi. Ilovadan qaytadan buyurtma bering.");
+  return answer(true);
+}
+
+// To'lov o'tdi: buyurtma "to'langan", AI ishga tushadi
+async function handlePaid(msg, bot, req) {
+  const p = msg.successful_payment;
+  const id = orderIdOf(p.invoice_payload);
+  const { data: order } = id ? await supabase.from("orders").select("*").eq("id", id).single() : { data: null };
+  if (!order) { console.error("To'lov keldi, buyurtma topilmadi:", p.invoice_payload); return; }
+  if (!order.details.awaitingPayment) return; // takroriy xabar
+  const details = { ...order.details, awaitingPayment: false, payment: { amount: p.total_amount / 100, currency: p.currency, telegram: p.telegram_payment_charge_id, provider: p.provider_payment_charge_id, at: new Date().toISOString() } };
+  await supabase.from("orders").update({ details }).eq("id", order.id);
+  await callTelegram("sendMessage", { chat_id: msg.chat.id, text: `✅ To'lov qabul qilindi! «${(order.details.topic || AI_LABELS[order.service] || "").slice(0, 100)}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.` }, bot);
+  const proto = req.headers["x-forwarded-proto"] || "https";
+  waitUntil(fetch(`${proto}://${req.headers.host}/api/resume-pdf`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-internal-key": internalKey(order.id) },
+    body: JSON.stringify({ orderId: order.id }),
+  }).then((r) => { if (!r.ok) console.error("resume-pdf xatosi:", r.status); }).catch((e) => console.error(e)));
+}
+
 /* ============ SO'ROV TELEGRAM'DAN KELGANINI TEKSHIRISH ============ */
 function sameSecret(got, expected) {
   const a = Buffer.from(String(got || ""));
@@ -541,7 +570,8 @@ async function healWebhook(bot) {
   const out = await callTelegram("setWebhook", {
     url,
     secret_token: webhookSecret(bot),
-    ...(info.result.allowed_updates ? { allowed_updates: info.result.allowed_updates } : {}),
+    // to'lov uchun pre_checkout_query ham kelishi shart
+    ...(info.result.allowed_updates && info.result.allowed_updates.length ? { allowed_updates: [...new Set([...info.result.allowed_updates, "pre_checkout_query"])] } : {}),
     ...(info.result.max_connections ? { max_connections: info.result.max_connections } : {}),
   }, bot);
   console.log("Webhook maxfiy kaliti o'rnatildi:", bot, out.ok);
@@ -569,7 +599,11 @@ module.exports = async (req, res) => {
     const update = req.body || {};
     const host = req.headers["x-forwarded-host"] || req.headers.host;
 
-    if (update.callback_query) {
+    if (update.pre_checkout_query) {
+      await handlePreCheckout(update.pre_checkout_query, bot);
+    } else if (update.message && update.message.successful_payment) {
+      await handlePaid(update.message, bot, req);
+    } else if (update.callback_query) {
       await handleCallbackQuery(update.callback_query, bot);
     } else if (update.message) {
       await handleMessage(update.message, bot, host);

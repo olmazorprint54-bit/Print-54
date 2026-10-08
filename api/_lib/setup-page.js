@@ -9,6 +9,24 @@
 // ---------------------------------------------------------------
 
 const { connectBots } = require("./setup");
+const { envReport } = require("./db");
+
+// Sozlamalar holati (qiymatlar ko'rsatilmaydi, faqat bor/yo'q/noto'g'ri)
+function envHtml() {
+  const rows = envReport();
+  const extra = [
+    { name: "ANTHROPIC_API_KEY", state: /^sk-ant-/.test(String(process.env.ANTHROPIC_API_KEY || "").trim()) ? "ok" : process.env.ANTHROPIC_API_KEY ? "invalid" : "missing", hint: "AI uchun (sk-ant-...) — bo'lmasa AI xizmatlari qo'lda" },
+    { name: "BOT_MODE", state: process.env.BOT_MODE === "ai" ? "ok" : "missing", hint: "ai" },
+  ];
+  const known = new Set(["TELEGRAM_BOT_TOKEN", "OWNER_CHAT_ID", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "ANTHROPIC_API_KEY", "BOT_MODE", "APP_BOT", "USD_UZS", "CRON_SECRET", "PEXELS_API_KEY"]);
+  // nomi xato yozilgan bo'lishi mumkin bo'lganlar (masalan SUPABASE_URL2)
+  const odd = Object.keys(process.env).filter((k) => /^(SUPABASE|TELEGRAM|OWNER|ANTHROPIC|BOT_|APP_)/.test(k) && !known.has(k) && !/^TELEGRAM_BOT_TOKEN_[A-Z0-9_]+$/.test(k));
+  const icon = { ok: "✅", missing: "❌ yo'q", invalid: "⚠️ noto'g'ri" };
+  const all = [...rows, ...extra];
+  const html = `<table style="width:100%;border-collapse:collapse;font-size:14px">${all.map((r) => `<tr class="r"><td style="padding:6px 0"><code>${r.name}</code></td><td>${icon[r.state]}</td></tr>${r.state === "ok" ? "" : `<tr><td colspan="2" class="w" style="padding-bottom:6px">${esc(r.hint)}</td></tr>`}`).join("")}</table>`
+    + (odd.length ? `<p class="w">Tushunarsiz nomlar (to'g'ri nomga o'zgartiring yoki o'chiring): ${odd.map((k) => `<code>${esc(k)}</code>`).join(", ")}</p>` : "");
+  return { html, ok: rows.every((r) => r.state === "ok") };
+}
 
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -31,6 +49,11 @@ module.exports = async (req, res) => {
     res.status(400).send(page("⚠️ Faqat asosiy manzilda", "<p>Bu sahifani loyihaning asosiy (production) manzilida oching.</p>"));
     return;
   }
+  const env = envHtml();
+  if (!env.ok) {
+    res.status(200).send(page("⚙️ Sozlamalarni tuzating", `<p>Vercel → Settings → Environment Variables bo'limida quyidagilarni to'g'rilang, so'ng <b>Redeploy</b> qiling va sahifani yangilang.</p>${env.html}`));
+    return;
+  }
   try {
     const list = await connectBots(host);
     if (!list.length) {
@@ -41,7 +64,7 @@ module.exports = async (req, res) => {
       ? `✅ <b>@${esc(b.username)}</b> — ulandi`
       : `<span class="e">❌ <b>${esc(b.username ? "@" + b.username : b.bot)}</b> — ${esc(b.error)}</span>`}
       ${b.ok && !b.ownerStarted ? `<div class="w">⚠️ Telegram'da @${esc(b.username)} ga kirib <b>/start</b> bosing, keyin shu sahifani yangilang — aks holda buyurtmalar sizga kelmaydi.</div>` : ""}</div>`).join("");
-    res.status(200).send(page("🔌 Botni ulash", rows + `<p style="font-size:14px;opacity:.7">Endi botni oching — «Ilova» tugmasi paydo bo'ladi.</p>`));
+    res.status(200).send(page("🔌 Botni ulash", rows + `<details style="margin-top:14px"><summary>Sozlamalar</summary>${env.html}</details>` + `<p style="font-size:14px;opacity:.7">Endi botni oching — «Ilova» tugmasi paydo bo'ladi.</p>`));
   } catch (err) {
     console.error(err);
     res.status(500).send(page("❌ Xatolik", "<p>Ulab bo'lmadi. Birozdan so'ng sahifani yangilang.</p>"));

@@ -6,18 +6,14 @@
 // o'sha botdan berilgan buyurtmalar ko'rinadi.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 const { authUser, orderBot } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 // Mijozga kerak bo'lmagan ichki maydonlar (egaga yuborilgan matn va h.k.)
 function publicOrder(o) {
   const d = o.details || {};
-  const { text, manualText, ownerBot, fileBot, ...details } = d;
+  const { text, manualText, ownerBot, fileBot, invoice, payment, ...details } = d;
   return { ...o, details };
 }
 
@@ -44,7 +40,8 @@ module.exports = async (req, res) => {
 
     if (error) throw error;
 
-    const orders = (data || []).filter((o) => orderBot(o) === auth.bot).slice(0, 50).map(publicOrder);
+    // to'lov oynasi yopilib, to'lanmay qolgan buyurtmalar ro'yxatda ko'rinmaydi
+    const orders = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment)).slice(0, 50).map(publicOrder);
     res.status(200).json({ ok: true, orders });
   } catch (err) {
     console.error(err);
