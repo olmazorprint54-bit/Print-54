@@ -79,7 +79,7 @@
           { id: "topic", type: "text", label: "Mavzu", placeholder: "Masalan: Amir Temur davlatining boshqaruv tizimi", required: true, max: 200 },
           { id: "subject", type: "text", label: "Fan", placeholder: "Masalan: O'zbekiston tarixi", required: true, max: 120 },
           { id: "level", type: "chips", label: "Ta'lim bosqichi", options: [{ v: "school", l: "Maktab" }, { v: "college", l: "Kollej / litsey" }, { v: "bachelor", l: "OTM (bakalavr)" }, { v: "master", l: "Magistratura" }], default: "bachelor" },
-          { id: "pages", type: "number", label: "Hajmi (bet)", placeholder: "Masalan: 15", min: 3, max: 100, fallback: "15" },
+          { id: "pages", type: "number", label: "Hajmi (bet)", placeholder: "Masalan: 15", min: 3, max: 30, fallback: "15" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
           { id: "template", type: "templates", label: "Titul varag'i shabloni", set: "essay", default: "otm" },
           { id: "_h1", type: "heading", label: "Titul varag'i uchun ma'lumotlar" },
@@ -100,7 +100,7 @@
           { id: "topic", type: "text", label: "Mavzu", placeholder: "Masalan: Alisher Navoiy ijodi", required: true, max: 200 },
           { id: "subject", type: "text", label: "Fan", placeholder: "Masalan: Adabiyot", required: true, max: 120 },
           { id: "level", type: "chips", label: "Ta'lim bosqichi", options: [{ v: "school", l: "Maktab" }, { v: "college", l: "Kollej / litsey" }, { v: "bachelor", l: "OTM (bakalavr)" }, { v: "master", l: "Magistratura" }], default: "school" },
-          { id: "pages", type: "number", label: "Hajmi (bet)", placeholder: "Masalan: 10", min: 3, max: 50, fallback: "10" },
+          { id: "pages", type: "number", label: "Hajmi (bet)", placeholder: "Masalan: 10", min: 3, max: 30, fallback: "10" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
           { id: "template", type: "templates", label: "Titul varag'i shabloni", set: "referat", default: "school" },
           { id: "_h1", type: "heading", label: "Titul varag'i uchun ma'lumotlar" },
@@ -444,14 +444,14 @@
         { id: "cmyk", name: "Print 54 CMYK", category: "umumiy", bg: "#FFFFFF", title: "#111111", text: "#333333", accent: "#E6007E", font: "sans", deco: "cmyk" },
       ],
       essay: [
-        { id: "otm", name: "OTM standart", style: "otm" },
-        { id: "school", name: "Maktab", style: "school" },
-        { id: "modern", name: "Zamonaviy", style: "modern" },
+        { id: "otm", name: "OTM standart", style: "otm", auto: true },
+        { id: "school", name: "Maktab", style: "school", auto: true },
+        { id: "modern", name: "Zamonaviy", style: "modern", auto: true },
       ],
       referat: [
-        { id: "school", name: "Maktab", style: "school" },
-        { id: "otm", name: "OTM standart", style: "otm" },
-        { id: "modern", name: "Zamonaviy", style: "modern" },
+        { id: "school", name: "Maktab", style: "school", auto: true },
+        { id: "otm", name: "OTM standart", style: "otm", auto: true },
+        { id: "modern", name: "Zamonaviy", style: "modern", auto: true },
       ],
       lesson: [
         // Canva kutubxonasidan dars ishlanma shablonlari
@@ -463,9 +463,9 @@
         { id: "di-sodda", name: "Sodda sariq", kind: "canva", lib: true, page: true, pages: 1 },
         { id: "di-kunlik", name: "Kunlik reja", kind: "canva", lib: true, page: true, pages: 1, ratio: "1/1.294" },
         { id: "di-yashil", name: "Yashil", kind: "canva", lib: true, page: true, pages: 1 },
-        { id: "table", name: "Klassik jadval", style: "table" },
-        { id: "techmap", name: "Texnologik xarita", style: "techmap" },
-        { id: "notes", name: "Qisqa konspekt", style: "notes" },
+        { id: "table", name: "Klassik jadval", style: "table", auto: true },
+        { id: "techmap", name: "Texnologik xarita", style: "techmap", auto: true },
+        { id: "notes", name: "Qisqa konspekt", style: "notes", auto: true },
       ],
       test: [
         // Canva kutubxonasidan test varaqlari
@@ -477,13 +477,14 @@
         { id: "ts-adabiy", name: "Adabiy", kind: "canva", lib: true, page: true, pages: 1, ratio: "1/1.294" },
         { id: "ts-kartochka", name: "Kartochkali", kind: "canva", lib: true, page: true, pages: 2, ratio: "1/1.294" },
         { id: "ts-lugat", name: "Lug'at testi", kind: "canva", lib: true, page: true, pages: 2 },
-        { id: "classic", name: "Klassik", style: "classic" },
-        { id: "twocol", name: "Ikki ustun (tejamkor)", style: "twocol" },
-        { id: "sheet", name: "Javob varaqasi bilan", style: "sheet" },
+        // auto — savollarni AI tuzadi, fayl avtomatik (api/_lib/test-gen.js)
+        { id: "classic", name: "Klassik", style: "classic", auto: true },
+        { id: "twocol", name: "Ikki ustun (tejamkor)", style: "twocol", auto: true },
+        { id: "sheet", name: "Javob varaqasi bilan", style: "sheet", auto: true },
       ],
       questions: [
-        { id: "list", name: "Ro'yxat", style: "list" },
-        { id: "cards", name: "Kesiladigan kartochkalar", style: "cards" },
+        { id: "list", name: "Ro'yxat", style: "list", auto: true },
+        { id: "cards", name: "Kesiladigan kartochkalar", style: "cards", auto: true },
       ],
       obyektivka: [
         { id: "rasmiy", name: "Rasmiy shakl", style: "rasmiy", auto: true },
@@ -498,8 +499,8 @@
         { id: "kr-tabiat", name: "Tabiat", kind: "canva", lib: true, page: true, pages: 2, ratio: "1/1.294" },
         { id: "kr-sayyoralar", name: "Sayyoralar", kind: "canva", lib: true, page: true, pages: 2, ratio: "1/1.294" },
         { id: "kr-kok", name: "Ko'k sodda", kind: "canva", lib: true, page: true, pages: 2, ratio: "1/1.294" },
-        { id: "classic", name: "Klassik", style: "classic" },
-        { id: "color", name: "Rangli (bolalar)", style: "color" },
+        { id: "classic", name: "Klassik", style: "classic", auto: true },
+        { id: "color", name: "Rangli (bolalar)", style: "color", auto: true },
       ],
       resume: [
         // Canva kutubxonasidan A4 resume shablonlari (rasm: ai/templates/<id>/1.jpg)

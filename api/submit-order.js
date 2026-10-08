@@ -1,10 +1,7 @@
 // api/submit-order.js
-const { createClient } = require("@supabase/supabase-js");
+const { authUser } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 
@@ -79,6 +76,15 @@ module.exports = async (req, res) => {
   try {
     const body = req.body || {};
 
+    // Mijoz faqat Telegram imzosi (initData) bo'yicha aniqlanadi — birovning
+    // nomidan yoki bepul varaqlaridan foydalanib bo'lmaydi
+    const auth = authUser(body);
+    if (body.initData && !auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
+      return;
+    }
+    body.user = auth ? auth.user : null;
+
     const validServices = ["paper", "book", "binding"];
     const total = Number(body.total);
 if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 0 || !body.qty) {
@@ -86,7 +92,19 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
       return;
     }
 
-    const freePagesUsed = Math.max(0, parseInt(body.freePagesUsed, 10) || 0);
+    // Bepul varaqlar mijoz balansidan oshmasin
+    let freePagesUsed = body.user ? Math.max(0, parseInt(body.freePagesUsed, 10) || 0) : 0;
+    let userRow = null;
+    if (freePagesUsed > 0) {
+      const found = await supabase
+        .from("users")
+        .select("free_pages")
+        .eq("telegram_user_id", body.user.id)
+        .single();
+      userRow = found.data;
+      freePagesUsed = Math.min(freePagesUsed, userRow ? userRow.free_pages || 0 : 0);
+    }
+    body.freePagesUsed = freePagesUsed;
 
     const { data: inserted, error } = await supabase
       .from("orders")
@@ -110,20 +128,12 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
 
     if (error) throw error;
 
-    if (freePagesUsed > 0 && body.user && body.user.id) {
-      const { data: userRow } = await supabase
+    if (freePagesUsed > 0 && userRow) {
+      const newBalance = Math.max(0, (userRow.free_pages || 0) - freePagesUsed);
+      await supabase
         .from("users")
-        .select("free_pages")
-        .eq("telegram_user_id", body.user.id)
-        .single();
-
-      if (userRow) {
-        const newBalance = Math.max(0, (userRow.free_pages || 0) - freePagesUsed);
-        await supabase
-          .from("users")
-          .update({ free_pages: newBalance })
-          .eq("telegram_user_id", body.user.id);
-      }
+        .update({ free_pages: newBalance })
+        .eq("telegram_user_id", body.user.id);
     }
 
     const messageId = await sendTelegramMessage(orderText(body), inserted.id);
@@ -136,6 +146,6 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: String(err) });
+    res.status(500).json({ ok: false, error: "Buyurtmani yuborib bo'lmadi" });
   }
 };

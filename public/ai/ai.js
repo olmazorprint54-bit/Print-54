@@ -16,7 +16,13 @@
   const optL = (o) => (typeof o === "object" ? o.l : o);
   const clip = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
   const fmt = (n) => Math.round(n).toLocaleString("ru-RU") + " so'm";
-  const priceText = (id) => (CFG.prices[id] == null ? "Narxi kelishiladi" : CFG.prices[id] === 0 ? "Tekin" : fmt(CFG.prices[id]));
+  // Narxlar: ai/prices.js (server ham shundan hisoblaydi); u yerda yo'q xizmat — config.js
+  const PR = window.AI_PRICES;
+  const priceText = (id) => {
+    const p = PR && PR.fromPrice(id);
+    if (p != null) return p === 0 ? "Tekin" : PR.TRIAL ? "Tekin (sinov)" : fmt(p) + "dan";
+    return CFG.prices[id] == null ? "Narxi kelishiladi" : CFG.prices[id] === 0 ? "Tekin" : fmt(CFG.prices[id]);
+  };
   const haptic = (kind) => { try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred(kind); } catch (e) {} };
   const tick = () => { try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch (e) {} };
 
@@ -59,8 +65,18 @@
       </div>
       <div class="ai-grid">${gridCards()}</div>`;
   }
+  // Umumiy ilovada hali AI bilan avtomatik bo'lmagan xizmatlar — "Tez kunda"
+  const soonSet = () => new Set((window.AI_APP || {}).soon || []);
   function gridCards() {
-    return CFG.services.map((s) => `
+    const soon = soonSet();
+    const list = [...CFG.services.filter((s) => !soon.has(s.id)), ...CFG.services.filter((s) => soon.has(s.id))];
+    return list.map((s) => soon.has(s.id) ? `
+          <div class="ai-card glass soon">
+            <div class="ic" style="background:${s.color}">${s.icon}</div>
+            <div class="t">${esc(s.title)}</div>
+            <div class="s">${esc(s.sub)}</div>
+            <div class="p">Tez kunda</div>
+          </div>` : `
           <div class="ai-card glass" data-open="${s.id}">
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
@@ -215,7 +231,7 @@
       const res = await fetch(CFG.uploadEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null }),
+        body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null, bot: (window.AI_APP || {}).bot }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
@@ -375,8 +391,8 @@
 
   // t.page — A4 hujjat (resume), aks holda 16:9 slayd
   const canvaImg = (t, n) => t.page
-    ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
-    : `<div class="slide-box"><div class="slide"><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
+    ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
+    : `<div class="slide-box"><div class="slide"><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
 
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
@@ -417,6 +433,7 @@
   }
 
   function openService(id) {
+    if (soonSet().has(id)) { openGrid(); return; }
     const svc = CFG.services.find((s) => s.id === id);
     if (!svc) return;
     current = svc;
@@ -452,6 +469,30 @@
     return !!(t && t.auto && v.format !== "docx");
   };
 
+  // Test: oddiy dizaynlar va Telegram quiz — AI avtomatik (api/_lib/test-gen.js)
+  const isAutoTest = (v) => {
+    const t = CFG.templates.test.find((x) => x.id === v.template);
+    return v.format === "quiz" || !!(t && t.auto);
+  };
+
+  // Matnli AI xizmatlar: oddiy dizaynlar avtomatik (api/_lib/doc-gen.js)
+  const AI_DOCS = ["essay", "referat", "lesson", "questions", "crossword"];
+  const isAutoDoc = (svc, v) => {
+    const f = svc.fields.find((x) => x.type === "templates");
+    const t = f && CFG.templates[f.set].find((x) => x.id === v.template);
+    return !!(t && t.auto);
+  };
+
+  // Avtomatik (AI) tayyorlanadimi — server bilan bir xil shart
+  const isAuto = (svc, v) => svc.id === "obyektivka" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
+  // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
+  const orderPrice = (svc, v) => {
+    const p = PR && PR.priceOf(svc.id, v);
+    if (p != null && (p === 0 || isAuto(svc, v))) return p;
+    return p != null ? null : CFG.prices[svc.id];
+  };
+  const orderPriceText = (svc, v) => { const p = orderPrice(svc, v); return p == null ? "Narxi kelishiladi" : p === 0 ? "Tekin" : PR && PR.TRIAL ? "Tekin (sinov)" : fmt(p); };
+
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
@@ -463,16 +504,18 @@
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
+      ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
+      ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
-      ["Chop etish", pick("print")],
+      ...(svc.fields.some((f) => f.id === "print") ? [["Chop etish", pick("print")]] : []),
     ];
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
       // tekin xizmatda chop etish alohida hisoblanadi
-      (() => { const t = CFG.prices[svc.id] === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : priceText(svc.id);
+      (() => { const t = orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
         return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${t.length > 12 ? "16px" : "23px"}">${esc(t)}</span></div>`; })();
   }
 
@@ -734,13 +777,21 @@
           service: svc.id,
           fields: visible,
           summary: summaryPairs(svc, visible),
-          price: CFG.prices[svc.id],
+          price: orderPrice(svc, visible),
           user,
           initData: tg ? tg.initData : null,
+          bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
+      if (data.pay) {
+        // Pullik AI xizmat: avval to'lov (Click/Payme), keyin AI ishlaydi
+        status.textContent = "";
+        btn.disabled = false;
+        openPayment(svc, data);
+        return;
+      }
       haptic("success");
       renderDone(svc, data.auto);
     } catch (err) {
@@ -751,14 +802,34 @@
     }
   }
 
-  function renderDone(svc, auto) {
+  // Telegram to'lov oynasi. To'lov o'tgach server AI'ni ishga tushiradi.
+  function openPayment(svc, data) {
+    const status = document.getElementById("aiStatus");
+    if (!tg || !tg.openInvoice) {
+      if (status) status.textContent = "To'lov uchun ilovani Telegram ichida oching.";
+      return;
+    }
+    tg.openInvoice(data.pay, (res) => {
+      if (res === "paid") { haptic("success"); renderDone(svc, true, true); return; }
+      if (res === "pending") { renderDone(svc, true, true); return; }
+      haptic("warning");
+      if (status) status.innerHTML = res === "failed"
+        ? "To'lov o'tmadi. Kartani tekshirib, qayta urinib ko'ring."
+        : "To'lov qilinmadi. Buyurtma to'lovdan keyin tayyorlanadi.";
+      const again = document.getElementById("aiPayAgain") || Object.assign(document.createElement("button"), { id: "aiPayAgain", type: "button", className: "order-btn", textContent: "💳 To'lovni qayta ochish" });
+      again.onclick = () => openPayment(svc, data);
+      if (status && !again.isConnected) status.after(again);
+    });
+  }
+
+  function renderDone(svc, auto, paid) {
     photoState[svc.id] = [];
     syncPhotos(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">✅</div>
-        <h3>So'rovingiz qabul qilindi!</h3>
-        <p>${auto ? `«${esc(svc.title)}» avtomatik tayyorlanmoqda — bir daqiqa ichida fayl shu botga xabar bo'lib keladi.` : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
+        <h3>${paid ? "To'lov qabul qilindi!" : "So'rovingiz qabul qilindi!"}</h3>
+        <p>${auto ? `«${esc(svc.title)}» avtomatik tayyorlanmoqda — bir necha daqiqa ichida fayl shu botga xabar bo'lib keladi.` : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
         <button type="button" class="order-btn" data-again="1">Yana so'rov qoldirish</button>
         <div class="pill-btn glass" data-contact="1" style="margin-top:10px;">Biz bilan bog'lanish</div>
       </div>`;

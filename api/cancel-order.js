@@ -1,7 +1,8 @@
 // api/cancel-order.js
 // ---------------------------------------------------------------
 // Mijoz "Buyurtmalarim" bo'limidan o'z buyurtmasini bekor qiladi:
-//   1) Buyurtma haqiqatan shu mijozniki ekanini tekshiradi
+//   1) Buyurtma haqiqatan shu mijozniki ekanini tekshiradi (Telegram
+//      imzosi — initData bo'yicha)
 //   2) Supabase'da statusni "cancelled" qiladi
 //   3) Agar buyurtmada bepul varaqlar ishlatilgan bo'lsa, ularni
 //      mijozning balansiga qaytarib qo'shadi
@@ -9,12 +10,10 @@
 //      tahrirlaydi (matn ustidan chiziq bilan)
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const { authUser, orderBot, botKey, telegram } = require("./_lib/bots");
+
+const supabase = require("./_lib/db");
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 function escapeHtml(str) {
   return String(str)
@@ -49,24 +48,15 @@ function orderText(o) {
   return lines.join("\n");
 }
 
-async function editTelegramMessage(messageId, text) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.OWNER_CHAT_ID;
-  const url = `https://api.telegram.org/bot${token}/editMessageText`;
-
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-      chat_id: chatId,
-      message_id: messageId,
-      text,
-      parse_mode: "HTML",
-      reply_markup: { inline_keyboard: [] },
-    }),
+// Egaga yuborilgan xabar qaysi bot orqali ketgan bo'lsa, o'sha bot tahrirlaydi
+async function editTelegramMessage(bot, messageId, text) {
+  const data = await telegram(bot, "editMessageText", {
+    chat_id: process.env.OWNER_CHAT_ID,
+    message_id: messageId,
+    text,
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: [] },
   });
-
-  const data = await res.json();
   if (!data.ok) {
     // Xabar juda eski bo'lsa yoki allaqachon o'zgargan bo'lsa Telegram
     // xato qaytarishi mumkin — buni buyurtmani bekor qilishga
@@ -82,9 +72,15 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { orderId, userId } = req.body || {};
-    if (!orderId || !userId) {
-      res.status(400).json({ ok: false, error: "orderId va userId kerak" });
+    const auth = authUser(req.body);
+    if (!auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
+      return;
+    }
+    const userId = auth.user.id;
+    const orderId = parseInt((req.body || {}).orderId, 10);
+    if (!orderId) {
+      res.status(400).json({ ok: false, error: "orderId kerak" });
       return;
     }
 
@@ -135,12 +131,13 @@ module.exports = async (req, res) => {
       // AI buyurtmalarda egaga yuborilgan asl matn details.text da saqlanadi
       const original = order.details && order.details.text ? order.details.text : orderText(order);
       const strikedText = `<s>${original}</s>\n\n❌ <b>Mijoz tomonidan bekor qilindi</b>`;
-      await editTelegramMessage(order.telegram_message_id, strikedText);
+      const ownerBot = botKey((order.details && order.details.ownerBot) || orderBot(order));
+      await editTelegramMessage(ownerBot, order.telegram_message_id, strikedText);
     }
 
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: String(err) });
+    res.status(500).json({ ok: false, error: "Buyurtmani bekor qilib bo'lmadi" });
   }
 };

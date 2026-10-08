@@ -11,19 +11,24 @@
 // avtomatik tayyorlanadi — api/resume-pdf.js.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 const { waitUntil } = require("@vercel/functions");
 const { canAutoResume } = require("./_lib/resume-html");
 const { canAutoObyektivka } = require("./_lib/obyektivka-docx");
+const { canAutoTest } = require("./_lib/test-gen");
+const { canAutoDoc } = require("./_lib/doc-gen");
+const { priceOf, TRIAL } = require("../public/ai/prices");
+const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
-const AUTO = { resume: canAutoResume, obyektivka: canAutoObyektivka };
+const AUTO = {
+  resume: canAutoResume, obyektivka: canAutoObyektivka, test: canAutoTest,
+  essay: (f) => canAutoDoc("essay", f), referat: (f) => canAutoDoc("referat", f), lesson: (f) => canAutoDoc("lesson", f),
+  questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
+};
 const { internalKey } = require("./_lib/internal-key");
+const { MAIN, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const SERVICE_LABELS = {
   presentation: "Taqdimot",
@@ -96,6 +101,7 @@ function requestText(body, summary, orderId) {
     const id = parseInt(u.id, 10);
     lines.push(`👤 Mijoz: <a href="tg://user?id=${id}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`);
   }
+  if (body.bot && body.bot !== MAIN) lines.push(`🤖 Bot: ${escapeHtml(body.bot)}`);
 
   if (orderId && body.autoResume) {
     lines.push("");
@@ -110,21 +116,17 @@ function requestText(body, summary, orderId) {
   return text;
 }
 
-async function sendToOwner(text) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: process.env.OWNER_CHAT_ID,
-      text,
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-    }),
+// Egaga xabar buyurtma kelgan botning o'zi orqali boradi — tayyor faylni
+// o'sha xabarga javob qilib yuborsa, fayl shu bot orqali mijozga yetadi
+async function sendToOwner(bot, text) {
+  const data = await toOwner(bot, "sendMessage", {
+    chat_id: process.env.OWNER_CHAT_ID,
+    text,
+    parse_mode: "HTML",
+    disable_web_page_preview: true,
   });
-  const data = await res.json();
   if (!data.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(data));
-  return data.result.message_id;
+  return { id: data.result.message_id, via: data.via };
 }
 
 // Buyurtma maydonlarining nusxasi (avtomatik tayyorlash uchun)
@@ -159,6 +161,13 @@ async function startResumePdf(req, orderId) {
   if (!res.ok) console.error("resume-pdf xatosi:", res.status);
 }
 
+// To'lovsiz sinov rejimida mijozning so'nggi 24 soatdagi bepul AI buyurtmalari
+async function trialsToday(userId) {
+  const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+  const { data } = await supabase.from("orders").select("id, details").eq("telegram_user_id", userId).gte("created_at", since);
+  return (data || []).filter((o) => o.details && o.details.trial).length;
+}
+
 // Mijoz yuklagan rasmlar yo'li faqat o'zining papkasidan bo'lishi kerak
 function cleanPhotos(photos, userId) {
   if (!userId || !Array.isArray(photos)) return [];
@@ -167,26 +176,20 @@ function cleanPhotos(photos, userId) {
 }
 
 // Rasmlarni egasiga buyurtma xabariga javob qilib, albom ko'rinishida yuboradi
-async function sendPhotosToOwner(paths, orderId, replyTo) {
+async function sendPhotosToOwner(bot, paths, orderId, replyTo) {
   const { data, error } = await supabase.storage.from(BUCKET).createSignedUrls(paths, LINK_TTL);
   if (error) throw error;
   const urls = data.map((x) => x.signedUrl).filter(Boolean);
   if (!urls.length) return;
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const res = await fetch(`https://api.telegram.org/bot${token}/sendMediaGroup`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: process.env.OWNER_CHAT_ID,
-      media: urls.map((url, i) => ({
-        type: "photo",
-        media: url,
-        ...(i === 0 ? { caption: `📷 Mijoz rasmlari${orderId ? " — #" + orderId : ""} (${urls.length} ta)` } : {}),
-      })),
-      ...(replyTo ? { reply_parameters: { message_id: replyTo, allow_sending_without_reply: true } } : {}),
-    }),
+  const out = await telegram(bot, "sendMediaGroup", {
+    chat_id: process.env.OWNER_CHAT_ID,
+    media: urls.map((url, i) => ({
+      type: "photo",
+      media: url,
+      ...(i === 0 ? { caption: `📷 Mijoz rasmlari${orderId ? " — #" + orderId : ""} (${urls.length} ta)` } : {}),
+    })),
+    ...(replyTo ? { reply_parameters: { message_id: replyTo, allow_sending_without_reply: true } } : {}),
   });
-  const out = await res.json();
   if (!out.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(out));
 }
 
@@ -203,14 +206,45 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Mijoz faqat Telegram imzosi (initData) orqali aniqlanadi — boshqa
+    // birovning nomidan buyurtma berib bo'lmaydi. Telegram tashqarisidan
+    // (oddiy brauzer) kelgan so'rov mijozsiz qabul qilinadi.
+    const auth = authUser(body);
+    if (body.initData && !auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
+      return;
+    }
+    const u = auth ? auth.user : null;
+    const bot = auth ? auth.bot : botKey(body.bot);
+    body.user = u;
+    body.bot = bot;
+
     const summary = cleanSummary(body.summary);
     const fields = body.fields || {};
-    const u = body.user && body.user.id ? body.user : null;
-    const price = body.price == null ? NaN : Number(body.price); // null — kelishiladi, 0 — tekin
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
     body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
+
+    // Narx serverda hisoblanadi (public/ai/prices.js) — mijoz yuborganiga ishonilmaydi.
+    // null — kelishiladi (qo'lda), 0 — tekin.
+    const known = priceOf(body.service, saved);
+    const price = known != null
+      ? (known === 0 || body.autoResume ? known : NaN)
+      : body.price == null ? NaN : Number(body.price);
+    body.price = Number.isFinite(price) ? price : null;
+
+    // Pullik avtomatik xizmat: avval to'lov (Click/Payme). To'lov ulanmagan
+    // bo'lsa — sinov rejimi: to'lovsiz, lekin mijozga kuniga FREE_DAILY ta.
+    const paid = !!(body.autoResume && price > 0);
+    if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
+    const payNow = paid && !!u && !!providerToken() && !TRIAL;
+    const trial = paid && !!u && !payNow;
+    if (trial && (await trialsToday(u.id)) >= FREE_DAILY) {
+      res.status(429).json({ ok: false, error: `Bugungi bepul limit (${FREE_DAILY} ta) tugadi. Ertaga yana urinib ko'ring.` });
+      return;
+    }
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -220,29 +254,43 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: Number.isFinite(price) && price >= 0 ? price : null,
+        total: trial ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
         status: "active",
-        details: { topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) },
+        details: { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags },
       })
       .select()
       .single();
     if (error) console.error("AI buyurtmani bazaga yozib bo'lmadi:", error);
     else orderId = inserted.id;
 
+    // To'lov kutilmoqda: egaga hech narsa yuborilmaydi; to'lov o'tgach
+    // telegram-webhook.js AI'ni ishga tushiradi
+    if (payNow) {
+      if (!orderId) throw new Error("Buyurtmani bazaga yozib bo'lmadi");
+      const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
+      details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
+      const link = await createInvoice(bot, { id: orderId, service: body.service, details }, price);
+      await supabase.from("orders").update({ details: { ...details, invoice: link } }).eq("id", orderId);
+      res.status(200).json({ ok: true, orderId, auto: true, pay: link, price });
+      return;
+    }
+
     // Avtomatik resume egaga kelmaydi — faqat chop etish so'ralsa (yoki
     // avtomatik bo'lmasa, resume-pdf.js manualText ni yuboradi)
     const auto = !!(orderId && body.autoResume);
     const wantsPrint = !!(fields.print && fields.print !== "none");
-    const details = { topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}) };
+    const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
     if (auto) details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
 
     let messageId = null;
     if (!auto || wantsPrint) {
       details.text = requestText(body, summary, orderId);
-      messageId = await sendToOwner(details.text);
+      const sent = await sendToOwner(bot, details.text);
+      messageId = sent.id;
+      details.ownerBot = sent.via; // egasi faylni shu botdagi xabarga javob qiladi
     }
 
     if (orderId) {
@@ -256,7 +304,7 @@ module.exports = async (req, res) => {
     // resume'da rasm PDF ichida — alohida yuborilmaydi)
     if (photos.length && !auto) {
       try {
-        await sendPhotosToOwner(photos, orderId, messageId);
+        await sendPhotosToOwner(details.ownerBot || bot, photos, orderId, messageId);
       } catch (err) {
         console.error("Mijoz rasmlarini yuborib bo'lmadi:", err);
       }

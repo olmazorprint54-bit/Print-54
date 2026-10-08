@@ -6,12 +6,8 @@
 // saqlash shart emas.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
 const KEEP_DAYS = 14;

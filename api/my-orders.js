@@ -1,15 +1,21 @@
 // api/my-orders.js
 // ---------------------------------------------------------------
-// Mijozning o'z buyurtmalar tarixini qaytaradi (Telegram user ID
-// bo'yicha filtrlangan holda).
+// Mijozning o'z buyurtmalar tarixini qaytaradi. Mijoz Telegram
+// imzosi (initData) bo'yicha aniqlanadi — boshqa birovning
+// buyurtmalarini ko'rib bo'lmaydi. Har bir bot ilovasida faqat
+// o'sha botdan berilgan buyurtmalar ko'rinadi.
 // ---------------------------------------------------------------
 
-const { createClient } = require("@supabase/supabase-js");
+const { authUser, orderBot } = require("./_lib/bots");
 
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
-);
+const supabase = require("./_lib/db");
+
+// Mijozga kerak bo'lmagan ichki maydonlar (egaga yuborilgan matn va h.k.)
+function publicOrder(o) {
+  const d = o.details || {};
+  const { text, manualText, ownerBot, fileBot, invoice, payment, ...details } = d;
+  return { ...o, details };
+}
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
@@ -18,25 +24,27 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { userId } = req.body || {};
-    if (!userId) {
-      res.status(400).json({ ok: false, error: "userId kerak" });
+    const auth = authUser(req.body);
+    if (!auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
       return;
     }
 
     const { data, error } = await supabase
       .from("orders")
       .select("*")
-      .eq("telegram_user_id", userId)
+      .eq("telegram_user_id", auth.user.id)
       .eq("hidden_by_customer", false)
       .order("created_at", { ascending: false })
-      .limit(50);
+      .limit(100);
 
     if (error) throw error;
 
-    res.status(200).json({ ok: true, orders: data });
+    // to'lov oynasi yopilib, to'lanmay qolgan buyurtmalar ro'yxatda ko'rinmaydi
+    const orders = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment)).slice(0, 50).map(publicOrder);
+    res.status(200).json({ ok: true, orders });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: String(err) });
+    res.status(500).json({ ok: false, error: "Buyurtmalarni olib bo'lmadi" });
   }
 };
