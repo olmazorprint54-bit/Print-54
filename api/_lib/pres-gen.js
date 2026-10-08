@@ -162,6 +162,25 @@ async function pexels(query, orientation, used) {
   return { buf, w: p.width, h: p.height };
 }
 
+// Pixabay (Pexels kalit bermay qo'ygani uchun asosiy manba): PIXABAY_API_KEY
+async function pixabay(query, orientation, used) {
+  if (!process.env.PIXABAY_API_KEY || !query) return null;
+  const orient = orientation === "landscape" ? "horizontal" : orientation === "portrait" ? "vertical" : "all";
+  const res = await fetch(`https://pixabay.com/api/?key=${encodeURIComponent(process.env.PIXABAY_API_KEY)}&q=${encodeURIComponent(query.slice(0, 100))}&image_type=photo&orientation=${orient}&safesearch=true&per_page=10`);
+  if (!res.ok) return null;
+  const data = await res.json();
+  const p = (data.hits || []).find((x) => !used.has("pb" + x.id));
+  if (!p) return null;
+  used.add("pb" + p.id);
+  const buf = await download(p.largeImageURL || p.webformatURL);
+  return { buf, w: p.imageWidth, h: p.imageHeight };
+}
+
+// Foto qidirish: Pixabay, bo'lmasa Pexels
+async function stockPhoto(query, orientation, used) {
+  return (await pixabay(query, orientation, used).catch(() => null)) || (await pexels(query, orientation, used).catch(() => null));
+}
+
 /* ---------------- PPTX yig'ish ---------------- */
 function shapeRange(xml, id) {
   const m = new RegExp(`<p:cNvPr\\b[^>]*\\bid="${id}"`).exec(xml);
@@ -309,7 +328,7 @@ async function generatePresentation(f, photoUrls = []) {
     if (own.length) return own.shift();
     if (!d.images) return null;
     const orient = fr.w / fr.h > 1.2 ? "landscape" : fr.w / fr.h < 0.83 ? "portrait" : "square";
-    try { return await pexels(k ? `${s.query} ${["detail", "closeup", "people"][k % 3]}` : s.query || d.topic, orient, used); } catch (e) { return null; }
+    try { return await stockPhoto(k ? `${s.query} ${["detail", "closeup", "people"][k % 3]}` : s.query || d.topic, orient, used); } catch (e) { return null; }
   }));
   const buffer = await buildPptx(tpl, spec, written.slides, photosFor, LANG_TAG[lang]);
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
