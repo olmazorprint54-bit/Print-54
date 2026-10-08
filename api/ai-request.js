@@ -243,8 +243,10 @@ module.exports = async (req, res) => {
     if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
     const payNow = paid && !!u && !!providerToken() && !TRIAL;
     const trial = paid && !!u && !payNow;
-    if (trial && (await trialsToday(u.id)) >= FREE_DAILY) {
-      res.status(429).json({ ok: false, error: `Bugungi bepul limit (${FREE_DAILY} ta) tugadi. Ertaga yana urinib ko'ring.` });
+    // Bot egasi (OWNER_CHAT_ID) sinab ko'rishi uchun limit yo'q
+    const isOwner = !!u && String(u.id) === String(process.env.OWNER_CHAT_ID || "").trim();
+    if (trial && !isOwner && (await trialsToday(u.id)) >= FREE_DAILY) {
+      res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
     const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}) };
