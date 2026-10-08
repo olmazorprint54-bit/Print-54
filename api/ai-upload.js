@@ -7,11 +7,12 @@
 // ai-request.js ga yuboriladi.
 //
 // Faqat Telegram ichidan kelgan so'rovlar qabul qilinadi (initData
-// imzosi bot tokeni bilan tekshiriladi).
+// imzosi ilova ochilgan botning tokeni bilan tekshiriladi).
 // ---------------------------------------------------------------
 
 const crypto = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
+const { authUser, verifyInitData } = require("./_lib/bots");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -20,32 +21,6 @@ const supabase = createClient(
 
 const BUCKET = "ai-uploads";
 const MAX_BYTES = 3 * 1024 * 1024;
-const MAX_AGE = 24 * 60 * 60; // initData 1 kundan eski bo'lmasin
-
-// Telegram Mini App initData imzosini tekshiradi. To'g'ri bo'lsa
-// foydalanuvchini, aks holda null qaytaradi.
-function verifyInitData(initData, botToken) {
-  if (!initData || !botToken) return null;
-  const params = new URLSearchParams(initData);
-  const hash = params.get("hash");
-  if (!hash) return null;
-  params.delete("hash");
-  const dataCheck = [...params.entries()]
-    .map(([k, v]) => `${k}=${v}`)
-    .sort()
-    .join("\n");
-  const secret = crypto.createHmac("sha256", "WebAppData").update(botToken).digest();
-  const expected = crypto.createHmac("sha256", secret).update(dataCheck).digest("hex");
-  if (expected.length !== hash.length || !crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(hash))) return null;
-  const authDate = parseInt(params.get("auth_date"), 10);
-  if (!authDate || Date.now() / 1000 - authDate > MAX_AGE) return null;
-  try {
-    const user = JSON.parse(params.get("user") || "null");
-    return user && user.id ? user : null;
-  } catch (e) {
-    return null;
-  }
-}
 
 let bucketReady = false;
 async function ensureBucket() {
@@ -66,8 +41,8 @@ module.exports = async (req, res) => {
 
   try {
     const body = req.body || {};
-    const user = verifyInitData(body.initData, process.env.TELEGRAM_BOT_TOKEN);
-    if (!user) {
+    const auth = authUser(body);
+    if (!auth) {
       res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" });
       return;
     }
@@ -80,7 +55,7 @@ module.exports = async (req, res) => {
     }
 
     await ensureBucket();
-    const path = `${parseInt(user.id, 10)}/${Date.now()}-${crypto.randomBytes(4).toString("hex")}.jpg`;
+    const path = `${parseInt(auth.user.id, 10)}/${Date.now()}-${crypto.randomBytes(4).toString("hex")}.jpg`;
     const { error } = await supabase.storage.from(BUCKET).upload(path, buf, { contentType: "image/jpeg" });
     if (error) throw error;
 

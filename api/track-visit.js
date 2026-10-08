@@ -2,10 +2,13 @@
 // ---------------------------------------------------------------
 // Mini app ochilganda chaqiriladi — foydalanuvchi va tashrif
 // ma'lumotlarini Supabase'ga yozadi (faqat sizga ko'rinadigan
-// statistika uchun).
+// statistika uchun). Foydalanuvchi faqat Telegram imzosi to'g'ri
+// bo'lsa yoziladi, aks holda tashrif nomsiz hisoblanadi.
 // ---------------------------------------------------------------
 
 const { createClient } = require("@supabase/supabase-js");
+
+const { authUser } = require("./_lib/bots");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -19,8 +22,8 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const body = req.body || {};
-    const user = body.user || null;
+    const auth = authUser(req.body);
+    const user = auth ? auth.user : null;
 
     // Har bir tashrifni alohida qator sifatida yozamiz
     const { error: visitError } = await supabase.from("visits").insert({
@@ -45,6 +48,6 @@ module.exports = async (req, res) => {
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: String(err) });
+    res.status(500).json({ ok: false });
   }
 };

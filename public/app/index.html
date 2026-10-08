@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../ai/ai.css?v=19">
-<link rel="stylesheet" href="app.css?v=1">
+<link rel="stylesheet" href="app.css?v=2">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -65,17 +65,22 @@
 
   <div class="toast" id="toast"></div>
 
-  <script src="bots.js?v=1"></script>
+  <script src="bots.js?v=2"></script>
   <script src="../ai/translit.js?v=19"></script>
   <script src="../ai/config.js?v=19"></script>
   <script>
+    // Bu ilovada chop etish yo'q — "chop etilsinmi?" maydoni olib tashlanadi
+    window.AI_CONFIG.services.forEach(function (s) {
+      s.fields = s.fields.filter(function (f) { return f.id !== "print"; });
+    });
     // ai.js bosh sahifasi uchun (chop etish haqidagi gaplarsiz)
     window.AI_APP = {
+      bot: window.APP_BOT_KEY,
       heroHtml: '<div class="app-hero"><h2>Bugun nima tayyorlaymiz?</h2><p>Taqdimot, mustaqil ish, test, resume va obyektivka — bir necha daqiqada.</p>' +
         '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
     };
   </script>
-  <script src="../ai/ai.js?v=19"></script>
-  <script src="app.js?v=1"></script>
+  <script src="../ai/ai.js?v=20"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

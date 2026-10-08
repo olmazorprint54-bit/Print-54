@@ -5,6 +5,7 @@
 //   2) Chrome (serverda @sparticuz/chromium) orqali PDF
 //   3) PDF to'g'ridan-to'g'ri mijozga boradi, buyurtma bajariladi.
 //      Ega faqat chop etish so'ralganda yoki xato bo'lganda xabar oladi.
+//      Hammasi buyurtma kelgan bot orqali boradi (api/_lib/bots.js).
 // Faqat ai-request.js chaqiradi (ichki imzo bilan).
 // ---------------------------------------------------------------
 
@@ -13,6 +14,7 @@ const { createClient } = require("@supabase/supabase-js");
 const { resumeData, resumeHtml } = require("./_lib/resume-html");
 const { internalKey } = require("./_lib/internal-key");
 const { buildObyektivka } = require("./_lib/obyektivka-docx");
+const { orderBot, telegram, toOwner } = require("./_lib/bots");
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = { resume: "Resume'ingiz", obyektivka: "Obyektivkangiz" };
@@ -83,14 +85,6 @@ async function photoUrl(order) {
 
 const fileName = (name) => `Resume - ${String(name || "mijoz").replace(/[\\/:*?"<>|]+/g, "").slice(0, 60)}.pdf`;
 
-async function telegram(method, body) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const res = await fetch(`https://api.telegram.org/bot${token}/${method}`, body instanceof FormData
-    ? { method: "POST", body }
-    : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-  return res.json();
-}
-
 // file: { buffer, name, mime }
 function docForm(chatId, file, caption, replyTo) {
   const form = new FormData();
@@ -108,26 +102,31 @@ async function deliver(order, file) {
   const what = READY[order.service] || "Faylingiz";
   const fields = order.details.fields;
   const wantsPrint = fields.print && fields.print !== "none";
+  const bot = orderBot(order);
   let doc = null;
+  let fileBot = bot; // file_id faqat o'sha botda ishlaydi
   if (order.telegram_user_id) {
-    const sent = await telegram("sendDocument", docForm(order.telegram_user_id, file,
+    const sent = await telegram(bot, "sendDocument", docForm(order.telegram_user_id, file,
       `🎉 <b>${what} tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`));
     if (sent.ok) doc = sent.result.document;
   }
 
   if (wantsPrint || !doc) {
-    const sent = await telegram("sendDocument", docForm(process.env.OWNER_CHAT_ID, file,
+    const sent = await toOwner(bot, "sendDocument", docForm(process.env.OWNER_CHAT_ID, file,
       doc
         ? `🖨 <b>Chop etish uchun</b> — #${order.id} (${fields.print === "color" ? "rangli" : "oq-qora"})\nFayl avtomatik tayyorlanib, mijozga yuborildi.`
         : `⚠️ #${order.id} — fayl tayyor, lekin mijozga yuborib bo'lmadi (botni bloklagan bo'lishi mumkin). U "Buyurtmalarim"dan olishi mumkin.`,
       order.telegram_message_id));
-    if (!doc && sent.ok) doc = sent.result.document;
+    if (!doc && sent.ok) {
+      doc = sent.result.document;
+      fileBot = sent.via;
+    }
   }
   if (!doc) throw new Error("Fayl hech kimga yuborilmadi");
 
   await supabase
     .from("orders")
-    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || file.name })
+    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || file.name, details: { ...order.details, fileBot } })
     .eq("id", order.id);
 }
 
@@ -137,16 +136,17 @@ async function fallbackToOwner(orderId, order, reason) {
   const why = reason ? `\n<i>Sabab: ${String(reason).replace(/[<>&]/g, "").slice(0, 200)}</i>` : "";
   const warn = `⚠️ <b>Avtomatik tayyorlab bo'lmadi</b> — iltimos, qo'lda tayyorlang.${why}`;
   if (manual && !order.telegram_message_id) {
-    const sent = await telegram("sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `${warn}\n\n${manual}`, parse_mode: "HTML", disable_web_page_preview: true });
+    const sent = await toOwner(orderBot(order), "sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `${warn}\n\n${manual}`, parse_mode: "HTML", disable_web_page_preview: true });
     if (sent.ok) {
       await supabase
         .from("orders")
-        .update({ telegram_message_id: sent.result.message_id, details: { ...order.details, text: manual } })
+        .update({ telegram_message_id: sent.result.message_id, details: { ...order.details, text: manual, ownerBot: sent.via } })
         .eq("id", order.id);
     }
     return;
   }
-  await telegram("sendMessage", {
+  const ownerBot = (order && order.details && order.details.ownerBot) || orderBot(order);
+  await toOwner(ownerBot, "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
     text: `${warn}\n#${orderId} — tayyor faylni buyurtma xabariga javob qilib yuboring.`,
     parse_mode: "HTML",

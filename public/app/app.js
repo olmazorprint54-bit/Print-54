@@ -13,8 +13,13 @@
   if (tg) { try { tg.ready(); tg.expand(); } catch (e) {} }
 
   /* ---------- bot ---------- */
-  const key = new URLSearchParams(location.search).get("b") || window.APP_BOT_DEFAULT;
+  const key = window.APP_BOT_KEY || window.APP_BOT_DEFAULT;
   const bot = (window.APP_BOTS || {})[key] || window.APP_BOTS[window.APP_BOT_DEFAULT];
+  // "Biz bilan bog'lanish" — shu botning egasi bilan
+  window.openOwnerChat = () => {
+    const url = bot.contact || "https://t.me/Print_54";
+    if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank");
+  };
   document.documentElement.style.setProperty("--acc", bot.accent);
   document.documentElement.style.setProperty("--acc-dark", bot.accentDark || bot.accent);
   document.title = bot.name;
@@ -92,10 +97,15 @@
     clearTimeout(toast.tm);
     toast.tm = setTimeout(() => t.classList.remove("show"), 2600);
   }
+  // Server mijozni Telegram imzosi (initData) bo'yicha taniydi; bot — qaysi bot ilovasi
+  const api = (path, extra) => fetch(path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ initData: tg ? tg.initData : "", bot: key, ...extra }),
+  }).then((r) => r.json().catch(() => ({})));
   async function fetchOrders() {
     if (!user) return null;
-    const res = await fetch("/api/my-orders", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId: user.id }) });
-    const data = await res.json();
+    const data = await api("/api/my-orders");
     // bu ilovada faqat AI xizmatlar buyurtmalari
     return data.ok ? (data.orders || []).filter((o) => TITLES[o.service]) : null;
   }
@@ -115,6 +125,9 @@
           <div class="row1"><div><div class="ttl">${esc(TITLES[o.service])}</div>${topic ? `<div class="topic">${esc(topic)}</div>` : ""}</div><span class="st ${cls}">${st}</span></div>
           <div class="meta">#${o.id} · ${date}${o.total === 0 ? " · Tekin" : ""}</div>
           ${o.status === "completed" && o.file_id ? `<button class="get" data-file="${o.id}">📥 Faylni olish</button>` : ""}
+          <div class="acts">${o.status === "active"
+            ? `<button class="danger" data-cancel="${o.id}">Bekor qilish</button>`
+            : `<button data-hide="${o.id}">Ro'yxatdan olib tashlash</button>`}</div>
         </div>`;
       }).join("") : `<div class="empty"><b>🗂</b>Hali buyurtma yo'q.<br>«Asosiy» bo'limidan xizmat tanlang.</div>`;
     } catch (err) {
@@ -122,16 +135,39 @@
     }
   }
   $("ordersList").addEventListener("click", async (e) => {
-    const b = e.target.closest("[data-file]");
+    const b = e.target.closest("[data-file],[data-cancel],[data-hide]");
     if (!b || !user) return;
+    if (b.dataset.cancel && !(await confirmAsk("Buyurtmani bekor qilasizmi?"))) return;
+    tick();
     b.disabled = true;
     try {
-      const res = await fetch("/api/order-file", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ orderId: +b.dataset.file, userId: user.id }) });
-      const data = await res.json().catch(() => ({}));
-      toast(data.ok ? "✅ Fayl botga yuborildi" : "Faylni yuborib bo'lmadi");
-    } catch (err) { toast("Faylni yuborib bo'lmadi"); }
+      if (b.dataset.file) {
+        const data = await api("/api/order-file", { orderId: +b.dataset.file });
+        toast(data.ok ? "✅ Fayl botga yuborildi" : data.error || "Faylni yuborib bo'lmadi");
+      } else if (b.dataset.cancel) {
+        const data = await api("/api/cancel-order", { orderId: +b.dataset.cancel });
+        toast(data.ok ? "Buyurtma bekor qilindi" : data.error || "Bekor qilib bo'lmadi");
+        if (data.ok) return loadOrders();
+      } else {
+        const card = b.closest(".order");
+        card.classList.add("gone");
+        const data = await api("/api/hide-order", { orderId: +b.dataset.hide });
+        if (data.ok) return loadOrders();
+        card.classList.remove("gone");
+        toast(data.error || "Olib tashlab bo'lmadi");
+      }
+    } catch (err) { toast("Internet aloqasini tekshiring"); }
     b.disabled = false;
   });
+  // Telegram'ning o'z tasdiqlash oynasi (brauzerda — oddiy confirm)
+  function confirmAsk(text) {
+    return new Promise((resolve) => {
+      try {
+        if (tg && tg.showConfirm && tg.platform !== "unknown") { tg.showConfirm(text, (ok) => resolve(!!ok)); return; }
+      } catch (e) {}
+      resolve(window.confirm(text));
+    });
+  }
   function updateBadge(list) {
     const n = list.filter((o) => o.status === "active").length;
     const b = $("ordersBadge");

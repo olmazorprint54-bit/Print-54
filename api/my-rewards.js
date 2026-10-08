@@ -2,9 +2,12 @@
 // ---------------------------------------------------------------
 // Foydalanuvchining bepul varaqlar balansi va taklif qilgan
 // do'stlar sonini qaytaradi (faqat o'qish, hech narsa yozmaydi).
+// Mijoz Telegram imzosi (initData) bo'yicha aniqlanadi.
 // ---------------------------------------------------------------
 
 const { createClient } = require("@supabase/supabase-js");
+
+const { authUser } = require("./_lib/bots");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -18,13 +21,12 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const body = req.body || {};
-    const userId = body.userId;
-
-    if (!userId) {
-      res.status(400).json({ ok: false, error: "userId kerak" });
+    const auth = authUser(req.body);
+    if (!auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
       return;
     }
+    const userId = auth.user.id;
 
     const { data: userRow, error } = await supabase
       .from("users")
@@ -42,6 +44,6 @@ module.exports = async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: String(err) });
+    res.status(500).json({ ok: false, error: "Ma'lumotni olib bo'lmadi" });
   }
 };

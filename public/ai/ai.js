@@ -215,7 +215,7 @@
       const res = await fetch(CFG.uploadEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null }),
+        body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null, bot: (window.AI_APP || {}).bot }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
@@ -468,7 +468,7 @@
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
-      ["Chop etish", pick("print")],
+      ...(svc.fields.some((f) => f.id === "print") ? [["Chop etish", pick("print")]] : []),
     ];
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
       // tekin xizmatda chop etish alohida hisoblanadi
@@ -737,6 +737,7 @@
           price: CFG.prices[svc.id],
           user,
           initData: tg ? tg.initData : null,
+          bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
         }),
       });
       const data = await res.json().catch(() => ({}));

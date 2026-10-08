@@ -1,5 +1,16 @@
 // api/telegram-webhook.js
+// ---------------------------------------------------------------
+// Barcha botlarning Telegram xabarlari shu yerga keladi:
+//   Print 54 (asosiy)   -> /api/telegram-webhook
+//   qo'shimcha botlar   -> /api/telegram-webhook?b=<kalit>
+// Har bir so'rov haqiqatan Telegram'dan kelganini maxfiy kalit
+// (X-Telegram-Bot-Api-Secret-Token) bilan tekshiramiz. Qo'shimcha
+// botlarni ulash: env'ga TELEGRAM_BOT_TOKEN_<KALIT> qo'shib, Print 54
+// botida egasi /ulash yuboradi.
+// ---------------------------------------------------------------
+const crypto = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
+const { MAIN, botKey, extraBots, orderBot, telegram, sendFile, webhookSecret } = require("./_lib/bots");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -42,16 +53,12 @@ function orderText(o) {
   return lines.join("\n");
 }
 
-async function callTelegram(method, payload) {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const url = `https://api.telegram.org/bot${token}/${method}`;
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  return res.json();
+// bot ko'rsatilmasa — Print 54 boti
+function callTelegram(method, payload, bot = MAIN) {
+  return telegram(bot, method, payload);
 }
+
+const isOwner = (from) => from && String(from.id) === String(process.env.OWNER_CHAT_ID);
 
 /* ============ XARID BONUSI (har bir bajarilgan buyurtma uchun) ============ */
 async function grantPurchaseBonus(order) {
@@ -79,16 +86,20 @@ async function grantPurchaseBonus(order) {
 }
 
 /* ============ BUYURTMA TAYYOR TUGMASI ============ */
-async function handleCallbackQuery(cq) {
+async function handleCallbackQuery(cq, bot) {
   if (cq.data && cq.data.startsWith("aisend:")) {
-    await handleAiSend(cq);
+    await handleAiSend(cq, bot);
     return;
   }
-  if (cq.data === "noop") {
-    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id });
+  if (cq.data === "noop" || bot !== MAIN) {
+    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     return;
   }
   if (cq.data && cq.data.startsWith("done:")) {
+    if (!isOwner(cq.from)) {
+      await callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text: "Bu tugma faqat do'kon egasi uchun.", show_alert: true });
+      return;
+    }
     const orderId = cq.data.split(":")[1];
 
     const { data: order, error } = await supabase
@@ -245,23 +256,31 @@ const AI_LABELS = {
 };
 
 // Tayyor AI faylini mijozga yetkazadi va buyurtmani "bajarildi" qiladi.
-// true — mijozga yetib bordi.
-async function deliverAiFile(order, doc, ownerChatId) {
+// viaBot — ega faylni qaysi botga yuborgan bo'lsa (file_id o'sha botniki).
+// Mijozga fayl buyurtma berilgan bot orqali boradi. true — yetib bordi.
+async function deliverAiFile(order, doc, ownerChatId, viaBot) {
+  const bot = orderBot(order);
   await supabase
     .from("orders")
-    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || null })
+    .update({ status: "completed", file_id: doc.file_id, file_name: doc.file_name || null, details: { ...order.details, fileBot: viaBot } })
     .eq("id", order.id);
 
   const topic = order.details && order.details.topic ? `\n«${escapeHtml(order.details.topic)}»` : "";
   let delivered = false;
   if (order.telegram_user_id) {
-    const sent = await callTelegram("sendDocument", {
-      chat_id: order.telegram_user_id,
-      document: doc.file_id,
+    const sent = await sendFile(viaBot, bot, order.telegram_user_id, doc.file_id, doc.file_name, {
       caption: `🎉 <b>Buyurtmangiz tayyor!</b>\n${AI_LABELS[order.service]}${topic}\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.`,
       parse_mode: "HTML",
     });
     delivered = !!sent.ok;
+    if (!sent.ok) console.error("Faylni mijozga yuborib bo'lmadi:", sent.description);
+    // fayl boshqa botdan ko'chirilgan bo'lsa — endi buyurtma botining file_id'sini saqlaymiz
+    if (sent.ok && viaBot !== bot && sent.result.document) {
+      await supabase
+        .from("orders")
+        .update({ file_id: sent.result.document.file_id, details: { ...order.details, fileBot: bot } })
+        .eq("id", order.id);
+    }
   }
 
   if (order.details && order.details.text) {
@@ -271,15 +290,15 @@ async function deliverAiFile(order, doc, ownerChatId) {
       text: `${order.details.text}\n\n✅ <b>Fayl yuborildi</b>`,
       parse_mode: "HTML",
       disable_web_page_preview: true,
-    });
+    }, viaBot);
   }
   return delivered;
 }
 
 // Avtomatik tayyorlangan faylning "✅ Mijozga yuborish" tugmasi
-async function handleAiSend(cq) {
-  const answer = (text) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text, show_alert: true });
-  if (String(cq.from.id) !== String(process.env.OWNER_CHAT_ID)) return answer("Bu tugma faqat do'kon egasi uchun.");
+async function handleAiSend(cq, bot) {
+  const answer = (text) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text, show_alert: true }, bot);
+  if (!isOwner(cq.from)) return answer("Bu tugma faqat do'kon egasi uchun.");
   const doc = cq.message && cq.message.document;
   const orderId = parseInt(cq.data.split(":")[1], 10);
   const { data: order } = await supabase.from("orders").select("*").eq("id", orderId).single();
@@ -287,26 +306,30 @@ async function handleAiSend(cq) {
   if (order.status === "cancelled") return answer(`#${order.id} buyurtma mijoz tomonidan bekor qilingan.`);
   if (order.status === "completed") return answer(`#${order.id} allaqachon yuborilgan.`);
 
-  const delivered = await deliverAiFile(order, doc, cq.message.chat.id);
+  const delivered = await deliverAiFile(order, doc, cq.message.chat.id, bot);
   await callTelegram("editMessageReplyMarkup", {
     chat_id: cq.message.chat.id,
     message_id: cq.message.message_id,
     reply_markup: { inline_keyboard: [[{ text: delivered ? "✅ Mijozga yuborildi" : "⚠️ Saqlandi (mijozga yetmadi)", callback_data: "noop" }]] },
-  });
+  }, bot);
   return answer(delivered
     ? `✅ #${order.id} — fayl mijozga yuborildi.`
     : `⚠️ #${order.id} — fayl saqlandi, lekin mijozga yuborib bo'lmadi. U "Buyurtmalarim"dan olishi mumkin.`);
 }
 
-async function handleOwnerFile(msg) {
-  const reply = (text) =>
-    callTelegram("sendMessage", { chat_id: msg.chat.id, text, reply_to_message_id: msg.message_id });
+// Egaga buyurtma xabari qaysi bot orqali borgan (eski buyurtmalarda — buyurtma boti)
+const ownerBotOf = (o) => botKey((o.details && o.details.ownerBot) || orderBot(o));
 
-  const { data: order } = await supabase
+async function handleOwnerFile(msg, bot) {
+  const reply = (text) =>
+    callTelegram("sendMessage", { chat_id: msg.chat.id, text, reply_to_message_id: msg.message_id }, bot);
+
+  // message_id har bir bot chatida alohida sanaladi — shu botdagi xabarni tanlaymiz
+  const { data: rows } = await supabase
     .from("orders")
     .select("*")
-    .eq("telegram_message_id", msg.reply_to_message.message_id)
-    .single();
+    .eq("telegram_message_id", msg.reply_to_message.message_id);
+  const order = (rows || []).find((o) => ownerBotOf(o) === bot);
 
   if (!order || !AI_LABELS[order.service]) {
     await reply("⚠️ Bu xabar AI buyurtmaga tegishli emas. Faylni buyurtma xabariga javob qilib yuboring.");
@@ -317,7 +340,7 @@ async function handleOwnerFile(msg) {
     return;
   }
 
-  const delivered = await deliverAiFile(order, msg.document, msg.chat.id);
+  const delivered = await deliverAiFile(order, msg.document, msg.chat.id, bot);
 
   await reply(
     delivered
@@ -326,7 +349,7 @@ async function handleOwnerFile(msg) {
   );
 }
 
-async function forwardCustomerMedia(msg) {
+async function forwardCustomerMedia(msg, bot) {
   const ownerId = process.env.OWNER_CHAT_ID;
   const u = msg.from;
   const name = escapeHtml([u.first_name, u.last_name].filter(Boolean).join(" ") || "Mijoz");
@@ -334,29 +357,97 @@ async function forwardCustomerMedia(msg) {
     chat_id: ownerId,
     text: `📷 <b>Mijoz fayl yubordi</b>\n👤 <a href="tg://user?id=${parseInt(u.id, 10)}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`,
     parse_mode: "HTML",
-  });
-  await callTelegram("copyMessage", { chat_id: ownerId, from_chat_id: msg.chat.id, message_id: msg.message_id });
+  }, bot);
+  await callTelegram("copyMessage", { chat_id: ownerId, from_chat_id: msg.chat.id, message_id: msg.message_id }, bot);
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: "✅ Qabul qilindi! Faylingiz Print 54 ga yuborildi.",
+    text: bot === MAIN ? "✅ Qabul qilindi! Faylingiz Print 54 ga yuborildi." : "✅ Qabul qilindi! Faylingiz yuborildi.",
     reply_to_message_id: msg.message_id,
-  });
+  }, bot);
+}
+
+/* ============ QO'SHIMCHA BOTLAR ============ */
+const appUrl = (host, bot) => `https://${host}/app/?b=${encodeURIComponent(bot)}`;
+const hookUrl = (host, bot) => `https://${host}/api/telegram-webhook${bot === MAIN ? "" : "?b=" + encodeURIComponent(bot)}`;
+
+// Qo'shimcha botdagi /start — ilovani ochish tugmasi bilan salomlashish
+async function welcomeExtra(msg, bot, host) {
+  const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
+  await callTelegram("sendMessage", {
+    chat_id: msg.chat.id,
+    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
+  }, bot);
+}
+
+// Egasi Print 54 botida /ulash yuboradi: env'dagi har bir qo'shimcha bot
+// shu serverga ulanadi (webhook + "Ilova" tugmasi) va natija xabar qilinadi
+async function setupBots(msg, host) {
+  const bots = extraBots();
+  if (!bots.length) {
+    await callTelegram("sendMessage", {
+      chat_id: msg.chat.id,
+      text: "Qo'shimcha bot topilmadi.\n\nVercel → Settings → Environment Variables bo'limiga bot tokenini TELEGRAM_BOT_TOKEN_AI kabi nom bilan qo'shing, qayta deploy qiling va /ulash ni yana yuboring.",
+    });
+    return;
+  }
+  const lines = ["🔌 <b>Botlarni ulash</b>", ""];
+  for (const bot of bots) {
+    const me = await callTelegram("getMe", {}, bot);
+    if (!me.ok) {
+      lines.push(`❌ <b>${escapeHtml(bot)}</b> — token noto'g'ri (TELEGRAM_BOT_TOKEN_${escapeHtml(bot.toUpperCase())})`);
+      continue;
+    }
+    const at = "@" + escapeHtml(me.result.username);
+    const hook = await callTelegram("setWebhook", {
+      url: hookUrl(host, bot),
+      secret_token: webhookSecret(bot),
+      allowed_updates: ["message", "callback_query"],
+    }, bot);
+    const menu = await callTelegram("setChatMenuButton", {
+      menu_button: { type: "web_app", text: "Ilova", web_app: { url: appUrl(host, bot) } },
+    }, bot);
+    const hello = await callTelegram("sendMessage", {
+      chat_id: process.env.OWNER_CHAT_ID,
+      text: "✅ Bot Print 54 serveriga ulandi. Buyurtmalar shu chatga keladi.",
+    }, bot);
+    if (!hook.ok || !menu.ok) {
+      lines.push(`❌ ${at} — ulab bo'lmadi: ${escapeHtml((hook.ok ? menu : hook).description || "")}`);
+    } else {
+      lines.push(`✅ ${at} — ulandi (kalit: <code>${escapeHtml(bot)}</code>)`);
+      if (!hello.ok) lines.push(`   ⚠️ ${at} ga kirib /start bosing — aks holda buyurtmalar shu (Print 54) botga keladi`);
+    }
+  }
+  await callTelegram("sendMessage", { chat_id: msg.chat.id, text: lines.join("\n"), parse_mode: "HTML" });
 }
 
 /* ============ /start VA REFERAL KUZATISH ============ */
-async function handleMessage(msg) {
-  if (msg.document && msg.reply_to_message && String(msg.from.id) === String(process.env.OWNER_CHAT_ID)) {
-    await handleOwnerFile(msg);
+async function handleMessage(msg, bot, host) {
+  if (!msg.from) return;
+  if (msg.document && msg.reply_to_message && isOwner(msg.from)) {
+    await handleOwnerFile(msg, bot);
     return;
   }
 
   // Mijoz rasm yoki fayl yuborsa (masalan, resume uchun rasmi) — egaga yetkazamiz
-  if ((msg.photo || msg.document) && String(msg.from.id) !== String(process.env.OWNER_CHAT_ID)) {
-    await forwardCustomerMedia(msg);
+  if ((msg.photo || msg.document) && !isOwner(msg.from)) {
+    await forwardCustomerMedia(msg, bot);
     return;
   }
 
   if (!msg.text) return;
+
+  // Qo'shimcha botlarda faqat salomlashish (referal, e'lon — Print 54 niki)
+  if (bot !== MAIN) {
+    if (msg.text.startsWith("/start")) await welcomeExtra(msg, bot, host);
+    return;
+  }
+
+  if (msg.text.startsWith("/ulash") && isOwner(msg.from)) {
+    await setupBots(msg, host);
+    return;
+  }
 
   if (msg.text.startsWith("/elon")) {
     await handleBroadcast(msg);
@@ -431,14 +522,57 @@ async function handleMessage(msg) {
   });
 }
 
+/* ============ SO'ROV TELEGRAM'DAN KELGANINI TEKSHIRISH ============ */
+function sameSecret(got, expected) {
+  const a = Buffer.from(String(got || ""));
+  const b = Buffer.from(expected);
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+// Webhook maxfiy kalitsiz o'rnatilgan bo'lsa (masalan, Print 54 ning eski
+// sozlamasi) — kalitni o'zimiz qo'shamiz. Telegram rad etilgan xabarni
+// birozdan so'ng kalit bilan qayta yuboradi, shuning uchun xabar yo'qolmaydi.
+const healedAt = {};
+async function healWebhook(bot) {
+  if (Date.now() - (healedAt[bot] || 0) < 60 * 1000) return;
+  healedAt[bot] = Date.now();
+  const info = await callTelegram("getWebhookInfo", {}, bot);
+  const url = info.ok && info.result.url;
+  if (!url) return;
+  const u = new URL(url);
+  // faqat shu serverning shu botga tegishli manzili bo'lsa
+  if (u.pathname !== "/api/telegram-webhook" || botKey(u.searchParams.get("b")) !== bot) return;
+  const out = await callTelegram("setWebhook", {
+    url,
+    secret_token: webhookSecret(bot),
+    ...(info.result.allowed_updates ? { allowed_updates: info.result.allowed_updates } : {}),
+    ...(info.result.max_connections ? { max_connections: info.result.max_connections } : {}),
+  }, bot);
+  console.log("Webhook maxfiy kaliti o'rnatildi:", bot, out.ok);
+}
+
 module.exports = async (req, res) => {
   try {
+    const raw = req.query && req.query.b;
+    const bot = botKey(raw);
+    // noma'lum bot (tokeni yo'q) — e'tiborsiz
+    if (raw && raw !== MAIN && bot === MAIN) {
+      res.status(200).json({ ok: true });
+      return;
+    }
+    if (!sameSecret(req.headers["x-telegram-bot-api-secret-token"], webhookSecret(bot))) {
+      await healWebhook(bot).catch((e) => console.error(e));
+      res.status(401).json({ ok: false });
+      return;
+    }
+
     const update = req.body || {};
+    const host = req.headers["x-forwarded-host"] || req.headers.host;
 
     if (update.callback_query) {
-      await handleCallbackQuery(update.callback_query);
+      await handleCallbackQuery(update.callback_query, bot);
     } else if (update.message) {
-      await handleMessage(update.message);
+      await handleMessage(update.message, bot, host);
     }
 
     res.status(200).json({ ok: true });

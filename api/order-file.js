@@ -2,10 +2,12 @@
 // ---------------------------------------------------------------
 // Mijoz "Buyurtmalarim" bo'limida "Faylni olish" tugmasini bossa,
 // tayyor fayl bot orqali uning chatiga qayta yuboriladi. Fayl faqat
-// buyurtma egasining o'ziga boradi.
+// buyurtma egasining o'ziga (Telegram imzosi bo'yicha) va buyurtma
+// berilgan bot orqali boradi.
 // ---------------------------------------------------------------
 
 const { createClient } = require("@supabase/supabase-js");
+const { authUser, orderBot, botKey, sendFile } = require("./_lib/bots");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -19,17 +21,22 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { orderId, userId } = req.body || {};
-    if (!orderId || !userId) {
-      res.status(400).json({ ok: false, error: "orderId va userId kerak" });
+    const auth = authUser(req.body);
+    if (!auth) {
+      res.status(401).json({ ok: false, error: "Ilovani yopib, qayta oching" });
+      return;
+    }
+    const orderId = parseInt((req.body || {}).orderId, 10);
+    if (!orderId) {
+      res.status(400).json({ ok: false, error: "orderId kerak" });
       return;
     }
 
     const { data: order, error } = await supabase
       .from("orders")
-      .select("id, telegram_user_id, file_id, details")
+      .select("id, telegram_user_id, file_id, file_name, details")
       .eq("id", orderId)
-      .eq("telegram_user_id", userId)
+      .eq("telegram_user_id", auth.user.id)
       .single();
 
     if (error || !order || !order.file_id) {
@@ -37,14 +44,20 @@ module.exports = async (req, res) => {
       return;
     }
 
+    const bot = orderBot(order);
+    // file_id qaysi botga tegishli (ega faylni boshqa botdan yuborgan bo'lishi mumkin)
+    const fileBot = botKey((order.details && order.details.fileBot) || bot);
     const topic = order.details && order.details.topic ? `«${order.details.topic}»` : `#${order.id}`;
-    const tgRes = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendDocument`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: order.telegram_user_id, document: order.file_id, caption: `📎 ${topic}` }),
-    });
-    const data = await tgRes.json();
+    const data = await sendFile(fileBot, bot, order.telegram_user_id, order.file_id, order.file_name, { caption: `📎 ${topic}` });
     if (!data.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(data));
+
+    // fayl endi buyurtma botida ham bor — keyingi safar to'g'ridan-to'g'ri yuboriladi
+    if (fileBot !== bot && data.result && data.result.document) {
+      await supabase
+        .from("orders")
+        .update({ file_id: data.result.document.file_id, details: { ...order.details, fileBot: bot } })
+        .eq("id", order.id);
+    }
 
     res.status(200).json({ ok: true });
   } catch (err) {
