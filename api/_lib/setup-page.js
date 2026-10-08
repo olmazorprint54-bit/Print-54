@@ -1,12 +1,14 @@
-// api/setup.js
+// api/_lib/setup-page.js
 // ---------------------------------------------------------------
 // Yangi Vercel loyihasidagi botni ulash: deploy'dan keyin brauzerda
-// https://<loyiha>.vercel.app/api/setup ni bir marta oching.
+// https://<loyiha>.vercel.app/api/setup ni bir marta oching (vercel.json uni
+// telegram-webhook.js ga yo'naltiradi — Hobby tarifida 12 tadan ortiq
+// funksiya bo'lishi mumkin emas).
 // Botlar faqat shu loyihaning asosiy (production) manziliga ulanadi,
 // shuning uchun buni kim ochsa ham zarari yo'q — natija bir xil.
 // ---------------------------------------------------------------
 
-const { connectBots } = require("./_lib/setup");
+const { connectBots } = require("./setup");
 
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 

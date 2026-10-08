@@ -547,7 +547,11 @@ async function healWebhook(bot) {
   console.log("Webhook maxfiy kaliti o'rnatildi:", bot, out.ok);
 }
 
+const setupPage = require("./_lib/setup-page");
+
 module.exports = async (req, res) => {
+  // /api/setup (vercel.json) — botni ulash sahifasi; Telegram faqat POST yuboradi
+  if (req.method === "GET") return setupPage(req, res);
   try {
     const raw = req.query && req.query.b;
     const bot = botKey(raw);

@@ -13,5 +13,11 @@
       "path": "/api/cleanup-uploads",
       "schedule": "0 3 * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/setup",
+      "destination": "/api/telegram-webhook"
+    }
   ]
 }
