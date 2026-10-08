@@ -375,8 +375,8 @@
 
   // t.page — A4 hujjat (resume), aks holda 16:9 slayd
   const canvaImg = (t, n) => t.page
-    ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
-    : `<div class="slide-box"><div class="slide"><img class="el" src="ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
+    ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
+    : `<div class="slide-box"><div class="slide"><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
 
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
