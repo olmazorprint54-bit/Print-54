@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AI Yordamchi</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+  // Temani sahifa chizilishidan oldin qo'yamiz (oq-qora "miltillash" bo'lmasin)
+  (function () {
+    var pref = "auto";
+    try { pref = localStorage.getItem("app-theme") || "auto"; } catch (e) {}
+    var tg = window.Telegram && window.Telegram.WebApp;
+    // Telegram ichida — Telegram temasi, tashqarida — qurilma temasi
+    var inTg = tg && tg.platform && tg.platform !== "unknown";
+    var dark = pref === "dark" || (pref === "auto" && (inTg ? tg.colorScheme === "dark" : window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches));
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ai/ai.css?v=19">
+<link rel="stylesheet" href="app.css?v=1">
+</head>
+<body class="app ai-mode">
+  <header class="app-top">
+    <div class="app-logo" id="appLogo">AI</div>
+    <div class="app-hello">
+      <div class="hi" id="appHi">Salom 👋</div>
+      <div class="nm" id="appName">AI Yordamchi</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" data-view="home">
+      <div id="aiRoot" class="ai-root"></div>
+    </section>
+    <section class="view" data-view="orders">
+      <h2 class="view-title">Buyurtmalarim</h2>
+      <div id="ordersList" class="orders"></div>
+    </section>
+    <section class="view" data-view="profile">
+      <div class="profile-card card">
+        <div class="avatar" id="profAvatar">?</div>
+        <div><div class="pname" id="profName">Mehmon</div><div class="puser" id="profUser"></div></div>
+      </div>
+      <div class="card setting">
+        <div class="set-title">Ko'rinish</div>
+        <div class="seg" id="themeSeg">
+          <div data-theme-pick="auto">Avto</div>
+          <div data-theme-pick="light">☀️ Yorug'</div>
+          <div data-theme-pick="dark">🌙 Qorong'i</div>
+        </div>
+        <div class="set-note">«Avto» — Telegram'dagi tema bo'yicha</div>
+      </div>
+      <div class="card setting link" data-contact="1">💬 Biz bilan bog'lanish</div>
+    </section>
+  </main>
+
+  <nav class="app-nav">
+    <div class="on" data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Asosiy</div>
+    <div data-go="orders"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Buyurtmalarim<span class="badge" id="ordersBadge"></span></div>
+    <div data-go="profile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profil</div>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="bots.js?v=1"></script>
+  <script src="../ai/translit.js?v=19"></script>
+  <script src="../ai/config.js?v=19"></script>
+  <script>
+    // ai.js bosh sahifasi uchun (chop etish haqidagi gaplarsiz)
+    window.AI_APP = {
+      heroHtml: '<div class="app-hero"><h2>Bugun nima tayyorlaymiz?</h2><p>Taqdimot, mustaqil ish, test, resume va obyektivka — bir necha daqiqada.</p>' +
+        '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
+    };
+  </script>
+  <script src="../ai/ai.js?v=19"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
