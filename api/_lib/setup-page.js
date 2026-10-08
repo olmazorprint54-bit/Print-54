@@ -17,11 +17,17 @@ function envHtml() {
   const extra = [
     { name: "ANTHROPIC_API_KEY", state: /^sk-ant-/.test(String(process.env.ANTHROPIC_API_KEY || "").trim()) ? "ok" : process.env.ANTHROPIC_API_KEY ? "invalid" : "missing", hint: "AI uchun (sk-ant-...) — bo'lmasa AI xizmatlari qo'lda" },
     { name: "BOT_MODE", state: process.env.BOT_MODE === "ai" ? "ok" : "missing", hint: "ai" },
+    { name: "GITHUB_TOKEN", state: process.env.GITHUB_TOKEN ? "ok" : "missing", hint: "Taqdimot shablonlarini o'qish uchun (yopiq repozitoriya)" },
+    { name: "PIXABAY_API_KEY", state: process.env.PIXABAY_API_KEY || process.env.PEXELS_API_KEY ? "ok" : "missing", hint: "Taqdimotga mavzuga mos rasmlar (pixabay.com/api/docs)" },
   ];
-  const known = new Set(["TELEGRAM_BOT_TOKEN", "OWNER_CHAT_ID", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "ANTHROPIC_API_KEY", "BOT_MODE", "APP_BOT", "USD_UZS", "CRON_SECRET", "PEXELS_API_KEY"]);
+  const known = new Set(["TELEGRAM_BOT_TOKEN", "OWNER_CHAT_ID", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "ANTHROPIC_API_KEY", "BOT_MODE", "APP_BOT", "USD_UZS", "CRON_SECRET", "PEXELS_API_KEY", "PIXABAY_API_KEY", "GITHUB_TOKEN", "TEMPLATES_REPO", "PAYMENT_PROVIDER_TOKEN", "FREE_DAILY"]);
   // nomi xato yozilgan bo'lishi mumkin bo'lganlar (masalan SUPABASE_URL2)
   const odd = Object.keys(process.env).filter((k) => /^(SUPABASE|TELEGRAM|OWNER|ANTHROPIC|BOT_|APP_)/.test(k) && !known.has(k) && !/^TELEGRAM_BOT_TOKEN_[A-Z0-9_]+$/.test(k));
   const icon = { ok: "✅", missing: "❌ yo'q", invalid: "⚠️ noto'g'ri" };
+  // taqdimot: AI tayyorlaydigan shablonlar soni (api/_lib/pres/*.json server bilan birga kelganmi)
+  let presCount = 0;
+  try { presCount = require("fs").readdirSync(require("path").join(__dirname, "pres")).filter((f) => f.endsWith(".json")).length; } catch (e) { /* yo'q */ }
+  extra.push({ name: `Taqdimot shablonlari: ${presCount} ta`, state: presCount ? "ok" : "missing", hint: "api/_lib/pres/*.json" });
   const all = [...rows, ...extra];
   const html = `<table style="width:100%;border-collapse:collapse;font-size:14px">${all.map((r) => `<tr class="r"><td style="padding:6px 0"><code>${r.name}</code></td><td>${icon[r.state]}</td></tr>${r.state === "ok" ? "" : `<tr><td colspan="2" class="w" style="padding-bottom:6px">${esc(r.hint)}</td></tr>`}`).join("")}</table>`
     + (odd.length ? `<p class="w">Tushunarsiz nomlar (to'g'ri nomga o'zgartiring yoki o'chiring): ${odd.map((k) => `<code>${esc(k)}</code>`).join(", ")}</p>` : "");
@@ -57,7 +63,7 @@ module.exports = async (req, res) => {
   try {
     const list = await connectBots(host);
     if (!list.length) {
-      res.status(200).send(page("Ulanadigan bot yo'q", "<p>Vercel → Settings → Environment Variables bo'limida <b>TELEGRAM_BOT_TOKEN</b> va <b>BOT_MODE=ai</b> borligini tekshiring, so'ng qayta deploy qiling.</p>"));
+      res.status(200).send(page("Ulanadigan bot yo'q", "<p>Vercel → Settings → Environment Variables bo'limida <b>TELEGRAM_BOT_TOKEN</b> va <b>BOT_MODE=ai</b> borligini tekshiring, so'ng qayta deploy qiling.</p>" + env.html));
       return;
     }
     const rows = list.map((b) => `<div class="r">${b.ok

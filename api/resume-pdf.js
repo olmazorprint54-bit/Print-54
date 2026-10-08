@@ -17,12 +17,14 @@ const { orderBot, telegram, toOwner } = require("./_lib/bots");
 const { generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS } = require("./_lib/test-gen");
 const { costLine } = require("./_lib/ai");
 const { GENERATORS } = require("./_lib/doc-gen");
+const { generatePresentation } = require("./_lib/pres-gen");
+const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
 const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  essay: "Mustaqil ishingiz", referat: "Referatingiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", referat: "Referatingiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -114,6 +116,7 @@ async function sendQuiz(order, t) {
 }
 
 const costTitle = (s, f) => ({
+  presentation: `Taqdimot — ${f.slides || 10} slayd${f.photos && f.photos.length ? `, ${f.photos.length} ta o'z rasmi` : ""}`,
   test: `Test — ${f.count || 20} savol, ${f.variants || 1} variant`,
   essay: `Mustaqil ish — ${f.pages || 15} bet`,
   referat: `Referat — ${f.pages || 10} bet`,
@@ -132,6 +135,14 @@ async function reportCost(order, ai) {
     chat_id: process.env.OWNER_CHAT_ID,
     text: `🤖 #${order.id} ${costTitle(order.service, f)}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}\n${costLine(ai)}`,
   }).catch((e) => console.error(e));
+}
+
+// Mijoz yuklagan barcha rasmlar (taqdimot uchun)
+async function photoUrls(order) {
+  const paths = (order.details && Array.isArray(order.details.photos) && order.details.photos) || [];
+  if (!paths.length) return [];
+  const { data } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 600);
+  return (data || []).map((x) => x.signedUrl).filter(Boolean);
 }
 
 async function photoUrl(order) {
@@ -237,7 +248,12 @@ module.exports = async (req, res) => {
 
     let file;
     let ai = null;
-    if (GENERATORS[order.service]) {
+    if (order.service === "presentation") {
+      // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
+      const pres = await generatePresentation(order.details.fields, await photoUrls(order));
+      ai = pres.ai;
+      file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
+    } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
       const doc = await GENERATORS[order.service](order.details.fields);
       ai = doc.ai;
