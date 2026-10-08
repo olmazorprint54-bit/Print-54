@@ -18,6 +18,8 @@ import xml.etree.ElementTree as ET
 
 from PIL import Image
 
+from fonts import Fonts
+
 Image.MAX_IMAGE_PIXELS = None
 EMU_PT = 12700
 NS = {
@@ -92,6 +94,7 @@ def walk(node, tf, cb):
 
 def analyze(path):
     z = zipfile.ZipFile(path)
+    fonts = Fonts(path)  # shablonning o'z shriftlari — matn eni aniq o'lchanadi
     pres = z.read("ppt/presentation.xml").decode("utf8")
     m = re.search(r'<p:sldSz cx="(\d+)" cy="(\d+)"', pres)
     cx, cy = int(m.group(1)), int(m.group(2))
@@ -126,8 +129,14 @@ def analyze(path):
                     rprs = list(tx.iter("{%s}rPr" % NS["a"]))
                     bold = any(r.get("b") in ("1", "true") for r in rprs)
                     caps = any(r.get("cap") == "all" for r in rprs) or (full == full.upper() and any(c.isalpha() for c in full))
+                    lat = tx.find(".//a:rPr/a:latin", NS)
+                    face = lat.get("typeface") if lat is not None else "+mn-lt"
+                    bp = tx.find("a:bodyPr", NS)
+                    anchor = (bp.get("anchor") if bp is not None else None) or "t"
+                    ins = [int(bp.get(k, d)) if bp is not None else d for k, d in (("lIns", 91440), ("rIns", 91440))]
                     slots.append({"id": sid, "text": full, "chars": len(full), "paras": len([p for p in paras if p.strip()]),
-                                  "sz": sz, "x": ax, "y": ay, "w": aw, "h": ah, "lineH": line_h, "bold": bold, "caps": caps})
+                                  "sz": sz, "x": ax, "y": ay, "w": aw, "h": ah, "lineH": line_h, "bold": bold, "caps": caps,
+                                  "font": face, "anchor": anchor, "ins": sum(ins)})
                     return
             blip = el.find(".//a:blip", NS)
             if blip is not None and blip.find(".//{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip") is None:
@@ -164,8 +173,9 @@ def analyze(path):
         for s in slots:
             placeholder = s["text"].strip().startswith("[")
             lines = max(1, round(s["h"] / max(s["lineH"], 1)))
-            f = (0.62 if s["caps"] else 0.5) + (0.06 if s["bold"] else 0)
-            cpl_w = s["w"] / (s["sz"] * EMU_PT * f)
+            # o'rtacha harf eni shablonning haqiqiy shriftidan (o'zbekcha namunaviy matn)
+            f = fonts.em(s["font"], s["caps"])
+            cpl_w = max(1, s["w"] - s["ins"]) / (s["sz"] * EMU_PT * f)
             # namuna matn haqiqatan bir necha qatorga o'ralgan bo'lsagina (quti matndan baland bo'lishi mumkin)
             if lines >= 2 and s["chars"] >= 20 and not placeholder and s["chars"] > cpl_w * 0.9:
                 cpl = min(cpl_w * 1.1, s["chars"] / lines)
@@ -186,7 +196,8 @@ def analyze(path):
         low = " ".join(s["text"].lower() for s in slots)
         role = "title" if n == 1 else "end" if n == len(order) and re.search(r"thank|rahmat|e.tibor|спасибо|savol", low) else "content"
         slides.append({"n": n, "part": part, "role": role, "slots": [
-            {k: (round(s[k], 1) if k == "perLine" else round(s[k]) if k == "max" else s[k]) for k in ("id", "kind", "chars", "max", "perLine", "lines", "caps", "sz", "paras", "text")}
+            {**{k: (round(s[k], 1) if k == "perLine" else round(s[k]) if k == "max" else s[k]) for k in ("id", "kind", "chars", "max", "perLine", "lines", "caps", "sz", "paras", "text", "font", "anchor")},
+             "box": [round(s["x"]), round(s["y"]), round(s["w"]), round(s["h"])], "lineH": round(s["lineH"]), "ins": s["ins"]}
             for s in slots
         ], "photos": photos})
     return {"size": [cx, cy], "slides": slides}

@@ -71,10 +71,14 @@ function layoutsOf(spec) {
     .filter((s) => s.editable.length && s.editable.length <= 12);
 }
 
+// Sarlavha sig'imi kamida 22 (titulda 30) harf: Canva namunasi ko'pincha bitta qisqa so'z,
+// mavzu esa uzunroq — shrift fillText'da avtomatik kichrayadi
+const slotMax = (t, s) => (t.kind === "title" ? Math.max(t.max, s && s.role === "title" ? 30 : 22) : t.max);
+
 function describe(layouts) {
   const kindName = { title: "TITLE", text: "TEXT", label: "LABEL" };
   return layouts.map((s) => {
-    const slots = s.editable.map((t, i) => `[${i + 1}] ${kindName[t.kind]} max ${t.max} chars${t.paras > 1 && t.kind === "text" ? `, ${t.paras} paragraphs/list items in sample` : ""}`).join("; ");
+    const slots = s.editable.map((t, i) => `[${i + 1}] ${kindName[t.kind]} max ${slotMax(t, s)} chars${t.paras > 1 && t.kind === "text" ? `, ${t.paras} paragraphs/list items in sample` : ""}`).join("; ");
     return `Layout ${s.n}${s.role === "title" ? " (TITLE SLIDE)" : s.role === "end" ? " (CLOSING / THANK-YOU SLIDE)" : ""}: ${slots}${s.photos.length ? `; photo frames: ${s.photos.length}` : ""}`;
   }).join("\n");
 }
@@ -118,7 +122,7 @@ The design template has these slide layouts (slots in reading order):
 ${describe(layouts)}
 
 Rules:
-- Slide 1 uses Layout ${titleL.n}: title = the topic (shortened if needed), other slots = subtitle / author.
+- Slide 1 uses Layout ${titleL.n}: title = the FULL topic (never cut it to a single word), other slots = subtitle / author.
 ${endL ? `- The last slide uses Layout ${endL.n}: a short thank-you and closing words.\n` : ""}- Other slides use content layouts (${content.map((s) => s.n).join(", ")}); vary them, repeating is allowed. Order: introduction / plan, main parts, conclusion.
 - "texts" has exactly one string per slot of the chosen layout, in slot order.
 - "image_query": for layouts with photo frames, 2–5 English words for a stock photo search matching the slide (else "").`,
@@ -348,4 +352,4 @@ async function generatePresentation(f, photoUrls = []) {
   return { buffer, name, ai: written.ai };
 }
 
-module.exports = { MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
+module.exports = { slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
