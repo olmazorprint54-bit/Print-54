@@ -16,6 +16,7 @@ const fs = require("fs");
 const path = require("path");
 const JSZip = require("jszip");
 const { askJson, hasKey } = require("./ai");
+const { isSmart, generateSmart } = require("./smart-gen");
 
 const MODEL = "claude-opus-5-5";
 const MAX_SLIDES = 30; // 300 soniyalik chegara ichida
@@ -40,7 +41,10 @@ function specs() {
 const hasTemplate = (id) => !!specs()[id];
 
 function canAutoPres(f) {
-  return !!(hasKey() && process.env.GITHUB_TOKEN && f && hasTemplate(f.template) && f.format !== "pdf" && clean(f.topic) && (parseInt(f.slides, 10) || 10) <= MAX_SLIDES);
+  if (!hasKey() || !f || f.format === "pdf" || !clean(f.topic) || (parseInt(f.slides, 10) || 10) > MAX_SLIDES) return false;
+  // aqlli umumiy shablonlar (api/_lib/smart-gen.js) — fayl kerak emas
+  if (isSmart(f.template)) return true;
+  return !!(process.env.GITHUB_TOKEN && hasTemplate(f.template));
 }
 
 // Shablon fayli: yopiq repozitoriyadan, issiq server paytida /tmp da saqlanadi
@@ -310,6 +314,14 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
 /* ---------------- asosiy ---------------- */
 // photoUrls — mijoz yuklagan rasmlar (imzolangan havolalar)
 async function generatePresentation(f, photoUrls = []) {
+  if (isSmart(f.template)) {
+    // mijoz rasmlari + Pixabay/Pexels (mavzu bo'yicha, gorizontal)
+    const own = [];
+    for (const u of photoUrls) { try { const b = await download(u); if (jpegSize(b)) own.push(b); } catch (e) { /* o'tkazamiz */ } }
+    const used = new Set();
+    const finder = async (q) => { const r = await stockPhoto(q, "landscape", used); return r ? r.buf : null; };
+    return generateSmart(f, own, finder);
+  }
   const lang = LANG_NAMES[f.lang] ? f.lang : "uz_lat";
   const d = {
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120), lang,

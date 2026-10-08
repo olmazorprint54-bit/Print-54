@@ -62,7 +62,7 @@
           { id: "subject", type: "text", label: "Fan yoki yo'nalish", placeholder: "Masalan: Astronomiya", max: 120 },
           { id: "slides", type: "number", label: "Slaydlar soni", placeholder: "Masalan: 10", min: 3, max: 60, fallback: "10" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
-          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "umumiy-kok" },
+          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "ai-dizayn" },
           { id: "images", type: "switch", label: "Slaydlarga mavzuga mos rasmlar qo'shilsin", default: true },
           { id: "photos", type: "photos", label: "O'z rasmlaringiz", hint: "Ixtiyoriy — yuklagan rasmlaringiz slaydlarga qo'yiladi (10 tagacha)", max: 10, default: [] },
           { id: "charts", type: "switch", label: "📊 Diagramma qo'shilsin", default: false },
@@ -276,6 +276,21 @@
       // kind: "canva" — Canva'da yasalgan shablon (rasmlari: ai/templates/<id>/1..7.jpg,
       // asl PPTX: shablonlar/<toifa>/). Qolganlari — HTML ko'rinishli oddiy mavzular.
       presentation: [
+        // ✨ Aqlli umumiy shablonlar (api/_lib/smart-gen.js): AI slayd turini mazmunga qarab tanlaydi —
+        // vaqt chizig'i, haqiqiy diagramma va jadval, taqqoslash... "ai-dizayn" — rang uslubini ham AI tanlaydi
+        { id: "ai-dizayn", name: "✨ AI dizayn (o'zi tanlaydi)", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-minimal", name: "Oq-ko'k minimal", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-tun", name: "Tungi koinot", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-yashil", name: "Yashil tabiat", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-akademik", name: "Akademik", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-binafsha", name: "Binafsha", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-quyosh", name: "Quyoshli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-dengiz", name: "Dengiz", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-qizil", name: "Qizil korporativ", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-oltin", name: "Qora-oltin", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-pastel", name: "Pastel (bolalar)", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-texno", name: "Texno", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "s-tibbiy", name: "Tibbiyot", kind: "canva", category: "umumiy", pages: 7, auto: true },
         { id: "tarix-qolyozma", name: "Qadimiy qo'lyozma", kind: "canva", category: "tarix", pages: 7, auto: true },
         { id: "tarix-temuriylar", name: "Temuriylar va Ipak yo'li", kind: "canva", category: "tarix", pages: 7, auto: true },
         { id: "tarix-yangi", name: "Yangi tarix", kind: "canva", category: "tarix", pages: 7, auto: true },
