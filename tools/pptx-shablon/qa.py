@@ -96,7 +96,10 @@ def problems(boxes, base, size, editable):
     ids = list(boxes)
     for i, a in enumerate(ids):
         ra = boxes[a]
-        if a in editable and (ra[3] > sh - 2 or ra[2] > sw + 2 or ra[0] < -2):
+        # slayddan chiqish: past, o'ng, chap VA yuqori (pastga bog'langan quti yuqoriga o'sadi);
+        # asl dizaynda biroz chiqib turgan bo'lsa — undan ko'proq chiqmasin
+        o = base.get(a, (0, 0, sw, sh))
+        if a in editable and (ra[3] > max(sh, o[3]) + 2 or ra[2] > max(sw, o[2]) + 2 or ra[0] < min(0, o[0]) - 2 or ra[1] < min(0, o[1]) - 2):
             bad[a] = "slayddan chiqdi"
         for b in ids[i + 1:]:
             if a not in editable and b not in editable:

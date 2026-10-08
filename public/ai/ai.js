@@ -361,7 +361,7 @@
 
   function categoryChips(svc, f) {
     const used = new Set(CFG.templates[f.set].map((t) => t.category));
-    const hasAuto = CFG.templates[f.set].some((t) => t.auto);
+    const hasAuto = CFG.templates[f.set].some((t) => t.auto) && CFG.templates[f.set].some((t) => !t.auto);
     const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], CFG.categories.filter((c) => used.has(c.v)));
     const st = getCat(svc);
     return cats.map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)}</div>`).join("");
@@ -380,9 +380,11 @@
   }
 
   // Mavzu yoki fan yozilganda mos toifani avtomatik tanlaydi
+  // ✨ AI dizayn va aqlli uslublar (s-*) mavzuga o'zi moslashadi — ularni almashtirmaymiz
+  const isSmartTpl = (id) => id === "ai-dizayn" || /^s-/.test(String(id || ""));
   function autoCategory(svc, f, v) {
     const st = getCat(svc);
-    if (st.manual) return;
+    if (st.manual || isSmartTpl(v[f.id])) return;
     const det = detectCategory(v);
     const next = det && CFG.templates[f.set].some((t) => t.category === det) ? det : "all";
     if (next === st.cat) return;
