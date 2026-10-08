@@ -63,7 +63,7 @@ module.exports = async (req, res) => {
   try {
     const list = await connectBots(host);
     if (!list.length) {
-      res.status(200).send(page("Ulanadigan bot yo'q", "<p>Vercel → Settings → Environment Variables bo'limida <b>TELEGRAM_BOT_TOKEN</b> va <b>BOT_MODE=ai</b> borligini tekshiring, so'ng qayta deploy qiling.</p>"));
+      res.status(200).send(page("Ulanadigan bot yo'q", "<p>Vercel → Settings → Environment Variables bo'limida <b>TELEGRAM_BOT_TOKEN</b> va <b>BOT_MODE=ai</b> borligini tekshiring, so'ng qayta deploy qiling.</p>" + env.html));
       return;
     }
     const rows = list.map((b) => `<div class="r">${b.ok
