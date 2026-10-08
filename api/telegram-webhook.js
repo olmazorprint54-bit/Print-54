@@ -6,11 +6,13 @@
 // Har bir so'rov haqiqatan Telegram'dan kelganini maxfiy kalit
 // (X-Telegram-Bot-Api-Secret-Token) bilan tekshiramiz. Qo'shimcha
 // botlarni ulash: env'ga TELEGRAM_BOT_TOKEN_<KALIT> qo'shib, Print 54
-// botida egasi /ulash yuboradi.
+// botida egasi /ulash yuboradi. BOT_MODE=ai bo'lgan alohida loyihada
+// asosiy bot ham faqat AI bot (chop etishsiz, referalsiz) bo'ladi.
 // ---------------------------------------------------------------
 const crypto = require("crypto");
 const { createClient } = require("@supabase/supabase-js");
-const { MAIN, botKey, extraBots, orderBot, telegram, sendFile, webhookSecret } = require("./_lib/bots");
+const { MAIN, AI_MODE, botKey, orderBot, telegram, sendFile, webhookSecret } = require("./_lib/bots");
+const { connectBots, appUrl } = require("./_lib/setup");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -91,7 +93,7 @@ async function handleCallbackQuery(cq, bot) {
     await handleAiSend(cq, bot);
     return;
   }
-  if (cq.data === "noop" || bot !== MAIN) {
+  if (cq.data === "noop" || isAiBot(bot)) {
     await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     return;
   }
@@ -361,16 +363,16 @@ async function forwardCustomerMedia(msg, bot) {
   await callTelegram("copyMessage", { chat_id: ownerId, from_chat_id: msg.chat.id, message_id: msg.message_id }, bot);
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: bot === MAIN ? "✅ Qabul qilindi! Faylingiz Print 54 ga yuborildi." : "✅ Qabul qilindi! Faylingiz yuborildi.",
+    text: isAiBot(bot) ? "✅ Qabul qilindi! Faylingiz yuborildi." : "✅ Qabul qilindi! Faylingiz Print 54 ga yuborildi.",
     reply_to_message_id: msg.message_id,
   }, bot);
 }
 
-/* ============ QO'SHIMCHA BOTLAR ============ */
-const appUrl = (host, bot) => `https://${host}/app/?b=${encodeURIComponent(bot)}`;
-const hookUrl = (host, bot) => `https://${host}/api/telegram-webhook${bot === MAIN ? "" : "?b=" + encodeURIComponent(bot)}`;
+/* ============ AI BOTLAR (qo'shimcha yoki BOT_MODE=ai) ============ */
+// Chop etishsiz bot: Print 54 salomi, referal va "Buyurtma tayyor" yo'q
+const isAiBot = (bot) => bot !== MAIN || AI_MODE;
 
-// Qo'shimcha botdagi /start — ilovani ochish tugmasi bilan salomlashish
+// AI botdagi /start — ilovani ochish tugmasi bilan salomlashish
 async function welcomeExtra(msg, bot, host) {
   const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
   await callTelegram("sendMessage", {
@@ -381,11 +383,11 @@ async function welcomeExtra(msg, bot, host) {
   }, bot);
 }
 
-// Egasi Print 54 botida /ulash yuboradi: env'dagi har bir qo'shimcha bot
-// shu serverga ulanadi (webhook + "Ilova" tugmasi) va natija xabar qilinadi
+// Egasi /ulash yuboradi: env'dagi botlar shu serverga ulanadi
+// (webhook + "Ilova" tugmasi) va natija xabar qilinadi
 async function setupBots(msg, host) {
-  const bots = extraBots();
-  if (!bots.length) {
+  const list = await connectBots(host);
+  if (!list.length) {
     await callTelegram("sendMessage", {
       chat_id: msg.chat.id,
       text: "Qo'shimcha bot topilmadi.\n\nVercel → Settings → Environment Variables bo'limiga bot tokenini TELEGRAM_BOT_TOKEN_AI kabi nom bilan qo'shing, qayta deploy qiling va /ulash ni yana yuboring.",
@@ -393,31 +395,14 @@ async function setupBots(msg, host) {
     return;
   }
   const lines = ["🔌 <b>Botlarni ulash</b>", ""];
-  for (const bot of bots) {
-    const me = await callTelegram("getMe", {}, bot);
-    if (!me.ok) {
-      lines.push(`❌ <b>${escapeHtml(bot)}</b> — token noto'g'ri (TELEGRAM_BOT_TOKEN_${escapeHtml(bot.toUpperCase())})`);
+  for (const b of list) {
+    const at = b.username ? "@" + escapeHtml(b.username) : "<b>" + escapeHtml(b.bot) + "</b>";
+    if (!b.ok) {
+      lines.push(`❌ ${at} — ${escapeHtml(b.error)}`);
       continue;
     }
-    const at = "@" + escapeHtml(me.result.username);
-    const hook = await callTelegram("setWebhook", {
-      url: hookUrl(host, bot),
-      secret_token: webhookSecret(bot),
-      allowed_updates: ["message", "callback_query"],
-    }, bot);
-    const menu = await callTelegram("setChatMenuButton", {
-      menu_button: { type: "web_app", text: "Ilova", web_app: { url: appUrl(host, bot) } },
-    }, bot);
-    const hello = await callTelegram("sendMessage", {
-      chat_id: process.env.OWNER_CHAT_ID,
-      text: "✅ Bot Print 54 serveriga ulandi. Buyurtmalar shu chatga keladi.",
-    }, bot);
-    if (!hook.ok || !menu.ok) {
-      lines.push(`❌ ${at} — ulab bo'lmadi: ${escapeHtml((hook.ok ? menu : hook).description || "")}`);
-    } else {
-      lines.push(`✅ ${at} — ulandi (kalit: <code>${escapeHtml(bot)}</code>)`);
-      if (!hello.ok) lines.push(`   ⚠️ ${at} ga kirib /start bosing — aks holda buyurtmalar shu (Print 54) botga keladi`);
-    }
+    lines.push(`✅ ${at} — ulandi (kalit: <code>${escapeHtml(b.bot)}</code>)`);
+    if (!b.ownerStarted) lines.push(`   ⚠️ ${at} ga kirib /start bosing — aks holda buyurtmalar shu botga keladi`);
   }
   await callTelegram("sendMessage", { chat_id: msg.chat.id, text: lines.join("\n"), parse_mode: "HTML" });
 }
@@ -438,19 +423,30 @@ async function handleMessage(msg, bot, host) {
 
   if (!msg.text) return;
 
+  if (msg.text.startsWith("/ulash") && isOwner(msg.from) && bot === MAIN) {
+    await setupBots(msg, host);
+    return;
+  }
+
   // Qo'shimcha botlarda faqat salomlashish (referal, e'lon — Print 54 niki)
   if (bot !== MAIN) {
     if (msg.text.startsWith("/start")) await welcomeExtra(msg, bot, host);
     return;
   }
 
-  if (msg.text.startsWith("/ulash") && isOwner(msg.from)) {
-    await setupBots(msg, host);
+  if (msg.text.startsWith("/elon")) {
+    await handleBroadcast(msg);
     return;
   }
 
-  if (msg.text.startsWith("/elon")) {
-    await handleBroadcast(msg);
+  // Alohida AI loyiha: salomlashish + foydalanuvchini e'lonlar uchun eslab qolish
+  if (AI_MODE) {
+    if (!msg.text.startsWith("/start")) return;
+    await supabase.from("users").upsert(
+      { telegram_user_id: msg.from.id, username: msg.from.username || null, first_name: msg.from.first_name || null, last_seen: new Date().toISOString() },
+      { onConflict: "telegram_user_id" }
+    );
+    await welcomeExtra(msg, bot, host);
     return;
   }
 

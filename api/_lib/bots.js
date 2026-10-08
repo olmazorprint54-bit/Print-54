@@ -7,6 +7,11 @@
 //   <kalit>           -> TELEGRAM_BOT_TOKEN_<KALIT>
 // Yangi bot qo'shish uchun kod o'zgarmaydi: env'ga token qo'shiladi
 // va Print 54 botida egasi /ulash buyrug'ini yuboradi.
+//
+// Alohida Vercel loyihasi (o'z Supabase'i bilan) faqat AI bot uchun
+// bo'lsa: BOT_MODE=ai — asosiy bot (TELEGRAM_BOT_TOKEN) chop etishsiz,
+// /start da umumiy ilovani ochadi; APP_BOT — ilovadagi nom/rang kaliti
+// (public/app/bots.js). Ulash: https://<loyiha>.vercel.app/api/setup
 // Buyurtma qaysi botdan kelgani orders.details.bot da saqlanadi
 // (yo'q bo'lsa — print54). Fayl va xabarlar o'sha bot orqali boradi.
 // ---------------------------------------------------------------
@@ -36,6 +41,12 @@ function extraBots() {
     .map((k) => k.slice(PREFIX.length).toLowerCase())
     .filter((k) => /^[a-z0-9_]{1,32}$/.test(k) && k !== MAIN);
 }
+
+// Bu Vercel loyihasi faqat AI bot uchunmi (chop etishsiz)
+const AI_MODE = process.env.BOT_MODE === "ai";
+
+// Umumiy ilova (public/app) qaysi nom/rang bilan ochilsin
+const appKey = (bot) => (bot === MAIN ? process.env.APP_BOT || "ai" : bot);
 
 const orderBot = (order) => botKey(order && order.details && order.details.bot);
 
@@ -114,4 +125,4 @@ function webhookSecret(key) {
   return crypto.createHmac("sha256", token(key)).update("tg-webhook").digest("hex").slice(0, 48);
 }
 
-module.exports = { MAIN, token, botKey, extraBots, orderBot, telegram, toOwner, sendFile, verifyInitData, authUser, webhookSecret };
+module.exports = { MAIN, AI_MODE, appKey, token, botKey, extraBots, orderBot, telegram, toOwner, sendFile, verifyInitData, authUser, webhookSecret };
