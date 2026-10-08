@@ -234,7 +234,11 @@
         body: JSON.stringify({ image: full.split(",")[1], initData: tg ? tg.initData : null, bot: (window.AI_APP || {}).bot }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
+      if (!res.ok || !data.ok) {
+        const e = new Error(data.error || "Server xatosi");
+        if (res.status >= 400 && res.status < 500 && data.error) e.show = data.error; // limit, eski sessiya — aniq sabab
+        throw e;
+      }
       p.path = data.path;
       p.status = "ok";
     } catch (err) {
@@ -812,7 +816,7 @@
       console.error(err);
       haptic("error");
       btn.disabled = false;
-      status.textContent = "Xatolik yuz berdi, birozdan so'ng qayta urinib ko'ring.";
+      status.textContent = err.show || "Xatolik yuz berdi, birozdan so'ng qayta urinib ko'ring.";
     }
   }
 
