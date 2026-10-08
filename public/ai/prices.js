@@ -14,6 +14,7 @@
 
   // base — shu hajmgacha (upTo); undan keyin har bir birlik uchun step
   var TABLE = {
+    presentation: { base: 20000, upTo: 10, field: "slides", fallback: 10, step: 1000 },
     test:      { base: 13000, upTo: 30, field: "count", fallback: 20, step: 300 },
     questions: { base: 13000, upTo: 30, field: "count", fallback: 15, step: 300 },
     crossword: { base: 13000 },

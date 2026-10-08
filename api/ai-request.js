@@ -16,6 +16,7 @@ const { canAutoResume } = require("./_lib/resume-html");
 const { canAutoObyektivka } = require("./_lib/obyektivka-docx");
 const { canAutoTest } = require("./_lib/test-gen");
 const { canAutoDoc } = require("./_lib/doc-gen");
+const { canAutoPres } = require("./_lib/pres-gen");
 const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
 
@@ -24,6 +25,7 @@ const AUTO = {
   resume: canAutoResume, obyektivka: canAutoObyektivka, test: canAutoTest,
   essay: (f) => canAutoDoc("essay", f), referat: (f) => canAutoDoc("referat", f), lesson: (f) => canAutoDoc("lesson", f),
   questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
+  presentation: canAutoPres,
 };
 const { internalKey } = require("./_lib/internal-key");
 const { MAIN, authUser, botKey, telegram, toOwner } = require("./_lib/bots");

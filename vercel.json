@@ -5,10 +5,14 @@
     "api/resume-pdf.js": {
       "memory": 1024,
       "maxDuration": 300,
-      "includeFiles": "node_modules/@sparticuz/chromium/bin/**"
+      "includeFiles": "{node_modules/@sparticuz/chromium/bin/**,api/_lib/pres/**}"
     },
     "api/ai-request.js": {
-      "maxDuration": 300
+      "maxDuration": 300,
+      "includeFiles": "api/_lib/pres/**"
+    },
+    "api/telegram-webhook.js": {
+      "includeFiles": "api/_lib/pres/**"
     }
   },
   "crons": [

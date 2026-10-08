@@ -484,7 +484,12 @@
   };
 
   // Avtomatik (AI) tayyorlanadimi — server bilan bir xil shart
-  const isAuto = (svc, v) => svc.id === "obyektivka" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
+  // Taqdimot: AI tayyorlaydigan shablon, PowerPoint, 30 slaydgacha (api/_lib/pres-gen.js)
+  const isAutoPres = (v) => {
+    const t = CFG.templates.presentation.find((x) => x.id === v.template);
+    return !!(t && t.auto && v.format !== "pdf" && (parseInt(v.slides, 10) || 10) <= 30);
+  };
+  const isAuto = (svc, v) => svc.id === "obyektivka" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
   // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
   const orderPrice = (svc, v) => {
     const p = PR && PR.priceOf(svc.id, v);
@@ -505,6 +510,7 @@
       ["Shablon", pick("template")],
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
+      ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
