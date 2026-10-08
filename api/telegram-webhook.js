@@ -248,6 +248,7 @@ const AI_LABELS = {
   presentation: "Taqdimot",
   essay: "Mustaqil ish",
   referat: "Referat",
+  article: "Maqola",
   lesson: "Dars ishlanma",
   test: "Test",
   questions: "Savollar",
