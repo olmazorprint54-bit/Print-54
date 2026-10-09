@@ -243,17 +243,65 @@ function maxCharsAt(slot, k) {
   return Math.floor(slot.kind === "text" ? (cpl * rows) / (k * k * 1.08) : (cpl * rows) / (k * 1.2));
 }
 
-// Matn qutisini toraytirish: chap/o'rta/o'ng tekislash saqlanadi
-function narrowBox(sp, use, algn) {
-  if (use >= 0.995) return sp;
-  return sp.replace(/(<a:xfrm\b[^>]*>\s*<a:off x=")(-?\d+)(" y="-?\d+"\/>\s*<a:ext cx=")(\d+)(")/, (m, a, x, b, cx, c) => {
-    const w = Math.round(cx * use);
+// Matn qutisini toraytirish (chap/o'rta/o'ng tekislash saqlanadi) va kerak bo'lsa yuqoriga surish (dy, EMU)
+function narrowBox(sp, use, algn, dy = 0) {
+  if (use >= 0.995 && !dy) return sp;
+  return sp.replace(/(<a:xfrm\b[^>]*>\s*<a:off x=")(-?\d+)(" y=")(-?\d+)("\/>\s*<a:ext cx=")(\d+)(")/, (m, a, x, b, y, c, cx, d) => {
+    const w = use >= 0.995 ? Number(cx) : Math.round(cx * use);
     const shift = algn === "ctr" ? Math.round((cx - w) / 2) : algn === "r" ? cx - w : 0;
-    return a + (Number(x) + shift) + b + w + c;
+    return a + (Number(x) + shift) + b + (Number(y) - dy) + c + w + d;
   });
 }
 
-function fillText(sp, text, slot, lang) {
+// Zich ustma-ust joylashgan katta yozuvlar (masalan "COMPANY" ostida "PROFILE"): namunada pastga
+// tushadigan harf yo'q, o'zbekchada esa Q ko'p ("IQTISOD", "TAQDIMOT") — Q/J/g dumi pastdagi yozuvga
+// tegadi; pastdagi yozuv kichraytirilsa (yuqoriga mahkamlangan quti) uning harflari ham ko'tariladi.
+// Geometriya shablonning haqiqiy shriftlari bilan o'lchangan (tools/pptx-shablon/tail.py: base, tail,
+// below[{id, gap, cap}] — em, k=1). Bu yerda haqiqiy kichraytirishlar bilan: yuqoridagi qutini
+// qancha ko'tarish kerak (EMU).
+const DESCENDER_CAPS = /[QJҚҲДЦЩ,;]/u;
+const DESCENDER_ANY = /[QJҚҲДЦЩgjpqyқҳдцщруф,;]/u;
+const TAIL_GAP = 0.06; // dum va pastdagi harf orasida qoladigan bo'shliq (em)
+const kPlan = (slot, text) => { const need = needScale(slot, text); return need < 0.97 ? Math.max(need, minScale(slot)) : 1; };
+function descLift(L, texts) {
+  // want — tayanch chiziq ostida yetishmayotgan joy (em); namuna matni bilan ham hisoblanadi:
+  // dizaynerning o'z joylashuvi to'g'ri deb olinadi, faqat undan yomonlashgani tuzatiladi
+  const want = (A, textA, textOf) => {
+    const kA = kPlan(A, textA);
+    const tails = (A.caps ? DESCENDER_CAPS : DESCENDER_ANY).test(A.caps ? textA.toUpperCase() : textA);
+    let w = -Infinity;
+    for (const nb of A.below) {
+      const B = L.slots.find((t) => t.id === nb.id);
+      const tb = textOf(B);
+      if (B && B.kind !== "fixed" && !tb) continue; // pastdagi joy bo'sh
+      const kB = B && B.kind !== "fixed" ? kPlan(B, tb) : 1;
+      const room = nb.gap + nb.cap * kB - A.base * kA; // tayanch chiziqdan pastdagi bosh harfgacha
+      w = Math.max(w, (tails ? A.tail * kA : 0) + TAIL_GAP - room);
+    }
+    return w;
+  };
+  const byId = new Map(L.editable.map((t, i) => [t.id, texts[i] || ""]));
+  const out = new Map();
+  for (const A of L.editable) {
+    const text = byId.get(A.id);
+    if (!text || !A.below) continue;
+    const need = want(A, text, (B) => (B ? (byId.has(B.id) ? byId.get(B.id) : B.text) : "")) - Math.max(0, want(A, A.text || "", (B) => (B ? B.text : "")));
+    if (need <= 0.005) continue;
+    // yuqoridagi yozuvga va slayd chetidan chiqib ketmasin
+    let limit = A.box[1];
+    for (const o of L.slots) {
+      if (o === A || !o.box || o.box[1] >= A.box[1]) continue;
+      const ow = Math.min(A.box[0] + A.box[2], o.box[0] + o.box[2]) - Math.max(A.box[0], o.box[0]);
+      const ob = o.box[1] + (o.lines || 1) * (o.lineH || o.box[3]);
+      if (ow > 0 && ob <= A.box[1]) limit = Math.min(limit, A.box[1] - ob);
+    }
+    const dy = Math.min(Math.round(Math.min(need, 0.6) * A.sz * 12700), Math.max(0, limit));
+    if (dy > 0) out.set(A.id, dy);
+  }
+  return out;
+}
+
+function fillText(sp, text, slot, lang, opt = {}) {
   const body = /<p:txBody>([\s\S]*?)<\/p:txBody>/.exec(sp);
   if (!body) return sp;
   const inner = body[1];
@@ -277,7 +325,7 @@ function fillText(sp, text, slot, lang) {
   const paras = (lines.length ? lines : [""]).map((l) => `<a:p>${pPr}<a:r>${rPr}<a:t>${xmlEsc(l)}</a:t></a:r></a:p>`).join("");
   const algn = (/\balgn="(\w+)"/.exec(pPr) || /<a:lvl1pPr[^>]*\balgn="(\w+)"/.exec(lst) || [])[1];
   const vertical = /\bvert="(?!horz)/.test(bodyPr);
-  return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical ? 1 : useOf(slot), algn);
+  return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical ? 1 : useOf(slot), algn, vertical ? 0 : opt.dy || 0);
 }
 
 // Rasmni ramkaga "cover" qilib joylash (ortiqcha qismi kesiladi)
@@ -321,9 +369,10 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
     let xml = src[s.L.n].xml;
     let rels = (src[s.L.n].rels || '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"></Relationships>')
       .replace(/<Relationship [^>]*notesSlide[^>]*\/>/g, "");
+    const lift = descLift(s.L, s.texts);
     s.L.editable.forEach((slot, k) => {
       const r = shapeRange(xml, slot.id);
-      if (r) xml = xml.slice(0, r[0]) + fillText(xml.slice(r[0], r[1]), s.texts[k] || "", slot, lang) + xml.slice(r[1]);
+      if (r) xml = xml.slice(0, r[0]) + fillText(xml.slice(r[0], r[1]), s.texts[k] || "", slot, lang, { dy: lift.get(slot.id) }) + xml.slice(r[1]);
     });
     const imgs = s.L.photos.length ? await photosFor(s, s.L.photos) : [];
     imgs.forEach((img, k) => {
@@ -426,4 +475,4 @@ async function generatePresentation(f, photoUrls = []) {
   return { buffer, name, ai: sumAi(written.ai, shortened) };
 }
 
-module.exports = { MIN_PT, useOf, narrowBox, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
+module.exports = { MIN_PT, useOf, narrowBox, descLift, kPlan, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
