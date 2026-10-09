@@ -36,20 +36,53 @@ def slot_max(t, slide):
     return t["max"]
 
 
-def k_for(t, text):
-    """api/_lib/pres-gen.js fillText bilan bir xil kichraytirish"""
-    cpl = max(4, t.get("perLine") or t["max"])
+MIN_PT = 14      # api/_lib/pres-gen.js MIN_PT: hech bir yozuv 14 pt dan kichik emas
+CAPS_W = 1.15
+
+
+def eff_cpl(t):
+    """api/_lib/pres-gen.js slotGrid: sarlavha/yorliq namuna kengligidan (+10%) chiqmaydi"""
+    use = min(1, max(0.5, t["useW"] * 1.1)) if t["kind"] != "text" and t.get("useW") else 1
+    return max(4, (t.get("perLine") or t["max"]) * use)
+
+
+def need_scale(t, text):
+    """api/_lib/pres-gen.js needScale bilan bir xil"""
+    cpl = eff_cpl(t)
     rows = max(1, t.get("lines") or math.ceil((t["chars"] or 1) / cpl))
     ln = max(len(text), 1) * (1.08 if t["kind"] == "text" else 1.2)
-    longest = max([len(w) for w in text.split()] or [1])
-    k = min(1, math.sqrt(cpl * rows / ln)) if t["kind"] == "text" else min(1, cpl * rows / ln)
-    k = min(k, cpl / longest)
-    return max(0.35, k) if k < 0.97 else 1.0
+    caps = t.get("caps") or (text.upper() == text and any(c.isalpha() for c in text))
+    longest = max([len(w) for w in text.split()] or [1]) * (CAPS_W if caps else 1.05)
+    k = math.sqrt(cpl * rows / ln) if t["kind"] == "text" else cpl * rows / ln
+    return min(1, k, cpl / longest)
+
+
+def min_scale(t):
+    sz = t.get("sz") or MIN_PT
+    return MIN_PT / sz if sz > MIN_PT else 1.0
+
+
+def max_chars_at(t, k):
+    cpl = eff_cpl(t)
+    rows = max(1, t.get("lines") or math.ceil((t["chars"] or 1) / cpl))
+    return math.floor(cpl * rows / (k * k * 1.08) if t["kind"] == "text" else cpl * rows / (k * 1.2))
+
+
+def fit_text(t, text):
+    """server: 14 pt da sig'masa matn qisqartiriladi (fitToSlots/trimTo), keyin fillText kichraytiradi"""
+    kmin = min_scale(t)
+    if need_scale(t, text) < kmin * (0.95 if t["kind"] == "text" else 0.85):
+        m = max(6, max_chars_at(t, kmin))
+        if len(text) > m:
+            text = (text[:m - 1].rsplit(" ", 1)[0] if " " in text[:m - 1] else text[:m - 1]) + "…"
+    k = need_scale(t, text)
+    return text, (1.0 if k >= 0.97 else max(k, kmin))
 
 
 def rect(fonts, t, text, k):
     x, y, w, h = t["box"]
-    width_pt = max(1, (w - t.get("ins", 0)) / EMU_PT)
+    use = min(1, max(0.5, t["useW"] * 1.1)) if t["kind"] != "text" and t.get("useW") else 1
+    width_pt = max(1, (w * use - t.get("ins", 0)) / EMU_PT)  # server qutini toraytiradi (narrowBox)
     size = t["sz"] * k
     lines = wrap_lines(fonts, text, t.get("font"), size, width_pt)
     hh = lines * (t["lineH"] / EMU_PT) * k
@@ -83,7 +116,8 @@ def check_slide(fonts, sl, size):
         text = filler(max(4, n))
         if t.get("caps"):
             text = text.upper()
-        got[t["id"]] = rect(fonts, t, text, k_for(t, text))
+        text, k = fit_text(t, text)
+        got[t["id"]] = rect(fonts, t, text, k)
     bad = set()
     ids = list(got)
     editable = {t["id"] for t in sl["slots"] if t["kind"] != "fixed"}

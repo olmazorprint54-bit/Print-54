@@ -117,14 +117,27 @@ const SW = 13.333, SH = 7.5;
 const clean = (v, n = 600) => String(v == null ? "" : v).replace(/[ \t]+/g, " ").trim().slice(0, n);
 
 // Matn qutiga sig'adigan shrift o'lchami (taxminiy: harf eni ~0.5 em)
-function fit(text, w, h, max, min = 10, bold = false) {
-  const paras = String(text || "").split("\n");
-  for (let pt = max; pt >= min; pt -= 1) {
-    const cpl = Math.max(4, (w * 72) / (pt * (bold ? 0.56 : 0.5)));
-    const lines = paras.reduce((n, p) => n + Math.max(1, Math.ceil(p.length / cpl)), 0);
-    if (lines * pt * 1.22 <= h * 72) return pt;
-  }
+// Hech bir yozuv 14 pt dan kichik emas; 14 pt da ham sig'masa — matn qisqartiriladi
+const MIN_PT = 14;
+function fits(text, w, h, pt, bold) {
+  const cpl = Math.max(4, (w * 72) / (pt * (bold ? 0.56 : 0.5)));
+  const lines = String(text || "").split("\n").reduce((n, p) => n + Math.max(1, Math.ceil(p.length / cpl)), 0);
+  return lines * pt * 1.22 <= h * 72;
+}
+function fit(text, w, h, max, min = MIN_PT, bold = false) {
+  for (let pt = max; pt >= min; pt -= 1) if (fits(text, w, h, pt, bold)) return pt;
   return min;
+}
+function shorten(text, w, h, pt, bold) {
+  let t = String(text || "");
+  while (t.length > 1 && !fits(t, w, h, pt, bold)) {
+    const items = t.split("\n");
+    if (items.length > 1) { items.pop(); t = items.join("\n"); continue; } // ro'yxat — oxirgi band
+    const cut = t.replace(/…$/, "").replace(/\s*\S+$/, "");
+    if (!cut || cut === t) break;
+    t = cut + "…";
+  }
+  return t;
 }
 
 function renderSmart(data, d, images) {
@@ -134,7 +147,9 @@ function renderSmart(data, d, images) {
   P.title = d.topic;
   const F = T.font;
   const txt = (s, text, o) => {
-    const size = fit(text, o.w, o.h, o.max || 18, o.min || 10, o.bold);
+    const min = Math.max(MIN_PT, o.min || MIN_PT);
+    const size = fit(text, o.w, o.h, Math.max(min, o.max || 18), min, o.bold);
+    text = shorten(text, o.w, o.h, size, o.bold);
     s.addText(text, { x: o.x, y: o.y, w: o.w, h: o.h, fontFace: F, fontSize: size, color: o.color || T.text, bold: !!o.bold, italic: !!o.italic, align: o.align || "left", valign: o.valign || "top", margin: 0, paraSpaceAfter: o.gap || 0, lineSpacingMultiple: 1.05 });
   };
   const heading = (s, title) => {

@@ -86,7 +86,7 @@ function describe(layouts) {
 const SYSTEM = `You create school and university presentations for students and teachers in Uzbekistan.
 - Content is factually accurate, specific and educational (facts, dates, examples), suited to the level; no filler.
 - Write in the requested language; for Uzbek use the current official Latin (or Cyrillic) spelling with o', g', sh, ch.
-- Each text must fit its slot: never exceed the max characters; aim for 60–100% of the max for TEXT slots.
+- Each text must fit its slot: never exceed the max characters (longer texts get cut); aim for 60–90% of the max for TEXT slots.
 - TEXT slots: short complete sentences or list items separated by \\n. TITLE: short heading. LABEL: 1–4 words.
 - No markdown, no emojis, no numbering prefixes unless the slot is a list.`;
 
@@ -207,6 +207,52 @@ function el(src, tag) {
   return m ? m[0] : null;
 }
 
+// Hech bir yozuv 14 pt dan kichik bo'lmasin (shablonning o'zida kichikroq bo'lsa — o'sha o'lchamda qoladi).
+// 14 pt da ham sig'masa — matn qisqartiriladi (fitToSlots), shrift emas.
+const MIN_PT = 14;
+const CAPS_W = 1.15; // katta harflar o'rtacha harfdan kengroq (M, W, G, X ...)
+// Sarlavha/yorliq namuna matni egallagan kenglikdan (+10%) chiqmasin — undan keyin ko'pincha
+// bezak (strelka, rasm) turadi. Quti shu kenglikka toraytiriladi (fillText -> narrowBox).
+// useW — tools/pptx-shablon/usew.py o'lchaydi
+const useOf = (slot) => (slot.kind !== "text" && slot.useW ? Math.min(1, Math.max(0.5, slot.useW * 1.1)) : 1);
+const slotGrid = (slot) => {
+  const cpl = Math.max(4, (slot.perLine || slot.max) * useOf(slot));
+  return { cpl, rows: Math.max(1, slot.lines || Math.ceil((slot.chars || 1) / cpl)) };
+};
+// Matn qutiga sig'ishi uchun shrift necha marta kichrayishi kerak (1 — kerak emas)
+//  matn — maydon ikki o'lchamli: sig'im shrift kvadratiga teskari;
+//  sarlavha/yorliq — namunadagidek qatorlar soni va eng uzun so'z qutiga sig'sin
+// cpl — shu shriftda bir qatorga sig'adigan harf (tools/pptx-shablon/analyze.py o'lchaydi),
+// lines — namunadagi qatorlar soni: matn shundan oshsa pastdagi elementlarga chiqib ketadi
+function needScale(slot, text) {
+  const { cpl, rows } = slotGrid(slot);
+  // zaxira: so'zlar qator oxirida bo'linmaydi; sarlavha/yorliqda katta harflar kengroq
+  const len = Math.max(String(text).length, 1) * (slot.kind === "text" ? 1.08 : 1.2);
+  const caps = slot.caps || (/\p{Lu}/u.test(text) && text === text.toUpperCase());
+  // bitta so'z qatorga bo'linmaydi — eng uzuni qutining enidan oshmasin
+  const longest = Math.max(...String(text).split(/\s+/).map((w) => w.length), 1) * (caps ? CAPS_W : 1.05);
+  const k = slot.kind === "text" ? Math.sqrt((cpl * rows) / len) : (cpl * rows) / len;
+  return Math.min(1, k, cpl / longest);
+}
+const minScale = (slot, pt = slot.sz) => (pt > MIN_PT ? MIN_PT / pt : 1);
+// 14 pt da ham sig'maydimi? Baholashda zaxira bor (1.08 / 1.2), shuning uchun ozgina ortig'i — sig'adi
+const overflows = (slot, text, kMin = minScale(slot)) => needScale(slot, text) < kMin * (slot.kind === "text" ? 0.95 : 0.85);
+// shu kichraytirishda qutiga sig'adigan harflar soni
+function maxCharsAt(slot, k) {
+  const { cpl, rows } = slotGrid(slot);
+  return Math.floor(slot.kind === "text" ? (cpl * rows) / (k * k * 1.08) : (cpl * rows) / (k * 1.2));
+}
+
+// Matn qutisini toraytirish: chap/o'rta/o'ng tekislash saqlanadi
+function narrowBox(sp, use, algn) {
+  if (use >= 0.995) return sp;
+  return sp.replace(/(<a:xfrm\b[^>]*>\s*<a:off x=")(-?\d+)(" y="-?\d+"\/>\s*<a:ext cx=")(\d+)(")/, (m, a, x, b, cx, c) => {
+    const w = Math.round(cx * use);
+    const shift = algn === "ctr" ? Math.round((cx - w) / 2) : algn === "r" ? cx - w : 0;
+    return a + (Number(x) + shift) + b + w + c;
+  });
+}
+
 function fillText(sp, text, slot, lang) {
   const body = /<p:txBody>([\s\S]*?)<\/p:txBody>/.exec(sp);
   if (!body) return sp;
@@ -216,22 +262,11 @@ function fillText(sp, text, slot, lang) {
   const firstP = (/<a:p>[\s\S]*?<\/a:p>/.exec(inner) || [""])[0];
   let pPr = el(firstP, "pPr") || "";
   let rPr = el(firstP, "rPr") || '<a:rPr lang="en-US"/>';
-  // Sig'magan matn: shrift kichraytiriladi.
-  //  matn — maydon ikki o'lchamli: sig'im shrift kvadratiga teskari;
-  //  sarlavha/yorliq — namunadagidek qatorlar soni va eng uzun so'z qutiga sig'sin
-  // cpl — shu shriftda bir qatorga sig'adigan harf (tools/pptx-shablon/analyze.py o'lchaydi),
-  // lines — namunadagi qatorlar soni: matn shundan oshsa pastdagi elementlarga chiqib ketadi
-  const cpl = Math.max(4, slot.perLine || slot.max);
-  const rows = Math.max(1, slot.lines || Math.ceil((slot.chars || 1) / cpl));
-  // zaxira: so'zlar qator oxirida bo'linmaydi; sarlavha/yorliqda katta harflar kengroq
-  const len = Math.max(text.length, 1) * (slot.kind === "text" ? 1.08 : 1.2);
-  const longest = Math.max(...text.split(/\s+/).map((w) => w.length), 1);
-  let k = slot.kind === "text"
-    ? Math.min(1, Math.sqrt((cpl * rows) / len)) // maydon: shrift kichrayganda qatorlar ham ko'payadi
-    : Math.min(1, (cpl * rows) / len);
-  k = Math.min(k, cpl / longest);
+  // Sig'magan matn: shrift kichraytiriladi, lekin 14 pt dan pastga emas
+  const m = /\bsz="(\d+)"/.exec(rPr);
+  const pt = m ? m[1] / 100 : slot.sz;
+  let k = Math.max(needScale(slot, text), minScale(slot, pt || MIN_PT));
   if (k < 0.97) {
-    k = Math.max(0.35, k);
     const scale = (s) => s.replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * k)}"`).replace(/<a:spcPts val="(\d+)"\/>/g, (_, v) => `<a:spcPts val="${Math.round(v * k)}"/>`);
     rPr = scale(rPr);
     pPr = scale(pPr);
@@ -240,7 +275,9 @@ function fillText(sp, text, slot, lang) {
   if (slot.text && slot.text === slot.text.toUpperCase() && /[A-Z]/.test(slot.text) && !/\bcap="all"/.test(rPr)) text = text.toLocaleUpperCase(lang.slice(0, 2));
   const lines = text.split(/\n+/).map((l) => l.trim()).filter(Boolean);
   const paras = (lines.length ? lines : [""]).map((l) => `<a:p>${pPr}<a:r>${rPr}<a:t>${xmlEsc(l)}</a:t></a:r></a:p>`).join("");
-  return sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`);
+  const algn = (/\balgn="(\w+)"/.exec(pPr) || /<a:lvl1pPr[^>]*\balgn="(\w+)"/.exec(lst) || [])[1];
+  const vertical = /\bvert="(?!horz)/.test(bodyPr);
+  return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical ? 1 : useOf(slot), algn);
 }
 
 // Rasmni ramkaga "cover" qilib joylash (ortiqcha qismi kesiladi)
@@ -317,6 +354,42 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
 
 /* ---------------- asosiy ---------------- */
 // photoUrls — mijoz yuklagan rasmlar (imzolangan havolalar)
+// 14 pt da ham sig'maydigan matnlar: avval AI qisqartiradi, baribir uzun bo'lsa — kod kesadi
+function trimTo(text, max) {
+  if (text.length <= max) return text;
+  const items = text.split("\n");
+  while (items.length > 1 && items.join("\n").length > max) items.pop(); // ro'yxat — oxirgi bandlar
+  let t = items.join("\n");
+  if (t.length <= max) return t;
+  const sent = /^[\s\S]*[.!?](?=\s|$)/.exec(t.slice(0, max)); // butun gaplar
+  if (sent && sent[0].length >= max * 0.5) return sent[0];
+  return t.slice(0, Math.max(1, max - 1)).replace(/\s+\S*$/, "") + "…";
+}
+const sumAi = (a, b) => (!b ? a : !a ? b : { ...a, usage: { input: a.usage.input + b.usage.input, output: a.usage.output + b.usage.output }, usd: a.usd + b.usd });
+
+async function fitToSlots(slides) {
+  const over = [];
+  slides.forEach((s, i) => s.L.editable.forEach((slot, k) => {
+    const t = s.texts[k];
+    const kMin = minScale(slot);
+    if (t && overflows(slot, t, kMin)) over.push({ s, k, slot, kMin, max: Math.max(3, maxCharsAt(slot, kMin)) });
+  }));
+  if (!over.length) return null;
+  let ai = null;
+  try {
+    ai = await askJson({
+      model: MODEL(), system: SYSTEM, effort: "low", maxTokens: 8000,
+      schema: { type: "object", properties: { texts: { type: "array", items: { type: "string" } } }, required: ["texts"], additionalProperties: false },
+      prompt: `These presentation texts are too long for their text boxes. Shorten each one to AT MOST the given number of characters (spaces included). Keep the language, the meaning and the key facts; keep list items on separate lines (\\n) and drop the least important ones if needed. Return "texts": one string per item, in the same order.
+
+${over.map((o, n) => `${n + 1}. [max ${o.max}] ${o.s.texts[o.k]}`).join("\n")}`,
+    });
+    over.forEach((o, n) => { const t = clean((ai.data.texts || [])[n], 2000); if (t) o.s.texts[o.k] = t; });
+  } catch (e) { console.error("Matnni qisqartirib bo'lmadi:", e.message); }
+  for (const o of over) if (overflows(o.slot, o.s.texts[o.k], o.kMin)) o.s.texts[o.k] = trimTo(o.s.texts[o.k], o.max);
+  return ai;
+}
+
 async function generatePresentation(f, photoUrls = []) {
   if (isSmart(f.template)) {
     // mijoz rasmlari + Pixabay/Pexels (mavzu bo'yicha, gorizontal)
@@ -334,6 +407,7 @@ async function generatePresentation(f, photoUrls = []) {
   };
   const spec = specs()[f.template];
   const [tpl, written] = await Promise.all([loadTemplate(f.template), writeSlides(d, spec)]);
+  const shortened = await fitToSlots(written.slides);
 
   // rasmlar: avval mijozniki, keyin Pexels (rasmlar o'chirilgan bo'lsa — shablonniki qoladi)
   const own = [];
@@ -349,7 +423,7 @@ async function generatePresentation(f, photoUrls = []) {
   }));
   const buffer = await buildPptx(tpl, spec, written.slides, photosFor, LANG_TAG[lang]);
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
-  return { buffer, name, ai: written.ai };
+  return { buffer, name, ai: sumAi(written.ai, shortened) };
 }
 
-module.exports = { slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
+module.exports = { MIN_PT, useOf, narrowBox, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
