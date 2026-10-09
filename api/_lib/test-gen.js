@@ -12,7 +12,7 @@ const {
 } = require("docx");
 const { askJson, hasKey } = require("./ai");
 
-const MODEL = "claude-sonnet-5-5";
+const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
 const STYLES = ["classic", "twocol", "sheet"];
 
 const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
@@ -103,7 +103,7 @@ const SCHEMA = {
 async function generateTest(fields) {
   const d = testData(fields);
   const ai = await askJson({
-    model: MODEL,
+    model: MODEL(),
     system: SYSTEM,
     prompt: testPrompt(d, d.count),
     schema: SCHEMA,

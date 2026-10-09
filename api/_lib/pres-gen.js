@@ -18,7 +18,7 @@ const JSZip = require("jszip");
 const { askJson, hasKey } = require("./ai");
 const { isSmart, generateSmart } = require("./smart-gen");
 
-const MODEL = "claude-opus-5-5";
+const MODEL = () => require("./ai").modelFor("PRES_MODEL"); // standart: Opus 5.5
 const MAX_SLIDES = 30; // 300 soniyalik chegara ichida
 const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
 const LANG_TAG = { uz_lat: "uz-Latn-UZ", uz_cyr: "uz-Cyrl-UZ", ru: "ru-RU", en: "en-US" };
@@ -110,7 +110,7 @@ async function writeSlides(d, spec) {
     required: ["slides"], additionalProperties: false,
   };
   const r = await askJson({
-    model: MODEL, system: SYSTEM, effort: "medium", maxTokens: 32000, schema,
+    model: MODEL(), system: SYSTEM, effort: "medium", maxTokens: 32000, schema,
     prompt: `Create a presentation.
 Topic: ${d.topic}
 Subject: ${d.subject || "—"}
