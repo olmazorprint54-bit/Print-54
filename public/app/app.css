@@ -206,3 +206,9 @@ section{ margin-bottom:18px; }
 .ref-bar{ height:8px; border-radius:99px; background: var(--line); margin-top:12px; overflow:hidden; }
 .ref-bar i{ display:block; height:100%; width:0; border-radius:99px; background: var(--accent); transition: width .4s ease; }
 .ref-card .ref-share{ margin-top:12px; width:100%; }
+
+/* Buyurtmalarim — tartib raqami va o'chirish belgisi */
+.order .meta{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.order .meta .del{ flex-shrink:0; width:34px; height:34px; padding:0; display:grid; place-items:center; border-radius:10px; border:1px solid var(--line); background:transparent; color:#ef4444; cursor:pointer; }
+.order .meta .del svg{ width:18px; height:18px; stroke: currentColor; }
+.order .meta .del:active{ transform: scale(.94); }

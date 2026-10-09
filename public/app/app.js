@@ -121,13 +121,13 @@
         const [st, cls] = STATUS[o.status] || [o.status, ""];
         const topic = o.details && o.details.topic;
         const date = new Date(o.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+        // mijozning o'z tartib raqami (umumiy #id emas); tayyor/bekor qilinganini o'chirish mumkin
         return `<div class="order card">
           <div class="row1"><div><div class="ttl">${esc(TITLES[o.service])}</div>${topic ? `<div class="topic">${esc(topic)}</div>` : ""}</div><span class="st ${cls}">${st}</span></div>
-          <div class="meta">#${o.id} · ${date}${o.total === 0 ? " · Tekin" : ""}</div>
+          <div class="meta"><span>№${o.n || ""} · ${date}${o.total === 0 ? " · Tekin" : ""}</span>${o.status !== "active"
+            ? `<button class="del" data-hide="${o.id}" aria-label="O'chirish" title="Tarixdan o'chirish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>` : ""}</div>
           ${o.status === "completed" && o.file_id ? `<button class="get" data-file="${o.id}">📥 Faylni olish</button>` : ""}
-          <div class="acts">${o.status === "active"
-            ? `<button class="danger" data-cancel="${o.id}">Bekor qilish</button>`
-            : `<button data-hide="${o.id}">Ro'yxatdan olib tashlash</button>`}</div>
+          ${o.status === "active" ? `<div class="acts"><button class="danger" data-cancel="${o.id}">Bekor qilish</button></div>` : ""}
         </div>`;
       }).join("") : `<div class="empty"><b>🗂</b>Hali buyurtma yo'q.<br>«Asosiy» bo'limidan xizmat tanlang.</div>`;
     } catch (err) {
@@ -138,6 +138,7 @@
     const b = e.target.closest("[data-file],[data-cancel],[data-hide]");
     if (!b || !user) return;
     if (b.dataset.cancel && !(await confirmAsk("Buyurtmani bekor qilasizmi?"))) return;
+    if (b.dataset.hide && !(await confirmAsk("Buyurtmani tarixdan o'chirasizmi?"))) return;
     tick();
     b.disabled = true;
     try {

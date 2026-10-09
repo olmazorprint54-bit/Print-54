@@ -30,18 +30,20 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Hammasi (o'chirilganlari ham) — mijozning o'z tartib raqami (1, 2, 3 ...) o'chirishdan keyin ham o'zgarmasin
     const { data, error } = await supabase
       .from("orders")
       .select("*")
       .eq("telegram_user_id", auth.user.id)
-      .eq("hidden_by_customer", false)
-      .order("created_at", { ascending: false })
-      .limit(100);
+      .order("created_at", { ascending: true })
+      .limit(1000);
 
     if (error) throw error;
 
-    // to'lov oynasi yopilib, to'lanmay qolgan buyurtmalar ro'yxatda ko'rinmaydi
-    const orders = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment)).slice(0, 50).map(publicOrder);
+    // to'lov oynasi yopilib, to'lanmay qolgan buyurtmalar hisoblanmaydi va ko'rinmaydi
+    const mine = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment));
+    mine.forEach((o, i) => { o.n = i + 1; });
+    const orders = mine.filter((o) => !o.hidden_by_customer).reverse().slice(0, 50).map(publicOrder);
     res.status(200).json({ ok: true, orders });
   } catch (err) {
     console.error(err);
