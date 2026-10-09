@@ -237,6 +237,7 @@
       if (!res.ok || !data.ok) {
         const e = new Error(data.error || "Server xatosi");
         if (res.status >= 400 && res.status < 500 && data.error) e.show = data.error; // limit, eski sessiya — aniq sabab
+        else e.show = `Xatolik yuz berdi (${res.status}${data.why ? ": " + data.why : ""}). Birozdan so'ng qayta urinib ko'ring.`;
         throw e;
       }
       p.path = data.path;
@@ -816,7 +817,8 @@
       console.error(err);
       haptic("error");
       btn.disabled = false;
-      status.textContent = err.show || "Xatolik yuz berdi, birozdan so'ng qayta urinib ko'ring.";
+      // Tarmoq yoki ilova ichidagi xato — sababi ham ko'rinsin (tuzatish uchun)
+      status.textContent = err.show || `Xatolik yuz berdi (${String((err && err.message) || err).slice(0, 100)}). Birozdan so'ng qayta urinib ko'ring.`;
     }
   }
 
