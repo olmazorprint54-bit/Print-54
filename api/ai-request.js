@@ -19,6 +19,7 @@ const { canAutoDoc } = require("./_lib/doc-gen");
 const { canAutoPres } = require("./_lib/pres-gen");
 const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
+const { takeCredit } = require("./_lib/referral");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
 const AUTO = {
@@ -241,15 +242,17 @@ module.exports = async (req, res) => {
     // bo'lsa — sinov rejimi: to'lovsiz, lekin mijozga kuniga FREE_DAILY ta.
     const paid = !!(body.autoResume && price > 0);
     if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
-    const payNow = paid && !!u && !!providerToken() && !TRIAL;
-    const trial = paid && !!u && !payNow;
+    // Referal bonusi: 1 ta bepul AI buyurtma — to'lov va sinov limitisiz
+    const credit = paid && !!u && body.useBonus === true && (await takeCredit(u.id));
+    const payNow = paid && !!u && !credit && !!providerToken() && !TRIAL;
+    const trial = paid && !!u && !credit && !payNow;
     // Bot egasi (OWNER_CHAT_ID) sinab ko'rishi uchun limit yo'q
     const isOwner = !!u && String(u.id) === String(process.env.OWNER_CHAT_ID || "").trim();
     if (trial && !isOwner && (await trialsToday(u.id)) >= FREE_DAILY) {
       res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
-    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}) };
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -259,7 +262,7 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: trial ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
+        total: trial || credit ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
@@ -317,7 +320,7 @@ module.exports = async (req, res) => {
 
     if (auto) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
 
-    res.status(200).json({ ok: true, orderId, auto });
+    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}) });
   } catch (err) {
     console.error(err);
     // Sababi egaga ham boradi — Vercel loglarini ochmasdan ko'rish uchun

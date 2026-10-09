@@ -6,7 +6,8 @@
 // ---------------------------------------------------------------
 
 
-const { authUser } = require("./_lib/bots");
+const { authUser, AI_MODE } = require("./_lib/bots");
+const { rewardsOf } = require("./_lib/referral");
 
 const supabase = require("./_lib/db");
 
@@ -23,6 +24,12 @@ module.exports = async (req, res) => {
       return;
     }
     const userId = auth.user.id;
+
+    // Alohida AI bot: bepul AI buyurtmalar (referal bonusi)
+    if (AI_MODE) {
+      res.status(200).json({ ok: true, ai: await rewardsOf(auth.bot, userId) });
+      return;
+    }
 
     const { data: userRow, error } = await supabase
       .from("users")

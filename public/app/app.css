@@ -196,3 +196,13 @@ section{ margin-bottom:18px; }
   transition: .25s ease; z-index:60; max-width:90%; text-align:center;
 }
 .toast.show{ opacity:1; transform:translate(-50%, 0); }
+
+/* Profil — referal (do'stlarni taklif qilish) */
+.ref-card .ref-text{ font-size:14px; line-height:1.45; margin-top:6px; opacity:.85; }
+.ref-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+.ref-stats div{ background: var(--bg, rgba(127,127,127,.08)); border:1px solid var(--line); border-radius:12px; padding:10px 6px; text-align:center; }
+.ref-stats b{ display:block; font-size:22px; font-weight:800; color: var(--accent); }
+.ref-stats span{ display:block; font-size:11.5px; opacity:.7; margin-top:2px; }
+.ref-bar{ height:8px; border-radius:99px; background: var(--line); margin-top:12px; overflow:hidden; }
+.ref-bar i{ display:block; height:100%; width:0; border-radius:99px; background: var(--accent); transition: width .4s ease; }
+.ref-card .ref-share{ margin-top:12px; width:100%; }

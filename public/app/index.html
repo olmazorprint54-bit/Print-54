@@ -19,8 +19,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../ai/ai.css?v=19">
-<link rel="stylesheet" href="app.css?v=3">
+<link rel="stylesheet" href="../ai/ai.css?v=20">
+<link rel="stylesheet" href="app.css?v=4">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -43,6 +43,18 @@
       <div class="profile-card card">
         <div class="avatar" id="profAvatar">?</div>
         <div><div class="pname" id="profName">Mehmon</div><div class="puser" id="profUser"></div></div>
+      </div>
+      <div class="card setting ref-card" id="refCard" hidden>
+        <div class="set-title">🎁 Do'stlarni taklif qiling</div>
+        <div class="ref-text">Har <b id="refStep">3</b> ta do'stingiz birinchi buyurtmasini olganda — sizga <b>1 ta bepul</b> AI buyurtma.</div>
+        <div class="ref-stats">
+          <div><b id="refCredits">0</b><span>bepul buyurtma</span></div>
+          <div><b id="refDone">0</b><span>do'st qo'shildi</span></div>
+          <div><b id="refWait">0</b><span>kutilmoqda</span></div>
+        </div>
+        <div class="ref-bar"><i id="refBar"></i></div>
+        <div class="set-note" id="refNote"></div>
+        <button type="button" class="order-btn ref-share" id="refShare">📤 Taklif havolasini ulashish</button>
       </div>
       <div class="card setting">
         <div class="set-title">Ko'rinish</div>
@@ -97,7 +109,7 @@
         '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
     };
   </script>
-  <script src="../ai/ai.js?v=33"></script>
-  <script src="app.js?v=2"></script>
+  <script src="../ai/ai.js?v=34"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
