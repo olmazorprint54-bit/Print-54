@@ -24,6 +24,19 @@ const MODEL_NAMES = {
   "claude-haiku-4-5": "Haiku 4.5",
 };
 
+// Modelni egasi Vercel env orqali tanlaydi (kodsiz):
+//   PRES_MODEL — taqdimot (standart: opus)
+//   TEXT_MODEL — mustaqil ish, referat, maqola, test va boshqalar (standart: sonnet)
+// Qiymat: "opus" yoki "sonnet". Noto'g'ri qiymat bo'lsa — standart model.
+const MODELS = { opus: "claude-opus-5-5", sonnet: "claude-sonnet-5-5" };
+const DEFAULTS = { PRES_MODEL: "opus", TEXT_MODEL: "sonnet" };
+function modelChoice(env) {
+  const v = String(process.env[env] || "").trim().toLowerCase();
+  const key = MODELS[v] ? v : Object.keys(MODELS).find((k) => MODELS[k] === v);
+  return { key: key || DEFAULTS[env], valid: !v || !!key, set: !!v };
+}
+const modelFor = (env) => MODELS[modelChoice(env).key];
+
 const hasKey = () => !!process.env.ANTHROPIC_API_KEY;
 
 let client = null;
@@ -69,4 +82,4 @@ function costLine(ai) {
   return `${MODEL_NAMES[ai.model] || ai.model} · ${k(ai.usage.input)} kirish + ${k(ai.usage.output)} chiqish token · $${ai.usd.toFixed(3)} (≈ ${som.toLocaleString("ru-RU")} so'm)`;
 }
 
-module.exports = { hasKey, askJson, costOf, costLine };
+module.exports = { hasKey, askJson, costOf, costLine, modelFor, modelChoice, MODEL_NAMES, MODELS };

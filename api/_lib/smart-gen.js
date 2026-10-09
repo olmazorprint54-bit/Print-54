@@ -11,7 +11,7 @@
 const PptxGenJS = require("pptxgenjs");
 const { askJson } = require("./ai");
 
-const MODEL = "claude-opus-5-5";
+const MODEL = () => require("./ai").modelFor("PRES_MODEL"); // standart: Opus 5.5
 const MAX_SLIDES = 30;
 const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
 
@@ -78,7 +78,7 @@ async function writeSmart(d) {
   };
   const themeList = Object.entries(THEMES).map(([id, t]) => `${id} — ${t.name} (${t.hint})`).join("\n");
   return askJson({
-    model: MODEL, effort: "medium", maxTokens: 32000, schema,
+    model: MODEL(), effort: "medium", maxTokens: 32000, schema,
     system: `You create school and university presentations for students and teachers in Uzbekistan, like a professional presentation designer.
 - Content is factually accurate, specific and educational; no filler. Respect every character limit.
 - Write in the requested language; for Uzbek use the current official spelling (o', g', sh, ch).

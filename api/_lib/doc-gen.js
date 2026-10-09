@@ -9,7 +9,7 @@
 
 const { askJson, hasKey } = require("./ai");
 
-const MODEL = "claude-sonnet-5-5";
+const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
 const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
 const AUTO_STYLES = {
   essay: ["otm", "school", "modern"],
@@ -155,7 +155,7 @@ async function generatePaper(service, f) {
 
   // 1) Reja
   const outline = await askJson({
-    model: MODEL, system: WRITER, effort: "medium", maxTokens: 4000,
+    model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
     schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
     prompt: `${ctx}\n\nMake the plan: exactly ${nCh} chapter(s)${essay ? "" : " (one chapter that just groups the sections; its title can repeat the topic)"}, each with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`,
   });
@@ -171,19 +171,19 @@ async function generatePaper(service, f) {
   const PARAS = { type: "array", items: STR };
   const tasks = [];
   if (d.parts.has("intro")) tasks.push(() => askJson({
-    model: MODEL, system: WRITER, effort: "low", maxTokens: 6000, schema: obj({ paragraphs: PARAS }),
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 6000, schema: obj({ paragraphs: PARAS }),
     prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the INTRODUCTION (about ${introW} words): relevance of the topic, aim and tasks of the work, short overview of the structure.`,
   }));
   if (d.parts.has("main")) chapters.forEach((c) => c.sections.forEach((s) => tasks.push(() => askJson({
-    model: MODEL, system: WRITER, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: PARAS }),
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: PARAS }),
     prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}"${essay ? ` (chapter "${c.title}")` : ""}: about ${secW} words. Do not repeat what other sections cover; do not write the section title.`,
   }))));
   if (d.parts.has("conclusion")) tasks.push(() => askJson({
-    model: MODEL, system: WRITER, effort: "low", maxTokens: 5000, schema: obj({ paragraphs: PARAS }),
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 5000, schema: obj({ paragraphs: PARAS }),
     prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the CONCLUSION (about ${conclW} words): main findings of each part and a general conclusion.`,
   }));
   if (d.parts.has("refs")) tasks.push(() => askJson({
-    model: MODEL, system: WRITER, effort: "low", maxTokens: 3000, schema: obj({ references: STRS }),
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 3000, schema: obj({ references: STRS }),
     prompt: `${ctx}\n\nList 6–10 references for this paper in standard bibliographic format (author, title, city, publisher, year). Use real, well-known sources only: laws and decrees of the Republic of Uzbekistan, textbooks, monographs, official websites (e.g. lex.uz). Do not invent books.`,
   }));
   const results = await pool(tasks, 3);
@@ -238,7 +238,7 @@ async function generateLesson(f) {
     teacher: clean(f.teacher, 120), school: clean(f.school, 120),
   };
   const r = await askJson({
-    model: MODEL, system: WRITER, effort: "medium", maxTokens: 12000,
+    model: MODEL(), system: WRITER, effort: "medium", maxTokens: 12000,
     schema: obj({
       goals: obj({ educational: STR, developmental: STR, upbringing: STR }),
       outcomes: STRS, equipment: STRS,
@@ -296,7 +296,7 @@ async function generateQuestions(f) {
     grade: clean(f.grade, 60), style: AUTO_STYLES.questions.includes(f.template) ? f.template : "list", answers: f.withAnswers !== false,
   };
   const r = await askJson({
-    model: MODEL, system: WRITER, effort: "medium", maxTokens: 32000,
+    model: MODEL(), system: WRITER, effort: "medium", maxTokens: 32000,
     schema: obj({ title: STR, items: { type: "array", items: obj({ kind: { type: "string", enum: d.kinds }, question: STR, answer: STR, pairs: { type: "array", items: obj({ left: STR, right: STR }) } }) } }),
     prompt: `Create exactly ${d.count} questions on the topic "${d.topic}" for ${d.grade || "school pupils"}.
 Question types to mix (roughly evenly): ${d.kinds.map((k) => KIND_TEXT[k]).join("; ")}.
@@ -413,7 +413,7 @@ async function generateCrossword(f) {
   };
   const want = custom.length || d.count;
   const r = await askJson({
-    model: MODEL, system: WRITER, effort: "medium", maxTokens: 8000,
+    model: MODEL(), system: WRITER, effort: "medium", maxTokens: 8000,
     schema: obj({ title: STR, words: { type: "array", items: obj({ answer: STR, clue: STR }) } }),
     prompt: custom.length
       ? `Write crossword clues in ${LANG_NAMES[lang]} for exactly these answer words (keep the words as given, one clue each), topic "${d.topic}", for ${d.grade || "school pupils"}:\n${custom.join("\n")}\nReturn a short "title".`
@@ -484,7 +484,7 @@ Language of the article: ${LANG_NAMES[lang]}`;
   // 1) sarlavha, annotatsiyalar, kalit so'zlar, bo'limlar
   const sections = kind === "scientific" ? A.sci : kind === "thesis" ? ["", "", ""] : null;
   const meta = await askJson({
-    model: MODEL, system: ARTW, effort: "medium", maxTokens: 6000,
+    model: MODEL(), system: ARTW, effort: "medium", maxTokens: 6000,
     schema: obj({
       title: STR,
       annotations: { type: "array", items: obj({ lang: { type: "string", enum: ["uz", "ru", "en"] }, text: STR, keywords: STRS }) },
@@ -508,11 +508,11 @@ Return:
 
   // 2) matn (bo'limlar parallel) + adabiyotlar
   const tasks = parts.map((p, i) => () => askJson({
-    model: MODEL, system: ARTW, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: STRS }),
+    model: MODEL(), system: ARTW, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: STRS }),
     prompt: `${ctx}\nTitle: ${meta.data.title}\n\nWrite the ${roles[i]} — about ${Math.round(words * share[i])} words. Do not write the section heading.`,
   }));
   if (kind !== "popular") tasks.push(() => askJson({
-    model: MODEL, system: ARTW, effort: "low", maxTokens: 3000, schema: obj({ references: STRS }),
+    model: MODEL(), system: ARTW, effort: "low", maxTokens: 3000, schema: obj({ references: STRS }),
     prompt: `${ctx}\n\nList ${kind === "thesis" ? "3–5" : "8–14"} references in standard bibliographic format (authors, title, journal/publisher, year, pages). Real, well-known sources only: laws and decrees of the Republic of Uzbekistan (lex.uz), textbooks, monographs, journal articles by known authors. Do not invent sources.`,
   }));
   const res = await pool(tasks, 3);

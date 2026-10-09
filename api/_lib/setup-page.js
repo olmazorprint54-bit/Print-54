@@ -19,8 +19,13 @@ function envHtml() {
     { name: "BOT_MODE", state: process.env.BOT_MODE === "ai" ? "ok" : "missing", hint: "ai" },
     { name: "GITHUB_TOKEN", state: process.env.GITHUB_TOKEN ? "ok" : "missing", hint: "Taqdimot shablonlarini o'qish uchun (yopiq repozitoriya)" },
     { name: "PIXABAY_API_KEY", state: process.env.PIXABAY_API_KEY || process.env.PEXELS_API_KEY ? "ok" : "missing", hint: "Taqdimotga mavzuga mos rasmlar (pixabay.com/api/docs)" },
+    ...["PRES_MODEL", "TEXT_MODEL"].map((name) => {
+      const { modelChoice, MODELS, MODEL_NAMES } = require("./ai");
+      const c = modelChoice(name);
+      return { name, state: c.valid ? "ok" : "invalid", hint: `Hozir: ${MODEL_NAMES[MODELS[c.key]]}${c.set ? "" : " (standart)"} — qiymati: opus yoki sonnet` };
+    }),
   ];
-  const known = new Set(["TELEGRAM_BOT_TOKEN", "OWNER_CHAT_ID", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "ANTHROPIC_API_KEY", "BOT_MODE", "APP_BOT", "USD_UZS", "CRON_SECRET", "PEXELS_API_KEY", "PIXABAY_API_KEY", "GITHUB_TOKEN", "TEMPLATES_REPO", "PAYMENT_PROVIDER_TOKEN", "FREE_DAILY"]);
+  const known = new Set(["TELEGRAM_BOT_TOKEN", "OWNER_CHAT_ID", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "ANTHROPIC_API_KEY", "BOT_MODE", "APP_BOT", "USD_UZS", "CRON_SECRET", "PEXELS_API_KEY", "PIXABAY_API_KEY", "GITHUB_TOKEN", "TEMPLATES_REPO", "PAYMENT_PROVIDER_TOKEN", "FREE_DAILY", "PRES_MODEL", "TEXT_MODEL"]);
   // nomi xato yozilgan bo'lishi mumkin bo'lganlar (masalan SUPABASE_URL2)
   const odd = Object.keys(process.env).filter((k) => /^(SUPABASE|TELEGRAM|OWNER|ANTHROPIC|BOT_|APP_)/.test(k) && !known.has(k) && !/^TELEGRAM_BOT_TOKEN_[A-Z0-9_]+$/.test(k));
   const icon = { ok: "✅", missing: "❌ yo'q", invalid: "⚠️ noto'g'ri" };
