@@ -16,6 +16,7 @@ const { buildObyektivka } = require("./_lib/obyektivka-docx");
 const { orderBot, telegram, toOwner } = require("./_lib/bots");
 const { generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS } = require("./_lib/test-gen");
 const { costLine } = require("./_lib/ai");
+const { confirmReferral } = require("./_lib/referral");
 const { GENERATORS } = require("./_lib/doc-gen");
 const { generatePresentation } = require("./_lib/pres-gen");
 const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
@@ -134,7 +135,7 @@ async function reportCost(order, ai) {
   const f = order.details.fields || {};
   await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `🤖 #${order.id} ${costTitle(order.service, f)}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}\n${costLine(ai)}`,
+    text: `🤖 #${order.id} ${costTitle(order.service, f)}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 referal bonusi (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
   }).catch((e) => console.error(e));
 }
 
@@ -286,6 +287,7 @@ module.exports = async (req, res) => {
     }
     await deliver(order, file);
     if (ai) await reportCost(order, ai);
+    await confirmReferral(orderBot(order), order).catch((e) => console.error("Referal:", e));
     // rasm PDF ichida — omborda saqlash shart emas (bepul joy 1 GB)
     if (order.details.photos && order.details.photos.length) {
       await supabase.storage.from(BUCKET).remove(order.details.photos).catch((e) => console.error(e));

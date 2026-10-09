@@ -210,3 +210,7 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-done .big{ font-size:40px; }
 .ai-done h3{ margin:8px 0 6px; font-size:17px; }
 .ai-done p{ margin:0 0 14px; font-size:13px; color: var(--ink-soft); line-height:1.5; }
+
+/* Referal bonusi — formadagi "Bonusdan foydalanish" qatori */
+.receipt-line.bonus-line{ align-items:center; cursor:pointer; font-weight:700; color: var(--accent, #4F46E5); }
+.receipt-line.bonus-line .switch{ flex-shrink:0; }

@@ -188,4 +188,39 @@
   document.querySelector(".view[data-view='profile']").addEventListener("click", (e) => {
     if (e.target.closest("[data-contact]") && window.aiContactOwner) window.aiContactOwner();
   });
+
+  /* ---------- Referal: do'stlarni taklif qilish (faqat alohida AI botda) ---------- */
+  let refLink = null;
+  function showRewards(r) {
+    $("refCard").hidden = false;
+    $("refStep").textContent = r.step;
+    $("refCredits").textContent = r.credits;
+    $("refDone").textContent = r.confirmed;
+    $("refWait").textContent = r.pending;
+    const inStep = r.confirmed % r.step;
+    $("refBar").style.width = Math.round((inStep / r.step) * 100) + "%";
+    $("refNote").textContent = (r.credits > 0 ? `Sizda ${r.credits} ta bepul buyurtma bor — buyurtma berishda «🎁 Bonusdan foydalanish» yoqilgan bo'ladi. ` : "") +
+      `Keyingi bonusgacha yana ${r.step - inStep} ta do'st.`;
+    refLink = r.link;
+    $("refShare").hidden = !refLink;
+  }
+  async function loadRewards() {
+    if (!user) return;
+    try {
+      const data = await api("/api/my-rewards");
+      if (!data.ok || !data.ai) return; // Print 54 loyihasidagi botlarda — referal yo'q
+      window.AI_BONUS = data.ai.credits;
+      if (window.aiBonusChanged) window.aiBonusChanged();
+      showRewards(data.ai);
+    } catch (e) {}
+  }
+  window.aiBonusUsed = loadRewards;
+  loadRewards();
+  $("refShare").addEventListener("click", () => {
+    if (!refLink) return;
+    tick();
+    const text = `${bot.name} — taqdimot, mustaqil ish, test va boshqalarni AI bir necha daqiqada tayyorlaydi. Shu havola orqali kiring 👇`;
+    const url = `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent(text)}`;
+    if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank");
+  });
 })();

@@ -15,6 +15,7 @@ const { connectBots, appUrl } = require("./_lib/setup");
 const { waitUntil } = require("@vercel/functions");
 const { orderIdOf } = require("./_lib/pay");
 const { internalKey } = require("./_lib/internal-key");
+const { registerReferral, REF_STEP } = require("./_lib/referral");
 
 const supabase = require("./_lib/db");
 
@@ -377,7 +378,7 @@ async function welcomeExtra(msg, bot, host) {
   const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
   }, bot);
@@ -442,10 +443,13 @@ async function handleMessage(msg, bot, host) {
   // Alohida AI loyiha: salomlashish + foydalanuvchini e'lonlar uchun eslab qolish
   if (AI_MODE) {
     if (!msg.text.startsWith("/start")) return;
+    // referal faqat haqiqiy yangi foydalanuvchi uchun (avval bazada bo'lmagan)
+    const { data: known } = await supabase.from("users").select("telegram_user_id").eq("telegram_user_id", msg.from.id).single();
     await supabase.from("users").upsert(
       { telegram_user_id: msg.from.id, username: msg.from.username || null, first_name: msg.from.first_name || null, last_seen: new Date().toISOString() },
       { onConflict: "telegram_user_id" }
     );
+    await registerReferral(bot, msg.from, msg.text, !known).catch((e) => console.error(e));
     await welcomeExtra(msg, bot, host);
     return;
   }

@@ -28,6 +28,11 @@
 
   const valuesBy = {};
   let current = null; // tanlangan xizmat
+  // Referal bonusi (AI bot): bepul AI buyurtmalar soni — app.js /api/my-rewards dan qo'yadi
+  let useBonus = true;
+  const bonusLeft = () => Number(window.AI_BONUS) || 0;
+  const bonusOn = (svc, v) => useBonus && bonusLeft() > 0 && orderPrice(svc, v) > 0;
+  window.aiBonusChanged = () => { if (current) refreshLive(current); };
 
   /* ---------------------------------------------------------------
      REJIM ALMASHTIRISH
@@ -532,9 +537,12 @@
       ["Til", pick("lang")],
       ...(svc.fields.some((f) => f.id === "print") ? [["Chop etish", pick("print")]] : []),
     ];
-    return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+    const bonusRow = bonusLeft() > 0 && orderPrice(svc, v) > 0
+      ? `<label class="receipt-line bonus-line"><span>🎁 Bonusdan foydalanish (${bonusLeft()} ta)</span><span class="switch"><input type="checkbox" data-bonus="1"${useBonus ? " checked" : ""}><span class="slider"></span></span></label>`
+      : "";
+    return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") + bonusRow +
       // tekin xizmatda chop etish alohida hisoblanadi
-      (() => { const t = orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
+      (() => { const t = bonusOn(svc, v) ? "🎁 Bonus — bepul" : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
         return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${t.length > 12 ? "16px" : "23px"}">${esc(t)}</span></div>`; })();
   }
 
@@ -571,6 +579,12 @@
   /* ---------------------------------------------------------------
      HODISALAR
      --------------------------------------------------------------- */
+  root.addEventListener("change", (e) => {
+    if (!e.target.matches("[data-bonus]") || !current) return;
+    useBonus = e.target.checked;
+    tick();
+    refreshLive(current);
+  });
   root.addEventListener("click", (e) => {
     const open = e.target.closest("[data-open]");
     if (open) { tick(); openService(open.dataset.open); return; }
@@ -800,6 +814,7 @@
           user,
           initData: tg ? tg.initData : null,
           bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
+          useBonus: bonusOn(svc, visible),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -812,6 +827,7 @@
         return;
       }
       haptic("success");
+      if (data.credit) { window.AI_BONUS = Math.max(0, bonusLeft() - 1); if (window.aiBonusUsed) window.aiBonusUsed(); }
       renderDone(svc, data.auto);
     } catch (err) {
       console.error(err);
