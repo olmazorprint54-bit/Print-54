@@ -320,6 +320,12 @@ module.exports = async (req, res) => {
     res.status(200).json({ ok: true, orderId, auto });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ ok: false, error: "So'rovni yuborib bo'lmadi" });
+    // Sababi egaga ham boradi — Vercel loglarini ochmasdan ko'rish uchun
+    const why = String((err && err.message) || err).replace(/[<>&]/g, "").slice(0, 300);
+    try {
+      const b = req.body || {};
+      await toOwner(botKey(b.bot), "sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `🛑 <b>AI so'rovda xato</b> (${SERVICE_LABELS[b.service] || b.service || "?"})\n<code>${why}</code>`, parse_mode: "HTML" });
+    } catch (e) { console.error(e); }
+    res.status(500).json({ ok: false, error: "So'rovni yuborib bo'lmadi", why: why.slice(0, 120) });
   }
 };
