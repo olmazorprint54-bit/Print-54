@@ -671,7 +671,7 @@ async function checkReceipt(msg, bot, order, req) {
   if (!isCardWait(fresh)) return;
 
   if (v.ok) {
-    await confirmPaid(fresh, { auto: true, txn: v.read.transaction_id || null, usd: v.ai ? v.ai.usd : 0 }, req);
+    await confirmPaid(fresh, { auto: true, amount: v.paid, txn: v.read.transaction_id || null, usd: v.ai ? v.ai.usd : 0 }, req);
     // egaga — ovozsiz qisqa xabar; pul aslida tushmagan bo'lsa belgilaydi
     await toOwner(bot, "sendMessage", {
       chat_id: process.env.OWNER_CHAT_ID,
@@ -683,11 +683,12 @@ async function checkReceipt(msg, bot, order, req) {
     return;
   }
 
-  // Shubhali chek — egasi qo'lda ko'radi
+  // Shubhali chek — egasi qo'lda ko'radi; AI o'qigan summa saqlanadi (tasdiqlansa balansga shu tushadi)
+  if (v.paid) await supabase.from("orders").update({ details: { ...fresh.details, receipt: { ...(fresh.details.receipt || {}), amount: v.paid } } }).eq("id", order.id);
   await callTelegram("copyMessage", { chat_id: process.env.OWNER_CHAT_ID, from_chat_id: msg.chat.id, message_id: msg.message_id }, bot).catch(() => null);
   const sent = await toOwner(bot, "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `💳 <b>Chekni tekshiring</b> — #${order.id}\n${orderLine(order)}\nSumma: <b>${fmtSum(payAmountOf(order))}</b>\n👤 ${userLink(msg.from)}\n\n🤖 Avtomatik tasdiqlanmadi: ${escapeHtml(v.reasons.join("; "))}\n\nKartangizga shu summa tushgan bo'lsa — «To'lov keldi» ni bosing.`,
+    text: `💳 <b>Chekni tekshiring</b> — #${order.id}\n${orderLine(order)}\nSumma: <b>${fmtSum(payAmountOf(order))}</b>${v.paid ? ` · chekda: <b>${fmtSum(v.paid)}</b>` : ""}\n👤 ${userLink(msg.from)}\n\n🤖 Avtomatik tasdiqlanmadi: ${escapeHtml(v.reasons.join("; "))}\n\nKartangizga pul tushgan bo'lsa — «To'lov keldi» ni bosing${v.paid ? ` (balansga ${fmtSum(v.paid)} tushadi)` : ""}.`,
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✅ To'lov keldi", callback_data: `payok:${order.id}` }, { text: "❌ Rad etish", callback_data: `payno:${order.id}` }]] },
   });
@@ -758,7 +759,7 @@ async function handlePayAction(cq, bot, req) {
   }
 
   if (act === "ok") {
-    await confirmPaid(order, { by: "owner" }, req);
+    await confirmPaid(order, { by: "owner", ...(d.receipt && d.receipt.amount ? { amount: d.receipt.amount } : {}) }, req);
     await mark("✅ To'lov tasdiqlandi");
     return answer(`#${id} tasdiqlandi — AI ishni boshladi.`);
   }
