@@ -198,6 +198,7 @@ section{ margin-bottom:18px; }
 .toast.show{ opacity:1; transform:translate(-50%, 0); }
 
 /* Profil — referal (do'stlarni taklif qilish) */
+.bal-sum{ font-size:28px; font-weight:800; color: var(--accent); margin:4px 0 6px; }
 .ref-card .ref-text{ font-size:14px; line-height:1.45; margin-top:6px; opacity:.85; }
 .ref-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
 .ref-stats div{ background: var(--bg, rgba(127,127,127,.08)); border:1px solid var(--line); border-radius:12px; padding:10px 6px; text-align:center; }

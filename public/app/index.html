@@ -19,8 +19,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../ai/ai.css?v=23">
-<link rel="stylesheet" href="app.css?v=5">
+<link rel="stylesheet" href="../ai/ai.css?v=25">
+<link rel="stylesheet" href="app.css?v=6">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -43,6 +43,11 @@
       <div class="profile-card card">
         <div class="avatar" id="profAvatar">?</div>
         <div><div class="pname" id="profName">Mehmon</div><div class="puser" id="profUser"></div></div>
+      </div>
+      <div class="card setting bal-card" id="balCard" hidden>
+        <div class="set-title">💰 Balans</div>
+        <div class="bal-sum" id="balSum">0 so'm</div>
+        <div class="set-note">Hisob buyurtma berishda kartaga o'tkazma bilan to'ldiriladi (kamida 5 000 so'm). Keyingi buyurtmalar narxi balansdan avtomatik yechiladi.</div>
       </div>
       <div class="card setting ref-card" id="refCard" hidden>
         <div class="set-title">🎁 Do'stlarni taklif qiling</div>
@@ -81,7 +86,7 @@
   <script src="../ai/translit.js?v=19"></script>
   <script src="../ai/titullar.js?v=2"></script>
   <script src="../ai/config.js?v=38"></script>
-  <script src="../ai/prices.js?v=6"></script>
+  <script src="../ai/prices.js?v=8"></script>
   <script>
     // Bu ilovada chop etish yo'q — "chop etilsinmi?" maydoni olib tashlanadi
     window.AI_CONFIG.services.forEach(function (s) {
@@ -110,7 +115,7 @@
         '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
     };
   </script>
-  <script src="../ai/ai.js?v=39"></script>
-  <script src="app.js?v=4"></script>
+  <script src="../ai/ai.js?v=42"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

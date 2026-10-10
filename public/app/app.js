@@ -90,6 +90,8 @@
   /* ---------- Buyurtmalarim ---------- */
   const TITLES = Object.fromEntries(CFG.services.map((s) => [s.id, s.title]));
   const STATUS = { active: ["⏳ Tayyorlanmoqda", "wait"], completed: ["✅ Tayyor", "done"], cancelled: ["Bekor qilingan", ""] };
+  // kartaga to'lov: chek botga yuboriladi, egasi tasdiqlagach "Tayyorlanmoqda"
+  const PAY_STATUS = { waiting: ["💳 To'lov kutilmoqda", "wait"], checking: ["🔎 To'lov tekshirilmoqda", "wait"] };
   function toast(text) {
     const t = $("toast");
     t.textContent = text;
@@ -118,7 +120,8 @@
       if (!list) throw new Error("server");
       updateBadge(list);
       box.innerHTML = list.length ? list.map((o) => {
-        const [st, cls] = STATUS[o.status] || [o.status, ""];
+        const pay = o.status === "active" && o.details && o.details.payState;
+        const [st, cls] = pay ? PAY_STATUS[pay] : STATUS[o.status] || [o.status, ""];
         const topic = o.details && o.details.topic;
         const date = new Date(o.created_at).toLocaleString("ru-RU", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
         // mijozning o'z tartib raqami (umumiy #id emas); tayyor/bekor qilinganini o'chirish mumkin
@@ -127,7 +130,7 @@
           <div class="meta"><span>№${o.n || ""} · ${date}${o.total === 0 ? " · Tekin" : ""}</span>${o.status !== "active"
             ? `<button class="del" data-hide="${o.id}" aria-label="O'chirish" title="Tarixdan o'chirish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>` : ""}</div>
           ${o.status === "completed" && o.file_id ? `<button class="get" data-file="${o.id}">📥 Faylni olish</button>` : ""}
-          ${o.status === "active" ? `<div class="acts"><button class="danger" data-cancel="${o.id}">Bekor qilish</button></div>` : ""}
+          ${o.status === "active" && !(o.details && (o.details.spent || o.details.payState === "checking")) ? `<div class="acts"><button class="danger" data-cancel="${o.id}">Bekor qilish</button></div>` : ""}
         </div>`;
       }).join("") : `<div class="empty"><b>🗂</b>Hali buyurtma yo'q.<br>«Asosiy» bo'limidan xizmat tanlang.</div>`;
     } catch (err) {
@@ -211,11 +214,13 @@
       const data = await api("/api/my-rewards");
       if (!data.ok || !data.ai) return; // Print 54 loyihasidagi botlarda — referal yo'q
       window.AI_BONUS = data.ai.credits;
+      if (data.balance != null) { $("balCard").hidden = false; $("balSum").textContent = Math.round(data.balance).toLocaleString("ru-RU") + " so'm"; }
       if (window.aiBonusChanged) window.aiBonusChanged();
       showRewards(data.ai);
     } catch (e) {}
   }
   window.aiBonusUsed = loadRewards;
+  window.aiBalanceChanged = loadRewards;
   loadRewards();
   $("refShare").addEventListener("click", () => {
     if (!refLink) return;

@@ -18,8 +18,10 @@ const { canAutoTest } = require("./_lib/test-gen");
 const { canAutoDoc } = require("./_lib/doc-gen");
 const { canAutoPres } = require("./_lib/pres-gen");
 const { priceOf, TRIAL } = require("../public/ai/prices");
-const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
+const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
+const { uniqueAmount } = require("./_lib/receipt");
+const { balanceOf, topupNeed, MAX_TOPUP } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
@@ -231,8 +233,11 @@ module.exports = async (req, res) => {
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
     // Manbalar: faqat mijozning o'ziniki, 3 tagacha, jami 100 bet (narxga +5 000)
-    saved.sources = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
-      ? (await SRC.pick(u.id, saved.sources).catch(() => [])).map((m) => m.id) : [];
+    const picked = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
+      ? await SRC.pick(u.id, saved.sources).catch(() => []) : [];
+    saved.sources = picked.map((m) => m.id);
+    // manba narxi jami betga qarab — mijoz yuborgan songa ishonilmaydi
+    saved.sourcePages = picked.reduce((n, m) => n + (Number(m.pages) || 0), 0);
     body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
 
     // Narx serverda hisoblanadi (public/ai/prices.js) — mijoz yuborganiga ishonilmaydi.
@@ -249,15 +254,37 @@ module.exports = async (req, res) => {
     if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
     // Referal bonusi: 1 ta bepul AI buyurtma — to'lov va sinov limitisiz
     const credit = paid && !!u && body.useBonus === true && (await takeCredit(u.id));
-    const payNow = paid && !!u && !credit && !!providerToken() && !TRIAL;
-    const trial = paid && !!u && !credit && !payNow;
-    // Bot egasi (OWNER_CHAT_ID) sinab ko'rishi uchun limit yo'q
+    // Bot egasi (OWNER_CHAT_ID) sinab ko'rishi uchun to'lov va limit yo'q
     const isOwner = !!u && String(u.id) === String(process.env.OWNER_CHAT_ID || "").trim();
+    const mustPay = paid && !!u && !credit && !isOwner && !TRIAL;
+    const payNow = mustPay && !!providerToken();
+    // Click/Payme ulanmagan — balans: yetsa darhol yechiladi, yetmasa kartaga
+    // to'ldirish (kamida 5 000 so'm, chekni AI tekshiradi), so'ng buyurtma boshlanadi
+    const cardCfg = mustPay && !payNow ? payCard() : null;
+    let card = null, spend = 0, bal = 0;
+    if (cardCfg) {
+      bal = await balanceOf(u.id);
+      if (bal >= price) spend = price;
+      else {
+        const need = topupNeed(price, bal);
+        const topup = Math.round(Number(body.topup) || 0);
+        if (!topup) {
+          res.status(200).json({ ok: true, needTopup: { price, balance: bal, ...need } });
+          return;
+        }
+        if (topup < need.min || topup > MAX_TOPUP) {
+          res.status(400).json({ ok: false, error: `To'ldirish summasi ${need.min.toLocaleString("ru-RU")} so'mdan kam bo'lmasin.` });
+          return;
+        }
+        card = { ...cardCfg, topup };
+      }
+    }
+    const trial = paid && !!u && !credit && !payNow && !cardCfg;
     if (trial && !isOwner && (await trialsToday(u.id)) >= FREE_DAILY) {
       res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
-    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}) };
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -288,6 +315,27 @@ module.exports = async (req, res) => {
       const link = await createInvoice(bot, { id: orderId, service: body.service, details }, price);
       await supabase.from("orders").update({ details: { ...details, invoice: link } }).eq("id", orderId);
       res.status(200).json({ ok: true, orderId, auto: true, pay: link, price });
+      return;
+    }
+
+    // Kartaga to'lov: mijozga botda karta va summa (chekni shu chatga yuboradi);
+    // egasiga hozircha hech narsa — chek kelgach telegram-webhook.js yuboradi
+    if (card) {
+      if (!orderId) throw new Error("Buyurtmani bazaga yozib bo'lmadi");
+      const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
+      details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
+      // noyob summa (to'ldirish + 1..99 so'm) — chek va Click/Payme xabaridan buyurtma taniladi
+      details.payAmount = await uniqueAmount(card.topup).catch(() => card.topup);
+      const sent = await telegram(bot, "sendMessage", {
+        chat_id: u.id,
+        text: cardText(card, { service: body.service, details, total: price }, details.payAmount, bal),
+        parse_mode: "HTML",
+        reply_markup: { inline_keyboard: [[{ text: "❌ Bekor qilish", callback_data: `paycancel:${orderId}` }]] },
+      }).catch((e) => ({ ok: false, description: String(e) }));
+      if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
+      else details.payMsg = sent.result.message_id;
+      await supabase.from("orders").update({ details }).eq("id", orderId);
+      res.status(200).json({ ok: true, orderId, auto: true, card: { number: card.number, name: card.name, price: details.payAmount, orderPrice: price, balance: bal } });
       return;
     }
 
@@ -325,7 +373,7 @@ module.exports = async (req, res) => {
 
     if (auto) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
 
-    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}) });
+    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}), ...(spend ? { balance: { spent: spend, left: bal - spend } } : {}) });
   } catch (err) {
     console.error(err);
     // Sababi egaga ham boradi — Vercel loglarini ochmasdan ko'rish uchun

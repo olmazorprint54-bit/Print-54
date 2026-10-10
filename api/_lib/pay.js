@@ -39,4 +39,45 @@ async function createInvoice(bot, order, price) {
   return out.result;
 }
 
-module.exports = { FREE_DAILY, providerToken, payload, orderIdOf, createInvoice };
+// ---------------------------------------------------------------
+// Kartaga o'tkazma (Click/Payme ulanmaguncha). Vercel env:
+//   PAY_CARD       — karta raqami (16 raqam)
+//   PAY_CARD_NAME  — karta egasi (mijozga ko'rinadi)
+// Oqim: ai-request.js buyurtmani "to'lov kutilmoqda" (payMethod: "card")
+// holatida yozadi, mijozga karta va summani yuboradi -> mijoz chek
+// rasmini botga yuboradi -> egasiga chek + "✅ To'lov keldi" tugmasi ->
+// egasi bosgach AI ishga tushadi (telegram-webhook.js).
+// ---------------------------------------------------------------
+const RECEIPT_HOURS = 24; // shu muddat ichida yuborilgan rasm/fayl — chek
+function payCard() {
+  const digits = String(process.env.PAY_CARD || "").replace(/\D/g, "");
+  if (digits.length < 16 || digits.length > 19) return null;
+  return { number: digits.replace(/(\d{4})(?=\d)/g, "$1 "), name: String(process.env.PAY_CARD_NAME || "").trim().slice(0, 60) };
+}
+
+const fmtSum = (n) => Number(n || 0).toLocaleString("ru-RU") + " so'm";
+const escHtml = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+// Mijozga botda: karta, to'ldirish summasi, nima qilish kerak.
+// amount — o'tkaziladigan noyob summa; order.total — buyurtma narxi; balance — hozirgi balans
+function cardText(card, order, amount, balance = 0) {
+  const title = TITLES[order.service] || "AI xizmat";
+  const topic = String((order.details && order.details.topic) || "").slice(0, 120);
+  const price = Number(order.total) || 0;
+  const left = balance + amount - price;
+  return [
+    `💳 <b>Hisobni to'ldirish: ${fmtSum(amount)}</b>`,
+    `${escHtml(title)}${topic ? ` — «${escHtml(topic)}»` : ""}: ${fmtSum(price)}${balance > 0 ? ` (balansda ${fmtSum(balance)} bor)` : ""}`,
+    ...(left > 0 ? [`Qolgan ${fmtSum(left)} balansingizda qoladi — keyingi buyurtmalar undan yechiladi.`] : []),
+    "",
+    `Karta: <code>${card.number}</code>`,
+    ...(card.name ? [`Egasi: ${escHtml(card.name)}`] : []),
+    "",
+    `1) Shu kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi orqali). Summa shu to'lov uchun maxsus — yaxlitlamang.`,
+    "2) To'lov chekini (skrinshot yoki PDF) shu chatga yuboring.",
+    "",
+    "Chek avtomatik tekshiriladi, so'ng balans to'ldiriladi, AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
+  ].join("\n");
+}
+
+module.exports = { FREE_DAILY, providerToken, payload, orderIdOf, createInvoice, payCard, cardText, fmtSum, RECEIPT_HOURS, TITLES };

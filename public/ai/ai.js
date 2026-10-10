@@ -163,7 +163,7 @@
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <div class="src-list" data-src-list="${f.id}">${sourcesHtml(v)}</div>
           <label class="src-add glass">📎 Fayl qo'shish<input type="file" data-src-input="${f.id}" accept=".pdf,.docx,.txt,image/*" multiple hidden></label>
-          <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}` : ""}</div></div>`;
+          <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}dan (betiga qarab)` : ""}</div></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
@@ -245,6 +245,8 @@
     } catch (e) { srcList = srcList || []; }
     if (current === svc) redrawSources(svc);
   }
+  // tanlangan manbalarning jami beti (manba narxi shunga qarab)
+  const srcPages = (v) => (srcList || []).filter((s) => (v.sources || []).includes(s.id)).reduce((n, s) => n + (s.pages || 0), 0);
   function pickSource(svc, id) {
     const v = getValues(svc);
     const sel = new Set(v.sources || []);
@@ -655,7 +657,7 @@
   const isAuto = (svc, v) => svc.id === "obyektivka" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
   // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
   const orderPrice = (svc, v) => {
-    const p = PR && PR.priceOf(svc.id, v);
+    const p = PR && PR.priceOf(svc.id, { ...v, sourcePages: srcPages(v) });
     if (p != null && (p === 0 || isAuto(svc, v))) return p;
     return p != null ? null : CFG.prices[svc.id];
   };
@@ -672,7 +674,7 @@
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
       ...(v.titul ? [["Titul", "🎓 OTM namunasida"]] : []),
-      ...((v.sources || []).length ? [["Manbalar", `📎 ${v.sources.length} ta${PR && !PR.TRIAL ? ` (+${fmt(PR.SOURCE_FEE)})` : ""}`]] : []),
+      ...((v.sources || []).length ? [["Manbalar", `📎 ${v.sources.length} ta${PR && !PR.TRIAL ? ` (+${fmt(PR.sourceFee(srcPages(v)))})` : ""}`]] : []),
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
@@ -758,6 +760,14 @@
     if (open) { tick(); openService(open.dataset.open); return; }
     if (e.target.closest("[data-back]")) { openGrid(); return; }
     if (e.target.closest("[data-again]")) { openGrid(); return; }
+    const copyCard = e.target.closest("[data-copy-card]");
+    if (copyCard) {
+      const num = copyCard.dataset.copyCard;
+      const ok = () => { haptic("success"); const s = copyCard.querySelector("span"); if (s) s.textContent = "✓ Nusxa olindi"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num).then(ok, () => {});
+      return;
+    }
+    if (e.target.closest("[data-to-bot]")) { if (tg && tg.close) tg.close(); return; }
     if (e.target.closest("[data-contact]")) { contactOwner(); return; }
     if (!current) return;
     const v = getValues(current);
@@ -979,26 +989,38 @@
     const visible = { ...v };
     svc.fields.forEach((f) => { if (!shown(svc, v, f.id)) visible[f.id] = Array.isArray(v[f.id]) ? [] : ""; });
     if (svc.id === "presentation" && visible.design !== "tpl") visible.template = "ai-dizayn";
+    const user = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+    await sendOrder(svc, {
+      service: svc.id,
+      fields: visible,
+      summary: summaryPairs(svc, visible),
+      price: orderPrice(svc, visible),
+      user,
+      initData: tg ? tg.initData : null,
+      bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
+      useBonus: bonusOn(svc, visible),
+    });
+  }
+
+  async function sendOrder(svc, payload) {
+    const status = document.getElementById("aiStatus");
+    const btn = document.getElementById("aiSubmit");
     btn.disabled = true;
     status.textContent = "Yuborilmoqda...";
     try {
-      const user = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
       const res = await fetch(CFG.endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          service: svc.id,
-          fields: visible,
-          summary: summaryPairs(svc, visible),
-          price: orderPrice(svc, visible),
-          user,
-          initData: tg ? tg.initData : null,
-          bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
-          useBonus: bonusOn(svc, visible),
-        }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Server xatosi");
+      if (!res.ok || !data.ok) throw Object.assign(new Error(data.error || "Server xatosi"), { show: data.error });
+      if (data.needTopup) {
+        // Balans yetmaydi: hisobni to'ldirish summasini tanlash (kamida 5 000)
+        btn.disabled = false;
+        renderTopup(svc, payload, data.needTopup);
+        return;
+      }
       if (data.pay) {
         // Pullik AI xizmat: avval to'lov (Click/Payme), keyin AI ishlaydi
         status.textContent = "";
@@ -1006,9 +1028,15 @@
         openPayment(svc, data);
         return;
       }
+      if (data.card) {
+        // Kartaga to'lov: karta va summa; chek botga yuboriladi
+        haptic("success");
+        renderCardPay(svc, data.card);
+        return;
+      }
       haptic("success");
       if (data.credit) { window.AI_BONUS = Math.max(0, bonusLeft() - 1); if (window.aiBonusUsed) window.aiBonusUsed(); }
-      renderDone(svc, data.auto);
+      renderDone(svc, data.auto, false, data.balance);
     } catch (err) {
       console.error(err);
       haptic("error");
@@ -1016,6 +1044,22 @@
       // Tarmoq yoki ilova ichidagi xato — sababi ham ko'rinsin (tuzatish uchun)
       status.textContent = err.show || `Xatolik yuz berdi (${String((err && err.message) || err).slice(0, 100)}). Birozdan so'ng qayta urinib ko'ring.`;
     }
+  }
+
+  // Balans yetmasa: qancha to'ldirishni tanlash. Tanlangach buyurtma shu summa bilan
+  // qayta yuboriladi — server karta va noyob summani qaytaradi (renderCardPay)
+  function renderTopup(svc, payload, t) {
+    const status = document.getElementById("aiStatus");
+    status.innerHTML = `<div class="ai-topup">
+        <div class="ai-topup-h">💰 Balansingiz: <b>${esc(fmt(t.balance))}</b> · buyurtma: <b>${esc(fmt(t.price))}</b></div>
+        <div class="ai-topup-t">Hisobingizni to'ldiring (kamida ${esc(fmt(t.min))}). Ortib qolgani balansda qoladi — keyingi buyurtmalar chek yubormasdan, darhol undan yechiladi.</div>
+        <div class="ai-topup-opts">${t.options.map((a) => `<button type="button" class="pill-btn glass" data-topup="${a}">${esc(fmt(a))}</button>`).join("")}</div>
+      </div>`;
+    status.querySelectorAll("[data-topup]").forEach((b) => b.addEventListener("click", () => {
+      tick();
+      sendOrder(svc, { ...payload, topup: Number(b.dataset.topup) });
+    }));
+    status.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   // Telegram to'lov oynasi. To'lov o'tgach server AI'ni ishga tushiradi.
@@ -1038,13 +1082,37 @@
     });
   }
 
-  function renderDone(svc, auto, paid) {
+  // Kartaga to'lov oynasi. Karta raqami botga ham yuborilgan; mijoz chekni
+  // botga yuboradi, egasi tasdiqlagach AI ishlaydi.
+  function renderCardPay(svc, c) {
+    photoState[svc.id] = [];
+    syncPhotos(svc);
+    root.innerHTML = `
+      <div class="ai-done glass">
+        <div class="big">💳</div>
+        <h3>Hisobni to'ldirish: ${esc(fmt(c.price))}</h3>
+        <p>«${esc(svc.title)}» — ${esc(fmt(c.orderPrice || c.price))}${c.price + (c.balance || 0) - (c.orderPrice || c.price) > 0 ? `, qolgan ${esc(fmt(c.price + (c.balance || 0) - (c.orderPrice || c.price)))} balansingizda qoladi` : ""}. Shu kartaga <b>aynan ${esc(fmt(c.price))}</b> o'tkazing — summa shu to'lov uchun maxsus, yaxlitlamang:</p>
+        <div class="ai-card-no" data-copy-card="${esc(c.number.replace(/\s/g, ""))}" role="button" title="Nusxa olish">${esc(c.number)}<span>Nusxa</span></div>
+        ${c.name ? `<div class="ai-card-name">${esc(c.name)}</div>` : ""}
+        <p>So'ng to'lov chekini (skrinshot) <b>botga</b> yuboring — karta raqami bot chatida ham turibdi. Chek avtomatik tekshiriladi, so'ng AI ishni boshlaydi va tayyor fayl botga keladi.</p>
+        <button type="button" class="order-btn" data-to-bot="1">Botga o'tish</button>
+        <div class="pill-btn glass" data-again="1" style="margin-top:10px;">Yana so'rov qoldirish</div>
+      </div>`;
+    current = null;
+    syncBackButton();
+    window.scrollTo(0, 0);
+    if (typeof window.updateOrdersBadge === "function") window.updateOrdersBadge();
+  }
+
+  function renderDone(svc, auto, paid, balance) {
+    if (balance && window.aiBalanceChanged) window.aiBalanceChanged();
     photoState[svc.id] = [];
     syncPhotos(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">✅</div>
         <h3>${paid ? "To'lov qabul qilindi!" : "So'rovingiz qabul qilindi!"}</h3>
+        ${balance ? `<p class="ai-bal-note">💰 Balansdan ${esc(fmt(balance.spent))} yechildi · qoldi <b>${esc(fmt(balance.left))}</b></p>` : ""}
         <p>${auto ? `«${esc(svc.title)}» avtomatik tayyorlanmoqda — bir necha daqiqa ichida fayl shu botga xabar bo'lib keladi.` : `«${esc(svc.title)}» tayyor bo'lgach, fayl shu botga xabar bo'lib keladi.`} Buyurtma holatini va tayyor faylni «Buyurtmalarim» bo'limida ham ko'rishingiz mumkin.</p>
         <button type="button" class="order-btn" data-again="1">Yana so'rov qoldirish</button>
         <div class="pill-btn glass" data-contact="1" style="margin-top:10px;">Biz bilan bog'lanish</div>
