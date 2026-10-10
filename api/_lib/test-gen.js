@@ -8,7 +8,7 @@
 
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType,
-  AlignmentType, BorderStyle, PageBreak,
+  AlignmentType, BorderStyle, PageBreak, Math: OMath, MathFraction, MathRun,
 } = require("docx");
 const { askJson, hasKey } = require("./ai");
 
@@ -62,7 +62,7 @@ Quality rules:
 - No "all of the above" / "none of the above", no trick wording, no repeated questions.
 - Spread the correct option position evenly across the options.
 - Options are plain text without letter prefixes like "A)".
-- Math: write formulas in plain text (x², √2, 3/4), no LaTeX.`;
+- Math: write formulas in plain text (x², √2, 3/4), no LaTeX. Write every fraction as a/b (e.g. 3/4) and a mixed number as "2 1/2" — never use ½-style characters; they are typeset as textbook fractions.`;
 
 function testPrompt(d, count) {
   return `Create a test.
@@ -153,6 +153,24 @@ function makeVariants(questions, n, seed) {
 /* ---------- PDF (HTML -> Chrome) ---------- */
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+// Matndagi kasrlar: "3/4", aralash son "2 1/2" -> [matn, {w, n, d}, matn ...]
+// 1–3 xonali sonlar (yillar "2024/2025" va sanalar "12/05/2024" kasr emas)
+function fracParts(text) {
+  const s = String(text == null ? "" : text);
+  const out = [];
+  const re = /(^|[^\d/.,])(?:(\d{1,3}) )?(\d{1,3})\/(\d{1,3})(?![\d/])/g;
+  let last = 0, m;
+  while ((m = re.exec(s))) {
+    if (+m[4] === 0) continue;
+    const start = m.index + m[1].length;
+    if (start > last) out.push(s.slice(last, start));
+    out.push({ w: m[2] || "", n: m[3], d: m[4] });
+    last = re.lastIndex;
+  }
+  if (last < s.length) out.push(s.slice(last));
+  return out;
+}
+
 function testHtml(t, variants) {
   const { d } = t;
   const L = LABELS[d.lang];
@@ -168,9 +186,10 @@ function testHtml(t, variants) {
       </tr></table>
       <div class="line"><b>${L.name}:</b> <span class="blank"></span> <b>${L.date}:</b> <span class="blank short"></span></div>
     </div>`;
+  const fr = (s) => fracParts(s).map((x) => (typeof x === "string" ? esc(x) : `${x.w ? `${x.w}<span class="fw"></span>` : ""}<span class="fr"><span>${x.n}</span><span>${x.d}</span></span>`)).join("");
   const qs = (list) => `<ol class="qs">${list.map((q) => `
-      <li><div class="q">${esc(q.question)}</div>
-        <div class="opts">${q.options.map((o, i) => `<span class="o"><b>${letters[i]})</b> ${esc(o)}</span>`).join("")}</div></li>`).join("")}</ol>`;
+      <li><div class="q">${fr(q.question)}</div>
+        <div class="opts">${q.options.map((o, i) => `<span class="o"><b>${letters[i]})</b> ${fr(o)}</span>`).join("")}</div></li>`).join("")}</ol>`;
   const sheet = (list, v) => `
     <div class="page sheet">
       <h2>${L.sheet}${multi ? ` — ${L.variant} ${v + 1}` : ""}</h2>
@@ -201,13 +220,18 @@ function testHtml(t, variants) {
     .head{border-bottom:2px solid #111;margin-bottom:10px}
     /* raqam qator ichida (o'z joyida): ikki xonali raqam chetga yoki ustunlar orasidagi chiziqqa chiqmaydi */
     .qs{margin:0;padding:0;list-style:none;counter-reset:q}
-    .qs li{counter-increment:q;position:relative;padding-left:2.6em}
-    .qs li::before{content:counter(q) ".";position:absolute;left:0;width:2.2em;text-align:right}
+    .qs li{counter-increment:q;display:grid;grid-template-columns:2.2em minmax(0,1fr);column-gap:.4em;align-items:baseline}
+    .qs li::before{content:counter(q) ".";grid-row:1;text-align:right}
+    .qs li>.q,.qs li>.opts{grid-column:2}
     ${d.style === "twocol" ? ".qs{columns:2;column-gap:9mm;column-rule:1px solid #ccc}" : ""}
     .qs li{break-inside:avoid;margin:0 0 ${d.style === "twocol" ? "7px" : "10px"}}
     .q{font-weight:600;margin-bottom:3px}
     .opts{display:${d.style === "twocol" ? "block" : "grid"};grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 14px}
     .o{display:block}
+    /* kasr — darslikdagidek: surat chiziq ustida, maxraj ostida */
+    .fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.9em;line-height:1.12;margin:0 .1em}
+    .fr>span:first-child{border-bottom:1px solid currentColor;padding:0 .2em}
+    .fw{display:inline-block;width:.12em}
     .grid{columns:3;column-gap:10mm;margin-top:10px}
     .row{display:flex;align-items:center;gap:6px;margin:0 0 6px;break-inside:avoid}
     .row .n{width:24px;text-align:right;font-weight:700}
@@ -230,6 +254,11 @@ async function testDocx(t, variants) {
   const p = (text, o = {}) => new Paragraph({ alignment: o.center ? AlignmentType.CENTER : undefined, spacing: { after: o.after == null ? 60 : o.after }, indent: o.indent ? { left: o.indent } : undefined,
     children: [].concat(text).map((x) => (typeof x === "string" ? new TextRun({ text: x, font: FONT, size: o.size || 24, bold: o.bold }) : x)) });
   const run = (text, bold) => new TextRun({ text, font: FONT, size: 24, bold });
+  // matn + kasrlar (Word formulasi: surat chiziq ustida)
+  const rich = (text, bold) => fracParts(text).flatMap((x) => (typeof x === "string" ? [run(x, bold)] : [
+    ...(x.w ? [run(x.w, bold)] : []),
+    new OMath({ children: [new MathFraction({ numerator: [new MathRun(x.n)], denominator: [new MathRun(x.d)] })] }),
+  ]));
   const children = [];
   variants.forEach((list, v) => {
     if (v > 0) children.push(new Paragraph({ children: [new PageBreak()] }));
@@ -237,8 +266,8 @@ async function testDocx(t, variants) {
     children.push(p([run(`${L.subject}: `, true), run(d.subject), ...(d.grade ? [run(`     ${L.grade}: `, true), run(d.grade)] : []), ...(multi ? [run(`     ${L.variant} ${v + 1}`, true)] : [])]));
     children.push(p([run(`${L.name}: `, true), run("______________________________   "), run(`${L.date}: `, true), run("__________")], { after: 200 }));
     list.forEach((q, i) => {
-      children.push(p([run(`${i + 1}. `, true), run(q.question, true)], { after: 40 }));
-      q.options.forEach((o, j) => children.push(p([run(`${letters[j]}) `, true), run(o)], { indent: 400, after: 20 })));
+      children.push(p([run(`${i + 1}. `, true), ...rich(q.question, true)], { after: 40 }));
+      q.options.forEach((o, j) => children.push(p([run(`${letters[j]}) `, true), ...rich(o)], { indent: 400, after: 20 })));
       children.push(p("", { after: 80 }));
     });
   });
@@ -266,4 +295,4 @@ async function testDocx(t, variants) {
 
 const fileBase = (d) => `Test - ${d.subject} - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
 
-module.exports = { MODEL, testData, canAutoTest, generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS };
+module.exports = { fracParts, MODEL, testData, canAutoTest, generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS };
