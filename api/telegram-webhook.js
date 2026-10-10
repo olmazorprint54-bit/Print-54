@@ -73,7 +73,8 @@ const isOwner = (from) => from && String(from.id) === String(process.env.OWNER_C
 async function grantPurchaseBonus(order) {
   if (!order.telegram_user_id) return 0;
 
-  const total = Number(order.total) || 0;
+  // balansdan to'langan qism ham to'lov hisoblanadi
+  const total = (Number(order.total) || 0) + (Number(order.details && order.details.spent) || 0);
   if (total <= 0) return 0; // to'liq bepul buyurtmaga bonus berilmaydi
 
   const bonusPages = total > 6000 ? 2 : 1;
@@ -146,7 +147,7 @@ async function handleCallbackQuery(cq, bot, req) {
 
         await callTelegram("sendMessage", {
           chat_id: order.telegram_user_id,
-          text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm\n\nDo'konimizdan olib ketishingiz mumkin.${bonusLine}`,
+          text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details && order.details.spent ? ` (yana ${Number(order.details.spent).toLocaleString("ru-RU")} so'm balansdan to'langan)` : ""}\n\nDo'konimizdan olib ketishingiz mumkin.${bonusLine}`,
           parse_mode: "HTML",
           reply_markup: {
             inline_keyboard: [[{ text: "📍 Manzilni ko'rish", url: LOCATION_URL }]],

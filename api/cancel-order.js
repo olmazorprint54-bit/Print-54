@@ -104,7 +104,7 @@ module.exports = async (req, res) => {
 
     // Kartaga to'lab chek yuborgan — egasi tekshirmoqda, bekor qilinmaydi
     const d = order.details || {};
-    if (d.spent && !d.awaitingPayment) {
+    if (d.spent && !d.awaitingPayment && !["paper", "book", "binding"].includes(order.service)) {
       res.status(409).json({ ok: false, error: "Buyurtma balansdan to'langan va AI tayyorlamoqda — bekor qilib bo'lmaydi." });
       return;
     }

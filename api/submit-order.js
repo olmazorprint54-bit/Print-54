@@ -1,5 +1,6 @@
 // api/submit-order.js
 const { authUser } = require("./_lib/bots");
+const { balanceOf } = require("./_lib/balance");
 
 const supabase = require("./_lib/db");
 
@@ -30,7 +31,8 @@ function orderText(body) {
     lines.push(`Miqdor: ${body.qty} dona`);
   }
 
-  lines.push(`💰 Jami: ${Number(body.total).toLocaleString("ru-RU")} so'm`);
+  if (body.balanceUsed) lines.push(`💳 Balansdan to'landi: ${Number(body.balanceUsed).toLocaleString("ru-RU")} so'm`);
+  lines.push(`💰 Jami${body.balanceUsed ? " (do'konda to'lanadi)" : ""}: ${Number(body.total).toLocaleString("ru-RU")} so'm`);
 
   if (body.user) {
     const u = body.user;
@@ -106,6 +108,16 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
     }
     body.freePagesUsed = freePagesUsed;
 
+    // Balansdan to'lanadigan qism: haqiqiy balansdan oshmasin (oshsa — qolgani do'konda)
+    let balanceUsed = body.user ? Math.max(0, Math.round(Number(body.balanceUsed) || 0)) : 0;
+    if (balanceUsed > 0) {
+      const bal = Math.max(0, await balanceOf(body.user.id));
+      const capped = Math.min(balanceUsed, bal);
+      body.total = total + (balanceUsed - capped);
+      balanceUsed = capped;
+    }
+    body.balanceUsed = balanceUsed;
+
     const { data: inserted, error } = await supabase
       .from("orders")
       .insert({
@@ -114,8 +126,9 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
         side: body.side || null,
         format: body.format || null,
         qty: body.qty || null,
-        total: body.total || null,
+        total: Number.isFinite(Number(body.total)) ? Number(body.total) : null,
         free_pages_used: freePagesUsed,
+        ...(balanceUsed > 0 ? { details: { spent: balanceUsed, paidBy: "balance" } } : {}),
         telegram_user_id: body.user ? body.user.id : null,
         telegram_username: body.user ? body.user.username : null,
         telegram_name: body.user

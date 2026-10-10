@@ -3,7 +3,7 @@
 // Mijoz balansi (kartaga o'tkazma bilan to'ldiriladi). Alohida jadval
 // yo'q — balans "orders" jadvalidan hisoblanadi (daftar):
 //   + details.topup bor va to'lov tasdiqlangan (details.payment) -> payment.amount
-//   - details.spent — buyurtma uchun balansdan yechilgan summa
+//   - details.spent — buyurtma uchun balansdan yechilgan summa (bekor qilinsa — qaytadi)
 // Birinchi to'ldirish kamida MIN_FIRST, keyingilari kamida MIN_NEXT so'm;
 // chek faqat to'ldirishda tekshiriladi.
 // ---------------------------------------------------------------
@@ -18,7 +18,7 @@ function sumOf(rows) {
   for (const o of rows || []) {
     const d = o.details || {};
     if (d.topup && d.payment) sum += Number(d.payment.amount) || 0;
-    if (d.spent) sum -= Number(d.spent) || 0;
+    if (d.spent && o.status !== "cancelled") sum -= Number(d.spent) || 0;
   }
   return sum;
 }
@@ -26,7 +26,7 @@ function sumOf(rows) {
 // Balans va eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT)
 async function walletOf(userId) {
   if (!userId) return { balance: 0, minTopup: MIN_FIRST };
-  const { data, error } = await supabase.from("orders").select("details").eq("telegram_user_id", userId).limit(5000);
+  const { data, error } = await supabase.from("orders").select("status, details").eq("telegram_user_id", userId).limit(5000);
   if (error) throw error;
   const topped = (data || []).some((o) => o.details && o.details.topup && o.details.payment);
   return { balance: sumOf(data), minTopup: topped ? MIN_NEXT : MIN_FIRST };
