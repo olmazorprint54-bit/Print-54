@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
 
     // to'lov oynasi (Click/Payme) yopilib, to'lanmay qolgan buyurtmalar hisoblanmaydi va ko'rinmaydi;
     // kartaga to'lov kutilayotganlari ko'rinadi (chek yuborish, bekor qilish)
-    const mine = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment && o.details.payMethod !== "card"));
+    const mine = (data || []).filter((o) => orderBot(o) === auth.bot && o.service !== "topup" && !(o.details && o.details.awaitingPayment && o.details.payMethod !== "card"));
     mine.forEach((o, i) => { o.n = i + 1; });
     const orders = mine.filter((o) => !o.hidden_by_customer).reverse().slice(0, 50).map(publicOrder);
     res.status(200).json({ ok: true, orders });

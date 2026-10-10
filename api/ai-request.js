@@ -21,7 +21,7 @@ const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
 const { uniqueAmount } = require("./_lib/receipt");
-const { balanceOf, topupNeed, MAX_TOPUP } = require("./_lib/balance");
+const { balanceOf, topupNeed, MIN_TOPUP, MAX_TOPUP } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
@@ -201,6 +201,54 @@ async function sendPhotosToOwner(bot, paths, orderId, replyTo) {
   if (!out.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(out));
 }
 
+// Profildan hisobni to'ldirish (buyurtmasiz): karta + noyob summa, chek botga.
+// Buyurtma "topup" — narxi 0, tasdiqlangach to'lov summasi balansga qo'shiladi.
+async function topupOnly(body, res) {
+  const auth = authUser(body);
+  if (!auth) {
+    res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" });
+    return;
+  }
+  const card = payCard();
+  if (!card) {
+    res.status(400).json({ ok: false, error: "Hisobni to'ldirish hozircha yoqilmagan." });
+    return;
+  }
+  const amount = Math.round(Number(body.topup) || 0);
+  if (amount < MIN_TOPUP || amount > MAX_TOPUP) {
+    res.status(400).json({ ok: false, error: `To'ldirish summasi ${MIN_TOPUP.toLocaleString("ru-RU")} so'mdan kam bo'lmasin.` });
+    return;
+  }
+  const u = auth.user, bot = auth.bot;
+  const bal = await balanceOf(u.id);
+  const payAmount = await uniqueAmount(amount).catch(() => amount);
+  const details = { bot, topic: "Hisobni to'ldirish", awaitingPayment: true, payMethod: "card", topup: amount, payAmount };
+  const { data: row, error } = await supabase
+    .from("orders")
+    .insert({
+      service: "topup",
+      qty: null,
+      total: 0,
+      telegram_user_id: u.id,
+      telegram_username: u.username || null,
+      telegram_name: [u.first_name, u.last_name].filter(Boolean).join(" "),
+      status: "active",
+      details,
+    })
+    .select()
+    .single();
+  if (error || !row) throw error || new Error("Buyurtmani bazaga yozib bo'lmadi");
+  const sent = await telegram(bot, "sendMessage", {
+    chat_id: u.id,
+    text: cardText(card, { service: "topup", details, total: 0 }, payAmount, bal),
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: [[{ text: "❌ Bekor qilish", callback_data: `paycancel:${row.id}` }]] },
+  }).catch((e) => ({ ok: false, description: String(e) }));
+  if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
+  else await supabase.from("orders").update({ details: { ...details, payMsg: sent.result.message_id } }).eq("id", row.id);
+  res.status(200).json({ ok: true, orderId: row.id, card: { number: card.number, name: card.name, price: payAmount, balance: bal } });
+}
+
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).json({ ok: false, error: "Method not allowed" });
@@ -209,6 +257,10 @@ module.exports = async (req, res) => {
 
   try {
     const body = req.body || {};
+    if (body.service === "topup") {
+      await topupOnly(body, res);
+      return;
+    }
     if (!SERVICE_LABELS[body.service]) {
       res.status(400).json({ ok: false, error: "Noto'g'ri so'rov" });
       return;

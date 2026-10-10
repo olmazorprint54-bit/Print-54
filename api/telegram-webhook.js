@@ -642,7 +642,8 @@ const userLink = (u) => {
   const name = escapeHtml([u.first_name, u.last_name].filter(Boolean).join(" ") || "Mijoz");
   return `<a href="tg://user?id=${parseInt(u.id, 10)}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`;
 };
-const orderLine = (order) => `${escapeHtml(AI_LABELS[order.service] || order.service)}${order.details.topic ? ` «${escapeHtml(String(order.details.topic).slice(0, 100))}»` : ""}`;
+const labelOf = (order) => (order.service === "topup" ? "💰 Hisobni to'ldirish" : AI_LABELS[order.service] || order.service);
+const orderLine = (order) => order.service === "topup" ? labelOf(order) : `${escapeHtml(labelOf(order))}${order.details.topic ? ` «${escapeHtml(String(order.details.topic).slice(0, 100))}»` : ""}`;
 const payAmountOf = (order) => Number(order.details.payAmount || order.total) || 0;
 
 // Chek keldi: mijozga "tekshirilmoqda", AI chekni fonda tekshiradi
@@ -703,6 +704,12 @@ async function confirmPaid(order, extra, req) {
   await supabase.from("orders").update({ details: { ...d, awaitingPayment: false, payment, ...(d.topup ? { spent } : {}) } }).eq("id", order.id);
   if (d.payMsg) await callTelegram("editMessageReplyMarkup", { chat_id: order.telegram_user_id, message_id: d.payMsg, reply_markup: { inline_keyboard: [] } }, custBot).catch(() => null);
   const left = d.topup ? await balanceOf(order.telegram_user_id).catch(() => null) : null;
+  if (order.service === "topup") {
+    // faqat to'ldirish — AI ishlamaydi
+    await supabase.from("orders").update({ status: "completed" }).eq("id", order.id);
+    await callTelegram("sendMessage", { chat_id: order.telegram_user_id, text: `✅ Hisobingiz to'ldirildi: +${fmtSum(payment.amount)}${left != null ? `. Balans: ${fmtSum(left)}` : ""}.\n\nEndi ilovada buyurtma bering — narxi balansdan avtomatik yechiladi.` }, custBot);
+    return;
+  }
   await callTelegram("sendMessage", { chat_id: order.telegram_user_id, text: `✅ To'lov tasdiqlandi!${d.topup ? ` Hisobingizga +${fmtSum(payment.amount)}, buyurtmaga −${fmtSum(spent)}${left != null ? `, balans: ${fmtSum(left)}` : ""}.` : ""}\n\n«${(d.topic || AI_LABELS[order.service] || "").slice(0, 100)}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.` }, custBot);
   startAi(req, order.id);
 }
