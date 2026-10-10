@@ -8,8 +8,9 @@
 
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType,
-  AlignmentType, BorderStyle, PageBreak, Math: OMath, MathFraction, MathRun,
+  AlignmentType, BorderStyle, PageBreak, Math: OMath, MathFraction, MathRun, SectionType,
 } = require("docx");
+const JSZip = require("jszip");
 const { askJson, hasKey } = require("./ai");
 
 const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
@@ -245,6 +246,8 @@ function testHtml(t, variants) {
 }
 
 /* ---------- Word ---------- */
+const MATH_SZ = 26; // yarim punkt: 13 pt
+
 async function testDocx(t, variants) {
   const { d } = t;
   const L = LABELS[d.lang];
@@ -259,20 +262,27 @@ async function testDocx(t, variants) {
     ...(x.w ? [run(x.w, bold)] : []),
     new OMath({ children: [new MathFraction({ numerator: [new MathRun(x.n)], denominator: [new MathRun(x.d)] })] }),
   ]));
-  const children = [];
+  // Bo'limlar: har bir variantda sarlavha to'liq kenglikda, savollar — dizayn bo'yicha
+  // (ikki ustunli shablon: 2 ustun, orasida chiziq); kalit — yangi sahifada
+  const page = { margin: { top: 1000, bottom: 1000, left: 1100, right: 900 } };
+  const twocol = d.style === "twocol";
+  const sections = [];
   variants.forEach((list, v) => {
-    if (v > 0) children.push(new Paragraph({ children: [new PageBreak()] }));
-    children.push(p(t.title, { center: true, bold: true, size: 30, after: 120 }));
-    children.push(p([run(`${L.subject}: `, true), run(d.subject), ...(d.grade ? [run(`     ${L.grade}: `, true), run(d.grade)] : []), ...(multi ? [run(`     ${L.variant} ${v + 1}`, true)] : [])]));
-    children.push(p([run(`${L.name}: `, true), run("______________________________   "), run(`${L.date}: `, true), run("__________")], { after: 200 }));
+    const head = [];
+    head.push(p(t.title, { center: true, bold: true, size: 30, after: 120 }));
+    head.push(p([run(`${L.subject}: `, true), run(d.subject), ...(d.grade ? [run(`     ${L.grade}: `, true), run(d.grade)] : []), ...(multi ? [run(`     ${L.variant} ${v + 1}`, true)] : [])]));
+    head.push(p([run(`${L.name}: `, true), run("______________________________   "), run(`${L.date}: `, true), run("__________")], { after: 200 }));
+    sections.push({ properties: { page, ...(v > 0 ? { type: SectionType.NEXT_PAGE } : {}) }, children: head });
+    const body = [];
     list.forEach((q, i) => {
-      children.push(p([run(`${i + 1}. `, true), ...rich(q.question, true)], { after: 40 }));
-      q.options.forEach((o, j) => children.push(p([run(`${letters[j]}) `, true), ...rich(o)], { indent: 400, after: 20 })));
-      children.push(p("", { after: 80 }));
+      body.push(p([run(`${i + 1}. `, true), ...rich(q.question, true)], { after: 40 }));
+      q.options.forEach((o, j) => body.push(p([run(`${letters[j]}) `, true), ...rich(o)], { indent: twocol ? 300 : 400, after: 20 })));
+      body.push(p("", { after: twocol ? 60 : 80 }));
     });
+    sections.push({ properties: { page, type: SectionType.CONTINUOUS, ...(twocol ? { column: { count: 2, space: 510, separate: true } } : {}) }, children: body });
   });
+  const children = [];
   if (d.key) {
-    children.push(new Paragraph({ children: [new PageBreak()] }));
     children.push(p(L.key, { center: true, bold: true, size: 28, after: 160 }));
     const NONE = { style: BorderStyle.SINGLE, size: 4, color: "999999" };
     variants.forEach((list, v) => {
@@ -289,8 +299,13 @@ async function testDocx(t, variants) {
       children.push(p("", { after: 120 }));
     });
   }
-  const doc = new Document({ sections: [{ properties: { page: { margin: { top: 1000, bottom: 1000, left: 1100, right: 900 } } }, children }] });
-  return Packer.toBuffer(doc);
+  if (children.length) sections.push({ properties: { page, type: SectionType.NEXT_PAGE }, children });
+  const buf = await Packer.toBuffer(new Document({ sections }));
+  // Kasr raqamlari matndan kichik chiqmasin: formula shrifti 13 pt (Word'da odatiy 11 pt)
+  const zip = await JSZip.loadAsync(buf);
+  const xml = await zip.file("word/document.xml").async("string");
+  zip.file("word/document.xml", xml.split("<m:r><m:t").join(`<m:r><w:rPr><w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/><w:sz w:val="${MATH_SZ}"/><w:szCs w:val="${MATH_SZ}"/></w:rPr><m:t`));
+  return zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
 }
 
 const fileBase = (d) => `Test - ${d.subject} - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
