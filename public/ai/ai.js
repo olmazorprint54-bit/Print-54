@@ -515,7 +515,7 @@
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}">
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
         <div class="tpl-name">${esc(t.name)}</div>
-        ${t.auto ? '<div class="tpl-badge">⚡ 1 daqiqada</div>' : ""}
+        ${t.auto ? `<div class="tpl-badge">⚡ ${svc.id === "kurs" ? "3–5" : "1"} daqiqada</div>` : ""}
       </div>`).join("");
   }
 
@@ -639,7 +639,7 @@
   };
 
   // Matnli AI xizmatlar: oddiy dizaynlar avtomatik (api/_lib/doc-gen.js)
-  const AI_DOCS = ["essay", "referat", "article", "lesson", "questions", "crossword"];
+  const AI_DOCS = ["essay", "kurs", "referat", "article", "lesson", "questions", "crossword"];
   const isAutoDoc = (svc, v) => {
     const f = svc.fields.find((x) => x.type === "templates");
     const t = f && CFG.templates[f.set].find((x) => x.id === v.template);
@@ -665,7 +665,7 @@
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],
@@ -676,7 +676,7 @@
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
-      ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
+      ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? (svc.id === "kurs" ? "⚡ 3–5 daqiqada (AI)" : "⚡ 1–3 daqiqada (AI)") : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
@@ -1110,7 +1110,7 @@
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
     } else {
-      const kinds = { article: [["main", "1-sahifa"]], essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], referat: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], resume: [["main", "Resume"]], obyektivka: [["main", "Ma'lumotnoma"], ["rel", "Qarindoshlar haqida ma'lumot"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
+      const kinds = { kurs: [["main", "Titul varag'i"], ["inner", "Mundarija"]], article: [["main", "1-sahifa"]], essay: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], referat: [["main", "Titul varag'i"], ["inner", "Reja va kirish"]], resume: [["main", "Resume"]], obyektivka: [["main", "Ma'lumotnoma"], ["rel", "Qarindoshlar haqida ma'lumot"]], lesson: [["main", "1-sahifa"]], test: [["main", "Test varag'i"]], questions: [["main", "Savollar varag'i"]], crossword: [["main", "Krossvord"]] }[svc.id] || [["main", ""]];
       if ((svc.id === "test" || svc.id === "crossword") && v.key) kinds.push(["key", "Javoblar"]);
       pages = kinds.map(([k, cap]) => `${pageHtml(svc.id, tpl, k, d)}<div class="cap">${cap}</div>`);
     }
@@ -1135,8 +1135,8 @@
      NAMUNA MA'LUMOTLAR (ko'rinish uchun)
      --------------------------------------------------------------- */
   function sampleData(svc, v) {
-    const subjectDefault = { article: "Iqtisodiyot", presentation: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
-    const topicDefault = { article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
+    const subjectDefault = { kurs: "Iqtisodiyot", article: "Iqtisodiyot", presentation: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
+    const topicDefault = { kurs: "Kichik biznesni rivojlantirishda soliq siyosatining roli", article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
     return {
       topic: String(v.topic || "").trim() || topicDefault,
       subject: String(v.subject || "").trim() || subjectDefault,
@@ -1148,7 +1148,7 @@
       city: String(v.city || "").trim() || "Toshkent",
       grade: String(v.grade || "").trim(),
       answers: parseInt(v.answers, 10) || 4,
-      docType: svc.id === "referat" ? "REFERAT" : "MUSTAQIL ISH",
+      docType: svc.id === "referat" ? "REFERAT" : svc.id === "kurs" ? "KURS ISHI" : "MUSTAQIL ISH",
       // resume uchun
       name: String(v.name || "").trim() || "Aliyev Sardor",
       position: String(v.position || "").trim() || "Buxgalter",
@@ -1342,6 +1342,16 @@
         </div>`;
     },
     referat(style, kind, d) { return PAGES.essay(style, kind, d); },
+    // Kurs ishi: titul — mustaqil ishdagidek, ichki sahifa — MUNDARIJA (boblar va betlar)
+    kurs(style, kind, d) {
+      if (kind !== "inner") return PAGES.essay(style, kind, d);
+      const row = (t, p, ind, b) => `<div style="display:flex;align-items:baseline;gap:1cqw;font-size:2.9cqw;margin-top:1.6cqw;padding-left:${ind ? 4 : 0}cqw;${b ? "font-weight:700" : ""}"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70%">${esc(t)}</span><span style="flex:1;border-bottom:.3cqw dotted #6b7280;transform:translateY(-.6cqw)"></span><span>${p}</span></div>`;
+      return `<div style="padding:10cqw 9cqw 0 12cqw">${C("MUNDARIJA", 4.2, 700)}<div style="margin-top:4cqw">
+        ${row("KIRISH", 3, 0, 1)}${row("1-BOB. Nazariy asoslar", 5, 0, 1)}${row("1.1. Asosiy tushunchalar", 5, 1)}${row("1.2. " + clip(d.topic, 28), 8, 1)}${row("1.3. Xorijiy tajriba", 11, 1)}
+        ${row("2-BOB. Amaliy tahlil", 14, 0, 1)}${row("2.1. Hozirgi holat tahlili", 14, 1)}${row("2.2. Muammolar", 18, 1)}${row("2.3. Takliflar", 22, 1)}
+        ${row("XULOSA", 26, 0, 1)}${row("FOYDALANILGAN ADABIYOTLAR", 28, 0, 1)}</div></div>
+        <div class="el" style="left:0;right:0;bottom:5cqw;text-align:center;font-size:2.6cqw">2</div>`;
+    },
     obyektivka(style, kind, d) {
       const T = (s) => (d.cyr && window.uzCyr ? window.uzCyr(s) : s);
       // 06.09.2018 -> "2018 yil 06 sentabrdan:" (serverdagi obyektivka-docx.js bilan bir xil)

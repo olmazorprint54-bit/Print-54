@@ -27,7 +27,7 @@ const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -121,7 +121,8 @@ async function sendQuiz(order, t) {
 const costTitle = (s, f) => ({
   presentation: `Taqdimot — ${f.slides || 10} slayd${f.photos && f.photos.length ? `, ${f.photos.length} ta o'z rasmi` : ""}`,
   test: `Test — ${f.count || 20} savol, ${f.variants || 1} variant`,
-  essay: `Mustaqil ish — ${f.pages || 15} bet`,
+  essay: `Mustaqil ish — ${f.pages || 12} bet`,
+  kurs: `Kurs ishi — ${f.pages || 30} bet`,
   referat: `Referat — ${f.pages || 10} bet`,
   article: `Maqola (${{ scientific: "ilmiy", thesis: "tezis", popular: "ommabop" }[f.kind] || "ilmiy"}) — ${f.pages || 6} bet`,
   lesson: `Dars ishlanma — ${f.duration || 45} daqiqa`,

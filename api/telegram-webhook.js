@@ -252,6 +252,7 @@ async function handleBroadcast(msg) {
 const AI_LABELS = {
   presentation: "Taqdimot",
   essay: "Mustaqil ish",
+  kurs: "Kurs ishi",
   referat: "Referat",
   article: "Maqola",
   lesson: "Dars ishlanma",

@@ -450,7 +450,7 @@ async function generatePresentation(f, photoUrls = []) {
   }
   const lang = LANG_NAMES[f.lang] ? f.lang : "uz_lat";
   const d = {
-    sourceNotes: f.sourceNotes,
+    sourceNotes: f.sourceNotes, extra: f.extra,
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120), lang,
     count: Math.min(MAX_SLIDES, Math.max(3, parseInt(f.slides, 10) || 10)),
     images: f.images !== false, tables: !!f.tables,

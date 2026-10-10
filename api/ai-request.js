@@ -25,7 +25,7 @@ const SRC = require("./_lib/sources");
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
 const AUTO = {
   resume: canAutoResume, obyektivka: canAutoObyektivka, test: canAutoTest,
-  essay: (f) => canAutoDoc("essay", f), referat: (f) => canAutoDoc("referat", f), article: (f) => canAutoDoc("article", f), lesson: (f) => canAutoDoc("lesson", f),
+  essay: (f) => canAutoDoc("essay", f), kurs: (f) => canAutoDoc("kurs", f), referat: (f) => canAutoDoc("referat", f), article: (f) => canAutoDoc("article", f), lesson: (f) => canAutoDoc("lesson", f),
   questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
   presentation: canAutoPres,
 };
@@ -37,6 +37,7 @@ const supabase = require("./_lib/db");
 const SERVICE_LABELS = {
   presentation: "Taqdimot",
   essay: "Mustaqil ish",
+  kurs: "Kurs ishi",
   referat: "Referat",
   article: "Maqola",
   lesson: "Dars ishlanma",
@@ -48,7 +49,7 @@ const SERVICE_LABELS = {
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
-const QTY_FIELD = { presentation: "slides", essay: "pages", referat: "pages", article: "pages", test: "count", questions: "count", crossword: "words" };
+const QTY_FIELD = { presentation: "slides", essay: "pages", kurs: "pages", referat: "pages", article: "pages", test: "count", questions: "count", crossword: "words" };
 
 const BUCKET = "ai-uploads"; // mijoz rasmlari (api/ai-upload.js)
 const MAX_PHOTOS = 10;

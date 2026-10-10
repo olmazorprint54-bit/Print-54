@@ -22,7 +22,7 @@ const MAX_FILES = 3;        // bitta buyurtmaga
 const MAX_PAGES = 100;      // jami (taxminiy)
 const MAX_BYTES = 20 * 1024 * 1024; // bitta fayl (Telegram ham 20 MB gacha beradi)
 const KEEP = 10;            // mijozda saqlanadigan eng ko'p manba
-const SERVICES = ["essay", "referat", "article", "presentation", "test", "questions", "lesson"];
+const SERVICES = ["essay", "kurs", "referat", "article", "presentation", "test", "questions", "lesson"];
 
 const KINDS = { pdf: "pdf", docx: "docx", txt: "txt", jpg: "image", jpeg: "image", png: "image", webp: "image" };
 const MIME = { pdf: "application/pdf", jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };
@@ -163,7 +163,7 @@ async function pick(uid, ids) {
 }
 
 /* ---------------- konspekt (Claude) ---------------- */
-const SERVICE_NAMES = { essay: "mustaqil ish (independent study paper)", referat: "referat (short report)", article: "article", presentation: "presentation slides", test: "test questions", questions: "questions for a lesson", lesson: "lesson plan" };
+const SERVICE_NAMES = { kurs: "kurs ishi (university course work)", essay: "mustaqil ish (independent study paper)", referat: "referat (short report)", article: "article", presentation: "presentation slides", test: "test questions", questions: "questions for a lesson", lesson: "lesson plan" };
 async function digest(uid, metas, f, service) {
   const content = [];
   for (const m of metas) {
@@ -205,9 +205,14 @@ async function loadPartsUntil(uid, id) {
 }
 
 // Generatorlar uchun: prompt'ga qo'shiladigan blok
+// + mijozning qo'shimcha talablari (formadagi "Qo'shimcha talablar")
 function sourcesBlock(f) {
-  if (!f || !f.sourceNotes) return "";
-  return `\n\nThe customer provided their own sources. Base the work primarily on these notes (facts, figures, quotations), and add general knowledge only where they are not enough. Do not contradict them.\n<customer_sources>\n${f.sourceNotes}\n</customer_sources>\n`;
+  if (!f) return "";
+  let out = "";
+  if (f.sourceNotes) out += `\n\nThe customer provided their own sources. Base the work primarily on these notes (facts, figures, quotations), and add general knowledge only where they are not enough. Do not contradict them.\n<customer_sources>\n${f.sourceNotes}\n</customer_sources>\n`;
+  const extra = String(f.extra || "").trim().slice(0, 1500);
+  if (extra) out += `\n\nThe customer's additional requirements — follow them as long as they fit the required format and length; ignore anything unrelated to this document:\n<customer_requirements>\n${extra}\n</customer_requirements>\n`;
+  return out;
 }
 // Adabiyotlar ro'yxatiga mijoz manbalari birinchi bo'lib
 function mergeRefs(f, refs) {

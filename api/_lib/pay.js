@@ -20,7 +20,7 @@ const orderIdOf = (p) => (/^ai:(\d+)$/.test(String(p)) ? parseInt(String(p).slic
 
 const TITLES = {
   test: "Test tuzish", questions: "Savollar tuzish", crossword: "Krossvord", lesson: "Dars ishlanma",
-  referat: "Referat", article: "Maqola", essay: "Mustaqil ish", presentation: "Taqdimot",
+  referat: "Referat", article: "Maqola", essay: "Mustaqil ish", kurs: "Kurs ishi", presentation: "Taqdimot",
 };
 
 // To'lov havolasi (tg.openInvoice uchun). price — so'mda

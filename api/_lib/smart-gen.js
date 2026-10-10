@@ -304,7 +304,7 @@ function toImage(buf) {
 // photoFinder(query) -> Buffer | null (pres-gen.js dagi Pixabay/Pexels)
 async function generateSmart(f, photoBuffers, photoFinder) {
   const d = {
-    sourceNotes: f.sourceNotes,
+    sourceNotes: f.sourceNotes, extra: f.extra,
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120),
     lang: LANG_NAMES[f.lang] ? f.lang : "uz_lat",
     count: Math.min(MAX_SLIDES, Math.max(3, parseInt(f.slides, 10) || 10)),

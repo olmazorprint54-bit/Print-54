@@ -12,7 +12,7 @@
   var MIN = 13000;
   // Mijoz o'z manbalarini (adabiyot) yuklasa — qo'shimcha (AI ularni o'qiydi)
   var SOURCE_FEE = 5000;
-  var SOURCE_SERVICES = ["essay", "referat", "article", "presentation", "test", "questions", "lesson"];
+  var SOURCE_SERVICES = ["essay", "kurs", "referat", "article", "presentation", "test", "questions", "lesson"];
   var num = function (v, d) { var n = parseInt(v, 10); return isFinite(n) && n > 0 ? n : d; };
 
   // base — shu hajmgacha (upTo); undan keyin har bir birlik uchun step
@@ -24,7 +24,8 @@
     lesson:    { base: 15000, extra: { duration: { "80": 5000 } } },
     article:   { base: 20000, upTo: 5, field: "pages", fallback: 6, step: 2000 },
     referat:   { base: 15000, upTo: 10, field: "pages", fallback: 10, step: 1000 },
-    essay:     { base: 20000, upTo: 15, field: "pages", fallback: 15, step: 1000 },
+    essay:     { base: 20000, upTo: 15, field: "pages", fallback: 12, step: 1000 },
+    kurs:      { base: 40000, upTo: 30, field: "pages", fallback: 30, step: 1000 },
     resume:    { base: 0 },
     obyektivka:{ base: 0 },
   };
