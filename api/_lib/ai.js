@@ -27,9 +27,10 @@ const MODEL_NAMES = {
 // Modelni egasi Vercel env orqali tanlaydi (kodsiz):
 //   PRES_MODEL — taqdimot (standart: opus)
 //   TEXT_MODEL — mustaqil ish, referat, maqola, test va boshqalar (standart: sonnet)
+//   CHAT_MODEL — botdagi AI suhbat (standart: sonnet)
 // Qiymat: "opus" yoki "sonnet". Noto'g'ri qiymat bo'lsa — standart model.
 const MODELS = { opus: "claude-opus-5-5", sonnet: "claude-sonnet-5-5" };
-const DEFAULTS = { PRES_MODEL: "opus", TEXT_MODEL: "sonnet" };
+const DEFAULTS = { PRES_MODEL: "opus", TEXT_MODEL: "sonnet", CHAT_MODEL: "sonnet" };
 function modelChoice(env) {
   const v = String(process.env[env] || "").trim().toLowerCase();
   const key = MODELS[v] ? v : Object.keys(MODELS).find((k) => MODELS[k] === v);
@@ -75,6 +76,23 @@ async function askJson({ model, system, prompt, content, schema, maxTokens = 320
   };
 }
 
+// Oddiy matnli javob (botdagi suhbat): messages — [{role, content}]
+async function askText({ model, system, messages, maxTokens = 3000, effort = "low" }) {
+  const stream = getClient().beta.messages.stream({
+    model,
+    max_tokens: maxTokens,
+    betas: ["server-side-fallback-2026-07-01"],
+    fallbacks: "default",
+    output_config: { effort },
+    system,
+    messages,
+  });
+  const msg = await stream.finalMessage();
+  if (msg.stop_reason === "refusal") throw Object.assign(new Error("Bu savolga javob bera olmayman."), { user: true });
+  const text = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+  return { text, model: msg.model, usage: { input: msg.usage.input_tokens || 0, output: msg.usage.output_tokens || 0 }, usd: costOf(msg.model, msg.usage) };
+}
+
 // Egaga hisobot uchun: "Sonnet 5.5 · 1.2K + 4.5K token · $0.047 (≈ 600 so'm)"
 function costLine(ai) {
   const k = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "K" : String(n));
@@ -83,4 +101,4 @@ function costLine(ai) {
   return `${MODEL_NAMES[ai.model] || ai.model} · ${k(ai.usage.input)} kirish + ${k(ai.usage.output)} chiqish token · $${ai.usd.toFixed(3)} (≈ ${som.toLocaleString("ru-RU")} so'm)`;
 }
 
-module.exports = { hasKey, askJson, costOf, costLine, modelFor, modelChoice, MODEL_NAMES, MODELS };
+module.exports = { hasKey, askJson, askText, costOf, costLine, modelFor, modelChoice, MODEL_NAMES, MODELS };

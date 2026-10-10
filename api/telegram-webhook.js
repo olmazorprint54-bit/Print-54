@@ -17,6 +17,7 @@ const { orderIdOf } = require("./_lib/pay");
 const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
+const CHAT = require("./_lib/chat");
 const { token: botToken } = require("./_lib/bots");
 const PR = require("../public/ai/prices");
 
@@ -372,13 +373,15 @@ async function forwardCustomerMedia(msg, bot) {
   }, bot);
 }
 
+const appButtonFor = (bot, host) => ({ inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] });
+
 /* ============ MANBALAR (botga yuborilgan adabiyotlar) ============ */
 async function saveChatSource(msg, bot) {
   const reply = (text) => callTelegram("sendMessage", { chat_id: msg.chat.id, text, parse_mode: "HTML", reply_to_message_id: msg.message_id }, bot);
   const doc = msg.document;
   const photo = msg.photo && msg.photo[msg.photo.length - 1]; // eng kattasi
   const name = doc ? doc.file_name || "manba" : `Rasm ${new Date().toLocaleDateString("ru-RU")}.jpg`;
-  if (doc && !SRC.kindOf(name)) return reply("Bu turdagi faylni manba sifatida qabul qila olmayman. PDF, Word (.docx), TXT yoki kitob sahifasining rasmini yuboring.");
+  if (doc && !SRC.kindOf(name)) return reply("Bu turdagi faylni manba sifatida qabul qila olmayman. PDF, Word (.docx) yoki TXT yuboring.");
   const size = (doc || photo).file_size || 0;
   if (size > SRC.MAX_BYTES) return reply("Fayl 20 MB dan katta — kichikroq qismini yuboring (masalan, kerakli boblarni).");
   try {
@@ -403,7 +406,7 @@ async function welcomeExtra(msg, bot, host) {
   const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${CHAT.FREE()} ta bepul). Yangi mavzu: /yangi${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
   }, bot);
@@ -444,7 +447,9 @@ async function handleMessage(msg, bot, host) {
   // Mijoz rasm yoki fayl yuborsa (masalan, resume uchun rasmi) — egaga yetkazamiz
   // AI botda mijoz yuborgan PDF/Word/TXT/rasm — manba (adabiyot) bo'lib saqlanadi
   if ((msg.photo || msg.document) && isAiBot(bot) && !(isOwner(msg.from) && msg.reply_to_message)) {
-    await saveChatSource(msg, bot);
+    const isImage = msg.photo || /^image\//.test((msg.document && msg.document.mime_type) || "");
+    if (isImage) waitUntil(CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host) }).catch((e) => console.error(e)));
+    else await saveChatSource(msg, bot);
     return;
   }
   if ((msg.photo || msg.document) && !isOwner(msg.from)) {
@@ -453,6 +458,16 @@ async function handleMessage(msg, bot, host) {
   }
 
   if (!msg.text) return;
+
+  // AI botda oddiy xabar — AI suhbat (javob fonda tayyorlanadi, Telegram kutib qolmaydi)
+  if (isAiBot(bot) && !msg.text.startsWith("/") && !(isOwner(msg.from) && msg.reply_to_message)) {
+    waitUntil(CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host) }).catch((e) => console.error(e)));
+    return;
+  }
+  if (isAiBot(bot) && /^\/(yangi|new)\b/.test(msg.text)) {
+    await CHAT.reset(msg, bot);
+    return;
+  }
 
   if (msg.text.startsWith("/ulash") && isOwner(msg.from) && bot === MAIN) {
     await setupBots(msg, host);

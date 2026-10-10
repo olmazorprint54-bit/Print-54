@@ -12,7 +12,8 @@
       "includeFiles": "api/_lib/pres/**"
     },
     "api/telegram-webhook.js": {
-      "includeFiles": "api/_lib/pres/**"
+      "includeFiles": "api/_lib/pres/**",
+      "maxDuration": 120
     }
   },
   "crons": [
