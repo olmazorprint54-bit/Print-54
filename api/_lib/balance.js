@@ -4,13 +4,14 @@
 // yo'q — balans "orders" jadvalidan hisoblanadi (daftar):
 //   + details.topup bor va to'lov tasdiqlangan (details.payment) -> payment.amount
 //   - details.spent — buyurtma uchun balansdan yechilgan summa
-// Kamida MIN_TOPUP so'm to'ldiriladi; chek faqat to'ldirishda tekshiriladi.
+// Birinchi to'ldirish kamida MIN_FIRST, keyingilari kamida MIN_NEXT so'm;
+// chek faqat to'ldirishda tekshiriladi.
 // ---------------------------------------------------------------
 const supabase = require("./db");
 
-const MIN_TOPUP = 5000;
+const MIN_FIRST = 5000;
+const MIN_NEXT = 3000;
 const MAX_TOPUP = 1000000;
-const TOPUP_OPTIONS = [5000, 10000, 20000, 50000];
 
 function sumOf(rows) {
   let sum = 0;
@@ -22,17 +23,20 @@ function sumOf(rows) {
   return sum;
 }
 
-async function balanceOf(userId) {
-  if (!userId) return 0;
+// Balans va eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT)
+async function walletOf(userId) {
+  if (!userId) return { balance: 0, minTopup: MIN_FIRST };
   const { data, error } = await supabase.from("orders").select("details").eq("telegram_user_id", userId).limit(5000);
   if (error) throw error;
-  return sumOf(data);
+  const topped = (data || []).some((o) => o.details && o.details.topup && o.details.payment);
+  return { balance: sumOf(data), minTopup: topped ? MIN_NEXT : MIN_FIRST };
+}
+const balanceOf = async (userId) => (await walletOf(userId)).balance;
+
+// Buyurtma uchun yetmasa — eng kam to'ldirish (yetmagan qismi, 100 so'mga yaxlitlab)
+function topupNeed(price, balance, minTopup = MIN_FIRST) {
+  const min = Math.max(minTopup, Math.ceil((price - balance) / 100) * 100);
+  return { min, options: [min] };
 }
 
-// Buyurtma uchun yetmasa — eng kam to'ldirish (100 so'mga yaxlitlab) va tanlovlar
-function topupNeed(price, balance) {
-  const min = Math.max(MIN_TOPUP, Math.ceil((price - balance) / 100) * 100);
-  return { min, options: [min, ...TOPUP_OPTIONS.filter((x) => x > min)].slice(0, 4) };
-}
-
-module.exports = { MIN_TOPUP, MAX_TOPUP, balanceOf, sumOf, topupNeed };
+module.exports = { MIN_FIRST, MIN_NEXT, MAX_TOPUP, walletOf, balanceOf, sumOf, topupNeed };

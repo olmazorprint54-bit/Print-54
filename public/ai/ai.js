@@ -1052,13 +1052,21 @@
     const status = document.getElementById("aiStatus");
     status.innerHTML = `<div class="ai-topup">
         <div class="ai-topup-h">💰 Balansingiz: <b>${esc(fmt(t.balance))}</b> · buyurtma: <b>${esc(fmt(t.price))}</b></div>
-        <div class="ai-topup-t">Hisobingizni to'ldiring (kamida ${esc(fmt(t.min))}). Ortib qolgani balansda qoladi — keyingi buyurtmalar chek yubormasdan, darhol undan yechiladi.</div>
-        <div class="ai-topup-opts">${t.options.map((a) => `<button type="button" class="pill-btn glass" data-topup="${a}">${esc(fmt(a))}</button>`).join("")}</div>
+        <div class="ai-topup-t">Hisobingizni to'ldiring — ortib qolgani balansda qoladi, keyingi buyurtmalar darhol undan yechiladi. Birinchi to'ldirish — kamida 5 000 so'm, keyingilari — kamida 3 000 so'm.</div>
+        <div class="ai-topup-row">
+          <button type="button" class="pill-btn glass" data-topup="${t.min}">${esc(fmt(t.min))}</button>
+          <input type="number" inputmode="numeric" min="${t.min}" step="100" placeholder="Boshqa summa" data-topup-input>
+          <button type="button" class="pill-btn glass ai-topup-go" data-topup-go>OK</button>
+        </div>
       </div>`;
-    status.querySelectorAll("[data-topup]").forEach((b) => b.addEventListener("click", () => {
+    status.querySelector("[data-topup]").addEventListener("click", () => { tick(); sendOrder(svc, { ...payload, topup: t.min }); });
+    status.querySelector("[data-topup-go]").addEventListener("click", () => {
+      const inp = status.querySelector("[data-topup-input]");
+      const a = Math.round(Number(inp.value) || 0);
+      if (a < t.min) { haptic("warning"); inp.focus(); inp.classList.add("bad"); return; }
       tick();
-      sendOrder(svc, { ...payload, topup: Number(b.dataset.topup) });
-    }));
+      sendOrder(svc, { ...payload, topup: a });
+    });
     status.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 

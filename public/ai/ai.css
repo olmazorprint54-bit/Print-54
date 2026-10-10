@@ -219,8 +219,11 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-topup{ text-align:left; margin-top:10px; padding:14px; border-radius:14px; border:1px solid color-mix(in srgb, var(--accent, #4F46E5) 30%, transparent); background: color-mix(in srgb, var(--accent, #4F46E5) 8%, transparent); color: var(--ink, inherit); }
 .ai-topup-h{ font-size:14px; }
 .ai-topup-t{ font-size:12.5px; line-height:1.45; opacity:.8; margin:6px 0 10px; }
-.ai-topup-opts{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
-.ai-topup-opts .pill-btn{ font-weight:700; padding:12px 8px; }
+.ai-topup-row{ display:grid; grid-template-columns: auto 1fr auto; gap:6px; }
+.ai-topup-row .pill-btn{ font-weight:700; padding:12px 10px; margin:0; white-space:nowrap; }
+.ai-topup-row input{ min-width:0; font: 600 14px/1 inherit; padding:12px 10px; border-radius:999px; border:1px solid var(--line, rgba(127,127,127,.3)); background: transparent; color: inherit; }
+.ai-topup-row input.bad{ border-color:#ef4444; }
+.ai-topup-row .ai-topup-go{ background: var(--accent, #4F46E5); color:#fff; }
 .ai-bal-note b{ color: var(--accent, #4F46E5); }
 .ai-done p.ai-extra-note{ font-size:12px; margin:-6px 0 12px; }
 .ai-card-name{ font-size:13.5px; font-weight:600; margin:0 0 14px; }

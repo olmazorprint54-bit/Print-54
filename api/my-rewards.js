@@ -8,7 +8,7 @@
 
 const { authUser, AI_MODE } = require("./_lib/bots");
 const { rewardsOf } = require("./_lib/referral");
-const { balanceOf } = require("./_lib/balance");
+const { walletOf, MIN_FIRST } = require("./_lib/balance");
 
 const supabase = require("./_lib/db");
 
@@ -28,8 +28,8 @@ module.exports = async (req, res) => {
 
     // Alohida AI bot: bepul AI buyurtmalar (referal bonusi)
     if (AI_MODE) {
-      const [ai, balance] = await Promise.all([rewardsOf(auth.bot, userId), balanceOf(userId).catch(() => 0)]);
-      res.status(200).json({ ok: true, ai, balance });
+      const [ai, w] = await Promise.all([rewardsOf(auth.bot, userId), walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST }))]);
+      res.status(200).json({ ok: true, ai, balance: w.balance, minTopup: w.minTopup });
       return;
     }
 

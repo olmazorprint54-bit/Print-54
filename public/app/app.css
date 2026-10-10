@@ -198,9 +198,12 @@ section{ margin-bottom:18px; }
 .toast.show{ opacity:1; transform:translate(-50%, 0); }
 
 /* Profil — referal (do'stlarni taklif qilish) */
-.bal-opts{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:12px; }
-.bal-opts button{ font: 700 13.5px/1 inherit; padding:12px 4px; border-radius:12px; border:1px solid var(--line); background: var(--bg, rgba(127,127,127,.08)); color: inherit; cursor:pointer; }
-.bal-opts button:active{ background: color-mix(in srgb, var(--accent) 15%, transparent); }
+.bal-row{ display:grid; grid-template-columns: auto 1fr auto; gap:6px; margin-top:10px; }
+.bal-row button, .bal-row input{ font: 700 14px/1 inherit; padding:12px 10px; border-radius:12px; border:1px solid var(--line); background: var(--bg, rgba(127,127,127,.08)); color: inherit; min-width:0; }
+.bal-row button{ cursor:pointer; white-space:nowrap; }
+.bal-row .bal-go-btn{ background: var(--accent); border-color: var(--accent); color:#fff; }
+.bal-row input{ font-weight:600; }
+.bal-row button:active{ opacity:.8; }
 .bal-pay{ margin-top:12px; padding:12px; border-radius:12px; background: color-mix(in srgb, var(--accent) 8%, transparent); border:1px solid color-mix(in srgb, var(--accent) 30%, transparent); font-size:13px; line-height:1.5; }
 .bal-pay .bal-card{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin:8px 0; font: 700 17px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; cursor:pointer; }
 .bal-pay .bal-card span{ font: 600 11.5px/1 system-ui, sans-serif; padding:5px 8px; border-radius:999px; color:#fff; background: var(--accent); }
