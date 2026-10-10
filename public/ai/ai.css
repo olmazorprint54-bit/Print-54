@@ -235,3 +235,8 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .src-del{ flex-shrink:0; width:26px; height:26px; display:grid; place-items:center; border-radius:8px; color:#ef4444; font-weight:700; }
 .src-empty{ font-size:13px; opacity:.7; padding:6px 2px; }
 .src-add{ display:flex; align-items:center; justify-content:center; margin-top:8px; padding:11px; border-radius:12px; font-weight:700; font-size:13.5px; cursor:pointer; }
+
+/* Namuna: katta virtual sahifa (cqw unga nisbatan), kartochka kengligiga transform bilan kichraytiriladi */
+.vbox{ position:absolute; left:0; top:0; container-type: inline-size; transform-origin:0 0; transform: scale(var(--k, 1)); visibility:hidden; }
+.vbox.fit{ visibility:visible; }
+.vbox .el{ position:absolute; }
