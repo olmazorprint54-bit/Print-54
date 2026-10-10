@@ -21,6 +21,7 @@ const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
 const { uniqueAmount } = require("./_lib/receipt");
+const { createTopup } = require("./_lib/topup");
 const { walletOf, topupNeed, MAX_TOPUP } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
@@ -209,45 +210,8 @@ async function topupOnly(body, res) {
     res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" });
     return;
   }
-  const card = payCard();
-  if (!card) {
-    res.status(400).json({ ok: false, error: "Hisobni to'ldirish hozircha yoqilmagan." });
-    return;
-  }
-  const amount = Math.round(Number(body.topup) || 0);
-  const u = auth.user, bot = auth.bot;
-  const w = await walletOf(u.id);
-  const bal = w.balance;
-  if (amount < w.minTopup || amount > MAX_TOPUP) {
-    res.status(400).json({ ok: false, error: amount > MAX_TOPUP ? "Summa juda katta." : `To'ldirish summasi ${w.minTopup.toLocaleString("ru-RU")} so'mdan kam bo'lmasin.` });
-    return;
-  }
-  const payAmount = await uniqueAmount(amount).catch(() => amount);
-  const details = { bot, topic: "Hisobni to'ldirish", awaitingPayment: true, payMethod: "card", topup: amount, payAmount };
-  const { data: row, error } = await supabase
-    .from("orders")
-    .insert({
-      service: "topup",
-      qty: null,
-      total: 0,
-      telegram_user_id: u.id,
-      telegram_username: u.username || null,
-      telegram_name: [u.first_name, u.last_name].filter(Boolean).join(" "),
-      status: "active",
-      details,
-    })
-    .select()
-    .single();
-  if (error || !row) throw error || new Error("Buyurtmani bazaga yozib bo'lmadi");
-  const sent = await telegram(bot, "sendMessage", {
-    chat_id: u.id,
-    text: cardText(card, { service: "topup", details, total: 0 }, payAmount, bal),
-    parse_mode: "HTML",
-    reply_markup: { inline_keyboard: [[{ text: "❌ Bekor qilish", callback_data: `paycancel:${row.id}` }]] },
-  }).catch((e) => ({ ok: false, description: String(e) }));
-  if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
-  else await supabase.from("orders").update({ details: { ...details, payMsg: sent.result.message_id } }).eq("id", row.id);
-  res.status(200).json({ ok: true, orderId: row.id, card: { number: card.number, name: card.name, price: payAmount, topup: amount, balance: bal } });
+  const out = await createTopup(auth.bot, auth.user, body.topup);
+  res.status(out.ok ? 200 : 400).json(out);
 }
 
 module.exports = async (req, res) => {

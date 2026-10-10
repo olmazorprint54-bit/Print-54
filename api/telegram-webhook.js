@@ -16,6 +16,7 @@ const { waitUntil } = require("@vercel/functions");
 const { orderIdOf, fmtSum, RECEIPT_HOURS, payCard } = require("./_lib/pay");
 const RECEIPT = require("./_lib/receipt");
 const { balanceOf } = require("./_lib/balance");
+const TOPUP = require("./_lib/topup");
 const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
@@ -97,6 +98,10 @@ async function grantPurchaseBonus(order) {
 async function handleCallbackQuery(cq, bot, req) {
   if (cq.data && cq.data.startsWith("aisend:")) {
     await handleAiSend(cq, bot);
+    return;
+  }
+  if (/^topup(:\d+|ask|menu)$/.test(cq.data || "")) {
+    await handleTopupCb(cq, bot);
     return;
   }
   if (/^pay(ok|no|cancel|bad):\d+$/.test(cq.data || "")) {
@@ -417,6 +422,13 @@ async function welcomeExtra(msg, bot, host) {
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
   }, bot);
+  if (topupOn()) {
+    await callTelegram("sendMessage", {
+      chat_id: msg.chat.id,
+      text: "👇 Hisobni to'ldirish va balansni pastdagi tugmalardan ko'rishingiz mumkin.",
+      reply_markup: TOPUP.keyboard(),
+    }, bot);
+  }
 }
 
 // Egasi /ulash yuboradi: env'dagi botlar shu serverga ulanadi
@@ -474,6 +486,9 @@ async function handleMessage(msg, bot, host, req) {
   }
 
   if (!msg.text) return;
+
+  // AI botda: "💳 Hisobni to'ldirish" / "💰 Balansim" tugmalari va summa javobi
+  if (isAiBot(bot) && !isOwnerReply(msg) && (await handleTopupText(msg, bot))) return;
 
   // AI botda oddiy xabar — AI suhbat (javob fonda tayyorlanadi, Telegram kutib qolmaydi)
   if (isAiBot(bot) && !msg.text.startsWith("/") && !(isOwner(msg.from) && msg.reply_to_message)) {
@@ -618,6 +633,39 @@ function startAi(req, orderId) {
   }).then((r) => { if (!r.ok) console.error("resume-pdf xatosi:", r.status); }).catch((e) => console.error(e)));
 }
 
+/* ============ HISOBNI TO'LDIRISH (botdagi tugmalar) ============ */
+const isOwnerReply = (msg) => isOwner(msg.from) && !!msg.reply_to_message;
+const topupOn = () => !PR.TRIAL && !!payCard();
+
+async function handleTopupText(msg, bot) {
+  if (!topupOn()) return false;
+  const t = msg.text.trim();
+  if (t === TOPUP.KB.topup) { await TOPUP.sendMenu(bot, msg.chat.id, msg.from.id); return true; }
+  if (t === TOPUP.KB.balance) { await TOPUP.sendBalance(bot, msg.chat.id, msg.from.id); return true; }
+  const r = msg.reply_to_message;
+  if (r && r.from && r.from.is_bot && String(r.text || "").startsWith(TOPUP.ASK_MARK)) {
+    const amount = TOPUP.parseAmount(t);
+    const out = amount ? await TOPUP.createTopup(bot, msg.from, amount) : { ok: false, error: "Summani raqam bilan yozing, masalan: 7000" };
+    if (!out.ok) {
+      await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "⚠️ " + out.error, reply_markup: { force_reply: true, input_field_placeholder: "Masalan: 7000" } }, bot);
+      // keyingi javob ham summa sifatida olinsin
+      await TOPUP.askAmount(bot, msg.chat.id, msg.from.id);
+    }
+    return true;
+  }
+  return false;
+}
+
+async function handleTopupCb(cq, bot) {
+  const answer = (text, alert) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, ...(text ? { text, show_alert: !!alert } : {}) }, bot);
+  if (!topupOn()) return answer("Hisobni to'ldirish hozircha yoqilmagan.", true);
+  const chatId = cq.message ? cq.message.chat.id : cq.from.id;
+  if (cq.data === "topupmenu") { await answer(); await TOPUP.sendMenu(bot, chatId, cq.from.id); return; }
+  if (cq.data === "topupask") { await answer(); await TOPUP.askAmount(bot, chatId, cq.from.id); return; }
+  const out = await TOPUP.createTopup(bot, cq.from, parseInt(cq.data.split(":")[1], 10));
+  await answer(out.ok ? "" : out.error, !out.ok);
+}
+
 /* ============ KARTAGA TO'LOV (chek + egasi tasdiqlaydi) ============ */
 const isCardWait = (o) => o && o.status === "active" && o.details && o.details.awaitingPayment && o.details.payMethod === "card";
 
@@ -652,7 +700,7 @@ async function handleReceipt(msg, bot, order, req) {
   await supabase.from("orders").update({ details }).eq("id", order.id);
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: "✅ Chek qabul qilindi, tekshirilmoqda — tasdiqlangach AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
+    text: "🧾 Chek qabul qilindi, tekshirilmoqda... ⏳",
     reply_to_message_id: msg.message_id,
   }, bot);
   waitUntil(checkReceipt(msg, bot, { ...order, details }, req).catch((e) => console.error("Chek tekshiruvi:", e)));
@@ -708,10 +756,19 @@ async function confirmPaid(order, extra, req) {
   if (order.service === "topup") {
     // faqat to'ldirish — AI ishlamaydi
     await supabase.from("orders").update({ status: "completed" }).eq("id", order.id);
-    await callTelegram("sendMessage", { chat_id: order.telegram_user_id, text: `✅ Hisobingiz to'ldirildi: +${fmtSum(payment.amount)}${left != null ? `. Balans: ${fmtSum(left)}` : ""}.\n\nEndi ilovada buyurtma bering — narxi balansdan avtomatik yechiladi.` }, custBot);
+    await callTelegram("sendMessage", {
+      chat_id: order.telegram_user_id,
+      text: `✅ <b>Hisobingiz to'ldirildi!</b>\n\n💰 +${fmtSum(payment.amount)}${left != null ? `\n👛 Balans: <b>${fmtSum(left)}</b>` : ""}\n\nEndi ilovada buyurtma bering — narxi balansdan avtomatik yechiladi 🚀`,
+      parse_mode: "HTML",
+      ...(AI_MODE || custBot !== MAIN ? { reply_markup: TOPUP.keyboard() } : {}),
+    }, custBot);
     return;
   }
-  await callTelegram("sendMessage", { chat_id: order.telegram_user_id, text: `✅ To'lov tasdiqlandi!${d.topup ? ` Hisobingizga +${fmtSum(payment.amount)}, buyurtmaga −${fmtSum(spent)}${left != null ? `, balans: ${fmtSum(left)}` : ""}.` : ""}\n\n«${(d.topic || AI_LABELS[order.service] || "").slice(0, 100)}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.` }, custBot);
+  await callTelegram("sendMessage", {
+    chat_id: order.telegram_user_id,
+    text: `✅ <b>To'lov tasdiqlandi!</b>${d.topup ? `\n\n💰 Hisobingizga: +${fmtSum(payment.amount)}\n🧾 Buyurtmaga: −${fmtSum(spent)}${left != null ? `\n👛 Balans: <b>${fmtSum(left)}</b>` : ""}` : ""}\n\n⏳ «${escapeHtml((d.topic || AI_LABELS[order.service] || "").slice(0, 100))}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.`,
+    parse_mode: "HTML",
+  }, custBot);
   startAi(req, order.id);
 }
 
