@@ -65,7 +65,9 @@
           { id: "slides", type: "number", label: "Slaydlar soni", placeholder: "Masalan: 10", min: 3, max: 60, fallback: "10" },
           { id: "lang", type: "chips", label: "Til", options: LANGS, default: "uz_lat" },
           { id: "sources", type: "sources", label: "📎 Manbalar (ixtiyoriy)", default: [] },
-          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "ai-dizayn" },
+          // Shablonsiz (standart): dizaynni AI o'zi yaratadi — galereya ko'rinmaydi
+          { id: "design", type: "chips", label: "Dizayn", options: [{ v: "ai", l: "✨ AI o'zi yaratadi (shablonsiz)" }, { v: "tpl", l: "🎨 Shablon tanlayman" }], default: "ai" },
+          { id: "template", type: "templates", label: "Dizayn shabloni", set: "presentation", default: "ai-dizayn", showIf: "design=tpl" },
           { id: "images", type: "switch", label: "Slaydlarga mavzuga mos rasmlar qo'shilsin", default: true },
           { id: "photos", type: "photos", label: "O'z rasmlaringiz", hint: "Ixtiyoriy — yuklagan rasmlaringiz slaydlarga qo'yiladi (10 tagacha)", max: 10, default: [] },
           { id: "charts", type: "switch", label: "📊 Diagramma qo'shilsin", default: false },
