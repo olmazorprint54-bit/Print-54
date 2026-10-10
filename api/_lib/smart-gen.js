@@ -85,7 +85,7 @@ async function writeSmart(d) {
 - Choose the slide TYPE that best fits each part of the content: chronology → timeline, numbers → chart or stats, two sides → comparison, structured facts → table, explanations → text_image or bullets. Vary types; avoid more than two slides of the same type in a row.
 - Fields not used by a type: empty string / empty array / chart {kind:"bar",name:"",labels:[],values:[]} / table {head:[],rows:[]} / left,right {title:"",items:[]}.
 - No markdown, no emojis.`,
-    prompt: `Topic: ${d.topic}
+    prompt: require("./sources").sourcesBlock(d) + `Topic: ${d.topic}
 Subject: ${d.subject || "—"}
 Language: ${LANG_NAMES[d.lang]}
 Number of slides: exactly ${d.count} (first = title, last = thanks)
@@ -304,6 +304,7 @@ function toImage(buf) {
 // photoFinder(query) -> Buffer | null (pres-gen.js dagi Pixabay/Pexels)
 async function generateSmart(f, photoBuffers, photoFinder) {
   const d = {
+    sourceNotes: f.sourceNotes,
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120),
     lang: LANG_NAMES[f.lang] ? f.lang : "uz_lat",
     count: Math.min(MAX_SLIDES, Math.max(3, parseInt(f.slides, 10) || 10)),

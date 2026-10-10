@@ -16,6 +16,8 @@ const { buildObyektivka } = require("./_lib/obyektivka-docx");
 const { orderBot, telegram, toOwner } = require("./_lib/bots");
 const { generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS } = require("./_lib/test-gen");
 const { costLine } = require("./_lib/ai");
+const SRC = require("./_lib/sources");
+const sumAi = (a, b) => (!b ? a : !a ? b : { ...a, usage: { input: a.usage.input + b.usage.input, output: a.usage.output + b.usage.output }, usd: a.usd + b.usd });
 const { confirmReferral } = require("./_lib/referral");
 const { GENERATORS } = require("./_lib/doc-gen");
 const { generatePresentation } = require("./_lib/pres-gen");
@@ -135,7 +137,7 @@ async function reportCost(order, ai) {
   const f = order.details.fields || {};
   await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `🤖 #${order.id} ${costTitle(order.service, f)}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 referal bonusi (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
+    text: `🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 referal bonusi (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
   }).catch((e) => console.error(e));
 }
 
@@ -250,14 +252,28 @@ module.exports = async (req, res) => {
 
     let file;
     let ai = null;
+    // Mijoz manbalari: Claude bir marta o'qib konspekt tuzadi — generatorlar shu asosda yozadi
+    const fields = { ...order.details.fields };
+    let srcAi = null;
+    if (Array.isArray(fields.sources) && fields.sources.length && SRC.SERVICES.includes(order.service) && order.telegram_user_id) {
+      try {
+        const metas = await SRC.pick(order.telegram_user_id, fields.sources);
+        if (metas.length) {
+          const dg = await SRC.digest(order.telegram_user_id, metas, fields, order.service);
+          fields.sourceNotes = dg.notes;
+          fields.sourceRefs = dg.refs;
+          srcAi = dg.ai;
+        }
+      } catch (e) { console.error("Manbalarni o'qib bo'lmadi:", e); }
+    }
     if (order.service === "presentation") {
       // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
-      const pres = await generatePresentation(order.details.fields, await photoUrls(order));
+      const pres = await generatePresentation(fields, await photoUrls(order));
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
     } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
-      const doc = await GENERATORS[order.service](order.details.fields);
+      const doc = await GENERATORS[order.service](fields);
       ai = doc.ai;
       const fmt = order.details.fields.format;
       // universitetning tayyor tituli (Word sahifasi) — hujjat boshiga
@@ -271,7 +287,7 @@ module.exports = async (req, res) => {
           : { buffer: await docx(), name: doc.name + ".docx", mime: DOCX };
     } else if (order.service === "test") {
       // Savollarni Claude tuzadi; variantlar, kalit va fayl — avtomatik
-      const t = await generateTest(order.details.fields);
+      const t = await generateTest(fields);
       ai = t.ai;
       const variants = makeVariants(t.questions, t.d.variants, order.id);
       if (t.d.format === "quiz") await sendQuiz(order, t);
@@ -290,6 +306,7 @@ module.exports = async (req, res) => {
       file = { buffer: await renderPdf(resumeHtml(d, origin)), name: fileName(d.name), mime: "application/pdf" };
     }
     await deliver(order, file);
+    ai = sumAi(ai, srcAi);
     if (ai) await reportCost(order, ai);
     await confirmReferral(orderBot(order), order).catch((e) => console.error("Referal:", e));
     // rasm PDF ichida — omborda saqlash shart emas (bepul joy 1 GB)

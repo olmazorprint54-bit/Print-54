@@ -8,6 +8,7 @@
 // ---------------------------------------------------------------
 
 const { askJson, hasKey } = require("./ai");
+const SRC = require("./sources");
 
 const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
 const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
@@ -151,7 +152,7 @@ async function generatePaper(service, f) {
   const words = bodyPages * 260;
   const nCh = essay ? (d.pages <= 10 ? 2 : 3) : 1;
   const nSec = essay ? (d.pages <= 8 ? 2 : 3) : clamp(Math.round(d.pages / 3), 2, 5, 3);
-  const ctx = `Paper type: ${essay ? "mustaqil ish (independent study paper)" : "referat (short report)"}\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}`;
+  const ctx = `Paper type: ${essay ? "mustaqil ish (independent study paper)" : "referat (short report)"}\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}` + SRC.sourcesBlock(f);
   let cost = null;
 
   // 1) Reja
@@ -226,7 +227,7 @@ async function generatePaper(service, f) {
   if (d.parts.has("conclusion")) { blocks.push({ t: "h1", text: t.concl }, ...paras(results[k++])); blocks.push({ t: "pagebreak" }); }
   if (d.parts.has("refs")) {
     blocks.push({ t: "h1", text: t.refs });
-    blocks.push({ t: "list", ordered: true, items: (results[k++].data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 12) });
+    blocks.push({ t: "list", ordered: true, items: SRC.mergeRefs(f, results[k++].data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 12) });
   }
   while (blocks[blocks.length - 1].t === "pagebreak") blocks.pop();
   return {
@@ -257,7 +258,7 @@ async function generateLesson(f) {
       stages: { type: "array", items: obj({ name: STR, minutes: { type: "integer" }, method: STR, teacher: STR, students: STR }) },
       homework: STR, assessment: STR,
     }),
-    prompt: `Write a detailed lesson plan for a teacher in an Uzbekistan general school (State educational standard, competency-based approach).
+    prompt: SRC.sourcesBlock(f) + `Write a detailed lesson plan for a teacher in an Uzbekistan general school (State educational standard, competency-based approach).
 Subject: ${d.subject}
 Grade: ${d.grade}
 Topic: ${d.topic}
@@ -310,7 +311,7 @@ async function generateQuestions(f) {
   const r = await askJson({
     model: MODEL(), system: WRITER, effort: "medium", maxTokens: 32000,
     schema: obj({ title: STR, items: { type: "array", items: obj({ kind: { type: "string", enum: d.kinds }, question: STR, answer: STR, pairs: { type: "array", items: obj({ left: STR, right: STR }) } }) } }),
-    prompt: `Create exactly ${d.count} questions on the topic "${d.topic}" for ${d.grade || "school pupils"}.
+    prompt: SRC.sourcesBlock(f) + `Create exactly ${d.count} questions on the topic "${d.topic}" for ${d.grade || "school pupils"}.
 Question types to mix (roughly evenly): ${d.kinds.map((k) => KIND_TEXT[k]).join("; ")}.
 ${d.source ? `Base the questions strictly on this text:\n"""\n${d.source}\n"""\n` : ""}Language: ${LANG_NAMES[lang]}.
 For each item give "kind", "question", a short correct "answer", and "pairs" (left/right items) only for matching tasks — empty array otherwise. Return also a short "title".`,
@@ -489,7 +490,7 @@ async function generateArticle(f) {
   const ctx = `Article type: ${{ scientific: "scientific journal article (Higher Attestation Commission of Uzbekistan / OAK requirements)", thesis: "conference abstract (thesis)", popular: "popular-science / journalistic article for a newspaper or magazine" }[kind]}
 Field: ${d.subject}
 Topic: ${d.topic}
-Language of the article: ${LANG_NAMES[lang]}`;
+Language of the article: ${LANG_NAMES[lang]}` + SRC.sourcesBlock(f);
   const ARTW = WRITER + `\n- Scientific style for articles: precise terms, logical argumentation, references to laws/decrees of the Republic of Uzbekistan and known research where relevant. Never invent statistics: give only well-known figures, otherwise describe qualitatively.`;
   let cost = null;
 
@@ -548,7 +549,7 @@ Return:
   });
   if (kind !== "popular") {
     blocks.push({ t: "h2", text: A.refs });
-    blocks.push({ t: "list", ordered: true, items: (res[parts.length].data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 15) });
+    blocks.push({ t: "list", ordered: true, items: SRC.mergeRefs(f, res[parts.length].data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 15) });
   }
   return {
     blocks,

@@ -20,6 +20,7 @@ const { canAutoPres } = require("./_lib/pres-gen");
 const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
+const SRC = require("./_lib/sources");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
 const AUTO = {
@@ -228,6 +229,9 @@ module.exports = async (req, res) => {
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id);
     const saved = cleanFields({ ...fields, photos });
+    // Manbalar: faqat mijozning o'ziniki, 3 tagacha, jami 100 bet (narxga +5 000)
+    saved.sources = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
+      ? (await SRC.pick(u.id, saved.sources).catch(() => [])).map((m) => m.id) : [];
     body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
 
     // Narx serverda hisoblanadi (public/ai/prices.js) — mijoz yuborganiga ishonilmaydi.

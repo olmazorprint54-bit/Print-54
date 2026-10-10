@@ -16,6 +16,9 @@ const { waitUntil } = require("@vercel/functions");
 const { orderIdOf } = require("./_lib/pay");
 const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
+const SRC = require("./_lib/sources");
+const { token: botToken } = require("./_lib/bots");
+const PR = require("../public/ai/prices");
 
 const supabase = require("./_lib/db");
 
@@ -369,6 +372,28 @@ async function forwardCustomerMedia(msg, bot) {
   }, bot);
 }
 
+/* ============ MANBALAR (botga yuborilgan adabiyotlar) ============ */
+async function saveChatSource(msg, bot) {
+  const reply = (text) => callTelegram("sendMessage", { chat_id: msg.chat.id, text, parse_mode: "HTML", reply_to_message_id: msg.message_id }, bot);
+  const doc = msg.document;
+  const photo = msg.photo && msg.photo[msg.photo.length - 1]; // eng kattasi
+  const name = doc ? doc.file_name || "manba" : `Rasm ${new Date().toLocaleDateString("ru-RU")}.jpg`;
+  if (doc && !SRC.kindOf(name)) return reply("Bu turdagi faylni manba sifatida qabul qila olmayman. PDF, Word (.docx), TXT yoki kitob sahifasining rasmini yuboring.");
+  const size = (doc || photo).file_size || 0;
+  if (size > SRC.MAX_BYTES) return reply("Fayl 20 MB dan katta — kichikroq qismini yuboring (masalan, kerakli boblarni).");
+  try {
+    const f = await callTelegram("getFile", { file_id: (doc || photo).file_id }, bot);
+    if (!f.ok) throw new Error(f.description);
+    const res = await fetch(`https://api.telegram.org/file/bot${botToken(bot)}/${f.result.file_path}`);
+    if (!res.ok) throw new Error("download " + res.status);
+    const s = await SRC.saveWhole(msg.from.id, name, Buffer.from(await res.arrayBuffer()), doc ? doc.mime_type : "image/jpeg");
+    await reply(`✅ Manba saqlandi: <b>${escapeHtml(s.name)}</b> (~${s.pages} bet)\n\nEndi ilovada buyurtma bering — «📎 Manbalar» bo'limida shu fayl tanlangan bo'ladi. AI ishni shu manba asosida yozadi${PR.TRIAL ? "" : ` (+${PR.SOURCE_FEE.toLocaleString("ru-RU")} so'm)`}.`);
+  } catch (e) {
+    console.error("Manbani saqlab bo'lmadi:", e);
+    await reply(e.user ? e.message : "Faylni saqlab bo'lmadi, birozdan so'ng qayta yuboring.");
+  }
+}
+
 /* ============ AI BOTLAR (qo'shimcha yoki BOT_MODE=ai) ============ */
 // Chop etishsiz bot: Print 54 salomi, referal va "Buyurtma tayyor" yo'q
 const isAiBot = (bot) => bot !== MAIN || AI_MODE;
@@ -417,6 +442,11 @@ async function handleMessage(msg, bot, host) {
   }
 
   // Mijoz rasm yoki fayl yuborsa (masalan, resume uchun rasmi) — egaga yetkazamiz
+  // AI botda mijoz yuborgan PDF/Word/TXT/rasm — manba (adabiyot) bo'lib saqlanadi
+  if ((msg.photo || msg.document) && isAiBot(bot) && !(isOwner(msg.from) && msg.reply_to_message)) {
+    await saveChatSource(msg, bot);
+    return;
+  }
   if ((msg.photo || msg.document) && !isOwner(msg.from)) {
     await forwardCustomerMedia(msg, bot);
     return;
