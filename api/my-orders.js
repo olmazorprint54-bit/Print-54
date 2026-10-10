@@ -13,7 +13,9 @@ const supabase = require("./_lib/db");
 // Mijozga kerak bo'lmagan ichki maydonlar (egaga yuborilgan matn va h.k.)
 function publicOrder(o) {
   const d = o.details || {};
-  const { text, manualText, ownerBot, fileBot, invoice, payment, ...details } = d;
+  const { text, manualText, ownerBot, fileBot, invoice, payment, payMsg, receipt, ...details } = d;
+  // kartaga to'lov: "to'lov kutilmoqda" yoki "chek tekshirilmoqda"
+  if (d.awaitingPayment && d.payMethod === "card") details.payState = receipt ? "checking" : "waiting";
   return { ...o, details };
 }
 
@@ -40,8 +42,9 @@ module.exports = async (req, res) => {
 
     if (error) throw error;
 
-    // to'lov oynasi yopilib, to'lanmay qolgan buyurtmalar hisoblanmaydi va ko'rinmaydi
-    const mine = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment));
+    // to'lov oynasi (Click/Payme) yopilib, to'lanmay qolgan buyurtmalar hisoblanmaydi va ko'rinmaydi;
+    // kartaga to'lov kutilayotganlari ko'rinadi (chek yuborish, bekor qilish)
+    const mine = (data || []).filter((o) => orderBot(o) === auth.bot && !(o.details && o.details.awaitingPayment && o.details.payMethod !== "card"));
     mine.forEach((o, i) => { o.n = i + 1; });
     const orders = mine.filter((o) => !o.hidden_by_customer).reverse().slice(0, 50).map(publicOrder);
     res.status(200).json({ ok: true, orders });

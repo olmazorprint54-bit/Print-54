@@ -10,10 +10,12 @@
 // asosiy bot ham faqat AI bot (chop etishsiz, referalsiz) bo'ladi.
 // ---------------------------------------------------------------
 const crypto = require("crypto");
-const { MAIN, AI_MODE, botKey, orderBot, telegram, sendFile, webhookSecret } = require("./_lib/bots");
+const { MAIN, AI_MODE, botKey, orderBot, telegram, toOwner, sendFile, webhookSecret } = require("./_lib/bots");
 const { connectBots, appUrl } = require("./_lib/setup");
 const { waitUntil } = require("@vercel/functions");
-const { orderIdOf } = require("./_lib/pay");
+const { orderIdOf, fmtSum, RECEIPT_HOURS, payCard } = require("./_lib/pay");
+const RECEIPT = require("./_lib/receipt");
+const { balanceOf } = require("./_lib/balance");
 const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
@@ -92,9 +94,13 @@ async function grantPurchaseBonus(order) {
 }
 
 /* ============ BUYURTMA TAYYOR TUGMASI ============ */
-async function handleCallbackQuery(cq, bot) {
+async function handleCallbackQuery(cq, bot, req) {
   if (cq.data && cq.data.startsWith("aisend:")) {
     await handleAiSend(cq, bot);
+    return;
+  }
+  if (/^pay(ok|no|cancel|bad):\d+$/.test(cq.data || "")) {
+    await handlePayAction(cq, bot, req);
     return;
   }
   if (cq.data === "noop" || isAiBot(bot)) {
@@ -391,7 +397,7 @@ async function saveChatSource(msg, bot) {
     const res = await fetch(`https://api.telegram.org/file/bot${botToken(bot)}/${f.result.file_path}`);
     if (!res.ok) throw new Error("download " + res.status);
     const s = await SRC.saveWhole(msg.from.id, name, Buffer.from(await res.arrayBuffer()), doc ? doc.mime_type : "image/jpeg");
-    await reply(`✅ Manba saqlandi: <b>${escapeHtml(s.name)}</b> (~${s.pages} bet)\n\nEndi ilovada buyurtma bering — «📎 Manbalar» bo'limida shu fayl tanlangan bo'ladi. AI ishni shu manba asosida yozadi${PR.TRIAL ? "" : ` (+${PR.SOURCE_FEE.toLocaleString("ru-RU")} so'm)`}.`);
+    await reply(`✅ Manba saqlandi: <b>${escapeHtml(s.name)}</b> (~${s.pages} bet)\n\nEndi ilovada buyurtma bering — «📎 Manbalar» bo'limida shu fayl tanlangan bo'ladi. AI ishni shu manba asosida yozadi${PR.TRIAL ? "" : ` (+${PR.sourceFee(s.pages).toLocaleString("ru-RU")} so'm)`}.`);
   } catch (e) {
     console.error("Manbani saqlab bo'lmadi:", e);
     await reply(e.user ? e.message : "Faylni saqlab bo'lmadi, birozdan so'ng qayta yuboring.");
@@ -438,11 +444,20 @@ async function setupBots(msg, host) {
 }
 
 /* ============ /start VA REFERAL KUZATISH ============ */
-async function handleMessage(msg, bot, host) {
+async function handleMessage(msg, bot, host, req) {
   if (!msg.from) return;
   if (msg.document && msg.reply_to_message && isOwner(msg.from)) {
     await handleOwnerFile(msg, bot);
     return;
+  }
+
+  // Kartaga to'lov kutilayotgan bo'lsa — mijoz yuborgan rasm/fayl to'lov cheki
+  if ((msg.photo || msg.document) && !isOwner(msg.from)) {
+    const order = await receiptOrder(msg, bot).catch((e) => { console.error("Chek tekshiruvi:", e); return null; });
+    if (order) {
+      await handleReceipt(msg, bot, order, req);
+      return;
+    }
   }
 
   // Mijoz rasm yoki fayl yuborsa (masalan, resume uchun rasmi) — egaga yetkazamiz
@@ -590,12 +605,162 @@ async function handlePaid(msg, bot, req) {
   const details = { ...order.details, awaitingPayment: false, payment: { amount: p.total_amount / 100, currency: p.currency, telegram: p.telegram_payment_charge_id, provider: p.provider_payment_charge_id, at: new Date().toISOString() } };
   await supabase.from("orders").update({ details }).eq("id", order.id);
   await callTelegram("sendMessage", { chat_id: msg.chat.id, text: `✅ To'lov qabul qilindi! «${(order.details.topic || AI_LABELS[order.service] || "").slice(0, 100)}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.` }, bot);
+  startAi(req, order.id);
+}
+
+// To'langan buyurtma — AI tayyorlashni fonda boshlaymiz (api/resume-pdf.js)
+function startAi(req, orderId) {
   const proto = req.headers["x-forwarded-proto"] || "https";
   waitUntil(fetch(`${proto}://${req.headers.host}/api/resume-pdf`, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "x-internal-key": internalKey(order.id) },
-    body: JSON.stringify({ orderId: order.id }),
+    headers: { "Content-Type": "application/json", "x-internal-key": internalKey(orderId) },
+    body: JSON.stringify({ orderId }),
   }).then((r) => { if (!r.ok) console.error("resume-pdf xatosi:", r.status); }).catch((e) => console.error(e)));
+}
+
+/* ============ KARTAGA TO'LOV (chek + egasi tasdiqlaydi) ============ */
+const isCardWait = (o) => o && o.status === "active" && o.details && o.details.awaitingPayment && o.details.payMethod === "card";
+
+// Mijoz yuborgan rasm/fayl chekmi: to'lov xabariga javob, yoki 24 soat
+// ichidagi chek kutilayotgan buyurtma (chek hali yuborilmagan)
+async function receiptOrder(msg, bot) {
+  const since = new Date(Date.now() - RECEIPT_HOURS * 3600e3).toISOString();
+  const { data } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("telegram_user_id", msg.from.id)
+    .eq("status", "active")
+    .gte("created_at", since)
+    .order("created_at", { ascending: false })
+    .limit(20);
+  const list = (data || []).filter((o) => orderBot(o) === bot && isCardWait(o));
+  const replyTo = msg.reply_to_message && msg.reply_to_message.message_id;
+  return (replyTo && list.find((o) => o.details.payMsg === replyTo)) || list.find((o) => !o.details.receipt) || null;
+}
+
+const userLink = (u) => {
+  const name = escapeHtml([u.first_name, u.last_name].filter(Boolean).join(" ") || "Mijoz");
+  return `<a href="tg://user?id=${parseInt(u.id, 10)}">${name}</a>${u.username ? " (@" + escapeHtml(u.username) + ")" : ""}`;
+};
+const orderLine = (order) => `${escapeHtml(AI_LABELS[order.service] || order.service)}${order.details.topic ? ` «${escapeHtml(String(order.details.topic).slice(0, 100))}»` : ""}`;
+const payAmountOf = (order) => Number(order.details.payAmount || order.total) || 0;
+
+// Chek keldi: mijozga "tekshirilmoqda", AI chekni fonda tekshiradi
+async function handleReceipt(msg, bot, order, req) {
+  const details = { ...order.details, receipt: { at: new Date().toISOString(), fileKey: RECEIPT.fileKey(msg) } };
+  await supabase.from("orders").update({ details }).eq("id", order.id);
+  await callTelegram("sendMessage", {
+    chat_id: msg.chat.id,
+    text: "✅ Chek qabul qilindi, tekshirilmoqda — tasdiqlangach AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
+    reply_to_message_id: msg.message_id,
+  }, bot);
+  waitUntil(checkReceipt(msg, bot, { ...order, details }, req).catch((e) => console.error("Chek tekshiruvi:", e)));
+}
+
+async function checkReceipt(msg, bot, order, req) {
+  let v;
+  try {
+    v = await RECEIPT.verify(bot, msg, order, payCard());
+  } catch (e) {
+    console.error("Chekni AI o'qiy olmadi:", e);
+    v = { ok: false, reasons: ["AI chekni o'qiy olmadi"] };
+  }
+  // shu orada mijoz bekor qilgan yoki egasi tasdiqlagan bo'lishi mumkin
+  const { data: fresh } = await supabase.from("orders").select("*").eq("id", order.id).single();
+  if (!isCardWait(fresh)) return;
+
+  if (v.ok) {
+    await confirmPaid(fresh, { auto: true, txn: v.read.transaction_id || null, usd: v.ai ? v.ai.usd : 0 }, req);
+    // egaga — ovozsiz qisqa xabar; pul aslida tushmagan bo'lsa belgilaydi
+    await toOwner(bot, "sendMessage", {
+      chat_id: process.env.OWNER_CHAT_ID,
+      text: `✅ <b>To'lov avtomatik tasdiqlandi</b> — #${order.id}\n${orderLine(order)}\nSumma: <b>${fmtSum(payAmountOf(order))}</b>\n👤 ${userLink(msg.from)}\n\nClick/Payme xabarlarida shu summa bo'lmasa — tugmani bosing.`,
+      parse_mode: "HTML",
+      disable_notification: true,
+      reply_markup: { inline_keyboard: [[{ text: "🚫 Pul tushmadi", callback_data: `paybad:${order.id}` }]] },
+    });
+    return;
+  }
+
+  // Shubhali chek — egasi qo'lda ko'radi
+  await callTelegram("copyMessage", { chat_id: process.env.OWNER_CHAT_ID, from_chat_id: msg.chat.id, message_id: msg.message_id }, bot).catch(() => null);
+  const sent = await toOwner(bot, "sendMessage", {
+    chat_id: process.env.OWNER_CHAT_ID,
+    text: `💳 <b>Chekni tekshiring</b> — #${order.id}\n${orderLine(order)}\nSumma: <b>${fmtSum(payAmountOf(order))}</b>\n👤 ${userLink(msg.from)}\n\n🤖 Avtomatik tasdiqlanmadi: ${escapeHtml(v.reasons.join("; "))}\n\nKartangizga shu summa tushgan bo'lsa — «To'lov keldi» ni bosing.`,
+    parse_mode: "HTML",
+    reply_markup: { inline_keyboard: [[{ text: "✅ To'lov keldi", callback_data: `payok:${order.id}` }, { text: "❌ Rad etish", callback_data: `payno:${order.id}` }]] },
+  });
+  if (!sent.ok) console.error("Chekni egaga yuborib bo'lmadi:", sent.description);
+}
+
+// To'lov tasdiqlandi (avtomatik yoki egasi): mijozga xabar, AI ishga tushadi
+async function confirmPaid(order, extra, req) {
+  const d = order.details;
+  const custBot = orderBot(order);
+  const payment = { amount: payAmountOf(order), method: "card", at: new Date().toISOString(), fileKey: (d.receipt && d.receipt.fileKey) || null, ...extra };
+  // to'ldirish balansga tushadi, buyurtma narxi undan yechiladi (details.spent)
+  const spent = Number(order.total) || 0;
+  await supabase.from("orders").update({ details: { ...d, awaitingPayment: false, payment, ...(d.topup ? { spent } : {}) } }).eq("id", order.id);
+  if (d.payMsg) await callTelegram("editMessageReplyMarkup", { chat_id: order.telegram_user_id, message_id: d.payMsg, reply_markup: { inline_keyboard: [] } }, custBot).catch(() => null);
+  const left = d.topup ? await balanceOf(order.telegram_user_id).catch(() => null) : null;
+  await callTelegram("sendMessage", { chat_id: order.telegram_user_id, text: `✅ To'lov tasdiqlandi!${d.topup ? ` Hisobingizga +${fmtSum(payment.amount)}, buyurtmaga −${fmtSum(spent)}${left != null ? `, balans: ${fmtSum(left)}` : ""}.` : ""}\n\n«${(d.topic || AI_LABELS[order.service] || "").slice(0, 100)}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.` }, custBot);
+  startAi(req, order.id);
+}
+
+// payok / payno / paybad — egasi; paycancel — mijoz (chek yuborilmagan bo'lsa)
+async function handlePayAction(cq, bot, req) {
+  const [, act, idStr] = cq.data.match(/^pay(ok|no|cancel|bad):(\d+)$/);
+  const id = parseInt(idStr, 10);
+  const answer = (text, alert) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text, show_alert: !!alert }, bot);
+  const mark = (text) => callTelegram("editMessageReplyMarkup", {
+    chat_id: cq.message.chat.id,
+    message_id: cq.message.message_id,
+    reply_markup: { inline_keyboard: [[{ text, callback_data: "noop" }]] },
+  }, bot);
+  const { data: order } = await supabase.from("orders").select("*").eq("id", id).single();
+  if (!order || !order.details) return answer("Buyurtma topilmadi.", true);
+  const d = order.details;
+  const custBot = orderBot(order);
+  const toCustomer = (text) => callTelegram("sendMessage", { chat_id: order.telegram_user_id, text }, custBot);
+  const label = (d.topic || AI_LABELS[order.service] || "").slice(0, 100);
+
+  if (act === "cancel") {
+    if (String(cq.from.id) !== String(order.telegram_user_id)) return answer("Bu buyurtma sizniki emas.", true);
+    if (!isCardWait(order)) {
+      await mark(order.status === "cancelled" ? "❌ Bekor qilingan" : "✅ To'langan");
+      return answer("Bu buyurtmani endi bekor qilib bo'lmaydi.");
+    }
+    if (d.receipt) return answer("Chek yuborilgan — to'lov tekshirilmoqda. Savol bo'lsa, biz bilan bog'laning.", true);
+    await supabase.from("orders").update({ status: "cancelled" }).eq("id", id);
+    await mark("❌ Bekor qilindi");
+    return answer("Buyurtma bekor qilindi.");
+  }
+
+  if (!isOwner(cq.from)) return answer("Bu tugma faqat do'kon egasi uchun.", true);
+
+  // Avtomatik tasdiqlangan, lekin pul tushmagan: mijozning keyingi cheklari faqat qo'lda
+  if (act === "bad") {
+    await supabase.from("orders").update({ details: { ...d, fraud: true } }).eq("id", id);
+    await mark("🚫 Pul tushmadi — belgilandi");
+    return answer(`#${id} belgilandi. Bu mijozning keyingi cheklari avtomatik tasdiqlanmaydi — sizga yuboriladi.`, true);
+  }
+
+  if (!isCardWait(order)) {
+    await mark(d.payment ? "✅ To'lov tasdiqlangan" : order.status === "cancelled" ? "❌ Mijoz bekor qilgan" : "—");
+    return answer(d.payment ? `#${id} allaqachon tasdiqlangan.` : `#${id} — to'lov kutilmayapti.`, true);
+  }
+
+  if (act === "ok") {
+    await confirmPaid(order, { by: "owner" }, req);
+    await mark("✅ To'lov tasdiqlandi");
+    return answer(`#${id} tasdiqlandi — AI ishni boshladi.`);
+  }
+
+  // Rad etildi: buyurtma qoladi, mijoz to'g'ri chekni qayta yuborishi mumkin
+  await supabase.from("orders").update({ details: { ...d, receipt: null } }).eq("id", id);
+  await mark("❌ Rad etildi");
+  await toCustomer(`⚠️ «${label}» uchun to'lov tasdiqlanmadi: pul kartaga tushmagan yoki chek mos emas (summa aynan ${fmtSum(payAmountOf(order))} bo'lishi kerak).\n\nTo'g'ri chekni shu chatga qayta yuboring yoki biz bilan bog'laning.`);
+  return answer(`#${id} rad etildi, mijozga xabar yuborildi.`);
 }
 
 /* ============ SO'ROV TELEGRAM'DAN KELGANINI TEKSHIRISH ============ */
@@ -655,9 +820,9 @@ module.exports = async (req, res) => {
     } else if (update.message && update.message.successful_payment) {
       await handlePaid(update.message, bot, req);
     } else if (update.callback_query) {
-      await handleCallbackQuery(update.callback_query, bot);
+      await handleCallbackQuery(update.callback_query, bot, req);
     } else if (update.message) {
-      await handleMessage(update.message, bot, host);
+      await handleMessage(update.message, bot, host, req);
     }
 
     res.status(200).json({ ok: true });

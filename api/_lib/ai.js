@@ -25,12 +25,12 @@ const MODEL_NAMES = {
 };
 
 // Modelni egasi Vercel env orqali tanlaydi (kodsiz):
-//   PRES_MODEL — taqdimot (standart: opus)
+//   PRES_MODEL — taqdimot (standart: sonnet — narx 3 500 so'mdan, opus qimmat)
 //   TEXT_MODEL — mustaqil ish, referat, maqola, test va boshqalar (standart: sonnet)
 //   CHAT_MODEL — botdagi AI suhbat (standart: sonnet)
 // Qiymat: "opus" yoki "sonnet". Noto'g'ri qiymat bo'lsa — standart model.
 const MODELS = { opus: "claude-opus-5-5", sonnet: "claude-sonnet-5-5" };
-const DEFAULTS = { PRES_MODEL: "opus", TEXT_MODEL: "sonnet", CHAT_MODEL: "sonnet" };
+const DEFAULTS = { PRES_MODEL: "sonnet", TEXT_MODEL: "sonnet", CHAT_MODEL: "sonnet" };
 function modelChoice(env) {
   const v = String(process.env[env] || "").trim().toLowerCase();
   const key = MODELS[v] ? v : Object.keys(MODELS).find((k) => MODELS[k] === v);

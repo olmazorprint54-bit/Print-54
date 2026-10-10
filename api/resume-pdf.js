@@ -140,7 +140,7 @@ async function reportCost(order, ai) {
   const f = order.details.fields || {};
   await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 referal bonusi (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
+    text: `🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 referal bonusi (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
   }).catch((e) => console.error(e));
 }
 

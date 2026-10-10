@@ -102,6 +102,17 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Kartaga to'lab chek yuborgan — egasi tekshirmoqda, bekor qilinmaydi
+    const d = order.details || {};
+    if (d.spent && !d.awaitingPayment) {
+      res.status(409).json({ ok: false, error: "Buyurtma balansdan to'langan va AI tayyorlamoqda — bekor qilib bo'lmaydi." });
+      return;
+    }
+    if (d.awaitingPayment && d.payMethod === "card" && d.receipt) {
+      res.status(409).json({ ok: false, error: "Chek yuborilgan — to'lov tekshirilmoqda. Savol bo'lsa, biz bilan bog'laning." });
+      return;
+    }
+
     const { error: updateError } = await supabase
       .from("orders")
       .update({ status: "cancelled" })
