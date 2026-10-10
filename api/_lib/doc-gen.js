@@ -7,7 +7,7 @@
 // Canva dizaynlari (dars ishlanma, krossvord) hozircha qo'lda.
 // ---------------------------------------------------------------
 
-const { askJson, hasKey } = require("./ai");
+const { askJson, askText, hasKey } = require("./ai");
 const SRC = require("./sources");
 
 const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
@@ -564,8 +564,82 @@ Return:
 
 /* =================== KURS ISHI =================== */
 // 30–40 bet: 2–3 bob, MUNDARIJA (sahifa raqamlari bilan), adabiyotga havolalar sahifa
-// ostida (snoska), sahifa raqami pastda o'rtada — titulda yo'q, 2-sahifadan (doc-render.js)
-async function generateKurs(f) {
+// ostida (snoska — bir bo'limda 3 tagacha), sahifa raqami pastda o'rtada — titulda yo'q,
+// 2-sahifadan (doc-render.js). Internetdan so'nggi statistika (veb-qidiruv), amaliy bobda
+// jadvallar va haqiqiy raqamli grafik (tools.png — Chrome orqali rasm).
+const WORDS_PER_PAGE = 290; // Times New Roman 14, 1,5 interval, 3/1,5/2/2 sm
+const UNDERSHOOT = 1.25;    // model odatda so'ralgandan ~20% kam yozadi
+const CHART = obj({ title: STR, kind: { type: "string", enum: ["bar", "line"] }, unit: STR, labels: STRS, values: { type: "array", items: { type: "number" } }, source: STR });
+const TABLE = obj({ title: STR, head: STRS, rows: { type: "array", items: STRS }, source: STR });
+
+// Internetdan tadqiqot: rasmiy statistika va manbalar (veb-qidiruv). Ishlamasa — bo'sh.
+async function research(ctx, lang, year) {
+  try {
+    const r = await askText({
+      model: MODEL(), effort: "medium", maxTokens: 6000,
+      tools: [{ type: "web_search_20260209", name: "web_search", max_uses: 5 }],
+      system: "You are a careful research assistant for a university course work in Uzbekistan. Use web search to find verifiable, up-to-date facts. Never invent numbers.",
+      messages: [{ role: "user", content: `${ctx}
+
+Search the web and collect material for this course work:
+1. Official statistics on the topic for Uzbekistan for the last 4–6 years (stat.uz, cbu.uz, gov.uz, ministries, World Bank / IMF if needed): give exact figures with year and unit — at least one time series (4–6 years) that can be shown as a chart and data for 1–2 tables.
+2. Relevant laws, decrees and state programmes (lex.uz) with number and date.
+3. A few key facts or definitions from reliable sources.
+
+Answer in ${lang}. Format exactly:
+NOTES:
+- <fact with figures> (Manba: <organisation>, <year>, <URL>)
+...
+REFERENCES:
+<one reference per line in bibliographic format for each website or document you used, e.g. "O'zbekiston Respublikasi Prezidenti va Statistika agentligi. Rasmiy statistik ma'lumotlar. [Elektron resurs]. URL: https://stat.uz (murojaat sanasi: ${year})">` }],
+    });
+    const [notes, refs = ""] = r.text.split(/^\s*REFERENCES:\s*$/im);
+    return {
+      notes: notes.replace(/^\s*NOTES:\s*/i, "").trim().slice(0, 12000),
+      refs: refs.split("\n").map((x) => clean(x.replace(/^\s*[-\d.)]+\s*/, ""), 400)).filter((x) => x.length > 15).slice(0, 6),
+      ai: r,
+    };
+  } catch (e) {
+    console.error("Tadqiqot (veb-qidiruv):", e.message);
+    return { notes: "", refs: [], ai: null };
+  }
+}
+
+// Grafik (SVG -> PNG): ustunli yoki chiziqli, 760×430
+function chartHtml(c) {
+  const W = 760, H = 430, L = 70, R = 20, T = 30, B = 70;
+  const vals = c.values.map(Number);
+  // o'q: yaxlit qadam (1, 2, 2.5, 5 × 10^n)
+  const raw = (Math.max(...vals) * 1.1 || 1) / 4;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const stepV = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((x) => x >= raw);
+  const ticks = Math.max(1, Math.ceil((Math.max(...vals) * 1.1 || 1) / stepV));
+  const max = stepV * ticks;
+  const step = (W - L - R) / vals.length;
+  const y = (v) => T + (H - T - B) * (1 - v / max);
+  const fmt = (v) => (Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("ru-RU") : String(Math.round(v * 10) / 10));
+  const grid = Array.from({ length: ticks + 1 }, (_, i) => stepV * i).map((v) => `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${L - 8}" y="${y(v) + 4}" text-anchor="end" font-size="13" fill="#555">${fmt(v)}</text>`).join("");
+  const lab = c.labels.map((l, i) => `<text x="${L + step * (i + 0.5)}" y="${H - B + 22}" text-anchor="middle" font-size="14" fill="#222">${String(l).slice(0, 14).replace(/[<&]/g, "")}</text>`).join("");
+  const marks = c.kind === "line"
+    ? `<polyline fill="none" stroke="#1f4e9c" stroke-width="3" points="${vals.map((v, i) => `${L + step * (i + 0.5)},${y(v)}`).join(" ")}"/>` + vals.map((v, i) => `<circle cx="${L + step * (i + 0.5)}" cy="${y(v)}" r="5" fill="#1f4e9c"/><text x="${L + step * (i + 0.5)}" y="${y(v) - 12}" text-anchor="middle" font-size="13" font-weight="700">${fmt(v)}</text>`).join("")
+    : vals.map((v, i) => `<rect x="${L + step * i + step * 0.18}" y="${y(v)}" width="${step * 0.64}" height="${H - B - y(v)}" fill="#2f5fb3"/><text x="${L + step * (i + 0.5)}" y="${y(v) - 8}" text-anchor="middle" font-size="13" font-weight="700">${fmt(v)}</text>`).join("");
+  return `<!doctype html><html><body style="margin:0;background:#fff;font-family:'Times New Roman',Tinos,serif"><svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+    <rect width="${W}" height="${H}" fill="#fff"/>${grid}<line x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}" stroke="#333"/>${marks}${lab}
+    <text x="${L}" y="18" font-size="13" fill="#555">${String(c.unit || "").slice(0, 40).replace(/[<&]/g, "")}</text></svg></body></html>`;
+}
+const okChart = (c) => c && Array.isArray(c.labels) && Array.isArray(c.values) && c.labels.length >= 3 && c.labels.length <= 10 && c.labels.length === c.values.length && c.values.every((v) => Number.isFinite(Number(v)) && Number(v) >= 0) && c.values.some((v) => Number(v) > 0);
+const okTable = (t) => t && Array.isArray(t.head) && t.head.length >= 2 && t.head.length <= 6 && Array.isArray(t.rows) && t.rows.length >= 2 && t.rows.every((r) => Array.isArray(r) && r.length === t.head.length);
+
+// Snoskalar: bo'limda ko'pi bilan `max` ta, bir paragrafda bittadan; ortig'i olib tashlanadi
+function limitCites(paragraphs, max) {
+  let used = 0;
+  return paragraphs.map((p) => {
+    let inPara = 0;
+    return p.replace(/\s?\[(\d{1,2})\]/g, (m) => (used < max && inPara < 1 ? ((used += 1), (inPara += 1), m) : ""));
+  });
+}
+
+async function generateKurs(f, tools = {}) {
   const d = paperData("kurs", f);
   d.pages = clamp(parseInt(f.pages, 10), 30, MAX_PAGES.kurs, 30);
   if (!LEVELS[f.level]) d.level = "bachelor";
@@ -573,50 +647,67 @@ async function generateKurs(f) {
   const lang = LANG_NAMES[d.lang];
   const nCh = d.pages >= 36 ? 3 : 2;
   const nSec = 3;
-  const words = (d.pages - 4) * 270; // titul, mundarija, adabiyotlar sahifalari chiqariladi
-  const ctx = `Paper type: kurs ishi (university course work, academic style)\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}` + SRC.sourcesBlock(f);
+  const year = new Date().getFullYear();
+  // titul, mundarija, adabiyotlar (~1,5) va jadval/grafiklar (~1,5) sahifasidan tashqari matn
+  const words = Math.round((d.pages - 5) * WORDS_PER_PAGE * UNDERSHOOT);
+  const ctx0 = `Paper type: kurs ishi (university course work, academic style)\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}\nCurrent year: ${year}` + SRC.sourcesBlock(f);
   let cost = null;
 
-  // 1) reja va adabiyotlar (birga) — bo'limlar adabiyotlarga raqam bilan havola qiladi
-  const [outline, refsR] = await Promise.all([
+  // 1) reja, adabiyotlar va internetdan tadqiqot — parallel
+  const [outline, refsR, web] = await Promise.all([
     askJson({
       model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
       schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
-      prompt: `${ctx}\n\nMake the plan of the course work: exactly ${nCh} chapters (the first — theoretical foundations, the last — practical analysis and proposals), each with exactly ${nSec} section titles. Titles are specific, academic and logically ordered. Do not include introduction or conclusion.`,
+      prompt: `${ctx0}\n\nMake the plan of the course work: exactly ${nCh} chapters (the first — theoretical foundations, the last — practical analysis of the current state in Uzbekistan and proposals), each with exactly ${nSec} section titles. Titles are specific, academic and logically ordered. Do not include introduction or conclusion.`,
     }),
     askJson({
       model: MODEL(), system: WRITER, effort: "low", maxTokens: 4000, schema: obj({ references: STRS }),
-      prompt: `${ctx}\n\nList 12–16 references for this course work in standard bibliographic format (author, title, city, publisher, year, number of pages). Start with laws and decrees of the Republic of Uzbekistan if relevant, then textbooks, monographs, journal articles, official websites (lex.uz, stat.uz). Real, well-known sources only — do not invent.`,
+      prompt: `${ctx0}\n\nList 12–15 references for this course work in standard bibliographic format (author, title, city, publisher, year, number of pages). Start with laws and decrees of the Republic of Uzbekistan if relevant, then textbooks, monographs, journal articles. Real, well-known sources only — do not invent.`,
     }),
+    research(ctx0, lang, year),
   ]);
-  cost = addCost(addCost(cost, outline), refsR);
+  cost = addCost(addCost(addCost(cost, outline), refsR), web.ai);
+  const ctx = ctx0 + (web.notes ? `\n\nUp-to-date facts found on the internet (prefer them to memory; give figures with their year):\n<research>\n${web.notes}\n</research>` : "") +
+    "\nIf the customer's sources or these facts are not enough, use your own reliable knowledge.";
   const chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
-  const refs = SRC.mergeRefs(f, refsR.data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 18);
+  const refs = SRC.mergeRefs(f, [...(refsR.data.references || []), ...web.refs]).map((x) => clean(x, 400)).filter(Boolean).slice(0, 20);
   const planText = chapters.map((c, i) => `${i + 1}-${t.ch}. ${c.title}\n${c.sections.map((s, j) => `  ${i + 1}.${j + 1}. ${s}`).join("\n")}`).join("\n");
-  const cite = `\n\nSources of the work (numbered):\n${refs.map((r, i) => `[${i + 1}] ${r}`).join("\n")}\n\nAfter a sentence that uses a fact, figure, definition or idea from one of these sources, put its number in square brackets, for example: "... samaradorlik oshadi [3]." Cite 2–4 times in this text, only these numbers; do not invent pages or other sources.`;
-  const introW = Math.round(words * 0.08);
-  const conclW = Math.round(words * 0.07);
-  const secW = Math.max(400, Math.round((words - introW - conclW) / (nCh * nSec)));
+  const cite = (n) => `\n\nSources of the work (numbered):\n${refs.map((r, i) => `[${i + 1}] ${r}`).join("\n")}\n\nWhere a fact, figure, definition or quotation comes from one of these sources, put its number in square brackets after the sentence, e.g. "... samaradorlik oshadi [3]." Cite ${n} in this whole text — NOT in every paragraph, at most once per paragraph, only these numbers.`;
+  const introW = Math.round(words * 0.07);
+  const conclW = Math.round(words * 0.06);
+  const secW = Math.round((words - introW - conclW) / (nCh * nSec));
+  const paraN = (w) => Math.max(3, Math.round(w / 130));
+  const body = (w) => `Write exactly ${paraN(w)} paragraphs, each 110–150 words (about ${w} words in total).`;
+
+  // Jadval va grafiklar: amaliy (oxirgi) bobning 1- va 2-bo'limida; 3 bob bo'lsa — 2-bobda ham grafik
+  const last = chapters.length - 1;
+  const visuals = new Map([[`${last}.0`, { table: true, chart: true }], [`${last}.1`, { table: true }], ...(nCh === 3 ? [[`1.0`, { chart: true }]] : [])]);
 
   // 2) matn (parallel)
   const PARAS = { type: "array", items: STR };
   const tasks = [() => askJson({
     model: MODEL(), system: WRITER, effort: "low", maxTokens: 6000, schema: obj({ paragraphs: PARAS }),
-    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the INTRODUCTION of the course work (about ${introW} words): relevance of the topic, degree of study, object and subject, aim and tasks, research methods, structure of the work.${cite}`,
+    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the INTRODUCTION of the course work. ${body(introW)} Cover: relevance of the topic, degree of study, object and subject, aim and tasks, research methods, structure of the work.${cite("1–2 times")}`,
   })];
-  chapters.forEach((c) => c.sections.forEach((s) => tasks.push(() => askJson({
-    model: MODEL(), system: WRITER, effort: "low", maxTokens: 9000, schema: obj({ paragraphs: PARAS }),
-    prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}" (chapter "${c.title}"): about ${secW} words, academic style with definitions, analysis, examples${/tahlil|analiz|amaliy|practical|analysis/i.test(c.title) ? ", figures and concrete proposals" : ""}. Do not repeat what other sections cover; do not write the section title.${cite}`,
-  }))));
+  chapters.forEach((c, i) => c.sections.forEach((s, j) => {
+    const v = visuals.get(`${i}.${j}`) || {};
+    const schema = obj({ paragraphs: PARAS, ...(v.table ? { table: TABLE } : {}), ...(v.chart ? { chart: CHART } : {}) });
+    tasks.push(() => askJson({
+      model: MODEL(), system: WRITER, effort: "low", maxTokens: 12000, schema,
+      prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}" (chapter "${c.title}"). ${body(secW)} Academic style with definitions, analysis and examples${i === last ? ", concrete figures for Uzbekistan and practical proposals" : ""}. Do not repeat what other sections cover; do not write the section title.${
+        v.table ? `\n\nAlso return "table": a compact table (2–6 columns, 3–8 rows) relevant to this section — use real figures with years from the research facts (or a clear qualitative comparison if exact figures are unknown); "source" — where the data comes from. In the text refer to it simply as "jadvalda" — its number and caption are added automatically.` : ""}${
+        v.chart ? `\n\nAlso return "chart": data for one chart (bar or line) — ONLY real figures for 4–8 years or categories from the research facts, with "unit" (e.g. "mlrd so'm", "%") and "source". If there are no real figures, return empty labels and values.` : ""}${cite("1–3 times")}`,
+    }));
+  }));
   tasks.push(() => askJson({
     model: MODEL(), system: WRITER, effort: "low", maxTokens: 5000, schema: obj({ paragraphs: PARAS }),
-    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the CONCLUSION of the course work (about ${conclW} words): main findings of each chapter, conclusions and practical proposals.`,
+    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the CONCLUSION of the course work. ${body(conclW)} Main findings of each chapter, conclusions and practical proposals. No citations.`,
   }));
-  const results = await pool(tasks, 4);
+  const results = await pool(tasks, 6);
   results.forEach((r) => { cost = addCost(cost, r); });
 
   // 3) hujjat
-  const paras = (r) => (r.data.paragraphs || []).map((p) => clean(p, 5000)).filter(Boolean).map((text) => ({ t: "p", text }));
+  const paras = (r, max) => limitCites((r.data.paragraphs || []).map((p) => clean(p, 5000)).filter(Boolean), max).map((text) => ({ t: "p", text }));
   let titul = null;
   if (d.titul) {
     try {
@@ -626,16 +717,41 @@ async function generateKurs(f) {
       }
     } catch (e) { console.error("Titul:", e.message); }
   }
-  let k = 0;
+  let k = 0, nTable = 0, nFig = 0;
   const blocks = titul ? [] : [titlePage(d)];
   blocks.push({ t: "toc", title: t.toc }, { t: "pagebreak" });
-  blocks.push({ t: "h1", text: t.intro.toUpperCase() }, ...paras(results[k++]), { t: "pagebreak" });
-  chapters.forEach((c, i) => {
+  blocks.push({ t: "h1", text: t.intro.toUpperCase() }, ...paras(results[k++], 2), { t: "pagebreak" });
+  for (let i = 0; i < chapters.length; i++) {
+    const c = chapters[i];
     blocks.push({ t: "h1", text: `${i + 1}-${t.ch.toUpperCase()}. ${c.title}` });
-    c.sections.forEach((s, j) => blocks.push({ t: "h2", text: `${i + 1}.${j + 1}. ${s}` }, ...paras(results[k++])));
+    for (let j = 0; j < c.sections.length; j++) {
+      const r = results[k++];
+      const ps = paras(r, 3);
+      const at = Math.min(2, ps.length);
+      const extra = [];
+      if (okTable(r.data.table)) {
+        const tb = r.data.table;
+        nTable += 1;
+        extra.push({ t: "p", text: `${nTable}-jadval`, align: "right", italic: true },
+          { t: "p", text: clean(tb.title, 200), align: "center", bold: true },
+          { t: "table", head: tb.head.map((x) => clean(x, 80)), rows: tb.rows.slice(0, 10).map((row) => row.map((x) => clean(x, 120))) });
+        if (clean(tb.source)) extra.push({ t: "p", text: `Manba: ${clean(tb.source, 300)}`, italic: true, small: true, indent: false });
+      }
+      if (okChart(r.data.chart) && tools.png) {
+        try {
+          const ch = r.data.chart;
+          const png = await tools.png(chartHtml(ch));
+          nFig += 1;
+          extra.push({ t: "image", data: png, w: 600, h: 340 },
+            { t: "p", text: `${nFig}-rasm. ${clean(ch.title, 200)}`, align: "center", bold: true });
+          if (clean(ch.source)) extra.push({ t: "p", text: `Manba: ${clean(ch.source, 300)}`, align: "center", italic: true, small: true });
+        } catch (e) { console.error("Grafik:", e.message); }
+      }
+      blocks.push({ t: "h2", text: `${i + 1}.${j + 1}. ${c.sections[j]}` }, ...ps.slice(0, at), ...extra, ...ps.slice(at));
+    }
     blocks.push({ t: "pagebreak" });
-  });
-  blocks.push({ t: "h1", text: t.concl.toUpperCase() }, ...paras(results[k++]), { t: "pagebreak" });
+  }
+  blocks.push({ t: "h1", text: t.concl.toUpperCase() }, ...paras(results[k++], 0), { t: "pagebreak" });
   blocks.push({ t: "h1", text: t.refs.toUpperCase() }, { t: "list", ordered: true, items: refs });
   return {
     blocks,

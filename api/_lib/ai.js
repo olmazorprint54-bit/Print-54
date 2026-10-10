@@ -77,20 +77,33 @@ async function askJson({ model, system, prompt, content, schema, maxTokens = 320
 }
 
 // Oddiy matnli javob (botdagi suhbat): messages — [{role, content}]
-async function askText({ model, system, messages, maxTokens = 3000, effort = "low" }) {
-  const stream = getClient().beta.messages.stream({
-    model,
-    max_tokens: maxTokens,
-    betas: ["server-side-fallback-2026-07-01"],
-    fallbacks: "default",
-    output_config: { effort },
-    system,
-    messages,
-  });
-  const msg = await stream.finalMessage();
-  if (msg.stop_reason === "refusal") throw Object.assign(new Error("Bu savolga javob bera olmayman."), { user: true });
-  const text = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("");
-  return { text, model: msg.model, usage: { input: msg.usage.input_tokens || 0, output: msg.usage.output_tokens || 0 }, usd: costOf(msg.model, msg.usage) };
+// tools — server vositalari (masalan veb-qidiruv); pause_turn bo'lsa davom ettiriladi.
+// Veb-qidiruv narxi: 1000 ta so'rov — $10
+async function askText({ model, system, messages, maxTokens = 3000, effort = "low", tools }) {
+  const msgs = [...messages];
+  let text = "", input = 0, output = 0, usd = 0, last = null;
+  for (let turn = 0; turn < 4; turn++) {
+    const stream = getClient().beta.messages.stream({
+      model,
+      max_tokens: maxTokens,
+      betas: ["server-side-fallback-2026-07-01"],
+      fallbacks: "default",
+      output_config: { effort },
+      system,
+      messages: msgs,
+      ...(tools ? { tools } : {}),
+    });
+    const msg = await stream.finalMessage();
+    last = msg;
+    if (msg.stop_reason === "refusal") throw Object.assign(new Error("Bu savolga javob bera olmayman."), { user: true });
+    text += msg.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+    input += msg.usage.input_tokens || 0;
+    output += msg.usage.output_tokens || 0;
+    usd += costOf(msg.model, msg.usage) + ((msg.usage.server_tool_use && msg.usage.server_tool_use.web_search_requests) || 0) * 0.01;
+    if (msg.stop_reason !== "pause_turn") break;
+    msgs.push({ role: "assistant", content: msg.content });
+  }
+  return { text, model: last.model, usage: { input, output }, usd };
 }
 
 // Egaga hisobot uchun: "Sonnet 5.5 · 1.2K + 4.5K token · $0.047 (≈ 600 so'm)"
