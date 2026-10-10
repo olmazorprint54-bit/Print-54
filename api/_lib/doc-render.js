@@ -9,6 +9,7 @@
 //   { t: "cards", items: [{ title, text }] }   — kesiladigan kartochkalar
 //   { t: "grid", cells: [[null | { n, ch }]], show }  — krossvord to'ri
 //   { t: "toc", title }   — mundarija (sahifa raqamlari bilan; Word'da)
+//   { t: "image", data: <PNG Buffer>, w, h }  — rasm/grafik (piksel, 96 dpi)
 //   { t: "pagebreak" }
 // render: toc, pageNumbers (pastda o'rtada), titleFirst (1-sahifa — titul, raqamsiz),
 //   footnotes: [adabiyotlar] — matndagi [3] kabi belgilar sahifa ostidagi snoskaga aylanadi
@@ -18,7 +19,7 @@
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType,
   AlignmentType, BorderStyle, PageBreak, HeadingLevel, VerticalAlign,
-  TableOfContents, FootnoteReferenceRun, Footer, PageNumber,
+  TableOfContents, FootnoteReferenceRun, Footer, PageNumber, ImageRun,
 } = require("docx");
 // Mundarijadagi sahifa raqamlarini hujjat yozilayotganda hisoblaydi (Word ochilganda yana yangilaydi)
 let estimatePageNumbers = null;
@@ -35,6 +36,7 @@ function blocksToHtml(blocks, o = {}) {
     switch (b.t) {
       case "title":
         return `<section class="title">${b.lines.map((l) => `<div style="text-align:${l.align || "center"};font-size:${l.size || size}pt;font-weight:${l.bold ? 700 : 400}${l.gap ? `;margin-top:${l.gap}mm` : ""}">${esc(l.text)}</div>`).join("")}</section>`;
+      case "image": return `<div style="text-align:center;margin:3mm 0"><img src="data:image/png;base64,${Buffer.from(b.data).toString("base64")}" style="width:${b.w * 0.75}pt;height:${b.h * 0.75}pt"></div>`;
       case "toc": return `<h1>${esc(b.title)}</h1>${blocks.filter((x) => x.t === "h1" || x.t === "h2").map((x) => `<p style="margin:0 0 1mm ${x.t === "h2" ? "8mm" : "0"};text-align:left">${esc(x.text)}</p>`).join("")}<div class="pb"></div>`;
       case "h1": return `<h1>${esc(b.text)}</h1>`;
       case "h2": return `<h2>${esc(b.text)}</h2>`;
@@ -130,6 +132,9 @@ async function blocksToDocx(blocks, o = {}) {
         if (pb) push(new Paragraph({ children: [new PageBreak()] }));
         b.lines.forEach((l, i) => push(para(l.text, { align: l.align || "center", size: (l.size || o.size || 14) * 2, bold: l.bold, before: Math.round((l.gap || 0) * 56.7), line: 276 })));
         breakNext = true;
+        break;
+      case "image":
+        push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 }, keepNext: true, children: [new ImageRun({ type: "png", data: b.data, transformation: { width: b.w, height: b.h } })] }));
         break;
       case "toc":
         push(para(b.title, { align: "center", bold: true, size: SIZE + 2, after: 240 }));

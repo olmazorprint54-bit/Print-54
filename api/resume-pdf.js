@@ -70,12 +70,14 @@ async function renderPdf(html, kind = "pdf") {
   const page = await browser.newPage();
   try {
     if (kind === "png") await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+    if (kind === "chart") await page.setViewport({ width: 760, height: 430, deviceScaleFactor: 2 }); // kurs ishi grafigi
     await page.setContent(html, { waitUntil: "networkidle0", timeout: 25000 });
     await page.evaluate(async () => {
       await document.fonts.ready;
       if (window.__fit) window.__fit();
       await Promise.all([...document.images].map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
     });
+    if (kind === "chart") return Buffer.from(await page.screenshot({ type: "png", clip: { x: 0, y: 0, width: 760, height: 430 } }));
     if (kind === "png") {
       await page.addStyleTag({ content: "body{padding:12mm 15mm} .pb ~ *{display:none!important} .pb{display:none}" });
       return Buffer.from(await page.screenshot({ type: "png", fullPage: true }));
@@ -274,7 +276,7 @@ module.exports = async (req, res) => {
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
     } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
-      const doc = await GENERATORS[order.service](fields);
+      const doc = await GENERATORS[order.service](fields, { png: (html) => renderPdf(html, "chart") });
       ai = doc.ai;
       const fmt = order.details.fields.format;
       // universitetning tayyor tituli (Word sahifasi) — hujjat boshiga
