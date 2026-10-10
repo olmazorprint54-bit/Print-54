@@ -426,6 +426,16 @@
             </label>
           </span>
         </div>
+        <div class="receipt-line" id="paperBalLine" style="display:none; color:#4FA8FF; align-items:center;">
+          <span>💰 Balansdan</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span id="paperBalAmount"></span>
+            <label class="switch">
+              <input type="checkbox" id="paperBalToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="paperTotal">0 so'm</span></div>
       </div>
       <button class="order-btn" data-order="paper">Buyurtma berish</button>
@@ -480,6 +490,16 @@
             </label>
           </span>
         </div>
+        <div class="receipt-line" id="bookBalLine" style="display:none; color:#4FA8FF; align-items:center;">
+          <span>💰 Balansdan</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span id="bookBalAmount"></span>
+            <label class="switch">
+              <input type="checkbox" id="bookBalToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="bookTotal">0 so'm</span></div>
       </div>
       <button class="order-btn" data-order="book">Buyurtma berish</button>
@@ -510,6 +530,16 @@
 
     <section>
       <div class="receipt glass">
+        <div class="receipt-line" id="bindingBalLine" style="display:none; color:#4FA8FF; align-items:center;">
+          <span>💰 Balansdan</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span id="bindingBalAmount"></span>
+            <label class="switch">
+              <input type="checkbox" id="bindingBalToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="receipt-total"><span class="t-label">JAMI</span><span class="t-value" id="bindingTotal">7 000 so'm</span></div>
       </div>
       <button class="order-btn" data-order="binding">Buyurtma berish</button>
@@ -585,6 +615,23 @@ binding: { a4: 7000, a5: 5000 }
    REFERAL / BEPUL VARAQLAR
    ================================================================ */
 let myFreePages = 0;
+// AI xizmatlar balansi — chop etish uchun ham ishlatsa bo'ladi (bepul varaqlardan keyin)
+let myBalance = 0;
+const balUse = { paper: true, book: true, binding: true };
+function balancePart(kind, total){
+  const used = balUse[kind] ? Math.max(0, Math.min(myBalance, total)) : 0;
+  return { used, pay: total - used };
+}
+function showBalance(kind, total){
+  const line = document.getElementById(kind + 'BalLine');
+  const r = balancePart(kind, total);
+  if (myBalance > 0 && total > 0) {
+    line.style.display = 'flex';
+    document.getElementById(kind + 'BalToggle').checked = balUse[kind];
+    document.getElementById(kind + 'BalAmount').textContent = r.used > 0 ? '-' + fmt(r.used) : '';
+  } else line.style.display = 'none';
+  return r.pay;
+}
 
 async function refreshMyRewards(){
   try{
@@ -598,6 +645,8 @@ async function refreshMyRewards(){
     const data = await res.json();
     if(!data.ok) return;
     myFreePages = data.free_pages || 0;
+    myBalance = Math.max(0, data.balance || 0);
+    renderBinding();
     if (data.balance != null) {
       document.getElementById('balSum').textContent = fmt(data.balance);
       balMin = data.minTopup || 5000;
@@ -809,6 +858,7 @@ function renderPaper(){
     document.getElementById('paperLineDesc').textContent = '—';
     document.getElementById('paperLineQty').textContent = `${qty} varaq`;
     document.getElementById('paperFreeLine').style.display = 'none';
+    document.getElementById('paperBalLine').style.display = 'none';
     document.getElementById('paperTotal').textContent = fmt(0);
     if (orderBtn) orderBtn.disabled = true;
     return;
@@ -839,7 +889,7 @@ function renderPaper(){
     freeLineEl.style.display = 'none';
   }
 
-  document.getElementById('paperTotal').textContent = fmt(finalTotal);
+  document.getElementById('paperTotal').textContent = fmt(showBalance('paper', finalTotal));
 }
 /* ================================================================
    BOOK TAB LOGIC
@@ -885,6 +935,7 @@ function renderBook(){
     document.getElementById('bookLinePages').textContent = `${qty} bet`;
     document.getElementById('bookLineCover').textContent = fmt(0);
     document.getElementById('bookFreeLine').style.display = 'none';
+    document.getElementById('bookBalLine').style.display = 'none';
     document.getElementById('bookTotal').textContent = fmt(0);
     if (orderBtn) orderBtn.disabled = true;
     return;
@@ -918,7 +969,7 @@ function renderBook(){
     freeLineEl.style.display = 'none';
   }
 
-  document.getElementById('bookTotal').textContent = fmt(finalTotal);
+  document.getElementById('bookTotal').textContent = fmt(showBalance('book', finalTotal));
 }
 
 /* ================================================================
@@ -942,14 +993,19 @@ function renderBinding(){
 
   if (!bindingState.format) {
     document.getElementById('bindingTotal').textContent = fmt(0);
+    document.getElementById('bindingBalLine').style.display = 'none';
     if (orderBtn) orderBtn.disabled = true;
     return;
   }
   if (orderBtn) orderBtn.disabled = false;
 
   const total = PRICING.binding[bindingState.format] * bindingState.qty;
-  document.getElementById('bindingTotal').textContent = fmt(total);
+  document.getElementById('bindingTotal').textContent = fmt(showBalance('binding', total));
 }
+['paper', 'book', 'binding'].forEach(k => document.getElementById(k + 'BalToggle').addEventListener('change', e => {
+  balUse[k] = e.target.checked;
+  if (k === 'paper') renderPaper(); else if (k === 'book') renderBook(); else renderBinding();
+}));
 /* ================================================================
    BUYURTMA YUBORISH
    ================================================================ */
@@ -1000,7 +1056,8 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
       const freeUsed = paperState.useFree ? Math.min(myFreePages, paperState.qty) : 0;
       const discount = Math.round(freeUsed * (rawTotal / paperState.qty));
       const finalTotal = Math.max(0, rawTotal - discount);
-      payload = { service:'paper', color: paperState.color, side: paperState.side, qty: paperState.qty, freePagesUsed: freeUsed, total: finalTotal };
+      const bp = balancePart('paper', finalTotal);
+      payload = { service:'paper', color: paperState.color, side: paperState.side, qty: paperState.qty, freePagesUsed: freeUsed, total: bp.pay, balanceUsed: bp.used };
     } else if (type === 'book'){
       if (!bookState.format || !bookState.color) return;
       const { total: rawTotal } = calcBookTotal(bookState.format, bookState.color, bookState.qty);
@@ -1011,10 +1068,12 @@ document.querySelectorAll('.order-btn').forEach(btn=>{
       const freeBookPages = Math.min(bookState.qty, sheetsUsed * pagesPerSheet);
       const discount = Math.round(freeBookPages * perPage);
       const finalTotal = Math.max(0, rawTotal - discount);
-      payload = { service:'book', format: bookState.format, color: bookState.color, qty: bookState.qty, freePagesUsed: sheetsUsed, total: finalTotal };
+      const bp = balancePart('book', finalTotal);
+      payload = { service:'book', format: bookState.format, color: bookState.color, qty: bookState.qty, freePagesUsed: sheetsUsed, total: bp.pay, balanceUsed: bp.used };
     } else {
       if (!bindingState.format) return;
-      payload = { service:'binding', format: bindingState.format, qty: bindingState.qty, total: PRICING.binding[bindingState.format] * bindingState.qty };
+      const bp = balancePart('binding', PRICING.binding[bindingState.format] * bindingState.qty);
+      payload = { service:'binding', format: bindingState.format, qty: bindingState.qty, total: bp.pay, balanceUsed: bp.used };
     }
     sendOrder(payload);
   });
