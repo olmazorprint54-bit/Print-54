@@ -68,20 +68,23 @@ function cardText(card, order, amount, balance = 0) {
   const onlyTopup = order.service === "topup";
   const extra = amount - (Number(order.details && order.details.topup) || amount);
   return [
-    `💳 <b>Hisobni to'ldirish: ${fmtSum(amount)}</b>`,
+    "💳 <b>Hisobni to'ldirish</b>",
+    "",
+    `💰 To'lov summasi: <b>${fmtSum(amount)}</b>`,
     ...(onlyTopup
-      ? [`Balansingiz: ${fmtSum(balance)} → to'lovdan keyin ${fmtSum(left)}. Buyurtmalar narxi balansdan avtomatik yechiladi.`]
-      : [`${escHtml(title)}${topic ? ` — «${escHtml(topic)}»` : ""}: ${fmtSum(price)}${balance > 0 ? ` (balansda ${fmtSum(balance)} bor)` : ""}`,
-        ...(left > 0 ? [`Qolgan ${fmtSum(left)} balansingizda qoladi — keyingi buyurtmalar undan yechiladi.`] : [])]),
+      ? [`👛 Balans: ${fmtSum(balance)} → <b>${fmtSum(left)}</b>`]
+      : [`🧾 ${escHtml(title)}${topic ? ` «${escHtml(topic)}»` : ""}: ${fmtSum(price)}`,
+        `👛 Balans: ${fmtSum(balance)} → to'lovdan keyin <b>${fmtSum(Math.max(0, left))}</b>`]),
     "",
-    `Karta: <code>${card.number}</code>`,
-    ...(card.name ? [`Egasi: ${escHtml(card.name)}`] : []),
+    `🏦 Karta: <code>${card.number}</code>`,
+    ...(card.name ? [`👤 Egasi: ${escHtml(card.name)}`] : []),
+    "<i>(karta raqamini bossangiz — nusxa olinadi)</i>",
     "",
-    `1) Shu kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi orqali).`,
-    ...(extra > 0 ? [`ℹ️ +${extra} so'm — to'lovingizni aniq tanib olish uchun qo'shildi, komissiya emas — u ham balansingizga tushadi.`] : []),
-    "2) To'lov chekini (skrinshot yoki PDF) shu chatga yuboring.",
-    "",
-    onlyTopup ? "Chek avtomatik tekshiriladi va balansingiz to'ldiriladi." : "Chek avtomatik tekshiriladi, so'ng balans to'ldiriladi, AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
+    "📌 <b>Qanday to'lanadi:</b>",
+    `1️⃣ Kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi)`,
+    "2️⃣ To'lov chekini (skrinshot yoki PDF) shu chatga yuboring",
+    onlyTopup ? "3️⃣ Chek avtomatik tekshiriladi — balansingiz to'ldiriladi ✅" : "3️⃣ Chek avtomatik tekshiriladi — AI ishni boshlaydi, tayyor fayl shu yerga keladi ✅",
+    ...(extra > 0 ? ["", `<i>ℹ️ +${extra} so'm — to'lovingizni aniq tanib olish uchun. Komissiya emas, u ham balansingizga tushadi.</i>`] : []),
   ].join("\n");
 }
 
