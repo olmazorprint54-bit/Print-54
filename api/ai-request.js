@@ -21,7 +21,7 @@ const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
 const { uniqueAmount } = require("./_lib/receipt");
-const { balanceOf, topupNeed, MIN_TOPUP, MAX_TOPUP } = require("./_lib/balance");
+const { walletOf, topupNeed, MAX_TOPUP } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
@@ -215,12 +215,13 @@ async function topupOnly(body, res) {
     return;
   }
   const amount = Math.round(Number(body.topup) || 0);
-  if (amount < MIN_TOPUP || amount > MAX_TOPUP) {
-    res.status(400).json({ ok: false, error: `To'ldirish summasi ${MIN_TOPUP.toLocaleString("ru-RU")} so'mdan kam bo'lmasin.` });
+  const u = auth.user, bot = auth.bot;
+  const w = await walletOf(u.id);
+  const bal = w.balance;
+  if (amount < w.minTopup || amount > MAX_TOPUP) {
+    res.status(400).json({ ok: false, error: amount > MAX_TOPUP ? "Summa juda katta." : `To'ldirish summasi ${w.minTopup.toLocaleString("ru-RU")} so'mdan kam bo'lmasin.` });
     return;
   }
-  const u = auth.user, bot = auth.bot;
-  const bal = await balanceOf(u.id);
   const payAmount = await uniqueAmount(amount).catch(() => amount);
   const details = { bot, topic: "Hisobni to'ldirish", awaitingPayment: true, payMethod: "card", topup: amount, payAmount };
   const { data: row, error } = await supabase
@@ -315,10 +316,11 @@ module.exports = async (req, res) => {
     const cardCfg = mustPay && !payNow ? payCard() : null;
     let card = null, spend = 0, bal = 0;
     if (cardCfg) {
-      bal = await balanceOf(u.id);
+      const w = await walletOf(u.id);
+      bal = w.balance;
       if (bal >= price) spend = price;
       else {
-        const need = topupNeed(price, bal);
+        const need = topupNeed(price, bal, w.minTopup);
         const topup = Math.round(Number(body.topup) || 0);
         if (!topup) {
           res.status(200).json({ ok: true, needTopup: { price, balance: bal, ...need } });

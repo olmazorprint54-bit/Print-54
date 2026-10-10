@@ -214,16 +214,30 @@
       const data = await api("/api/my-rewards");
       if (!data.ok || !data.ai) return; // Print 54 loyihasidagi botlarda — referal yo'q
       window.AI_BONUS = data.ai.credits;
-      if (data.balance != null) { $("balCard").hidden = false; $("balSum").textContent = Math.round(data.balance).toLocaleString("ru-RU") + " so'm"; }
+      if (data.balance != null) {
+        $("balCard").hidden = false;
+        $("balSum").textContent = Math.round(data.balance).toLocaleString("ru-RU") + " so'm";
+        balMin = data.minTopup || 5000;
+        $("balMinBtn").dataset.balTop = balMin;
+        $("balMinBtn").textContent = balMin.toLocaleString("ru-RU") + " so'm";
+        $("balCustom").min = balMin;
+      }
       if (window.aiBonusChanged) window.aiBonusChanged();
       showRewards(data.ai);
     } catch (e) {}
   }
-  // Hisobni to'ldirish (buyurtmasiz): karta va noyob summa, chek botga yuboriladi
-  $("balOpts").addEventListener("click", async (e) => {
-    const b = e.target.closest("[data-bal-top]");
-    if (!b || !user) return;
-    const amount = Number(b.dataset.balTop);
+  // Hisobni to'ldirish (buyurtmasiz): karta va noyob summa, chek botga yuboriladi.
+  // Birinchi to'ldirish kamida 5 000, keyingilari kamida 3 000 so'm (server aytadi)
+  let balMin = 5000;
+  $("balMinBtn").addEventListener("click", () => startTopup(balMin));
+  $("balCustomGo").addEventListener("click", () => {
+    const amount = Math.round(Number($("balCustom").value) || 0);
+    if (amount < balMin) { toast(`Kamida ${balMin.toLocaleString("ru-RU")} so'm`); $("balCustom").focus(); return; }
+    if (amount > 1000000) { toast("Summa juda katta"); return; }
+    startTopup(amount);
+  });
+  async function startTopup(amount) {
+    if (!user) return;
     if (!(await confirmAsk(`Hisobni ${amount.toLocaleString("ru-RU")} so'mga to'ldirasizmi?`))) return;
     tick();
     const box = $("balPay");
@@ -246,7 +260,7 @@
       };
       box.querySelector(".bal-go").onclick = () => { if (tg && tg.close) tg.close(); };
     } catch (err) { box.textContent = "Internet aloqasini tekshiring"; }
-  });
+  }
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
   loadRewards();
