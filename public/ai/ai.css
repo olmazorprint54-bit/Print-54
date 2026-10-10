@@ -222,6 +222,7 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-topup-opts{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
 .ai-topup-opts .pill-btn{ font-weight:700; padding:12px 8px; }
 .ai-bal-note b{ color: var(--accent, #4F46E5); }
+.ai-done p.ai-extra-note{ font-size:12px; margin:-6px 0 12px; }
 .ai-card-name{ font-size:13.5px; font-weight:600; margin:0 0 14px; }
 
 /* Referal bonusi — formadagi "Bonusdan foydalanish" qatori */

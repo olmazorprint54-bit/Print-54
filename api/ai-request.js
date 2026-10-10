@@ -246,7 +246,7 @@ async function topupOnly(body, res) {
   }).catch((e) => ({ ok: false, description: String(e) }));
   if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
   else await supabase.from("orders").update({ details: { ...details, payMsg: sent.result.message_id } }).eq("id", row.id);
-  res.status(200).json({ ok: true, orderId: row.id, card: { number: card.number, name: card.name, price: payAmount, balance: bal } });
+  res.status(200).json({ ok: true, orderId: row.id, card: { number: card.number, name: card.name, price: payAmount, topup: amount, balance: bal } });
 }
 
 module.exports = async (req, res) => {
@@ -387,7 +387,7 @@ module.exports = async (req, res) => {
       if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
       else details.payMsg = sent.result.message_id;
       await supabase.from("orders").update({ details }).eq("id", orderId);
-      res.status(200).json({ ok: true, orderId, auto: true, card: { number: card.number, name: card.name, price: details.payAmount, orderPrice: price, balance: bal } });
+      res.status(200).json({ ok: true, orderId, auto: true, card: { number: card.number, name: card.name, price: details.payAmount, topup: card.topup, orderPrice: price, balance: bal } });
       return;
     }
 

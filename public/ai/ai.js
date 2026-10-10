@@ -1091,9 +1091,10 @@
       <div class="ai-done glass">
         <div class="big">💳</div>
         <h3>Hisobni to'ldirish: ${esc(fmt(c.price))}</h3>
-        <p>«${esc(svc.title)}» — ${esc(fmt(c.orderPrice || c.price))}${c.price + (c.balance || 0) - (c.orderPrice || c.price) > 0 ? `, qolgan ${esc(fmt(c.price + (c.balance || 0) - (c.orderPrice || c.price)))} balansingizda qoladi` : ""}. Shu kartaga <b>aynan ${esc(fmt(c.price))}</b> o'tkazing — summa shu to'lov uchun maxsus, yaxlitlamang:</p>
+        <p>«${esc(svc.title)}» — ${esc(fmt(c.orderPrice || c.price))}${c.price + (c.balance || 0) - (c.orderPrice || c.price) > 0 ? `, qolgan ${esc(fmt(c.price + (c.balance || 0) - (c.orderPrice || c.price)))} balansingizda qoladi` : ""}. Shu kartaga <b>aynan ${esc(fmt(c.price))}</b> o'tkazing:</p>
         <div class="ai-card-no" data-copy-card="${esc(c.number.replace(/\s/g, ""))}" role="button" title="Nusxa olish">${esc(c.number)}<span>Nusxa</span></div>
         ${c.name ? `<div class="ai-card-name">${esc(c.name)}</div>` : ""}
+        ${c.topup && c.price > c.topup ? `<p class="ai-extra-note">ℹ️ +${c.price - c.topup} so'm — to'lovingizni aniq tanib olish uchun qo'shildi, komissiya emas — u ham balansingizga tushadi.</p>` : ""}
         <p>So'ng to'lov chekini (skrinshot) <b>botga</b> yuboring — karta raqami bot chatida ham turibdi. Chek avtomatik tekshiriladi, so'ng AI ishni boshlaydi va tayyor fayl botga keladi.</p>
         <button type="button" class="order-btn" data-to-bot="1">Botga o'tish</button>
         <div class="pill-btn glass" data-again="1" style="margin-top:10px;">Yana so'rov qoldirish</div>
