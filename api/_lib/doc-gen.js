@@ -15,16 +15,17 @@ const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic sc
 const AUTO_STYLES = {
   essay: ["otm", "school", "modern"],
   referat: ["otm", "school", "modern"],
+  kurs: ["otm", "modern"],
   article: ["oak", "conf", "modern"],
   lesson: ["table", "techmap", "notes"],
   questions: ["list", "cards"],
   crossword: ["classic", "color"],
 };
-const MAX_PAGES = { essay: 30, referat: 30 }; // 300 soniyalik chegara ichida yozib bo'ladigani
+const MAX_PAGES = { essay: 30, referat: 30, kurs: 40 }; // 300 soniyalik chegara ichida yozib bo'ladigani
 
 const L = {
   uz_lat: {
-    essay: "MUSTAQIL ISH", referat: "REFERAT", subject: "Fan", topic: "Mavzu", did: "Bajardi", group: "Guruh", got: "Qabul qildi",
+    essay: "MUSTAQIL ISH", referat: "REFERAT", kurs: "KURS ISHI", toc: "MUNDARIJA", subject: "Fan", topic: "Mavzu", did: "Bajardi", group: "Guruh", got: "Qabul qildi",
     plan: "Reja", intro: "Kirish", concl: "Xulosa", refs: "Foydalanilgan adabiyotlar", ch: "bob",
     lesson: "Dars ishlanma", grade: "Sinf", type: "Dars turi", time: "Vaqti", teacher: "O'qituvchi", school: "Maktab",
     goals: "Darsning maqsadlari", edu: "Ta'limiy", dev: "Rivojlantiruvchi", up: "Tarbiyaviy", outcomes: "Kutilayotgan natijalar",
@@ -35,7 +36,7 @@ const L = {
     types: { new: "Yangi bilim beruvchi", reinforce: "Mustahkamlash", review: "Takrorlash", control: "Nazorat", mixed: "Aralash" },
   },
   uz_cyr: {
-    essay: "МУСТАҚИЛ ИШ", referat: "РЕФЕРАТ", subject: "Фан", topic: "Мавзу", did: "Бажарди", group: "Гуруҳ", got: "Қабул қилди",
+    essay: "МУСТАҚИЛ ИШ", referat: "РЕФЕРАТ", kurs: "КУРС ИШИ", toc: "МУНДАРИЖА", subject: "Фан", topic: "Мавзу", did: "Бажарди", group: "Гуруҳ", got: "Қабул қилди",
     plan: "Режа", intro: "Кириш", concl: "Хулоса", refs: "Фойдаланилган адабиётлар", ch: "боб",
     lesson: "Дарс ишланма", grade: "Синф", type: "Дарс тури", time: "Вақти", teacher: "Ўқитувчи", school: "Мактаб",
     goals: "Дарснинг мақсадлари", edu: "Таълимий", dev: "Ривожлантирувчи", up: "Тарбиявий", outcomes: "Кутилаётган натижалар",
@@ -46,7 +47,7 @@ const L = {
     types: { new: "Янги билим берувчи", reinforce: "Мустаҳкамлаш", review: "Такрорлаш", control: "Назорат", mixed: "Аралаш" },
   },
   ru: {
-    essay: "САМОСТОЯТЕЛЬНАЯ РАБОТА", referat: "РЕФЕРАТ", subject: "Предмет", topic: "Тема", did: "Выполнил(а)", group: "Группа", got: "Проверил(а)",
+    essay: "САМОСТОЯТЕЛЬНАЯ РАБОТА", referat: "РЕФЕРАТ", kurs: "КУРСОВАЯ РАБОТА", toc: "СОДЕРЖАНИЕ", subject: "Предмет", topic: "Тема", did: "Выполнил(а)", group: "Группа", got: "Проверил(а)",
     plan: "План", intro: "Введение", concl: "Заключение", refs: "Список литературы", ch: "глава",
     lesson: "План урока", grade: "Класс", type: "Тип урока", time: "Время", teacher: "Учитель", school: "Школа",
     goals: "Цели урока", edu: "Образовательная", dev: "Развивающая", up: "Воспитательная", outcomes: "Ожидаемые результаты",
@@ -57,7 +58,7 @@ const L = {
     types: { new: "Изучение нового", reinforce: "Закрепление", review: "Повторение", control: "Контроль", mixed: "Комбинированный" },
   },
   en: {
-    essay: "INDEPENDENT WORK", referat: "REPORT", subject: "Subject", topic: "Topic", did: "Done by", group: "Group", got: "Checked by",
+    essay: "INDEPENDENT WORK", referat: "REPORT", kurs: "COURSE WORK", toc: "CONTENTS", subject: "Subject", topic: "Topic", did: "Done by", group: "Group", got: "Checked by",
     plan: "Contents", intro: "Introduction", concl: "Conclusion", refs: "References", ch: "chapter",
     lesson: "Lesson plan", grade: "Grade", type: "Lesson type", time: "Duration", teacher: "Teacher", school: "School",
     goals: "Lesson objectives", edu: "Educational", dev: "Developmental", up: "Character", outcomes: "Expected outcomes",
@@ -116,7 +117,7 @@ function paperData(service, f) {
     service, lang,
     topic: clean(f.topic, 200), subject: clean(f.subject, 120),
     level: LEVELS[f.level] ? f.level : service === "essay" ? "bachelor" : "school",
-    pages: clamp(parseInt(f.pages, 10), 3, MAX_PAGES[service], service === "essay" ? 15 : 10),
+    pages: clamp(parseInt(f.pages, 10), 3, MAX_PAGES[service], service === "essay" ? 12 : 10),
     style: AUTO_STYLES[service].includes(f.template) ? f.template : "otm",
     institution: clean(f.institution, 160), student: clean(f.student, 120), group: clean(f.group, 40),
     teacher: clean(f.teacher, 120), city: clean(f.city, 60) || (lang === "ru" ? "Ташкент" : lang === "uz_cyr" ? "Тошкент" : lang === "en" ? "Tashkent" : "Toshkent"),
@@ -130,7 +131,7 @@ function titlePage(d) {
   const year = new Date().getFullYear();
   const lines = [];
   lines.push({ text: d.institution || " ", bold: true, size: 14 });
-  lines.push({ text: d.service === "essay" ? t.essay : t.referat, bold: true, size: d.style === "modern" ? 28 : 24, gap: 55 });
+  lines.push({ text: d.service === "kurs" ? t.kurs : d.service === "essay" ? t.essay : t.referat, bold: true, size: d.style === "modern" ? 28 : 24, gap: 55 });
   if (d.subject) lines.push({ text: `${t.subject}: ${d.subject}`, size: 14, gap: 8 });
   lines.push({ text: `${t.topic}: «${d.topic}»`, bold: true, size: 16, gap: 4 });
   const who = [
@@ -150,8 +151,10 @@ async function generatePaper(service, f) {
   const essay = service === "essay";
   const bodyPages = Math.max(2, d.pages - 1 - (d.parts.has("plan") ? 1 : 0) - (d.parts.has("refs") ? 1 : 0));
   const words = bodyPages * 260;
-  const nCh = essay ? (d.pages <= 10 ? 2 : 3) : 1;
-  const nSec = essay ? (d.pages <= 8 ? 2 : 3) : clamp(Math.round(d.pages / 3), 2, 5, 3);
+  // boblarsiz: reja 3–5 band (mustaqil ish odatda 12–14 bet); boblar — faqat kurs ishida
+  const chap = false;
+  const nCh = 1;
+  const nSec = essay ? (d.pages <= 13 ? 3 : d.pages <= 18 ? 4 : 5) : clamp(Math.round(d.pages / 3), 2, 5, 3);
   const ctx = `Paper type: ${essay ? "mustaqil ish (independent study paper)" : "referat (short report)"}\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}` + SRC.sourcesBlock(f);
   let cost = null;
 
@@ -159,7 +162,7 @@ async function generatePaper(service, f) {
   const outline = await askJson({
     model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
     schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
-    prompt: `${ctx}\n\nMake the plan: exactly ${nCh} chapter(s)${essay ? "" : " (one chapter that just groups the sections; its title can repeat the topic)"}, each with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`,
+    prompt: `${ctx}\n\nMake the plan: exactly ${nCh} chapter(s)${chap ? "" : " (one chapter that just groups the sections; its title can repeat the topic)"}, each with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`,
   });
   cost = addCost(cost, outline);
   const chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
@@ -167,7 +170,7 @@ async function generatePaper(service, f) {
   const introW = d.parts.has("intro") ? Math.round(words * 0.1) : 0;
   const conclW = d.parts.has("conclusion") ? Math.round(words * 0.08) : 0;
   const secW = Math.max(150, Math.round((words - introW - conclW) / allSections.length));
-  const planText = chapters.map((c, i) => `${essay ? `${i + 1}-${t.ch}. ${c.title}\n` : ""}${c.sections.map((s, j) => `  ${essay ? `${i + 1}.${j + 1}` : j + 1}. ${s}`).join("\n")}`).join("\n");
+  const planText = chapters.map((c, i) => `${chap ? `${i + 1}-${t.ch}. ${c.title}\n` : ""}${c.sections.map((s, j) => `  ${chap ? `${i + 1}.${j + 1}` : j + 1}. ${s}`).join("\n")}`).join("\n");
 
   // 2) Matn (bo'limlar parallel yoziladi)
   const PARAS = { type: "array", items: STR };
@@ -178,7 +181,7 @@ async function generatePaper(service, f) {
   }));
   if (d.parts.has("main")) chapters.forEach((c) => c.sections.forEach((s) => tasks.push(() => askJson({
     model: MODEL(), system: WRITER, effort: "low", maxTokens: 8000, schema: obj({ paragraphs: PARAS }),
-    prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}"${essay ? ` (chapter "${c.title}")` : ""}: about ${secW} words. Do not repeat what other sections cover; do not write the section title.`,
+    prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}"${chap ? ` (chapter "${c.title}")` : ""}: about ${secW} words. Do not repeat what other sections cover; do not write the section title.`,
   }))));
   if (d.parts.has("conclusion")) tasks.push(() => askJson({
     model: MODEL(), system: WRITER, effort: "low", maxTokens: 5000, schema: obj({ paragraphs: PARAS }),
@@ -210,8 +213,8 @@ async function generatePaper(service, f) {
     const items = [];
     if (d.parts.has("intro")) items.push(t.intro);
     chapters.forEach((c, i) => {
-      if (essay) items.push(`${i + 1}-${t.ch}. ${c.title}`);
-      c.sections.forEach((s, j) => items.push(`${essay ? `   ${i + 1}.${j + 1}. ` : `${j + 1}. `}${s}`));
+      if (chap) items.push(`${i + 1}-${t.ch}. ${c.title}`);
+      c.sections.forEach((s, j) => items.push(`${chap ? `   ${i + 1}.${j + 1}. ` : `${j + 1}. `}${s}`));
     });
     if (d.parts.has("conclusion")) items.push(t.concl);
     if (d.parts.has("refs")) items.push(t.refs);
@@ -220,8 +223,8 @@ async function generatePaper(service, f) {
   }
   if (d.parts.has("intro")) { blocks.push({ t: "h1", text: t.intro }, ...paras(results[k++])); blocks.push({ t: "pagebreak" }); }
   if (d.parts.has("main")) chapters.forEach((c, i) => {
-    if (essay) blocks.push({ t: "h1", text: `${i + 1}-${t.ch.toUpperCase()}. ${c.title}` });
-    c.sections.forEach((s, j) => blocks.push({ t: "h2", text: `${essay ? `${i + 1}.${j + 1}.` : `${j + 1}.`} ${s}` }, ...paras(results[k++])));
+    if (chap) blocks.push({ t: "h1", text: `${i + 1}-${t.ch.toUpperCase()}. ${c.title}` });
+    c.sections.forEach((s, j) => blocks.push({ t: "h2", text: `${chap ? `${i + 1}.${j + 1}.` : `${j + 1}.`} ${s}` }, ...paras(results[k++])));
     blocks.push({ t: "pagebreak" });
   });
   if (d.parts.has("conclusion")) { blocks.push({ t: "h1", text: t.concl }, ...paras(results[k++])); blocks.push({ t: "pagebreak" }); }
@@ -428,10 +431,10 @@ async function generateCrossword(f) {
   const r = await askJson({
     model: MODEL(), system: WRITER, effort: "medium", maxTokens: 8000,
     schema: obj({ title: STR, words: { type: "array", items: obj({ answer: STR, clue: STR }) } }),
-    prompt: custom.length
+    prompt: SRC.sourcesBlock(f) + (custom.length
       ? `Write crossword clues in ${LANG_NAMES[lang]} for exactly these answer words (keep the words as given, one clue each), topic "${d.topic}", for ${d.grade || "school pupils"}:\n${custom.join("\n")}\nReturn a short "title".`
       : `Make a crossword on the topic "${d.topic}" for ${d.grade || "school pupils"} in ${LANG_NAMES[lang]}.
-Give ${want + 6} candidate answers (single words, 3–12 letters, no spaces, hyphens, digits${lang === "uz_lat" ? " or tutuq belgisi (')—o' and g' are fine" : ""}; common nouns related to the topic, many shared letters) with short clear clues (definitions, not the word itself). Return a short "title".`,
+Give ${want + 6} candidate answers (single words, 3–12 letters, no spaces, hyphens, digits${lang === "uz_lat" ? " or tutuq belgisi (')—o' and g' are fine" : ""}; common nouns related to the topic, many shared letters) with short clear clues (definitions, not the word itself). Return a short "title".`),
   });
   const seen = new Set();
   const words = r.data.words
@@ -559,7 +562,95 @@ Return:
   };
 }
 
+/* =================== KURS ISHI =================== */
+// 30–40 bet: 2–3 bob, MUNDARIJA (sahifa raqamlari bilan), adabiyotga havolalar sahifa
+// ostida (snoska), sahifa raqami pastda o'rtada — titulda yo'q, 2-sahifadan (doc-render.js)
+async function generateKurs(f) {
+  const d = paperData("kurs", f);
+  d.pages = clamp(parseInt(f.pages, 10), 30, MAX_PAGES.kurs, 30);
+  if (!LEVELS[f.level]) d.level = "bachelor";
+  const t = L[d.lang];
+  const lang = LANG_NAMES[d.lang];
+  const nCh = d.pages >= 36 ? 3 : 2;
+  const nSec = 3;
+  const words = (d.pages - 4) * 270; // titul, mundarija, adabiyotlar sahifalari chiqariladi
+  const ctx = `Paper type: kurs ishi (university course work, academic style)\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}` + SRC.sourcesBlock(f);
+  let cost = null;
+
+  // 1) reja va adabiyotlar (birga) — bo'limlar adabiyotlarga raqam bilan havola qiladi
+  const [outline, refsR] = await Promise.all([
+    askJson({
+      model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
+      schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
+      prompt: `${ctx}\n\nMake the plan of the course work: exactly ${nCh} chapters (the first — theoretical foundations, the last — practical analysis and proposals), each with exactly ${nSec} section titles. Titles are specific, academic and logically ordered. Do not include introduction or conclusion.`,
+    }),
+    askJson({
+      model: MODEL(), system: WRITER, effort: "low", maxTokens: 4000, schema: obj({ references: STRS }),
+      prompt: `${ctx}\n\nList 12–16 references for this course work in standard bibliographic format (author, title, city, publisher, year, number of pages). Start with laws and decrees of the Republic of Uzbekistan if relevant, then textbooks, monographs, journal articles, official websites (lex.uz, stat.uz). Real, well-known sources only — do not invent.`,
+    }),
+  ]);
+  cost = addCost(addCost(cost, outline), refsR);
+  const chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
+  const refs = SRC.mergeRefs(f, refsR.data.references || []).map((x) => clean(x, 400)).filter(Boolean).slice(0, 18);
+  const planText = chapters.map((c, i) => `${i + 1}-${t.ch}. ${c.title}\n${c.sections.map((s, j) => `  ${i + 1}.${j + 1}. ${s}`).join("\n")}`).join("\n");
+  const cite = `\n\nSources of the work (numbered):\n${refs.map((r, i) => `[${i + 1}] ${r}`).join("\n")}\n\nAfter a sentence that uses a fact, figure, definition or idea from one of these sources, put its number in square brackets, for example: "... samaradorlik oshadi [3]." Cite 2–4 times in this text, only these numbers; do not invent pages or other sources.`;
+  const introW = Math.round(words * 0.08);
+  const conclW = Math.round(words * 0.07);
+  const secW = Math.max(400, Math.round((words - introW - conclW) / (nCh * nSec)));
+
+  // 2) matn (parallel)
+  const PARAS = { type: "array", items: STR };
+  const tasks = [() => askJson({
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 6000, schema: obj({ paragraphs: PARAS }),
+    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the INTRODUCTION of the course work (about ${introW} words): relevance of the topic, degree of study, object and subject, aim and tasks, research methods, structure of the work.${cite}`,
+  })];
+  chapters.forEach((c) => c.sections.forEach((s) => tasks.push(() => askJson({
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 9000, schema: obj({ paragraphs: PARAS }),
+    prompt: `${ctx}\nFull plan:\n${planText}\n\nWrite the text of the section "${s}" (chapter "${c.title}"): about ${secW} words, academic style with definitions, analysis, examples${/tahlil|analiz|amaliy|practical|analysis/i.test(c.title) ? ", figures and concrete proposals" : ""}. Do not repeat what other sections cover; do not write the section title.${cite}`,
+  }))));
+  tasks.push(() => askJson({
+    model: MODEL(), system: WRITER, effort: "low", maxTokens: 5000, schema: obj({ paragraphs: PARAS }),
+    prompt: `${ctx}\nPlan:\n${planText}\n\nWrite the CONCLUSION of the course work (about ${conclW} words): main findings of each chapter, conclusions and practical proposals.`,
+  }));
+  const results = await pool(tasks, 4);
+  results.forEach((r) => { cost = addCost(cost, r); });
+
+  // 3) hujjat
+  const paras = (r) => (r.data.paragraphs || []).map((p) => clean(p, 5000)).filter(Boolean).map((text) => ({ t: "p", text }));
+  let titul = null;
+  if (d.titul) {
+    try {
+      const T = require("./titul");
+      if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
+        titul = { id: d.titul, values: { workType: "KURS ISHI", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty } };
+      }
+    } catch (e) { console.error("Titul:", e.message); }
+  }
+  let k = 0;
+  const blocks = titul ? [] : [titlePage(d)];
+  blocks.push({ t: "toc", title: t.toc }, { t: "pagebreak" });
+  blocks.push({ t: "h1", text: t.intro.toUpperCase() }, ...paras(results[k++]), { t: "pagebreak" });
+  chapters.forEach((c, i) => {
+    blocks.push({ t: "h1", text: `${i + 1}-${t.ch.toUpperCase()}. ${c.title}` });
+    c.sections.forEach((s, j) => blocks.push({ t: "h2", text: `${i + 1}.${j + 1}. ${s}` }, ...paras(results[k++])));
+    blocks.push({ t: "pagebreak" });
+  });
+  blocks.push({ t: "h1", text: t.concl.toUpperCase() }, ...paras(results[k++]), { t: "pagebreak" });
+  blocks.push({ t: "h1", text: t.refs.toUpperCase() }, { t: "list", ordered: true, items: refs });
+  return {
+    blocks,
+    render: {
+      font: d.style === "modern" ? "Noto Sans" : "Times New Roman", size: 14, capsH1: d.style !== "modern",
+      toc: true, pageNumbers: true, footnotes: refs, titleFirst: !titul,
+    },
+    name: fileSafe(`Kurs ishi - ${d.topic}`),
+    ai: cost,
+    ...(titul ? { titul } : {}),
+  };
+}
+
 const GENERATORS = {
+  kurs: generateKurs,
   article: generateArticle,
   essay: (f) => generatePaper("essay", f),
   referat: (f) => generatePaper("referat", f),

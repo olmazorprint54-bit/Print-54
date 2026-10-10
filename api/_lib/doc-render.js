@@ -8,14 +8,21 @@
 //   { t: "list", items, ordered }  { t: "table", head, rows, widths }
 //   { t: "cards", items: [{ title, text }] }   — kesiladigan kartochkalar
 //   { t: "grid", cells: [[null | { n, ch }]], show }  — krossvord to'ri
+//   { t: "toc", title }   — mundarija (sahifa raqamlari bilan; Word'da)
 //   { t: "pagebreak" }
+// render: toc, pageNumbers (pastda o'rtada), titleFirst (1-sahifa — titul, raqamsiz),
+//   footnotes: [adabiyotlar] — matndagi [3] kabi belgilar sahifa ostidagi snoskaga aylanadi
 // Standart: Times New Roman 14, 1,5 interval, hoshiyalar 3/1,5/2/2 sm.
 // ---------------------------------------------------------------
 
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType,
   AlignmentType, BorderStyle, PageBreak, HeadingLevel, VerticalAlign,
+  TableOfContents, FootnoteReferenceRun, Footer, PageNumber,
 } = require("docx");
+// Mundarijadagi sahifa raqamlarini hujjat yozilayotganda hisoblaydi (Word ochilganda yana yangilaydi)
+let estimatePageNumbers = null;
+try { ({ estimatePageNumbers } = require("docx/layout")); } catch (e) { /* eski versiya */ }
 
 const CM = 567;
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -28,9 +35,10 @@ function blocksToHtml(blocks, o = {}) {
     switch (b.t) {
       case "title":
         return `<section class="title">${b.lines.map((l) => `<div style="text-align:${l.align || "center"};font-size:${l.size || size}pt;font-weight:${l.bold ? 700 : 400}${l.gap ? `;margin-top:${l.gap}mm` : ""}">${esc(l.text)}</div>`).join("")}</section>`;
+      case "toc": return `<h1>${esc(b.title)}</h1>${blocks.filter((x) => x.t === "h1" || x.t === "h2").map((x) => `<p style="margin:0 0 1mm ${x.t === "h2" ? "8mm" : "0"};text-align:left">${esc(x.text)}</p>`).join("")}<div class="pb"></div>`;
       case "h1": return `<h1>${esc(b.text)}</h1>`;
       case "h2": return `<h2>${esc(b.text)}</h2>`;
-      case "p": return `<p class="${b.indent === false || b.align ? "" : "ind"}" style="${b.align ? `text-align:${b.align};` : ""}${b.bold ? "font-weight:700;" : ""}${b.italic ? "font-style:italic;" : ""}${b.small ? "font-size:.9em;" : ""}">${b.label ? `<b>${esc(b.label)}</b> ` : ""}${esc(b.text)}</p>`;
+      case "p": return `<p class="${b.indent === false || b.align ? "" : "ind"}" style="${b.align ? `text-align:${b.align};` : ""}${b.bold ? "font-weight:700;" : ""}${b.italic ? "font-style:italic;" : ""}${b.small ? "font-size:.9em;" : ""}">${b.label ? `<b>${esc(b.label)}</b> ` : ""}${o.footnotes ? esc(b.text).replace(/\s?\[(\d{1,2})\]/g, "<sup>$1</sup>") : esc(b.text)}</p>`;
       case "list": return `<${b.ordered ? "ol" : "ul"}>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</${b.ordered ? "ol" : "ul"}>`;
       case "table":
         return `<table class="tbl">${b.head ? `<thead><tr>${b.head.map((h, i) => `<th style="${b.widths ? `width:${b.widths[i]}%` : ""}">${esc(h)}</th>`).join("")}</tr></thead>` : ""}<tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c).replace(/\n/g, "<br>")}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
@@ -82,13 +90,28 @@ async function blocksToDocx(blocks, o = {}) {
   const SIZE = (o.size || 14) * 2;
   const LINE = Math.round((o.lineHeight || 1.5) * 240);
   const run = (text, x = {}) => new TextRun({ text: String(text), font: FONT, size: x.size || SIZE, bold: x.bold, italics: x.italic });
+  // [3] -> sahifa ostida snoska (adabiyot); noto'g'ri raqam — olib tashlanadi
+  const footnotes = {};
+  let fnId = 0;
+  const withNotes = (line, x) => {
+    if (!o.footnotes || !/\[\d{1,2}\]/.test(line)) return [run(line, x)];
+    return String(line).split(/\s?\[(\d{1,2})\]/).flatMap((part, i) => {
+      if (i % 2 === 0) return part ? [run(part, x)] : [];
+      const ref = o.footnotes[Number(part) - 1];
+      if (!ref) return [];
+      fnId += 1;
+      footnotes[fnId] = { children: [new Paragraph({ children: [new TextRun({ text: ref, font: FONT, size: 20 })] })] };
+      return [new FootnoteReferenceRun(fnId)];
+    });
+  };
   const para = (text, x = {}) => new Paragraph({
     alignment: x.align === "left" ? AlignmentType.LEFT : x.align === "right" ? AlignmentType.RIGHT : x.align === "center" ? AlignmentType.CENTER : AlignmentType.JUSTIFIED,
     spacing: { line: x.line || LINE, before: x.before || 0, after: x.after == null ? 0 : x.after },
     indent: x.indent ? { firstLine: Math.round(1.25 * CM) } : undefined,
     keepNext: x.keepNext,
     pageBreakBefore: x.pageBreakBefore,
-    children: [...(x.label ? [run(x.label + " ", { ...x, bold: true })] : []), ...String(text).split("\n").flatMap((line, i) => (i ? [new TextRun({ break: 1 }), run(line, x)] : [run(line, x)]))],
+    heading: x.heading,
+    children: [...(x.label ? [run(x.label + " ", { ...x, bold: true })] : []), ...String(text).split("\n").flatMap((line, i) => (i ? [new TextRun({ break: 1 }), ...withNotes(line, x)] : withNotes(line, x)))],
   });
   const LINEB = { style: BorderStyle.SINGLE, size: 4, color: "000000" };
   const DASH = { style: BorderStyle.DASHED, size: 4, color: "555555" };
@@ -108,8 +131,13 @@ async function blocksToDocx(blocks, o = {}) {
         b.lines.forEach((l, i) => push(para(l.text, { align: l.align || "center", size: (l.size || o.size || 14) * 2, bold: l.bold, before: Math.round((l.gap || 0) * 56.7), line: 276 })));
         breakNext = true;
         break;
-      case "h1": push(para(b.text, { align: "center", bold: true, size: SIZE + 2, after: 120, keepNext: true })); break;
-      case "h2": push(para(b.text, { align: "left", bold: true, before: 120, after: 60, keepNext: true })); break;
+      case "toc":
+        push(para(b.title, { align: "center", bold: true, size: SIZE + 2, after: 240 }));
+        push(new TableOfContents(b.title, { hyperlink: true, headingStyleRange: "1-2" }));
+        break;
+      // mundarija bo'lsa — sarlavhalar Word uslubi bilan (mundarija ularni topadi)
+      case "h1": push(para(o.capsH1 && o.toc ? b.text.toUpperCase() : b.text, { align: "center", bold: true, size: SIZE + 2, after: 120, keepNext: true, heading: o.toc ? HeadingLevel.HEADING_1 : undefined })); break;
+      case "h2": push(para(b.text, { align: "left", bold: true, before: 120, after: 60, keepNext: true, heading: o.toc ? HeadingLevel.HEADING_2 : undefined })); break;
       case "p": push(para(b.text, { indent: b.indent !== false && !b.align, align: b.align, bold: b.bold, italic: b.italic, label: b.label, size: b.small ? SIZE - 4 : undefined })); break;
       case "list": b.items.forEach((it, i) => push(para(`${b.ordered ? `${i + 1}. ` : "• "}${it}`, { align: "left" }))); break;
       case "table": {
@@ -163,9 +191,21 @@ async function blocksToDocx(blocks, o = {}) {
       default: break;
     }
   }
+  // sahifa raqami pastda o'rtada; titul (1-sahifa) raqamsiz; tayyor OTM tituli oldidan qo'shilsa — 2 dan
+  const pageNo = () => new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 24 })] });
+  const tocStyle = (id, name, left) => ({ id, name, basedOn: "Normal", next: "Normal", run: { font: FONT, size: SIZE }, paragraph: { spacing: { after: 60, line: 276 }, indent: left ? { left } : undefined } });
+  const headStyle = (id, name, size) => ({ id, name, basedOn: "Normal", next: "Normal", quickFormat: true, run: { font: FONT, size, bold: true, color: "000000" } });
   const doc = new Document({
+    ...(o.toc && estimatePageNumbers ? { pageNumbers: estimatePageNumbers } : {}),
+    ...(o.toc ? { features: { updateFields: true } } : {}),
+    ...(fnId ? { footnotes } : {}),
+    ...(o.toc ? { styles: { paragraphStyles: [headStyle("Heading1", "Heading 1", SIZE + 2), headStyle("Heading2", "Heading 2", SIZE), tocStyle("TOC1", "toc 1", 0), tocStyle("TOC2", "toc 2", 400)] } } : {}),
     sections: [{
-      properties: { page: { margin: { top: 2 * CM, bottom: 2 * CM, left: 3 * CM, right: 1.5 * CM } } },
+      properties: {
+        page: { margin: { top: 2 * CM, bottom: 2 * CM, left: 3 * CM, right: 1.5 * CM }, ...(o.pageNumbers && !o.titleFirst ? { pageNumbers: { start: 2 } } : {}) },
+        ...(o.pageNumbers && o.titleFirst ? { titlePage: true } : {}),
+      },
+      ...(o.pageNumbers ? { footers: { default: new Footer({ children: [pageNo()] }), ...(o.titleFirst ? { first: new Footer({ children: [new Paragraph("")] }) } : {}) } } : {}),
       children,
     }],
   });
