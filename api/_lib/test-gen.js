@@ -199,7 +199,10 @@ function testHtml(t, variants) {
     .blank{flex:1;border-bottom:1px solid #333;height:14px}
     .blank.short{flex:0 0 32mm}
     .head{border-bottom:2px solid #111;margin-bottom:10px}
-    .qs{margin:0;padding-left:22px}
+    /* raqam qator ichida (o'z joyida): ikki xonali raqam chetga yoki ustunlar orasidagi chiziqqa chiqmaydi */
+    .qs{margin:0;padding:0;list-style:none;counter-reset:q}
+    .qs li{counter-increment:q;position:relative;padding-left:2.6em}
+    .qs li::before{content:counter(q) ".";position:absolute;left:0;width:2.2em;text-align:right}
     ${d.style === "twocol" ? ".qs{columns:2;column-gap:9mm;column-rule:1px solid #ccc}" : ""}
     .qs li{break-inside:avoid;margin:0 0 ${d.style === "twocol" ? "7px" : "10px"}}
     .q{font-weight:600;margin-bottom:3px}
