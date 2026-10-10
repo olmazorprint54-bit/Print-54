@@ -42,10 +42,14 @@ module.exports = async (req, res) => {
     // PGRST116 = qator topilmadi (yangi foydalanuvchi) — xato emas
     if (error && error.code !== "PGRST116") throw error;
 
+    // AI xizmatlar balansi (kartaga to'ldiriladi)
+    const w = await walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST }));
     res.status(200).json({
       ok: true,
       free_pages: userRow ? userRow.free_pages || 0 : 0,
       referral_count: userRow ? userRow.referral_count || 0 : 0,
+      balance: w.balance,
+      minTopup: w.minTopup,
     });
   } catch (err) {
     console.error(err);
