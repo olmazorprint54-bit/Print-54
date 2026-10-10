@@ -123,8 +123,9 @@
       case "heading":
         return `<div class="ai-heading">${esc(f.label)}</div>`;
       case "text":
-        return `<div class="ai-field" data-f="${f.id}">${label(f)}
-          <input class="ai-input" data-input="${f.id}"${f.inputmode ? ` inputmode="${f.inputmode}"` : ""} maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
+        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
+          <input class="ai-input" data-input="${f.id}"${f.inputmode ? ` inputmode="${f.inputmode}"` : ""}${f.suggest ? ' autocomplete="off"' : ""} maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
+          ${f.suggest ? `<div class="ai-sug glass" data-sug="${f.id}" hidden></div><div class="ai-sug-ok" data-sug-ok="${f.id}"${v.titul ? "" : " hidden"}>✅ Titul shu OTM namunasida tayyorlanadi</div>` : ""}
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "number":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
@@ -422,13 +423,58 @@
   }
 
   // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
-  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || !f.showIf || !!v[f.showIf]; };
+  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || !!v[f.showIf]) && (!f.hideIf || !v[f.hideIf])); };
   function applyShowIf(svc) {
     const v = getValues(svc);
-    svc.fields.filter((f) => f.showIf).forEach((f) => {
+    svc.fields.filter((f) => f.showIf || f.hideIf).forEach((f) => {
       const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
-      if (el) el.hidden = !v[f.showIf];
+      if (el) el.hidden = !shown(svc, v, f.id);
     });
+  }
+
+  /* ---------- Universitetlar ro'yxati (tayyor titullar, ai/titullar.js) ---------- */
+  const norm = (s) => String(s || "").toLowerCase().replace(/[‘’ʻʼ`'"«»“”]/g, "").replace(/[–—-]/g, " ").replace(/\s+/g, " ").trim();
+  const TITULS = (window.AI_TITULS || []).map((t) => {
+    // qisqartmalar: TDTU, TATU, SamDU ... ("nomidagi" dan keyingi so'zlar)
+    const words = t.name.replace(/\(.*?\)/g, "").split(/\s+/);
+    const k = words.findIndex((w) => /^nomidagi$/i.test(w));
+    const core = words.slice(k + 1).filter((w) => !/^(va|filiali|universitetining)$/i.test(w) && /^[\p{L}]/u.test(w));
+    const ini = core.map((w) => w[0]).join("");
+    const abbr = [ini, core.length > 1 ? core[0].slice(0, 3) + core.slice(1).map((w) => w[0]).join("") : ""].map(norm).filter((x) => x.length >= 2);
+    return { ...t, key: norm(t.name), abbr };
+  });
+  function titulMatches(q) {
+    const nq = norm(q);
+    if (nq.length < 2) return [];
+    const toks = nq.split(" ");
+    return TITULS.map((t) => {
+      let score = 0;
+      if (t.abbr.includes(nq.replace(/ /g, ""))) score = 3;
+      else if (t.key.startsWith(nq)) score = 2;
+      else if (toks.every((w) => t.key.split(" ").some((x) => x.startsWith(w)))) score = 1;
+      return { t, score };
+    }).filter((x) => x.score).sort((a, b) => b.score - a.score || a.t.name.length - b.t.name.length).slice(0, 6).map((x) => x.t);
+  }
+  function renderSuggest(f, value) {
+    const box = root.querySelector(`[data-sug="${f.id}"]`);
+    if (!box) return;
+    const v = getValues(current);
+    const list = v.titul ? [] : titulMatches(value);
+    box.hidden = !list.length;
+    box.innerHTML = list.map((t) => `<div class="ai-sug-item" data-pick="${esc(t.id)}">🎓 ${esc(t.name)}</div>`).join("");
+  }
+  function setTitul(svc, t) {
+    const v = getValues(svc);
+    v.titul = t ? t.id : "";
+    if (t) v.institution = t.name;
+    const inp = root.querySelector('[data-input="institution"]');
+    if (t && inp) inp.value = t.name;
+    const ok = root.querySelector('[data-sug-ok="institution"]');
+    if (ok) ok.hidden = !t;
+    const box = root.querySelector('[data-sug="institution"]');
+    if (box) box.hidden = true;
+    applyShowIf(svc);
+    refreshLive(svc);
   }
 
   function renderForm(svc) {
@@ -526,6 +572,7 @@
       [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
+      ...(v.titul ? [["Titul", "🎓 OTM namunasida"]] : []),
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
@@ -586,6 +633,8 @@
     refreshLive(current);
   });
   root.addEventListener("click", (e) => {
+    const pick = e.target.closest("[data-pick]");
+    if (pick && current) { tick(); setTitul(current, TITULS.find((t) => t.id === pick.dataset.pick)); return; }
     const open = e.target.closest("[data-open]");
     if (open) { tick(); openService(open.dataset.open); return; }
     if (e.target.closest("[data-back]")) { openGrid(); return; }
@@ -716,6 +765,14 @@
     const id = e.target.dataset.input;
     if (id) {
       v[id] = e.target.value;
+      const sf = current.fields.find((x) => x.id === id && x.suggest);
+      if (sf) {
+        // qo'lda o'zgartirilsa — tanlangan OTM bekor; aynan nomi yozilsa — avtomatik tanlanadi
+        const exact = TITULS.find((t) => t.key === norm(e.target.value));
+        if (v.titul && (!exact || exact.id !== v.titul)) setTitul(current, null);
+        if (exact && !v.titul) setTitul(current, exact);
+        else renderSuggest(sf, e.target.value);
+      }
       const fieldEl = e.target.closest(".ai-field");
       if (fieldEl && e.target.value.trim()) fieldEl.classList.remove("error");
       const counter = root.querySelector(`[data-count="${id}"]`);

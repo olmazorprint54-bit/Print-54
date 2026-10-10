@@ -260,11 +260,15 @@ module.exports = async (req, res) => {
       const doc = await GENERATORS[order.service](order.details.fields);
       ai = doc.ai;
       const fmt = order.details.fields.format;
+      // universitetning tayyor tituli (Word sahifasi) — hujjat boshiga
+      const T = doc.titul ? require("./_lib/titul") : null;
+      const html = async () => { const h = blocksToHtml(doc.blocks, doc.render); return T ? T.prependHtml(h, doc.titul.id, doc.titul.values) : h; };
+      const docx = async () => { const b = await blocksToDocx(doc.blocks, doc.render); return T ? T.prependDocx(b, doc.titul.id, doc.titul.values) : b; };
       file = fmt === "pdf"
-        ? { buffer: await renderPdf(blocksToHtml(doc.blocks, doc.render)), name: doc.name + ".pdf", mime: "application/pdf" }
+        ? { buffer: await renderPdf(await html()), name: doc.name + ".pdf", mime: "application/pdf" }
         : fmt === "png"
-          ? { buffer: await renderPdf(blocksToHtml(doc.blocks, doc.render), "png"), name: doc.name + ".png", mime: "image/png" }
-          : { buffer: await blocksToDocx(doc.blocks, doc.render), name: doc.name + ".docx", mime: DOCX };
+          ? { buffer: await renderPdf(await html(), "png"), name: doc.name + ".png", mime: "image/png" }
+          : { buffer: await docx(), name: doc.name + ".docx", mime: DOCX };
     } else if (order.service === "test") {
       // Savollarni Claude tuzadi; variantlar, kalit va fayl — avtomatik
       const t = await generateTest(order.details.fields);

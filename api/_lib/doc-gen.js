@@ -119,6 +119,7 @@ function paperData(service, f) {
     style: AUTO_STYLES[service].includes(f.template) ? f.template : "otm",
     institution: clean(f.institution, 160), student: clean(f.student, 120), group: clean(f.group, 40),
     teacher: clean(f.teacher, 120), city: clean(f.city, 60) || (lang === "ru" ? "Ташкент" : lang === "uz_cyr" ? "Тошкент" : lang === "en" ? "Tashkent" : "Toshkent"),
+    titul: clean(f.titul, 160), faculty: clean(f.faculty, 120),
     parts: new Set(parts),
   };
 }
@@ -192,7 +193,17 @@ async function generatePaper(service, f) {
   // 3) Hujjat
   const paras = (r) => (r.data.paragraphs || []).map((p) => clean(p, 4000)).filter(Boolean).map((text) => ({ t: "p", text }));
   let k = 0;
-  const blocks = [titlePage(d)];
+  // Universitetning tayyor tituli (api/_lib/titul.js) — topilmasa umumiy titul
+  let titul = null;
+  if (d.titul) {
+    try {
+      const T = require("./titul");
+      if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
+        titul = { id: d.titul, values: { workType: essay ? "MUSTAQIL ISH" : "REFERAT", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty } };
+      }
+    } catch (e) { console.error("Titul:", e.message); }
+  }
+  const blocks = titul ? [] : [titlePage(d)];
   if (d.parts.has("plan")) {
     blocks.push({ t: "h1", text: t.plan });
     const items = [];
@@ -223,6 +234,7 @@ async function generatePaper(service, f) {
     render: { font: d.style === "modern" ? "Noto Sans" : "Times New Roman", size: 14, capsH1: d.style !== "modern" },
     name: fileSafe(`${essay ? "Mustaqil ish" : "Referat"} - ${d.topic}`),
     ai: cost,
+    ...(titul ? { titul } : {}),
   };
 }
 
