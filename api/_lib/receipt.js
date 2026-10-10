@@ -110,15 +110,17 @@ async function verify(bot, msg, order, card) {
   return { ok: !reasons.length, reasons: [...new Set(reasons)], read: r, ai, fileKey: key };
 }
 
-// Har bir buyurtmaga noyob summa (narx + 1..99 so'm): egasi Click/Payme xabaridagi
-// summadan qaysi buyurtma ekanini taniydi, chekni boshqa buyurtmaga ishlatib bo'lmaydi
+// Har bir to'ldirishga noyob summa (summa + 1..19 so'm): chek va Click/Payme xabaridan
+// qaysi to'lov ekani taniladi. Hozir chek kutilayotgan to'lovlar bilan takrorlanmaydi;
+// eski chekni qayta yuborishni esa vaqt tekshiruvi to'xtatadi.
+const EXTRA_MAX = 19;
 async function uniqueAmount(price) {
-  const since = new Date(Date.now() - 48 * 3600e3).toISOString();
-  const { data } = await supabase.from("orders").select("id, details").gte("created_at", since).limit(2000);
-  const taken = new Set((data || []).map((o) => o.details && o.details.payAmount).filter(Boolean));
+  const since = new Date(Date.now() - 24 * 3600e3).toISOString();
+  const { data } = await supabase.from("orders").select("id, status, details").gte("created_at", since).limit(2000);
+  const taken = new Set((data || []).filter((o) => o.status === "active" && o.details && o.details.awaitingPayment).map((o) => o.details.payAmount).filter(Boolean));
   const free = [];
-  for (let k = 1; k <= 99; k++) if (!taken.has(price + k)) free.push(price + k);
-  if (!free.length) return price + 1 + Math.floor(Math.random() * 99);
+  for (let k = 1; k <= EXTRA_MAX; k++) if (!taken.has(price + k)) free.push(price + k);
+  if (!free.length) return price + 1 + Math.floor(Math.random() * EXTRA_MAX);
   return free[Math.floor(Math.random() * free.length)];
 }
 

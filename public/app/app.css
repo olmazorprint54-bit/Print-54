@@ -204,6 +204,7 @@ section{ margin-bottom:18px; }
 .bal-pay{ margin-top:12px; padding:12px; border-radius:12px; background: color-mix(in srgb, var(--accent) 8%, transparent); border:1px solid color-mix(in srgb, var(--accent) 30%, transparent); font-size:13px; line-height:1.5; }
 .bal-pay .bal-card{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin:8px 0; font: 700 17px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; cursor:pointer; }
 .bal-pay .bal-card span{ font: 600 11.5px/1 system-ui, sans-serif; padding:5px 8px; border-radius:999px; color:#fff; background: var(--accent); }
+.bal-pay .bal-extra{ font-size:12px; opacity:.75; margin-top:6px; }
 .bal-pay button.bal-go{ width:100%; margin-top:10px; }
 .bal-sum{ font-size:28px; font-weight:800; color: var(--accent); margin:4px 0 6px; }
 .ref-card .ref-text{ font-size:14px; line-height:1.45; margin-top:6px; opacity:.85; }

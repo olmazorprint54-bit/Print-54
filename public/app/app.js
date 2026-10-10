@@ -234,9 +234,10 @@
       if (!data.ok) { box.textContent = data.error || "Xatolik yuz berdi"; return; }
       const c = data.card;
       const sum = c.price.toLocaleString("ru-RU") + " so'm";
-      box.innerHTML = `Shu kartaga <b>aynan ${esc(sum)}</b> o'tkazing (summa shu to'lov uchun maxsus — yaxlitlamang):
+      box.innerHTML = `Shu kartaga <b>aynan ${esc(sum)}</b> o'tkazing:
         <div class="bal-card" data-copy="${esc(c.number.replace(/\s/g, ""))}">${esc(c.number)}<span>Nusxa</span></div>
         ${c.name ? `<div>${esc(c.name)}</div>` : ""}
+        ${c.topup && c.price > c.topup ? `<div class="bal-extra">ℹ️ +${c.price - c.topup} so'm — to'lovingizni aniq tanib olish uchun qo'shildi, komissiya emas — u ham balansingizga tushadi.</div>` : ""}
         <div style="margin-top:6px">So'ng to'lov chekini (skrinshot) <b>botga</b> yuboring — chek avtomatik tekshiriladi va balans to'ldiriladi.</div>
         <button type="button" class="order-btn bal-go">Botga o'tish</button>`;
       box.querySelector(".bal-card").onclick = (ev) => {

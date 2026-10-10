@@ -66,6 +66,7 @@ function cardText(card, order, amount, balance = 0) {
   const price = Number(order.total) || 0;
   const left = balance + amount - price;
   const onlyTopup = order.service === "topup";
+  const extra = amount - (Number(order.details && order.details.topup) || amount);
   return [
     `💳 <b>Hisobni to'ldirish: ${fmtSum(amount)}</b>`,
     ...(onlyTopup
@@ -76,7 +77,8 @@ function cardText(card, order, amount, balance = 0) {
     `Karta: <code>${card.number}</code>`,
     ...(card.name ? [`Egasi: ${escHtml(card.name)}`] : []),
     "",
-    `1) Shu kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi orqali). Summa shu to'lov uchun maxsus — yaxlitlamang.`,
+    `1) Shu kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi orqali).`,
+    ...(extra > 0 ? [`ℹ️ +${extra} so'm — to'lovingizni aniq tanib olish uchun qo'shildi, komissiya emas — u ham balansingizga tushadi.`] : []),
     "2) To'lov chekini (skrinshot yoki PDF) shu chatga yuboring.",
     "",
     onlyTopup ? "Chek avtomatik tekshiriladi va balansingiz to'ldiriladi." : "Chek avtomatik tekshiriladi, so'ng balans to'ldiriladi, AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
