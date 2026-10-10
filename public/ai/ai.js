@@ -165,7 +165,7 @@
           <label class="src-add glass">📎 Fayl qo'shish<input type="file" data-src-input="${f.id}" accept=".pdf,.docx,.txt,image/*" multiple hidden></label>
           <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}` : ""}</div></div>`;
       case "templates":
-        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
           <div class="tpl-row${f.set === "presentation" ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
@@ -520,7 +520,8 @@
   }
 
   // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
-  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || !!v[f.showIf]) && (!f.hideIf || !v[f.hideIf])); };
+  const cond = (v, expr) => { const [k, val] = String(expr).split("="); return val === undefined ? !!v[k] : v[k] === val; };
+  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || cond(v, f.showIf)) && (!f.hideIf || !cond(v, f.hideIf))); };
   function applyShowIf(svc) {
     const v = getValues(svc);
     svc.fields.filter((f) => f.showIf || f.hideIf).forEach((f) => {
@@ -834,6 +835,9 @@
       if (single) {
         v[single] = chip.dataset.v;
         chip.parentElement.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === chip));
+        // taqdimot: "AI o'zi yaratadi" — shablonsiz (smart-gen), galereya yopiladi
+        if (single === "design" && chip.dataset.v === "ai") v.template = "ai-dizayn";
+        applyShowIf(current);
       } else if (multi) {
         const arr = v[multi];
         const i = arr.indexOf(chip.dataset.v);
@@ -974,6 +978,7 @@
     svc.fields.forEach((f) => { if (f.fallback && !String(v[f.id] || "").trim()) v[f.id] = f.fallback; });
     const visible = { ...v };
     svc.fields.forEach((f) => { if (!shown(svc, v, f.id)) visible[f.id] = Array.isArray(v[f.id]) ? [] : ""; });
+    if (svc.id === "presentation" && visible.design !== "tpl") visible.template = "ai-dizayn";
     btn.disabled = true;
     status.textContent = "Yuborilmoqda...";
     try {
