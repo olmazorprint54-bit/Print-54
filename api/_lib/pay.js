@@ -65,10 +65,13 @@ function cardText(card, order, amount, balance = 0) {
   const topic = String((order.details && order.details.topic) || "").slice(0, 120);
   const price = Number(order.total) || 0;
   const left = balance + amount - price;
+  const onlyTopup = order.service === "topup";
   return [
     `💳 <b>Hisobni to'ldirish: ${fmtSum(amount)}</b>`,
-    `${escHtml(title)}${topic ? ` — «${escHtml(topic)}»` : ""}: ${fmtSum(price)}${balance > 0 ? ` (balansda ${fmtSum(balance)} bor)` : ""}`,
-    ...(left > 0 ? [`Qolgan ${fmtSum(left)} balansingizda qoladi — keyingi buyurtmalar undan yechiladi.`] : []),
+    ...(onlyTopup
+      ? [`Balansingiz: ${fmtSum(balance)} → to'lovdan keyin ${fmtSum(left)}. Buyurtmalar narxi balansdan avtomatik yechiladi.`]
+      : [`${escHtml(title)}${topic ? ` — «${escHtml(topic)}»` : ""}: ${fmtSum(price)}${balance > 0 ? ` (balansda ${fmtSum(balance)} bor)` : ""}`,
+        ...(left > 0 ? [`Qolgan ${fmtSum(left)} balansingizda qoladi — keyingi buyurtmalar undan yechiladi.`] : [])]),
     "",
     `Karta: <code>${card.number}</code>`,
     ...(card.name ? [`Egasi: ${escHtml(card.name)}`] : []),
@@ -76,7 +79,7 @@ function cardText(card, order, amount, balance = 0) {
     `1) Shu kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi orqali). Summa shu to'lov uchun maxsus — yaxlitlamang.`,
     "2) To'lov chekini (skrinshot yoki PDF) shu chatga yuboring.",
     "",
-    "Chek avtomatik tekshiriladi, so'ng balans to'ldiriladi, AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
+    onlyTopup ? "Chek avtomatik tekshiriladi va balansingiz to'ldiriladi." : "Chek avtomatik tekshiriladi, so'ng balans to'ldiriladi, AI ishni boshlaydi va tayyor fayl shu yerga keladi.",
   ].join("\n");
 }
 

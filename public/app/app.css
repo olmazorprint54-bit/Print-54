@@ -198,6 +198,13 @@ section{ margin-bottom:18px; }
 .toast.show{ opacity:1; transform:translate(-50%, 0); }
 
 /* Profil — referal (do'stlarni taklif qilish) */
+.bal-opts{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:12px; }
+.bal-opts button{ font: 700 13.5px/1 inherit; padding:12px 4px; border-radius:12px; border:1px solid var(--line); background: var(--bg, rgba(127,127,127,.08)); color: inherit; cursor:pointer; }
+.bal-opts button:active{ background: color-mix(in srgb, var(--accent) 15%, transparent); }
+.bal-pay{ margin-top:12px; padding:12px; border-radius:12px; background: color-mix(in srgb, var(--accent) 8%, transparent); border:1px solid color-mix(in srgb, var(--accent) 30%, transparent); font-size:13px; line-height:1.5; }
+.bal-pay .bal-card{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin:8px 0; font: 700 17px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; cursor:pointer; }
+.bal-pay .bal-card span{ font: 600 11.5px/1 system-ui, sans-serif; padding:5px 8px; border-radius:999px; color:#fff; background: var(--accent); }
+.bal-pay button.bal-go{ width:100%; margin-top:10px; }
 .bal-sum{ font-size:28px; font-weight:800; color: var(--accent); margin:4px 0 6px; }
 .ref-card .ref-text{ font-size:14px; line-height:1.45; margin-top:6px; opacity:.85; }
 .ref-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }

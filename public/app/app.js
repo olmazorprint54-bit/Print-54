@@ -219,6 +219,33 @@
       showRewards(data.ai);
     } catch (e) {}
   }
+  // Hisobni to'ldirish (buyurtmasiz): karta va noyob summa, chek botga yuboriladi
+  $("balOpts").addEventListener("click", async (e) => {
+    const b = e.target.closest("[data-bal-top]");
+    if (!b || !user) return;
+    const amount = Number(b.dataset.balTop);
+    if (!(await confirmAsk(`Hisobni ${amount.toLocaleString("ru-RU")} so'mga to'ldirasizmi?`))) return;
+    tick();
+    const box = $("balPay");
+    box.hidden = false;
+    box.textContent = "Tayyorlanmoqda...";
+    try {
+      const data = await api("/api/ai-request", { service: "topup", topup: amount });
+      if (!data.ok) { box.textContent = data.error || "Xatolik yuz berdi"; return; }
+      const c = data.card;
+      const sum = c.price.toLocaleString("ru-RU") + " so'm";
+      box.innerHTML = `Shu kartaga <b>aynan ${esc(sum)}</b> o'tkazing (summa shu to'lov uchun maxsus — yaxlitlamang):
+        <div class="bal-card" data-copy="${esc(c.number.replace(/\s/g, ""))}">${esc(c.number)}<span>Nusxa</span></div>
+        ${c.name ? `<div>${esc(c.name)}</div>` : ""}
+        <div style="margin-top:6px">So'ng to'lov chekini (skrinshot) <b>botga</b> yuboring — chek avtomatik tekshiriladi va balans to'ldiriladi.</div>
+        <button type="button" class="order-btn bal-go">Botga o'tish</button>`;
+      box.querySelector(".bal-card").onclick = (ev) => {
+        const el = ev.currentTarget;
+        if (navigator.clipboard) navigator.clipboard.writeText(el.dataset.copy).then(() => { el.querySelector("span").textContent = "✓ Nusxa olindi"; }, () => {});
+      };
+      box.querySelector(".bal-go").onclick = () => { if (tg && tg.close) tg.close(); };
+    } catch (err) { box.textContent = "Internet aloqasini tekshiring"; }
+  });
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
   loadRewards();
