@@ -278,6 +278,43 @@
   }
   .switch input:checked + .slider{ background: #4ADE80; }
   .switch input:checked + .slider:before{ transform: translateX(16px); }
+
+  /* ---------- pastki menyu: Asosiy / Buyurtmalarim / Profil ---------- */
+  body{ padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  .app-nav{
+    position:fixed; left:0; right:0; bottom:0; z-index:40; height:68px; padding-bottom: env(safe-area-inset-bottom);
+    display:flex; justify-content:space-around; align-items:center;
+    background: rgba(15,18,25,0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-top:1px solid var(--glass-border);
+  }
+  .app-nav > div{ position:relative; display:flex; flex-direction:column; align-items:center; gap:3px; font-size:11px; font-weight:700; color: var(--ink-soft); cursor:pointer; min-width:84px; }
+  .app-nav svg{ width:23px; height:23px; stroke: currentColor; }
+  .app-nav .on{ color: var(--accent); }
+  .app-nav .order-badge{ top:-4px; right:20px; }
+  #panel-myorders, #panel-profile{ display:none !important; }
+  body.view-orders #panel-myorders, body.view-profile #panel-profile{ display:block !important; }
+  body.view-orders .mode-switch, body.view-orders #aiRoot, body.view-orders .tabs, body.view-orders .panel:not(#panel-myorders), body.view-orders #btnOtherBottom,
+  body.view-profile .mode-switch, body.view-profile #aiRoot, body.view-profile .tabs, body.view-profile .panel:not(#panel-profile), body.view-profile #btnOtherBottom{ display:none !important; }
+
+  /* ---------- profil ---------- */
+  .prof-head{ display:flex; align-items:center; gap:14px; padding:16px; margin-bottom:14px; }
+  .prof-ava{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; font-size:22px; font-weight:800; color:#fff; background: linear-gradient(135deg, #5FB4FF, #3D8FE0); background-size:cover; background-position:center; flex-shrink:0; }
+  .prof-name{ font-weight:800; font-size:16px; }
+  .prof-user{ font-size:12.5px; color: var(--ink-soft); margin-top:2px; }
+  .bal-box{ padding:16px; margin-bottom:14px; }
+  .bal-box .field-title{ margin-bottom:4px; }
+  .bal-sum{ font-size:30px; font-weight:800; color: var(--accent); margin:2px 0 6px; }
+  .bal-text{ font-size:12px; color: var(--ink-soft); line-height:1.45; }
+  .bal-row{ display:grid; grid-template-columns: auto 1fr auto; gap:6px; margin-top:8px; }
+  .bal-row button, .bal-row input{ font: 700 14px/1 inherit; font-family: inherit; padding:12px 10px; border-radius:12px; border:1px solid var(--glass-border); background: var(--glass); color: var(--ink); min-width:0; }
+  .bal-row button{ cursor:pointer; white-space:nowrap; }
+  .bal-row .bal-ok{ background: linear-gradient(180deg, #5FB4FF, #3D8FE0); border-color: transparent; color:#fff; }
+  .bal-row input{ font-weight:600; }
+  .bal-pay{ margin-top:12px; padding:12px; border-radius:12px; background: rgba(79,168,255,0.10); border:1px solid rgba(79,168,255,0.30); font-size:13px; line-height:1.5; }
+  .bal-pay .bal-card{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin:8px 0; font: 700 17px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; cursor:pointer; }
+  .bal-pay .bal-card span{ font: 600 11.5px/1 system-ui, sans-serif; padding:5px 8px; border-radius:999px; color:#fff; background: var(--accent); }
+  .bal-pay .bal-extra{ font-size:12px; opacity:.75; margin-top:6px; }
+  .bal-pay .order-btn{ margin-top:10px; }
 </style>
 <link rel="stylesheet" href="ai/ai.css?v=27">
 </head>
@@ -295,10 +332,6 @@
       </div>
       <div class="icon-btn glass" id="btnHelp" title="Ma'lumot">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </div>
-      <div class="icon-btn glass" id="btnOther" title="Buyurtmalarim">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 3H8l1-3Z"/><path d="M4 6h16v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6Z"/><path d="M8 11h8M8 15h5"/></svg>
-        <span class="order-badge" id="ordersBadge" style="display:none;">0</span>
       </div>
     </div>
   </header>
@@ -484,18 +517,45 @@
   </div>
     <!-- ============ MY ORDERS TAB ============ -->
   <div class="panel" id="panel-myorders">
+    <div class="field-title">Sizning buyurtmalaringiz</div>
+    <div id="myOrdersList"></div>
+  </div>
+
+  <!-- ============ PROFIL ============ -->
+  <div class="panel" id="panel-profile">
+    <div class="receipt glass prof-head">
+      <div class="prof-ava" id="profAva">?</div>
+      <div><div class="prof-name" id="profName">Mehmon</div><div class="prof-user" id="profUser"></div></div>
+    </div>
+    <div class="receipt glass bal-box" id="balBox">
+      <div class="field-title">💰 Balans</div>
+      <div class="bal-sum" id="balSum">0 so'm</div>
+      <div class="bal-text">AI xizmatlar (taqdimot, referat, test va boshqalar) narxi balansdan avtomatik yechiladi. Hisob kartaga o'tkazma bilan to'ldiriladi.</div>
+      <div class="field-title" style="margin-top:14px;">➕ Hisobni to'ldirish</div>
+      <div class="bal-row">
+        <button type="button" id="balMinBtn">5 000 so'm</button>
+        <input type="number" id="balCustom" inputmode="numeric" min="3000" step="100" placeholder="Boshqa summa">
+        <button type="button" class="bal-ok" id="balCustomGo">OK</button>
+      </div>
+      <div class="bal-text" style="margin-top:8px;">Birinchi to'ldirish — kamida 5 000 so'm, keyingilari — kamida 3 000 so'm.</div>
+      <div class="bal-pay" id="balPay" hidden></div>
+    </div>
     <div class="receipt glass" style="margin-bottom:18px;">
       <div class="receipt-line"><span>🎁 Bepul varaqlaringiz</span><span id="rewardFreePages" style="color:#4ADE80; font-weight:700;">0</span></div>
       <div class="receipt-line"><span>👥 Taklif qilingan do'stlar</span><span id="rewardReferralCount">0</span></div>
       <div class="status-msg" style="margin-top:6px; text-align:left;">3 ta do'st taklif qiling — 15 ta bepul varaq oling! 5 tada jami 20 ta, undan keyin har biriga +3 tadan.</div>
       <button type="button" id="shareReferralBtn" style="width:100%; margin-top:10px; padding:11px; border:none; border-radius: var(--radius-pill); background: linear-gradient(180deg, #5FB4FF, #3D8FE0); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">📤 Do'stlarni taklif qilish</button>
     </div>
-    <div class="field-title">Sizning buyurtmalaringiz</div>
-    <div id="myOrdersList"></div>
   </div>
 
   <div class="pill-btn glass other-services-btn" id="btnOtherBottom">Boshqa xizmatlar</div>
   <div class="status-msg" id="statusMsg"></div>
+
+  <nav class="app-nav">
+    <div class="on" data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Asosiy</div>
+    <div data-go="orders"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Buyurtmalarim<span class="order-badge" id="ordersBadge" style="display:none;">0</span></div>
+    <div data-go="profile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profil</div>
+  </nav>
 
 <script>
 /* ================================================================
@@ -538,6 +598,12 @@ async function refreshMyRewards(){
     const data = await res.json();
     if(!data.ok) return;
     myFreePages = data.free_pages || 0;
+    if (data.balance != null) {
+      document.getElementById('balSum').textContent = fmt(data.balance);
+      balMin = data.minTopup || 5000;
+      document.getElementById('balMinBtn').textContent = fmt(balMin);
+      document.getElementById('balCustom').min = balMin;
+    }
     const fpEl = document.getElementById('rewardFreePages');
     const rcEl = document.getElementById('rewardReferralCount');
     if(fpEl) fpEl.textContent = myFreePages;
@@ -619,11 +685,78 @@ function openOwnerChat(prefillText){
   if (tg && tg.openTelegramLink) tg.openTelegramLink(url);
   else window.open(url, '_blank');
 }
-document.getElementById('btnOther').addEventListener('click', ()=>{
-  document.querySelectorAll('.tabs .pill-btn').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.getElementById('panel-myorders').classList.add('active');
-  loadMyOrders();
+/* ================================================================
+   PASTKI MENYU: Asosiy / Buyurtmalarim / Profil
+   ================================================================ */
+function showView(v){
+  document.body.classList.remove('view-orders', 'view-profile');
+  if (v !== 'home') document.body.classList.add('view-' + v);
+  document.querySelectorAll('.app-nav [data-go]').forEach(b => b.classList.toggle('on', b.dataset.go === v));
+  if (v === 'orders') loadMyOrders();
+  if (v === 'profile') { fillProfile(); refreshMyRewards(); }
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('.app-nav [data-go]').forEach(b => b.addEventListener('click', () => {
+  try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch(e){}
+  showView(b.dataset.go);
+}));
+function fillProfile(){
+  const u = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
+  if (!u) return;
+  document.getElementById('profName').textContent = [u.first_name, u.last_name].filter(Boolean).join(' ') || 'Mehmon';
+  document.getElementById('profUser').textContent = u.username ? '@' + u.username : '';
+  const ava = document.getElementById('profAva');
+  ava.textContent = (u.first_name || '?').slice(0, 1).toUpperCase();
+  if (u.photo_url) { ava.style.backgroundImage = 'url("' + u.photo_url.replace(/"/g, '') + '")'; ava.textContent = ''; }
+}
+
+/* ================================================================
+   BALANS: hisobni to'ldirish (kartaga o'tkazma, chek botga)
+   ================================================================ */
+let balMin = 5000;
+function balConfirm(text){
+  return new Promise(resolve => {
+    try { if (tg && tg.showConfirm && tg.platform !== 'unknown') { tg.showConfirm(text, ok => resolve(!!ok)); return; } } catch(e){}
+    resolve(window.confirm(text));
+  });
+}
+function escHtml(t){ return String(t == null ? '' : t).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c])); }
+async function startTopup(amount){
+  if (!(tg && tg.initData)) return;
+  if (!(await balConfirm(`Hisobni ${amount.toLocaleString('ru-RU')} so'mga to'ldirasizmi?`))) return;
+  const box = document.getElementById('balPay');
+  box.hidden = false;
+  box.textContent = 'Tayyorlanmoqda...';
+  try {
+    const res = await fetch('/api/ai-request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ service:'topup', topup: amount, initData: tg.initData }) });
+    const data = await res.json().catch(() => ({}));
+    if (!data.ok) { box.textContent = data.error || 'Xatolik yuz berdi'; return; }
+    const c = data.card;
+    box.innerHTML = `Shu kartaga <b>aynan ${escHtml(fmt(c.price))}</b> o'tkazing:
+      <div class="bal-card" data-copy="${escHtml(c.number.replace(/\s/g, ''))}">${escHtml(c.number)}<span>Nusxa</span></div>
+      ${c.name ? `<div>${escHtml(c.name)}</div>` : ''}
+      ${c.topup && c.price > c.topup ? `<div class="bal-extra">ℹ️ +${c.price - c.topup} so'm — to'lovingizni aniq tanib olish uchun. Komissiya emas, u ham balansingizga tushadi.</div>` : ''}
+      <div style="margin-top:6px">So'ng to'lov chekini (skrinshot) <b>botga</b> yuboring — chek avtomatik tekshiriladi va balans to'ldiriladi.</div>
+      <button type="button" class="order-btn bal-go">Botga o'tish</button>`;
+    box.querySelector('.bal-card').onclick = ev => {
+      const el = ev.currentTarget;
+      if (navigator.clipboard) navigator.clipboard.writeText(el.dataset.copy).then(() => { el.querySelector('span').textContent = '✓ Nusxa olindi'; }, () => {});
+    };
+    box.querySelector('.bal-go').onclick = () => { if (tg && tg.close) tg.close(); };
+  } catch(e){ box.textContent = 'Internet aloqasini tekshiring'; }
+}
+document.getElementById('balMinBtn').addEventListener('click', () => startTopup(balMin));
+document.getElementById('balCustomGo').addEventListener('click', () => {
+  const inp = document.getElementById('balCustom');
+  const amount = Math.round(Number(inp.value) || 0);
+  const box = document.getElementById('balPay');
+  if (amount < balMin || amount > 1000000) {
+    box.hidden = false;
+    box.textContent = amount > 1000000 ? 'Summa juda katta.' : `Kamida ${fmt(balMin)} kiriting.`;
+    inp.focus();
+    return;
+  }
+  startTopup(amount);
 });
 document.getElementById('btnOtherBottom').addEventListener('click', openOwnerChat);
 
