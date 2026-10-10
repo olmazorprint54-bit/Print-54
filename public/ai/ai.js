@@ -1250,7 +1250,7 @@
           ${bulletHtml(bullets.slice(0, 3), 2.3)}
         </div>`;
     }
-    return `<div class="slide-box"><div class="slide" style="background:${t.bg}">${decoHtml(t)}${body}</div></div>`;
+    return `<div class="slide-box"><div class="slide" style="background:${t.bg}"><div class="vbox" style="width:${VB.slide}px;height:${VB.slide * 9 / 16}px">${decoHtml(t)}${body}</div></div></div>`;
   }
 
   /* ---------------------------------------------------------------
@@ -1263,8 +1263,29 @@
 
   function pageHtml(svcId, t, kind, d) {
     const inner = (PAGES[svcId] && PAGES[svcId](t.style, kind, d)) || "";
-    return `<div class="page-box"><div class="page">${inner}</div></div>`;
+    return `<div class="page-box"><div class="page"><div class="vbox" style="width:${VB.page}px;height:${VB.page * 1.414}px">${inner}</div></div></div>`;
   }
+
+  // Namunalar katta "virtual" o'lchamda chiziladi va kichraytiriladi (transform): telefondagi
+  // Telegram (Android WebView) juda mayda shriftni majburan kattalashtiradi — kichik kartochkada
+  // matn ustma-ust tushardi. 600px kenglikda eng mayda yozuv ham ~11px bo'ladi.
+  const VB = { page: 600, slide: 640 };
+  const fitBox = (el) => {
+    const vb = el.firstElementChild;
+    if (!vb || !vb.classList.contains("vbox")) return;
+    const w = el.clientWidth;
+    if (w) { vb.style.setProperty("--k", (w / parseFloat(vb.style.width)).toFixed(4)); vb.classList.add("fit"); }
+  };
+  const vbRO = typeof ResizeObserver !== "undefined" ? new ResizeObserver((es) => es.forEach((e) => fitBox(e.target))) : null;
+  function watchBoxes(scope) {
+    (scope || document).querySelectorAll(".page, .slide").forEach((el) => {
+      if (el.__vb || !el.querySelector(":scope > .vbox")) return;
+      el.__vb = true;
+      if (vbRO) vbRO.observe(el); else fitBox(el);
+    });
+  }
+  new MutationObserver(() => watchBoxes(document)).observe(document.body, { childList: true, subtree: true });
+  if (!vbRO) window.addEventListener("resize", () => document.querySelectorAll(".page, .slide").forEach(fitBox));
 
   // Resume: kiritilgan matnni qatorlarga bo'lib, namuna ko'rinishida chizamiz
   const rLines = (txt, fb) => (txt ? txt.split(/\n+/).filter(Boolean).slice(0, 4) : fb).map((x) => esc(clip(x, 60)));
