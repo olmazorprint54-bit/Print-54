@@ -29,9 +29,11 @@ module.exports = async (req, res) => {
     for (const folder of folders || []) {
       if (folder.id) continue; // ildizda faqat foydalanuvchi papkalari bo'ladi
       const { data: files } = await store.list(folder.name, { limit: 1000 });
-      const old = (files || [])
-        .filter((f) => f.id && new Date(f.created_at).getTime() < cutoff)
-        .map((f) => `${folder.name}/${f.name}`);
+      const { data: src } = await store.list(`${folder.name}/src`, { limit: 1000 }); // manbalar (adabiyotlar)
+      const old = [
+        ...(files || []).filter((f) => f.id && new Date(f.created_at).getTime() < cutoff).map((f) => `${folder.name}/${f.name}`),
+        ...(src || []).filter((f) => f.id && new Date(f.created_at).getTime() < cutoff).map((f) => `${folder.name}/src/${f.name}`),
+      ];
       if (old.length) {
         await store.remove(old);
         removed += old.length;

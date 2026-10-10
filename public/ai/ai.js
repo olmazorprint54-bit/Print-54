@@ -159,6 +159,11 @@
           <div class="ph-grid" data-photos="${f.id}">${photoTiles(svc, f)}</div>
           <input type="file" accept="image/*" multiple hidden data-photo-input="${f.id}">
           <div class="ai-err">Rasmlar hali yuklanmoqda — biroz kuting</div></div>`;
+      case "sources":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+          <div class="src-list" data-src-list="${f.id}">${sourcesHtml(v)}</div>
+          <label class="src-add glass">📎 Fayl qo'shish<input type="file" data-src-input="${f.id}" accept=".pdf,.docx,.txt,image/*" multiple hidden></label>
+          <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}` : ""}</div></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
@@ -198,6 +203,98 @@
       if (el) el.classList.remove("error");
     }
     if (current === svc) refreshLive(svc);
+  }
+
+  /* ---------- Manbalar (adabiyotlar): api/ai-upload.js -> api/_lib/sources.js ---------- */
+  const SRC_MAX = 3, SRC_PAGES = 100, SRC_CHUNK = 2.6 * 1024 * 1024; // bo'lak (base64 da ~3.5 MB)
+  let srcList = null;            // serverdagi manbalar [{id, name, kind, pages}]
+  const srcUploads = [];         // yuklanayotganlar [{name, pct}]
+  let srcAutoPicked = false;
+  const srcApi = (extra) => fetch(CFG.uploadEndpoint, {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ initData: tg ? tg.initData : null, bot: (window.AI_APP || {}).bot, ...extra }),
+  }).then(async (r) => { const d = await r.json().catch(() => ({})); if (!r.ok || !d.ok) throw Object.assign(new Error(d.error || "Server xatosi"), { show: d.error }); return d; });
+  const srcIcon = (k) => ({ pdf: "📕", docx: "📘", txt: "📄", image: "🖼" }[k] || "📄");
+  function sourcesHtml(v) {
+    const sel = new Set(v.sources || []);
+    if (!tg || !tg.initData) return `<div class="src-empty">Manba yuklash uchun ilovani Telegram ichida oching</div>`;
+    if (srcList === null) return `<div class="src-empty">Yuklanmoqda...</div>`;
+    const rows = srcList.map((s) => `<div class="src-item${sel.has(s.id) ? " on" : ""}" data-src-pick="${esc(s.id)}">
+        <span class="src-check">${sel.has(s.id) ? "✓" : ""}</span><span class="src-name">${srcIcon(s.kind)} ${esc(s.name)}</span><span class="src-pages">~${s.pages} bet</span>
+        <span class="src-del" data-src-del="${esc(s.id)}" title="O'chirish">✕</span></div>`).join("") +
+      srcUploads.map((u) => `<div class="src-item up"><span class="src-check">⏳</span><span class="src-name">${esc(u.name)}</span><span class="src-pages">${u.err ? "xato" : u.pct + "%"}</span></div>`).join("");
+    return rows || `<div class="src-empty">Hali manba yo'q — fayl qo'shing yoki botga yuboring</div>`;
+  }
+  function redrawSources(svc) {
+    const box = root.querySelector('[data-src-list="sources"]');
+    if (box) box.innerHTML = sourcesHtml(getValues(svc));
+    refreshLive(svc);
+  }
+  async function loadSources(svc) {
+    if (!tg || !tg.initData) return;
+    try {
+      const d = await srcApi({ action: "src-list" });
+      srcList = d.sources || [];
+      // botga yaqinda (2 soat ichida) yuborilgan fayllar — avtomatik tanlanadi
+      const v = getValues(svc);
+      if (!srcAutoPicked && !(v.sources || []).length) {
+        v.sources = srcList.filter((s) => Date.now() - s.at < 2 * 3600 * 1000).slice(0, SRC_MAX).map((s) => s.id);
+      }
+      srcAutoPicked = true;
+      v.sources = (v.sources || []).filter((id) => srcList.some((s) => s.id === id));
+    } catch (e) { srcList = srcList || []; }
+    if (current === svc) redrawSources(svc);
+  }
+  function pickSource(svc, id) {
+    const v = getValues(svc);
+    const sel = new Set(v.sources || []);
+    if (sel.has(id)) sel.delete(id);
+    else {
+      const pages = srcList.filter((s) => sel.has(s.id) || s.id === id).reduce((n, s) => n + s.pages, 0);
+      if (sel.size >= SRC_MAX) return srcStatus(`Ko'pi bilan ${SRC_MAX} ta manba tanlash mumkin`);
+      if (pages > SRC_PAGES) return srcStatus(`Manbalar jami ${SRC_PAGES} betdan oshmasin — kerakli boblarni alohida yuklang`);
+      sel.add(id);
+    }
+    v.sources = [...sel];
+    tick();
+    redrawSources(svc);
+  }
+  function srcStatus(text) { const s = document.getElementById("aiStatus"); if (s) s.textContent = text; haptic("warning"); }
+  const toB64 = (buf) => { let s = ""; const b = new Uint8Array(buf); for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(s); };
+  async function addSources(svc, files) {
+    for (const file of Array.from(files)) {
+      const isImg = /^image\//.test(file.type);
+      if (!isImg && !/\.(pdf|docx|txt)$/i.test(file.name)) { srcStatus("Faqat PDF, Word (.docx), TXT yoki rasm yuklash mumkin"); continue; }
+      if (file.size > 20 * 1024 * 1024) { srcStatus(`«${file.name}» 20 MB dan katta — kerakli qismini yuklang`); continue; }
+      const up = { name: file.name, pct: 0 };
+      srcUploads.push(up);
+      redrawSources(svc);
+      try {
+        let buf, name = file.name;
+        if (isImg) { const im = await shrinkImage(file); buf = Uint8Array.from(atob(im.full.split(",")[1]), (c) => c.charCodeAt(0)).buffer; name = name.replace(/\.[^.]+$/, "") + ".jpg"; }
+        else buf = await file.arrayBuffer();
+        const total = Math.max(1, Math.ceil(buf.byteLength / SRC_CHUNK));
+        let id = null, res = null;
+        for (let i = 0; i < total; i++) {
+          res = await srcApi({ action: "src-part", id, name, index: i, total, data: toB64(buf.slice(i * SRC_CHUNK, (i + 1) * SRC_CHUNK)) });
+          id = res.id;
+          up.pct = Math.round(((i + 1) / total) * 100);
+          redrawSources(svc);
+        }
+        srcUploads.splice(srcUploads.indexOf(up), 1);
+        srcList = [res.source, ...(srcList || []).filter((s) => s.id !== res.source.id)];
+        const v = getValues(svc);
+        const pages = srcList.filter((s) => (v.sources || []).includes(s.id)).reduce((n, s) => n + s.pages, 0) + res.source.pages;
+        if ((v.sources || []).length < SRC_MAX && pages <= SRC_PAGES) v.sources = [...(v.sources || []), res.source.id];
+        haptic("success");
+      } catch (e) {
+        console.error(e);
+        up.err = true;
+        srcStatus(e.show || `«${file.name}» ni yuklab bo'lmadi`);
+        setTimeout(() => { const k = srcUploads.indexOf(up); if (k >= 0) srcUploads.splice(k, 1); redrawSources(svc); }, 2500);
+      }
+      redrawSources(svc);
+    }
   }
 
   // Katta rasmni 1600px gacha kichraytirib JPEG qilamiz (+ kichik ko'rinish)
@@ -502,6 +599,7 @@
     if (!svc) return;
     current = svc;
     renderForm(svc);
+    if (svc.fields.some((f) => f.type === "sources")) loadSources(svc);
     applyShowIf(svc);
     syncBackButton();
     window.scrollTo(0, 0);
@@ -573,6 +671,7 @@
       ["Hajmi", amount || "—"],
       ["Shablon", pick("template")],
       ...(v.titul ? [["Titul", "🎓 OTM namunasida"]] : []),
+      ...((v.sources || []).length ? [["Manbalar", `📎 ${v.sources.length} ta${PR && !PR.TRIAL ? ` (+${fmt(PR.SOURCE_FEE)})` : ""}`]] : []),
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
@@ -627,12 +726,31 @@
      HODISALAR
      --------------------------------------------------------------- */
   root.addEventListener("change", (e) => {
+    if (e.target.matches("[data-src-input]") && current) {
+      const files = e.target.files;
+      if (files && files.length) addSources(current, files);
+      e.target.value = "";
+      return;
+    }
     if (!e.target.matches("[data-bonus]") || !current) return;
     useBonus = e.target.checked;
     tick();
     refreshLive(current);
   });
   root.addEventListener("click", (e) => {
+    const sdel = e.target.closest("[data-src-del]");
+    if (sdel && current) {
+      e.preventDefault();
+      const id = sdel.dataset.srcDel;
+      srcList = (srcList || []).filter((s) => s.id !== id);
+      const v = getValues(current);
+      v.sources = (v.sources || []).filter((x) => x !== id);
+      redrawSources(current);
+      srcApi({ action: "src-del", id }).catch(() => {});
+      return;
+    }
+    const spick = e.target.closest("[data-src-pick]");
+    if (spick && current) { pickSource(current, spick.dataset.srcPick); return; }
     const pick = e.target.closest("[data-pick]");
     if (pick && current) { tick(); setTitul(current, TITULS.find((t) => t.id === pick.dataset.pick)); return; }
     const open = e.target.closest("[data-open]");

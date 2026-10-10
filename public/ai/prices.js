@@ -10,6 +10,9 @@
   // xarajat o'lchanadi. Narxlar belgilangach false qilinadi.
   var TRIAL = true;
   var MIN = 13000;
+  // Mijoz o'z manbalarini (adabiyot) yuklasa — qo'shimcha (AI ularni o'qiydi)
+  var SOURCE_FEE = 5000;
+  var SOURCE_SERVICES = ["essay", "referat", "article", "presentation", "test", "questions", "lesson"];
   var num = function (v, d) { var n = parseInt(v, 10); return isFinite(n) && n > 0 ? n : d; };
 
   // base — shu hajmgacha (upTo); undan keyin har bir birlik uchun step
@@ -37,6 +40,7 @@
       if (n > t.upTo) p += (n - t.upTo) * t.step;
     }
     if (t.extra) for (var k in t.extra) if (t.extra[k][f[k]]) p += t.extra[k][f[k]];
+    if (f.sources && f.sources.length && SOURCE_SERVICES.indexOf(service) >= 0) p += SOURCE_FEE;
     return Math.max(MIN, Math.round(p / 500) * 500);
   }
 
@@ -47,7 +51,7 @@
     return t.base ? Math.max(MIN, t.base) : 0;
   }
 
-  var api = { TRIAL: TRIAL, MIN: MIN, TABLE: TABLE, priceOf: priceOf, fromPrice: fromPrice };
+  var api = { TRIAL: TRIAL, MIN: MIN, TABLE: TABLE, SOURCE_FEE: SOURCE_FEE, SOURCE_SERVICES: SOURCE_SERVICES, priceOf: priceOf, fromPrice: fromPrice };
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.AI_PRICES = api;
 })(this);

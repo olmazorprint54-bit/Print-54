@@ -111,7 +111,7 @@ async function writeSlides(d, spec) {
   };
   const r = await askJson({
     model: MODEL(), system: SYSTEM, effort: "medium", maxTokens: 32000, schema,
-    prompt: `Create a presentation.
+    prompt: require("./sources").sourcesBlock(d) + `Create a presentation.
 Topic: ${d.topic}
 Subject: ${d.subject || "—"}
 Language: ${LANG_NAMES[d.lang]}
@@ -450,6 +450,7 @@ async function generatePresentation(f, photoUrls = []) {
   }
   const lang = LANG_NAMES[f.lang] ? f.lang : "uz_lat";
   const d = {
+    sourceNotes: f.sourceNotes,
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120), lang,
     count: Math.min(MAX_SLIDES, Math.max(3, parseInt(f.slides, 10) || 10)),
     images: f.images !== false, tables: !!f.tables,

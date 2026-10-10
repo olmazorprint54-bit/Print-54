@@ -14,6 +14,7 @@ const crypto = require("crypto");
 const { authUser, verifyInitData } = require("./_lib/bots");
 
 const supabase = require("./_lib/db");
+const SRC = require("./_lib/sources");
 
 const BUCKET = "ai-uploads";
 const MAX_BYTES = 3 * 1024 * 1024;
@@ -40,6 +41,26 @@ module.exports = async (req, res) => {
     const auth = authUser(body);
     if (!auth) {
       res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" });
+      return;
+    }
+
+    // Manbalar (adabiyotlar): bo'laklab yuklash, ro'yxat, o'chirish (api/_lib/sources.js)
+    if (body.action === "src-part") {
+      try {
+        res.status(200).json({ ok: true, ...(await SRC.savePart(auth.user.id, body)) });
+      } catch (e) {
+        if (!e.user) throw e;
+        res.status(400).json({ ok: false, error: e.message });
+      }
+      return;
+    }
+    if (body.action === "src-list") {
+      res.status(200).json({ ok: true, sources: await SRC.list(auth.user.id), maxFiles: SRC.MAX_FILES, maxPages: SRC.MAX_PAGES });
+      return;
+    }
+    if (body.action === "src-del") {
+      await SRC.remove(auth.user.id, body.id);
+      res.status(200).json({ ok: true });
       return;
     }
 

@@ -52,7 +52,8 @@ function costOf(model, usage) {
 // Bitta so'rov -> sxemaga mos JSON. Javob uzun bo'lishi mumkin, shuning
 // uchun oqim (stream) bilan olinadi. Xavfsizlik filtri noto'g'ri rad etsa,
 // so'rov server tomonida boshqa modelda qayta bajariladi (fallbacks).
-async function askJson({ model, system, prompt, schema, maxTokens = 32000, effort = "medium" }) {
+// content — prompt o'rniga bloklar ro'yxati (hujjat, rasm, matn) bo'lishi mumkin
+async function askJson({ model, system, prompt, content, schema, maxTokens = 32000, effort = "medium" }) {
   const stream = getClient().beta.messages.stream({
     model,
     max_tokens: maxTokens,
@@ -60,7 +61,7 @@ async function askJson({ model, system, prompt, schema, maxTokens = 32000, effor
     fallbacks: "default",
     output_config: { effort, format: { type: "json_schema", schema } },
     system,
-    messages: [{ role: "user", content: prompt }],
+    messages: [{ role: "user", content: content || prompt }],
   });
   const msg = await stream.finalMessage();
   if (msg.stop_reason === "refusal") throw new Error("AI so'rovni rad etdi");

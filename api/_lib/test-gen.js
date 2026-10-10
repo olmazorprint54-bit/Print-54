@@ -105,7 +105,7 @@ async function generateTest(fields) {
   const ai = await askJson({
     model: MODEL(),
     system: SYSTEM,
-    prompt: testPrompt(d, d.count),
+    prompt: require("./sources").sourcesBlock(fields) + testPrompt(d, d.count),
     schema: SCHEMA,
     maxTokens: 64000,
     effort: "medium",
