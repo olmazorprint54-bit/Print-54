@@ -66,6 +66,9 @@ const fileKey = (msg) => (msg.photo && msg.photo.length ? msg.photo[msg.photo.le
 // Natija: { ok, reasons: [...], read: {...}, ai, fileKey }
 async function verify(bot, msg, order, card) {
   const want = Number(order.details.payAmount || order.total);
+  // mijoz noyob qo'shimchasiz (masalan 5 013 o'rniga 5 000) yoki ko'proq o'tkazsa ham
+  // qabul qilinadi — balansga chekdagi haqiqiy summa tushadi
+  const base = Number(order.details.topup) || want;
   const key = fileKey(msg);
   const reasons = [];
   if (!hasKey()) return { ok: false, reasons: ["AI ulanmagan"], fileKey: key };
@@ -85,7 +88,7 @@ async function verify(bot, msg, order, card) {
   if (!r.is_receipt) reasons.push("to'lov chekiga o'xshamaydi");
   else if (!r.success) reasons.push("to'lov muvaffaqiyatli deb ko'rsatilmagan");
   if (r.amount == null) reasons.push("summa o'qilmadi");
-  else if (Math.round(r.amount) !== want) reasons.push(`summa mos emas: chekda ${Math.round(r.amount).toLocaleString("ru-RU")}, kerak ${want.toLocaleString("ru-RU")}`);
+  else if (Math.round(r.amount) < base) reasons.push(`summa kam: chekda ${Math.round(r.amount).toLocaleString("ru-RU")}, kerak kamida ${base.toLocaleString("ru-RU")}`);
   const last4 = card && card.number.replace(/\D/g, "").slice(-4);
   if (r.recipient_card_last4 && last4 && String(r.recipient_card_last4).replace(/\D/g, "").slice(-4) !== last4) reasons.push(`boshqa kartaga: *${r.recipient_card_last4}`);
   const at = parseLocal(r.paid_at);
@@ -107,7 +110,8 @@ async function verify(bot, msg, order, card) {
     if (o.details.fraud && String(o.telegram_user_id) === String(order.telegram_user_id)) reasons.push(`mijoz avval #${o.id} da "pul tushmadi" deb belgilangan`);
   }
 
-  return { ok: !reasons.length, reasons: [...new Set(reasons)], read: r, ai, fileKey: key };
+  const paid = r.amount != null && r.amount > 0 ? Math.round(r.amount) : null;
+  return { ok: !reasons.length, reasons: [...new Set(reasons)], read: r, paid, ai, fileKey: key };
 }
 
 // Har bir to'ldirishga noyob summa (summa + 1..19 so'm): chek va Click/Payme xabaridan
