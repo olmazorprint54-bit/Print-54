@@ -31,7 +31,10 @@
   // Referal bonusi (AI bot): bepul AI buyurtmalar soni — app.js /api/my-rewards dan qo'yadi
   let useBonus = true;
   const bonusLeft = () => Number(window.AI_BONUS) || 0;
-  const bonusOn = (svc, v) => useBonus && bonusLeft() > 0 && orderPrice(svc, v) > 0;
+  // Birinchi AI ishi tekin (AI botda; server window.AI_FIRST_FREE ni beradi), kurs ishidan tashqari
+  const freeOk = (svc) => svc.id !== "kurs";
+  const firstFreeOn = (svc, v) => !!window.AI_FIRST_FREE && freeOk(svc) && orderPrice(svc, v) > 0;
+  const bonusOn = (svc, v) => useBonus && bonusLeft() > 0 && freeOk(svc) && !firstFreeOn(svc, v) && orderPrice(svc, v) > 0;
   window.aiBonusChanged = () => { if (current) refreshLive(current); };
 
   /* ---------------------------------------------------------------
@@ -686,12 +689,12 @@
       ["Til", pick("lang")],
       ...(svc.fields.some((f) => f.id === "print") ? [["Chop etish", pick("print")]] : []),
     ];
-    const bonusRow = bonusLeft() > 0 && orderPrice(svc, v) > 0
+    const bonusRow = bonusLeft() > 0 && freeOk(svc) && !firstFreeOn(svc, v) && orderPrice(svc, v) > 0
       ? `<label class="receipt-line bonus-line"><span>🎁 Bonusdan foydalanish (${bonusLeft()} ta)</span><span class="switch"><input type="checkbox" data-bonus="1"${useBonus ? " checked" : ""}><span class="slider"></span></span></label>`
       : "";
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") + bonusRow +
       // tekin xizmatda chop etish alohida hisoblanadi
-      (() => { const t = bonusOn(svc, v) ? "🎁 Bonus — bepul" : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
+      (() => { const t = firstFreeOn(svc, v) ? "🎁 Birinchi ish — tekin" : bonusOn(svc, v) ? "🎁 Bonus — bepul" : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
         return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${t.length > 12 ? "16px" : "23px"}">${esc(t)}</span></div>`; })();
   }
 
@@ -1036,6 +1039,7 @@
       }
       haptic("success");
       if (data.credit) { window.AI_BONUS = Math.max(0, bonusLeft() - 1); if (window.aiBonusUsed) window.aiBonusUsed(); }
+      if (data.firstFree) window.AI_FIRST_FREE = false;
       renderDone(svc, data.auto, false, data.balance);
     } catch (err) {
       console.error(err);

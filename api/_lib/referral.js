@@ -32,7 +32,9 @@ async function registerReferral(bot, from, startText, isNew) {
 async function confirmReferral(bot, order) {
   if (!AI_MODE || !order || !order.telegram_user_id) return;
   const d = order.details || {};
-  const worth = Number(order.total) > 0 || Number(d.listPrice) > 0; // tekin resume/obyektivka hisobga olinmaydi
+  // haqiqatan to'langan buyurtma (balansdan yoki kartadan); tekin birinchi ish, bonus,
+  // sinov va tekin resume/obyektivka hisobga olinmaydi — soxta akkauntlar bilan bonus yig'ilmasin
+  const worth = Number(order.total) > 0 && !d.firstFree && !d.credit && !d.trial;
   if (!worth) return;
   // shartli yangilash: bir vaqtda ikki buyurtma tugasa ham faqat bittasi tasdiqlaydi
   const { data: rows } = await supabase

@@ -22,7 +22,7 @@ const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require(
 const { takeCredit } = require("./_lib/referral");
 const { uniqueAmount } = require("./_lib/receipt");
 const { createTopup } = require("./_lib/topup");
-const { walletOf, topupNeed, MAX_TOPUP } = require("./_lib/balance");
+const { walletOf, topupNeed, MAX_TOPUP, FIRST_FREE_EXCEPT } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
 // AI'siz avtomatik tayyorlanadigan xizmatlar (api/resume-pdf.js)
@@ -33,7 +33,7 @@ const AUTO = {
   presentation: canAutoPres,
 };
 const { internalKey } = require("./_lib/internal-key");
-const { MAIN, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
+const { MAIN, AI_MODE, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
 
 const supabase = require("./_lib/db");
 
@@ -269,11 +269,15 @@ module.exports = async (req, res) => {
     // bo'lsa — sinov rejimi: to'lovsiz, lekin mijozga kuniga FREE_DAILY ta.
     const paid = !!(body.autoResume && price > 0);
     if (paid && !u) body.autoResume = false; // Telegram'siz — qo'lda
-    // Referal bonusi: 1 ta bepul AI buyurtma — to'lov va sinov limitisiz
-    const credit = paid && !!u && body.useBonus === true && (await takeCredit(u.id));
     // Bot egasi (OWNER_CHAT_ID) sinab ko'rishi uchun to'lov va limit yo'q
     const isOwner = !!u && String(u.id) === String(process.env.OWNER_CHAT_ID || "").trim();
-    const mustPay = paid && !!u && !credit && !isOwner && !TRIAL;
+    // Yangi mijoz: birinchi AI ishi tekin (faqat AI botda, kurs ishidan tashqari)
+    const freeOk = !FIRST_FREE_EXCEPT.includes(body.service);
+    // (Vercel env FIRST_FREE=0 — aksiyani o'chiradi)
+    const firstFree = paid && !!u && !isOwner && !TRIAL && AI_MODE && process.env.FIRST_FREE !== "0" && freeOk && (await walletOf(u.id)).firstFree;
+    // Referal bonusi: 1 ta bepul AI buyurtma (kurs ishidan tashqari) — to'lov va sinov limitisiz
+    const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await takeCredit(u.id));
+    const mustPay = paid && !!u && !credit && !firstFree && !isOwner && !TRIAL;
     const payNow = mustPay && !!providerToken();
     // Click/Payme ulanmagan — balans: yetsa darhol yechiladi, yetmasa kartaga
     // to'ldirish (kamida 5 000 so'm, chekni AI tekshiradi), so'ng buyurtma boshlanadi
@@ -297,12 +301,12 @@ module.exports = async (req, res) => {
         card = { ...cardCfg, topup };
       }
     }
-    const trial = paid && !!u && !credit && !payNow && !cardCfg;
+    const trial = paid && !!u && !credit && !firstFree && !payNow && !cardCfg;
     if (trial && !isOwner && (await trialsToday(u.id)) >= FREE_DAILY) {
       res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
-    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}) };
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}), ...(firstFree ? { firstFree: true, listPrice: price } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -312,7 +316,7 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: trial || credit ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
+        total: trial || credit || firstFree ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
@@ -391,7 +395,7 @@ module.exports = async (req, res) => {
 
     if (auto) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
 
-    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}), ...(spend ? { balance: { spent: spend, left: bal - spend } } : {}) });
+    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}), ...(firstFree ? { firstFree: true } : {}), ...(spend ? { balance: { spent: spend, left: bal - spend } } : {}) });
   } catch (err) {
     console.error(err);
     // Sababi egaga ham boradi — Vercel loglarini ochmasdan ko'rish uchun

@@ -23,13 +23,20 @@ function sumOf(rows) {
   return sum;
 }
 
-// Balans va eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT)
+// Birinchi AI ishi tekin (AI botda, kurs ishidan tashqari): mijozda hali pullik AI
+// buyurtma (bekor qilinmagan, to'lov kutmayotgan) bo'lmasa. Tekin xizmatlar
+// (resume, obyektivka), chop etish va to'ldirishlar hisobga kirmaydi.
+const NOT_AI = ["paper", "book", "binding", "topup", "resume", "obyektivka"];
+const FIRST_FREE_EXCEPT = ["kurs"];
+const hadAiOrder = (rows) => (rows || []).some((o) => !NOT_AI.includes(o.service) && o.status !== "cancelled" && !(o.details && o.details.awaitingPayment));
+
+// Balans, eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT) va birinchi ish tekinligi
 async function walletOf(userId) {
-  if (!userId) return { balance: 0, minTopup: MIN_FIRST };
-  const { data, error } = await supabase.from("orders").select("status, details").eq("telegram_user_id", userId).limit(5000);
+  if (!userId) return { balance: 0, minTopup: MIN_FIRST, firstFree: false };
+  const { data, error } = await supabase.from("orders").select("service, status, details").eq("telegram_user_id", userId).limit(5000);
   if (error) throw error;
   const topped = (data || []).some((o) => o.details && o.details.topup && o.details.payment);
-  return { balance: sumOf(data), minTopup: topped ? MIN_NEXT : MIN_FIRST };
+  return { balance: sumOf(data), minTopup: topped ? MIN_NEXT : MIN_FIRST, firstFree: !hadAiOrder(data) };
 }
 const balanceOf = async (userId) => (await walletOf(userId)).balance;
 
@@ -39,4 +46,4 @@ function topupNeed(price, balance, minTopup = MIN_FIRST) {
   return { min, options: [min] };
 }
 
-module.exports = { MIN_FIRST, MIN_NEXT, MAX_TOPUP, walletOf, balanceOf, sumOf, topupNeed };
+module.exports = { MIN_FIRST, MIN_NEXT, MAX_TOPUP, FIRST_FREE_EXCEPT, walletOf, balanceOf, sumOf, topupNeed };
