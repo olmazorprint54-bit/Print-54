@@ -214,6 +214,7 @@
       const data = await api("/api/my-rewards");
       if (!data.ok || !data.ai) return; // Print 54 loyihasidagi botlarda — referal yo'q
       window.AI_BONUS = data.ai.credits;
+      window.AI_FIRST_FREE = !!data.firstFree;
       if (data.balance != null) {
         $("balCard").hidden = false;
         $("balSum").textContent = Math.round(data.balance).toLocaleString("ru-RU") + " so'm";

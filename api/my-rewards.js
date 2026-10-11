@@ -28,8 +28,8 @@ module.exports = async (req, res) => {
 
     // Alohida AI bot: bepul AI buyurtmalar (referal bonusi)
     if (AI_MODE) {
-      const [ai, w] = await Promise.all([rewardsOf(auth.bot, userId), walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST }))]);
-      res.status(200).json({ ok: true, ai, balance: w.balance, minTopup: w.minTopup });
+      const [ai, w] = await Promise.all([rewardsOf(auth.bot, userId), walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST, firstFree: false }))]);
+      res.status(200).json({ ok: true, ai, balance: w.balance, minTopup: w.minTopup, firstFree: !!w.firstFree && process.env.FIRST_FREE !== "0" });
       return;
     }
 

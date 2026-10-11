@@ -243,6 +243,7 @@ async function handleBroadcast(msg) {
       const res = await callTelegram("sendMessage", {
         chat_id: u.telegram_user_id,
         text,
+        reply_markup: TOPUP.keyboard(), // eski mijozlarda ham pastki tugmalar paydo bo'ladi
       });
       if (res.ok) sent++; else failed++;
     } catch (e) {
@@ -419,7 +420,7 @@ async function welcomeExtra(msg, bot, host) {
   const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${CHAT.FREE()} ta bepul). Yangi mavzu: /yangi${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${AI_MODE ? "\n\n🎁 <b>Birinchi ishingiz — tekin!</b> (kurs ishidan tashqari)" : ""}\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${CHAT.FREE()} ta bepul). Yangi mavzu: /yangi${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma (kurs ishidan tashqari) — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
   }, bot);
@@ -516,7 +517,8 @@ async function handleMessage(msg, bot, host, req) {
   }
 
   if (msg.text.startsWith("/elon")) {
-    await handleBroadcast(msg);
+    // fonda — ko'p foydalanuvchida Telegram webhook'ni kutib qolmasin
+    waitUntil(handleBroadcast(msg).catch((e) => console.error("E'lon:", e)));
     return;
   }
 
