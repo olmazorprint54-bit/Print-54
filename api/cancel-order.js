@@ -14,6 +14,7 @@
 const { authUser, orderBot, botKey, telegram } = require("./_lib/bots");
 
 const supabase = require("./_lib/db");
+const { cancelledText } = require("./_lib/pay");
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 function escapeHtml(str) {
   return String(str)
@@ -119,6 +120,16 @@ module.exports = async (req, res) => {
       .eq("id", orderId);
 
     if (updateError) throw updateError;
+
+    // Kartaga to'lov kutilayotgan bo'lsa — botdagi karta xabari qisqa yozuvga aylanadi
+    if (d.awaitingPayment && d.payMsg) {
+      await telegram(orderBot(order), "editMessageText", {
+        chat_id: order.telegram_user_id,
+        message_id: d.payMsg,
+        text: cancelledText(order),
+        reply_markup: { inline_keyboard: [] },
+      }).catch((e) => console.error("Karta xabarini o'zgartirib bo'lmadi:", e));
+    }
 
     // Agar bu buyurtmada bepul varaqlar ishlatilgan bo'lsa,
     // ularni mijozning balansiga qaytarib qo'shamiz
