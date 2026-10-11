@@ -20,6 +20,7 @@ const { canAutoPres } = require("./_lib/pres-gen");
 const { priceOf, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
+const { takeGiftAi } = require("./_lib/bonus");
 const { uniqueAmount } = require("./_lib/receipt");
 const { createTopup } = require("./_lib/topup");
 const LB = require("./_lib/i18n-bot");
@@ -277,7 +278,8 @@ module.exports = async (req, res) => {
     // (Vercel env FIRST_FREE=0 — aksiyani o'chiradi)
     const firstFree = paid && !!u && !isOwner && !TRIAL && AI_MODE && process.env.FIRST_FREE !== "0" && freeOk && (await walletOf(u.id)).firstFree;
     // Referal bonusi: 1 ta bepul AI buyurtma (kurs ishidan tashqari) — to'lov va sinov limitisiz
-    const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await takeCredit(u.id));
+    // bonus: AI botda — referal/obuna bonusi; hisoblash botida — obuna sovg'asi (AI xizmat yoki 10 varaq)
+    const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await (AI_MODE ? takeCredit(u.id) : takeGiftAi(u.id).catch(() => false)));
     const mustPay = paid && !!u && !credit && !firstFree && !isOwner && !TRIAL;
     const payNow = mustPay && !!providerToken();
     // Click/Payme ulanmagan — balans: yetsa darhol yechiladi, yetmasa kartaga

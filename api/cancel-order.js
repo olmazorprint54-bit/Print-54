@@ -15,6 +15,7 @@ const { authUser, orderBot, botKey, telegram } = require("./_lib/bots");
 
 const supabase = require("./_lib/db");
 const { cancelledText } = require("./_lib/pay");
+const { returnGiftPages } = require("./_lib/bonus");
 const SERVICE_LABELS = { paper: "Qog'oz chop etish", book: "Kitob chiqarish", binding: "Pereplyot" };
 function escapeHtml(str) {
   return String(str)
@@ -133,7 +134,10 @@ module.exports = async (req, res) => {
 
     // Agar bu buyurtmada bepul varaqlar ishlatilgan bo'lsa,
     // ularni mijozning balansiga qaytarib qo'shamiz
-    const usedFree = order.free_pages_used || 0;
+    // (obuna sovg'asidan olingan varaqlar — sovg'aning o'ziga qaytadi)
+    const giftPages = (d.giftPages || []).reduce((a, g) => a + (g.n || 0), 0);
+    if (giftPages > 0) await returnGiftPages(userId, d.giftPages).catch((e) => console.error("Sovg'a varaqlari:", e));
+    const usedFree = Math.max(0, (order.free_pages_used || 0) - giftPages);
     if (usedFree > 0) {
       const { data: userRow } = await supabase
         .from("users")

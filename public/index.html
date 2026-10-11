@@ -287,12 +287,15 @@
     background: rgba(15,18,25,0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-top:1px solid var(--glass-border);
   }
-  .app-nav > div{ position:relative; display:flex; flex-direction:column; align-items:center; gap:3px; font-size:11px; font-weight:700; color: var(--ink-soft); cursor:pointer; min-width:84px; }
+  .app-nav > div{ position:relative; display:flex; flex-direction:column; align-items:center; gap:3px; font-size:11px; font-weight:700; color: var(--ink-soft); cursor:pointer; min-width:64px; }
   .app-nav svg{ width:23px; height:23px; stroke: currentColor; }
   .app-nav .on{ color: var(--accent); }
   .app-nav .order-badge{ top:-4px; right:20px; }
-  #panel-myorders, #panel-profile{ display:none !important; }
-  body.view-orders #panel-myorders, body.view-profile #panel-profile{ display:block !important; }
+  #panel-myorders, #panel-profile, #panel-bonus{ display:none !important; }
+  body.view-orders #panel-myorders, body.view-profile #panel-profile, body.view-bonus #panel-bonus{ display:block !important; }
+  body.view-bonus .mode-switch, body.view-bonus #aiRoot, body.view-bonus .tabs, body.view-bonus .panel:not(#panel-bonus), body.view-bonus #btnOtherBottom,
+  body.view-orders .gift-banner, body.view-profile .gift-banner, body.view-bonus .gift-banner{ display:none !important; }
+  .app-nav > div[hidden]{ display:none; }
   body.view-orders .mode-switch, body.view-orders #aiRoot, body.view-orders .tabs, body.view-orders .panel:not(#panel-myorders), body.view-orders #btnOtherBottom,
   body.view-profile .mode-switch, body.view-profile #aiRoot, body.view-profile .tabs, body.view-profile .panel:not(#panel-profile), body.view-profile #btnOtherBottom{ display:none !important; }
 
@@ -325,6 +328,33 @@
   .bal-pay .bal-card span{ font: 600 11.5px/1 system-ui, sans-serif; padding:5px 8px; border-radius:999px; color:#fff; background: var(--accent); }
   .bal-pay .bal-extra{ font-size:12px; opacity:.75; margin-top:6px; }
   .bal-pay .order-btn{ margin-top:10px; }
+
+  /* ---------- Bonuslar: obuna sovg'alari ---------- */
+  .gift-banner{ display:flex; align-items:center; gap:12px; margin:0 0 14px; padding:13px 14px; border-radius:18px; cursor:pointer; color:#fff;
+    background: linear-gradient(135deg, #3D8FE0, #8B5CF6); box-shadow: 0 10px 24px -12px rgba(79,168,255,.7); }
+  .gift-banner[hidden]{ display:none; }
+  .gift-banner .gb-ico{ font-size:26px; }
+  .gift-banner .gb-txt{ flex:1; display:flex; flex-direction:column; gap:2px; }
+  .gift-banner .gb-txt b{ font-size:14.5px; }
+  .gift-banner .gb-txt span{ font-size:12px; opacity:.9; }
+  .gift-banner .gb-arr{ font-size:24px; opacity:.85; }
+  .gift-stats{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+  .gift-stats div{ border:1px solid var(--glass-border); border-radius:14px; padding:12px 6px; text-align:center; background: rgba(255,255,255,.04); }
+  .gift-stats b{ display:block; font-size:26px; font-weight:800; color: var(--accent); }
+  .gift-stats span{ display:block; font-size:11.5px; color: var(--ink-soft); margin-top:2px; }
+  .gift-task{ display:flex; align-items:center; gap:12px; padding:14px; margin-bottom:12px; }
+  .gift-task[hidden]{ display:none; }
+  .gt-ico{ flex-shrink:0; width:44px; height:44px; border-radius:14px; display:grid; place-items:center; }
+  .gt-ico svg{ width:24px; height:24px; }
+  .gt-ico.tg{ background: linear-gradient(135deg, #37AEE2, #1E96C8); }
+  .gt-ico.ig{ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .gt-body{ flex:1; min-width:0; }
+  .gt-title{ font-weight:800; font-size:14px; line-height:1.3; }
+  .gt-sub{ font-size:12px; color: var(--ink-soft); margin-top:3px; line-height:1.35; }
+  .gt-btn{ flex-shrink:0; padding:10px 14px; border:none; border-radius:12px; background: linear-gradient(180deg, #5FB4FF, #3D8FE0); color:#fff; font-weight:800; font-size:13px; font-family: inherit; cursor:pointer; white-space:nowrap; }
+  .gt-btn:disabled{ opacity:.55; cursor:default; }
+  .gift-task.done .gt-btn{ background: transparent; color:#4ADE80; opacity:1; padding-right:2px; }
+  .gift-task.done .gt-sub{ text-decoration: line-through; }
 </style>
 <link rel="stylesheet" href="ai/ai.css?v=27">
 </head>
@@ -377,6 +407,7 @@
     </div>
   </div>
 
+  <div class="gift-banner" id="giftBanner" hidden><span class="gb-ico">🎁</span><span class="gb-txt"><b>Bepul AI xizmat yoki 10 ta varaq</b><span>Kanalimizga qo'shiling va Instagram'da kuzating</span></span><span class="gb-arr">›</span></div>
   <div class="mode-switch">
     <div class="mode-btn active" data-mode="print">🖨 Chop etish</div>
     <div class="mode-btn" data-mode="ai">✨ AI xizmatlar <span class="new-badge">Yangi</span></div>
@@ -561,6 +592,35 @@
     <div id="myOrdersList"></div>
   </div>
 
+  <!-- ============ BONUSLAR ============ -->
+  <div class="panel" id="panel-bonus">
+    <div class="receipt glass bal-box">
+      <div class="field-title">🎁 Sizning sovg'alaringiz</div>
+      <div class="gift-stats">
+        <div><b id="giftAi">0</b><span>bepul AI xizmat</span></div>
+        <div><b id="giftPages">0</b><span>bepul varaq</span></div>
+      </div>
+      <div class="bal-text" style="margin-top:10px;">Har bir obuna uchun — 1 ta bepul AI xizmat yoki 10 ta bepul varaq. Bittasini ishlatsangiz, shu sovg'a tugaydi.</div>
+    </div>
+    <div class="receipt glass gift-task" id="taskTg" hidden>
+      <div class="gt-ico tg"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.8 15.3l-.4 5.2c.6 0 .8-.2 1.1-.5l2.6-2.5 5.4 4c1 .5 1.7.3 2-.9l3.6-17c.3-1.5-.6-2.1-1.6-1.7L1.4 9.9C0 10.5 0 11.3 1.2 11.7l5.4 1.7L19 5.5c.6-.4 1.1-.2.7.2z" transform="scale(.92) translate(1 1)"/></svg></div>
+      <div class="gt-body"><div class="gt-title">Telegram kanalimizga qo'shiling</div><div class="gt-sub">1 ta bepul AI xizmat yoki 10 ta bepul varaq</div></div>
+      <button type="button" class="gt-btn" data-task="tg">Qo'shilish</button>
+    </div>
+    <div class="receipt glass gift-task" id="taskIg" hidden>
+      <div class="gt-ico ig"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></div>
+      <div class="gt-body"><div class="gt-title">Instagram sahifamizga obuna bo'ling</div><div class="gt-sub">1 ta bepul AI xizmat yoki 10 ta bepul varaq</div></div>
+      <button type="button" class="gt-btn" data-task="ig">Obuna bo'lish</button>
+    </div>
+    <div class="receipt glass" style="margin-bottom:18px;">
+      <div class="receipt-line"><span>🎁 Bepul varaqlaringiz</span><span id="rewardFreePages" style="color:#4ADE80; font-weight:700;">0</span></div>
+      <div class="receipt-line"><span>👥 Taklif qilingan do'stlar</span><span id="rewardReferralCount">0</span></div>
+      <div class="status-msg" style="margin-top:6px; text-align:left;">3 ta do'st taklif qiling — 15 ta bepul varaq oling! 5 tada jami 20 ta, undan keyin har biriga +3 tadan.</div>
+      <button type="button" id="shareReferralBtn" style="width:100%; margin-top:10px; padding:11px; border:none; border-radius: var(--radius-pill); background: linear-gradient(180deg, #5FB4FF, #3D8FE0); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">📤 Do'stlarni taklif qilish</button>
+    </div>
+    <div class="bal-text" style="margin:0 4px 18px;">🎁 Bepul AI xizmat buyurtma berishda «🎁 Bonusdan foydalanish» orqali, bepul varaqlar chop etishda avtomatik ishlatiladi. Kurs ishiga bonus ishlatilmaydi.</div>
+  </div>
+
   <!-- ============ PROFIL ============ -->
   <div class="panel" id="panel-profile">
     <div class="receipt glass prof-head">
@@ -598,12 +658,6 @@
       <div class="bal-text" style="margin-top:8px;">Birinchi to'ldirish — kamida 5 000 so'm, keyingilari — kamida 3 000 so'm.</div>
       <div class="bal-pay" id="balPay" hidden></div>
     </div>
-    <div class="receipt glass" style="margin-bottom:18px;">
-      <div class="receipt-line"><span>🎁 Bepul varaqlaringiz</span><span id="rewardFreePages" style="color:#4ADE80; font-weight:700;">0</span></div>
-      <div class="receipt-line"><span>👥 Taklif qilingan do'stlar</span><span id="rewardReferralCount">0</span></div>
-      <div class="status-msg" style="margin-top:6px; text-align:left;">3 ta do'st taklif qiling — 15 ta bepul varaq oling! 5 tada jami 20 ta, undan keyin har biriga +3 tadan.</div>
-      <button type="button" id="shareReferralBtn" style="width:100%; margin-top:10px; padding:11px; border:none; border-radius: var(--radius-pill); background: linear-gradient(180deg, #5FB4FF, #3D8FE0); color:#fff; font-size:13px; font-weight:700; cursor:pointer;">📤 Do'stlarni taklif qilish</button>
-    </div>
   </div>
 
   <div class="pill-btn glass other-services-btn" id="btnOtherBottom">Boshqa xizmatlar</div>
@@ -612,6 +666,7 @@
   <nav class="app-nav">
     <div class="on" data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Asosiy</div>
     <div data-go="orders"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Buyurtmalarim<span class="order-badge" id="ordersBadge" style="display:none;">0</span></div>
+    <div data-go="bonus" id="navBonus" hidden><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Bonuslar<span class="order-badge" id="bonusBadge" style="display:none;">0</span></div>
     <div data-go="profile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profil</div>
   </nav>
 
@@ -673,6 +728,7 @@ async function refreshMyRewards(){
       document.getElementById('balMinBtn').textContent = fmt(balMin);
       document.getElementById('balCustom').min = balMin;
     }
+    showGifts(data);
     const fpEl = document.getElementById('rewardFreePages');
     const rcEl = document.getElementById('rewardReferralCount');
     if(fpEl) fpEl.textContent = myFreePages;
@@ -681,6 +737,86 @@ async function refreshMyRewards(){
     renderBook();
   }catch(e){ console.error(e); }
 }
+
+/* ================================================================
+   BONUSLAR: kanal va Instagram obunasi — har biri uchun sovg'a
+   (1 ta bepul AI xizmat yoki 10 ta bepul varaq; bittasi ishlatilsa tugaydi)
+   ================================================================ */
+let giftTasks = {};
+const IG_WAIT = 8000; // Instagram'ni ochgach "Obuna bo'ldim" shuncha vaqtdan keyin bosiladi
+const taskOpened = {
+  get(k){ try { return Number(localStorage.getItem('bonus-open-' + k)) || 0; } catch(e){ return 0; } },
+  set(k){ try { localStorage.setItem('bonus-open-' + k, String(Date.now())); } catch(e){} },
+};
+function showGifts(data){
+  const gift = data.gift || { ai: 0, pages: 0 };
+  giftTasks = data.tasks || {};
+  // AI xizmat formasidagi «🎁 Bonusdan foydalanish» (ai.js)
+  window.AI_BONUS = gift.ai;
+  if (window.aiBonusChanged) window.aiBonusChanged();
+  document.getElementById('giftAi').textContent = gift.ai;
+  document.getElementById('giftPages').textContent = data.free_pages || 0;
+  document.getElementById('navBonus').hidden = false;
+  [['tg', 'taskTg'], ['ig', 'taskIg']].forEach(([k, id]) => {
+    document.getElementById(id).hidden = !giftTasks[k];
+    if (giftTasks[k]) paintTask(k);
+  });
+  const open = Object.values(giftTasks).filter(t => !t.done).length;
+  const badge = document.getElementById('bonusBadge');
+  badge.textContent = open;
+  badge.style.display = open ? '' : 'none';
+  document.getElementById('giftBanner').hidden = !open;
+}
+function paintTask(k){
+  const t = giftTasks[k];
+  const btn = document.querySelector('[data-task="' + k + '"]');
+  btn.closest('.gift-task').classList.toggle('done', !!t.done);
+  btn.disabled = false;
+  if (t.done) { btn.textContent = '✅ Olindi'; btn.disabled = true; return; }
+  const at = taskOpened.get(k);
+  if (!at) { btn.textContent = k === 'tg' ? "Qo'shilish" : "Obuna bo'lish"; delete btn.dataset.step; return; }
+  btn.textContent = k === 'tg' ? '✅ Tekshirish' : "✅ Obuna bo'ldim";
+  btn.dataset.step = 'check';
+  const left = k === 'ig' ? at + IG_WAIT - Date.now() : 0;
+  if (left > 0) { btn.disabled = true; clearTimeout(paintTask['tm' + k]); paintTask['tm' + k] = setTimeout(() => paintTask(k), left + 50); }
+}
+function openExternal(url){
+  if (url.startsWith('https://t.me/') && tg && tg.openTelegramLink) tg.openTelegramLink(url);
+  else if (tg && tg.openLink) tg.openLink(url);
+  else window.open(url, '_blank');
+}
+function giftToast(text){
+  const msg = window.t ? window.t(text) : text;
+  try { if (tg && tg.showAlert && tg.platform !== 'unknown') { tg.showAlert(msg); return; } } catch(e){}
+  alert(msg);
+}
+document.getElementById('giftBanner').addEventListener('click', () => showView('bonus'));
+document.getElementById('panel-bonus').addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-task]');
+  if (!btn || btn.disabled || !tg || !tg.initData) return;
+  const k = btn.dataset.task, t = giftTasks[k];
+  if (!t || t.done) return;
+  try { tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch(er){}
+  if (btn.dataset.step !== 'check') { taskOpened.set(k); openExternal(t.url); setTimeout(() => paintTask(k), 400); return; }
+  btn.disabled = true;
+  const was = btn.textContent;
+  btn.textContent = 'Tekshirilmoqda...';
+  try {
+    const r = await fetch('/api/my-rewards', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ initData: tg.initData, claim: k }) }).then(x => x.json());
+    if (r.ok) {
+      try { tg.HapticFeedback && tg.HapticFeedback.notificationOccurred('success'); } catch(er){}
+      giftToast("🎁 Sovg'a qo'shildi: 1 ta bepul AI xizmat yoki 10 ta bepul varaq!");
+      return refreshMyRewards();
+    }
+    if (r.code === 'notMember') { giftToast("Avval kanalga qo'shiling, so'ng «Tekshirish»ni bosing"); openExternal(t.url); }
+    else if (r.code === 'done') { giftToast('Bu bonus allaqachon olingan'); return refreshMyRewards(); }
+    else giftToast(r.error || "Hozir tekshirib bo'lmadi. Birozdan so'ng qayta urinib ko'ring");
+  } catch(er) { giftToast('Internet aloqasini tekshiring'); }
+  btn.textContent = was;
+  btn.disabled = false;
+});
+document.addEventListener('visibilitychange', () => { if (!document.hidden) Object.keys(giftTasks).forEach(k => giftTasks[k] && paintTask(k)); });
+window.aiBonusUsed = () => refreshMyRewards();
 
 document.getElementById('shareReferralBtn').addEventListener('click', ()=>{
   const tgUser = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
@@ -758,11 +894,12 @@ function openOwnerChat(prefillText){
    PASTKI MENYU: Asosiy / Buyurtmalarim / Profil
    ================================================================ */
 function showView(v){
-  document.body.classList.remove('view-orders', 'view-profile');
+  document.body.classList.remove('view-orders', 'view-profile', 'view-bonus');
   if (v !== 'home') document.body.classList.add('view-' + v);
   document.querySelectorAll('.app-nav [data-go]').forEach(b => b.classList.toggle('on', b.dataset.go === v));
   if (v === 'orders') loadMyOrders();
   if (v === 'profile') { fillProfile(); refreshMyRewards(); }
+  if (v === 'bonus') refreshMyRewards();
   window.scrollTo(0, 0);
 }
 // Narxlar: bosilganda ochiladi / yopiladi
@@ -1330,7 +1467,7 @@ updateOrdersBadge();
   <script src="ai/titullar.js?v=2"></script>
   <script src="ai/config.js?v=38"></script>
   <script src="ai/prices.js?v=9"></script>
-  <script src="ai/i18n.js?v=2"></script>
+  <script src="ai/i18n.js?v=3"></script>
   <script src="ai/ai.js?v=45"></script>
  </body>
   </html>
