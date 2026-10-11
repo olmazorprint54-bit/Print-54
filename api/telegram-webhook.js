@@ -13,7 +13,7 @@ const crypto = require("crypto");
 const { MAIN, AI_MODE, botKey, orderBot, telegram, toOwner, sendFile, webhookSecret } = require("./_lib/bots");
 const { connectBots, appUrl } = require("./_lib/setup");
 const { waitUntil } = require("@vercel/functions");
-const { orderIdOf, fmtSum, RECEIPT_HOURS, payCard } = require("./_lib/pay");
+const { orderIdOf, fmtSum, RECEIPT_HOURS, payCard, cancelledText } = require("./_lib/pay");
 const RECEIPT = require("./_lib/receipt");
 const { balanceOf } = require("./_lib/balance");
 const TOPUP = require("./_lib/topup");
@@ -792,14 +792,22 @@ async function handlePayAction(cq, bot, req) {
 
   if (act === "cancel") {
     if (String(cq.from.id) !== String(order.telegram_user_id)) return answer("Bu buyurtma sizniki emas.", true);
+    // karta xabari o'rniga qisqa yozuv
+    const shrink = () => callTelegram("editMessageText", {
+      chat_id: cq.message.chat.id,
+      message_id: cq.message.message_id,
+      text: cancelledText(order),
+      reply_markup: { inline_keyboard: [] },
+    }, bot);
     if (!isCardWait(order)) {
-      await mark(order.status === "cancelled" ? "❌ Bekor qilingan" : "✅ To'langan");
-      return answer("Bu buyurtmani endi bekor qilib bo'lmaydi.");
+      if (order.status === "cancelled") await shrink();
+      else await mark("✅ To'langan");
+      return answer(order.status === "cancelled" ? "" : "Bu buyurtmani endi bekor qilib bo'lmaydi.");
     }
     if (d.receipt) return answer("Chek yuborilgan — to'lov tekshirilmoqda. Savol bo'lsa, biz bilan bog'laning.", true);
     await supabase.from("orders").update({ status: "cancelled" }).eq("id", id);
-    await mark("❌ Bekor qilindi");
-    return answer("Buyurtma bekor qilindi.");
+    await shrink();
+    return answer("Bekor qilindi.");
   }
 
   if (!isOwner(cq.from)) return answer("Bu tugma faqat do'kon egasi uchun.", true);

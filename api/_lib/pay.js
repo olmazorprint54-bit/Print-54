@@ -88,4 +88,12 @@ function cardText(card, order, amount, balance = 0) {
   ].join("\n");
 }
 
-module.exports = { FREE_DAILY, providerToken, payload, orderIdOf, createInvoice, payCard, cardText, fmtSum, RECEIPT_HOURS, TITLES };
+// Bekor qilingan to'lov: karta xabari o'rniga qisqa yozuv (karta va summa qolmasin)
+function cancelledText(order) {
+  if (order.service === "topup") return "❌ Hisobni to'ldirish bekor qilindi.";
+  const title = TITLES[order.service] || "Buyurtma";
+  const topic = String((order.details && order.details.topic) || "").slice(0, 100);
+  return `❌ ${title}${topic ? ` «${topic}»` : ""} — to'lov bekor qilindi.`;
+}
+
+module.exports = { FREE_DAILY, providerToken, payload, orderIdOf, createInvoice, payCard, cardText, cancelledText, fmtSum, RECEIPT_HOURS, TITLES };
