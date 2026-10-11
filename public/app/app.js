@@ -265,6 +265,11 @@
   if (window.AI_PRICES && window.AI_PRICES.priceList) {
     $("priceList").innerHTML = window.AI_PRICES.priceList().map((p) => `<div class="price-row"><span>${p.icon} ${esc(p.title)}</span><b>${esc(p.text)}</b></div>`).join("");
     $("priceCard").hidden = false;
+    $("priceHead").addEventListener("click", () => {
+      tick();
+      $("priceBody").hidden = !$("priceBody").hidden;
+      $("priceHead").classList.toggle("open", !$("priceBody").hidden);
+    });
   }
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;

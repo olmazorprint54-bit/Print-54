@@ -107,17 +107,19 @@ const parseAmount = (text) => {
 // "💲 Narxlar": AI xizmatlar narxi (public/ai/prices.js jadvalidan)
 async function sendPrices(bot, chatId, { print = false, topup = false } = {}) {
   const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const lines = require("../../public/ai/prices").priceList().map((p) => `${p.icon} <b>${esc(p.title)}</b> — ${esc(p.text)}`);
+  const fmtRow = (p) => `${p.icon} <b>${esc(p.title)}</b> — ${esc(p.text)}`;
+  const lines = require("../../public/ai/prices").priceList().map(fmtRow);
+  const printLines = print ? require("../../public/ai/print-prices").printList().map(fmtRow) : [];
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
     text: [
+      ...(print ? ["🖨 <b>Chop etish narxlari</b>", "", ...printLines, "", "Aniq summani ilovada («Hisoblash» tugmasi) hisoblang.", "", ""] : []),
       "💲 <b>AI xizmatlar narxlari</b>",
       "",
       ...lines,
       "",
       "⚡ Hujjat 1–5 daqiqada tayyor bo'ladi.",
       "💰 Narx balansdan avtomatik yechiladi.",
-      ...(print ? ["", "🖨 Chop etish, kitob va pereplyot narxini ilovada («Hisoblash» tugmasi) hisoblang."] : []),
     ].join("\n"),
     parse_mode: "HTML",
     ...(topup ? { reply_markup: { inline_keyboard: [[{ text: KB.topup, callback_data: "topupmenu" }]] } } : {}),

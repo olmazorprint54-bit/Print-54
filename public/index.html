@@ -303,6 +303,10 @@
   .prof-user{ font-size:12.5px; color: var(--ink-soft); margin-top:2px; }
   .bal-box{ padding:16px; margin-bottom:14px; }
   .bal-box .field-title{ margin-bottom:4px; }
+  .price-head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:14.5px; cursor:pointer; user-select:none; }
+  .price-arrow{ font-size:20px; color: var(--ink-soft); transition: transform .2s; }
+  .price-head.open .price-arrow{ transform: rotate(90deg); }
+  .price-sec{ margin-top:14px; font-size:12.5px; font-weight:700; color: var(--accent); }
   .price-row{ display:flex; flex-direction:column; gap:2px; padding:9px 0; border-bottom:1px dashed var(--glass-border); font-size:13.5px; }
   .price-row:last-child{ border-bottom:0; }
   .price-row b{ font-weight:600; font-size:12.5px; color: var(--ink-soft); }
@@ -561,9 +565,14 @@
       <div><div class="prof-name" id="profName">Mehmon</div><div class="prof-user" id="profUser"></div></div>
     </div>
     <div class="receipt glass bal-box" id="priceBox">
-      <div class="field-title">💲 AI xizmatlar narxlari</div>
-      <div id="priceList"></div>
-      <div class="bal-text" style="margin-top:8px;">Hujjat 1–5 daqiqada tayyor bo'ladi. Narx balansdan avtomatik yechiladi.</div>
+      <div class="price-head" id="priceHead"><span>💲 Narxlar</span><span class="price-arrow">›</span></div>
+      <div id="priceBody" hidden>
+        <div class="price-sec">🖨 Chop etish</div>
+        <div id="printPriceList"></div>
+        <div class="price-sec">✨ AI xizmatlar</div>
+        <div id="priceList"></div>
+        <div class="bal-text" style="margin-top:8px;">AI hujjat 1–5 daqiqada tayyor bo'ladi. Narx balansdan avtomatik yechiladi.</div>
+      </div>
     </div>
     <div class="receipt glass bal-box" id="balBox">
       <div class="field-title">💰 Balans</div>
@@ -595,6 +604,8 @@
     <div data-go="profile"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profil</div>
   </nav>
 
+
+<script src="ai/print-prices.js?v=1"></script>
 <script>
 /* ================================================================
    SOZLAMALAR — shu yerlarni to'ldiring / o'zgartiring
@@ -607,18 +618,8 @@ const CONFIG = {
   LOCATION_URL: "https://maps.google.com/maps?q=41.349872,69.214325&ll=41.349872,69.214325&z=16"
 };
 
-const PRICING = {
-  paper: {
-    bw:    { tier1: 439, tier2: 349 },
-    color: { tier1: 700, tier2: 649 },
-    doubleAddOn: { bw: 85, color: 135 }
-  },
-  book: {
-    a4: { bw: 249, color: 440, cover: 7000 },
-    a5: { bw: 122.5, color: 220, cover: 5000 }
-  },
-binding: { a4: 7000, a5: 5000 }
-};
+// Narxlar: ai/print-prices.js (botdagi "Narxlar" tugmasi ham shundan oladi)
+const PRICING = window.PRINT_PRICES.PRICING;
 /* ================================================================
    REFERAL / BEPUL VARAQLAR
    ================================================================ */
@@ -753,15 +754,22 @@ function showView(v){
   if (v === 'profile') { fillProfile(); refreshMyRewards(); }
   window.scrollTo(0, 0);
 }
+// Narxlar: bosilganda ochiladi / yopiladi
+document.getElementById('priceHead').addEventListener('click', () => {
+  const body = document.getElementById('priceBody');
+  body.hidden = !body.hidden;
+  document.getElementById('priceHead').classList.toggle('open', !body.hidden);
+});
 document.querySelectorAll('.app-nav [data-go]').forEach(b => b.addEventListener('click', () => {
   try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch(e){}
   showView(b.dataset.go);
 }));
 function fillProfile(){
+  const row = p => `<div class="price-row"><span>${p.icon} ${escHtml(p.title)}</span><b>${escHtml(p.text)}</b></div>`;
   const pl = document.getElementById('priceList');
-  if (!pl.childElementCount && window.AI_PRICES && window.AI_PRICES.priceList) {
-    pl.innerHTML = window.AI_PRICES.priceList().map(p => `<div class="price-row"><span>${p.icon} ${escHtml(p.title)}</span><b>${escHtml(p.text)}</b></div>`).join('');
-  }
+  if (!pl.childElementCount && window.AI_PRICES && window.AI_PRICES.priceList) pl.innerHTML = window.AI_PRICES.priceList().map(row).join('');
+  const pp = document.getElementById('printPriceList');
+  if (!pp.childElementCount) pp.innerHTML = window.PRINT_PRICES.printList().map(row).join('');
   const u = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
   if (!u) return;
   document.getElementById('profName').textContent = [u.first_name, u.last_name].filter(Boolean).join(' ') || 'Mehmon';
