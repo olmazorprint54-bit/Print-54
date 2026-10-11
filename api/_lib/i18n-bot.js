@@ -63,6 +63,9 @@ const LABELS = {
   resume: ["Resume / CV", "Резюме / CV", "Résumé / CV"],
   obyektivka: ["Obyektivka", "Объективка", "Obyektivka"],
   topup: ["Hisobni to'ldirish", "Пополнение баланса", "Balance top-up"],
+  paper: ["Qog'oz chop etish", "Печать документов", "Document printing"],
+  book: ["Kitob chiqarish", "Книга", "Book"],
+  binding: ["Pereplyot", "Переплёт", "Binding"],
 };
 const I = (l) => (l === "ru" ? 1 : l === "en" ? 2 : 0);
 const label = (l, service) => (LABELS[service] || [service, service, service])[I(l)];
@@ -166,6 +169,38 @@ const M = {
   cancelReceipt: ["Chek yuborilgan — to'lov tekshirilmoqda. Savol bo'lsa, biz bilan bog'laning.", "Чек отправлен — оплата проверяется. Если есть вопросы, свяжитесь с нами.", "Receipt sent — the payment is being checked. Contact us if you have questions."],
   notYours: ["Bu buyurtma sizniki emas.", "Это не ваш заказ.", "This isn't your order."],
   paidTag: ["✅ To'langan", "✅ Оплачено", "✅ Paid"],
+  // hisoblash boti
+  calcWelcome: [
+    "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! \n\n🎁  Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.\n\n🌐 Til / Язык / Language: /til",
+    "Здравствуйте! Добро пожаловать в бот Print 54 👋\n\nВ приложении можно рассчитать стоимость услуг и сделать заказ — нажмите кнопку «HISOBLASH» внизу.\n\n⚠️ Бот работает в тестовом режиме, доставки пока нет — извините за возможные недочёты.\n\n🎁 Чем больше заказов, тем больше бесплатной печати!\n\n🎁 Приглашайте друзей и получайте дополнительные бесплатные листы — подробнее в профиле.\n\n🌐 Til / Язык / Language: /til",
+    "Hello! Welcome to the Print 54 bot 👋\n\nIn the app you can calculate prices and place orders — tap the “HISOBLASH” button below.\n\n⚠️ The bot is in test mode and there's no delivery yet — sorry for any glitches.\n\n🎁 The more you order, the more free printing you get!\n\n🎁 Invite friends to earn extra free sheets — details in your profile.\n\n🌐 Til / Язык / Language: /til",
+  ],
+  printReady: [
+    (o) => `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${o.label} — ${o.total}${o.spent ? ` (yana ${o.spent} balansdan to'langan)` : ""}\n\nDo'konimizdan olib ketishingiz mumkin.${o.bonus ? `\n\n🎁 Ushbu buyurtma uchun ${o.bonus} ta bepul list hisobingizga qo'shildi!` : ""}`,
+    (o) => `🎉 <b>Ваш заказ готов!</b>\n\n${o.label} — ${o.total}${o.spent ? ` (ещё ${o.spent} оплачено с баланса)` : ""}\n\nЗаберите его в нашем магазине.${o.bonus ? `\n\n🎁 За этот заказ вам начислено бесплатных листов: ${o.bonus}!` : ""}`,
+    (o) => `🎉 <b>Your order is ready!</b>\n\n${o.label} — ${o.total}${o.spent ? ` (plus ${o.spent} paid from balance)` : ""}\n\nYou can pick it up at our shop.${o.bonus ? `\n\n🎁 ${o.bonus} free sheets were added for this order!` : ""}`,
+  ],
+  locBtn: ["📍 Manzilni ko'rish", "📍 Посмотреть адрес", "📍 See location"],
+  refJoined: [
+    (n, c) => `🎉 ${n} sizning referal havolangiz orqali muvaffaqiyatli qo'shildi!\n\nHozirda sizda ${c} ta referal bor.`,
+    (n, c) => `🎉 ${n} присоединился(-ась) по вашей ссылке!\n\nУ вас уже ${c} приглашённых.`,
+    (n, c) => `🎉 ${n} joined with your invite link!\n\nYou now have ${c} referrals.`,
+  ],
+  ref5first: [
+    (c, e) => `🎉 Ajoyib! ${c} ta do'stni taklif qildingiz — endi jami ${e} ta list bepul chiqarishingiz mumkin!\n\nBundan keyingi har bir yangi referal uchun +3 tadan qo'shiladi.`,
+    (c, e) => `🎉 Отлично! Вы пригласили ${c} друзей — теперь можно бесплатно напечатать ${e} листов!\n\nЗа каждого следующего друга +3 листа.`,
+    (c, e) => `🎉 Great! You invited ${c} friends — you can now print ${e} sheets for free!\n\nEach new referral adds +3 more.`,
+  ],
+  ref5more: [
+    (e) => `🎁 Yana bir do'stingiz qo'shildi! Endi jami ${e} ta list bepul chiqarishingiz mumkin.`,
+    (e) => `🎁 Присоединился ещё один друг! Теперь бесплатно — ${e} листов.`,
+    (e) => `🎁 Another friend joined! You can now print ${e} sheets for free.`,
+  ],
+  ref3: [
+    (c, e) => `🎉 Tabriklaymiz! ${c} ta do'stni taklif qildingiz — sizga ${e} ta list bepul chiqarish imkoniyati berildi!\n\nYana ${5 - c} ta referal qo'shsangiz, jami 20 ta bo'ladi.`,
+    (c, e) => `🎉 Поздравляем! Вы пригласили ${c} друзей — вам доступно ${e} бесплатных листов!\n\nЕщё ${5 - c} — и будет 20.`,
+    (c, e) => `🎉 Congratulations! You invited ${c} friends — you get ${e} free sheets!\n\n${5 - c} more and it becomes 20.`,
+  ],
   // fayl yetkazildi
   delivered: [
     (o) => `🎉 <b>Buyurtmangiz tayyor!</b>\n${o.label}${o.topic}\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.`,

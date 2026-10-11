@@ -148,17 +148,18 @@ async function handleCallbackQuery(cq, bot, req) {
 
       if (order.telegram_user_id) {
         const bonusPages = await grantPurchaseBonus(order);
-        const label = SERVICE_LABELS[order.service] || order.service;
+        const ul = await LB.getLang(order.telegram_user_id);
+        const label = LB.label(ul, order.service);
         const bonusLine = bonusPages > 0
           ? `\n\n🎁 Ushbu buyurtma uchun ${bonusPages} ta bepul list hisobingizga qo'shildi!`
           : "";
 
         await callTelegram("sendMessage", {
           chat_id: order.telegram_user_id,
-          text: `🎉 <b>Buyurtmangiz tayyor!</b>\n\n${label} — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details && order.details.spent ? ` (yana ${Number(order.details.spent).toLocaleString("ru-RU")} so'm balansdan to'langan)` : ""}\n\nDo'konimizdan olib ketishingiz mumkin.${bonusLine}`,
+          text: LB.T(ul, "printReady", { label, total: LB.sum(ul, order.total), spent: order.details && order.details.spent ? LB.sum(ul, order.details.spent) : "", bonus: bonusPages }),
           parse_mode: "HTML",
           reply_markup: {
-            inline_keyboard: [[{ text: "📍 Manzilni ko'rish", url: LOCATION_URL }]],
+            inline_keyboard: [[{ text: LB.T(ul, "locBtn"), url: LOCATION_URL }]],
           },
         });
       }
@@ -196,12 +197,11 @@ async function grantReferralReward(referrerId) {
   if (addPages <= 0) return; // yangi bonus yo'q
 
   let message;
+  const rl = await LB.getLang(referrerId);
   if (count >= 5) {
-    message = !user.reward_5_given
-      ? `🎉 Ajoyib! ${count} ta do'stni taklif qildingiz — endi jami ${expected} ta list bepul chiqarishingiz mumkin!\n\nBundan keyingi har bir yangi referal uchun +3 tadan qo'shiladi.`
-      : `🎁 Yana bir do'stingiz qo'shildi! Endi jami ${expected} ta list bepul chiqarishingiz mumkin.`;
+    message = !user.reward_5_given ? LB.T(rl, "ref5first", count, expected) : LB.T(rl, "ref5more", expected);
   } else if (count >= 3) {
-    message = `🎉 Tabriklaymiz! ${count} ta do'stni taklif qildingiz — sizga ${expected} ta list bepul chiqarish imkoniyati berildi!\n\nYana ${5 - count} ta referal qo'shsangiz, jami 20 ta bo'ladi.`;
+    message = LB.T(rl, "ref3", count, expected);
   }
 
   const updates = { free_pages: expected };
@@ -515,7 +515,7 @@ async function handleMessage(msg, bot, host, req) {
     return;
   }
   // /til — tilni tanlash (o'zbek / rus / ingliz)
-  if (isAiBot(bot) && /^\/(til|lang|language|язык)\b/i.test(msg.text)) {
+  if (/^\/(til|lang|language|язык)\b/i.test(msg.text)) {
     const l = await LB.getLang(msg.from.id);
     await callTelegram("sendMessage", {
       chat_id: msg.chat.id,
@@ -610,7 +610,7 @@ async function handleMessage(msg, bot, host, req) {
       const referredName = msg.from.first_name || (msg.from.username ? "@" + msg.from.username : "Yangi foydalanuvchi");
       await callTelegram("sendMessage", {
         chat_id: referrerId,
-        text: `🎉 ${referredName} sizning referal havolangiz orqali muvaffaqiyatli qo'shildi!\n\nHozirda sizda ${newCount} ta referal bor.`,
+        text: LB.T(await LB.getLang(referrerId), "refJoined", referredName, newCount),
       });
 
       await grantReferralReward(referrerId);
@@ -620,7 +620,7 @@ async function handleMessage(msg, bot, host, req) {
   await callTelegram("sendPhoto", {
     chat_id: msg.chat.id,
     photo: "https://raw.githubusercontent.com/olmazorprint54-bit/Print-54/main/public/assets/start-guide.png",
-    caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! \n\n🎁  Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.",
+    caption: LB.T(await LB.getLang(msg.from.id), "calcWelcome"),
   });
   await sendKeyboard(msg.chat.id, MAIN);
 }

@@ -303,6 +303,9 @@
   .prof-user{ font-size:12.5px; color: var(--ink-soft); margin-top:2px; }
   .bal-box{ padding:16px; margin-bottom:14px; }
   .bal-box .field-title{ margin-bottom:4px; }
+  .lang-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:6px; }
+  .lang-row button{ font: 700 14px/1 inherit; font-family: inherit; padding:12px 6px; border-radius:12px; border:1px solid var(--glass-border); background: var(--glass); color: var(--ink); cursor:pointer; }
+  .lang-row button.on{ background: linear-gradient(180deg, #5FB4FF, #3D8FE0); border-color: transparent; color:#fff; }
   .price-head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:14.5px; cursor:pointer; user-select:none; }
   .price-arrow{ font-size:20px; color: var(--ink-soft); transition: transform .2s; }
   .price-head.open .price-arrow{ transform: rotate(90deg); }
@@ -363,7 +366,7 @@
       Yuqoridagi "AI xizmatlar" bo'limida taqdimot, mustaqil ish, dars ishlanma, test, savollar va krossvord tayyorlatishingiz mumkin. Mavzu va shablonni tanlab so'rov qoldirasiz — tayyor hujjat bot orqali yuboriladi va xohlasangiz shu yerning o'zida chop etib beramiz.
       <br><br>
       <b>Buyurtmalarim</b><br>
-      Yuqoridagi hujjat belgisi orqali barcha buyurtmalaringiz tarixini — ularning holatini (kutilmoqda, bajarildi yoki bekor qilindi) — ko'rishingiz, va agar kerak bo'lsa hali bajarilmagan buyurtmani bekor qilishingiz mumkin.
+      Pastdagi «Buyurtmalarim» bo'limida barcha buyurtmalaringiz tarixini — ularning holatini (kutilmoqda, bajarildi yoki bekor qilindi) — ko'rishingiz, va agar kerak bo'lsa hali bajarilmagan buyurtmani bekor qilishingiz mumkin.
       <br><br>
       <b>Manzil</b><br>
       Do'konimiz joylashuvini yuqoridagi xarita belgisi orqali ko'rishingiz mumkin.
@@ -564,6 +567,14 @@
       <div class="prof-ava" id="profAva">?</div>
       <div><div class="prof-name" id="profName">Mehmon</div><div class="prof-user" id="profUser"></div></div>
     </div>
+    <div class="receipt glass bal-box" id="langBox">
+      <div class="field-title">🌐 Til</div>
+      <div class="lang-row" data-no-i18n>
+        <button type="button" data-lang-pick="uz">O'zbekcha</button>
+        <button type="button" data-lang-pick="ru">Русский</button>
+        <button type="button" data-lang-pick="en">English</button>
+      </div>
+    </div>
     <div class="receipt glass bal-box" id="priceBox">
       <div class="price-head" id="priceHead"><span>💲 Narxlar</span><span class="price-arrow">›</span></div>
       <div id="priceBody" hidden>
@@ -755,6 +766,16 @@ function showView(v){
   window.scrollTo(0, 0);
 }
 // Narxlar: bosilganda ochiladi / yopiladi
+// Til: o'zbek (standart) / rus / ingliz — ilova qayta yuklanadi; bot xabarlari uchun serverga ham
+document.querySelectorAll('[data-lang-pick]').forEach(b => {
+  let cur = 'uz'; try { cur = localStorage.getItem('ai-lang') || 'uz'; } catch(e){}
+  b.classList.toggle('on', b.dataset.langPick === cur);
+  b.addEventListener('click', async () => {
+    if (!window.AI_I18N || b.dataset.langPick === cur) return;
+    if (tg && tg.initData) await fetch('/api/my-rewards', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ initData: tg.initData, setLang: b.dataset.langPick }) }).catch(() => null);
+    window.AI_I18N.set(b.dataset.langPick);
+  });
+});
 document.getElementById('priceHead').addEventListener('click', () => {
   const body = document.getElementById('priceBody');
   body.hidden = !body.hidden;
@@ -784,6 +805,7 @@ function fillProfile(){
    ================================================================ */
 let balMin = 5000;
 function balConfirm(text){
+  if (window.t) text = window.t(text);
   return new Promise(resolve => {
     try { if (tg && tg.showConfirm && tg.platform !== 'unknown') { tg.showConfirm(text, ok => resolve(!!ok)); return; } } catch(e){}
     resolve(window.confirm(text));
@@ -1308,6 +1330,7 @@ updateOrdersBadge();
   <script src="ai/titullar.js?v=2"></script>
   <script src="ai/config.js?v=38"></script>
   <script src="ai/prices.js?v=9"></script>
+  <script src="ai/i18n.js?v=2"></script>
   <script src="ai/ai.js?v=45"></script>
  </body>
   </html>
