@@ -9,6 +9,7 @@
 const { authUser, AI_MODE } = require("./_lib/bots");
 const { rewardsOf } = require("./_lib/referral");
 const { walletOf, MIN_FIRST } = require("./_lib/balance");
+const { bonusTasks, claimBonus } = require("./_lib/bonus");
 
 const supabase = require("./_lib/db");
 
@@ -33,10 +34,21 @@ module.exports = async (req, res) => {
       return;
     }
 
-    // Alohida AI bot: bepul AI buyurtmalar (referal bonusi)
+    // Obuna bonusi: Telegram kanal (bot tekshiradi) yoki Instagram — bir martalik 1 ta bepul buyurtma
+    if (AI_MODE && (req.body || {}).claim) {
+      const r = await claimBonus(auth.bot, userId, String(req.body.claim));
+      res.status(200).json(r);
+      return;
+    }
+
+    // Alohida AI bot: bepul AI buyurtmalar (referal va obuna bonuslari)
     if (AI_MODE) {
-      const [ai, w] = await Promise.all([rewardsOf(auth.bot, userId), walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST, firstFree: false }))]);
-      res.status(200).json({ ok: true, ai, balance: w.balance, minTopup: w.minTopup, firstFree: !!w.firstFree && process.env.FIRST_FREE !== "0" });
+      const [ai, w, tasks] = await Promise.all([
+        rewardsOf(auth.bot, userId),
+        walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST, firstFree: false })),
+        bonusTasks(userId).catch(() => ({})),
+      ]);
+      res.status(200).json({ ok: true, ai, tasks, balance: w.balance, minTopup: w.minTopup, firstFree: !!w.firstFree && process.env.FIRST_FREE !== "0" });
       return;
     }
 

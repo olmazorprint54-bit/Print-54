@@ -232,3 +232,33 @@ section{ margin-bottom:18px; }
 .order .meta .del{ flex-shrink:0; width:34px; height:34px; padding:0; display:grid; place-items:center; border-radius:10px; border:1px solid var(--line); background:transparent; color:#ef4444; cursor:pointer; }
 .order .meta .del svg{ width:18px; height:18px; stroke: currentColor; }
 .order .meta .del:active{ transform: scale(.94); }
+
+/* Bonuslar bo'limi: obuna vazifalari va bepul buyurtmalar */
+.app-nav > div[hidden]{ display:none; }
+.app-nav > div{ min-width:64px; }
+.bonus-top{ display:flex; align-items:center; gap:14px; }
+.bonus-num{ font-size:34px; font-weight:800; line-height:1; color: var(--accent); text-align:center; }
+.bonus-lbl{ font-size:11.5px; font-weight:700; color: var(--ink-soft); text-align:center; margin-top:4px; white-space:nowrap; }
+.bonus-top .set-note{ margin-top:0; }
+.bonus-task{ display:flex; align-items:center; gap:12px; margin-top:10px; }
+.bt-ico{ flex-shrink:0; width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-size:22px; background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.bt-ico svg{ width:24px; height:24px; }
+.bt-ico.tg{ background: linear-gradient(135deg, #37AEE2, #1E96C8); }
+.bt-ico.ig{ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.bt-body{ flex:1; min-width:0; }
+.bt-title{ font-weight:800; font-size:14px; line-height:1.3; }
+.bt-sub{ font-size:12px; color: var(--ink-soft); margin-top:3px; }
+.bt-btn{ flex-shrink:0; padding:10px 14px; border:none; border-radius:12px; background: var(--accent); color:#fff; font: 800 13px Manrope, sans-serif; cursor:pointer; white-space:nowrap; }
+.bt-btn:active{ transform: scale(.97); }
+.bt-btn:disabled{ opacity:.55; cursor:default; }
+.bonus-task.done .bt-btn{ background: transparent; color: #16A34A; opacity:1; padding-right:4px; }
+.bonus-task.done .bt-sub{ text-decoration: line-through; }
+.view[data-view="bonus"] .ref-card{ margin-top:10px; }
+.bonus-foot{ margin:12px 4px 0; }
+.bonus-banner{ display:flex; align-items:center; gap:12px; margin-top:12px; padding:13px 14px; border-radius:18px; cursor:pointer; color:#fff;
+  background: linear-gradient(135deg, var(--acc), color-mix(in srgb, var(--acc) 55%, #F59E0B)); box-shadow: 0 8px 22px -10px var(--accent-glow); }
+.bonus-banner .bb-ico{ font-size:26px; }
+.bonus-banner .bb-txt{ flex:1; display:flex; flex-direction:column; gap:2px; }
+.bonus-banner .bb-txt b{ font-size:14.5px; font-weight:800; }
+.bonus-banner .bb-txt span{ font-size:12px; opacity:.9; }
+.bonus-banner .bb-arr{ font-size:24px; opacity:.85; }

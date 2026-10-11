@@ -9,6 +9,7 @@
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const tick = () => { try { tg && tg.HapticFeedback && tg.HapticFeedback.selectionChanged(); } catch (e) {} };
   const $ = (id) => document.getElementById(id);
+  let tasks = {}, firstFree = false; // Bonuslar bo'limi (pastda)
 
   if (tg) { try { tg.ready(); tg.expand(); } catch (e) {} }
 
@@ -88,7 +89,15 @@
   if (!$("aiRoot").innerHTML.trim() && window.aiOpenGrid) window.aiOpenGrid();
   function decorateGrid() {
     document.querySelectorAll("#aiRoot .ai-card .p").forEach((p) => p.classList.toggle("free", p.textContent.trim() === "Tekin"));
+    // ochilmagan bonuslar bo'lsa — bosh sahifada "Bepul AI xizmat oling" banneri
+    const hero = document.querySelector("#aiRoot .app-hero");
+    const old = document.querySelector("#aiRoot .bonus-banner");
+    const n = openTasks();
+    if (!hero || !n) { if (old) old.remove(); return; }
+    if (old) return;
+    hero.insertAdjacentHTML("afterend", `<div class="bonus-banner" data-go-bonus="1"><span class="bb-ico">🎁</span><span class="bb-txt"><b>Bepul AI xizmat oling</b><span>«Bonuslar» bo'limida sovg'alar sizni kutmoqda</span></span><span class="bb-arr">›</span></div>`);
   }
+  $("aiRoot").addEventListener("click", (e) => { if (e.target.closest("[data-go-bonus]")) { tick(); go("bonus"); } });
   new MutationObserver(decorateGrid).observe($("aiRoot"), { childList: true });
   decorateGrid();
   document.addEventListener("input", (e) => {
@@ -236,6 +245,7 @@
       }
       if (window.aiBonusChanged) window.aiBonusChanged();
       showRewards(data.ai);
+      showBonus(data);
     } catch (e) {}
   }
   // Hisobni to'ldirish (buyurtmasiz): karta va noyob summa, chek botga yuboriladi.
@@ -283,6 +293,84 @@
       $("priceHead").classList.toggle("open", !$("priceBody").hidden);
     });
   }
+  /* ---------- Bonuslar: obuna vazifalari (kanal, Instagram) va bepul buyurtmalar ---------- */
+  const IG_WAIT = 8000; // Instagram'ni ochgach "Obuna bo'ldim" shuncha vaqtdan keyin bosiladi
+  const opened = {
+    get(k) { try { return Number(localStorage.getItem("bonus-open-" + k)) || 0; } catch (e) { return 0; } },
+    set(k) { try { localStorage.setItem("bonus-open-" + k, String(Date.now())); } catch (e) {} },
+  };
+  function openTasks() {
+    return Object.values(tasks).filter((t) => !t.done).length + (firstFree ? 1 : 0);
+  }
+  function showBonus(data) {
+    tasks = data.tasks || {};
+    firstFree = !!data.firstFree;
+    $("navBonus").hidden = false;
+    $("bonusNum").textContent = data.ai.credits;
+    $("taskFirst").hidden = !firstFree;
+    [["tg", "taskTg"], ["ig", "taskIg"]].forEach(([k, id]) => {
+      const t = tasks[k];
+      $(id).hidden = !t;
+      if (t) paintTask(k);
+    });
+    const n = openTasks();
+    $("bonusBadge").textContent = n;
+    $("bonusBadge").classList.toggle("show", n > 0);
+    decorateGrid();
+  }
+  function paintTask(k) {
+    const t = tasks[k];
+    const btn = document.querySelector(`[data-task="${k}"]`);
+    const card = btn.closest(".bonus-task");
+    card.classList.toggle("done", !!t.done);
+    btn.disabled = false;
+    if (t.done) { btn.textContent = "✅ Olindi"; btn.disabled = true; return; }
+    const at = opened.get(k);
+    if (!at) { btn.textContent = k === "tg" ? "Qo'shilish" : "Obuna bo'lish"; return; }
+    btn.textContent = k === "tg" ? "✅ Tekshirish" : "✅ Obuna bo'ldim";
+    btn.dataset.step = "check";
+    // Instagram: sahifani ochib, biroz turgandan keyingina tasdiqlash mumkin
+    const left = k === "ig" ? at + IG_WAIT - Date.now() : 0;
+    if (left > 0) { btn.disabled = true; clearTimeout(paintTask["tm" + k]); paintTask["tm" + k] = setTimeout(() => paintTask(k), left + 50); }
+  }
+  function openUrl(url) {
+    if (url.startsWith("https://t.me/") && tg && tg.openTelegramLink) tg.openTelegramLink(url);
+    else if (tg && tg.openLink) tg.openLink(url);
+    else window.open(url, "_blank");
+  }
+  $("taskFirst").addEventListener("click", (e) => { if (e.target.closest("[data-bonus-go]")) { tick(); go("home"); } });
+  document.querySelector(".view[data-view='bonus']").addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-task]");
+    if (!btn || btn.disabled || !user) return;
+    const k = btn.dataset.task;
+    const t = tasks[k];
+    if (!t || t.done) return;
+    tick();
+    if (btn.dataset.step !== "check") {
+      opened.set(k);
+      openUrl(t.url);
+      setTimeout(() => paintTask(k), 400);
+      return;
+    }
+    btn.disabled = true;
+    const was = btn.textContent;
+    btn.textContent = "Tekshirilmoqda...";
+    try {
+      const r = await api("/api/my-rewards", { claim: k });
+      if (r.ok) {
+        try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred("success"); } catch (er) {}
+        toast("🎁 +1 bepul AI xizmat qo'shildi!");
+        return loadRewards();
+      }
+      if (r.code === "notMember") { toast("Avval kanalga qo'shiling, so'ng «Tekshirish»ni bosing"); openUrl(t.url); }
+      else if (r.code === "done") { toast("Bu bonus allaqachon olingan"); return loadRewards(); }
+      else toast(r.error || "Hozir tekshirib bo'lmadi. Birozdan so'ng qayta urinib ko'ring");
+    } catch (er) { toast("Internet aloqasini tekshiring"); }
+    btn.textContent = was;
+    btn.disabled = false;
+  });
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) Object.keys(tasks).forEach((k) => tasks[k] && paintTask(k)); });
+
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
   loadRewards();
