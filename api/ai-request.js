@@ -22,6 +22,7 @@ const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require(
 const { takeCredit } = require("./_lib/referral");
 const { uniqueAmount } = require("./_lib/receipt");
 const { createTopup } = require("./_lib/topup");
+const LB = require("./_lib/i18n-bot");
 const { walletOf, topupNeed, MAX_TOPUP, FIRST_FREE_EXCEPT } = require("./_lib/balance");
 const SRC = require("./_lib/sources");
 
@@ -346,13 +347,14 @@ module.exports = async (req, res) => {
       if (!orderId) throw new Error("Buyurtmani bazaga yozib bo'lmadi");
       const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
       details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
+      const ul = await LB.getLang(u.id);
       // noyob summa (to'ldirish + 1..99 so'm) — chek va Click/Payme xabaridan buyurtma taniladi
       details.payAmount = await uniqueAmount(card.topup).catch(() => card.topup);
       const sent = await telegram(bot, "sendMessage", {
         chat_id: u.id,
-        text: cardText(card, { service: body.service, details, total: price }, details.payAmount, bal),
+        text: cardText(card, { service: body.service, details, total: price }, details.payAmount, bal, ul),
         parse_mode: "HTML",
-        reply_markup: { inline_keyboard: [[{ text: "❌ Bekor qilish", callback_data: `paycancel:${orderId}` }]] },
+        reply_markup: { inline_keyboard: [[{ text: LB.T(ul, "cancelBtn"), callback_data: `paycancel:${orderId}` }]] },
       }).catch((e) => ({ ok: false, description: String(e) }));
       if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
       else details.payMsg = sent.result.message_id;

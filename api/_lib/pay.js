@@ -58,42 +58,43 @@ function payCard() {
 const fmtSum = (n) => Number(n || 0).toLocaleString("ru-RU") + " so'm";
 const escHtml = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// Mijozga botda: karta, to'ldirish summasi, nima qilish kerak.
+// Mijozga botda: karta, to'ldirish summasi, nima qilish kerak (l — mijoz tili).
 // amount — o'tkaziladigan noyob summa; order.total — buyurtma narxi; balance — hozirgi balans
-function cardText(card, order, amount, balance = 0) {
-  const title = TITLES[order.service] || "AI xizmat";
+function cardText(card, order, amount, balance = 0, l = "uz") {
+  const L = require("./i18n-bot");
+  const s = (n) => L.sum(l, n);
   const topic = String((order.details && order.details.topic) || "").slice(0, 120);
   const price = Number(order.total) || 0;
   const left = balance + amount - price;
   const onlyTopup = order.service === "topup";
   const extra = amount - (Number(order.details && order.details.topup) || amount);
   return [
-    "💳 <b>Hisobni to'ldirish</b>",
+    L.T(l, "cardTitle"),
     "",
-    `💰 To'lov summasi: <b>${fmtSum(amount)}</b>`,
+    L.T(l, "cardAmount", s(amount)),
     ...(onlyTopup
-      ? [`👛 Balans: ${fmtSum(balance)} → <b>${fmtSum(left)}</b>`]
-      : [`🧾 ${escHtml(title)}${topic ? ` «${escHtml(topic)}»` : ""}: ${fmtSum(price)}`,
-        `👛 Balans: ${fmtSum(balance)} → to'lovdan keyin <b>${fmtSum(Math.max(0, left))}</b>`]),
+      ? [L.T(l, "cardBal", s(balance), s(left))]
+      : [`🧾 ${escHtml(L.label(l, order.service))}${topic ? ` «${escHtml(topic)}»` : ""}: ${s(price)}`,
+        L.T(l, "cardBalAfter", s(balance), s(Math.max(0, left)))]),
     "",
-    `🏦 Karta: <code>${card.number}</code>`,
-    ...(card.name ? [`👤 Egasi: ${escHtml(card.name)}`] : []),
-    "<i>(karta raqamini bossangiz — nusxa olinadi)</i>",
+    `${L.T(l, "cardNo")}: <code>${card.number}</code>`,
+    ...(card.name ? [`${L.T(l, "cardOwner")}: ${escHtml(card.name)}`] : []),
+    L.T(l, "cardCopy"),
     "",
-    "📌 <b>Qanday to'lanadi:</b>",
-    `1️⃣ Kartaga <b>aynan ${fmtSum(amount)}</b> o'tkazing (Click, Payme yoki bank ilovasi)`,
-    "2️⃣ To'lov chekini (skrinshot yoki PDF) shu chatga yuboring",
-    onlyTopup ? "3️⃣ Chek avtomatik tekshiriladi — balansingiz to'ldiriladi ✅" : "3️⃣ Chek avtomatik tekshiriladi — AI ishni boshlaydi, tayyor fayl shu yerga keladi ✅",
-    ...(extra > 0 ? ["", `<i>ℹ️ +${extra} so'm — to'lovingizni aniq tanib olish uchun. Komissiya emas, u ham balansingizga tushadi.</i>`] : []),
+    L.T(l, "cardHow"),
+    L.T(l, "cardStep1", s(amount)),
+    L.T(l, "cardStep2"),
+    onlyTopup ? L.T(l, "cardStep3Topup") : L.T(l, "cardStep3Order"),
+    ...(extra > 0 ? ["", L.T(l, "cardExtra", extra)] : []),
   ].join("\n");
 }
 
 // Bekor qilingan to'lov: karta xabari o'rniga qisqa yozuv (karta va summa qolmasin)
-function cancelledText(order) {
-  if (order.service === "topup") return "❌ Hisobni to'ldirish bekor qilindi.";
-  const title = TITLES[order.service] || "Buyurtma";
+function cancelledText(order, l = "uz") {
+  const L = require("./i18n-bot");
+  if (order.service === "topup") return L.T(l, "cancelledTopup");
   const topic = String((order.details && order.details.topic) || "").slice(0, 100);
-  return `❌ ${title}${topic ? ` «${topic}»` : ""} — to'lov bekor qilindi.`;
+  return L.T(l, "cancelledOrder", `${L.label(l, order.service)}${topic ? ` «${topic}»` : ""}`);
 }
 
 module.exports = { FREE_DAILY, providerToken, payload, orderIdOf, createInvoice, payCard, cardText, cancelledText, fmtSum, RECEIPT_HOURS, TITLES };
