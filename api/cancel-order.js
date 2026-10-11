@@ -126,7 +126,7 @@ module.exports = async (req, res) => {
       await telegram(orderBot(order), "editMessageText", {
         chat_id: order.telegram_user_id,
         message_id: d.payMsg,
-        text: cancelledText(order),
+        text: cancelledText(order, await require("./_lib/i18n-bot").getLang(order.telegram_user_id)),
         reply_markup: { inline_keyboard: [] },
       }).catch((e) => console.error("Karta xabarini o'zgartirib bo'lmadi:", e));
     }

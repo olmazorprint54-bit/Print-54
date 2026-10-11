@@ -11,21 +11,26 @@ const { payCard, cardText, fmtSum } = require("./pay");
 const { walletOf, MAX_TOPUP, MIN_FIRST, MIN_NEXT } = require("./balance");
 const { uniqueAmount } = require("./receipt");
 
-// Botdagi doimiy tugmalar (xabar yozish joyi ostida)
-const KB = { topup: "💳 Hisobni to'ldirish", balance: "💰 Balansim", prices: "💲 Narxlar", contact: "💬 Bog'lanish" };
-const keyboard = () => ({ keyboard: [[{ text: KB.topup }, { text: KB.balance }], [{ text: KB.prices }, { text: KB.contact }]], resize_keyboard: true, is_persistent: true });
+const L = require("./i18n-bot");
+
+// Botdagi doimiy tugmalar (xabar yozish joyi ostida) — mijoz tilida
+const keyboard = (l = "uz") => ({
+  keyboard: [[{ text: L.kbText(l, "topup") }, { text: L.kbText(l, "balance") }], [{ text: L.kbText(l, "prices") }, { text: L.kbText(l, "contact") }]],
+  resize_keyboard: true,
+  is_persistent: true,
+});
 const OWNER_URL = () => `https://t.me/${String(process.env.OWNER_USERNAME || "Print_54").replace(/^@/, "")}`;
-// "Boshqa summa" so'rovi — mijoz shu xabarga javob qilib summani yozadi
-const ASK_MARK = "✏️ Qancha so'mga to'ldirasiz?";
-const MIN_NOTE = `Birinchi to'ldirish — kamida ${fmtSum(MIN_FIRST)}, keyingilari — kamida ${fmtSum(MIN_NEXT)}.`;
+// "Boshqa summa" so'roviga javobmi (har qaysi tilda)
+const isAsk = (text) => L.ASK.some((a) => String(text || "").startsWith(a));
 
 async function createTopup(bot, u, amount) {
+  const l = await L.getLang(u.id);
   const card = payCard();
-  if (!card) return { ok: false, error: "Hisobni to'ldirish hozircha yoqilmagan." };
+  if (!card) return { ok: false, error: L.T(l, "topupOff") };
   amount = Math.round(Number(amount) || 0);
   const w = await walletOf(u.id);
-  if (amount > MAX_TOPUP) return { ok: false, error: "Summa juda katta." };
-  if (amount < w.minTopup) return { ok: false, error: `To'ldirish summasi ${fmtSum(w.minTopup)}dan kam bo'lmasin.` };
+  if (amount > MAX_TOPUP) return { ok: false, error: L.T(l, "errMax") };
+  if (amount < w.minTopup) return { ok: false, error: L.T(l, "errMin", L.sum(l, w.minTopup)) };
   const payAmount = await uniqueAmount(amount).catch(() => amount);
   const details = { bot, topic: "Hisobni to'ldirish", awaitingPayment: true, payMethod: "card", topup: amount, payAmount };
   const { data: row, error } = await supabase
@@ -45,9 +50,9 @@ async function createTopup(bot, u, amount) {
   if (error || !row) throw error || new Error("Buyurtmani bazaga yozib bo'lmadi");
   const sent = await telegram(bot, "sendMessage", {
     chat_id: u.id,
-    text: cardText(card, { service: "topup", details, total: 0 }, payAmount, w.balance),
+    text: cardText(card, { service: "topup", details, total: 0 }, payAmount, w.balance, l),
     parse_mode: "HTML",
-    reply_markup: { inline_keyboard: [[{ text: "❌ Bekor qilish", callback_data: `paycancel:${row.id}` }]] },
+    reply_markup: { inline_keyboard: [[{ text: L.T(l, "cancelBtn"), callback_data: `paycancel:${row.id}` }]] },
   }).catch((e) => ({ ok: false, description: String(e) }));
   if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
   else await supabase.from("orders").update({ details: { ...details, payMsg: sent.result.message_id } }).eq("id", row.id);
@@ -56,45 +61,38 @@ async function createTopup(bot, u, amount) {
 
 // "💳 Hisobni to'ldirish": balans va summa tanlovi
 async function sendMenu(bot, chatId, userId) {
-  const w = await walletOf(userId);
+  const [w, l] = await Promise.all([walletOf(userId), L.getLang(userId)]);
   const opts = [w.minTopup, 10000, 20000, 50000].filter((x, i, a) => a.indexOf(x) === i);
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
-    text: [
-      "💳 <b>Hisobni to'ldirish</b>",
-      "",
-      `👛 Balansingiz: <b>${fmtSum(w.balance)}</b>`,
-      `📌 ${MIN_NOTE}`,
-      "",
-      "Summani tanlang yoki o'zingiz yozing 👇",
-    ].join("\n"),
+    text: L.T(l, "menu", { bal: L.sum(l, w.balance), first: L.sum(l, MIN_FIRST), next: L.sum(l, MIN_NEXT) }),
     parse_mode: "HTML",
     reply_markup: {
       inline_keyboard: [
-        opts.slice(0, 2).map((a) => ({ text: fmtSum(a), callback_data: `topup:${a}` })),
-        opts.slice(2, 4).map((a) => ({ text: fmtSum(a), callback_data: `topup:${a}` })),
-        [{ text: "✏️ Boshqa summa", callback_data: "topupask" }],
+        opts.slice(0, 2).map((a) => ({ text: L.sum(l, a), callback_data: `topup:${a}` })),
+        opts.slice(2, 4).map((a) => ({ text: L.sum(l, a), callback_data: `topup:${a}` })),
+        [{ text: L.T(l, "other"), callback_data: "topupask" }],
       ].filter((r) => r.length),
     },
   });
 }
 
 async function sendBalance(bot, chatId, userId) {
-  const w = await walletOf(userId);
+  const [w, l] = await Promise.all([walletOf(userId), L.getLang(userId)]);
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
-    text: `👛 Balansingiz: <b>${fmtSum(w.balance)}</b>\n\nBuyurtmalar narxi balansdan avtomatik yechiladi.`,
+    text: L.T(l, "balance", L.sum(l, w.balance)),
     parse_mode: "HTML",
-    reply_markup: { inline_keyboard: [[{ text: KB.topup, callback_data: "topupmenu" }]] },
+    reply_markup: { inline_keyboard: [[{ text: L.kbText(l, "topup"), callback_data: "topupmenu" }]] },
   });
 }
 
 async function askAmount(bot, chatId, userId) {
-  const w = await walletOf(userId);
+  const [w, l] = await Promise.all([walletOf(userId), L.getLang(userId)]);
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
-    text: `${ASK_MARK}\nSummani raqam bilan yozing — kamida ${fmtSum(w.minTopup)}.`,
-    reply_markup: { force_reply: true, input_field_placeholder: `Masalan: ${w.minTopup + 2000}` },
+    text: L.T(l, "ask", L.sum(l, w.minTopup)),
+    reply_markup: { force_reply: true, input_field_placeholder: L.T(l, "askHint") + (w.minTopup + 2000) },
   });
 }
 
@@ -104,35 +102,33 @@ const parseAmount = (text) => {
   return digits ? parseInt(digits, 10) : 0;
 };
 
-// "💲 Narxlar": AI xizmatlar narxi (public/ai/prices.js jadvalidan)
-async function sendPrices(bot, chatId, { print = false, topup = false } = {}) {
-  const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const fmtRow = (p) => `${p.icon} <b>${esc(p.title)}</b> — ${esc(p.text)}`;
+// "💲 Narxlar": AI xizmatlar narxi (public/ai/prices.js) + hisoblash botida chop etish narxlari
+async function sendPrices(bot, chatId, { print = false, topup = false, l = "uz" } = {}) {
+  const fmtRow = (p) => `${p.icon} <b>${L.esc(L.tr(l, p.title))}</b> — ${L.esc(L.tr(l, p.text))}`;
   const lines = require("../../public/ai/prices").priceList().map(fmtRow);
   const printLines = print ? require("../../public/ai/print-prices").printList().map(fmtRow) : [];
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
     text: [
-      ...(print ? ["🖨 <b>Chop etish narxlari</b>", "", ...printLines, "", "Aniq summani ilovada («Hisoblash» tugmasi) hisoblang.", "", ""] : []),
-      "💲 <b>AI xizmatlar narxlari</b>",
+      ...(print ? [L.T(l, "pricesPrintHead"), "", ...printLines, "", L.T(l, "pricesPrintNote"), "", ""] : []),
+      L.T(l, "pricesHead"),
       "",
       ...lines,
       "",
-      "⚡ Hujjat 1–5 daqiqada tayyor bo'ladi.",
-      "💰 Narx balansdan avtomatik yechiladi.",
+      L.T(l, "pricesFoot"),
     ].join("\n"),
     parse_mode: "HTML",
-    ...(topup ? { reply_markup: { inline_keyboard: [[{ text: KB.topup, callback_data: "topupmenu" }]] } } : {}),
+    ...(topup ? { reply_markup: { inline_keyboard: [[{ text: L.kbText(l, "topup"), callback_data: "topupmenu" }]] } } : {}),
   });
 }
 
 // "💬 Bog'lanish": egasining Telegram akkaunti
-async function sendContact(bot, chatId) {
+async function sendContact(bot, chatId, l = "uz") {
   return telegram(bot, "sendMessage", {
     chat_id: chatId,
-    text: "💬 Savol, taklif yoki muammo bo'lsa — bizga to'g'ridan-to'g'ri yozing 👇",
-    reply_markup: { inline_keyboard: [[{ text: "✍️ Yozish", url: OWNER_URL() }]] },
+    text: L.T(l, "contact"),
+    reply_markup: { inline_keyboard: [[{ text: L.T(l, "write"), url: OWNER_URL() }]] },
   });
 }
 
-module.exports = { KB, keyboard, sendPrices, sendContact, ASK_MARK, MIN_NOTE, createTopup, sendMenu, sendBalance, askAmount, parseAmount };
+module.exports = { keyboard, isAsk, sendPrices, sendContact, createTopup, sendMenu, sendBalance, askAmount, parseAmount };

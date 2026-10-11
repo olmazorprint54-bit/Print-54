@@ -129,11 +129,11 @@ async function reply(msg, bot, { isOwner, appButton } = {}) {
   }
 }
 
-async function reset(msg, bot) {
+async function reset(msg, bot, l = "uz") {
   const s = await load(msg.from.id);
   s.msgs = [];
   await save(msg.from.id, s);
-  await telegram(bot, "sendMessage", { chat_id: msg.chat.id, text: "🧹 Suhbat tozalandi. Yangi savolingizni yozing." });
+  await telegram(bot, "sendMessage", { chat_id: msg.chat.id, text: require("./i18n-bot").T(l, "chatReset") });
 }
 
 module.exports = { reply, reset, toHtml, chunks, FREE, SYSTEM };

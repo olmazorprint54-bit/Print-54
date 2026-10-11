@@ -50,6 +50,16 @@
   }
   applyTheme();
   if (tg && tg.onEvent) tg.onEvent("themeChanged", applyTheme);
+  // Til: o'zbek (standart) / rus / ingliz — ilova qayta yuklanadi; bot xabarlari uchun serverga ham
+  const curLang = (window.AI_I18N && window.AI_I18N.lang) || "uz";
+  document.querySelectorAll("[data-lang-pick]").forEach((el) => el.classList.toggle("on", el.dataset.langPick === curLang));
+  $("langSeg").addEventListener("click", async (e) => {
+    const p = e.target.closest("[data-lang-pick]");
+    if (!p || p.dataset.langPick === curLang || !window.AI_I18N) return;
+    tick();
+    if (user) await api("/api/my-rewards", { setLang: p.dataset.langPick }).catch(() => null);
+    window.AI_I18N.set(p.dataset.langPick);
+  });
   $("themeSeg").addEventListener("click", (e) => {
     const p = e.target.closest("[data-theme-pick]");
     if (!p) return;
@@ -167,6 +177,7 @@
   function confirmAsk(text) {
     return new Promise((resolve) => {
       try {
+        if (window.t) text = window.t(text);
         if (tg && tg.showConfirm && tg.platform !== "unknown") { tg.showConfirm(text, (ok) => resolve(!!ok)); return; }
       } catch (e) {}
       resolve(window.confirm(text));

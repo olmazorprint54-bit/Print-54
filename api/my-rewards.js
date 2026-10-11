@@ -26,6 +26,13 @@ module.exports = async (req, res) => {
     }
     const userId = auth.user.id;
 
+    // Ilova profilida til tanlandi — bot xabarlari ham shu tilda bo'lsin
+    if ((req.body || {}).setLang) {
+      const ok = await require("./_lib/i18n-bot").setLang(userId, String(req.body.setLang)).catch((e) => { console.error("Til:", e); return false; });
+      res.status(200).json({ ok: !!ok });
+      return;
+    }
+
     // Alohida AI bot: bepul AI buyurtmalar (referal bonusi)
     if (AI_MODE) {
       const [ai, w] = await Promise.all([rewardsOf(auth.bot, userId), walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST, firstFree: false }))]);

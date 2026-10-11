@@ -17,6 +17,7 @@ const { orderIdOf, fmtSum, RECEIPT_HOURS, payCard, cancelledText } = require("./
 const RECEIPT = require("./_lib/receipt");
 const { balanceOf } = require("./_lib/balance");
 const TOPUP = require("./_lib/topup");
+const LB = require("./_lib/i18n-bot");
 const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
@@ -103,6 +104,13 @@ async function handleCallbackQuery(cq, bot, req) {
   }
   if (/^topup(:\d+|ask|menu)$/.test(cq.data || "")) {
     await handleTopupCb(cq, bot);
+    return;
+  }
+  if (/^lang:(uz|ru|en)$/.test(cq.data || "")) {
+    const l = cq.data.slice(5);
+    await LB.setLang(cq.from.id, l).catch((e) => console.error("Til:", e));
+    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text: LB.T(l, "langSet") }, bot);
+    await sendKeyboard(cq.from.id, bot, l);
     return;
   }
   if (/^pay(ok|no|cancel|bad):\d+$/.test(cq.data || "")) {
@@ -243,7 +251,7 @@ async function handleBroadcast(msg) {
       const res = await callTelegram("sendMessage", {
         chat_id: u.telegram_user_id,
         text,
-        reply_markup: TOPUP.keyboard(), // eski mijozlarda ham pastki tugmalar paydo bo'ladi
+        reply_markup: TOPUP.keyboard("uz"), // eski mijozlarda ham pastki tugmalar paydo bo'ladi
       });
       if (res.ok) sent++; else failed++;
     } catch (e) {
@@ -290,7 +298,7 @@ async function deliverAiFile(order, doc, ownerChatId, viaBot) {
   let delivered = false;
   if (order.telegram_user_id) {
     const sent = await sendFile(viaBot, bot, order.telegram_user_id, doc.file_id, doc.file_name, {
-      caption: `🎉 <b>Buyurtmangiz tayyor!</b>\n${AI_LABELS[order.service]}${topic}\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.`,
+      caption: LB.T(await LB.getLang(order.telegram_user_id), "delivered", { label: LB.label(await LB.getLang(order.telegram_user_id), order.service), topic }),
       parse_mode: "HTML",
     });
     delivered = !!sent.ok;
@@ -387,7 +395,7 @@ async function forwardCustomerMedia(msg, bot) {
   }, bot);
 }
 
-const appButtonFor = (bot, host) => ({ inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] });
+const appButtonFor = (bot, host, l = "uz") => ({ inline_keyboard: [[{ text: LB.T(l, "appBtn"), web_app: { url: appUrl(host, bot) } }]] });
 
 /* ============ MANBALAR (botga yuborilgan adabiyotlar) ============ */
 async function saveChatSource(msg, bot) {
@@ -417,22 +425,24 @@ const isAiBot = (bot) => bot !== MAIN || AI_MODE;
 
 // AI botdagi /start — ilovani ochish tugmasi bilan salomlashish
 async function welcomeExtra(msg, bot, host) {
+  const l = await LB.getLang(msg.from.id);
   const name = msg.from.first_name ? `, ${escapeHtml(msg.from.first_name)}` : "";
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: `Assalomu alaykum${name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${AI_MODE ? "\n\n🎁 <b>Birinchi ishingiz — tekin!</b> (kurs ishidan tashqari)" : ""}\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${CHAT.FREE()} ta bepul). Yangi mavzu: /yangi${AI_MODE ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${REF_STEP} ta do'st uchun 1 ta bepul AI buyurtma (kurs ishidan tashqari) — havola «Profil» bo'limida.` : ""}\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    text: LB.T(l, "welcome", { name, ai: AI_MODE, free: CHAT.FREE(), step: REF_STEP }),
     parse_mode: "HTML",
-    reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
+    reply_markup: appButtonFor(bot, host, l),
   }, bot);
-  await sendKeyboard(msg.chat.id, bot);
+  await sendKeyboard(msg.chat.id, bot, l);
 }
 
 // Pastki tugmalar (hisob, balans, narxlar, bog'lanish)
-function sendKeyboard(chatId, bot) {
+async function sendKeyboard(chatId, bot, l) {
+  if (!l) l = await LB.getLang(chatId);
   return callTelegram("sendMessage", {
     chat_id: chatId,
-    text: "👇 Hisobni to'ldirish, balans, narxlar va biz bilan bog'lanish — pastdagi tugmalarda.",
-    reply_markup: TOPUP.keyboard(),
+    text: LB.T(l, "kbHint"),
+    reply_markup: TOPUP.keyboard(l),
   }, bot);
 }
 
@@ -481,7 +491,7 @@ async function handleMessage(msg, bot, host, req) {
   // AI botda mijoz yuborgan PDF/Word/TXT/rasm — manba (adabiyot) bo'lib saqlanadi
   if ((msg.photo || msg.document) && isAiBot(bot) && !(isOwner(msg.from) && msg.reply_to_message)) {
     const isImage = msg.photo || /^image\//.test((msg.document && msg.document.mime_type) || "");
-    if (isImage) waitUntil(CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host) }).catch((e) => console.error(e)));
+    if (isImage) waitUntil(LB.getLang(msg.from.id).then((l) => CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host, l) })).catch((e) => console.error(e)));
     else await saveChatSource(msg, bot);
     return;
   }
@@ -497,11 +507,21 @@ async function handleMessage(msg, bot, host, req) {
 
   // AI botda oddiy xabar — AI suhbat (javob fonda tayyorlanadi, Telegram kutib qolmaydi)
   if (isAiBot(bot) && !msg.text.startsWith("/") && !(isOwner(msg.from) && msg.reply_to_message)) {
-    waitUntil(CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host) }).catch((e) => console.error(e)));
+    waitUntil(LB.getLang(msg.from.id).then((l) => CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host, l) })).catch((e) => console.error(e)));
     return;
   }
   if (isAiBot(bot) && /^\/(yangi|new)\b/.test(msg.text)) {
-    await CHAT.reset(msg, bot);
+    await CHAT.reset(msg, bot, await LB.getLang(msg.from.id));
+    return;
+  }
+  // /til — tilni tanlash (o'zbek / rus / ingliz)
+  if (isAiBot(bot) && /^\/(til|lang|language|язык)\b/i.test(msg.text)) {
+    const l = await LB.getLang(msg.from.id);
+    await callTelegram("sendMessage", {
+      chat_id: msg.chat.id,
+      text: LB.T(l, "langPick"),
+      reply_markup: { inline_keyboard: [[{ text: "🇺🇿 O'zbekcha", callback_data: "lang:uz" }, { text: "🇷🇺 Русский", callback_data: "lang:ru" }, { text: "🇬🇧 English", callback_data: "lang:en" }]] },
+    }, bot);
     return;
   }
 
@@ -645,27 +665,29 @@ const isOwnerReply = (msg) => isOwner(msg.from) && !!msg.reply_to_message;
 const topupOn = () => !PR.TRIAL && !!payCard();
 
 async function handleKbText(msg, bot) {
-  const t = msg.text.trim();
-  if (t === TOPUP.KB.prices) { await TOPUP.sendPrices(bot, msg.chat.id, { print: !isAiBot(bot), topup: topupOn() }); return true; }
-  if (t === TOPUP.KB.contact) { await TOPUP.sendContact(bot, msg.chat.id); return true; }
-  if (!topupOn() && (t === TOPUP.KB.topup || t === TOPUP.KB.balance)) {
-    await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "Hisobni to'ldirish hozircha yoqilmagan." }, bot);
+  const kind = LB.kbKind(msg.text.trim());
+  const r = msg.reply_to_message;
+  const isAskReply = !!(r && r.from && r.from.is_bot && TOPUP.isAsk(r.text));
+  if (!kind && !isAskReply) return false;
+  const l = await LB.getLang(msg.from.id);
+  if (kind === "prices") { await TOPUP.sendPrices(bot, msg.chat.id, { print: !isAiBot(bot), topup: topupOn(), l }); return true; }
+  if (kind === "contact") { await TOPUP.sendContact(bot, msg.chat.id, l); return true; }
+  if (!topupOn()) {
+    await callTelegram("sendMessage", { chat_id: msg.chat.id, text: LB.T(l, "topupOff") }, bot);
     return true;
   }
-  return handleTopupText(msg, bot);
+  return handleTopupText(msg, bot, kind, l);
 }
 
-async function handleTopupText(msg, bot) {
-  if (!topupOn()) return false;
+async function handleTopupText(msg, bot, kind, l) {
   const t = msg.text.trim();
-  if (t === TOPUP.KB.topup) { await TOPUP.sendMenu(bot, msg.chat.id, msg.from.id); return true; }
-  if (t === TOPUP.KB.balance) { await TOPUP.sendBalance(bot, msg.chat.id, msg.from.id); return true; }
-  const r = msg.reply_to_message;
-  if (r && r.from && r.from.is_bot && String(r.text || "").startsWith(TOPUP.ASK_MARK)) {
+  if (kind === "topup") { await TOPUP.sendMenu(bot, msg.chat.id, msg.from.id); return true; }
+  if (kind === "balance") { await TOPUP.sendBalance(bot, msg.chat.id, msg.from.id); return true; }
+  {
     const amount = TOPUP.parseAmount(t);
-    const out = amount ? await TOPUP.createTopup(bot, msg.from, amount) : { ok: false, error: "Summani raqam bilan yozing, masalan: 7000" };
+    const out = amount ? await TOPUP.createTopup(bot, msg.from, amount) : { ok: false, error: LB.T(l, "errNumber") };
     if (!out.ok) {
-      await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "⚠️ " + out.error, reply_markup: { force_reply: true, input_field_placeholder: "Masalan: 7000" } }, bot);
+      await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "⚠️ " + out.error }, bot);
       // keyingi javob ham summa sifatida olinsin
       await TOPUP.askAmount(bot, msg.chat.id, msg.from.id);
     }
@@ -676,7 +698,7 @@ async function handleTopupText(msg, bot) {
 
 async function handleTopupCb(cq, bot) {
   const answer = (text, alert) => callTelegram("answerCallbackQuery", { callback_query_id: cq.id, ...(text ? { text, show_alert: !!alert } : {}) }, bot);
-  if (!topupOn()) return answer("Hisobni to'ldirish hozircha yoqilmagan.", true);
+  if (!topupOn()) return answer(LB.T(await LB.getLang(cq.from.id), "topupOff"), true);
   const chatId = cq.message ? cq.message.chat.id : cq.from.id;
   if (cq.data === "topupmenu") { await answer(); await TOPUP.sendMenu(bot, chatId, cq.from.id); return; }
   if (cq.data === "topupask") { await answer(); await TOPUP.askAmount(bot, chatId, cq.from.id); return; }
@@ -718,7 +740,7 @@ async function handleReceipt(msg, bot, order, req) {
   await supabase.from("orders").update({ details }).eq("id", order.id);
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: "🧾 Chek qabul qilindi, tekshirilmoqda... ⏳",
+    text: LB.T(await LB.getLang(msg.from.id), "receiptGot"),
     reply_to_message_id: msg.message_id,
   }, bot);
   waitUntil(checkReceipt(msg, bot, { ...order, details }, req).catch((e) => console.error("Chek tekshiruvi:", e)));
@@ -771,20 +793,22 @@ async function confirmPaid(order, extra, req) {
   await supabase.from("orders").update({ details: { ...d, awaitingPayment: false, payment, ...(d.topup ? { spent } : {}) } }).eq("id", order.id);
   if (d.payMsg) await callTelegram("editMessageReplyMarkup", { chat_id: order.telegram_user_id, message_id: d.payMsg, reply_markup: { inline_keyboard: [] } }, custBot).catch(() => null);
   const left = d.topup ? await balanceOf(order.telegram_user_id).catch(() => null) : null;
+  const l = await LB.getLang(order.telegram_user_id);
+  const S = (n) => LB.sum(l, n);
   if (order.service === "topup") {
     // faqat to'ldirish — AI ishlamaydi
     await supabase.from("orders").update({ status: "completed" }).eq("id", order.id);
     await callTelegram("sendMessage", {
       chat_id: order.telegram_user_id,
-      text: `✅ <b>Hisobingiz to'ldirildi!</b>\n\n💰 +${fmtSum(payment.amount)}${left != null ? `\n👛 Balans: <b>${fmtSum(left)}</b>` : ""}\n\nEndi ilovada buyurtma bering — narxi balansdan avtomatik yechiladi 🚀`,
+      text: LB.T(l, "topupDone", { amount: S(payment.amount), left: left != null ? S(left) : "" }),
       parse_mode: "HTML",
-      reply_markup: TOPUP.keyboard(),
+      reply_markup: TOPUP.keyboard(l),
     }, custBot);
     return;
   }
   await callTelegram("sendMessage", {
     chat_id: order.telegram_user_id,
-    text: `✅ <b>To'lov tasdiqlandi!</b>${d.topup ? `\n\n💰 Hisobingizga: +${fmtSum(payment.amount)}\n🧾 Buyurtmaga: −${fmtSum(spent)}${left != null ? `\n👛 Balans: <b>${fmtSum(left)}</b>` : ""}` : ""}\n\n⏳ «${escapeHtml((d.topic || AI_LABELS[order.service] || "").slice(0, 100))}» tayyorlanmoqda — bir necha daqiqada fayl shu yerga keladi.`,
+    text: LB.T(l, "orderPaid", { topup: !!d.topup, amount: S(payment.amount), spent: S(spent), left: left != null ? S(left) : "", label: escapeHtml((d.topic || LB.label(l, order.service) || "").slice(0, 100)) }),
     parse_mode: "HTML",
   }, custBot);
   startAi(req, order.id);
@@ -805,26 +829,27 @@ async function handlePayAction(cq, bot, req) {
   const d = order.details;
   const custBot = orderBot(order);
   const toCustomer = (text) => callTelegram("sendMessage", { chat_id: order.telegram_user_id, text }, custBot);
-  const label = (d.topic || AI_LABELS[order.service] || "").slice(0, 100);
+  const cl = await LB.getLang(order.telegram_user_id);
+  const label = (d.topic || LB.label(cl, order.service) || "").slice(0, 100);
 
   if (act === "cancel") {
-    if (String(cq.from.id) !== String(order.telegram_user_id)) return answer("Bu buyurtma sizniki emas.", true);
+    if (String(cq.from.id) !== String(order.telegram_user_id)) return answer(LB.T(await LB.getLang(cq.from.id), "notYours"), true);
     // karta xabari o'rniga qisqa yozuv
     const shrink = () => callTelegram("editMessageText", {
       chat_id: cq.message.chat.id,
       message_id: cq.message.message_id,
-      text: cancelledText(order),
+      text: cancelledText(order, cl),
       reply_markup: { inline_keyboard: [] },
     }, bot);
     if (!isCardWait(order)) {
       if (order.status === "cancelled") await shrink();
-      else await mark("✅ To'langan");
-      return answer(order.status === "cancelled" ? "" : "Bu buyurtmani endi bekor qilib bo'lmaydi.");
+      else await mark(LB.T(cl, "paidTag"));
+      return answer(order.status === "cancelled" ? "" : LB.T(cl, "cancelNo"));
     }
-    if (d.receipt) return answer("Chek yuborilgan — to'lov tekshirilmoqda. Savol bo'lsa, biz bilan bog'laning.", true);
+    if (d.receipt) return answer(LB.T(cl, "cancelReceipt"), true);
     await supabase.from("orders").update({ status: "cancelled" }).eq("id", id);
     await shrink();
-    return answer("Bekor qilindi.");
+    return answer(LB.T(cl, "cancelDone"));
   }
 
   if (!isOwner(cq.from)) return answer("Bu tugma faqat do'kon egasi uchun.", true);
@@ -850,7 +875,7 @@ async function handlePayAction(cq, bot, req) {
   // Rad etildi: buyurtma qoladi, mijoz to'g'ri chekni qayta yuborishi mumkin
   await supabase.from("orders").update({ details: { ...d, receipt: null } }).eq("id", id);
   await mark("❌ Rad etildi");
-  await toCustomer(`⚠️ «${label}» uchun to'lov tasdiqlanmadi: pul kartaga tushmagan yoki chek mos emas (summa aynan ${fmtSum(payAmountOf(order))} bo'lishi kerak).\n\nTo'g'ri chekni shu chatga qayta yuboring yoki biz bilan bog'laning.`);
+  await toCustomer(LB.T(cl, "rejected", { label, amount: LB.sum(cl, payAmountOf(order)) }));
   return answer(`#${id} rad etildi, mijozga xabar yuborildi.`);
 }
 
