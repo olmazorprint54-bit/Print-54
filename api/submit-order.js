@@ -1,5 +1,6 @@
 // api/submit-order.js
 const { authUser } = require("./_lib/bots");
+const { giftsOf, takeGiftPages } = require("./_lib/bonus");
 const { balanceOf } = require("./_lib/balance");
 
 const supabase = require("./_lib/db");
@@ -94,17 +95,16 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
       return;
     }
 
-    // Bepul varaqlar mijoz balansidan oshmasin
+    // Bepul varaqlar mijoz balansidan oshmasin (referal varaqlari + obuna sovg'alari)
     let freePagesUsed = body.user ? Math.max(0, parseInt(body.freePagesUsed, 10) || 0) : 0;
     let userRow = null;
     if (freePagesUsed > 0) {
-      const found = await supabase
-        .from("users")
-        .select("free_pages")
-        .eq("telegram_user_id", body.user.id)
-        .single();
+      const [found, gift] = await Promise.all([
+        supabase.from("users").select("free_pages").eq("telegram_user_id", body.user.id).single(),
+        giftsOf(body.user.id).catch(() => ({ pages: 0 })),
+      ]);
       userRow = found.data;
-      freePagesUsed = Math.min(freePagesUsed, userRow ? userRow.free_pages || 0 : 0);
+      freePagesUsed = Math.min(freePagesUsed, (userRow ? userRow.free_pages || 0 : 0) + gift.pages);
     }
     body.freePagesUsed = freePagesUsed;
 
@@ -141,12 +141,21 @@ if (!validServices.includes(body.service) || !Number.isFinite(total) || total < 
 
     if (error) throw error;
 
-    if (freePagesUsed > 0 && userRow) {
-      const newBalance = Math.max(0, (userRow.free_pages || 0) - freePagesUsed);
-      await supabase
-        .from("users")
-        .update({ free_pages: newBalance })
-        .eq("telegram_user_id", body.user.id);
+    if (freePagesUsed > 0) {
+      // avval obuna sovg'asi varaqlari (10 tasi ishlatilsa sovg'a tugaydi), qolgani — referal varaqlari
+      const gift = await takeGiftPages(body.user.id, freePagesUsed).catch((e) => { console.error("Sovg'a varaqlari:", e); return { used: 0, from: [] }; });
+      const fromRow = freePagesUsed - gift.used;
+      if (fromRow > 0 && userRow) {
+        await supabase
+          .from("users")
+          .update({ free_pages: Math.max(0, (userRow.free_pages || 0) - fromRow) })
+          .eq("telegram_user_id", body.user.id);
+      }
+      if (gift.from.length) {
+        await supabase.from("orders")
+          .update({ details: { ...(inserted.details || {}), giftPages: gift.from } })
+          .eq("id", inserted.id);
+      }
     }
 
     const messageId = await sendTelegramMessage(orderText(body), inserted.id);
