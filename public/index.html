@@ -303,6 +303,9 @@
   .prof-user{ font-size:12.5px; color: var(--ink-soft); margin-top:2px; }
   .bal-box{ padding:16px; margin-bottom:14px; }
   .bal-box .field-title{ margin-bottom:4px; }
+  .price-row{ display:flex; flex-direction:column; gap:2px; padding:9px 0; border-bottom:1px dashed var(--glass-border); font-size:13.5px; }
+  .price-row:last-child{ border-bottom:0; }
+  .price-row b{ font-weight:600; font-size:12.5px; color: var(--ink-soft); }
   .bal-sum{ font-size:30px; font-weight:800; color: var(--accent); margin:2px 0 6px; }
   .bal-text{ font-size:12px; color: var(--ink-soft); line-height:1.45; }
   .bal-row{ display:grid; grid-template-columns: auto 1fr auto; gap:6px; margin-top:8px; }
@@ -557,6 +560,11 @@
       <div class="prof-ava" id="profAva">?</div>
       <div><div class="prof-name" id="profName">Mehmon</div><div class="prof-user" id="profUser"></div></div>
     </div>
+    <div class="receipt glass bal-box" id="priceBox">
+      <div class="field-title">💲 AI xizmatlar narxlari</div>
+      <div id="priceList"></div>
+      <div class="bal-text" style="margin-top:8px;">Hujjat 1–5 daqiqada tayyor bo'ladi. Narx balansdan avtomatik yechiladi.</div>
+    </div>
     <div class="receipt glass bal-box" id="balBox">
       <div class="field-title">💰 Balans</div>
       <div class="bal-sum" id="balSum">0 so'm</div>
@@ -750,6 +758,10 @@ document.querySelectorAll('.app-nav [data-go]').forEach(b => b.addEventListener(
   showView(b.dataset.go);
 }));
 function fillProfile(){
+  const pl = document.getElementById('priceList');
+  if (!pl.childElementCount && window.AI_PRICES && window.AI_PRICES.priceList) {
+    pl.innerHTML = window.AI_PRICES.priceList().map(p => `<div class="price-row"><span>${p.icon} ${escHtml(p.title)}</span><b>${escHtml(p.text)}</b></div>`).join('');
+  }
   const u = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
   if (!u) return;
   document.getElementById('profName').textContent = [u.first_name, u.last_name].filter(Boolean).join(' ') || 'Mehmon';
@@ -1178,6 +1190,7 @@ const trashHtml = isFinal
     <div class="receipt glass" style="margin-bottom:12px; ${cardStyle}">
       <div class="receipt-line"><span>${serviceLabel}</span><span>${date}${trashHtml}</span></div>
       <div class="receipt-line"><span>Tafsilot</span><span>${detail}</span></div>
+      ${o.details && o.details.spent ? `<div class="receipt-line"><span>💰 Balansdan to'langan</span><span>${fmt(o.details.spent)}</span></div>` : ''}
       <div class="receipt-total"><span class="t-label">Summasi</span><span class="t-value" style="font-size:18px;">${o.total == null ? 'Kelishiladi' : Number(o.total) === 0 ? 'Tekin' : fmt(o.total)}</span></div>
       ${actionHtml}
     </div>
@@ -1286,7 +1299,7 @@ updateOrdersBadge();
   <script src="ai/translit.js?v=19"></script>
   <script src="ai/titullar.js?v=2"></script>
   <script src="ai/config.js?v=38"></script>
-  <script src="ai/prices.js?v=8"></script>
+  <script src="ai/prices.js?v=9"></script>
   <script src="ai/ai.js?v=44"></script>
  </body>
   </html>

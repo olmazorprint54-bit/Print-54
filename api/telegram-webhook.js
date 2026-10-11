@@ -423,13 +423,16 @@ async function welcomeExtra(msg, bot, host) {
     parse_mode: "HTML",
     reply_markup: { inline_keyboard: [[{ text: "✨ Ilovani ochish", web_app: { url: appUrl(host, bot) } }]] },
   }, bot);
-  if (topupOn()) {
-    await callTelegram("sendMessage", {
-      chat_id: msg.chat.id,
-      text: "👇 Hisobni to'ldirish va balansni pastdagi tugmalardan ko'rishingiz mumkin.",
-      reply_markup: TOPUP.keyboard(),
-    }, bot);
-  }
+  await sendKeyboard(msg.chat.id, bot);
+}
+
+// Pastki tugmalar (hisob, balans, narxlar, bog'lanish)
+function sendKeyboard(chatId, bot) {
+  return callTelegram("sendMessage", {
+    chat_id: chatId,
+    text: "👇 Hisobni to'ldirish, balans, narxlar va biz bilan bog'lanish — pastdagi tugmalarda.",
+    reply_markup: TOPUP.keyboard(),
+  }, bot);
 }
 
 // Egasi /ulash yuboradi: env'dagi botlar shu serverga ulanadi
@@ -488,8 +491,8 @@ async function handleMessage(msg, bot, host, req) {
 
   if (!msg.text) return;
 
-  // AI botda: "💳 Hisobni to'ldirish" / "💰 Balansim" tugmalari va summa javobi
-  if (isAiBot(bot) && !isOwnerReply(msg) && (await handleTopupText(msg, bot))) return;
+  // Pastki tugmalar (hamma botda): hisobni to'ldirish, balans, narxlar, bog'lanish; summa javobi
+  if (!isOwnerReply(msg) && (await handleKbText(msg, bot))) return;
 
   // AI botda oddiy xabar — AI suhbat (javob fonda tayyorlanadi, Telegram kutib qolmaydi)
   if (isAiBot(bot) && !msg.text.startsWith("/") && !(isOwner(msg.from) && msg.reply_to_message)) {
@@ -597,6 +600,7 @@ async function handleMessage(msg, bot, host, req) {
     photo: "https://raw.githubusercontent.com/olmazorprint54-bit/Print-54/main/public/assets/start-guide.png",
     caption: "Assalomu alaykum! Print 54 botiga xush kelibsiz 👋\n\nIlova orqali xizmatlarimiz narxini hisoblab, buyurtma berishingiz mumkin — pastdagi \"HISOBLASH\" tugmasini bosing.\n\n⚠️ Hozirda bot test rejimida ishlamoqda va yetkazib berish xizmati hozircha mavjud emas — kamchiliklar bo'lsa, uzr so'raymiz.\n\n🎁 Ko'proq buyurtmalar berish orqali tekinga chop etish imkoniyatingizni oshirib borishingiz mumkin! \n\n🎁  Shuningdek, do'stlaringizni taklif qilib ham qo'shimcha bepul varaqlar qo'lga kiritishingiz mumkin — batafsili \"Buyurtmalarim\" bo'limida.",
   });
+  await sendKeyboard(msg.chat.id, MAIN);
 }
 
 /* ============ TO'LOV (Click / Payme) ============ */
@@ -637,6 +641,17 @@ function startAi(req, orderId) {
 /* ============ HISOBNI TO'LDIRISH (botdagi tugmalar) ============ */
 const isOwnerReply = (msg) => isOwner(msg.from) && !!msg.reply_to_message;
 const topupOn = () => !PR.TRIAL && !!payCard();
+
+async function handleKbText(msg, bot) {
+  const t = msg.text.trim();
+  if (t === TOPUP.KB.prices) { await TOPUP.sendPrices(bot, msg.chat.id, { print: !isAiBot(bot), topup: topupOn() }); return true; }
+  if (t === TOPUP.KB.contact) { await TOPUP.sendContact(bot, msg.chat.id); return true; }
+  if (!topupOn() && (t === TOPUP.KB.topup || t === TOPUP.KB.balance)) {
+    await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "Hisobni to'ldirish hozircha yoqilmagan." }, bot);
+    return true;
+  }
+  return handleTopupText(msg, bot);
+}
 
 async function handleTopupText(msg, bot) {
   if (!topupOn()) return false;
@@ -761,7 +776,7 @@ async function confirmPaid(order, extra, req) {
       chat_id: order.telegram_user_id,
       text: `✅ <b>Hisobingiz to'ldirildi!</b>\n\n💰 +${fmtSum(payment.amount)}${left != null ? `\n👛 Balans: <b>${fmtSum(left)}</b>` : ""}\n\nEndi ilovada buyurtma bering — narxi balansdan avtomatik yechiladi 🚀`,
       parse_mode: "HTML",
-      ...(AI_MODE || custBot !== MAIN ? { reply_markup: TOPUP.keyboard() } : {}),
+      reply_markup: TOPUP.keyboard(),
     }, custBot);
     return;
   }

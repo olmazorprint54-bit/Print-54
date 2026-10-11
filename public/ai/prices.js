@@ -62,7 +62,26 @@
     return t.base ? Math.max(MIN, t.base) : 0;
   }
 
-  var api = { TRIAL: TRIAL, MIN: MIN, TABLE: TABLE, SOURCE_FEE: SOURCE_FEE, SOURCE_TIERS: SOURCE_TIERS, SOURCE_SERVICES: SOURCE_SERVICES, sourceFee: sourceFee, priceOf: priceOf, fromPrice: fromPrice };
+  // Narxlar ro'yxati: botdagi "💲 Narxlar" va ilova profili uchun
+  var LIST = [
+    ["presentation", "📊", "Taqdimot", "slayd"], ["referat", "📄", "Referat", "bet"], ["essay", "📝", "Mustaqil ish", "bet"],
+    ["kurs", "🎓", "Kurs ishi", "bet"], ["article", "📰", "Maqola", "bet"], ["test", "✅", "Test tuzish", "savol"],
+    ["questions", "❓", "Savollar tuzish", "savol"], ["crossword", "🧩", "Krossvord", ""], ["lesson", "👩‍🏫", "Dars ishlanma", ""],
+  ];
+  var som = function (n) { return Math.round(n).toLocaleString("ru-RU") + " so'm"; };
+  function priceList() {
+    var out = LIST.map(function (r) {
+      var t = TABLE[r[0]];
+      var text = t.upTo ? t.upTo + " " + r[3] + "gacha " + som(t.base) + ", keyingi har " + r[3] + " +" + som(t.step) : som(t.base);
+      if (t.extra && t.extra.duration) text += " (80 daqiqalik +" + som(t.extra.duration["80"]) + ")";
+      return { icon: r[1], title: r[2], text: text };
+    });
+    out.push({ icon: "📎", title: "Manba yuklash", text: "+" + som(SOURCE_TIERS[0][1]) + " … +" + som(SOURCE_TIERS[SOURCE_TIERS.length - 1][1]) + " (betiga qarab)" });
+    out.push({ icon: "🆓", title: "Resume, Obyektivka", text: "tekin" });
+    return out;
+  }
+
+  var api = { TRIAL: TRIAL, priceList: priceList, MIN: MIN, TABLE: TABLE, SOURCE_FEE: SOURCE_FEE, SOURCE_TIERS: SOURCE_TIERS, SOURCE_SERVICES: SOURCE_SERVICES, sourceFee: sourceFee, priceOf: priceOf, fromPrice: fromPrice };
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.AI_PRICES = api;
 })(this);
