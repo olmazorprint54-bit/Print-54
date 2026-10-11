@@ -127,7 +127,7 @@
         // mijozning o'z tartib raqami (umumiy #id emas); tayyor/bekor qilinganini o'chirish mumkin
         return `<div class="order card">
           <div class="row1"><div><div class="ttl">${esc(TITLES[o.service])}</div>${topic ? `<div class="topic">${esc(topic)}</div>` : ""}</div><span class="st ${cls}">${st}</span></div>
-          <div class="meta"><span>№${o.n || ""} · ${date}${o.total === 0 ? " · Tekin" : ""}</span>${o.status !== "active"
+          <div class="meta"><span>№${o.n || ""} · ${date}${o.total > 0 ? ` · ${Math.round(o.total).toLocaleString("ru-RU")} so'm${o.details && o.details.spent ? " (balansdan)" : ""}` : o.total === 0 ? " · Tekin" : ""}</span>${o.status !== "active"
             ? `<button class="del" data-hide="${o.id}" aria-label="O'chirish" title="Tarixdan o'chirish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>` : ""}</div>
           ${o.status === "completed" && o.file_id ? `<button class="get" data-file="${o.id}">📥 Faylni olish</button>` : ""}
           ${o.status === "active" && !(o.details && (o.details.spent || o.details.payState === "checking")) ? `<div class="acts"><button class="danger" data-cancel="${o.id}">Bekor qilish</button></div>` : ""}
@@ -260,6 +260,11 @@
       };
       box.querySelector(".bal-go").onclick = () => { if (tg && tg.close) tg.close(); };
     } catch (err) { box.textContent = "Internet aloqasini tekshiring"; }
+  }
+  // Profilda narxlar (public/ai/prices.js jadvalidan)
+  if (window.AI_PRICES && window.AI_PRICES.priceList) {
+    $("priceList").innerHTML = window.AI_PRICES.priceList().map((p) => `<div class="price-row"><span>${p.icon} ${esc(p.title)}</span><b>${esc(p.text)}</b></div>`).join("");
+    $("priceCard").hidden = false;
   }
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;

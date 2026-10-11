@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../ai/ai.css?v=27">
-<link rel="stylesheet" href="app.css?v=9">
+<link rel="stylesheet" href="app.css?v=10">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -56,6 +56,11 @@
         </div>
         <div class="set-note">Birinchi to'ldirish — kamida 5 000 so'm, keyingilari — kamida 3 000 so'm.</div>
         <div class="bal-pay" id="balPay" hidden></div>
+      </div>
+      <div class="card setting price-card" id="priceCard" hidden>
+        <div class="set-title">💲 Narxlar</div>
+        <div class="price-list" id="priceList"></div>
+        <div class="set-note">Hujjat 1–5 daqiqada tayyor bo'ladi. Narx balansdan avtomatik yechiladi.</div>
       </div>
       <div class="card setting ref-card" id="refCard" hidden>
         <div class="set-title">🎁 Do'stlarni taklif qiling</div>
@@ -94,7 +99,7 @@
   <script src="../ai/translit.js?v=19"></script>
   <script src="../ai/titullar.js?v=2"></script>
   <script src="../ai/config.js?v=38"></script>
-  <script src="../ai/prices.js?v=8"></script>
+  <script src="../ai/prices.js?v=9"></script>
   <script>
     // Bu ilovada chop etish yo'q — "chop etilsinmi?" maydoni olib tashlanadi
     window.AI_CONFIG.services.forEach(function (s) {
@@ -124,6 +129,6 @@
     };
   </script>
   <script src="../ai/ai.js?v=44"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>

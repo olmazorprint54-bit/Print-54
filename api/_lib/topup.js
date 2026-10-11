@@ -12,8 +12,9 @@ const { walletOf, MAX_TOPUP, MIN_FIRST, MIN_NEXT } = require("./balance");
 const { uniqueAmount } = require("./receipt");
 
 // Botdagi doimiy tugmalar (xabar yozish joyi ostida)
-const KB = { topup: "💳 Hisobni to'ldirish", balance: "💰 Balansim" };
-const keyboard = () => ({ keyboard: [[{ text: KB.topup }, { text: KB.balance }]], resize_keyboard: true, is_persistent: true });
+const KB = { topup: "💳 Hisobni to'ldirish", balance: "💰 Balansim", prices: "💲 Narxlar", contact: "💬 Bog'lanish" };
+const keyboard = () => ({ keyboard: [[{ text: KB.topup }, { text: KB.balance }], [{ text: KB.prices }, { text: KB.contact }]], resize_keyboard: true, is_persistent: true });
+const OWNER_URL = () => `https://t.me/${String(process.env.OWNER_USERNAME || "Print_54").replace(/^@/, "")}`;
 // "Boshqa summa" so'rovi — mijoz shu xabarga javob qilib summani yozadi
 const ASK_MARK = "✏️ Qancha so'mga to'ldirasiz?";
 const MIN_NOTE = `Birinchi to'ldirish — kamida ${fmtSum(MIN_FIRST)}, keyingilari — kamida ${fmtSum(MIN_NEXT)}.`;
@@ -103,4 +104,33 @@ const parseAmount = (text) => {
   return digits ? parseInt(digits, 10) : 0;
 };
 
-module.exports = { KB, keyboard, ASK_MARK, MIN_NOTE, createTopup, sendMenu, sendBalance, askAmount, parseAmount };
+// "💲 Narxlar": AI xizmatlar narxi (public/ai/prices.js jadvalidan)
+async function sendPrices(bot, chatId, { print = false, topup = false } = {}) {
+  const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const lines = require("../../public/ai/prices").priceList().map((p) => `${p.icon} <b>${esc(p.title)}</b> — ${esc(p.text)}`);
+  return telegram(bot, "sendMessage", {
+    chat_id: chatId,
+    text: [
+      "💲 <b>AI xizmatlar narxlari</b>",
+      "",
+      ...lines,
+      "",
+      "⚡ Hujjat 1–5 daqiqada tayyor bo'ladi.",
+      "💰 Narx balansdan avtomatik yechiladi.",
+      ...(print ? ["", "🖨 Chop etish, kitob va pereplyot narxini ilovada («Hisoblash» tugmasi) hisoblang."] : []),
+    ].join("\n"),
+    parse_mode: "HTML",
+    ...(topup ? { reply_markup: { inline_keyboard: [[{ text: KB.topup, callback_data: "topupmenu" }]] } } : {}),
+  });
+}
+
+// "💬 Bog'lanish": egasining Telegram akkaunti
+async function sendContact(bot, chatId) {
+  return telegram(bot, "sendMessage", {
+    chat_id: chatId,
+    text: "💬 Savol, taklif yoki muammo bo'lsa — bizga to'g'ridan-to'g'ri yozing 👇",
+    reply_markup: { inline_keyboard: [[{ text: "✍️ Yozish", url: OWNER_URL() }]] },
+  });
+}
+
+module.exports = { KB, keyboard, sendPrices, sendContact, ASK_MARK, MIN_NOTE, createTopup, sendMenu, sendBalance, askAmount, parseAmount };
