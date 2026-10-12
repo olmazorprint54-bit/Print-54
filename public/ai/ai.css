@@ -257,3 +257,19 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .vbox{ position:absolute; left:0; top:0; container-type: inline-size; transform-origin:0 0; transform: scale(var(--k, 1)); visibility:hidden; }
 .vbox.fit{ visibility:visible; }
 .vbox .el{ position:absolute; }
+
+/* ---------- rasmli tanlov kartochkalari (Rasm yaratish: maqsad, uslub) ---------- */
+.opt-cards{ display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; }
+.opt-card{ border-radius:14px; padding:6px 6px 8px; cursor:pointer; text-align:center; background: var(--glass); border:1px solid var(--glass-border); transition: border-color .15s ease, box-shadow .2s ease; user-select:none; }
+.opt-card.active{ border-color: rgba(79,168,255,.75); box-shadow: 0 0 18px -5px var(--accent-glow); background: var(--glass-active); }
+.oc-pic{ height:46px; border-radius:10px; display:grid; place-items:center; font-size:24px; background: rgba(127,127,127,.12); background-size:cover; background-position:center; }
+.opt-cards.style .oc-pic{ height:62px; }
+.oc-l{ font-size:11.5px; font-weight:700; margin-top:6px; line-height:1.2; }
+.oc-s{ font-size:10.5px; color: var(--ink-soft); margin-top:2px; }
+.ex-list{ display:flex; flex-direction:column; gap:6px; }
+.ex-item{ padding:9px 12px; border-radius:12px; font-size:12.5px; cursor:pointer; background: var(--glass); border:1px dashed var(--glass-border); color: var(--ink); }
+.ex-item::before{ content:"💡 "; }
+.ex-item:active{ transform: scale(.98); }
+.ai-soon-note{ text-align:center; font-size:12.5px; color: var(--ink-soft); margin-top:8px; line-height:1.4; }
+.order-btn:disabled{ opacity:.55; cursor:default; }
+@media (max-width: 360px){ .opt-cards{ grid-template-columns: repeat(3, 1fr); } }

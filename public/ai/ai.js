@@ -89,7 +89,7 @@
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
             <div class="s">${esc(s.sub)}</div>
-            <div class="p">${esc(priceText(s.id))}</div>
+            <div class="p">${s.comingSoon ? "🔜 Tez kunda" : esc(priceText(s.id))}</div>
           </div>`).join("");
   }
 
@@ -140,9 +140,17 @@
           <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div>
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "chips":
-        return `<div class="ai-field">${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
+        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
           </div></div>`;
+      case "cards":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="opt-cards${f.look === "style" ? " style" : ""}" data-cards="${f.id}">
+          ${f.options.map((o) => `<div class="opt-card${v[f.id] === o.v ? " active" : ""}" data-v="${esc(o.v)}">
+            <div class="oc-pic"${o.img ? ` style="background-image:url('${esc(o.img)}')"` : o.bg ? ` style="background:${o.bg}"` : ""}>${o.img ? "" : `<span>${o.e || ""}</span>`}</div>
+            <div class="oc-l">${esc(o.l)}</div>${o.s ? `<div class="oc-s">${esc(o.s)}</div>` : ""}</div>`).join("")}
+          </div></div>`;
+      case "examples":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="ex-list" data-examples="${f.id}">${examplesHtml(f, v)}</div></div>`;
       case "multichips":
         return `<div class="ai-field">${label(f)}<div class="chips" data-multi="${f.id}">
           ${f.options.map((o) => `<div class="chip multi${v[f.id].includes(optV(o)) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
@@ -175,6 +183,12 @@
       default:
         return "";
     }
+  }
+
+  // misol tavsiflar: maqsadga qarab (f.from maydonining qiymati)
+  function examplesHtml(f, v) {
+    const list = (f.items && (f.items[v[f.from]] || f.items.free)) || [];
+    return list.map((t) => `<div class="ex-item" data-ex="${esc(f.target)}">${esc(t)}</div>`).join("");
   }
 
   /* ---------------------------------------------------------------
@@ -593,8 +607,8 @@
       </form>
       <section>
         <div class="receipt glass ai-summary" id="aiSummary">${summaryHtml(svc, v)}</div>
-        <button type="button" class="order-btn" id="aiSubmit">So'rov yuborish</button>
-        <div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>
+        ${svc.comingSoon ? `<button type="button" class="order-btn" id="aiSubmit" disabled>🔜 Tez kunda</button><div class="ai-soon-note">Bu bo'lim tayyorlanmoqda — tez orada ishga tushadi. Hozircha imkoniyatlarini ko'rib chiqishingiz mumkin.</div>` : `<button type="button" class="order-btn" id="aiSubmit">So'rov yuborish</button>`}
+        ${svc.id === "image" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
         <div class="status-msg" id="aiStatus"></div>
       </section>`;
   }
@@ -621,6 +635,8 @@
     if (f.type === "photos") return val && val.length ? `${val.length} ta rasm` : "";
     if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
+    if (f.type === "cards") { const o = f.options.find((x) => x.v === val); return o ? o.l + (o.s && o.s !== "tanlaysiz" ? " · " + o.s : "") : val; }
+    if (f.type === "examples") return "";
     return String(val || "").trim();
   }
 
@@ -668,9 +684,18 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
+    // Rasm yaratish: o'z qatorlari
+    if (svc.id === "image") {
+      const pf = svc.fields.find((x) => x.id === "purpose");
+      const po = pf.options.find((o) => o.v === v.purpose) || {};
+      const rows = [["Xizmat", svc.title], ["Maqsad", po.l || "—"], ["O'lcham", v.purpose === "free" ? v.ratio : po.s || "—"], ["Uslub", pick("style")], ["Sifat", pick("quality")], ["Variantlar", pick("variants")],
+        ...(v.text ? [["Yozuv", v.text]] : []), ...(v.photos && v.photos.length ? [["O'z rasmlari", `${v.photos.length} ta`]] : [])];
+      return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+        `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
+    }
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, presentation_ai: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],
@@ -680,6 +705,7 @@
       ...((v.sources || []).length ? [["Manbalar", `📎 ${v.sources.length} ta${PR && !PR.TRIAL ? ` (+${fmt(PR.sourceFee(srcPages(v)))})` : ""}`]] : []),
       ...(svc.id === "resume" ? [["Tayyor bo'ladi", isAutoResume(v) ? "⚡ 1 daqiqada (avtomatik)" : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "test" ? [["Tayyor bo'ladi", isAutoTest(v) ? "⚡ 1–3 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
+      ...(svc.id === "presentation_ai" ? [["Rasmlar", `🎨 ${pick("imgStyle")} · Nano Banana`]] : []),
       ...(svc.id === "presentation" ? [["Tayyor bo'ladi", isAutoPres(v) ? "⚡ 2–4 daqiqada (AI)" : "Dizayner tayyorlaydi"]] : []),
       ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? (svc.id === "kurs" ? "⚡ 3–5 daqiqada (AI)" : "⚡ 1–3 daqiqada (AI)") : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
@@ -695,7 +721,8 @@
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") + bonusRow +
       // tekin xizmatda chop etish alohida hisoblanadi
       (() => { const t = firstFreeOn(svc, v) ? "🎁 Birinchi ish — tekin" : bonusOn(svc, v) ? "🎁 Bonus — bepul" : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
-        return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${t.length > 12 ? "16px" : "23px"}">${esc(t)}</span></div>`; })();
+        const tt = svc.comingSoon ? "🔜 Tez kunda" : t;
+        return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${tt.length > 12 ? "16px" : "23px"}">${esc(tt)}</span></div>`; })();
   }
 
   function refreshLive(svc) {
@@ -841,6 +868,32 @@
       return;
     }
 
+    const oc = e.target.closest("[data-cards] .opt-card");
+    if (oc) {
+      const fid = oc.parentElement.dataset.cards;
+      v[fid] = oc.dataset.v;
+      oc.parentElement.querySelectorAll(".opt-card").forEach((c) => c.classList.toggle("active", c === oc));
+      // shu maydonga bog'liq misollar yangilanadi
+      current.fields.filter((f) => f.type === "examples" && f.from === fid).forEach((f) => {
+        const box = root.querySelector(`[data-examples="${f.id}"]`);
+        if (box) box.innerHTML = examplesHtml(f, v);
+      });
+      applyShowIf(current);
+      tick();
+      refreshLive(current);
+      return;
+    }
+    const ex = e.target.closest("[data-ex]");
+    if (ex) {
+      const tid = ex.dataset.ex;
+      v[tid] = ex.textContent;
+      const inp = root.querySelector(`[data-input="${tid}"]`);
+      if (inp) { inp.value = v[tid]; inp.dispatchEvent(new Event("input", { bubbles: true })); }
+      tick();
+      refreshLive(current);
+      return;
+    }
+
     const chip = e.target.closest(".chip");
     if (chip) {
       const single = chip.parentElement.dataset.chips;
@@ -972,6 +1025,7 @@
   }
 
   async function submit(svc) {
+    if (svc.comingSoon) return;
     const v = getValues(svc);
     const status = document.getElementById("aiStatus");
     const btn = document.getElementById("aiSubmit");
@@ -1216,8 +1270,8 @@
      NAMUNA MA'LUMOTLAR (ko'rinish uchun)
      --------------------------------------------------------------- */
   function sampleData(svc, v) {
-    const subjectDefault = { kurs: "Iqtisodiyot", article: "Iqtisodiyot", presentation: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
-    const topicDefault = { kurs: "Kichik biznesni rivojlantirishda soliq siyosatining roli", article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
+    const subjectDefault = { kurs: "Iqtisodiyot", article: "Iqtisodiyot", presentation: "Astronomiya", presentation_ai: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
+    const topicDefault = { kurs: "Kichik biznesni rivojlantirishda soliq siyosatining roli", article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", presentation_ai: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
     return {
       topic: String(v.topic || "").trim() || topicDefault,
       subject: String(v.subject || "").trim() || subjectDefault,
