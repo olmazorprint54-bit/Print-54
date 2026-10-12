@@ -136,11 +136,11 @@
           <div class="ai-err">${f.min} dan ${f.max} gacha son kiriting</div></div>`;
       case "textarea":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
-          <textarea class="ai-input" data-input="${f.id}" maxlength="${f.max || 1000}" placeholder="${esc(f.placeholder || "")}">${esc(v[f.id])}</textarea>
+          <div class="ta-wrap"><textarea class="ai-input${f.enhance ? " has-enh" : ""}" data-input="${f.id}" maxlength="${f.max || 1000}" placeholder="${esc(f.placeholder || "")}">${esc(v[f.id])}</textarea>${f.enhance ? `<button type="button" class="enh-btn" data-enhance="${f.id}">✨ Yaxshilash</button>` : ""}</div>
           <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div>
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "chips":
-        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="chips${f.compact ? " compact" : ""}" data-chips="${f.id}">
+        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="chips${f.compact ? " compact" : ""}${f.seg ? " seg" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
           </div></div>`;
       case "cards":
@@ -149,6 +149,8 @@
             <div class="oc-pic"${o.img ? ` style="background-image:url('${esc(o.img)}')"` : o.bg ? ` style="background:${o.bg}"` : ""}>${o.img ? "" : `<span>${o.e || ""}</span>`}</div>
             <div class="oc-l">${esc(o.l)}</div>${o.s ? `<div class="oc-s">${esc(o.s)}</div>` : ""}</div>`).join("")}
           </div></div>`;
+      case "sample":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="vs-box" data-sample="${f.id}">${sampleHtml(f, v)}</div></div>`;
       case "examples":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="ex-list" data-examples="${f.id}">${examplesHtml(f, v)}</div></div>`;
       case "multichips":
@@ -183,6 +185,23 @@
       default:
         return "";
     }
+  }
+
+  // namuna video: tanlangan modelga qarab (f.items[qiymat].src — keyin qo'shiladi)
+  function sampleHtml(f, v) {
+    const it = (f.items && f.items[v[f.from]]) || {};
+    return (it.src
+      ? `<video class="vs-video" src="${esc(it.src)}" autoplay muted loop playsinline></video>`
+      : `<div class="vs-empty"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg><span>Namuna video tez orada qo'shiladi</span></div>`) +
+      (it.note ? `<div class="vs-note">${esc(it.note)}</div>` : "");
+  }
+  // bog'liq maydonlar (misollar, namuna) — manba maydon o'zgarganda qayta chiziladi
+  function refreshDeps(svc, fid) {
+    const v = getValues(svc);
+    svc.fields.filter((f) => f.from === fid).forEach((f) => {
+      const box = root.querySelector(f.type === "sample" ? `[data-sample="${f.id}"]` : `[data-examples="${f.id}"]`);
+      if (box) box.innerHTML = f.type === "sample" ? sampleHtml(f, v) : examplesHtml(f, v);
+    });
   }
 
   // misol tavsiflar: maqsadga qarab (f.from maydonining qiymati)
@@ -608,7 +627,7 @@
       <section>
         <div class="receipt glass ai-summary" id="aiSummary">${summaryHtml(svc, v)}</div>
         ${svc.comingSoon ? `<button type="button" class="order-btn" id="aiSubmit" disabled>🔜 Tez kunda</button><div class="ai-soon-note">Bu bo'lim tayyorlanmoqda — tez orada ishga tushadi. Hozircha imkoniyatlarini ko'rib chiqishingiz mumkin.</div>` : `<button type="button" class="order-btn" id="aiSubmit">So'rov yuborish</button>`}
-        ${svc.id === "image" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
+        ${svc.id === "image" || svc.id === "video" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
         <div class="status-msg" id="aiStatus"></div>
       </section>`;
   }
@@ -636,7 +655,7 @@
     if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     if (f.type === "cards") { const o = f.options.find((x) => x.v === val); return o ? o.l + (o.s && o.s !== "tanlaysiz" ? " · " + o.s : "") : val; }
-    if (f.type === "examples") return "";
+    if (f.type === "examples" || f.type === "sample") return "";
     return String(val || "").trim();
   }
 
@@ -684,6 +703,12 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
+    // Video yaratish: o'z qatorlari
+    if (svc.id === "video") {
+      const rows = [["Xizmat", svc.title], ["Turi", pick("mode")], ["Model", pick("model")], ["O'lcham", pick("resolution")], ["Nisbat", v.aspect], ["Davomiyligi", pick("duration")], ["Ovoz", v.audio ? "Bor" : "Yo'q"]];
+      return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+        `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
+    }
     // Rasm yaratish: o'z qatorlari
     if (svc.id === "image") {
       const pf = svc.fields.find((x) => x.id === "purpose");
@@ -873,14 +898,17 @@
       const fid = oc.parentElement.dataset.cards;
       v[fid] = oc.dataset.v;
       oc.parentElement.querySelectorAll(".opt-card").forEach((c) => c.classList.toggle("active", c === oc));
-      // shu maydonga bog'liq misollar yangilanadi
-      current.fields.filter((f) => f.type === "examples" && f.from === fid).forEach((f) => {
-        const box = root.querySelector(`[data-examples="${f.id}"]`);
-        if (box) box.innerHTML = examplesHtml(f, v);
-      });
+      refreshDeps(current, fid);
       applyShowIf(current);
       tick();
       refreshLive(current);
+      return;
+    }
+    const enh = e.target.closest("[data-enhance]");
+    if (enh) {
+      const st = document.getElementById("aiStatus");
+      if (st) st.textContent = current.comingSoon ? "✨ Yaxshilash bo'lim ishga tushganda ishlaydi" : "";
+      tick();
       return;
     }
     const ex = e.target.closest("[data-ex]");
@@ -903,6 +931,7 @@
         chip.parentElement.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === chip));
         // taqdimot: "AI o'zi yaratadi" — shablonsiz (smart-gen), galereya yopiladi
         if (single === "design" && chip.dataset.v === "ai") v.template = "ai-dizayn";
+        refreshDeps(current, single);
         applyShowIf(current);
       } else if (multi) {
         const arr = v[multi];
