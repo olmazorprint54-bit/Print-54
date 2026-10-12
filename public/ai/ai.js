@@ -140,7 +140,7 @@
           <input class="ai-input" data-input="${f.id}" type="number" inputmode="numeric" min="${f.min}" max="${f.max}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
           <div class="ai-err">${f.min} dan ${f.max} gacha son kiriting</div></div>`;
       case "textarea":
-        return `<div class="ai-field" data-f="${f.id}">${label(f)}
+        return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
           <div class="ta-wrap"><textarea class="ai-input${f.enhance ? " has-enh" : ""}" data-input="${f.id}" maxlength="${f.max || 1000}" placeholder="${esc(f.placeholder || "")}">${esc(v[f.id])}</textarea>${f.enhance ? `<button type="button" class="enh-btn" data-enhance="${f.id}">✨ Yaxshilash</button>` : ""}</div>
           <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div>
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
@@ -154,10 +154,6 @@
             <div class="oc-pic"${o.img ? ` style="background-image:url('${esc(o.img)}')"` : o.bg ? ` style="background:${o.bg}"` : ""}>${o.img ? "" : `<span>${o.e || ""}</span>`}</div>
             <div class="oc-l">${esc(o.l)}</div>${o.s ? `<div class="oc-s">${esc(o.s)}</div>` : ""}</div>`).join("")}
           </div></div>`;
-      case "gpreview": {
-        const { cat, it } = svc.preset;
-        return `<div class="ai-field g-prev" data-no-i18n>${gPic(cat, it, true)}<div class="g-prev-r">📐 ${esc(it.r)}${it.tx ? " · ✍️ " + esc(GL(["yozuv bilan", "с надписью", "with text"])) : ""}</div></div>`;
-      }
       case "sample":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="vs-box" data-sample="${f.id}">${sampleHtml(f, v)}</div></div>`;
       case "examples":
@@ -567,7 +563,7 @@
   }
 
   // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
-  const cond = (v, expr) => { const [k, val] = String(expr).split("="); return val === undefined ? !!v[k] : v[k] === val; };
+  const cond = (v, expr) => { const [k, val] = String(expr).split("="); return val === undefined ? !!v[k] : val.split("|").includes(String(v[k])); };
   const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || cond(v, f.showIf)) && (!f.hideIf || !cond(v, f.hideIf))); };
   function applyShowIf(svc) {
     const v = getValues(svc);
@@ -661,50 +657,59 @@
      Prompt yashirin; mijoz faqat mavzu/matn yozadi yoki rasm yuklaydi.
      --------------------------------------------------------------- */
   let galleryOpen = false;
-  let galleryCat = null;
   const presetSvcs = {}; // "img_<kat>_<id>" -> vaqtinchalik xizmat (qiymatlari saqlanadi)
   const GL = (x) => (Array.isArray(x) ? x[Math.max(0, ["uz", "ru", "en"].indexOf((window.AI_I18N && window.AI_I18N.lang) || "uz"))] || x[0] : x || "");
-  const gPic = (cat, it, big) => it.img
-    ? `<div class="g-pic${big ? " big" : ""}" style="background-image:url('${esc(it.img)}')"></div>`
-    : `<div class="g-pic${big ? " big" : ""}" style="background:${cat.bg}"><span>${it.e || cat.e}</span></div>`;
-
-  function openGallery(catId) {
+  
+  function openGallery() {
     const G = window.AI_IMAGE_GALLERY;
-    const base = CFG.services.find((s) => s.id === "image");
+    const base = CFG.services.find((x) => x.id === "image");
     current = null;
     galleryOpen = true;
-    galleryCat = catId || galleryCat || G[0].id;
-    const cat = G.find((c) => c.id === galleryCat) || G[0];
+    const n = (c) => (c.free ? GL(["O'zim yozaman", "Напишу сам", "Describe it myself"]) : `${c.items.length} ${GL(["ta namuna", "образцов", "samples"])}`);
     root.innerHTML = `
       <div class="ai-top">
         <div class="ai-back glass" data-back="1"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></div>
         <div class="ic" style="background:${base.color}">${base.icon}</div>
-        <div><div class="t">${esc(base.title)}</div><div class="s">Namunani tanlang — qolganini AI qiladi</div></div>
+        <div><div class="t">${esc(base.title)}</div><div class="s">Bo'limni tanlang</div></div>
       </div>
       ${base.comingSoon ? `<div class="g-soon">🔜 Bo'lim tez orada ishga tushadi — namunalarni hozirdan ko'rib chiqing</div>` : ""}
-      <div class="g-cats" data-no-i18n>${G.map((c) => `<div class="g-cat${c.id === cat.id ? " active" : ""}" data-gcat="${c.id}">${c.e} ${esc(GL(c.t))}</div>`).join("")}</div>
-      ${cat.free
-        ? `<div class="g-free glass" data-gfree="1"><div class="g-pic big" style="background:${cat.bg}"><span>✏️</span></div>
-            <div class="g-free-t">O'zim yozaman</div><div class="g-free-s">Maqsad, o'lcham, uslub va tavsifni o'zingiz tanlaysiz</div></div>`
-        : `<div class="g-grid" data-no-i18n>${cat.items.map((it) => `<div class="g-card glass" data-gpick="${cat.id}/${it.id}">
-            ${gPic(cat, it)}<div class="g-t">${esc(GL(it.t))}</div>
-            <div class="g-s">${it.in === "text" ? "✍️ " + esc(GL(["Yozasiz", "Пишете текст", "Type text"])) : "📷 " + esc(GL(["Rasm yuklaysiz", "Загружаете фото", "Upload a photo"]))} · ${esc(it.r)}</div></div>`).join("")}</div>`}`;
-    const act = root.querySelector(".g-cat.active");
-    if (act && act.scrollIntoView) act.scrollIntoView({ inline: "center", block: "nearest" });
+      <div class="ai-grid g-cats-grid" data-no-i18n>${G.map((c) => `
+        <div class="ai-card glass" data-gcat="${c.id}">
+          <div class="ic g-ic" style="background:${c.bg}">${c.e}</div>
+          <div class="t">${esc(GL(c.t))}</div>
+          <div class="s">${esc(n(c))}</div>
+        </div>`).join("")}</div>`;
     syncBackButton();
+    window.scrollTo(0, 0);
   }
 
-  // namuna uchun qisqa forma (vaqtinchalik xizmat)
-  function presetService(cat, it) {
-    const key = `img_${cat.id}_${it.id}`;
+  // Kategoriya formasi: avvalgi to'liq forma ko'rinishida — namunalar kartochka bo'lib,
+  // keyin uslub, tavsif, misollar, yozuv, o'z rasmi, sifat, variantlar
+  function categoryService(cat) {
+    const key = `img_${cat.id}`;
     if (presetSvcs[key]) return presetSvcs[key];
-    const base = CFG.services.find((s) => s.id === "image");
-    const pick = (id) => base.fields.find((f) => f.id === id);
-    const fields = [{ id: "gpreview", type: "gpreview" }];
-    if (it.in === "photo" || it.in === "photo_text") fields.push({ id: "photos", type: "photos", label: GL(["Rasmingiz", "Ваше фото", "Your photo"]), hint: GL(["Aniq, yorug' rasm yuklang — natija shunga bog'liq", "Загрузите чёткое светлое фото — от него зависит результат", "Upload a clear, well-lit photo — the result depends on it"]), max: 1, default: [], required: true });
-    if (it.in === "text" || it.in === "photo_text") fields.push({ id: "input", type: it.tx ? "text" : "textarea", label: GL(it.lb), placeholder: GL(it.ph), required: true, max: it.tx ? 120 : 300 });
-    fields.push(pick("quality"), pick("variants"));
-    const svc = { id: key, kind: "image", back: "image", title: GL(it.t), sub: GL(cat.t), icon: base.icon, color: base.color, comingSoon: base.comingSoon, preset: { cat, it }, fields };
+    const base = CFG.services.find((x) => x.id === "image");
+    const pick = (id) => ({ ...base.fields.find((f) => f.id === id) });
+    const ids = (pred) => cat.items.filter(pred).map((it) => it.id).join("|");
+    const photoIds = ids((it) => it.in !== "text");
+    const textIds = ids((it) => it.in !== "photo");
+    const txIds = ids((it) => it.tx);
+    const fields = [
+      { id: "preset", type: "cards", label: GL(["Namunani tanlang", "Выберите образец", "Choose a sample"]), look: "style",
+        options: cat.items.map((it) => ({ v: it.id, l: GL(it.t), s: it.r, e: it.e, bg: cat.bg, img: it.img })), default: cat.items[0].id },
+    ];
+    if (photoIds) fields.push({ id: "photos", type: "photos", label: GL(["Rasmingiz", "Ваше фото", "Your photo"]), hint: GL(["Aniq, yorug' rasm yuklang — natija shunga bog'liq", "Загрузите чёткое светлое фото — от него зависит результат", "Upload a clear, well-lit photo — the result depends on it"]), max: 1, default: [], showIf: "preset=" + photoIds });
+    if (textIds) {
+      fields.push({ id: "prompt", type: "textarea", label: GL(["Tavsif yoki matn", "Описание или текст", "Description or text"]), placeholder: GL(["Bu yerga yozing — misollardan birini bosishingiz ham mumkin", "Напишите здесь — или нажмите на пример", "Type here — or tap an example"]), required: true, max: 1000, showIf: "preset=" + textIds });
+      const items = {};
+      cat.items.forEach((it) => { if (it.ph) items[it.id] = [GL(it.ph).replace(/^(Masalan|Например|E\.g\.):\s*/, "")]; });
+      fields.push({ id: "examples", type: "examples", label: "💡 Misollar — bosing, tavsifga qo'yiladi", target: "prompt", from: "preset", items, showIf: "preset=" + textIds });
+    }
+    fields.push(pick("style"));
+    const noTx = ids((it) => !it.tx);
+    if (noTx) fields.push({ ...pick("text"), showIf: "preset=" + noTx });
+    fields.push(pick("enhance"), pick("quality"), pick("variants"));
+    const svc = { id: key, kind: "image", back: "image", title: GL(cat.t), sub: base.title, icon: base.icon, color: base.color, comingSoon: base.comingSoon, cat, fields };
     presetSvcs[key] = svc;
     return svc;
   }
@@ -720,7 +725,7 @@
     if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     if (f.type === "cards") { const o = f.options.find((x) => x.v === val); return o ? o.l + (o.s && o.s !== "tanlaysiz" ? " · " + o.s : "") : val; }
-    if (f.type === "examples" || f.type === "sample" || f.type === "gpreview") return "";
+    if (f.type === "examples" || f.type === "sample") return "";
     return String(val || "").trim();
   }
 
@@ -768,9 +773,10 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
-    // Galereya namunasi
-    if (svc.preset) {
-      const rows = [["Namuna", svc.title], ["Kategoriya", svc.sub], ["O'lcham", svc.preset.it.r], ["Sifat", pick("quality")], ["Variantlar", pick("variants")]];
+    // Galereya kategoriyasi
+    if (svc.cat) {
+      const it = svc.cat.items.find((x) => x.id === v.preset) || svc.cat.items[0];
+      const rows = [["Kategoriya", svc.title], ["Namuna", GL(it.t)], ["O'lcham", it.r], ["Uslub", pick("style")], ["Sifat", pick("quality")], ["Variantlar", pick("variants")]];
       return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
         `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
     }
@@ -886,16 +892,13 @@
     if (open) { tick(); openService(open.dataset.open); return; }
     if (e.target.closest("[data-back]")) { goBack(); return; }
     const gc = e.target.closest("[data-gcat]");
-    if (gc) { tick(); openGallery(gc.dataset.gcat); return; }
-    const gp = e.target.closest("[data-gpick]");
-    if (gp) {
-      const [cid, iid] = gp.dataset.gpick.split("/");
-      const cat = window.AI_IMAGE_GALLERY.find((c) => c.id === cid);
-      const it = cat && cat.items.find((x) => x.id === iid);
-      if (it) { tick(); openService(presetService(cat, it).id); }
+    if (gc) {
+      tick();
+      const cat = window.AI_IMAGE_GALLERY.find((c) => c.id === gc.dataset.gcat);
+      if (cat && cat.free) openService("image", true);
+      else if (cat) openService(categoryService(cat).id);
       return;
     }
-    if (e.target.closest("[data-gfree]")) { tick(); openService("image", true); return; }
 
     if (e.target.closest("[data-again]")) { openGrid(); return; }
     const copyCard = e.target.closest("[data-copy-card]");
