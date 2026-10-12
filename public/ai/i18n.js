@@ -138,6 +138,8 @@
     ["{n} ta bepul", "{n} бесплатный", "{n} free"],
     ["AI buyurtma (kurs ishidan tashqari).", "AI-заказ (кроме курсовой).", "AI order (except coursework)."],
     ["AI buyurtma.", "AI-заказ.", "AI order."],
+    ["{n} ta do'stingizni taklif qiling — {n} ta bepul AI buyurtma. Keyin har {n} ta do'st uchun yana {n} ta.", "Пригласите {n} друзей — {n} бесплатный AI-заказ. Дальше за каждых {n} друзей — ещё {n}.", "Invite {n} friends — get {n} free AI order. Then for every {n} friends — {n} more."],
+    ["keyingi bonusgacha", "до след. бонуса", "to next bonus"],
     // ---------- Bonuslar bo'limi ----------
     ["Bonuslar", "Бонусы", "Bonuses"],
     ["🎁 Bonuslar", "🎁 Бонусы", "🎁 Bonuses"],

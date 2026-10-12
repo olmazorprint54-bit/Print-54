@@ -90,9 +90,9 @@ const M = {
     "👇 Top-up, balance, prices and contact — on the buttons below.",
   ],
   welcome: [
-    (o) => `Assalomu alaykum${o.name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${o.ai ? "\n\n🎁 <b>Birinchi ishingiz — tekin!</b> (kurs ishidan tashqari)" : ""}\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${o.free} ta bepul). Yangi mavzu: /yangi${o.ai ? `\n\n🎁 Do'stlaringizni taklif qiling: har ${o.step} ta do'st uchun 1 ta bepul AI buyurtma (kurs ishidan tashqari) — havola «Profil» bo'limida.` : ""}\n\n🌐 Til / Язык / Language: /til\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
-    (o) => `Здравствуйте${o.name}! 👋\n\nЗдесь можно за несколько минут подготовить презентацию, самостоятельную работу, реферат, тест, резюме и объективку. Резюме и объективка — <b>бесплатно</b>.${o.ai ? "\n\n🎁 <b>Первая работа — бесплатно!</b> (кроме курсовой)" : ""}\n\n💬 Напишите вопрос сюда или отправьте фото задачи — AI объяснит (${o.free} бесплатно в день). Новая тема: /yangi${o.ai ? `\n\n🎁 Приглашайте друзей: за каждых ${o.step} друзей — 1 бесплатный AI-заказ (кроме курсовой), ссылка в разделе «Профиль».` : ""}\n\n🌐 Til / Язык / Language: /til\n\nНажмите кнопку ниже, чтобы начать 👇`,
-    (o) => `Hello${o.name}! 👋\n\nHere you can get a presentation, independent work, report, test, résumé or official CV ready in a few minutes. Résumé and CV — <b>free</b>.${o.ai ? "\n\n🎁 <b>Your first order is free!</b> (except coursework)" : ""}\n\n💬 Type your question here or send a photo of a problem — AI will explain it (${o.free} free per day). New topic: /yangi${o.ai ? `\n\n🎁 Invite friends: every ${o.step} friends = 1 free AI order (except coursework), link in “Profile”.` : ""}\n\n🌐 Til / Язык / Language: /til\n\nTap the button below to start 👇`,
+    (o) => `Assalomu alaykum${o.name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${o.ai ? "\n\n🎁 <b>Birinchi ishingiz — tekin!</b> (kurs ishidan tashqari)" : ""}\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${o.free} ta bepul). Yangi mavzu: /yangi${o.ai ? `\n\n🎁 Do'stlaringizni taklif qiling: ${o.step} ta do'st — 1 ta bepul AI buyurtma, keyin har 2 ta do'st — yana 1 ta. Havola «🎁 Bonuslar» bo'limida.` : ""}\n\n🌐 Til / Язык / Language: /til\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
+    (o) => `Здравствуйте${o.name}! 👋\n\nЗдесь можно за несколько минут подготовить презентацию, самостоятельную работу, реферат, тест, резюме и объективку. Резюме и объективка — <b>бесплатно</b>.${o.ai ? "\n\n🎁 <b>Первая работа — бесплатно!</b> (кроме курсовой)" : ""}\n\n💬 Напишите вопрос сюда или отправьте фото задачи — AI объяснит (${o.free} бесплатно в день). Новая тема: /yangi${o.ai ? `\n\n🎁 Приглашайте друзей: ${o.step} друга — 1 бесплатный AI-заказ, дальше за каждых 2 друзей — ещё 1. Ссылка в разделе «🎁 Бонусы».` : ""}\n\n🌐 Til / Язык / Language: /til\n\nНажмите кнопку ниже, чтобы начать 👇`,
+    (o) => `Hello${o.name}! 👋\n\nHere you can get a presentation, independent work, report, test, résumé or official CV ready in a few minutes. Résumé and CV — <b>free</b>.${o.ai ? "\n\n🎁 <b>Your first order is free!</b> (except coursework)" : ""}\n\n💬 Type your question here or send a photo of a problem — AI will explain it (${o.free} free per day). New topic: /yangi${o.ai ? `\n\n🎁 Invite friends: ${o.step} friends = 1 free AI order, then every 2 more friends = 1 more. Link in “🎁 Bonuses”.` : ""}\n\n🌐 Til / Язык / Language: /til\n\nTap the button below to start 👇`,
   ],
   langPick: ["🌐 Tilni tanlang:", "🌐 Выберите язык:", "🌐 Choose a language:"],
   langSet: ["✅ Til: O'zbekcha", "✅ Язык: русский", "✅ Language: English"],
@@ -195,6 +195,17 @@ const M = {
     (e) => `🎁 Yana bir do'stingiz qo'shildi! Endi jami ${e} ta list bepul chiqarishingiz mumkin.`,
     (e) => `🎁 Присоединился ещё один друг! Теперь бесплатно — ${e} листов.`,
     (e) => `🎁 Another friend joined! You can now print ${e} sheets for free.`,
+  ],
+  // AI bot referali: do'st qo'shildi (bonusgacha yana left ta) / bonus berildi
+  aiRefJoin: [
+    (n, c, left) => `🎉 ${n} sizning havolangiz orqali qo'shildi! (jami ${c} ta do'st)\n\nYana ${left} ta do'st — va 1 ta bepul AI buyurtma sizniki 🎁`,
+    (n, c, left) => `🎉 ${n} присоединился(-ась) по вашей ссылке! (всего друзей: ${c})\n\nЕщё ${left} — и 1 бесплатный AI-заказ ваш 🎁`,
+    (n, c, left) => `🎉 ${n} joined with your link! (${c} friends total)\n\n${left} more and you get 1 free AI order 🎁`,
+  ],
+  aiRefEarn: [
+    (n, c, add, cr, left) => `🎉 ${n} sizning havolangiz orqali qo'shildi! (jami ${c} ta do'st)\n\n🎁 Sizga ${add} ta bepul AI buyurtma berildi! Hozir bonuslar: ${cr} ta — buyurtma berishda «🎁 Bonusdan foydalanish» orqali ishlatasiz.\n\nKeyingi bonus — yana ${left} ta do'st.`,
+    (n, c, add, cr, left) => `🎉 ${n} присоединился(-ась) по вашей ссылке! (всего друзей: ${c})\n\n🎁 Вам начислен бесплатный AI-заказ: ${add}. Сейчас бонусов: ${cr} — используйте при заказе через «🎁 Использовать бонус».\n\nСледующий бонус — ещё ${left} друга.`,
+    (n, c, add, cr, left) => `🎉 ${n} joined with your link! (${c} friends total)\n\n🎁 You got ${add} free AI order! Bonuses now: ${cr} — use them via “🎁 Use bonus” when ordering.\n\nNext bonus — ${left} more friends.`,
   ],
   ref3: [
     (c, e) => `🎉 Tabriklaymiz! ${c} ta do'stni taklif qildingiz — sizga ${e} ta list bepul chiqarish imkoniyati berildi!\n\nYana ${5 - c} ta referal qo'shsangiz, jami 20 ta bo'ladi.`,
