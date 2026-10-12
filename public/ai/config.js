@@ -34,7 +34,43 @@
     referat: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 14h7M9 17h4"/></svg>',
     resume: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="9" r="2.6"/><path d="M8 16.5c.8-1.9 2.2-2.8 4-2.8s3.2.9 4 2.8"/></svg>',
     obyektivka: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="13" y="6" width="4" height="5" rx=".6"/><path d="M7 7h4M7 10h4M7 14h10M7 17h7"/></svg>',
+    image: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L6 21"/><path d="M17 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg>',
+    presentation_ai: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 13-4-4-7 7"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
+  };
+
+  /* ---------- AI rasm (Google Nano Banana) ----------
+     purpose — nima uchun: o'lcham (nisbat) shundan; style — uslub (namuna: bg gradient,
+     keyin haqiqiy namuna rasm "img"); examples — har maqsadga misol tavsiflar. */
+  var IMG_PURPOSES = [
+    { v: "slide", l: "Slayd uchun", s: "16:9", e: "📊" },
+    { v: "post", l: "Instagram post", s: "1:1", e: "📱" },
+    { v: "story", l: "Stories / Reels", s: "9:16", e: "📲" },
+    { v: "poster", l: "Afisha / gazeta", s: "3:4", e: "📰" },
+    { v: "card", l: "Tabriknoma", s: "3:2", e: "🎉" },
+    { v: "cover", l: "Muqova", s: "2:3", e: "📘" },
+    { v: "logo", l: "Logotip eskizi", s: "1:1", e: "🧩" },
+    { v: "free", l: "Erkin o'lcham", s: "tanlaysiz", e: "✏️" },
+  ];
+  var IMG_STYLES = [
+    { v: "photo", l: "Realistik foto", e: "📷", bg: "linear-gradient(135deg,#334155,#94a3b8)" },
+    { v: "3d", l: "3D multfilm", e: "🧸", bg: "linear-gradient(135deg,#f472b6,#fb923c)" },
+    { v: "watercolor", l: "Akvarel", e: "🎨", bg: "linear-gradient(135deg,#a5f3fc,#f9a8d4)" },
+    { v: "flat", l: "Minimalist", e: "🔷", bg: "linear-gradient(135deg,#22d3ee,#6366f1)" },
+    { v: "anime", l: "Anime", e: "🌸", bg: "linear-gradient(135deg,#c084fc,#f472b6)" },
+    { v: "pencil", l: "Qalam chizgi", e: "✏️", bg: "linear-gradient(135deg,#e5e7eb,#9ca3af)" },
+    { v: "infographic", l: "Infografika", e: "📈", bg: "linear-gradient(135deg,#34d399,#3b82f6)" },
+    { v: "retro", l: "Retro / vintaj", e: "📻", bg: "linear-gradient(135deg,#f59e0b,#b45309)" },
+  ];
+  var IMG_EXAMPLES = {
+    slide: ["Quyosh tizimi sayyoralari, koinot fonida", "Amir Temur davridagi Samarqand, Registon maydoni", "Fotosintez jarayoni: yashil barg, quyosh nuri, sxema"],
+    post: ["Kitob do'koni reklamasi: stol ustida kitoblar va bir finjon qahva", "Yangi yil chegirmasi: sovg'a qutilari va qor", "Matematika kursiga qabul: doska, formulalar"],
+    story: ["Tog'larda tong, motivatsion kayfiyat", "Telefonda AI yordamchi, zamonaviy neon uslub", "Ramazon tabrigi: oy, fonuslar"],
+    poster: ["Navro'z bayrami afishasi: sumalak, bahor gullari", "Maktab sport musobaqasi afishasi", "Kitobxonlik tanlovi afishasi"],
+    card: ["Ustozlar kuni tabriknomasi: gullar va kitoblar", "Tug'ilgan kun tabriknomasi: sharlar va tort", "8-mart tabriknomasi: lolalar"],
+    cover: ["Referat muqovasi: kimyo laboratoriyasi", "Bolalar ertak kitobi muqovasi: o'rmon va quyoncha", "Tarix kitobi muqovasi: qadimiy Buxoro"],
+    logo: ["Kafe logotipi: qahva finjoni, minimal", "IT o'quv markazi logotipi", "Gul do'koni logotipi"],
+    free: ["Kosmosdagi kitob javoni, fantastik uslub", "Ipak yo'li karvoni, quyosh botishi", "Kelajak shahri, uchar mashinalar"],
   };
 
   window.AI_CONFIG = {
@@ -57,6 +93,22 @@
     },
 
     services: [
+      {
+        id: "image", title: "Rasm yaratish", sub: "Afisha, post, tabriknoma, slayd uchun",
+        icon: ICONS.image, color: "#F472B6", comingSoon: true,
+        fields: [
+          { id: "purpose", type: "cards", label: "Rasm nima uchun?", options: IMG_PURPOSES, default: "post" },
+          { id: "ratio", type: "chips", label: "O'lcham (nisbat)", options: [{ v: "1:1", l: "1:1 kvadrat" }, { v: "4:5", l: "4:5" }, { v: "3:4", l: "3:4" }, { v: "2:3", l: "2:3" }, { v: "9:16", l: "9:16 tik" }, { v: "16:9", l: "16:9 yotiq" }, { v: "3:2", l: "3:2" }], default: "1:1", showIf: "purpose=free" },
+          { id: "style", type: "cards", label: "Uslub", options: IMG_STYLES, default: "3d", look: "style" },
+          { id: "prompt", type: "textarea", label: "Rasmda nima bo'lsin?", placeholder: "O'zbekcha oddiy yozing. Masalan: Navro'z bayrami afishasi, sumalak, bahor gullari", required: true, max: 1000 },
+          { id: "examples", type: "examples", label: "💡 Misollar — bosing, tavsifga qo'yiladi", target: "prompt", from: "purpose", items: IMG_EXAMPLES },
+          { id: "text", type: "text", label: "Rasmdagi yozuv (ixtiyoriy)", placeholder: "Masalan: Navro'z muborak!", max: 80, hint: "Rasm ichida aynan shu yozuv to'g'ri imlo bilan chiziladi" },
+          { id: "enhance", type: "switch", label: "✨ Tavsifimni AI mukammal promptga aylantirsin", default: true },
+          { id: "photos", type: "photos", label: "O'z rasmingiz (ixtiyoriy)", hint: "AI shu rasm asosida chizadi: uslubini o'zgartiradi, fonni almashtiradi yoki tahrirlaydi (3 tagacha)", max: 3, default: [] },
+          { id: "quality", type: "chips", label: "Sifat", options: [{ v: "std", l: "⚡ Oddiy · 1K" }, { v: "pro", l: "💎 Yuqori · 2K (chop etish uchun)" }], default: "std" },
+          { id: "variants", type: "chips", label: "Variantlar", options: [{ v: "1", l: "1 ta" }, { v: "2", l: "2 ta (tanlash uchun)" }], default: "1" },
+        ],
+      },
       {
         id: "presentation", title: "Taqdimot", sub: "PowerPoint slaydlar",
         icon: ICONS.presentation, color: "#4FA8FF",
@@ -620,4 +672,24 @@
   // 0 — oddiy (HTML) dizaynlar, 1 — biz Canva'da yasaganlar, 2 — Canva kutubxonasidan
   const rank = (t) => (t.lib ? 2 : t.kind === "canva" ? 1 : 0);
   Object.values(window.AI_CONFIG.templates).forEach((list) => list.sort((a, b) => rank(a) - rank(b)));
+
+  // 🖼 Rasmli taqdimot: oddiy taqdimot (matnni Claude yozadi) + har slaydga Google Nano Banana chizgan rasm.
+  // Oddiy taqdimotga Google modeli qo'shilmaydi (u bepul foto bazasidan oladi).
+  (function () {
+    var C = window.AI_CONFIG;
+    var pres = C.services.filter(function (s) { return s.id === "presentation"; })[0];
+    var fields = pres.fields.filter(function (f) { return f.id !== "images" && f.id !== "photos"; }).map(function (f) { var o = {}; for (var k in f) o[k] = f[k]; return o; });
+    var at = fields.map(function (f) { return f.id; }).indexOf("template") + 1;
+    fields.splice(at, 0,
+      { id: "imgStyle", type: "cards", label: "Rasmlar uslubi", options: IMG_STYLES.filter(function (s) { return ["photo", "3d", "watercolor", "flat", "infographic", "retro"].indexOf(s.v) >= 0; }), default: "photo", look: "style" },
+      { id: "imgCount", type: "chips", label: "Rasmlar", options: [{ v: "all", l: "Har slaydga" }, { v: "half", l: "Muhim slaydlarga (~yarmiga)" }], default: "all", hint: "Rasmlarni Google Nano Banana chizadi" });
+    var svc = { id: "presentation_ai", title: "Rasmli taqdimot", sub: "Har slaydga AI chizgan rasm", icon: ICONS.presentation_ai, color: "#A78BFA", comingSoon: true, fields: fields };
+    C.services.splice(C.services.indexOf(pres) + 1, 0, svc);
+    // Rasm yaratish — rasmli taqdimotdan keyin
+    var img = C.services.filter(function (s) { return s.id === "image"; })[0];
+    C.services.splice(C.services.indexOf(img), 1);
+    C.services.splice(C.services.indexOf(svc) + 1, 0, img);
+    C.templates.presentation_ai = C.templates.presentation;
+    fields.forEach(function (f) { if (f.type === "templates") f.set = "presentation"; });
+  })();
 })();
