@@ -290,21 +290,6 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .vs-empty svg{ width:44px; height:44px; stroke:#6b7280; }
 .vs-note{ padding:10px 12px; font-size:12px; color:#d1d5db; background:#0b0b0f; line-height:1.4; }
 
-/* ---------- rasm galereyasi ---------- */
+/* ---------- rasm galereyasi: kategoriyalar to'ri ---------- */
 .g-soon{ font-size:12.5px; padding:10px 12px; border-radius:12px; margin-bottom:12px; background: rgba(251,146,60,.12); border:1px solid rgba(251,146,60,.35); }
-.g-cats{ display:flex; gap:7px; overflow-x:auto; padding:2px 2px 10px; margin:0 -2px 6px; scrollbar-width:none; }
-.g-cats::-webkit-scrollbar{ display:none; }
-.g-cat{ flex:none; padding:9px 13px; border-radius:999px; font-size:13px; font-weight:700; white-space:nowrap; cursor:pointer; background: var(--glass); border:1px solid var(--glass-border); }
-.g-cat.active{ background: var(--accent); border-color: var(--accent); color:#fff; }
-.g-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.g-card{ border-radius:16px; padding:8px 8px 10px; cursor:pointer; }
-.g-card:active{ transform: scale(.97); }
-.g-pic{ aspect-ratio: 1 / 1; border-radius:12px; display:grid; place-items:center; font-size:40px; background-size:cover; background-position:center; }
-.g-pic.big{ aspect-ratio: 4 / 3; font-size:64px; }
-.g-t{ font-size:13.5px; font-weight:800; margin-top:8px; line-height:1.25; }
-.g-s{ font-size:11px; color: var(--ink-soft); margin-top:3px; }
-.g-free{ border-radius:18px; padding:10px 10px 16px; cursor:pointer; text-align:center; }
-.g-free-t{ font-size:16px; font-weight:800; margin-top:10px; }
-.g-free-s{ font-size:12.5px; color: var(--ink-soft); margin-top:4px; }
-.g-prev .g-pic.big{ border-radius:16px; }
-.g-prev-r{ font-size:12px; color: var(--ink-soft); margin-top:6px; text-align:center; }
+.g-cats-grid .g-ic{ font-size:22px; }
