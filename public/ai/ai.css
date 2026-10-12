@@ -293,3 +293,8 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 /* ---------- rasm galereyasi: kategoriyalar to'ri ---------- */
 .g-soon{ font-size:12.5px; padding:10px 12px; border-radius:12px; margin-bottom:12px; background: rgba(251,146,60,.12); border:1px solid rgba(251,146,60,.35); }
 .g-cats-grid .g-ic{ font-size:22px; }
+
+/* 18+ / behayo so'rov — qizil ogohlantirish */
+.ai-field.nsfw .ai-input{ border-color:#ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,.18) !important; background: rgba(239,68,68,.06); }
+.ai-nsfw{ margin-top:8px; padding:10px 12px; border-radius:12px; font-size:12.5px; font-weight:600; line-height:1.4; color:#b91c1c; background: rgba(239,68,68,.10); border:1px solid rgba(239,68,68,.35); }
+:root[data-theme="dark"] .ai-nsfw, body:not(.app) .ai-nsfw{ color:#fca5a5; }
