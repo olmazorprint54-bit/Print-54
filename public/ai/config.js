@@ -37,6 +37,7 @@
     image: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L6 21"/><path d="M17 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg>',
     presentation_ai: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 13-4-4-7 7"/></svg>',
     video: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>',
+    teacher: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M7 21l3-6M17 21l-3-6M8 8h5M8 11h8"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -134,6 +135,21 @@
           { id: "aspect", type: "chips", seg: true, label: "Nisbat", options: [{ v: "16:9", l: "▭ 16:9 yotiq" }, { v: "9:16", l: "▯ 9:16 tik" }], default: "9:16" },
           { id: "duration", type: "chips", seg: true, label: "Davomiyligi", options: [{ v: "4", l: "4 s" }, { v: "6", l: "6 s" }, { v: "8", l: "8 s" }], default: "8" },
           { id: "audio", type: "switch", label: "🔊 Ovoz bilan (tovushlar, musiqa, nutq)", default: true },
+        ],
+      },
+      {
+        // ichida bo'limlar (hub): open — mavjud xizmatni ochadi, aks holda «Tez kunda»
+        id: "teacher", title: "O'qituvchilar uchun", sub: "Dars ishlanmasi, keys, flesh kartalar va boshqalar",
+        icon: ICONS.teacher, color: "#22C55E", comingSoon: true, fields: [],
+        hub: [
+          { id: "lesson", e: "📘", t: ["Dars ishlanmasi", "Конспект урока", "Lesson plan"], open: "lesson", bg: "linear-gradient(135deg,#60a5fa,#2563eb)" },
+          { id: "techmap", e: "🧩", t: ["Texnologik xarita", "Технологическая карта", "Lesson flow map"], bg: "linear-gradient(135deg,#34d399,#059669)" },
+          { id: "case", e: "📝", t: ["Keys", "Кейс", "Case study"], bg: "linear-gradient(135deg,#fbbf24,#d97706)" },
+          { id: "glossary", e: "📗", t: ["Glossariy", "Глоссарий", "Glossary"], bg: "linear-gradient(135deg,#4ade80,#16a34a)" },
+          { id: "attestation", e: "📚", t: ["Attestatsiyaga tayyorlanish", "Подготовка к аттестации", "Certification prep"], bg: "linear-gradient(135deg,#a78bfa,#7c3aed)" },
+          { id: "flashcards", e: "🃏", t: ["Flesh kartalar", "Флеш-карточки", "Flashcards"], bg: "linear-gradient(135deg,#f472b6,#db2777)" },
+          { id: "sorting", e: "🧺", t: ["Saralash o'yini", "Игра на сортировку", "Sorting game"], bg: "linear-gradient(135deg,#fb923c,#ea580c)" },
+          { id: "listening", e: "🎧", t: ["Tinglash mashqlari", "Упражнения на аудирование", "Listening exercises"], bg: "linear-gradient(135deg,#38bdf8,#0284c7)" },
         ],
       },
       {
@@ -719,6 +735,9 @@
     var vid = C.services.filter(function (s) { return s.id === "video"; })[0];
     C.services.splice(C.services.indexOf(vid), 1);
     C.services.splice(C.services.indexOf(img) + 1, 0, vid);
+    var tch = C.services.filter(function (s) { return s.id === "teacher"; })[0];
+    C.services.splice(C.services.indexOf(tch), 1);
+    C.services.splice(C.services.indexOf(vid) + 1, 0, tch);
     C.templates.presentation_ai = C.templates.presentation;
     fields.forEach(function (f) { if (f.type === "templates") f.set = "presentation"; });
   })();

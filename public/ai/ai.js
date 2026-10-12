@@ -640,6 +640,8 @@
   function openService(id, free) {
     if (soonSet().has(id)) { openGrid(); return; }
     if (id === "image" && !free && window.AI_IMAGE_GALLERY) { openGallery(); return; }
+    const hubSvc = CFG.services.find((x) => x.id === id && x.hub);
+    if (hubSvc) { openHub(hubSvc); return; }
     galleryOpen = false;
     const svc = presetSvcs[id] || CFG.services.find((s) => s.id === id);
     if (!svc) return;
@@ -678,6 +680,27 @@
           <div class="ic g-ic" style="background:${c.bg}">${c.e}</div>
           <div class="t">${esc(GL(c.t))}</div>
           <div class="s">${esc(n(c))}</div>
+        </div>`).join("")}</div>`;
+    syncBackButton();
+    window.scrollTo(0, 0);
+  }
+
+  // Ichida bo'limlari bor xizmat (O'qituvchilar uchun): kartochkalar to'ri
+  function openHub(svc) {
+    current = null;
+    galleryOpen = true;
+    root.innerHTML = `
+      <div class="ai-top">
+        <div class="ai-back glass" data-back="1"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></div>
+        <div class="ic" style="background:${svc.color}">${svc.icon}</div>
+        <div><div class="t">${esc(svc.title)}</div><div class="s">Bo'limni tanlang</div></div>
+      </div>
+      <div class="g-soon" id="hubNote">🔜 Yangi bo'limlar tez orada ishga tushadi</div>
+      <div class="ai-grid g-cats-grid" data-no-i18n>${svc.hub.map((h) => `
+        <div class="ai-card glass${h.open ? "" : " hub-soon"}" data-hub="${svc.id}/${h.id}">
+          <div class="ic g-ic" style="background:${h.bg}">${h.e}</div>
+          <div class="t">${esc(GL(h.t))}</div>
+          <div class="p">${h.open ? esc(priceText(h.open)) : "🔜 " + esc(GL(["Tez kunda", "Скоро", "Coming soon"]))}</div>
         </div>`).join("")}</div>`;
     syncBackButton();
     window.scrollTo(0, 0);
@@ -889,8 +912,30 @@
     const pick = e.target.closest("[data-pick]");
     if (pick && current) { tick(); setTitul(current, TITULS.find((t) => t.id === pick.dataset.pick)); return; }
     const open = e.target.closest("[data-open]");
-    if (open) { tick(); openService(open.dataset.open); return; }
+    if (open) {
+      tick();
+      const os = CFG.services.find((x) => x.id === open.dataset.open);
+      if (os && os.id !== "image") delete os.back;
+      openService(open.dataset.open);
+      return;
+    }
     if (e.target.closest("[data-back]")) { goBack(); return; }
+    const hb = e.target.closest("[data-hub]");
+    if (hb) {
+      const [sid, hid] = hb.dataset.hub.split("/");
+      const hs = CFG.services.find((x) => x.id === sid);
+      const h = hs && hs.hub.find((x) => x.id === hid);
+      if (h && h.open) {
+        tick();
+        openService(h.open);
+        if (current) { current.back = sid; syncBackButton(); }
+      } else {
+        haptic("warning");
+        const n = document.getElementById("hubNote");
+        if (n) { n.classList.remove("pulse"); void n.offsetWidth; n.classList.add("pulse"); }
+      }
+      return;
+    }
     const gc = e.target.closest("[data-gcat]");
     if (gc) {
       tick();

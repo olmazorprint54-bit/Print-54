@@ -138,6 +138,8 @@
     ["{n} ta bepul", "{n} бесплатный", "{n} free"],
     ["AI buyurtma (kurs ishidan tashqari).", "AI-заказ (кроме курсовой).", "AI order (except coursework)."],
     ["AI buyurtma.", "AI-заказ.", "AI order."],
+    ["Dars ishlanmasi, keys, flesh kartalar va boshqalar", "Конспекты, кейсы, флеш-карточки и другое", "Lesson plans, cases, flashcards and more"],
+    ["🔜 Yangi bo'limlar tez orada ishga tushadi", "🔜 Новые разделы скоро заработают", "🔜 New sections are coming soon"],
     ["🚫 Bunday mazmundagi (18+, yalang'och yoki behayo) rasm va videolar tayyorlanmaydi. Iltimos, tavsifni o'zgartiring.", "🚫 Изображения и видео такого содержания (18+, обнажённые или непристойные) не создаются. Пожалуйста, измените описание.", "🚫 We don't create images or videos with this kind of content (18+, nudity or indecent). Please change your description."],
     ["Bo'limni tanlang", "Выберите раздел", "Choose a section"],
     ["Namunani tanlang — qolganini AI qiladi", "Выберите образец — остальное сделает AI", "Pick a sample — AI does the rest"],
