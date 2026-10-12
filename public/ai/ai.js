@@ -54,10 +54,14 @@
 
   function syncBackButton() {
     if (!tg || !tg.BackButton) return;
-    const inForm = document.body.classList.contains("ai-mode") && current;
+    const inForm = document.body.classList.contains("ai-mode") && (current || galleryOpen);
     inForm ? tg.BackButton.show() : tg.BackButton.hide();
   }
-  if (tg && tg.BackButton) tg.BackButton.onClick(() => { if (current) openGrid(); });
+  if (tg && tg.BackButton) tg.BackButton.onClick(() => goBack());
+  function goBack() {
+    if (current && current.back) { openService(current.back); return; }
+    if (current || galleryOpen) openGrid();
+  }
 
   /* ---------------------------------------------------------------
      XIZMATLAR TO'RI
@@ -95,6 +99,7 @@
 
   function openGrid() {
     current = null;
+    galleryOpen = false;
     renderGrid();
     syncBackButton();
     window.scrollTo(0, 0);
@@ -149,6 +154,10 @@
             <div class="oc-pic"${o.img ? ` style="background-image:url('${esc(o.img)}')"` : o.bg ? ` style="background:${o.bg}"` : ""}>${o.img ? "" : `<span>${o.e || ""}</span>`}</div>
             <div class="oc-l">${esc(o.l)}</div>${o.s ? `<div class="oc-s">${esc(o.s)}</div>` : ""}</div>`).join("")}
           </div></div>`;
+      case "gpreview": {
+        const { cat, it } = svc.preset;
+        return `<div class="ai-field g-prev" data-no-i18n>${gPic(cat, it, true)}<div class="g-prev-r">📐 ${esc(it.r)}${it.tx ? " · ✍️ " + esc(GL(["yozuv bilan", "с надписью", "with text"])) : ""}</div></div>`;
+      }
       case "sample":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="vs-box" data-sample="${f.id}">${sampleHtml(f, v)}</div></div>`;
       case "examples":
@@ -627,21 +636,77 @@
       <section>
         <div class="receipt glass ai-summary" id="aiSummary">${summaryHtml(svc, v)}</div>
         ${svc.comingSoon ? `<button type="button" class="order-btn" id="aiSubmit" disabled>🔜 Tez kunda</button><div class="ai-soon-note">Bu bo'lim tayyorlanmoqda — tez orada ishga tushadi. Hozircha imkoniyatlarini ko'rib chiqishingiz mumkin.</div>` : `<button type="button" class="order-btn" id="aiSubmit">So'rov yuborish</button>`}
-        ${svc.id === "image" || svc.id === "video" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
+        ${svc.id === "image" || svc.kind === "image" || svc.id === "video" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
         <div class="status-msg" id="aiStatus"></div>
       </section>`;
   }
 
-  function openService(id) {
+  function openService(id, free) {
     if (soonSet().has(id)) { openGrid(); return; }
-    const svc = CFG.services.find((s) => s.id === id);
+    if (id === "image" && !free && window.AI_IMAGE_GALLERY) { openGallery(); return; }
+    galleryOpen = false;
+    const svc = presetSvcs[id] || CFG.services.find((s) => s.id === id);
     if (!svc) return;
+    if (id === "image") svc.back = "image"; // erkin formadan orqaga — galereyaga
     current = svc;
     renderForm(svc);
     if (svc.fields.some((f) => f.type === "sources")) loadSources(svc);
     applyShowIf(svc);
     syncBackButton();
     window.scrollTo(0, 0);
+  }
+
+  /* ---------------------------------------------------------------
+     RASM GALEREYASI (ai/image-gallery.js): kategoriyalar → namuna → qisqa forma.
+     Prompt yashirin; mijoz faqat mavzu/matn yozadi yoki rasm yuklaydi.
+     --------------------------------------------------------------- */
+  let galleryOpen = false;
+  let galleryCat = null;
+  const presetSvcs = {}; // "img_<kat>_<id>" -> vaqtinchalik xizmat (qiymatlari saqlanadi)
+  const GL = (x) => (Array.isArray(x) ? x[Math.max(0, ["uz", "ru", "en"].indexOf((window.AI_I18N && window.AI_I18N.lang) || "uz"))] || x[0] : x || "");
+  const gPic = (cat, it, big) => it.img
+    ? `<div class="g-pic${big ? " big" : ""}" style="background-image:url('${esc(it.img)}')"></div>`
+    : `<div class="g-pic${big ? " big" : ""}" style="background:${cat.bg}"><span>${it.e || cat.e}</span></div>`;
+
+  function openGallery(catId) {
+    const G = window.AI_IMAGE_GALLERY;
+    const base = CFG.services.find((s) => s.id === "image");
+    current = null;
+    galleryOpen = true;
+    galleryCat = catId || galleryCat || G[0].id;
+    const cat = G.find((c) => c.id === galleryCat) || G[0];
+    root.innerHTML = `
+      <div class="ai-top">
+        <div class="ai-back glass" data-back="1"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></div>
+        <div class="ic" style="background:${base.color}">${base.icon}</div>
+        <div><div class="t">${esc(base.title)}</div><div class="s">Namunani tanlang — qolganini AI qiladi</div></div>
+      </div>
+      ${base.comingSoon ? `<div class="g-soon">🔜 Bo'lim tez orada ishga tushadi — namunalarni hozirdan ko'rib chiqing</div>` : ""}
+      <div class="g-cats" data-no-i18n>${G.map((c) => `<div class="g-cat${c.id === cat.id ? " active" : ""}" data-gcat="${c.id}">${c.e} ${esc(GL(c.t))}</div>`).join("")}</div>
+      ${cat.free
+        ? `<div class="g-free glass" data-gfree="1"><div class="g-pic big" style="background:${cat.bg}"><span>✏️</span></div>
+            <div class="g-free-t">O'zim yozaman</div><div class="g-free-s">Maqsad, o'lcham, uslub va tavsifni o'zingiz tanlaysiz</div></div>`
+        : `<div class="g-grid" data-no-i18n>${cat.items.map((it) => `<div class="g-card glass" data-gpick="${cat.id}/${it.id}">
+            ${gPic(cat, it)}<div class="g-t">${esc(GL(it.t))}</div>
+            <div class="g-s">${it.in === "text" ? "✍️ " + esc(GL(["Yozasiz", "Пишете текст", "Type text"])) : "📷 " + esc(GL(["Rasm yuklaysiz", "Загружаете фото", "Upload a photo"]))} · ${esc(it.r)}</div></div>`).join("")}</div>`}`;
+    const act = root.querySelector(".g-cat.active");
+    if (act && act.scrollIntoView) act.scrollIntoView({ inline: "center", block: "nearest" });
+    syncBackButton();
+  }
+
+  // namuna uchun qisqa forma (vaqtinchalik xizmat)
+  function presetService(cat, it) {
+    const key = `img_${cat.id}_${it.id}`;
+    if (presetSvcs[key]) return presetSvcs[key];
+    const base = CFG.services.find((s) => s.id === "image");
+    const pick = (id) => base.fields.find((f) => f.id === id);
+    const fields = [{ id: "gpreview", type: "gpreview" }];
+    if (it.in === "photo" || it.in === "photo_text") fields.push({ id: "photos", type: "photos", label: GL(["Rasmingiz", "Ваше фото", "Your photo"]), hint: GL(["Aniq, yorug' rasm yuklang — natija shunga bog'liq", "Загрузите чёткое светлое фото — от него зависит результат", "Upload a clear, well-lit photo — the result depends on it"]), max: 1, default: [], required: true });
+    if (it.in === "text" || it.in === "photo_text") fields.push({ id: "input", type: it.tx ? "text" : "textarea", label: GL(it.lb), placeholder: GL(it.ph), required: true, max: it.tx ? 120 : 300 });
+    fields.push(pick("quality"), pick("variants"));
+    const svc = { id: key, kind: "image", back: "image", title: GL(it.t), sub: GL(cat.t), icon: base.icon, color: base.color, comingSoon: base.comingSoon, preset: { cat, it }, fields };
+    presetSvcs[key] = svc;
+    return svc;
   }
 
   /* ---------------------------------------------------------------
@@ -655,7 +720,7 @@
     if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     if (f.type === "cards") { const o = f.options.find((x) => x.v === val); return o ? o.l + (o.s && o.s !== "tanlaysiz" ? " · " + o.s : "") : val; }
-    if (f.type === "examples" || f.type === "sample") return "";
+    if (f.type === "examples" || f.type === "sample" || f.type === "gpreview") return "";
     return String(val || "").trim();
   }
 
@@ -703,6 +768,12 @@
 
   function summaryHtml(svc, v) {
     const pick = (id) => { const f = svc.fields.find((x) => x.id === id); return f ? displayValue(f, v[id]) : ""; };
+    // Galereya namunasi
+    if (svc.preset) {
+      const rows = [["Namuna", svc.title], ["Kategoriya", svc.sub], ["O'lcham", svc.preset.it.r], ["Sifat", pick("quality")], ["Variantlar", pick("variants")]];
+      return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+        `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
+    }
     // Video yaratish: o'z qatorlari
     if (svc.id === "video") {
       const rows = [["Xizmat", svc.title], ["Turi", pick("mode")], ["Model", pick("model")], ["O'lcham", pick("resolution")], ["Nisbat", v.aspect], ["Davomiyligi", pick("duration")], ["Ovoz", v.audio ? "Bor" : "Yo'q"]];
@@ -813,7 +884,19 @@
     if (pick && current) { tick(); setTitul(current, TITULS.find((t) => t.id === pick.dataset.pick)); return; }
     const open = e.target.closest("[data-open]");
     if (open) { tick(); openService(open.dataset.open); return; }
-    if (e.target.closest("[data-back]")) { openGrid(); return; }
+    if (e.target.closest("[data-back]")) { goBack(); return; }
+    const gc = e.target.closest("[data-gcat]");
+    if (gc) { tick(); openGallery(gc.dataset.gcat); return; }
+    const gp = e.target.closest("[data-gpick]");
+    if (gp) {
+      const [cid, iid] = gp.dataset.gpick.split("/");
+      const cat = window.AI_IMAGE_GALLERY.find((c) => c.id === cid);
+      const it = cat && cat.items.find((x) => x.id === iid);
+      if (it) { tick(); openService(presetService(cat, it).id); }
+      return;
+    }
+    if (e.target.closest("[data-gfree]")) { tick(); openService("image", true); return; }
+
     if (e.target.closest("[data-again]")) { openGrid(); return; }
     const copyCard = e.target.closest("[data-copy-card]");
     if (copyCard) {
