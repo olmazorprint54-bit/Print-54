@@ -217,14 +217,16 @@
   let refLink = null;
   function showRewards(r) {
     $("refCard").hidden = false;
-    $("refStep").textContent = r.step;
+    // 3 ta do'st — 1 bepul, keyin har 2 ta do'st — yana 1 (server: first / every / next / prev)
+    const first = r.first || r.step || 3, every = r.every || 2;
+    const next = r.next || first, prev = r.prev || 0, left = Math.max(0, next - r.confirmed);
+    $("refText").textContent = `${first} ta do'stingizni taklif qiling — 1 ta bepul AI buyurtma. Keyin har ${every} ta do'st uchun yana 1 ta.`;
     $("refCredits").textContent = r.credits;
     $("refDone").textContent = r.confirmed;
-    $("refWait").textContent = r.pending;
-    const inStep = r.confirmed % r.step;
-    $("refBar").style.width = Math.round((inStep / r.step) * 100) + "%";
+    $("refWait").textContent = left;
+    $("refBar").style.width = Math.round(((r.confirmed - prev) / Math.max(1, next - prev)) * 100) + "%";
     $("refNote").textContent = (r.credits > 0 ? `Sizda ${r.credits} ta bepul buyurtma bor — buyurtma berishda «🎁 Bonusdan foydalanish» yoqilgan bo'ladi. ` : "") +
-      `Keyingi bonusgacha yana ${r.step - inStep} ta do'st.`;
+      `Keyingi bonusgacha yana ${left} ta do'st.`;
     refLink = r.link;
     $("refShare").hidden = !refLink;
   }
