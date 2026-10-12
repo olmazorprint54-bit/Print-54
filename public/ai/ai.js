@@ -1047,6 +1047,41 @@
     if (e.target.closest("#aiSubmit")) submit(current);
   });
 
+  /* ---------- 18+ / behayo so'rovlar (rasm, video) ----------
+     So'z ildizlari: o'zbek, rus, ingliz (harf almashtirish: 0→o, 3→e, @→a).
+     Bu — tezkor ogohlantirish; asosiy tekshiruv serverda (AI ma'no bo'yicha). */
+  const NSFW_RE = new RegExp([
+    "yalang.?o.?ch", "behayo", "shahvon", "jinsiy", "erotik", "porno?", "kiyimsiz", "kiyimini yech", "ichki kiyim", "bikini", "fohisha", "intim",
+    "гол(ый|ая|ое|ые|ую)", "обнаж", "эрот", "порн", "секс", "нюд", "интим", "раздет", "раздень", "без одежды", "бель[её]", "проститут", "хентай",
+    "nude", "naked", "nsfw", "porn", "\\bsex", "erotic", "topless", "lingerie", "undress", "explicit", "hentai", "boobs", "onlyfans", "18\\s*\\+",
+  ].join("|"), "i");
+  const isNsfw = (t) => NSFW_RE.test(String(t || "").toLowerCase().replace(/0/g, "o").replace(/3/g, "e").replace(/@/g, "a").replace(/[*_.]/g, ""));
+  const modOn = (svc) => !!svc && (svc.id === "image" || svc.kind === "image" || svc.id === "video" || svc.id === "presentation_ai");
+  const MOD_TEXT_FIELDS = ["prompt", "input", "text", "topic"];
+  // ogohlantirish maydon ostida; qaytaradi: birinchi buzilgan maydon yoki null
+  function checkNsfw(svc) {
+    if (!modOn(svc)) return null;
+    const v = getValues(svc);
+    let bad = null;
+    MOD_TEXT_FIELDS.forEach((id) => {
+      const el = root.querySelector(`.ai-field[data-f="${id}"]`);
+      if (!el) return;
+      const hit = isNsfw(v[id]);
+      el.classList.toggle("nsfw", hit);
+      let w = el.querySelector(".ai-nsfw");
+      if (hit && !w) {
+        w = document.createElement("div");
+        w.className = "ai-nsfw";
+        w.textContent = "🚫 Bunday mazmundagi (18+, yalang'och yoki behayo) rasm va videolar tayyorlanmaydi. Iltimos, tavsifni o'zgartiring.";
+        el.appendChild(w);
+      } else if (!hit && w) w.remove();
+      if (hit && !bad) bad = el;
+    });
+    const btn = document.getElementById("aiSubmit");
+    if (btn && !svc.comingSoon) btn.disabled = !!bad;
+    return bad;
+  }
+
   root.addEventListener("input", (e) => {
     if (!current) return;
     const v = getValues(current);
@@ -1068,6 +1103,7 @@
     const id = e.target.dataset.input;
     if (id) {
       v[id] = e.target.value;
+      if (MOD_TEXT_FIELDS.includes(id)) checkNsfw(current);
       const sf = current.fields.find((x) => x.id === id && x.suggest);
       if (sf) {
         // qo'lda o'zgartirilsa — tanlangan OTM bekor; aynan nomi yozilsa — avtomatik tanlanadi
@@ -1141,6 +1177,8 @@
 
   async function submit(svc) {
     if (svc.comingSoon) return;
+    const nsfwBad = checkNsfw(svc);
+    if (nsfwBad) { haptic("error"); nsfwBad.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
     const v = getValues(svc);
     const status = document.getElementById("aiStatus");
     const btn = document.getElementById("aiSubmit");
