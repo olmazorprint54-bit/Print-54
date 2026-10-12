@@ -36,6 +36,7 @@
     obyektivka: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="13" y="6" width="4" height="5" rx=".6"/><path d="M7 7h4M7 10h4M7 14h10M7 17h7"/></svg>',
     image: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L6 21"/><path d="M17 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg>',
     presentation_ai: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 13-4-4-7 7"/></svg>',
+    video: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -73,6 +74,12 @@
     free: ["Kosmosdagi kitob javoni, fantastik uslub", "Ipak yo'li karvoni, quyosh botishi", "Kelajak shahri, uchar mashinalar"],
   };
 
+  /* ---------- AI video (Google Veo) ---------- */
+  var VIDEO_EXAMPLES = {
+    text: ["Samarqand Registon maydoni ustidan dron bilan uchish, quyosh botishi", "Qahvaxonada bug'lanayotgan qahva finjoni, sekin harakat, iliq yorug'lik", "Kosmonavt Oyda yuribdi, orqada Yer ko'rinadi"],
+    image: ["Rasmdagi odam jilmayib qo'l silkitadi", "Kamera sekin yaqinlashadi, sochlar shamolda hilpiraydi", "Fondagi bulutlar suzadi, suv to'lqinlanadi"],
+  };
+
   window.AI_CONFIG = {
     endpoint: "/api/ai-request",
     uploadEndpoint: "/api/ai-upload",
@@ -107,6 +114,26 @@
           { id: "photos", type: "photos", label: "O'z rasmingiz (ixtiyoriy)", hint: "AI shu rasm asosida chizadi: uslubini o'zgartiradi, fonni almashtiradi yoki tahrirlaydi (3 tagacha)", max: 3, default: [] },
           { id: "quality", type: "chips", label: "Sifat", options: [{ v: "std", l: "⚡ Oddiy · 1K" }, { v: "pro", l: "💎 Yuqori · 2K (chop etish uchun)" }], default: "std" },
           { id: "variants", type: "chips", label: "Variantlar", options: [{ v: "1", l: "1 ta" }, { v: "2", l: "2 ta (tanlash uchun)" }], default: "1" },
+        ],
+      },
+      {
+        id: "video", title: "Video yaratish", sub: "Matn yoki rasmdan AI video",
+        icon: ICONS.video, color: "#FB923C", comingSoon: true,
+        fields: [
+          { id: "mode", type: "chips", seg: true, label: "Video turi", options: [{ v: "text", l: "Matndan video" }, { v: "image", l: "Rasmdan video" }], default: "text" },
+          { id: "photos", type: "photos", label: "Boshlang'ich rasm", hint: "Shu rasm jonlantiriladi — video shu kadrdan boshlanadi", max: 1, default: [], showIf: "mode=image" },
+          { id: "prompt", type: "textarea", label: "Tavsif (prompt)", placeholder: "Videoda nima bo'lsin? Masalan: Samarqand Registon maydoni ustidan dron bilan uchish, quyosh botishi", required: true, max: 2000, enhance: true, hint: "Batafsil yozing: joy, harakat, kamera, kayfiyat. Kimdir gapirishi kerak bo'lsa — gapini qo'shtirnoqda yozing." },
+          { id: "examples", type: "examples", label: "💡 Misollar — bosing, tavsifga qo'yiladi", target: "prompt", from: "mode", items: VIDEO_EXAMPLES },
+          { id: "model", type: "chips", seg: true, label: "Model", options: [{ v: "fast", l: "⚡ Fast" }, { v: "quality", l: "💎 Quality" }, { v: "lite", l: "🪶 Lite" }], default: "fast" },
+          { id: "sample", type: "sample", label: "Namuna", from: "model", items: {
+            fast: { note: "Fast — tez va arzon, ijtimoiy tarmoqlar uchun yetarli sifat" },
+            quality: { note: "Quality — eng yuqori sifat, kinoga yaqin tasvir va ovoz" },
+            lite: { note: "Lite — eng arzon, sinab ko'rish va oddiy sahnalar uchun" },
+          } },
+          { id: "resolution", type: "chips", seg: true, label: "O'lcham (sifat)", options: [{ v: "720p", l: "720p" }, { v: "1080p", l: "1080p" }, { v: "4k", l: "4K" }], default: "720p" },
+          { id: "aspect", type: "chips", seg: true, label: "Nisbat", options: [{ v: "16:9", l: "▭ 16:9 yotiq" }, { v: "9:16", l: "▯ 9:16 tik" }], default: "9:16" },
+          { id: "duration", type: "chips", seg: true, label: "Davomiyligi", options: [{ v: "4", l: "4 s" }, { v: "6", l: "6 s" }, { v: "8", l: "8 s" }], default: "8" },
+          { id: "audio", type: "switch", label: "🔊 Ovoz bilan (tovushlar, musiqa, nutq)", default: true },
         ],
       },
       {
@@ -689,6 +716,9 @@
     var img = C.services.filter(function (s) { return s.id === "image"; })[0];
     C.services.splice(C.services.indexOf(img), 1);
     C.services.splice(C.services.indexOf(svc) + 1, 0, img);
+    var vid = C.services.filter(function (s) { return s.id === "video"; })[0];
+    C.services.splice(C.services.indexOf(vid), 1);
+    C.services.splice(C.services.indexOf(img) + 1, 0, vid);
     C.templates.presentation_ai = C.templates.presentation;
     fields.forEach(function (f) { if (f.type === "templates") f.set = "presentation"; });
   })();

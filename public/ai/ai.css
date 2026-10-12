@@ -273,3 +273,19 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-soon-note{ text-align:center; font-size:12.5px; color: var(--ink-soft); margin-top:8px; line-height:1.4; }
 .order-btn:disabled{ opacity:.55; cursor:default; }
 @media (max-width: 360px){ .opt-cards{ grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- segment tanlov (Video yaratish: model, o'lcham, nisbat, davomiylik) ---------- */
+.chips.seg{ display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:4px; padding:4px; border-radius:14px; background: var(--glass); border:1px solid var(--glass-border); }
+.chips.seg .chip{ border:none; background:transparent; text-align:center; border-radius:10px; padding:10px 4px; box-shadow:none; }
+.chips.seg .chip.active{ background: var(--accent); color:#fff; box-shadow: 0 6px 16px -8px var(--accent-glow); }
+/* tavsif ichidagi "Yaxshilash" tugmasi */
+.ta-wrap{ position:relative; }
+.ai-input.has-enh{ padding-top:46px; }
+.enh-btn{ position:absolute; top:8px; right:8px; padding:7px 12px; border-radius:10px; border:1px solid var(--glass-border); background: var(--glass-active, var(--glass)); color: var(--ink); font: 700 12.5px/1 inherit; font-family: inherit; cursor:pointer; }
+.enh-btn:active{ transform: scale(.96); }
+/* namuna video oynasi */
+.vs-box{ border-radius:16px; overflow:hidden; background:#000; }
+.vs-video{ display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#000; }
+.vs-empty{ aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#9ca3af; font-size:12.5px; }
+.vs-empty svg{ width:44px; height:44px; stroke:#6b7280; }
+.vs-note{ padding:10px 12px; font-size:12px; color:#d1d5db; background:#0b0b0f; line-height:1.4; }
