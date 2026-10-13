@@ -232,21 +232,37 @@ async function grantReferralReward(referrerId) {
 }
 
 /* ============ OMMAVIY XABAR (faqat do'kon egasi uchun) ============ */
+// Uch usul:
+//  1) /elon <matn>                       — matn
+//  2) video / rasm / GIF ostiga /elon <izoh> — o'sha media izoh bilan
+//  3) istalgan xabarga javob (reply) qilib /elon — o'sha xabar (nusxa) hammaga
+const isElon = (t) => /^\/elon(@\w+)?(\s|$)/i.test(t || "");
 async function handleBroadcast(msg) {
   const ownerId = process.env.OWNER_CHAT_ID;
   if (String(msg.from.id) !== String(ownerId)) return; // faqat egasi ishlata oladi
 
-  const text = msg.text.slice("/elon".length).trim();
-  if (!text) {
+  const raw = msg.text || msg.caption || "";
+  const text = raw.replace(/^\/elon(@\w+)?/i, "").trim();
+  const hasMedia = !!(msg.video || msg.photo || msg.animation || msg.document || msg.video_note || msg.audio || msg.voice);
+  const src = msg.reply_to_message && !hasMedia ? msg.reply_to_message : hasMedia ? msg : null;
+
+  if (!src && !text) {
     await callTelegram("sendMessage", {
       chat_id: msg.chat.id,
-      text: "Xabar matnini shu tarzda yozing:\n/elon Ertaga aksiya! 1 list — 200 so'm!",
+      text: "E'lonni 3 xil yuborish mumkin:\n\n1) Matn:\n/elon Ertaga aksiya! 1 list — 200 so'm!\n\n2) Video yoki rasm: uni yuboring va izohiga /elon … deb yozing.\n\n3) Tayyor xabarga javob (reply) qilib /elon yozing — o'sha xabar hammaga ketadi.",
     });
     return;
   }
 
-  const { data: users, error } = await supabase.from("users").select("telegram_user_id");
-  if (error || !users || users.length === 0) {
+  // Hamma foydalanuvchilar (Supabase bir so'rovda 1000 tadan beradi — sahifalab olamiz)
+  const users = [];
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await supabase.from("users").select("telegram_user_id").order("telegram_user_id").range(from, from + 999);
+    if (error) { users.length = 0; break; }
+    users.push(...(data || []));
+    if (!data || data.length < 1000) break;
+  }
+  if (!users.length) {
     await callTelegram("sendMessage", { chat_id: msg.chat.id, text: "Foydalanuvchilar ro'yxatini olishda xatolik yoki ro'yxat bo'sh." });
     return;
   }
@@ -256,27 +272,41 @@ async function handleBroadcast(msg) {
     text: `📤 Yuborish boshlandi... (${users.length} ta foydalanuvchi)`,
   });
 
-  let sent = 0;
-  let failed = 0;
-
-  for (const u of users) {
-    try {
-      const res = await callTelegram("sendMessage", {
-        chat_id: u.telegram_user_id,
-        text,
-        reply_markup: TOPUP.keyboard("uz"), // eski mijozlarda ham pastki tugmalar paydo bo'ladi
-      });
-      if (res.ok) sent++; else failed++;
-    } catch (e) {
-      failed++;
+  const kb = TOPUP.keyboard("uz"); // eski mijozlarda ham pastki tugmalar paydo bo'ladi
+  const send = (id) => {
+    if (src) {
+      // media/xabar nusxasi («Forwarded» yozuvisiz); media bo'lsa izohdan /elon olib tashlanadi
+      const p = { chat_id: id, from_chat_id: src.chat.id, message_id: src.message_id };
+      if (src === msg) p.caption = text;
+      return callTelegram("copyMessage", p);
     }
-    // Telegram limitidan xavfsiz turish uchun har xabar orasida kichik pauza
-    await new Promise((r) => setTimeout(r, 40));
+    return callTelegram("sendMessage", { chat_id: id, text, reply_markup: kb });
+  };
+
+  const started = Date.now();
+  const DEADLINE = 105 * 1000; // funksiya limiti 120 s — undan oldin to'xtab hisobot beramiz
+  let sent = 0, failed = 0, i = 0;
+  while (i < users.length && Date.now() - started < DEADLINE) {
+    const part = users.slice(i, i + 20); // Telegram: ~30 xabar/soniya
+    i += part.length;
+    const res = await Promise.all(part.map(async (u) => {
+      try {
+        let r = await send(u.telegram_user_id);
+        if (!r.ok && r.error_code === 429) { // juda tez — kutib, qayta uramiz
+          await new Promise((ok) => setTimeout(ok, ((r.parameters && r.parameters.retry_after) || 1) * 1000 + 100));
+          r = await send(u.telegram_user_id);
+        }
+        return !!r.ok;
+      } catch (e) { return false; }
+    }));
+    res.forEach((ok) => (ok ? sent++ : failed++));
+    await new Promise((ok) => setTimeout(ok, 700));
   }
 
+  const left = users.length - i;
   await callTelegram("sendMessage", {
     chat_id: msg.chat.id,
-    text: `✅ Yakunlandi!\n\nYuborildi: ${sent} ta\nXato (bloklagan/o'chirilgan va h.k.): ${failed} ta`,
+    text: `✅ Yakunlandi!\n\nYuborildi: ${sent} ta\nXato (bloklagan/o'chirilgan va h.k.): ${failed} ta` + (left > 0 ? `\n⚠️ Vaqt tugadi — ${left} ta foydalanuvchiga yetib bormadi (qolganlariga ketdi).` : ""),
   });
 }
 
@@ -486,6 +516,11 @@ async function setupBots(msg, host) {
 /* ============ /start VA REFERAL KUZATISH ============ */
 async function handleMessage(msg, bot, host, req) {
   if (!msg.from) return;
+  // E'lon: matn, yoki video/rasm ostiga /elon, yoki xabarga javob qilib /elon (faqat egasi, asosiy botda)
+  if (bot === MAIN && isOwner(msg.from) && isElon(msg.text || msg.caption)) {
+    waitUntil(handleBroadcast(msg).catch((e) => console.error("E'lon:", e)));
+    return;
+  }
   if (msg.document && msg.reply_to_message && isOwner(msg.from)) {
     await handleOwnerFile(msg, bot);
     return;
@@ -547,12 +582,6 @@ async function handleMessage(msg, bot, host, req) {
   // Qo'shimcha botlarda faqat salomlashish (referal, e'lon — Print 54 niki)
   if (bot !== MAIN) {
     if (msg.text.startsWith("/start")) await welcomeExtra(msg, bot, host);
-    return;
-  }
-
-  if (msg.text.startsWith("/elon")) {
-    // fonda — ko'p foydalanuvchida Telegram webhook'ni kutib qolmasin
-    waitUntil(handleBroadcast(msg).catch((e) => console.error("E'lon:", e)));
     return;
   }
 
