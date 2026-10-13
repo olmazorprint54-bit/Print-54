@@ -373,6 +373,112 @@
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) Object.keys(tasks).forEach((k) => tasks[k] && paintTask(k)); });
 
+  /* ---------- AI yordamchi: suzuvchi 🤖 tugma va chat ----------
+     Server: /api/ai-request {service:"chat"} — bot suhbati bilan bir xil xotira va kunlik limit.
+     Javobdagi tavsiya qilingan xizmatlar — tugma (bosilsa shu xizmat ochiladi). */
+  const fab = $("aiFab"), sheet = $("chatSheet"), body = $("chatBody"), txt = $("chatText");
+  const SUGS = ["Menga qaysi xizmat mos?", "Narxlar qancha?", "Birinchi buyurtma qanday tekin bo'ladi?", "Taqdimotni qanday buyurtma qilaman?"];
+  let chatLoaded = false, chatBusy = false;
+  const fmtMsg = (t) => esc(t).replace(/\*\*([^*\n][^*]*?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>");
+  const tr = (t) => (window.t ? window.t(t) : t);
+  function bubble(role, text, actions) {
+    const d = document.createElement("div");
+    d.className = "cs-msg " + (role === "user" ? "me" : "bot");
+    d.innerHTML = (role === "user" ? esc(text).replace(/\n/g, "<br>") : fmtMsg(text)) +
+      (actions && actions.length ? `<div class="cs-acts">${actions.map((id) => `<button type="button" class="cs-act" data-chat-open="${esc(id)}">${esc(TITLES[id] || id)} →</button>`).join("")}</div>` : "");
+    d.setAttribute("data-no-i18n", ""); // matn allaqachon tarjima qilingan
+    body.appendChild(d);
+    body.scrollTop = body.scrollHeight;
+    return d;
+  }
+  function setLeft(left) {
+    $("chatLeft").textContent = left == null ? tr("Xizmat tanlash va savollar bo'yicha yordam") : tr(`Bugun yana ${left} ta savol bepul`);
+  }
+  function showSugs(on) {
+    $("chatSug").innerHTML = on ? SUGS.map((q) => `<button type="button" class="cs-chip" data-chat-q="${esc(q)}">${esc(q)}</button>`).join("") : "";
+  }
+  function welcome() {
+    const d = bubble("bot", tr("Salom! Men AI yordamchiman 🤖 Qaysi xizmat kerakligini tanlashga yordam beraman, narxlar va bonuslarni tushuntiraman, masala va savollaringizga ham javob beraman."));
+    d.removeAttribute("data-no-i18n");
+    showSugs(true);
+  }
+  async function openChat() {
+    tick();
+    sheet.hidden = false;
+    document.body.classList.add("chat-open");
+    if (!chatLoaded) {
+      chatLoaded = true;
+      body.innerHTML = "";
+      if (user) {
+        try {
+          const r = await api("/api/ai-request", { service: "chat", history: true });
+          if (r.ok) { (r.msgs || []).forEach((m) => bubble(m.role, m.text)); setLeft(r.left); }
+        } catch (e) {}
+      }
+      if (!body.childElementCount) welcome();
+    }
+    setTimeout(() => txt.focus(), 150);
+  }
+  function closeChat() {
+    sheet.hidden = true;
+    document.body.classList.remove("chat-open");
+  }
+  async function sendChat(q) {
+    q = String(q || "").trim();
+    if (!q || chatBusy) return;
+    if (!user) { bubble("bot", tr("Yordamchidan foydalanish uchun ilovani Telegram ichida oching.")); return; }
+    chatBusy = true;
+    showSugs(false);
+    bubble("user", q);
+    txt.value = "";
+    txt.style.height = "";
+    const typing = bubble("bot", "");
+    typing.classList.add("typing");
+    typing.innerHTML = "<span></span><span></span><span></span>";
+    try {
+      const r = await api("/api/ai-request", { service: "chat", chat: q, lang: (window.AI_I18N && window.AI_I18N.lang) || "uz" });
+      typing.remove();
+      if (r.limit) {
+        const d = bubble("bot", tr(`Bugungi bepul ${r.free || 10} ta savol tugadi 🙏 Ertaga yana yozishingiz mumkin. Tayyor fayllar (taqdimot, mustaqil ish, test) esa ilovada buyurtma qilinadi.`));
+        d.removeAttribute("data-no-i18n");
+        setLeft(0);
+      } else if (r.ok) {
+        bubble("bot", r.reply, r.actions);
+        setLeft(r.left);
+        try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred("success"); } catch (e) {}
+      } else {
+        const d = bubble("bot", tr(r.error || "Kechirasiz, hozir javob bera olmadim. Birozdan so'ng qayta yozing."));
+        d.removeAttribute("data-no-i18n");
+      }
+    } catch (e) {
+      typing.remove();
+      const d = bubble("bot", tr("Internet aloqasini tekshiring"));
+      d.removeAttribute("data-no-i18n");
+    }
+    chatBusy = false;
+  }
+  fab.addEventListener("click", openChat);
+  $("chatClose").addEventListener("click", closeChat);
+  $("chatNew").addEventListener("click", async () => {
+    if (!(await confirmAsk("Suhbatni tozalab, yangidan boshlaymizmi?"))) return;
+    tick();
+    if (user) await api("/api/ai-request", { service: "chat", reset: true }).catch(() => null);
+    body.innerHTML = "";
+    welcome();
+  });
+  $("chatForm").addEventListener("submit", () => sendChat(txt.value));
+  txt.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChat(txt.value); } });
+  txt.addEventListener("input", () => { txt.style.height = "auto"; txt.style.height = Math.min(txt.scrollHeight, 120) + "px"; });
+  $("chatSug").addEventListener("click", (e) => { const c = e.target.closest("[data-chat-q]"); if (c) sendChat(tr(c.dataset.chatQ)); });
+  body.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-chat-open]");
+    if (!a) return;
+    tick();
+    closeChat();
+    go("home");
+    if (window.aiOpenService) window.aiOpenService(a.dataset.chatOpen);
+  });
+
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
   loadRewards();

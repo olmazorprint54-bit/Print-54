@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../ai/ai.css?v=33">
-<link rel="stylesheet" href="app.css?v=12">
+<link rel="stylesheet" href="app.css?v=13">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -120,6 +120,23 @@
     </section>
   </main>
 
+  <!-- AI yordamchi: suzuvchi tugma va chat oynasi (app.js) -->
+  <button type="button" class="ai-fab" id="aiFab" aria-label="AI yordamchi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><circle cx="12" cy="2.6" r="1" fill="currentColor" stroke="none"/><rect x="4" y="6.5" width="16" height="12" rx="4"/><circle cx="9" cy="12.3" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="12.3" r="1.6" fill="currentColor" stroke="none"/><path d="M9.5 15.6h5"/><path d="M2 11.5v3M22 11.5v3"/></svg><span class="fab-ping"></span></button>
+  <div class="chat-sheet" id="chatSheet" hidden>
+    <div class="cs-head">
+      <div class="cs-ava"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><circle cx="12" cy="2.6" r="1" fill="currentColor" stroke="none"/><rect x="4" y="6.5" width="16" height="12" rx="4"/><circle cx="9" cy="12.3" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="12.3" r="1.6" fill="currentColor" stroke="none"/><path d="M9.5 15.6h5"/><path d="M2 11.5v3M22 11.5v3"/></svg></div>
+      <div class="cs-ht"><div class="cs-t">AI yordamchi</div><div class="cs-s" id="chatLeft">Xizmat tanlash va savollar bo'yicha yordam</div></div>
+      <button type="button" class="cs-btn" id="chatNew" aria-label="Yangi suhbat" title="Yangi suhbat"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+      <button type="button" class="cs-btn" id="chatClose" aria-label="Yopish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="cs-body" id="chatBody"></div>
+    <div class="cs-sug" id="chatSug"></div>
+    <form class="cs-input" id="chatForm" onsubmit="return false">
+      <textarea id="chatText" rows="1" maxlength="2000" placeholder="Savolingizni yozing..."></textarea>
+      <button type="submit" class="cs-send" id="chatSend" aria-label="Yuborish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button>
+    </form>
+  </div>
+
   <nav class="app-nav">
     <div class="on" data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Asosiy</div>
     <div data-go="orders"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Buyurtmalarim<span class="badge" id="ordersBadge"></span></div>
@@ -163,8 +180,8 @@
         '<input class="app-search" id="appSearch" placeholder="🔍 Xizmat qidirish..." autocomplete="off"></div><div class="app-sec">Xizmatlar</div>',
     };
   </script>
-  <script src="../ai/i18n.js?v=9"></script>
-  <script src="../ai/ai.js?v=51"></script>
-  <script src="app.js?v=15"></script>
+  <script src="../ai/i18n.js?v=10"></script>
+  <script src="../ai/ai.js?v=52"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>
