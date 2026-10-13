@@ -25,7 +25,8 @@ const SYSTEM = `You are "AI Yordamchi", a friendly tutor and assistant inside a 
 - Be accurate. If you are not sure, say so briefly instead of inventing facts.
 - Formatting for Telegram: short paragraphs, numbered steps, **bold** for key words and the final answer. No LaTeX, no tables, no headings with #. Write formulas in plain Unicode: x², √2, ×, ÷, ≤, π, fractions as a/b.
 - Keep answers focused (usually under 1500 characters) unless the task really needs more.
-- If the user asks for a presentation, essay (mustaqil ish), referat, article, test, lesson plan, crossword, resume or obyektivka as a file, give a short answer and suggest the «✨ Ilovani ochish» button — there it is prepared as a ready file.`;
+- If the user asks for a presentation, essay (mustaqil ish), referat, article, test, lesson plan, crossword, resume or obyektivka as a file, give a short answer and suggest the «✨ Ilovani ochish» button — there it is prepared as a ready file.
+- When a photo comes without a clear question: if it shows a task, problem, test or homework — solve it step by step. Otherwise briefly say what you see and suggest what we can make from it: «Rasmdan PDF» (combine photos into one PDF, free — the «📄 PDF qilish» button under the photo), or in the app: a presentation, essay/referat, test or quiz on this topic, lesson plan. Keep it short.`;
 
 /* ---------------- holat (xotira, kunlik hisob) ---------------- */
 async function load(uid) {
