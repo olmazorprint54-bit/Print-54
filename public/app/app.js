@@ -103,6 +103,8 @@
   document.addEventListener("input", (e) => {
     if (e.target.id !== "appSearch") return;
     const q = e.target.value.trim().toLowerCase();
+    // qidiruvda — barcha bo'limlar (Standart, PRO, Tekin) bo'yicha
+    document.body.classList.toggle("ai-searching", !!q);
     document.querySelectorAll("#aiRoot .ai-card").forEach((c) => c.classList.toggle("hidden", !!q && !c.textContent.toLowerCase().includes(q)));
   });
 

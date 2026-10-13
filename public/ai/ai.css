@@ -333,3 +333,20 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
   .ai-grid > .ai-card, .ai-top, #aiForm > .ai-field, .chip.active, .opt-card.active, .tpl-card.active, .ai-card:active .ic{ animation:none !important; }
   .order-btn::after{ display:none; }
 }
+
+/* ---------- bosh sahifa bo'limlari: ⭐ Standart · 💎 PRO · 🆓 Tekin ---------- */
+.tier-tabs{ display:grid; grid-template-columns: repeat(3, 1fr); gap:6px; padding:5px; margin:12px 0 12px; border-radius:18px; background: var(--glass); border:1px solid var(--glass-border); }
+.tier-tab{ display:flex; align-items:center; justify-content:center; gap:5px; padding:10px 4px; border:none; border-radius:13px; background:transparent; color: var(--ink-soft, #6b7280); font: 800 13px/1 inherit; font-family: inherit; cursor:pointer; transition: background .2s ease, color .2s ease, transform .15s ease; }
+.tier-tab .tt-e{ font-size:15px; }
+.tier-tab .tt-n{ min-width:18px; height:18px; padding:0 5px; border-radius:999px; display:grid; place-items:center; font-size:10.5px; background: rgba(127,127,127,.14); }
+.tier-tab:active{ transform: scale(.96); }
+.tier-tab.on{ color:#fff; box-shadow: 0 6px 16px -8px rgba(0,0,0,.35); }
+.tier-tab.on .tt-n{ background: rgba(255,255,255,.25); }
+.tier-tab.t-std.on{ background: var(--accent, #4F46E5); }
+.tier-tab.t-pro.on{ background: linear-gradient(135deg, #7C3AED, #EC4899 60%, #F59E0B); }
+.tier-tab.t-free.on{ background: linear-gradient(135deg, #10B981, #059669); }
+.ai-card.tier-off{ display:none; }
+body.ai-searching .ai-card.tier-off:not(.hidden){ display:block; }
+body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
+.ai-card.is-pro{ position:relative; }
+.ai-card.is-pro::after{ content:"PRO"; position:absolute; top:10px; right:10px; padding:3px 7px; border-radius:999px; font-size:9.5px; font-weight:900; letter-spacing:.04em; color:#fff; background: linear-gradient(135deg, #7C3AED, #EC4899); }

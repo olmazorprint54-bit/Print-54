@@ -71,13 +71,34 @@
   function renderGrid() {
     // Umumiy AI ilova (public/app) o'z bosh qismini beradi
     const APP = window.AI_APP || {};
-    root.innerHTML = APP.heroHtml ? `${APP.heroHtml}<div class="ai-grid">${gridCards()}</div>` : `
+    root.innerHTML = APP.heroHtml ? `${APP.heroHtml}${tierTabs()}<div class="ai-grid">${gridCards()}</div>` : `
       <div class="ai-hero glass">
         <h2>✨ AI xizmatlar</h2>
         <p>Taqdimot, mustaqil ish, referat, dars ishlanma, test, krossvord va resume'ni sun'iy intellekt yordamida tayyorlang — va shu yerning o'zida chop ettiring.</p>
         <div class="ai-note">⏳ <span>Xizmat sinov bosqichida: so'rovingizni qoldiring, tayyor hujjatni shu bot orqali yuboramiz.</span></div>
       </div>
-      <div class="ai-grid">${gridCards()}</div>`;
+      ${tierTabs()}<div class="ai-grid">${gridCards()}</div>`;
+  }
+  // Bo'limlar: ⭐ Standart · 💎 PRO · 🆓 Tekin (qidiruvda — hammasi)
+  let gridTier = (() => { try { return localStorage.getItem("ai-tier") || "std"; } catch (e) { return "std"; } })();
+  function tierTabs() {
+    const T = CFG.tiers || [];
+    if (!T.length) return "";
+    if (!T.some((t) => t.id === gridTier)) gridTier = T[0].id;
+    return `<div class="tier-tabs">${T.map((t) => {
+      const n = CFG.services.filter((s) => (s.tier || "std") === t.id).length;
+      return `<button type="button" class="tier-tab t-${t.id}${t.id === gridTier ? " on" : ""}" data-tier-tab="${t.id}"><span class="tt-e">${t.e}</span><span class="tt-l">${esc(t.l)}</span><span class="tt-n">${n}</span></button>`;
+    }).join("")}</div>`;
+  }
+  function setTier(id) {
+    gridTier = id;
+    try { localStorage.setItem("ai-tier", id); } catch (e) {}
+    root.querySelectorAll("[data-tier-tab]").forEach((b) => b.classList.toggle("on", b.dataset.tierTab === id));
+    root.querySelectorAll(".ai-grid > .ai-card").forEach((c, i) => {
+      const off = (c.dataset.tier || "std") !== id;
+      c.classList.toggle("tier-off", off);
+      if (!off) { c.style.animation = "none"; void c.offsetWidth; c.style.animation = ""; }
+    });
   }
   // Umumiy ilovada hali AI bilan avtomatik bo'lmagan xizmatlar — "Tez kunda"
   const soonSet = () => new Set((window.AI_APP || {}).soon || []);
@@ -85,13 +106,13 @@
     const soon = soonSet();
     const list = [...CFG.services.filter((s) => !soon.has(s.id)), ...CFG.services.filter((s) => soon.has(s.id))];
     return list.map((s) => soon.has(s.id) ? `
-          <div class="ai-card glass soon">
+          <div class="ai-card glass soon${CFG.tiers && (s.tier || "std") !== gridTier ? " tier-off" : ""}" data-tier="${s.tier || "std"}">
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
             <div class="s">${esc(s.sub)}</div>
             <div class="p">Tez kunda</div>
           </div>` : `
-          <div class="ai-card glass" data-open="${s.id}">
+          <div class="ai-card glass${CFG.tiers && (s.tier || "std") !== gridTier ? " tier-off" : ""}${s.tier === "pro" ? " is-pro" : ""}" data-open="${s.id}" data-tier="${s.tier || "std"}">
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
             <div class="s">${esc(s.sub)}</div>
@@ -831,7 +852,7 @@
     }
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, presentation_ai: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, presentation_ai: `${n("slides")} ta slayd`, presentation_pro: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],
@@ -931,6 +952,8 @@
       return;
     }
     if (e.target.closest("[data-back]")) { goBack(); return; }
+    const tt = e.target.closest("[data-tier-tab]");
+    if (tt) { tick(); setTier(tt.dataset.tierTab); return; }
     const hb = e.target.closest("[data-hub]");
     if (hb) {
       const [sid, hid] = hb.dataset.hub.split("/");
@@ -1487,8 +1510,8 @@
      NAMUNA MA'LUMOTLAR (ko'rinish uchun)
      --------------------------------------------------------------- */
   function sampleData(svc, v) {
-    const subjectDefault = { kurs: "Iqtisodiyot", article: "Iqtisodiyot", presentation: "Astronomiya", presentation_ai: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
-    const topicDefault = { kurs: "Kichik biznesni rivojlantirishda soliq siyosatining roli", article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", presentation_ai: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
+    const subjectDefault = { kurs: "Iqtisodiyot", article: "Iqtisodiyot", presentation: "Astronomiya", presentation_ai: "Astronomiya", presentation_pro: "Astronomiya", essay: "O'zbekiston tarixi", referat: "Adabiyot", lesson: "Biologiya", test: "Matematika", questions: "Tarix", crossword: "Tabiatshunoslik" }[svc.id];
+    const topicDefault = { kurs: "Kichik biznesni rivojlantirishda soliq siyosatining roli", article: "Raqamli iqtisodiyotda kichik biznesni rivojlantirish", presentation: "Quyosh tizimi sayyoralari", presentation_ai: "Quyosh tizimi sayyoralari", presentation_pro: "Quyosh tizimi sayyoralari", essay: "Amir Temur davlatining boshqaruv tizimi", referat: "Alisher Navoiy ijodi", lesson: "Hujayraning tuzilishi", test: "Kasrlarni qo'shish", questions: "Ikkinchi jahon urushi", crossword: "Hayvonot olami" }[svc.id];
     return {
       topic: String(v.topic || "").trim() || topicDefault,
       subject: String(v.subject || "").trim() || subjectDefault,

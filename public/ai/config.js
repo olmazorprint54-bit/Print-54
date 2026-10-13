@@ -39,6 +39,7 @@
     video: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>',
     teacher: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M7 21l3-6M17 21l-3-6M8 8h5M8 11h8"/></svg>',
     img2pdf: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9.5" cy="12.5" r="1.5"/><path d="m18 17-3.5-3.5L8 20"/></svg>',
+    presentation_pro: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m12 6.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4z"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -742,6 +743,10 @@
       { id: "imgCount", type: "chips", label: "Rasmlar", options: [{ v: "all", l: "Har slaydga" }, { v: "half", l: "Muhim slaydlarga (~yarmiga)" }], default: "all", hint: "Rasmlarni Google Nano Banana chizadi" });
     var svc = { id: "presentation_ai", title: "Rasmli taqdimot", sub: "Har slaydga AI chizgan rasm", icon: ICONS.presentation_ai, color: "#A78BFA", comingSoon: true, fields: fields };
     C.services.splice(C.services.indexOf(pres) + 1, 0, svc);
+    // 🚀 Super taqdimot (PRO): eng kuchli model, boyroq dizayn, AI rasmlar va infografika — tez kunda
+    var proFields = pres.fields.map(function (f) { var o = {}; for (var k in f) o[k] = f[k]; return o; });
+    var superSvc = { id: "presentation_pro", title: "Super taqdimot", sub: "Eng kuchli AI, boy dizayn va infografika", icon: ICONS.presentation_pro, color: "#F59E0B", comingSoon: true, fields: proFields };
+    C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
     var img = C.services.filter(function (s) { return s.id === "image"; })[0];
     C.services.splice(C.services.indexOf(img), 1);
@@ -755,6 +760,14 @@
     var tch = C.services.filter(function (s) { return s.id === "teacher"; })[0];
     C.services.splice(C.services.indexOf(tch), 1);
     C.services.splice(C.services.indexOf(vid) + 1, 0, tch);
+    // Bosh sahifa bo'limlari: ⭐ Standart (std) · 💎 PRO (pro) · 🆓 Tekin (free)
+    var TIER = { presentation_pro: "pro", presentation_ai: "pro", image: "pro", video: "pro", resume: "free", obyektivka: "free", img2pdf: "free" };
+    C.services.forEach(function (s) { s.tier = TIER[s.id] || "std"; });
+    C.tiers = [
+      { id: "std", e: "⭐", l: "Standart" },
+      { id: "pro", e: "💎", l: "PRO" },
+      { id: "free", e: "🆓", l: "Tekin" },
+    ];
     C.templates.presentation_ai = C.templates.presentation;
     fields.forEach(function (f) { if (f.type === "templates") f.set = "presentation"; });
   })();
