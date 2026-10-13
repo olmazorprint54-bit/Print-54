@@ -36,6 +36,7 @@
     essay:     { base: 4500, upTo: 15, field: "pages", fallback: 12, step: 300 },
     kurs:      { base: 10000, upTo: 30, field: "pages", fallback: 30, step: 300 },
     resume:    { base: 0 },
+    img2pdf:   { base: 0 }, // rasmdan PDF — AI yo'q, tekin
     obyektivka:{ base: 0 },
   };
 
