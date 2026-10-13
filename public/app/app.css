@@ -317,3 +317,12 @@ body.chat-open{ overflow:hidden; }
   .view.active, .app-nav .on svg, .ai-fab, .chat-sheet, .cs-msg, .card.setting, .profile-card, .bonus-task{ animation:none !important; }
 }
 body.ai-form .ai-fab{ display:none; }
+
+/* bosh sahifa: faqat qidiruv (sarlavhasiz) */
+.app-hero.solo{ padding:0; border:none; box-shadow:none; background:transparent; margin-bottom:0; }
+.app-hero.solo .app-search{ margin-top:0; padding:13px 16px; border-radius:16px; background: var(--surface); border:1px solid var(--line); box-shadow: var(--shadow); }
+:root[data-theme="dark"] .app-hero.solo .app-search{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+.bonus-banner{ margin-top:10px; }
+/* AI yordamchi tugmasi — kichikroq */
+.ai-fab{ width:48px; height:48px; right:14px; }
+.ai-fab svg{ width:24px; height:24px; }
