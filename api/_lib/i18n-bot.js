@@ -62,6 +62,7 @@ const LABELS = {
   crossword: ["Krossvord", "Кроссворд", "Crossword"],
   resume: ["Resume / CV", "Резюме / CV", "Résumé / CV"],
   obyektivka: ["Obyektivka", "Объективка", "Obyektivka"],
+  img2pdf: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"],
   topup: ["Hisobni to'ldirish", "Пополнение баланса", "Balance top-up"],
   paper: ["Qog'oz chop etish", "Печать документов", "Document printing"],
   book: ["Kitob chiqarish", "Книга", "Book"],
@@ -212,6 +213,26 @@ const M = {
     (c, e) => `🎉 Поздравляем! Вы пригласили ${c} друзей — вам доступно ${e} бесплатных листов!\n\nЕщё ${5 - c} — и будет 20.`,
     (c, e) => `🎉 Congratulations! You invited ${c} friends — you get ${e} free sheets!\n\n${5 - c} more and it becomes 20.`,
   ],
+  // bot chatiga yuborilgan rasm: PDF yoki AI javobi
+  phAsk: ["📷 Rasm qabul qilindi. Nima qilamiz?", "📷 Фото получено. Что сделать?", "📷 Got your photo. What should I do?"],
+  phBtnPdf: ["📄 PDF qilish", "📄 Сделать PDF", "📄 Make a PDF"],
+  phBtnAi: ["🤖 AI javobi", "🤖 Ответ AI", "🤖 AI answer"],
+  phBtnBack: ["← Orqaga", "← Назад", "← Back"],
+  phPdfPick: [
+    (n) => `📄 PDF: ${n} ta rasm.\n\n1 ta varaqqa nechta rasm joylansin?\n(Albomdagi barcha rasmlar bitta PDF ga kiradi — 30 tagacha)`,
+    (n) => `📄 PDF: фото — ${n}.\n\nСколько фото разместить на одном листе?\n(Все фото из альбома войдут в один PDF — до 30)`,
+    (n) => `📄 PDF: ${n} image(s).\n\nHow many images per page?\n(All photos from the album go into one PDF — up to 30)`,
+  ],
+  phPdfWait: [
+    (n) => `⏳ PDF tayyorlanmoqda (${n} ta rasm)… 10–30 soniyada shu yerga keladi.`,
+    (n) => `⏳ Готовлю PDF (фото: ${n})… придёт сюда через 10–30 секунд.`,
+    (n) => `⏳ Making your PDF (${n} images)… it will arrive here in 10–30 seconds.`,
+  ],
+  phAiWait: ["🤖 AI rasmni ko'rib chiqyapti…", "🤖 AI изучает фото…", "🤖 AI is looking at the photo…"],
+  phNone: ["Rasmlar topilmadi — iltimos, rasmni qaytadan yuboring.", "Фото не найдены — отправьте фото ещё раз.", "No photos found — please send the photo again."],
+  phCancel: ["Bekor qilindi.", "Отменено.", "Cancelled."],
+  phTopic: ["Rasmlardan PDF (chat)", "Фото в PDF (чат)", "Images to PDF (chat)"],
+  phErr: ["Kechirasiz, xatolik yuz berdi. Rasmni qaytadan yuborib ko'ring.", "Извините, произошла ошибка. Отправьте фото ещё раз.", "Sorry, something went wrong. Please send the photo again."],
   // fayl yetkazildi
   delivered: [
     (o) => `🎉 <b>Buyurtmangiz tayyor!</b>\n${o.label}${o.topic}\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.`,

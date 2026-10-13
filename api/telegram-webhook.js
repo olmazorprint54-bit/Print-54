@@ -22,6 +22,7 @@ const { internalKey } = require("./_lib/internal-key");
 const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
 const CHAT = require("./_lib/chat");
+const PH = require("./_lib/photo-actions");
 const { token: botToken } = require("./_lib/bots");
 const PR = require("../public/ai/prices");
 
@@ -115,6 +116,18 @@ async function handleCallbackQuery(cq, bot, req) {
   }
   if (/^pay(ok|no|cancel|bad):\d+$/.test(cq.data || "")) {
     await handlePayAction(cq, bot, req);
+    return;
+  }
+  if (/^ph:/.test(cq.data || "") && isAiBot(bot)) {
+    const host = req.headers["x-forwarded-host"] || req.headers.host;
+    waitUntil(PH.onCallback(cq, bot, {
+      startPdf: async (orderId) => startAi(req, orderId),
+      aiReply: (m, l) => CHAT.reply(m, bot, { isOwner: isOwner(cq.from), appButton: appButtonFor(bot, host, l) }),
+    }).catch(async (e) => {
+      console.error("Rasm tugmasi:", e);
+      const l = await LB.getLang(cq.from.id).catch(() => "uz");
+      await callTelegram("sendMessage", { chat_id: cq.message.chat.id, text: LB.T(l, "phErr") }, bot).catch(() => {});
+    }));
     return;
   }
   if (cq.data === "noop" || isAiBot(bot)) {
@@ -491,7 +504,8 @@ async function handleMessage(msg, bot, host, req) {
   // AI botda mijoz yuborgan PDF/Word/TXT/rasm — manba (adabiyot) bo'lib saqlanadi
   if ((msg.photo || msg.document) && isAiBot(bot) && !(isOwner(msg.from) && msg.reply_to_message)) {
     const isImage = msg.photo || /^image\//.test((msg.document && msg.document.mime_type) || "");
-    if (isImage) waitUntil(LB.getLang(msg.from.id).then((l) => CHAT.reply(msg, bot, { isOwner: isOwner(msg.from), appButton: appButtonFor(bot, host, l) })).catch((e) => console.error(e)));
+    // rasm → «📄 PDF qilish» / «🤖 AI javobi» tugmalari (api/_lib/photo-actions.js)
+    if (isImage) await PH.onPhoto(msg, bot).catch((e) => console.error("Rasm:", e));
     else await saveChatSource(msg, bot);
     return;
   }

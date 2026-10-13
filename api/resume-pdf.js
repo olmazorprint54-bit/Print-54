@@ -184,8 +184,10 @@ async function buildImgPdf(order) {
   // rasmlar data: URL bo'lib joylanadi (tarmoqqa bog'liq emas), o'lchami — avto yo'nalish uchun
   const images = await Promise.all(urls.map(async (u) => {
     const buf = Buffer.from(await (await fetch(u)).arrayBuffer());
-    const sz = jpegSize(buf) || { w: 1, h: 1 };
-    return { src: "data:image/jpeg;base64," + buf.toString("base64"), w: sz.w, h: sz.h };
+    const png = buf[0] === 0x89 && buf[1] === 0x50;
+    const webp = buf.slice(8, 12).toString("latin1") === "WEBP";
+    const sz = png ? { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) } : (!webp && jpegSize(buf)) || { w: 1, h: 1 };
+    return { src: `data:image/${png ? "png" : webp ? "webp" : "jpeg"};base64,` + buf.toString("base64"), w: sz.w, h: sz.h };
   }));
   const f = order.details.fields || {};
   const base = String(f.name || "").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 80) || "Rasmlar";
