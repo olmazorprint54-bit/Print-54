@@ -204,6 +204,28 @@ async function sendPhotosToOwner(bot, paths, orderId, replyTo) {
   if (!out.ok) throw new Error("Telegram API xatosi: " + JSON.stringify(out));
 }
 
+// Ilovadagi AI yordamchi: {chat: matn} | {history: true} | {reset: true}
+async function appChatReq(body, res) {
+  const auth = authUser(body);
+  if (!auth) { res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" }); return; }
+  const CH = require("./_lib/chat");
+  const uid = auth.user.id;
+  const isOwner = String(uid) === String(process.env.OWNER_CHAT_ID);
+  if (body.history) { res.status(200).json({ ok: true, ...(await CH.appHistory(uid, isOwner)) }); return; }
+  if (body.reset) { await CH.appReset(uid); res.status(200).json({ ok: true }); return; }
+  const text = String(body.chat || "").trim();
+  if (!text) { res.status(400).json({ ok: false, error: "Savol yozing" }); return; }
+  const w = await walletOf(uid).catch(() => ({ balance: 0, minTopup: 5000, firstFree: false }));
+  let credits = 0;
+  if (AI_MODE) {
+    const { data } = await supabase.from("users").select("ai_credits").eq("telegram_user_id", uid).single();
+    credits = (data && data.ai_credits) || 0;
+  }
+  const lang = ["uz", "ru", "en"].includes(body.lang) ? body.lang : "uz";
+  const out = await CH.appChat(uid, text, { lang, isOwner, balance: w.balance, minTopup: w.minTopup, firstFree: AI_MODE && !!w.firstFree && process.env.FIRST_FREE !== "0", credits });
+  res.status(200).json({ ok: true, ...out });
+}
+
 // Profildan hisobni to'ldirish (buyurtmasiz): karta + noyob summa, chek botga.
 // Buyurtma "topup" — narxi 0, tasdiqlangach to'lov summasi balansga qo'shiladi.
 async function topupOnly(body, res) {
@@ -226,6 +248,11 @@ module.exports = async (req, res) => {
     const body = req.body || {};
     if (body.service === "topup") {
       await topupOnly(body, res);
+      return;
+    }
+    // ilovadagi AI yordamchi (suzuvchi 🤖 tugma)
+    if (body.service === "chat") {
+      await appChatReq(body, res);
       return;
     }
     if (!SERVICE_LABELS[body.service]) {

@@ -136,4 +136,70 @@ async function reset(msg, bot, l = "uz") {
   await telegram(bot, "sendMessage", { chat_id: msg.chat.id, text: require("./i18n-bot").T(l, "chatReset") });
 }
 
-module.exports = { reply, reset, toHtml, chunks, FREE, SYSTEM };
+/* ---------------- ilova ichidagi AI yordamchi ----------------
+   Ilovadagi suzuvchi 🤖 tugma. Bot suhbati bilan bir xil xotira va kunlik
+   limit. Yordamchi xizmatlar va narxlarni, mijozning balansi va bonuslarini
+   biladi; xizmat tavsiya qilsa — [[open:id]] belgisi (ilova tugmaga aylantiradi). */
+const PR = require("../../public/ai/prices.js");
+const APP_SERVICES = [
+  ["presentation", "Taqdimot (PowerPoint)"], ["essay", "Mustaqil ish"], ["referat", "Referat"], ["kurs", "Kurs ishi (30–40 bet)"],
+  ["article", "Ilmiy maqola / tezis"], ["test", "Test tuzish"], ["questions", "Savollar tuzish"], ["crossword", "Krossvord"],
+  ["lesson", "Dars ishlanma"], ["resume", "Resume / CV"], ["obyektivka", "Obyektivka"],
+];
+const APP_IDS = APP_SERVICES.map((s) => s[0]);
+const LANG_NAME = { uz: "Uzbek (Latin script, with o', g', sh, ch)", ru: "Russian", en: "English" };
+const som = (n) => Math.round(n).toLocaleString("ru-RU") + " so'm";
+
+function appSystem(ctx) {
+  const list = APP_SERVICES.map(([id, name]) => {
+    const p = PR.fromPrice(id);
+    return `- ${id} — ${name} — ${p === 0 ? "free" : p != null ? "from " + som(p) : "price on request"}`;
+  }).join("\n");
+  return `You are "AI yordamchi", the assistant inside the AI services mini app of a Telegram bot for pupils, students and teachers in Uzbekistan. The app prepares ready files automatically in 1–5 minutes.
+
+Services (id — name — price):
+${list}
+Extras: customer's own sources (PDF/Word) +500…1500 so'm depending on pages. Kurs ishi takes 3–5 minutes.
+
+This customer: balance ${som(ctx.balance || 0)}; first order free: ${ctx.firstFree ? "YES, still available (not valid for kurs ishi)" : "already used"}; bonus free orders: ${ctx.credits || 0} (not valid for kurs ishi). Top-up: Profile → «Hisobni to'ldirish» (card transfer, minimum ${som(ctx.minTopup || 5000)}). Free extras: join our Telegram channel or follow our Instagram — +1 free order each (section «🎁 Bonuslar»); invite 3 friends — 1 free order, then +1 for every 2 more.
+
+Rules:
+- Reply in ${LANG_NAME[ctx.lang] || LANG_NAME.uz}.
+- Be short and friendly: usually 2–6 sentences, simple words. Use **bold** for key words. No tables, no headings, no LaTeX.
+- When you recommend a service the app offers, add on a separate line at the very end a marker [[open:ID]] (max 3 markers), using ONLY ids from the list above. Example: [[open:presentation]]
+- Never invent services, prices, discounts or promises that are not listed. If you don't know, say so and suggest «💬 Biz bilan bog'lanish» in Profile.
+- For homework questions, explain step by step like a tutor (that is allowed here too).
+- Never help with 18+, nudity or indecent content.`;
+}
+
+// qaytaradi: { reply, actions, left } | { limit: true, left: 0 }
+async function appChat(uid, text, ctx) {
+  const s = await load(uid);
+  if (s.day !== today()) { s.day = today(); s.used = 0; s.usd = 0; }
+  if (!ctx.isOwner && s.used >= FREE()) return { limit: true, left: 0, free: FREE() };
+  const question = String(text || "").slice(0, 2000).trim() || "Salom";
+  const history = s.msgs.slice(-HISTORY).map((m) => ({ role: m.role, content: m.text }));
+  const r = await askText({ model: modelFor("CHAT_MODEL"), system: appSystem(ctx), messages: [...history, { role: "user", content: question }], maxTokens: 1500, effort: "low" });
+  let answer = r.text.trim() || "Kechirasiz, javob tayyorlay olmadim. Savolni boshqacha yozib ko'ring.";
+  const actions = [];
+  answer = answer.replace(/\[\[open:([a-z_]+)\]\]/g, (m, id) => { if (APP_IDS.includes(id) && !actions.includes(id) && actions.length < 3) actions.push(id); return ""; }).trim();
+  s.msgs.push({ role: "user", text: question }, { role: "assistant", text: answer.slice(0, 6000) });
+  s.msgs = s.msgs.slice(-HISTORY);
+  s.used += 1;
+  s.usd = +(s.usd + r.usd).toFixed(5);
+  s.total = +((s.total || 0) + r.usd).toFixed(5);
+  await save(uid, s);
+  return { reply: answer, actions, left: ctx.isOwner ? null : Math.max(0, FREE() - s.used) };
+}
+async function appHistory(uid, isOwner) {
+  const s = await load(uid);
+  const used = s.day === today() ? s.used : 0;
+  return { msgs: s.msgs.slice(-HISTORY).map((m) => ({ role: m.role, text: String(m.text || "").slice(0, 4000) })), left: isOwner ? null : Math.max(0, FREE() - used) };
+}
+async function appReset(uid) {
+  const s = await load(uid);
+  s.msgs = [];
+  await save(uid, s);
+}
+
+module.exports = { reply, reset, toHtml, chunks, FREE, SYSTEM, appChat, appHistory, appReset, appSystem };

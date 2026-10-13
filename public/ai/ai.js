@@ -105,6 +105,7 @@
     window.scrollTo(0, 0);
   }
   window.aiOpenGrid = openGrid; // umumiy ilova pastki menyusi uchun
+  window.aiOpenService = (id) => openService(id); // AI yordamchi tavsiya tugmalari uchun
 
   /* ---------------------------------------------------------------
      SHAKL
