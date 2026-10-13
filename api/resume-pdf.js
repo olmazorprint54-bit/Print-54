@@ -27,7 +27,7 @@ const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  img2pdf: "PDF faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -142,6 +142,54 @@ async function reportCost(order, ai) {
     chat_id: process.env.OWNER_CHAT_ID,
     text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
   }).catch((e) => console.error(e));
+}
+
+/* ---------- Rasmdan PDF (AI'siz) ----------
+   1 varaqqa 1/2/4/6/9 rasm, A4 tik/yotiq (avto — rasmlar ko'piga qarab), hoshiya, to'liq/to'ldirish. */
+// JPEG o'lchami (SOF belgisidan) — avto yo'nalish uchun
+function jpegSize(buf) {
+  let i = 2;
+  while (i + 9 < buf.length) {
+    if (buf[i] !== 0xff) { i++; continue; }
+    const m = buf[i + 1];
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+    i += 2 + buf.readUInt16BE(i + 2);
+  }
+  return null;
+}
+const GRID = { 1: [1, 1], 2: [1, 2], 4: [2, 2], 6: [2, 3], 9: [3, 3] }; // [ustun, qator] — tik varaq uchun
+function imgPdfHtml(images, f) {
+  const per = GRID[f.perPage] ? Number(f.perPage) : 1;
+  const wide = images.filter((im) => im.w > im.h).length;
+  const land = f.orient === "landscape" || (f.orient !== "portrait" && (per === 2 ? wide * 2 < images.length : wide * 2 > images.length));
+  let [cols, rows] = GRID[per];
+  if (land) [cols, rows] = [rows, cols];
+  const m = { none: 0, small: 8, normal: 16 }[f.margin] ?? 8;
+  const gap = per === 1 ? 0 : m ? 5 : 2;
+  const pages = [];
+  for (let i = 0; i < images.length; i += per) pages.push(images.slice(i, i + per));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+    @page { size: A4 ${land ? "landscape" : "portrait"}; margin: ${m}mm; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .pg { width: 100%; height: ${land ? 210 - 2 * m : 297 - 2 * m}mm; display: grid; grid-template-columns: repeat(${cols}, 1fr); grid-template-rows: repeat(${rows}, 1fr); gap: ${gap}mm; page-break-after: always; break-after: page; overflow: hidden; }
+    .pg:last-child { page-break-after: auto; break-after: auto; }
+    .cell { min-width: 0; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .cell img { width: 100%; height: 100%; object-fit: ${f.fit === "cover" ? "cover" : "contain"}; display: block; }
+  </style></head><body>${pages.map((p) => `<div class="pg">${p.map((im) => `<div class="cell"><img src="${esc(im.src)}"></div>`).join("")}</div>`).join("")}</body></html>`;
+}
+async function buildImgPdf(order) {
+  const urls = await photoUrls(order);
+  if (!urls.length) throw new Error("Rasmlar topilmadi");
+  // rasmlar data: URL bo'lib joylanadi (tarmoqqa bog'liq emas), o'lchami — avto yo'nalish uchun
+  const images = await Promise.all(urls.map(async (u) => {
+    const buf = Buffer.from(await (await fetch(u)).arrayBuffer());
+    const sz = jpegSize(buf) || { w: 1, h: 1 };
+    return { src: "data:image/jpeg;base64," + buf.toString("base64"), w: sz.w, h: sz.h };
+  }));
+  const f = order.details.fields || {};
+  const base = String(f.name || "").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 80) || "Rasmlar";
+  return { buffer: await renderPdf(imgPdfHtml(images, f)), name: base + ".pdf", mime: "application/pdf" };
 }
 
 // Mijoz yuklagan barcha rasmlar (taqdimot uchun)
@@ -269,7 +317,10 @@ module.exports = async (req, res) => {
         }
       } catch (e) { console.error("Manbalarni o'qib bo'lmadi:", e); }
     }
-    if (order.service === "presentation") {
+    if (order.service === "img2pdf") {
+      // AI yo'q — rasmlardan PDF to'liq kodda
+      file = await buildImgPdf(order);
+    } else if (order.service === "presentation") {
       // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
       const pres = await generatePresentation(fields, await photoUrls(order));
       ai = pres.ai;
@@ -325,3 +376,5 @@ module.exports = async (req, res) => {
 };
 
 module.exports.renderPdf = renderPdf;
+module.exports.imgPdfHtml = imgPdfHtml;
+module.exports.jpegSize = jpegSize;

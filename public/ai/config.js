@@ -38,6 +38,7 @@
     presentation_ai: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 13-4-4-7 7"/></svg>',
     video: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>',
     teacher: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M7 21l3-6M17 21l-3-6M8 8h5M8 11h8"/></svg>',
+    img2pdf: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9.5" cy="12.5" r="1.5"/><path d="m18 17-3.5-3.5L8 20"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -150,6 +151,19 @@
           { id: "flashcards", e: "🃏", t: ["Flesh kartalar", "Флеш-карточки", "Flashcards"], bg: "linear-gradient(135deg,#f472b6,#db2777)" },
           { id: "sorting", e: "🧺", t: ["Saralash o'yini", "Игра на сортировку", "Sorting game"], bg: "linear-gradient(135deg,#fb923c,#ea580c)" },
           { id: "listening", e: "🎧", t: ["Tinglash mashqlari", "Упражнения на аудирование", "Listening exercises"], bg: "linear-gradient(135deg,#38bdf8,#0284c7)" },
+        ],
+      },
+      {
+        // AI ishlatilmaydi — PDF to'liq kodda (api/resume-pdf.js imgPdfHtml), tekin
+        id: "img2pdf", title: "Rasmdan PDF", sub: "JPG, PNG rasmlarni bitta PDF faylga",
+        icon: ICONS.img2pdf, color: "#EF4444",
+        fields: [
+          { id: "photos", type: "photos", label: "Rasmlar", hint: "30 tagacha rasm — PDF da shu tartibda bo'ladi", max: 30, default: [], required: true },
+          { id: "perPage", type: "chips", seg: true, label: "1 ta varaqqa nechta rasm?", options: [{ v: "1", l: "1" }, { v: "2", l: "2" }, { v: "4", l: "4" }, { v: "6", l: "6" }, { v: "9", l: "9" }], default: "1" },
+          { id: "orient", type: "chips", seg: true, label: "Varaq yo'nalishi", options: [{ v: "auto", l: "Avto" }, { v: "portrait", l: "Tik" }, { v: "landscape", l: "Yotiq" }], default: "auto" },
+          { id: "margin", type: "chips", seg: true, label: "Hoshiya (chet)", options: [{ v: "none", l: "Yo'q" }, { v: "small", l: "Kichik" }, { v: "normal", l: "O'rtacha" }], default: "small" },
+          { id: "fit", type: "chips", seg: true, label: "Rasm joylashuvi", options: [{ v: "contain", l: "To'liq ko'rinsin" }, { v: "cover", l: "Katakni to'ldirsin" }], default: "contain" },
+          { id: "name", type: "text", label: "Fayl nomi (ixtiyoriy)", placeholder: "Masalan: Hujjatlar", max: 80 },
         ],
       },
       {
@@ -735,6 +749,9 @@
     var vid = C.services.filter(function (s) { return s.id === "video"; })[0];
     C.services.splice(C.services.indexOf(vid), 1);
     C.services.splice(C.services.indexOf(img) + 1, 0, vid);
+    var i2p = C.services.filter(function (s) { return s.id === "img2pdf"; })[0];
+    C.services.splice(C.services.indexOf(i2p), 1);
+    C.services.splice(C.services.indexOf(pres) + 1, 0, i2p);
     var tch = C.services.filter(function (s) { return s.id === "teacher"; })[0];
     C.services.splice(C.services.indexOf(tch), 1);
     C.services.splice(C.services.indexOf(vid) + 1, 0, tch);

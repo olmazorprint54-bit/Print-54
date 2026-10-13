@@ -303,3 +303,33 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .ai-card.hub-soon{ opacity:.82; }
 .g-soon.pulse{ animation: hubPulse .6s ease; }
 @keyframes hubPulse{ 0%,100%{ transform:none; } 30%{ transform: scale(1.03); } 60%{ transform: scale(.99); } }
+
+/* ================================================================
+   ANIMATSIYALAR — yengil va tez; "kamroq harakat" sozlamasida o'chadi
+   ================================================================ */
+@keyframes aiCardIn{ from{ opacity:0; transform: translateY(14px) scale(.97); } to{ opacity:1; transform:none; } }
+@keyframes aiFieldIn{ from{ opacity:0; transform: translateY(8px); } to{ opacity:1; transform:none; } }
+@keyframes aiTopIn{ from{ opacity:0; transform: translateX(-12px); } to{ opacity:1; transform:none; } }
+@keyframes aiPop{ 0%{ transform: scale(1); } 40%{ transform: scale(1.06); } 100%{ transform: scale(1); } }
+@keyframes aiSheen{ 0%,70%{ transform: translateX(-120%) skewX(-20deg); } 100%{ transform: translateX(220%) skewX(-20deg); } }
+@keyframes aiIcFloat{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-2px); } }
+.ai-grid > .ai-card{ animation: aiCardIn .5s cubic-bezier(.2,.8,.2,1) both; }
+.ai-grid > .ai-card:nth-child(2){ animation-delay:.04s; } .ai-grid > .ai-card:nth-child(3){ animation-delay:.08s; }
+.ai-grid > .ai-card:nth-child(4){ animation-delay:.12s; } .ai-grid > .ai-card:nth-child(5){ animation-delay:.16s; }
+.ai-grid > .ai-card:nth-child(6){ animation-delay:.2s; } .ai-grid > .ai-card:nth-child(7){ animation-delay:.24s; }
+.ai-grid > .ai-card:nth-child(8){ animation-delay:.28s; } .ai-grid > .ai-card:nth-child(9){ animation-delay:.32s; }
+.ai-grid > .ai-card:nth-child(n+10){ animation-delay:.36s; }
+.ai-card:active .ic{ animation: aiPop .3s ease; }
+.ai-top{ animation: aiTopIn .35s ease both; }
+#aiForm > .ai-field{ animation: aiFieldIn .4s ease both; }
+#aiForm > .ai-field:nth-child(2){ animation-delay:.03s; } #aiForm > .ai-field:nth-child(3){ animation-delay:.06s; }
+#aiForm > .ai-field:nth-child(4){ animation-delay:.09s; } #aiForm > .ai-field:nth-child(5){ animation-delay:.12s; }
+#aiForm > .ai-field:nth-child(n+6){ animation-delay:.15s; }
+.chip.active, .opt-card.active, .tpl-card.active{ animation: aiPop .28s ease; }
+.order-btn{ position:relative; overflow:hidden; }
+.order-btn:not(:disabled)::after{ content:""; position:absolute; top:0; bottom:0; left:0; width:40%; pointer-events:none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent); animation: aiSheen 3.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce){
+  .ai-grid > .ai-card, .ai-top, #aiForm > .ai-field, .chip.active, .opt-card.active, .tpl-card.active, .ai-card:active .ic{ animation:none !important; }
+  .order-btn::after{ display:none; }
+}

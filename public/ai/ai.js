@@ -53,6 +53,8 @@
   if (btnOrders) btnOrders.addEventListener("click", () => setMode("print"));
 
   function syncBackButton() {
+    // forma ochiq — AI yordamchi tugmasi yashirinadi (yuborish tugmasini to'smasin)
+    document.body.classList.toggle("ai-form", !!current);
     if (!tg || !tg.BackButton) return;
     const inForm = document.body.classList.contains("ai-mode") && (current || galleryOpen);
     inForm ? tg.BackButton.show() : tg.BackButton.hide();
@@ -633,7 +635,7 @@
       <section>
         <div class="receipt glass ai-summary" id="aiSummary">${summaryHtml(svc, v)}</div>
         ${svc.comingSoon ? `<button type="button" class="order-btn" id="aiSubmit" disabled>🔜 Tez kunda</button><div class="ai-soon-note">Bu bo'lim tayyorlanmoqda — tez orada ishga tushadi. Hozircha imkoniyatlarini ko'rib chiqishingiz mumkin.</div>` : `<button type="button" class="order-btn" id="aiSubmit">So'rov yuborish</button>`}
-        ${svc.id === "image" || svc.kind === "image" || svc.id === "video" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
+        ${svc.id === "image" || svc.kind === "image" || svc.id === "video" || svc.id === "img2pdf" ? "" : `<div class="ai-disclaimer">AI tayyorlagan matnni topshirishdan oldin o'qib chiqing: sun'iy intellekt ba'zan fakt yoki manbalarda xato qilishi mumkin.</div>`}
         <div class="status-msg" id="aiStatus"></div>
       </section>`;
   }
@@ -786,7 +788,7 @@
     const t = CFG.templates.presentation.find((x) => x.id === v.template);
     return !!(t && t.auto && v.format !== "pdf" && (parseInt(v.slides, 10) || 10) <= 30);
   };
-  const isAuto = (svc, v) => svc.id === "obyektivka" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
+  const isAuto = (svc, v) => svc.id === "obyektivka" || svc.id === "img2pdf" || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
   // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
   const orderPrice = (svc, v) => {
     const p = PR && PR.priceOf(svc.id, { ...v, sourcePages: srcPages(v) });
@@ -803,6 +805,14 @@
       const rows = [["Kategoriya", svc.title], ["Namuna", GL(it.t)], ["O'lcham", it.r], ["Uslub", pick("style")], ["Sifat", pick("quality")], ["Variantlar", pick("variants")]];
       return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
         `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
+    }
+    // Rasmdan PDF: o'z qatorlari
+    if (svc.id === "img2pdf") {
+      const n = (v.photos || []).length;
+      const pp = Number(v.perPage) || 1;
+      const rows = [["Xizmat", svc.title], ["Rasmlar", `${n} ta`], ["1 varaqda", `${pp} ta rasm`], ["Varaqlar", n ? `${Math.ceil(n / pp)} ta (A4)` : "—"], ["Yo'nalish", pick("orient")], ["Tayyor bo'ladi", "⚡ 10–30 soniyada"]];
+      return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+        `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value">${esc(orderPriceText(svc, v))}</span></div>`;
     }
     // Video yaratish: o'z qatorlari
     if (svc.id === "video") {
@@ -1230,6 +1240,14 @@
     const btn = document.getElementById("aiSubmit");
     let bad = validate(svc, v);
     const phField = svc.fields.find((x) => x.type === "photos");
+    // majburiy rasm (Rasmdan PDF): kamida bittasi yuklangan bo'lsin
+    const phEl = phField && root.querySelector(`.ai-field[data-f="${phField.id}"]`);
+    const phErr = (t) => { const er = phEl && phEl.querySelector(".ai-err"); if (er) er.textContent = t; };
+    if (phEl && phField.required && shown(svc, v, phField.id) && !photosOf(svc).some((p) => p.status === "ok" || p.status === "up")) {
+      phEl.classList.add("error");
+      phErr("Kamida bitta rasm yuklang");
+      if (!bad) bad = phEl;
+    } else phErr("Rasmlar hali yuklanmoqda — biroz kuting");
     if (!bad && phField && shown(svc, v, phField.id) && photosOf(svc).some((p) => p.status === "up")) {
       bad = root.querySelector(`.ai-field[data-f="${phField.id}"]`);
       if (bad) bad.classList.add("error");

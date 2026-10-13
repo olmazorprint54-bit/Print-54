@@ -33,6 +33,7 @@ const AUTO = {
   essay: (f) => canAutoDoc("essay", f), kurs: (f) => canAutoDoc("kurs", f), referat: (f) => canAutoDoc("referat", f), article: (f) => canAutoDoc("article", f), lesson: (f) => canAutoDoc("lesson", f),
   questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
   presentation: canAutoPres,
+  img2pdf: (f) => Array.isArray(f.photos) && f.photos.length > 0, // AI'siz, kod bilan PDF
 };
 const { internalKey } = require("./_lib/internal-key");
 const { MAIN, AI_MODE, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
@@ -51,6 +52,7 @@ const SERVICE_LABELS = {
   crossword: "Krossvord",
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
+  img2pdf: "Rasmdan PDF",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
@@ -180,10 +182,12 @@ async function trialsToday(userId) {
 }
 
 // Mijoz yuklagan rasmlar yo'li faqat o'zining papkasidan bo'lishi kerak
-function cleanPhotos(photos, userId) {
+// xizmatga qarab rasm chegarasi (Rasmdan PDF — 30 ta)
+const PHOTO_MAX = { img2pdf: 30 };
+function cleanPhotos(photos, userId, max = MAX_PHOTOS) {
   if (!userId || !Array.isArray(photos)) return [];
   const re = new RegExp("^" + parseInt(userId, 10) + "/[\\w-]+\\.jpg$");
-  return [...new Set(photos.filter((p) => typeof p === "string" && re.test(p)))].slice(0, MAX_PHOTOS);
+  return [...new Set(photos.filter((p) => typeof p === "string" && re.test(p)))].slice(0, max);
 }
 
 // Rasmlarni egasiga buyurtma xabariga javob qilib, albom ko'rinishida yuboradi
@@ -276,7 +280,7 @@ module.exports = async (req, res) => {
     const summary = cleanSummary(body.summary);
     const fields = body.fields || {};
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
-    const photos = cleanPhotos(fields.photos, u && u.id);
+    const photos = cleanPhotos(fields.photos, u && u.id, PHOTO_MAX[body.service]);
     const saved = cleanFields({ ...fields, photos });
     // Manbalar: faqat mijozning o'ziniki, 3 tagacha, jami 100 bet (narxga +5 000)
     const picked = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
