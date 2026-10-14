@@ -3,6 +3,7 @@
 // «PDF vositalari» — AI'siz, to'liq kodda, tekin:
 //   word2pdf   Word (.docx)          -> PDF   (mammoth -> HTML -> Chrome)
 //   excel2pdf  Excel (.xlsx/.xls/.csv) -> PDF (SheetJS -> HTML -> Chrome)
+//   pptx2pdf   PowerPoint (.pptx)    -> PDF   (pptx-render.js -> HTML -> Chrome)
 //   pdfmerge   bir nechta PDF        -> bitta PDF        (pdf-lib)
 //   pdfsplit   PDF'dan sahifalar     -> PDF yoki ZIP      (pdf-lib)
 //   pdf2word   PDF                   -> Word (.docx)      (pdfjs: matn)
@@ -111,6 +112,24 @@ td[data-t="n"]{text-align:right}
 tr{page-break-inside:avoid}
 </style></head><body>${body}</body></html>`;
   return { buffer: await renderPdf(html), name: baseOf(file.name, "jadval") + ".pdf", mime: MIME.pdf };
+}
+
+/* ---------------------------------------------------------------
+   PowerPoint -> PDF (api/_lib/pptx-render.js: slaydlar HTML ga, Chrome PDF qiladi)
+   --------------------------------------------------------------- */
+async function pptxToPdf(file, o, { renderHtmlFile }) {
+  const buf = file.buffer;
+  if (isOle(buf)) throw E("Bu eski PowerPoint formati (.ppt) yoki parol bilan himoyalangan fayl. PowerPoint'da «Saqlash → .pptx» qilib qayta yuklang.");
+  if (!isZip(buf)) throw E("Bu PowerPoint (.pptx) fayl emas yoki buzilgan.");
+  let r;
+  try {
+    r = await require("./pptx-render").pptxToHtml(buf);
+  } catch (e) {
+    console.error("PPTX o'qish:", e);
+    throw E(e && e.message === "slides" ? "Taqdimotda ko'rsatiladigan slayd topilmadi." : "PowerPoint faylni o'qib bo'lmadi: fayl buzilgan bo'lishi mumkin.");
+  }
+  if (r.slides > 200) throw E("Taqdimotda 200 tadan ortiq slayd bor — qismlarga bo'lib yuklang.");
+  return { buffer: await renderHtmlFile(r.html), name: baseOf(file.name, "taqdimot") + ".pdf", mime: MIME.pdf };
 }
 
 /* ---------------------------------------------------------------
@@ -385,6 +404,7 @@ async function runTool(service, files, options, deps) {
   switch (service) {
     case "word2pdf": return wordToPdf(files[0], o, deps);
     case "excel2pdf": return excelToPdf(files[0], o, deps);
+    case "pptx2pdf": return pptxToPdf(files[0], o, deps);
     case "pdfmerge": return mergePdfs(files);
     case "pdfsplit": return splitPdf(files[0], o);
     case "pdf2word": return pdfToWord(files[0]);

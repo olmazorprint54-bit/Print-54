@@ -65,6 +65,7 @@ const LABELS = {
   img2pdf: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"],
   word2pdf: ["Word → PDF", "Word → PDF", "Word to PDF"],
   excel2pdf: ["Excel → PDF", "Excel → PDF", "Excel to PDF"],
+  pptx2pdf: ["PowerPoint → PDF", "PowerPoint → PDF", "PowerPoint to PDF"],
   pdfmerge: ["PDF birlashtirish", "Объединение PDF", "Merge PDF"],
   pdfsplit: ["PDF ni bo'lish", "Разделение PDF", "Split PDF"],
   pdf2word: ["PDF → Word", "PDF → Word", "PDF to Word"],

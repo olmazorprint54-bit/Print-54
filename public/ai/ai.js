@@ -102,7 +102,7 @@
   }
   // Umumiy ilovada hali AI bilan avtomatik bo'lmagan xizmatlar — "Tez kunda"
   const soonSet = () => new Set((window.AI_APP || {}).soon || []);
-  const TOOL_IDS = ["word2pdf", "excel2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"]; // PDF vositalari: AI yo'q, tekin
+  const TOOL_IDS = ["word2pdf", "excel2pdf", "pptx2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"]; // PDF vositalari: AI yo'q, tekin
   function gridCards() {
     const soon = soonSet();
     const list = [...CFG.services.filter((s) => !soon.has(s.id)), ...CFG.services.filter((s) => soon.has(s.id))].filter((s) => !s.hidden);
@@ -281,7 +281,7 @@
   const filesOf = (svc) => (fileState[svc.id] = fileState[svc.id] || []);
   let fileSeq = 0;
   const FL_CHUNK = 2.6 * 1024 * 1024;
-  const flIcon = (n) => ({ pdf: "📕", docx: "📘", xlsx: "📗", xls: "📗", xlsm: "📗", csv: "📗" }[String(n).toLowerCase().split(".").pop()] || "📄");
+  const flIcon = (n) => ({ pdf: "📕", docx: "📘", pptx: "📙", xlsx: "📗", xls: "📗", xlsm: "📗", csv: "📗" }[String(n).toLowerCase().split(".").pop()] || "📄");
   const flSize = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB");
   function fileRows(svc, f) {
     const list = filesOf(svc);

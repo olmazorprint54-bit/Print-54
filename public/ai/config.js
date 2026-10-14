@@ -774,6 +774,9 @@
           { id: "orient", type: "chips", seg: true, label: "Varaq yo'nalishi", options: [{ v: "auto", l: "Avto" }, { v: "portrait", l: "Tik" }, { v: "landscape", l: "Yotiq" }], default: "auto" },
           { id: "grid", type: "chips", seg: true, label: "Katak chiziqlari", options: [{ v: "lines", l: "Bor" }, { v: "none", l: "Yo'q" }], default: "lines" },
         ] },
+        { id: "pptx2pdf", title: "PowerPoint → PDF", sub: "Taqdimot (.pptx) ni PDF ga aylantirish", color: "#DC2626", fields: [
+          files("PowerPoint fayl (.pptx)", "Faqat .pptx · diagramma, animatsiya va maxsus shriftlar farq qilishi mumkin · " + DOC_HINT, ["pptx"]),
+        ] },
         { id: "pdfmerge", title: "PDF birlashtirish", sub: "Bir nechta PDF ni bitta faylga", color: "#7C3AED", fields: [
           files("PDF fayllar", "2 tadan 10 tagacha · ▲▼ tugmalari bilan tartibini o'zgartiring · " + DOC_HINT, ["pdf"], 10, 2),
         ] },
@@ -795,12 +798,13 @@
       i2p.back = "pdftools";
       var G = function (a, b) { return "linear-gradient(135deg," + a + "," + b + ")"; };
       var hub = {
-        id: "pdftools", title: "PDF vositalari", sub: "Word, Excel, rasm → PDF · birlashtirish, bo'lish · PDF → Word, PowerPoint",
+        id: "pdftools", title: "PDF vositalari", sub: "Word, Excel, PowerPoint, rasm → PDF · birlashtirish, bo'lish · PDF → Word, PowerPoint",
         icon: ICONS.pdftools, color: "#EF4444", fields: [], hubNote: false,
         hub: [
           { id: "img2pdf", e: "🖼", t: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"], open: "img2pdf", bg: G("#f87171", "#dc2626") },
           { id: "word2pdf", e: "📘", t: ["Word → PDF", "Word → PDF", "Word to PDF"], open: "word2pdf", bg: G("#60a5fa", "#2563eb") },
           { id: "excel2pdf", e: "📗", t: ["Excel → PDF", "Excel → PDF", "Excel to PDF"], open: "excel2pdf", bg: G("#4ade80", "#16a34a") },
+          { id: "pptx2pdf", e: "📙", t: ["PowerPoint → PDF", "PowerPoint → PDF", "PowerPoint to PDF"], open: "pptx2pdf", bg: G("#f87171", "#b91c1c") },
           { id: "pdfmerge", e: "🧷", t: ["PDF birlashtirish", "Объединить PDF", "Merge PDF"], open: "pdfmerge", bg: G("#a78bfa", "#7c3aed") },
           { id: "pdfsplit", e: "✂️", t: ["PDF ni bo'lish", "Разделить PDF", "Split PDF"], open: "pdfsplit", bg: G("#fb923c", "#ea580c") },
           { id: "pdf2word", e: "📝", t: ["PDF → Word", "PDF → Word", "PDF to Word"], open: "pdf2word", bg: G("#38bdf8", "#0284c7") },
