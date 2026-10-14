@@ -138,6 +138,8 @@
     ["{n} ta bepul", "{n} бесплатный", "{n} free"],
     ["AI buyurtma (kurs ishidan tashqari).", "AI-заказ (кроме курсовой).", "AI order (except coursework)."],
     ["AI buyurtma.", "AI-заказ.", "AI order."],
+    ["Taqdimotingiz (.pptx yoki .pdf)", "Ваша презентация (.pptx или .pdf)", "Your presentation (.pptx or .pdf)"],
+    ["PowerPoint (.pptx) yoki PDF taqdimot · 15 MB gacha. PDF bo'lsa, natija PowerPoint (.pptx) bo'lib keladi: har bir sahifa slayd bo'ladi (matni tahrirlanmaydi), 50 sahifagacha", "Презентация PowerPoint (.pptx) или PDF · до 15 МБ. Если PDF — результат придёт в PowerPoint (.pptx): каждая страница станет слайдом (текст не редактируется), до 50 страниц", "A PowerPoint (.pptx) or PDF presentation · up to 15 MB. For a PDF, the result is a PowerPoint (.pptx): each page becomes a slide (text isn't editable), up to 50 pages"],
     ["Musiqa faylini yuklang.", "Загрузите файл музыки.", "Upload a music file."],
     ["Musiqa faylini yuklang", "Загрузите файл музыки", "Upload a music file"],
     ["Jonli personaj", "Живой персонаж", "Animated character"],

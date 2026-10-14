@@ -821,7 +821,7 @@
       if (!CH.length) return; // ommaviy repoda personaj fayllari yo'q — bo'lim ko'rinmaydi
       var G = function (a, b) { return "linear-gradient(135deg," + a + "," + b + ")"; };
       var add = { id: "char_add", title: "Personaj qo'shish", sub: "Tayyor taqdimotingizga jonli personaj", color: "#F59E0B", icon: ICONS.character, hidden: true, back: "charstudio", fields: [
-        { id: "files", type: "files", label: "Taqdimotingiz (.pptx)", hint: "O'zingiz tayyorlagan PowerPoint fayl · 15 MB gacha", exts: ["pptx"], max: 1, min: 1, required: true, default: [] },
+        { id: "files", type: "files", label: "Taqdimotingiz (.pptx yoki .pdf)", hint: "PowerPoint (.pptx) yoki PDF taqdimot · 15 MB gacha. PDF bo'lsa, natija PowerPoint (.pptx) bo'lib keladi: har bir sahifa slayd bo'ladi (matni tahrirlanmaydi), 50 sahifagacha", exts: ["pptx", "pdf"], max: 1, min: 1, required: true, default: [] },
         { id: "character", type: "characters", label: "Personajni tanlang", hint: "🔊 tugmasini bosib, ovozini eshitib ko'ring", default: CH[0].id },
         { id: "where", type: "chips", label: "Qaysi slaydga qo'yamiz?", options: [{ v: "last", l: "Oxirgi («Rahmat» slaydi)" }, { v: "first", l: "Birinchi" }, { v: "both", l: "Birinchi va oxirgi" }, { v: "custom", l: "Boshqa slaydlar" }], default: "last" },
         { id: "slideNums", type: "text", label: "Slayd raqamlari", placeholder: "Masalan: 3, 5-7", hint: "Vergul bilan yozing", max: 60, showIf: "where=custom" },

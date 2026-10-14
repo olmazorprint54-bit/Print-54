@@ -117,10 +117,15 @@ tr{page-break-inside:avoid}
 /* ---------------------------------------------------------------
    Jonli personaj: tayyor PPTX ga harakatlanuvchi, ovozli personaj (api/_lib/characters.js)
    --------------------------------------------------------------- */
-async function charAdd(files, o) {
-  const pp = files.find((f) => f.role !== "music");
+async function charAdd(files, o, deps) {
+  let pp = files.find((f) => f.role !== "music");
   const music = files.find((f) => f.role === "music");
   if (!pp) throw E("Taqdimot faylini yuklang.");
+  // PDF taqdimot: avval PowerPoint'ga aylantiramiz (har bir sahifa — slayd), keyin personaj qo'shamiz
+  if (isPdf(pp.buffer)) {
+    const conv = await pdfToPptx({ name: pp.name, buffer: pp.buffer }, {}, deps);
+    pp = { name: pp.name, buffer: conv.buffer };
+  }
   if (isOle(pp.buffer)) throw E("Bu eski PowerPoint formati (.ppt) yoki parol bilan himoyalangan fayl. PowerPoint'da «Saqlash → .pptx» qilib qayta yuklang.");
   if (!isZip(pp.buffer)) throw E("Bu PowerPoint (.pptx) fayl emas yoki buzilgan.");
   const C = require("./characters");
@@ -430,7 +435,7 @@ async function runTool(service, files, options, deps) {
   const o = options || {};
   if (!files.length) throw E("Fayl topilmadi — qaytadan yuklang.");
   switch (service) {
-    case "char_add": return charAdd(files, o);
+    case "char_add": return charAdd(files, o, deps);
     case "word2pdf": return wordToPdf(files[0], o, deps);
     case "excel2pdf": return excelToPdf(files[0], o, deps);
     case "pptx2pdf": return pptxToPdf(files[0], o, deps);
