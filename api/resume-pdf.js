@@ -24,6 +24,7 @@ const { generatePresentation } = require("./_lib/pres-gen");
 const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
 const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI'siz
+const CHARS = require("./_lib/characters"); // «Jonli personaj» (taqdimotga harakatlanuvchi, ovozli personaj)
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
@@ -392,6 +393,12 @@ module.exports = async (req, res) => {
       const pres = await generatePresentation(fields, await photoUrls(order));
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
+      // 🎬 Jonli personaj: birinchi va oxirgi slaydga (xato bo'lsa — taqdimot personajsiz yuboriladi)
+      if (fields.character && fields.character !== "none") {
+        try {
+          file.buffer = await CHARS.addCharacter(file.buffer, String(fields.character), { sound: String(fields.charSound) !== "off", side: fields.charSide === "left" ? "left" : "right" });
+        } catch (e) { console.error("Personaj qo'shilmadi:", e); }
+      }
     } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
       const doc = await GENERATORS[order.service](fields, { png: (html) => renderPdf(html, "chart") });

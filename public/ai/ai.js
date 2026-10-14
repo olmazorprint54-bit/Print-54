@@ -952,6 +952,7 @@
       ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? (svc.id === "kurs" ? "⚡ 3–5 daqiqada (AI)" : "⚡ 1–3 daqiqada (AI)") : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
+      ...(v.character && v.character !== "none" && shown(svc, v, "character") ? [["Personaj", pick("character")], ["Personaj ovozi", pick("charSound")]] : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
