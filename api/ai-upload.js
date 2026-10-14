@@ -30,14 +30,14 @@ async function ensureBucket() {
   bucketReady = true;
 }
 
-const DOC_EXT = ["pdf", "docx", "xlsx", "xls", "xlsm", "csv"];
+const DOC_EXT = ["pdf", "docx", "xlsx", "xls", "xlsm", "csv", "pptx"];
 const DOC_MAX = 15 * 1024 * 1024;
 const userErr = (m) => Object.assign(new Error(m), { user: true });
 const docDir = (uid) => `${parseInt(uid, 10)}/docs`;
 async function saveDocPart(uid, { id, name, index, total, data }) {
   await ensureBucket();
   const ext = String(name || "").toLowerCase().split(".").pop();
-  if (!DOC_EXT.includes(ext)) throw userErr("Faqat PDF, Word (.docx) yoki Excel (.xlsx, .xls, .csv) fayl yuklash mumkin.");
+  if (!DOC_EXT.includes(ext)) throw userErr("Faqat PDF, Word (.docx), Excel (.xlsx, .xls, .csv) yoki PowerPoint (.pptx) fayl yuklash mumkin.");
   index = parseInt(index, 10); total = parseInt(total, 10);
   if (!(total >= 1 && total <= 7 && index >= 0 && index < total)) throw userErr("Noto'g'ri bo'lak");
   if (index === 0) id = `${Date.now()}-${crypto.randomBytes(4).toString("hex")}`;
@@ -61,7 +61,7 @@ async function saveDocPart(uid, { id, name, index, total, data }) {
     : ext === "csv" ? !full.slice(0, 2000).includes(0)
     : ext === "xls" ? full[0] === 0xd0 && full[1] === 0xcf
     : full[0] === 0x50 && full[1] === 0x4b; // docx, xlsx, xlsm — zip
-  if (!magicOk) { await rm(); throw userErr(ext === "docx" ? "Bu Word (.docx) fayl emas yoki buzilgan." : "Fayl turi kengaytmasiga mos kelmaydi yoki buzilgan."); }
+  if (!magicOk) { await rm(); throw userErr(ext === "docx" ? "Bu Word (.docx) fayl emas yoki buzilgan." : ext === "pptx" ? "Bu PowerPoint (.pptx) fayl emas yoki buzilgan." : "Fayl turi kengaytmasiga mos kelmaydi yoki buzilgan."); }
   const path = `${docDir(uid)}/${id}.${ext}`;
   const up = await store.upload(path, full, { contentType: "application/octet-stream", upsert: true });
   await rm();

@@ -56,7 +56,7 @@ const SERVICE_LABELS = {
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
   img2pdf: "Rasmdan PDF",
-  word2pdf: "Word → PDF", excel2pdf: "Excel → PDF", pdfmerge: "PDF birlashtirish", pdfsplit: "PDF ni bo'lish", pdf2word: "PDF → Word", pdf2pptx: "PDF → PowerPoint",
+  word2pdf: "Word → PDF", excel2pdf: "Excel → PDF", pptx2pdf: "PowerPoint → PDF", pdfmerge: "PDF birlashtirish", pdfsplit: "PDF ni bo'lish", pdf2word: "PDF → Word", pdf2pptx: "PDF → PowerPoint",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)

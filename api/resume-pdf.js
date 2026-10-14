@@ -28,7 +28,7 @@ const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI's
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -106,6 +106,22 @@ async function withPage(fn) {
   }
 }
 
+// Katta HTML (rasmli taqdimot — o'nlab MB) setContent o'rniga vaqtinchalik fayl orqali: ancha tez
+async function renderHtmlFile(html) {
+  const fs = require("fs"), os = require("os"), nodePath = require("path");
+  const tmp = nodePath.join(os.tmpdir(), `pptx-${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.html`);
+  fs.writeFileSync(tmp, html);
+  try {
+    return await withPage(async (page) => {
+      await page.goto("file://" + (tmp.startsWith("/") ? "" : "/") + tmp.split("\\").join("/"), { waitUntil: "networkidle0", timeout: 120000 });
+      await page.evaluate(async () => { await document.fonts.ready; });
+      return Buffer.from(await page.pdf({ printBackground: true, preferCSSPageSize: true, timeout: 180000 }));
+    });
+  } finally {
+    try { fs.unlinkSync(tmp); } catch (e) { /* tozalanadi */ }
+  }
+}
+
 // PDF vositalari: mijoz yuklagan fayllar Storage'dan olinadi (api/_lib/doc-tools.js)
 async function buildDocTool(order) {
   const f = order.details.fields || {};
@@ -118,7 +134,7 @@ async function buildDocTool(order) {
     if (error || !data) throw new DT.UserError("Yuklangan fayl topilmadi (muddati o'tgan bo'lishi mumkin) — qaytadan yuklang.");
     files.push({ name: String(names[i] || paths[i].split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()) });
   }
-  return DT.runTool(order.service, files, f, { renderPdf: (html) => renderPdf(html), withPage });
+  return DT.runTool(order.service, files, f, { renderPdf: (html) => renderPdf(html), renderHtmlFile, withPage });
 }
 
 // Fayl bajarib bo'lmasa (parolli, buzilgan, skaner...) — sababi mijozning o'ziga aytiladi
