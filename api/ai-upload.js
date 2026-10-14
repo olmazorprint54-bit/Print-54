@@ -30,7 +30,7 @@ async function ensureBucket() {
   bucketReady = true;
 }
 
-const DOC_EXT = ["pdf", "docx", "xlsx", "xls", "xlsm", "csv", "pptx"];
+const DOC_EXT = ["pdf", "docx", "xlsx", "xls", "xlsm", "csv", "pptx", "mp3", "m4a", "wav"];
 const DOC_MAX = 15 * 1024 * 1024;
 const userErr = (m) => Object.assign(new Error(m), { user: true });
 const docDir = (uid) => `${parseInt(uid, 10)}/docs`;
@@ -60,6 +60,9 @@ async function saveDocPart(uid, { id, name, index, total, data }) {
   const magicOk = ext === "pdf" ? full.slice(0, 1024).toString("latin1").includes("%PDF-")
     : ext === "csv" ? !full.slice(0, 2000).includes(0)
     : ext === "xls" ? full[0] === 0xd0 && full[1] === 0xcf
+    : ext === "mp3" ? full.slice(0, 3).toString("latin1") === "ID3" || (full[0] === 0xff && (full[1] & 0xe0) === 0xe0)
+    : ext === "m4a" ? full.slice(4, 8).toString("latin1") === "ftyp"
+    : ext === "wav" ? full.slice(0, 4).toString("latin1") === "RIFF"
     : full[0] === 0x50 && full[1] === 0x4b; // docx, xlsx, xlsm — zip
   if (!magicOk) { await rm(); throw userErr(ext === "docx" ? "Bu Word (.docx) fayl emas yoki buzilgan." : ext === "pptx" ? "Bu PowerPoint (.pptx) fayl emas yoki buzilgan." : "Fayl turi kengaytmasiga mos kelmaydi yoki buzilgan."); }
   const path = `${docDir(uid)}/${id}.${ext}`;
