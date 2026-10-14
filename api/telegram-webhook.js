@@ -803,7 +803,8 @@ async function checkReceipt(msg, bot, order, req) {
 
   if (v.ok) {
     await confirmPaid(fresh, { auto: true, amount: v.paid, txn: v.read.transaction_id || null, usd: v.ai ? v.ai.usd : 0 }, req);
-    // egaga — ovozsiz qisqa xabar; pul aslida tushmagan bo'lsa belgilaydi
+    // egaga — mijoz yuborgan chek (ovozsiz nusxa) va qisqa xabar; pul aslida tushmagan bo'lsa belgilaydi
+    await callTelegram("copyMessage", { chat_id: process.env.OWNER_CHAT_ID, from_chat_id: msg.chat.id, message_id: msg.message_id, disable_notification: true }, bot).catch(() => null);
     await toOwner(bot, "sendMessage", {
       chat_id: process.env.OWNER_CHAT_ID,
       text: `✅ <b>To'lov avtomatik tasdiqlandi</b> — #${order.id}\n${orderLine(order)}\nSumma: <b>${fmtSum(payAmountOf(order))}</b>\n👤 ${userLink(msg.from)}\n\nClick/Payme xabarlarida shu summa bo'lmasa — tugmani bosing.`,
