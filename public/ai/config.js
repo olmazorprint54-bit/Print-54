@@ -186,6 +186,15 @@
           { id: "tables", type: "switch", label: "📋 Jadval qo'shilsin", default: false },
           { id: "author", type: "text", label: "Muallif (F.I.Sh)", placeholder: "Birinchi slaydda ko'rsatiladi", max: 120 },
           { id: "extra", type: "textarea", label: "Qo'shimcha talablar (ixtiyoriy)", placeholder: "Masalan: o'qituvchi talabi bo'yicha 5 ta reja bo'lsin, misollar O'zbekiston hayotidan, sodda tilda yozilsin...", max: 1500 },
+          // 🐹 Jonli personaj: birinchi va oxirgi slaydda harakatlanuvchi, ovozli personaj (AI kerak emas)
+          ...(window.AI_CHARACTERS && window.AI_CHARACTERS.length ? (function () {
+            var ids = window.AI_CHARACTERS.map(function (c) { return c.id; }).join("|");
+            return [
+              { id: "character", type: "chips", label: "🎬 Jonli personaj", hint: "Birinchi va oxirgi slaydda harakatlanuvchi personaj paydo bo'ladi (PowerPoint namoyish rejimida — F5 — harakatlanadi va ovoz chiqaradi)", options: [{ v: "none", l: "Yo'q" }].concat(window.AI_CHARACTERS.map(function (c) { return { v: c.id, l: c.e + " " + c.name }; })), default: "none", showIf: "format=pptx" },
+              { id: "charSound", type: "chips", seg: true, label: "Personaj ovozi", options: [{ v: "on", l: "🔊 Ovozli" }, { v: "off", l: "🔇 Ovozsiz" }], default: "on", showIf: "character=" + ids },
+              { id: "charSide", type: "chips", seg: true, label: "Personaj joyi", options: [{ v: "right", l: "O'ng pastda" }, { v: "left", l: "Chap pastda" }], default: "right", showIf: "character=" + ids },
+            ];
+          })() : []),
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pptx", l: "PowerPoint (.pptx)" }, { v: "pdf", l: "PDF" }], default: "pptx" },
           PRINT_FIELD,
         ],
