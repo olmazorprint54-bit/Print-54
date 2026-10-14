@@ -26,7 +26,7 @@ function sumOf(rows) {
 // Birinchi AI ishi tekin (AI botda, kurs ishidan tashqari): mijozda hali pullik AI
 // buyurtma (bekor qilinmagan, to'lov kutmayotgan) bo'lmasa. Tekin xizmatlar
 // (resume, obyektivka), chop etish va to'ldirishlar hisobga kirmaydi.
-const NOT_AI = ["paper", "book", "binding", "topup", "resume", "obyektivka", "img2pdf"];
+const NOT_AI = ["paper", "book", "binding", "topup", "resume", "obyektivka", "img2pdf", "word2pdf", "excel2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"];
 const FIRST_FREE_EXCEPT = ["kurs"];
 const hadAiOrder = (rows) => (rows || []).some((o) => !NOT_AI.includes(o.service) && o.status !== "cancelled" && !(o.details && o.details.awaitingPayment));
 

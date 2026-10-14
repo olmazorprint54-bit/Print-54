@@ -40,6 +40,7 @@
     teacher: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M7 21l3-6M17 21l-3-6M8 8h5M8 11h8"/></svg>',
     img2pdf: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9.5" cy="12.5" r="1.5"/><path d="m18 17-3.5-3.5L8 20"/></svg>',
     presentation_pro: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m12 6.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4z"/></svg>',
+    pdftools: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -757,11 +758,63 @@
     var i2p = C.services.filter(function (s) { return s.id === "img2pdf"; })[0];
     C.services.splice(C.services.indexOf(i2p), 1);
     C.services.splice(C.services.indexOf(pres) + 1, 0, i2p);
+    // 📄 PDF vositalari (hub): Word/Excel/rasm → PDF, birlashtirish, bo'lish, PDF → Word/PowerPoint. AI yo'q, tekin.
+    // Ichki vositalar asosiy to'rda ko'rinmaydi (hidden) — «PDF vositalari» kartochkasi ichidan ochiladi.
+    (function () {
+      var DOC_HINT = "15 MB gacha";
+      function files(label, hint, exts, max, min) { return { id: "files", type: "files", label: label, hint: hint, exts: exts, max: max || 1, min: min || 1, required: true, default: [] }; }
+      var tools = [
+        { id: "word2pdf", title: "Word → PDF", sub: "Word (.docx) faylni PDF ga aylantirish", color: "#2563EB", fields: [
+          files("Word fayl (.docx)", "Faqat .docx · " + DOC_HINT, ["docx"]),
+          { id: "orient", type: "chips", seg: true, label: "Varaq yo'nalishi", options: [{ v: "portrait", l: "Tik" }, { v: "landscape", l: "Yotiq" }], default: "portrait" },
+          { id: "margin", type: "chips", seg: true, label: "Hoshiya (chet)", options: [{ v: "small", l: "Kichik" }, { v: "normal", l: "O'rtacha" }, { v: "wide", l: "Keng" }], default: "normal" },
+        ] },
+        { id: "excel2pdf", title: "Excel → PDF", sub: "Excel jadvalini PDF ga aylantirish", color: "#16A34A", fields: [
+          files("Excel fayl", "Faqat .xlsx, .xls yoki .csv · " + DOC_HINT, ["xlsx", "xls", "xlsm", "csv"]),
+          { id: "orient", type: "chips", seg: true, label: "Varaq yo'nalishi", options: [{ v: "auto", l: "Avto" }, { v: "portrait", l: "Tik" }, { v: "landscape", l: "Yotiq" }], default: "auto" },
+          { id: "grid", type: "chips", seg: true, label: "Katak chiziqlari", options: [{ v: "lines", l: "Bor" }, { v: "none", l: "Yo'q" }], default: "lines" },
+        ] },
+        { id: "pdfmerge", title: "PDF birlashtirish", sub: "Bir nechta PDF ni bitta faylga", color: "#7C3AED", fields: [
+          files("PDF fayllar", "2 tadan 10 tagacha · ▲▼ tugmalari bilan tartibini o'zgartiring · " + DOC_HINT, ["pdf"], 10, 2),
+        ] },
+        { id: "pdfsplit", title: "PDF ni bo'lish", sub: "Kerakli sahifalarni ajratish yoki olib tashlash", color: "#EA580C", fields: [
+          files("PDF fayl", "Faqat .pdf · " + DOC_HINT, ["pdf"]),
+          { id: "mode", type: "chips", label: "Nima qilamiz?", options: [{ v: "pick", l: "Kerakli sahifalarni ajratish" }, { v: "remove", l: "Sahifalarni olib tashlash" }, { v: "each", l: "Har bir sahifa alohida (ZIP)" }], default: "pick" },
+          { id: "pages", type: "text", label: "Sahifa raqamlari", placeholder: "Masalan: 1-3, 5, 8-10", hint: "Vergul bilan yozing. «7-» — 7-sahifadan oxirigacha.", max: 120, showIf: "mode=pick|remove" },
+        ] },
+        { id: "pdf2word", title: "PDF → Word", sub: "PDF dagi matnni Word fayliga", color: "#0284C7", fields: [
+          files("PDF fayl", "Matnli PDF (nusxa olinadigan). Skaner/rasm PDF dan matn chiqmaydi. Dizayn va murakkab jadvallar saqlanmasligi mumkin · " + DOC_HINT, ["pdf"]),
+        ] },
+        { id: "pdf2pptx", title: "PDF → PowerPoint", sub: "PDF sahifalarini slaydlarga", color: "#D97706", fields: [
+          files("PDF fayl", "Har bir sahifa slaydga rasm bo'lib tushadi (matnni tahrirlab bo'lmaydi) · 50 sahifagacha · " + DOC_HINT, ["pdf"]),
+        ] },
+      ];
+      tools.forEach(function (t) { t.icon = ICONS.pdftools; t.hidden = true; t.back = "pdftools"; });
+      var i2p = C.services.filter(function (s) { return s.id === "img2pdf"; })[0];
+      i2p.hidden = true;
+      i2p.back = "pdftools";
+      var G = function (a, b) { return "linear-gradient(135deg," + a + "," + b + ")"; };
+      var hub = {
+        id: "pdftools", title: "PDF vositalari", sub: "Word, Excel, rasm → PDF · birlashtirish, bo'lish · PDF → Word, PowerPoint",
+        icon: ICONS.pdftools, color: "#EF4444", fields: [], hubNote: false,
+        hub: [
+          { id: "img2pdf", e: "🖼", t: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"], open: "img2pdf", bg: G("#f87171", "#dc2626") },
+          { id: "word2pdf", e: "📘", t: ["Word → PDF", "Word → PDF", "Word to PDF"], open: "word2pdf", bg: G("#60a5fa", "#2563eb") },
+          { id: "excel2pdf", e: "📗", t: ["Excel → PDF", "Excel → PDF", "Excel to PDF"], open: "excel2pdf", bg: G("#4ade80", "#16a34a") },
+          { id: "pdfmerge", e: "🧷", t: ["PDF birlashtirish", "Объединить PDF", "Merge PDF"], open: "pdfmerge", bg: G("#a78bfa", "#7c3aed") },
+          { id: "pdfsplit", e: "✂️", t: ["PDF ni bo'lish", "Разделить PDF", "Split PDF"], open: "pdfsplit", bg: G("#fb923c", "#ea580c") },
+          { id: "pdf2word", e: "📝", t: ["PDF → Word", "PDF → Word", "PDF to Word"], open: "pdf2word", bg: G("#38bdf8", "#0284c7") },
+          { id: "pdf2pptx", e: "📊", t: ["PDF → PowerPoint", "PDF → PowerPoint", "PDF to PowerPoint"], open: "pdf2pptx", bg: G("#fbbf24", "#d97706") },
+        ],
+      };
+      C.services.splice(C.services.indexOf(i2p) + 1, 0, hub);
+      tools.forEach(function (t) { C.services.push(t); });
+    })();
     var tch = C.services.filter(function (s) { return s.id === "teacher"; })[0];
     C.services.splice(C.services.indexOf(tch), 1);
     C.services.splice(C.services.indexOf(vid) + 1, 0, tch);
     // Bosh sahifa bo'limlari: ⭐ Standart (std) · 💎 PRO (pro) · 🆓 Tekin (free)
-    var TIER = { presentation_pro: "pro", presentation_ai: "pro", image: "pro", video: "pro", resume: "free", obyektivka: "free", img2pdf: "free" };
+    var TIER = { presentation_pro: "pro", presentation_ai: "pro", image: "pro", video: "pro", resume: "free", obyektivka: "free", img2pdf: "free", pdftools: "free" };
     C.services.forEach(function (s) { s.tier = TIER[s.id] || "std"; });
     C.tiers = [
       { id: "std", e: "⭐", l: "Standart" },
