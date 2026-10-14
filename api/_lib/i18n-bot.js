@@ -92,6 +92,7 @@ const kbKind = (text) => Object.keys(KB).find((k) => KB[k].includes(text)) || nu
 const ASK = ["✏️ Qancha so'mga to'ldirasiz?", "✏️ На какую сумму пополнить?", "✏️ How much to top up?"];
 
 const M = {
+  trendBtn: ["🔥 Trend qo'shish", "🔥 Добавить тренд", "🔥 Add the trend"],
   appBtn: ["✨ Ilovani ochish", "✨ Открыть приложение", "✨ Open the app"],
   kbHint: [
     "👇 Hisobni to'ldirish, balans, narxlar va biz bilan bog'lanish — pastdagi tugmalarda.",

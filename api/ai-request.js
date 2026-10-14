@@ -301,6 +301,14 @@ module.exports = async (req, res) => {
     if (DT.TOOLS.includes(body.service)) {
       saved.files = u ? cleanDocs(fields.files, u.id, body.service) : [];
       saved.fileNames = (Array.isArray(fields.fileNames) ? fields.fileNames : []).filter((x) => typeof x === "string").slice(0, saved.files.length).map((x) => x.slice(0, 120));
+      // «Trend qo'shish»: botning o'zi tayyorlagan taqdimot (order:<id>) — faqat mijozning o'ziniki, tayyor .pptx
+      if (body.service === "char_add" && u && Array.isArray(fields.files) && fields.files.some((x) => /^order:\d+$/.test(String(x)))) {
+        const oid = parseInt(String(fields.files.find((x) => /^order:\d+$/.test(String(x)))).slice(6), 10);
+        const { data: ro } = await supabase.from("orders").select("id, telegram_user_id, service, status, file_id, file_name").eq("id", oid).single();
+        const okSrc = ro && String(ro.telegram_user_id) === String(u.id) && ro.status === "completed" && ro.file_id && /\.pptx$/i.test(ro.file_name || "") && /^presentation/.test(ro.service);
+        saved.files = okSrc ? ["order:" + oid] : [];
+        saved.fileNames = okSrc ? [String(ro.file_name).slice(0, 120)] : [];
+      }
       fields.topic = saved.fileNames[0] || ""; // Buyurtmalarim ro'yxatida fayl nomi ko'rinadi
       // Jonli personaj: mijozning o'z musiqasi (faqat «O'z musiqam» tanlansa)
       if (body.service === "char_add") {

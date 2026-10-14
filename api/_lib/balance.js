@@ -27,7 +27,7 @@ function sumOf(rows) {
 // buyurtma (bekor qilinmagan, to'lov kutmayotgan) bo'lmasa. Tekin xizmatlar
 // (resume, obyektivka), chop etish va to'ldirishlar hisobga kirmaydi.
 const NOT_AI = ["paper", "book", "binding", "topup", "resume", "obyektivka", "img2pdf", "char_add", "word2pdf", "excel2pdf", "pptx2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"];
-const FIRST_FREE_EXCEPT = ["kurs"];
+const FIRST_FREE_EXCEPT = ["kurs", "char_add"]; // birinchi ish / obuna / referal bonusi bu xizmatlarga tegmaydi
 const hadAiOrder = (rows) => (rows || []).some((o) => !NOT_AI.includes(o.service) && o.status !== "cancelled" && !(o.details && o.details.awaitingPayment));
 
 // Balans, eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT) va birinchi ish tekinligi

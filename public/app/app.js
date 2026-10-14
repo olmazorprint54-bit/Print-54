@@ -151,6 +151,7 @@
           <div class="meta"><span>№${o.n || ""} · ${date}${o.total > 0 ? ` · ${Math.round(o.total).toLocaleString("ru-RU")} so'm${o.details && o.details.spent ? " (balansdan)" : ""}` : o.total === 0 ? " · Tekin" : ""}</span>${o.status !== "active"
             ? `<button class="del" data-hide="${o.id}" aria-label="O'chirish" title="Tarixdan o'chirish"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>` : ""}</div>
           ${o.status === "completed" && o.file_id ? `<button class="get" data-file="${o.id}">📥 Faylni olish</button>` : ""}
+          ${o.status === "completed" && o.file_id && /^presentation/.test(o.service) && /\.pptx$/i.test(o.file_name || "") && (window.AI_CHARACTERS || []).length ? `<button class="get trend" data-trend="${o.id}">🔥 Trend qo'shish</button>` : ""}
           ${o.status === "active" && !(o.details && (o.details.spent || o.details.payState === "checking")) ? `<div class="acts"><button class="danger" data-cancel="${o.id}">Bekor qilish</button></div>` : ""}
         </div>`;
       }).join("") : `<div class="empty"><b>🗂</b>Hali buyurtma yo'q.<br>«Asosiy» bo'limidan xizmat tanlang.</div>`;
@@ -159,8 +160,9 @@
     }
   }
   $("ordersList").addEventListener("click", async (e) => {
-    const b = e.target.closest("[data-file],[data-cancel],[data-hide]");
+    const b = e.target.closest("[data-file],[data-cancel],[data-hide],[data-trend]");
     if (!b || !user) return;
+    if (b.dataset.trend) { tick(); go("home"); if (window.aiOpenCharFrom) window.aiOpenCharFrom(b.dataset.trend); return; }
     if (b.dataset.cancel && !(await confirmAsk("Buyurtmani bekor qilasizmi?"))) return;
     if (b.dataset.hide && !(await confirmAsk("Buyurtmani tarixdan o'chirasizmi?"))) return;
     tick();
@@ -491,4 +493,10 @@
     const url = `https://t.me/share/url?url=${encodeURIComponent(refLink)}&text=${encodeURIComponent(text)}`;
     if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank");
   });
+
+  // 🔥 Trend qo'shish: bot yuborgan taqdimot ostidagi tugma ilovani ?char=<buyurtma> bilan ochadi
+  try {
+    const cq = new URLSearchParams(location.search).get("char");
+    if (cq && /^\d+$/.test(cq)) setTimeout(() => { go("home"); if (window.aiOpenCharFrom) window.aiOpenCharFrom(cq); }, 400);
+  } catch (e) { /* havola parametrsiz */ }
 })();

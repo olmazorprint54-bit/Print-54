@@ -32,7 +32,7 @@
   let useBonus = true;
   const bonusLeft = () => Number(window.AI_BONUS) || 0;
   // Birinchi AI ishi tekin (AI botda; server window.AI_FIRST_FREE ni beradi), kurs ishidan tashqari
-  const freeOk = (svc) => svc.id !== "kurs";
+  const freeOk = (svc) => svc.id !== "kurs" && svc.id !== "char_add"; // birinchi ish / bonus bu xizmatlarga tegmaydi
   const firstFreeOn = (svc, v) => !!window.AI_FIRST_FREE && freeOk(svc) && orderPrice(svc, v) > 0;
   const bonusOn = (svc, v) => useBonus && bonusLeft() > 0 && freeOk(svc) && !firstFreeOn(svc, v) && orderPrice(svc, v) > 0;
   window.aiBonusChanged = () => { if (current) refreshLive(current); };
@@ -129,7 +129,18 @@
     window.scrollTo(0, 0);
   }
   window.aiOpenGrid = openGrid; // umumiy ilova pastki menyusi uchun
-  window.aiOpenService = (id) => openService(id); // AI yordamchi tavsiya tugmalari uchun
+  window.aiOpenService = (id) => openService(id);
+  // 🔥 Trend qo'shish: botda tayyorlangan taqdimotni qayta yuklamasdan personaj menyusini ochadi
+  window.aiOpenCharFrom = (orderId) => {
+    const svc = CFG.services.find((x) => x.id === "char_add");
+    if (!svc || !/^\d+$/.test(String(orderId))) return;
+    openService("char_add");
+    const f = svc.fields.find((x) => x.id === "files");
+    const st = filesOf(svc, f);
+    st.length = 0;
+    st.push({ key: "f" + ++fileSeq, name: GL(["Botda tayyorlangan taqdimot", "Презентация из бота", "Presentation from the bot"]) + " №" + orderId, size: null, status: "ok", path: "order:" + orderId });
+    syncFiles(svc);
+  }; // AI yordamchi tavsiya tugmalari uchun
 
   /* ---------------------------------------------------------------
      SHAKL
@@ -306,7 +317,7 @@
     const list = filesOf(svc, f);
     return list.map((p, i) => `<div class="fl-row ${p.status}" data-fl="${p.key}">
         <span class="fl-ic">${flIcon(p.name)}</span>
-        <span class="fl-name">${esc(p.name)}<small>${esc(flSize(p.size))}${p.status === "up" ? " · yuklanmoqda " + p.pct + "%" : p.status === "err" ? " · " + esc(p.err || "yuklanmadi") : " · ✓"}</small>${p.status === "up" ? `<i class="fl-bar"><b style="width:${p.pct}%"></b></i>` : ""}</span>
+        <span class="fl-name">${esc(p.name)}<small>${p.size == null ? "✓" : esc(flSize(p.size)) + (p.status === "up" ? " · yuklanmoqda " + p.pct + "%" : p.status === "err" ? " · " + esc(p.err || "yuklanmadi") : " · ✓")}</small>${p.status === "up" ? `<i class="fl-bar"><b style="width:${p.pct}%"></b></i>` : ""}</span>
         ${f.max > 1 && list.length > 1 ? `<span class="fl-mv" data-fl-up="${p.key}"${i === 0 ? " hidden" : ""}>▲</span><span class="fl-mv" data-fl-down="${p.key}"${i === list.length - 1 ? " hidden" : ""}>▼</span>` : ""}
         <span class="fl-x" data-fl-del="${p.key}">×</span></div>`).join("") +
       (list.length < f.max ? `<div class="fl-add glass" data-fl-add="${f.id}"><b>+</b><span>${f.max > 1 ? "Fayl qo'shish" : "Fayl tanlash"}</span></div>` : "");
