@@ -326,3 +326,5 @@ body.ai-form .ai-fab{ display:none; }
 /* AI yordamchi tugmasi — kichikroq */
 .ai-fab{ width:48px; height:48px; right:14px; }
 .ai-fab svg{ width:24px; height:24px; }
+
+.order .get.trend{ margin-top:8px; background: linear-gradient(135deg,#f59e0b,#ef4444); color:#fff; border:none; }

@@ -13,7 +13,10 @@ const crypto = require("crypto");
 const { resumeData, resumeHtml } = require("./_lib/resume-html");
 const { internalKey } = require("./_lib/internal-key");
 const { buildObyektivka } = require("./_lib/obyektivka-docx");
-const { orderBot, telegram, toOwner } = require("./_lib/bots");
+const { orderBot, telegram, toOwner, token } = require("./_lib/bots");
+const LB = require("./_lib/i18n-bot");
+const CHARS = require("./_lib/characters"); // «Trend qo'shish» tugmasi faqat personaj mavjud bo'lsa
+const { appUrl } = require("./_lib/setup");
 const { generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS } = require("./_lib/test-gen");
 const { costLine } = require("./_lib/ai");
 const SRC = require("./_lib/sources");
@@ -123,6 +126,19 @@ async function renderHtmlFile(html) {
 }
 
 // PDF vositalari: mijoz yuklagan fayllar Storage'dan olinadi (api/_lib/doc-tools.js)
+// «Trend qo'shish»: botning o'zi yuborgan taqdimotni Telegram'dan qayta yuklab olamiz (file_id shu botda ishlaydi)
+async function orderSourceFile(ref, order) {
+  const oid = parseInt(String(ref).slice(6), 10);
+  const { data: src } = await supabase.from("orders").select("*").eq("id", oid).single();
+  if (!src || String(src.telegram_user_id) !== String(order.telegram_user_id) || !src.file_id) throw new DT.UserError("Taqdimot topilmadi — uni qo'lda yuklang.");
+  const fb = (src.details && src.details.fileBot) || orderBot(src);
+  const gf = await telegram(fb, "getFile", { file_id: src.file_id });
+  if (!gf.ok) throw new DT.UserError("Taqdimotni botdan olib bo'lmadi (fayl 20 MB dan katta bo'lishi mumkin) — uni qo'lda yuklang.");
+  const res = await fetch(`https://api.telegram.org/file/bot${token(fb)}/${gf.result.file_path}`);
+  if (!res.ok) throw new DT.UserError("Taqdimotni botdan olib bo'lmadi — uni qo'lda yuklang.");
+  return { name: src.file_name || "taqdimot.pptx", buffer: Buffer.from(await res.arrayBuffer()) };
+}
+
 async function buildDocTool(order) {
   const f = order.details.fields || {};
   const paths = Array.isArray(f.files) ? f.files : [];
@@ -130,6 +146,7 @@ async function buildDocTool(order) {
   if (!paths.length) throw new DT.UserError("Fayl topilmadi — qaytadan yuklang.");
   const files = [];
   for (let i = 0; i < paths.length; i++) {
+    if (/^order:\d+$/.test(paths[i])) { files.push(await orderSourceFile(paths[i], order)); continue; }
     const { data, error } = await supabase.storage.from(BUCKET).download(paths[i]);
     if (error || !data) throw new DT.UserError("Yuklangan fayl topilmadi (muddati o'tgan bo'lishi mumkin) — qaytadan yuklang.");
     files.push({ name: String(names[i] || paths[i].split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()) });
@@ -158,7 +175,7 @@ async function failToCustomer(order, reason) {
 async function removeDocs(order) {
   const f = (order && order.details && order.details.fields) || {};
   if (order && DT.TOOLS.includes(order.service) && ((Array.isArray(f.files) && f.files.length) || (Array.isArray(f.music) && f.music.length))) {
-    await supabase.storage.from(BUCKET).remove([...(f.files || []), ...(f.music || [])]).catch((e) => console.error(e));
+    await supabase.storage.from(BUCKET).remove([...(f.files || []), ...(f.music || [])].filter((p) => !/^order:/.test(p))).catch((e) => console.error(e));
   }
 }
 
@@ -281,8 +298,9 @@ async function photoUrl(order) {
 const fileName = (name) => `Resume - ${String(name || "mijoz").replace(/[\\/:*?"<>|]+/g, "").slice(0, 60)}.pdf`;
 
 // file: { buffer, name, mime }
-function docForm(chatId, file, caption, replyTo) {
+function docForm(chatId, file, caption, replyTo, markup) {
   const form = new FormData();
+  if (markup) form.append("reply_markup", JSON.stringify(markup));
   form.append("chat_id", String(chatId));
   form.append("document", new Blob([file.buffer], { type: file.mime }), file.name);
   form.append("caption", caption);
@@ -293,7 +311,7 @@ function docForm(chatId, file, caption, replyTo) {
 
 // Tayyor fayl to'g'ridan-to'g'ri mijozga boradi; buyurtma bajarilgan bo'ladi.
 // Chop etish so'ralgan bo'lsa yoki mijozga yetmasa — nusxa egaga ham boradi.
-async function deliver(order, file) {
+async function deliver(order, file, host) {
   const what = READY[order.service] || "Faylingiz";
   const fields = order.details.fields;
   const wantsPrint = fields.print && fields.print !== "none";
@@ -301,8 +319,14 @@ async function deliver(order, file) {
   let doc = null;
   let fileBot = bot; // file_id faqat o'sha botda ishlaydi
   if (order.telegram_user_id) {
+    // 🔥 Trend qo'shish: botda tayyorlangan taqdimot ostida — jonli personaj menyusini ochadi (taqdimotni qayta yuklash shart emas)
+    let markup = null;
+    if (host && /^presentation/.test(order.service) && file.mime === PPTX && CHARS.list().length) {
+      const l = await LB.getLang(order.telegram_user_id).catch(() => "uz");
+      markup = { inline_keyboard: [[{ text: LB.T(l, "trendBtn"), web_app: { url: appUrl(host, bot) + "&char=" + order.id } }]] };
+    }
     const sent = await telegram(bot, "sendDocument", docForm(order.telegram_user_id, file,
-      `🎉 <b>${what} tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`));
+      `🎉 <b>${what} tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`, null, markup));
     if (sent.ok) doc = sent.result.document;
   }
 
@@ -433,7 +457,7 @@ module.exports = async (req, res) => {
       const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
       file = { buffer: await renderPdf(resumeHtml(d, origin)), name: fileName(d.name), mime: "application/pdf" };
     }
-    await deliver(order, file);
+    await deliver(order, file, req.headers.host);
     ai = sumAi(ai, srcAi);
     if (ai) await reportCost(order, ai);
     await confirmReferral(orderBot(order), order).catch((e) => console.error("Referal:", e));
