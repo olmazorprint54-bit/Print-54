@@ -23,11 +23,12 @@ const { GENERATORS } = require("./_lib/doc-gen");
 const { generatePresentation } = require("./_lib/pres-gen");
 const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
 const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
+const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI'siz
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  img2pdf: "PDF faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -90,6 +91,51 @@ async function renderPdf(html, kind = "pdf") {
       browserPromise = null;
       await browser.close();
     }
+  }
+}
+
+// Sahifa ochib beradi (PDF -> rasm kabi ishlar uchun); lokal sinovda brauzer yopiladi
+async function withPage(fn) {
+  const browser = await getBrowser();
+  const page = await browser.newPage();
+  try {
+    return await fn(page);
+  } finally {
+    await page.close().catch(() => {});
+    if (process.env.LOCAL_CHROME) { browserPromise = null; await browser.close(); }
+  }
+}
+
+// PDF vositalari: mijoz yuklagan fayllar Storage'dan olinadi (api/_lib/doc-tools.js)
+async function buildDocTool(order) {
+  const f = order.details.fields || {};
+  const paths = Array.isArray(f.files) ? f.files : [];
+  const names = Array.isArray(f.fileNames) ? f.fileNames : [];
+  if (!paths.length) throw new DT.UserError("Fayl topilmadi — qaytadan yuklang.");
+  const files = [];
+  for (let i = 0; i < paths.length; i++) {
+    const { data, error } = await supabase.storage.from(BUCKET).download(paths[i]);
+    if (error || !data) throw new DT.UserError("Yuklangan fayl topilmadi (muddati o'tgan bo'lishi mumkin) — qaytadan yuklang.");
+    files.push({ name: String(names[i] || paths[i].split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()) });
+  }
+  return DT.runTool(order.service, files, f, { renderPdf: (html) => renderPdf(html), withPage });
+}
+
+// Fayl bajarib bo'lmasa (parolli, buzilgan, skaner...) — sababi mijozning o'ziga aytiladi
+async function failToCustomer(order, reason) {
+  if (order.telegram_user_id) {
+    await telegram(orderBot(order), "sendMessage", {
+      chat_id: order.telegram_user_id,
+      text: `⚠️ <b>Faylni tayyorlab bo'lmadi</b>\n\n${String(reason).replace(/[<>&]/g, "").slice(0, 400)}\n\nFaylni tekshirib, ilovadan qayta urinib ko'ring — bu xizmat tekin.`,
+      parse_mode: "HTML",
+    }).catch((e) => console.error(e));
+  }
+  await supabase.from("orders").update({ status: "cancelled", details: { ...order.details, error: String(reason).slice(0, 300) } }).eq("id", order.id);
+}
+async function removeDocs(order) {
+  const f = (order && order.details && order.details.fields) || {};
+  if (order && DT.TOOLS.includes(order.service) && Array.isArray(f.files) && f.files.length) {
+    await supabase.storage.from(BUCKET).remove(f.files).catch((e) => console.error(e));
   }
 }
 
@@ -319,7 +365,10 @@ module.exports = async (req, res) => {
         }
       } catch (e) { console.error("Manbalarni o'qib bo'lmadi:", e); }
     }
-    if (order.service === "img2pdf") {
+    if (DT.TOOLS.includes(order.service)) {
+      // AI yo'q — Word/Excel/PDF vositalari to'liq kodda
+      file = await buildDocTool(order);
+    } else if (order.service === "img2pdf") {
       // AI yo'q — rasmlardan PDF to'liq kodda
       file = await buildImgPdf(order);
     } else if (order.service === "presentation") {
@@ -369,9 +418,17 @@ module.exports = async (req, res) => {
     if (order.details.photos && order.details.photos.length) {
       await supabase.storage.from(BUCKET).remove(order.details.photos).catch((e) => console.error(e));
     }
+    // mijoz hujjatlari ham tayyor bo'lgach darhol o'chiriladi (maxfiylik)
+    await removeDocs(order);
     res.status(200).json({ ok: true, size: file.buffer.length });
   } catch (err) {
     console.error(err);
+    if (err && err.user && order && DT.TOOLS.includes(order.service)) {
+      await failToCustomer(order, err.message).catch((e) => console.error(e));
+      await removeDocs(order);
+      res.status(200).json({ ok: false, user: true });
+      return;
+    }
     await fallbackToOwner(orderId, order, err && err.message).catch((e) => console.error(e));
     res.status(500).json({ ok: false });
   }

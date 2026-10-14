@@ -6,7 +6,7 @@
     "api/resume-pdf.js": {
       "memory": 1024,
       "maxDuration": 300,
-      "includeFiles": "{node_modules/@sparticuz/chromium/bin/**,api/_lib/pres/**}"
+      "includeFiles": "{node_modules/@sparticuz/chromium/bin/**,api/_lib/pres/**,node_modules/pdfjs-dist/legacy/build/pdf.js,node_modules/pdfjs-dist/legacy/build/pdf.worker.js,node_modules/pdfjs-dist/build/pdf.min.js,node_modules/pdfjs-dist/build/pdf.worker.min.js}"
     },
     "api/ai-request.js": {
       "maxDuration": 300,

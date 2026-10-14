@@ -35,6 +35,9 @@ const AUTO = {
   presentation: canAutoPres,
   img2pdf: (f) => Array.isArray(f.photos) && f.photos.length > 0, // AI'siz, kod bilan PDF
 };
+// PDF vositalari (AI'siz): yuklangan fayllar bo'lsa — avtomatik (api/_lib/doc-tools.js)
+const DT = require("./_lib/doc-tools-meta");
+for (const t of DT.TOOLS) AUTO[t] = (f) => Array.isArray(f.files) && f.files.length > 0;
 const { internalKey } = require("./_lib/internal-key");
 const { MAIN, AI_MODE, authUser, botKey, telegram, toOwner } = require("./_lib/bots");
 
@@ -53,6 +56,7 @@ const SERVICE_LABELS = {
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
   img2pdf: "Rasmdan PDF",
+  word2pdf: "Word → PDF", excel2pdf: "Excel → PDF", pdfmerge: "PDF birlashtirish", pdfsplit: "PDF ni bo'lish", pdf2word: "PDF → Word", pdf2pptx: "PDF → PowerPoint",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
@@ -190,6 +194,12 @@ function cleanPhotos(photos, userId, max = MAX_PHOTOS) {
   return [...new Set(photos.filter((p) => typeof p === "string" && re.test(p)))].slice(0, max);
 }
 
+function cleanDocs(files, userId, service) {
+  if (!userId || !Array.isArray(files)) return [];
+  const re = new RegExp("^" + parseInt(userId, 10) + "/docs/[\\w-]+\\.(" + DT.EXT[service].join("|") + ")$");
+  return [...new Set(files.filter((p) => typeof p === "string" && re.test(p)))].slice(0, DT.MAX_FILES[service]);
+}
+
 // Rasmlarni egasiga buyurtma xabariga javob qilib, albom ko'rinishida yuboradi
 async function sendPhotosToOwner(bot, paths, orderId, replyTo) {
   const { data, error } = await supabase.storage.from(BUCKET).createSignedUrls(paths, LINK_TTL);
@@ -282,6 +292,16 @@ module.exports = async (req, res) => {
     const qty = parseInt(fields[QTY_FIELD[body.service]], 10);
     const photos = cleanPhotos(fields.photos, u && u.id, PHOTO_MAX[body.service]);
     const saved = cleanFields({ ...fields, photos });
+    // PDF vositalari: faqat mijozning o'z papkasidagi hujjatlar (<id>/docs/<..>.<ext>)
+    if (DT.TOOLS.includes(body.service)) {
+      saved.files = u ? cleanDocs(fields.files, u.id, body.service) : [];
+      saved.fileNames = (Array.isArray(fields.fileNames) ? fields.fileNames : []).filter((x) => typeof x === "string").slice(0, saved.files.length).map((x) => x.slice(0, 120));
+      fields.topic = saved.fileNames[0] || ""; // Buyurtmalarim ro'yxatida fayl nomi ko'rinadi
+      if (!u || !saved.files.length || (body.service === "pdfmerge" && saved.files.length < 2)) {
+        res.status(400).json({ ok: false, error: !u ? "Ilovani Telegram ichida oching" : body.service === "pdfmerge" ? "Kamida 2 ta PDF yuklang" : "Avval faylni yuklang" });
+        return;
+      }
+    }
     // Manbalar: faqat mijozning o'ziniki, 3 tagacha, jami 100 bet (narxga +5 000)
     const picked = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
       ? await SRC.pick(u.id, saved.sources).catch(() => []) : [];

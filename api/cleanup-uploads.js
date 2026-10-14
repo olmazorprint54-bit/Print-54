@@ -30,7 +30,10 @@ module.exports = async (req, res) => {
       if (folder.id) continue; // ildizda faqat foydalanuvchi papkalari bo'ladi
       const { data: files } = await store.list(folder.name, { limit: 1000 });
       const { data: src } = await store.list(`${folder.name}/src`, { limit: 1000 }); // manbalar (adabiyotlar)
+      const { data: docs } = await store.list(`${folder.name}/docs`, { limit: 1000 }); // PDF vositalari hujjatlari — 1 sutka
+      const docCut = Date.now() - 24 * 60 * 60 * 1000;
       const old = [
+        ...(docs || []).filter((f) => f.id && new Date(f.created_at).getTime() < docCut).map((f) => `${folder.name}/docs/${f.name}`),
         ...(files || []).filter((f) => f.id && new Date(f.created_at).getTime() < cutoff).map((f) => `${folder.name}/${f.name}`),
         ...(src || []).filter((f) => f.id && new Date(f.created_at).getTime() < cutoff).map((f) => `${folder.name}/src/${f.name}`),
       ];

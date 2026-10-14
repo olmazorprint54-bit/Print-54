@@ -350,3 +350,23 @@ body.ai-searching .ai-card.tier-off:not(.hidden){ display:block; }
 body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 .ai-card.is-pro{ position:relative; }
 .ai-card.is-pro::after{ content:"PRO"; position:absolute; top:10px; right:10px; padding:3px 7px; border-radius:999px; font-size:9.5px; font-weight:900; letter-spacing:.04em; color:#fff; background: linear-gradient(135deg, #7C3AED, #EC4899); }
+
+/* ---------- PDF vositalari: fayl yuklash ---------- */
+.fl-list{ display:flex; flex-direction:column; gap:8px; }
+.fl-row{ position:relative; display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:14px; background: var(--glass); border:1px solid var(--glass-border); animation: flIn .25s ease both; }
+.fl-row.err{ border-color:#ef4444; }
+.fl-ic{ font-size:22px; flex:none; }
+.fl-name{ flex:1; min-width:0; font-weight:700; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; }
+.fl-name small{ display:block; font-weight:500; font-size:11.5px; opacity:.65; margin-top:2px; white-space:normal; }
+.fl-bar{ display:block; height:3px; border-radius:3px; background: rgba(127,127,127,.2); margin-top:5px; overflow:hidden; }
+.fl-bar b{ display:block; height:100%; background: var(--accent, #4F46E5); transition: width .2s ease; }
+.fl-x, .fl-mv{ flex:none; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background: rgba(127,127,127,.14); font-size:14px; cursor:pointer; transition: transform .15s ease; }
+.fl-mv{ font-size:10px; }
+.fl-mv[hidden]{ display:grid; visibility:hidden; }
+.fl-x:active, .fl-mv:active{ transform: scale(.88); }
+.fl-add{ display:flex; align-items:center; justify-content:center; gap:8px; padding:14px; border-radius:14px; border:1.5px dashed var(--glass-border); cursor:pointer; font-weight:700; transition: transform .15s ease; }
+.fl-add b{ font-size:20px; line-height:1; }
+.fl-add:active{ transform: scale(.98); }
+.ai-field.error .fl-add{ border-color:#ef4444; }
+@keyframes flIn{ from{ opacity:0; transform: translateY(6px); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion: reduce){ .fl-row{ animation:none; } }
