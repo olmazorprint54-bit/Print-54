@@ -37,6 +37,7 @@
     kurs:      { base: 10000, upTo: 30, field: "pages", fallback: 30, step: 300 },
     resume:    { base: 0 },
     img2pdf:   { base: 0 }, // rasmdan PDF — AI yo'q, tekin
+    pdftools:  { base: 0 }, charstudio: { base: 2500 }, // bo'limlar (hub) kartochkasi uchun narx yozuvi
     char_add:  { base: 2500 }, word2pdf:  { base: 0 }, excel2pdf: { base: 0 }, pptx2pdf: { base: 0 }, pdfmerge: { base: 0 }, pdfsplit: { base: 0 }, pdf2word: { base: 0 }, pdf2pptx: { base: 0 }, // PDF vositalari — tekin
     obyektivka:{ base: 0 },
   };
