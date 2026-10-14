@@ -24,12 +24,11 @@ const { generatePresentation } = require("./_lib/pres-gen");
 const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
 const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI'siz
-const CHARS = require("./_lib/characters"); // «Jonli personaj» (taqdimotga harakatlanuvchi, ovozli personaj)
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 
@@ -135,6 +134,13 @@ async function buildDocTool(order) {
     if (error || !data) throw new DT.UserError("Yuklangan fayl topilmadi (muddati o'tgan bo'lishi mumkin) — qaytadan yuklang.");
     files.push({ name: String(names[i] || paths[i].split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()) });
   }
+  // Jonli personaj: mijozning o'z musiqasi (ixtiyoriy)
+  const mp = Array.isArray(f.music) ? f.music[0] : null;
+  if (order.service === "char_add" && mp && f.sound === "custom") {
+    const { data, error } = await supabase.storage.from(BUCKET).download(mp);
+    if (error || !data) throw new DT.UserError("Yuklangan musiqa topilmadi (muddati o'tgan bo'lishi mumkin) — qaytadan yuklang.");
+    files.push({ name: String((f.musicNames || [])[0] || mp.split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()), role: "music" });
+  }
   return DT.runTool(order.service, files, f, { renderPdf: (html) => renderPdf(html), renderHtmlFile, withPage });
 }
 
@@ -151,8 +157,8 @@ async function failToCustomer(order, reason) {
 }
 async function removeDocs(order) {
   const f = (order && order.details && order.details.fields) || {};
-  if (order && DT.TOOLS.includes(order.service) && Array.isArray(f.files) && f.files.length) {
-    await supabase.storage.from(BUCKET).remove(f.files).catch((e) => console.error(e));
+  if (order && DT.TOOLS.includes(order.service) && ((Array.isArray(f.files) && f.files.length) || (Array.isArray(f.music) && f.music.length))) {
+    await supabase.storage.from(BUCKET).remove([...(f.files || []), ...(f.music || [])]).catch((e) => console.error(e));
   }
 }
 
@@ -393,12 +399,6 @@ module.exports = async (req, res) => {
       const pres = await generatePresentation(fields, await photoUrls(order));
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
-      // 🎬 Jonli personaj: birinchi va oxirgi slaydga (xato bo'lsa — taqdimot personajsiz yuboriladi)
-      if (fields.character && fields.character !== "none") {
-        try {
-          file.buffer = await CHARS.addCharacter(file.buffer, String(fields.character), { sound: String(fields.charSound) !== "off", side: fields.charSide === "left" ? "left" : "right" });
-        } catch (e) { console.error("Personaj qo'shilmadi:", e); }
-      }
     } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
       const doc = await GENERATORS[order.service](fields, { png: (html) => renderPdf(html, "chart") });

@@ -56,7 +56,7 @@ const SERVICE_LABELS = {
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
   img2pdf: "Rasmdan PDF",
-  word2pdf: "Word → PDF", excel2pdf: "Excel → PDF", pptx2pdf: "PowerPoint → PDF", pdfmerge: "PDF birlashtirish", pdfsplit: "PDF ni bo'lish", pdf2word: "PDF → Word", pdf2pptx: "PDF → PowerPoint",
+  char_add: "Jonli personaj", word2pdf: "Word → PDF", excel2pdf: "Excel → PDF", pptx2pdf: "PowerPoint → PDF", pdfmerge: "PDF birlashtirish", pdfsplit: "PDF ni bo'lish", pdf2word: "PDF → Word", pdf2pptx: "PDF → PowerPoint",
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
@@ -194,6 +194,11 @@ function cleanPhotos(photos, userId, max = MAX_PHOTOS) {
   return [...new Set(photos.filter((p) => typeof p === "string" && re.test(p)))].slice(0, max);
 }
 
+function cleanAudio(files, userId) {
+  if (!userId || !Array.isArray(files)) return [];
+  const re = new RegExp("^" + parseInt(userId, 10) + "/docs/[\\w-]+\\.(mp3|m4a|wav)$");
+  return files.filter((p) => typeof p === "string" && re.test(p)).slice(0, 1);
+}
 function cleanDocs(files, userId, service) {
   if (!userId || !Array.isArray(files)) return [];
   const re = new RegExp("^" + parseInt(userId, 10) + "/docs/[\\w-]+\\.(" + DT.EXT[service].join("|") + ")$");
@@ -297,6 +302,12 @@ module.exports = async (req, res) => {
       saved.files = u ? cleanDocs(fields.files, u.id, body.service) : [];
       saved.fileNames = (Array.isArray(fields.fileNames) ? fields.fileNames : []).filter((x) => typeof x === "string").slice(0, saved.files.length).map((x) => x.slice(0, 120));
       fields.topic = saved.fileNames[0] || ""; // Buyurtmalarim ro'yxatida fayl nomi ko'rinadi
+      // Jonli personaj: mijozning o'z musiqasi (faqat «O'z musiqam» tanlansa)
+      if (body.service === "char_add") {
+        saved.music = u && fields.sound === "custom" ? cleanAudio(fields.music, u.id) : [];
+        saved.musicNames = saved.music.length ? (Array.isArray(fields.musicNames) ? fields.musicNames : []).filter((x) => typeof x === "string").slice(0, 1).map((x) => x.slice(0, 120)) : [];
+        if (u && fields.sound === "custom" && !saved.music.length) { res.status(400).json({ ok: false, error: "Musiqa faylini yuklang" }); return; }
+      }
       if (!u || !saved.files.length || (body.service === "pdfmerge" && saved.files.length < 2)) {
         res.status(400).json({ ok: false, error: !u ? "Ilovani Telegram ichida oching" : body.service === "pdfmerge" ? "Kamida 2 ta PDF yuklang" : "Avval faylni yuklang" });
         return;

@@ -102,7 +102,7 @@
   }
   // Umumiy ilovada hali AI bilan avtomatik bo'lmagan xizmatlar — "Tez kunda"
   const soonSet = () => new Set((window.AI_APP || {}).soon || []);
-  const TOOL_IDS = ["word2pdf", "excel2pdf", "pptx2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"]; // PDF vositalari: AI yo'q, tekin
+  const TOOL_IDS = ["char_add", "word2pdf", "excel2pdf", "pptx2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"]; // PDF vositalari: AI yo'q, tekin
   function gridCards() {
     const soon = soonSet();
     const list = [...CFG.services.filter((s) => !soon.has(s.id)), ...CFG.services.filter((s) => soon.has(s.id))].filter((s) => !s.hidden);
@@ -202,6 +202,8 @@
           <div class="ph-grid" data-photos="${f.id}">${photoTiles(svc, f)}</div>
           <input type="file" accept="image/*" multiple hidden data-photo-input="${f.id}">
           <div class="ai-err">Rasmlar hali yuklanmoqda — biroz kuting</div></div>`;
+      case "characters":
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="ch-list" data-chars="${f.id}">${charCards(f, v)}</div></div>`;
       case "files":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}
           <div class="fl-list" data-files="${f.id}">${fileRows(svc, f)}</div>
@@ -276,15 +278,32 @@
     if (current === svc) refreshLive(svc);
   }
 
+  /* ---------- Jonli personajlar: tanlash va ovozini eshitish ---------- */
+  const charList = () => window.AI_CHARACTERS || [];
+  let charAudio = null, charPlaying = null;
+  function charCards(f, v) {
+    return charList().map((c) => `<div class="ch-card${v[f.id] === c.id ? " on" : ""}" data-char-pick="${esc(c.id)}">
+        <img class="ch-pic" src="${esc(c.preview || c.img)}" alt="" loading="lazy">
+        <div class="ch-name">${esc(c.e + " " + c.name)}</div>
+        <button type="button" class="ch-play${charPlaying === c.id ? " on" : ""}" data-char-play="${esc(c.id)}">${charPlaying === c.id ? "⏹ To'xtatish" : "🔊 Eshitish"}</button>
+      </div>`).join("");
+  }
+  function charStop() { if (charAudio) { charAudio.pause(); charAudio = null; } charPlaying = null; }
+  function charRedraw(svc) {
+    root.querySelectorAll("[data-chars]").forEach((box) => { const f = svc.fields.find((x) => x.id === box.dataset.chars); if (f) box.innerHTML = charCards(f, getValues(svc)); });
+  }
+
   /* ---------- PDF vositalari: hujjat yuklash (api/ai-upload.js "doc-part") ---------- */
   const fileState = {}; // xizmat id -> [{ key, name, size, status: "up" | "ok" | "err", pct, path, err }]
-  const filesOf = (svc) => (fileState[svc.id] = fileState[svc.id] || []);
+  const filesOf = (svc, f) => (fileState[svc.id + ":" + f.id] = fileState[svc.id + ":" + f.id] || []);
+  const filesFields = (svc) => svc.fields.filter((x) => x.type === "files");
+  const resetFiles = (svc) => { filesFields(svc).forEach((f) => delete fileState[svc.id + ":" + f.id]); syncFiles(svc); };
   let fileSeq = 0;
   const FL_CHUNK = 2.6 * 1024 * 1024;
-  const flIcon = (n) => ({ pdf: "📕", docx: "📘", pptx: "📙", xlsx: "📗", xls: "📗", xlsm: "📗", csv: "📗" }[String(n).toLowerCase().split(".").pop()] || "📄");
+  const flIcon = (n) => ({ pdf: "📕", docx: "📘", pptx: "📙", xlsx: "📗", xls: "📗", xlsm: "📗", csv: "📗", mp3: "🎵", m4a: "🎵", wav: "🎵" }[String(n).toLowerCase().split(".").pop()] || "📄");
   const flSize = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB");
   function fileRows(svc, f) {
-    const list = filesOf(svc);
+    const list = filesOf(svc, f);
     return list.map((p, i) => `<div class="fl-row ${p.status}" data-fl="${p.key}">
         <span class="fl-ic">${flIcon(p.name)}</span>
         <span class="fl-name">${esc(p.name)}<small>${esc(flSize(p.size))}${p.status === "up" ? " · yuklanmoqda " + p.pct + "%" : p.status === "err" ? " · " + esc(p.err || "yuklanmadi") : " · ✓"}</small>${p.status === "up" ? `<i class="fl-bar"><b style="width:${p.pct}%"></b></i>` : ""}</span>
@@ -293,22 +312,24 @@
       (list.length < f.max ? `<div class="fl-add glass" data-fl-add="${f.id}"><b>+</b><span>${f.max > 1 ? "Fayl qo'shish" : "Fayl tanlash"}</span></div>` : "");
   }
   function syncFiles(svc) {
-    const f = svc.fields.find((x) => x.type === "files");
-    if (!f) return;
-    const ok = filesOf(svc).filter((p) => p.status === "ok");
+    const fl = filesFields(svc);
+    if (!fl.length) return;
     const v = getValues(svc);
-    v[f.id] = ok.map((p) => p.path);
-    v.fileNames = ok.map((p) => p.name);
-    const grid = root.querySelector(`[data-files="${f.id}"]`);
-    if (grid && current === svc) grid.innerHTML = fileRows(svc, f);
-    if (ok.length) {
-      const el = root.querySelector(`.ai-field[data-f="${f.id}"]`); if (el) el.classList.remove("error");
-      const st = document.getElementById("aiStatus"); if (st && /yuklang|yuklanmoqda/i.test(st.textContent)) st.textContent = "";
-    }
+    fl.forEach((f) => {
+      const ok = filesOf(svc, f).filter((p) => p.status === "ok");
+      v[f.id] = ok.map((p) => p.path);
+      v[f.id === "files" ? "fileNames" : f.id + "Names"] = ok.map((p) => p.name);
+      const grid = root.querySelector(`[data-files="${f.id}"]`);
+      if (grid && current === svc) grid.innerHTML = fileRows(svc, f);
+      if (ok.length) {
+        const el = root.querySelector(`.ai-field[data-f="${f.id}"]`); if (el) el.classList.remove("error");
+        const st = document.getElementById("aiStatus"); if (st && /yuklang|yuklanmoqda/i.test(st.textContent)) st.textContent = "";
+      }
+    });
     if (current === svc) refreshLive(svc);
   }
   async function addFiles(svc, f, list) {
-    const st = filesOf(svc);
+    const st = filesOf(svc, f);
     const say = (t) => { const s = document.getElementById("aiStatus"); if (s) s.textContent = t; haptic("warning"); };
     if (!tg || !tg.initData) { say("Fayl yuklash uchun ilovani Telegram ichida oching"); return; }
     for (const file of Array.from(list)) {
@@ -798,7 +819,7 @@
         <div class="ai-card glass${h.open ? "" : " hub-soon"}" data-hub="${svc.id}/${h.id}">
           <div class="ic g-ic" style="background:${h.bg}">${h.e}</div>
           <div class="t">${esc(GL(h.t))}</div>
-          <div class="p">${h.open ? esc(priceText(h.open) === "Tekin" ? GL(["Tekin", "Бесплатно", "Free"]) : priceText(h.open)) : "🔜 " + esc(GL(["Tez kunda", "Скоро", "Coming soon"]))}</div>
+          <div class="p">${h.soon ? "🔜 " + esc(GL(["Tez kunda", "Скоро", "Coming soon"])) : h.open ? esc(priceText(h.open) === "Tekin" ? GL(["Tekin", "Бесплатно", "Free"]) : priceText(h.open)) : "🔜 " + esc(GL(["Tez kunda", "Скоро", "Coming soon"]))}</div>
         </div>`).join("")}</div>`;
     syncBackButton();
     window.scrollTo(0, 0);
@@ -844,6 +865,7 @@
     if (f.type === "switch") return val ? "Ha" : "Yo'q";
     if (f.type === "photos") return val && val.length ? `${val.length} ta rasm` : "";
     if (f.type === "files") return val && val.length ? `${val.length} ta fayl` : "";
+    if (f.type === "characters") { const c = charList().find((x) => x.id === val); return c ? c.e + " " + c.name : String(val || ""); }
     if (f.type === "relatives") return val && val.length ? `${val.length} ta qarindosh` : "";
     if (f.type === "templates") { const t = CFG.templates[f.set].find((x) => x.id === val); return t ? t.name : val; }
     if (f.type === "cards") { const o = f.options.find((x) => x.v === val); return o ? o.l + (o.s && o.s !== "tanlaysiz" ? " · " + o.s : "") : val; }
@@ -914,7 +936,9 @@
     if (TOOL_IDS.includes(svc.id)) {
       const names = v.fileNames || [];
       const rows = [["Xizmat", svc.title], ["Fayl", names.length ? (names.length > 1 ? `${names.length} ta fayl` : names[0]) : "—"],
-        ...svc.fields.filter((x) => x.type === "chips" && shown(svc, v, x.id)).map((x) => [x.label, pick(x.id)]),
+        ...svc.fields.filter((x) => (x.type === "chips" || x.type === "characters") && shown(svc, v, x.id)).map((x) => [x.label, pick(x.id)]),
+        ...(svc.id === "char_add" && v.sound === "custom" && (v.musicNames || [])[0] ? [["Musiqa fayli", v.musicNames[0]]] : []),
+        ...(svc.id === "char_add" && v.where === "custom" && String(v.slideNums || "").trim() ? [["Slaydlar", String(v.slideNums).trim()]] : []),
         ...(svc.id === "pdfsplit" && v.mode !== "each" && String(v.pages || "").trim() ? [["Sahifalar", String(v.pages).trim()]] : []),
         ["Tayyor bo'ladi", "⚡ 10–60 soniyada"]];
       return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
@@ -1111,15 +1135,40 @@
       return;
     }
 
+    const chPlay = e.target.closest("[data-char-play]");
+    if (chPlay) {
+      const c = charList().find((x) => x.id === chPlay.dataset.charPlay);
+      if (charPlaying === (c && c.id)) charStop();
+      else if (c && c.sound) {
+        charStop();
+        charAudio = new Audio(c.sound);
+        charPlaying = c.id;
+        charAudio.onended = () => { charPlaying = null; charAudio = null; charRedraw(current); };
+        charAudio.play().catch(() => { charPlaying = null; charAudio = null; charRedraw(current); });
+        tick();
+      }
+      charRedraw(current);
+      return;
+    }
+    const chPick = e.target.closest("[data-char-pick]");
+    if (chPick) {
+      const fid = chPick.closest("[data-chars]").dataset.chars;
+      v[fid] = chPick.dataset.charPick;
+      tick();
+      charRedraw(current);
+      refreshLive(current);
+      return;
+    }
     const flAdd = e.target.closest("[data-fl-add]");
     if (flAdd) {
       const input = root.querySelector(`[data-file-input="${flAdd.dataset.flAdd}"]`);
       if (input) input.click();
       return;
     }
+    const flField = (el) => { const w = el.closest(".ai-field"); return w && current.fields.find((x) => x.id === w.dataset.f); };
     const flDel = e.target.closest("[data-fl-del]");
     if (flDel) {
-      const list = filesOf(current);
+      const list = filesOf(current, flField(flDel));
       const i = list.findIndex((p) => p.key === flDel.dataset.flDel);
       if (i >= 0) list.splice(i, 1);
       tick();
@@ -1128,7 +1177,7 @@
     }
     const flMv = e.target.closest("[data-fl-up],[data-fl-down]");
     if (flMv) {
-      const list = filesOf(current);
+      const list = filesOf(current, flField(flMv));
       const up = !!flMv.dataset.flUp;
       const i = list.findIndex((p) => p.key === (up ? flMv.dataset.flUp : flMv.dataset.flDown));
       const j = up ? i - 1 : i + 1;
@@ -1245,8 +1294,8 @@
     "nude", "naked", "nsfw", "porn", "\\bsex", "erotic", "topless", "lingerie", "undress", "explicit", "hentai", "boobs", "onlyfans", "18\\s*\\+",
   ].join("|"), "i");
   const isNsfw = (t) => NSFW_RE.test(String(t || "").toLowerCase().replace(/0/g, "o").replace(/3/g, "e").replace(/@/g, "a").replace(/[*_.]/g, ""));
-  const modOn = (svc) => !!svc && (svc.id === "image" || svc.kind === "image" || svc.id === "video" || svc.id === "presentation_ai");
-  const MOD_TEXT_FIELDS = ["prompt", "input", "text", "topic"];
+  const modOn = (svc) => !!svc && (svc.id === "image" || svc.kind === "image" || svc.id === "video" || svc.id === "presentation_ai" || svc.id === "char_make");
+  const MOD_TEXT_FIELDS = ["prompt", "input", "text", "topic", "animal"];
   // ogohlantirish maydon ostida; qaytaradi: birinchi buzilgan maydon yoki null
   function checkNsfw(svc) {
     if (!modOn(svc)) return null;
@@ -1344,6 +1393,7 @@
   function validate(svc, v) {
     let firstBad = null;
     svc.fields.forEach((f) => {
+      if (!shown(svc, v, f.id)) return;
       const el0 = root.querySelector(`.ai-field[data-f="${f.id}"]`);
       if (f.type === "relatives") {
         const bad = validateRelatives(svc, v, f);
@@ -1394,16 +1444,24 @@
       if (bad) bad.classList.add("error");
     }
     // PDF vositalari: fayl(lar) yuklangan bo'lsin
-    const flField = svc.fields.find((x) => x.type === "files");
     let flMsg = "";
-    if (flField) {
+    for (const flField of filesFields(svc)) {
+      if (!shown(svc, v, flField.id)) continue;
       const flEl = root.querySelector(`.ai-field[data-f="${flField.id}"]`);
-      const fl = filesOf(svc);
+      const fl = filesOf(svc, flField);
       const okN = fl.filter((p) => p.status === "ok").length;
       const flErr = (t) => { const er = flEl && flEl.querySelector(".ai-err"); if (er) er.textContent = t; };
-      if (fl.some((p) => p.status === "up")) { flMsg = "Fayl hali yuklanmoqda — biroz kuting."; flErr("Fayl hali yuklanmoqda — biroz kuting"); }
-      else if (okN < (flField.min || 1)) { flMsg = flField.min > 1 ? `Kamida ${flField.min} ta fayl yuklang.` : "Avval faylni yuklang."; flErr(flField.min > 1 ? `Kamida ${flField.min} ta fayl yuklang` : "Fayl yuklang"); }
-      if (flMsg) { if (flEl) flEl.classList.add("error"); bad = bad || flEl; }
+      let m = "";
+      if (fl.some((p) => p.status === "up")) { m = "Fayl hali yuklanmoqda — biroz kuting."; flErr("Fayl hali yuklanmoqda — biroz kuting"); }
+      else if (okN < (flField.min || 1)) { m = flField.min > 1 ? `Kamida ${flField.min} ta fayl yuklang.` : flField.id === "music" ? "Musiqa faylini yuklang." : "Avval faylni yuklang."; flErr(flField.min > 1 ? `Kamida ${flField.min} ta fayl yuklang` : flField.id === "music" ? "Musiqa faylini yuklang" : "Fayl yuklang"); }
+      if (m) { flMsg = flMsg || m; if (flEl) flEl.classList.add("error"); bad = bad || flEl; }
+    }
+    // Jonli personaj: «Boshqa slaydlar» tanlansa — raqamlar yozilsin
+    if (svc.id === "char_add" && v.where === "custom" && !String(v.slideNums || "").trim()) {
+      const se = root.querySelector('.ai-field[data-f="slideNums"]');
+      if (se) { se.classList.add("error"); const er = se.querySelector(".ai-err"); if (er) er.textContent = "Slayd raqamlarini yozing. Masalan: 3, 5-7"; }
+      flMsg = flMsg || "Slayd raqamlarini yozing.";
+      bad = bad || se;
     }
     // PDF ni bo'lish: sahifa raqamlari
     if (svc.id === "pdfsplit" && v.mode !== "each" && !String(v.pages || "").trim()) {
@@ -1530,8 +1588,7 @@
   function renderCardPay(svc, c) {
     photoState[svc.id] = [];
     syncPhotos(svc);
-    fileState[svc.id] = [];
-    syncFiles(svc);
+    resetFiles(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">💳</div>
@@ -1554,8 +1611,7 @@
     if (balance && window.aiBalanceChanged) window.aiBalanceChanged();
     photoState[svc.id] = [];
     syncPhotos(svc);
-    fileState[svc.id] = [];
-    syncFiles(svc);
+    resetFiles(svc);
     root.innerHTML = `
       <div class="ai-done glass">
         <div class="big">✅</div>

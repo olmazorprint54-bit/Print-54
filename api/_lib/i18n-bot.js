@@ -63,6 +63,7 @@ const LABELS = {
   resume: ["Resume / CV", "Резюме / CV", "Résumé / CV"],
   obyektivka: ["Obyektivka", "Объективка", "Obyektivka"],
   img2pdf: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"],
+  char_add: ["Jonli personaj", "Живой персонаж", "Animated character"],
   word2pdf: ["Word → PDF", "Word → PDF", "Word to PDF"],
   excel2pdf: ["Excel → PDF", "Excel → PDF", "Excel to PDF"],
   pptx2pdf: ["PowerPoint → PDF", "PowerPoint → PDF", "PowerPoint to PDF"],

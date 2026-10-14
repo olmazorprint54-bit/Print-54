@@ -41,6 +41,7 @@
     img2pdf: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9.5" cy="12.5" r="1.5"/><path d="m18 17-3.5-3.5L8 20"/></svg>',
     presentation_pro: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m12 6.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4z"/></svg>',
     pdftools: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>',
+    character: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/><path d="M6 5.5 4 3M18 5.5 20 3"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -186,15 +187,6 @@
           { id: "tables", type: "switch", label: "📋 Jadval qo'shilsin", default: false },
           { id: "author", type: "text", label: "Muallif (F.I.Sh)", placeholder: "Birinchi slaydda ko'rsatiladi", max: 120 },
           { id: "extra", type: "textarea", label: "Qo'shimcha talablar (ixtiyoriy)", placeholder: "Masalan: o'qituvchi talabi bo'yicha 5 ta reja bo'lsin, misollar O'zbekiston hayotidan, sodda tilda yozilsin...", max: 1500 },
-          // 🐹 Jonli personaj: birinchi va oxirgi slaydda harakatlanuvchi, ovozli personaj (AI kerak emas)
-          ...(window.AI_CHARACTERS && window.AI_CHARACTERS.length ? (function () {
-            var ids = window.AI_CHARACTERS.map(function (c) { return c.id; }).join("|");
-            return [
-              { id: "character", type: "chips", label: "🎬 Jonli personaj", hint: "Birinchi va oxirgi slaydda harakatlanuvchi personaj paydo bo'ladi (PowerPoint namoyish rejimida — F5 — harakatlanadi va ovoz chiqaradi)", options: [{ v: "none", l: "Yo'q" }].concat(window.AI_CHARACTERS.map(function (c) { return { v: c.id, l: c.e + " " + c.name }; })), default: "none", showIf: "format=pptx" },
-              { id: "charSound", type: "chips", seg: true, label: "Personaj ovozi", options: [{ v: "on", l: "🔊 Ovozli" }, { v: "off", l: "🔇 Ovozsiz" }], default: "on", showIf: "character=" + ids },
-              { id: "charSide", type: "chips", seg: true, label: "Personaj joyi", options: [{ v: "right", l: "O'ng pastda" }, { v: "left", l: "Chap pastda" }], default: "right", showIf: "character=" + ids },
-            ];
-          })() : []),
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pptx", l: "PowerPoint (.pptx)" }, { v: "pdf", l: "PDF" }], default: "pptx" },
           PRINT_FIELD,
         ],
@@ -823,11 +815,38 @@
       C.services.splice(C.services.indexOf(i2p) + 1, 0, hub);
       tools.forEach(function (t) { C.services.push(t); });
     })();
+    // 🎬 Jonli personaj (PRO): taqdimotga harakatlanuvchi, ovozli personaj qo'shish / o'z personajini yaratish
+    (function () {
+      var CH = window.AI_CHARACTERS || [];
+      if (!CH.length) return; // ommaviy repoda personaj fayllari yo'q — bo'lim ko'rinmaydi
+      var G = function (a, b) { return "linear-gradient(135deg," + a + "," + b + ")"; };
+      var add = { id: "char_add", title: "Personaj qo'shish", sub: "Tayyor taqdimotingizga jonli personaj", color: "#F59E0B", icon: ICONS.character, hidden: true, back: "charstudio", fields: [
+        { id: "files", type: "files", label: "Taqdimotingiz (.pptx)", hint: "O'zingiz tayyorlagan PowerPoint fayl · 15 MB gacha", exts: ["pptx"], max: 1, min: 1, required: true, default: [] },
+        { id: "character", type: "characters", label: "Personajni tanlang", hint: "🔊 tugmasini bosib, ovozini eshitib ko'ring", default: CH[0].id },
+        { id: "where", type: "chips", label: "Qaysi slaydga qo'yamiz?", options: [{ v: "last", l: "Oxirgi («Rahmat» slaydi)" }, { v: "first", l: "Birinchi" }, { v: "both", l: "Birinchi va oxirgi" }, { v: "custom", l: "Boshqa slaydlar" }], default: "last" },
+        { id: "slideNums", type: "text", label: "Slayd raqamlari", placeholder: "Masalan: 3, 5-7", hint: "Vergul bilan yozing", max: 60, showIf: "where=custom" },
+        { id: "sound", type: "chips", label: "Musiqa / ovoz", options: [{ v: "char", l: "🔊 Personaj ovozi" }, { v: "custom", l: "🎵 O'z musiqam" }, { v: "none", l: "🔇 Ovozsiz" }], default: "char" },
+        { id: "music", type: "files", label: "Musiqa fayli", hint: "mp3, m4a yoki wav · 15 MB gacha", exts: ["mp3", "m4a", "wav"], max: 1, min: 1, required: true, default: [], showIf: "sound=custom" },
+        { id: "charSize", type: "chips", seg: true, label: "Personaj o'lchami", options: [{ v: "m", l: "O'rta" }, { v: "l", l: "Katta" }, { v: "xl", l: "Juda katta" }], default: "l" },
+        { id: "charSide", type: "chips", seg: true, label: "Joylashuvi", options: [{ v: "right", l: "O'ng pastda" }, { v: "left", l: "Chap pastda" }], default: "right" },
+      ] };
+      var make = { id: "char_make", title: "Personaj yaratish", sub: "Sevimli hayvoningizdan o'z personajingiz", color: "#EC4899", icon: ICONS.character, hidden: true, back: "charstudio", comingSoon: true, fields: [
+        { id: "animal", type: "text", label: "Qaysi hayvon?", placeholder: "Masalan: mushukcha, quyon, panda, kuchukcha", required: true, max: 60 },
+        { id: "photos", type: "photos", label: "Hayvoningiz rasmi (ixtiyoriy)", hint: "Uy hayvoningiz bo'lsa — rasmini yuklang, personaj shunga o'xshaydi", max: 1, default: [] },
+        { id: "style", type: "chips", label: "Uslub", options: [{ v: "3d", l: "3D multfilm" }, { v: "plush", l: "Yumshoq o'yinchoq" }, { v: "real", l: "Realistik" }], default: "3d" },
+        { id: "action", type: "chips", label: "Harakat", options: [{ v: "wave", l: "Salomlashadi" }, { v: "dance", l: "Raqsga tushadi" }, { v: "thanks", l: "Rahmat deydi" }, { v: "joy", l: "Quvonadi" }], default: "dance" },
+      ] };
+      var hub = { id: "charstudio", title: "Jonli personaj", sub: "Taqdimotga raqsga tushuvchi, ovozli personaj", icon: ICONS.character, color: "#F59E0B", fields: [], hubNote: false, hub: [
+        { id: "char_add", e: "🎬", t: ["Taqdimotga personaj qo'shish", "Добавить персонажа в презентацию", "Add a character to a presentation"], open: "char_add", bg: G("#fbbf24", "#d97706") },
+        { id: "char_make", e: "🪄", t: ["Personaj yaratish", "Создать персонажа", "Create a character"], open: "char_make", soon: true, bg: G("#f472b6", "#db2777") },
+      ] };
+      C.services.splice(C.services.indexOf(vid) + 1, 0, hub, add, make);
+    })();
     var tch = C.services.filter(function (s) { return s.id === "teacher"; })[0];
     C.services.splice(C.services.indexOf(tch), 1);
     C.services.splice(C.services.indexOf(vid) + 1, 0, tch);
     // Bosh sahifa bo'limlari: ⭐ Standart (std) · 💎 PRO (pro) · 🆓 Tekin (free)
-    var TIER = { presentation_pro: "pro", presentation_ai: "pro", image: "pro", video: "pro", resume: "free", obyektivka: "free", img2pdf: "free", pdftools: "free" };
+    var TIER = { presentation_pro: "pro", presentation_ai: "pro", image: "pro", video: "pro", resume: "free", obyektivka: "free", img2pdf: "free", pdftools: "free", charstudio: "pro" };
     C.services.forEach(function (s) { s.tier = TIER[s.id] || "std"; });
     C.tiers = [
       { id: "std", e: "⭐", l: "Standart" },

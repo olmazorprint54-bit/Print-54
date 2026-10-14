@@ -115,6 +115,34 @@ tr{page-break-inside:avoid}
 }
 
 /* ---------------------------------------------------------------
+   Jonli personaj: tayyor PPTX ga harakatlanuvchi, ovozli personaj (api/_lib/characters.js)
+   --------------------------------------------------------------- */
+async function charAdd(files, o) {
+  const pp = files.find((f) => f.role !== "music");
+  const music = files.find((f) => f.role === "music");
+  if (!pp) throw E("Taqdimot faylini yuklang.");
+  if (isOle(pp.buffer)) throw E("Bu eski PowerPoint formati (.ppt) yoki parol bilan himoyalangan fayl. PowerPoint'da «Saqlash → .pptx» qilib qayta yuklang.");
+  if (!isZip(pp.buffer)) throw E("Bu PowerPoint (.pptx) fayl emas yoki buzilgan.");
+  const C = require("./characters");
+  if (!C.get(o.character)) throw E("Personajni tanlang.");
+  if (o.sound === "custom" && !music) throw E("Musiqa faylini yuklang yoki «Personaj ovozi» / «Ovozsiz» ni tanlang.");
+  let r;
+  try {
+    r = await C.addCharacter(pp.buffer, o.character, {
+      sound: ["char", "none", "custom"].includes(o.sound) ? o.sound : "char",
+      music: music && music.buffer, musicExt: music ? String(music.name).toLowerCase().split(".").pop() : "mp3",
+      where: ["last", "first", "both", "custom"].includes(o.where) ? o.where : "last",
+      slideText: o.slideNums, side: o.charSide === "left" ? "left" : "right", size: ["m", "l", "xl"].includes(o.charSize) ? o.charSize : "l",
+    });
+  } catch (e) {
+    if (e && e.user) throw E(e.message);
+    console.error("Personaj qo'shish:", e);
+    throw E("Personajni qo'shib bo'lmadi: taqdimot fayli buzilgan bo'lishi mumkin.");
+  }
+  return { buffer: r.buffer, name: baseOf(pp.name, "taqdimot") + "-personajli.pptx", mime: MIME.pptx };
+}
+
+/* ---------------------------------------------------------------
    PowerPoint -> PDF (api/_lib/pptx-render.js: slaydlar HTML ga, Chrome PDF qiladi)
    --------------------------------------------------------------- */
 async function pptxToPdf(file, o, { renderHtmlFile }) {
@@ -402,6 +430,7 @@ async function runTool(service, files, options, deps) {
   const o = options || {};
   if (!files.length) throw E("Fayl topilmadi — qaytadan yuklang.");
   switch (service) {
+    case "char_add": return charAdd(files, o);
     case "word2pdf": return wordToPdf(files[0], o, deps);
     case "excel2pdf": return excelToPdf(files[0], o, deps);
     case "pptx2pdf": return pptxToPdf(files[0], o, deps);

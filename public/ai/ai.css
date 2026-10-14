@@ -370,3 +370,14 @@ body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 .ai-field.error .fl-add{ border-color:#ef4444; }
 @keyframes flIn{ from{ opacity:0; transform: translateY(6px); } to{ opacity:1; transform:none; } }
 @media (prefers-reduced-motion: reduce){ .fl-row{ animation:none; } }
+
+/* ---------- Jonli personaj: tanlash kartochkalari ---------- */
+.ch-list{ display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:10px; }
+.ch-card{ display:flex; flex-direction:column; align-items:center; gap:6px; padding:12px 10px; border-radius:18px; background: var(--glass); border:2px solid var(--glass-border); cursor:pointer; transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease; }
+.ch-card:active{ transform: scale(.97); }
+.ch-card.on{ border-color: var(--accent, #4F46E5); box-shadow: 0 8px 20px -10px var(--accent, #4F46E5); }
+.ch-pic{ width:120px; height:130px; object-fit:contain; border-radius:12px; background: repeating-conic-gradient(rgba(127,127,127,.10) 0 25%, transparent 0 50%) 0 0 / 16px 16px; }
+.ch-name{ font-weight:800; font-size:14px; }
+.ch-play{ border:none; border-radius:999px; padding:7px 14px; font: 700 12.5px/1 inherit; font-family:inherit; color:#fff; background: linear-gradient(135deg,#fbbf24,#d97706); cursor:pointer; transition: transform .15s ease; }
+.ch-play:active{ transform: scale(.94); }
+.ch-play.on{ background: linear-gradient(135deg,#ef4444,#b91c1c); }
