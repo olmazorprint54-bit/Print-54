@@ -459,6 +459,11 @@
         // ✨ Aqlli umumiy shablonlar (api/_lib/smart-gen.js): AI slayd turini mazmunga qarab tanlaydi —
         // vaqt chizig'i, haqiqiy diagramma va jadval, taqqoslash... "ai-dizayn" — rang uslubini ham AI tanlaydi
         { id: "ai-dizayn", name: "✨ AI dizayn (o'zi tanlaydi)", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        // 📷 Premium: butun slayd mavzuga mos rasm ustida (rasm fon + shisha kartalar)
+        { id: "p-kok", name: "📷 Premium · Tungi ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "p-zumrad", name: "📷 Premium · Zumrad", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "p-oltin", name: "📷 Premium · Qora-oltin", kind: "canva", category: "umumiy", pages: 7, auto: true },
+        { id: "p-qizil", name: "📷 Premium · Olov", kind: "canva", category: "umumiy", pages: 7, auto: true },
         { id: "s-minimal", name: "Oq-ko'k minimal", kind: "canva", category: "umumiy", pages: 7, auto: true },
         { id: "s-tun", name: "Tungi koinot", kind: "canva", category: "umumiy", pages: 7, auto: true },
         { id: "s-yashil", name: "Yashil tabiat", kind: "canva", category: "umumiy", pages: 7, auto: true },

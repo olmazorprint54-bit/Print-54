@@ -29,8 +29,13 @@ const THEMES = {
   "s-pastel": { name: "Pastel (bolalar)", bg: "FFF7ED", title: "BE185D", text: "4B5563", accent: "8B5CF6", card: "FCE7F3", dark: "6D28D9", font: "Segoe UI", hint: "kids, primary school, kindergarten" },
   "s-texno": { name: "Texno", bg: "F8FAFC", title: "1E1B4B", text: "334155", accent: "7C3AED", card: "EDE9FE", dark: "1E1B4B", font: "Segoe UI", hint: "IT, programming, AI, innovation" },
   "s-tibbiy": { name: "Tibbiyot", bg: "F0F9FF", title: "0C4A6E", text: "334155", accent: "0EA5E9", card: "E0F2FE", dark: "0C4A6E", font: "Calibri", hint: "medicine, anatomy, chemistry, health" },
+  // 📷 Premium: butun slayd mavzuga mos rasm ustida, qoraytirilgan qatlam va shisha kartalar bilan
+  "p-kok": { photo: true, name: "Premium · Tungi ko'k", bg: "0A1226", overlay: "050B1C", title: "FFFFFF", text: "E2E8F0", accent: "38BDF8", card: "0B1630", dark: "0B1630", font: "Calibri", hint: "PHOTO background: medicine, science, technology, space, modern" },
+  "p-zumrad": { photo: true, name: "Premium · Zumrad", bg: "06201C", overlay: "03130F", title: "FFFFFF", text: "E2F5EE", accent: "2DD4BF", card: "06231F", dark: "06231F", font: "Calibri", hint: "PHOTO background: nature, ecology, biology, health, agriculture" },
+  "p-oltin": { photo: true, name: "Premium · Qora-oltin", bg: "0E0E0E", overlay: "050505", title: "FFFFFF", text: "E7E5E4", accent: "E0B84F", card: "161412", dark: "161412", font: "Georgia", hint: "PHOTO background: history, economics, law, architecture, culture" },
+  "p-qizil": { photo: true, name: "Premium · Olov", bg: "1A0A0F", overlay: "10050A", title: "FFFFFF", text: "FDE8EC", accent: "FB5C7C", card: "240D14", dark: "240D14", font: "Calibri", hint: "PHOTO background: sport, energy, geography, war, dynamic topics" },
 };
-const SMART_IDS = ["ai-dizayn", ...Object.keys(THEMES)];
+const SMART_IDS =["ai-dizayn", ...Object.keys(THEMES)];
 const isSmart = (id) => SMART_IDS.includes(id);
 
 const TYPES = {
@@ -76,7 +81,8 @@ async function writeSmart(d) {
     required: ["theme", "slides"],
     additionalProperties: false,
   };
-  const themeList = Object.entries(THEMES).map(([id, t]) => `${id} — ${t.name} (${t.hint})`).join("\n");
+  // "✨ AI dizayn" rasm-fonli Premium mavzularni o'zi tanlamaydi (ular mijoz tanlovi bilan ishlaydi)
+  const themeList = Object.entries(THEMES).filter(([, t]) => !t.photo).map(([id, t]) => `${id} — ${t.name} (${t.hint})`).join("\n");
   return askJson({
     model: MODEL(), effort: "medium", maxTokens: 32000, schema,
     system: `You create school and university presentations for students and teachers in Uzbekistan, like a professional presentation designer.
@@ -94,7 +100,8 @@ ${d.theme ? `Theme: ${d.theme} (fixed)` : `Choose the most suitable theme:\n${th
 ${d.charts ? "Include at least one chart slide with real data.\n" : ""}${d.tables ? "Include at least one table slide.\n" : ""}
 Slide types (fields):
 ${Object.entries(TYPES).map(([k, v]) => `- ${k}: ${v}`).join("\n")}
-For title and text_image slides give "image_query": 2–5 English words for a stock photo; otherwise "".`,
+For title and text_image slides give "image_query": 2–5 English words for a stock photo; otherwise "".
+Themes marked PHOTO (ids starting with p-) put a full-slide photo behind EVERY slide: for them give "image_query" on EVERY slide — 2–5 English words describing a real, cinematic, text-free photo scene that fits the slide (e.g. "doctor examining patient hospital", "heart anatomy model"), and keep texts short (one idea per slide, ≤3–4 items).`,
   });
 }
 
@@ -152,11 +159,24 @@ function renderSmart(data, d, images) {
     text = shorten(text, o.w, o.h, size, o.bold);
     s.addText(text, { x: o.x, y: o.y, w: o.w, h: o.h, fontFace: F, fontSize: size, color: o.color || T.text, bold: !!o.bold, italic: !!o.italic, align: o.align || "left", valign: o.valign || "top", margin: 0, paraSpaceAfter: o.gap || 0, lineSpacingMultiple: 1.05 });
   };
+  const PH = !!T.photo;
   const heading = (s, title) => {
-    txt(s, clean(title, 90), { x: 0.6, y: 0.42, w: SW - 1.2, h: 0.85, max: 30, min: 18, bold: true, color: T.title, valign: "bottom" });
+    const t = PH ? clean(title, 90).toLocaleUpperCase() : clean(title, 90);
+    txt(s, t, { x: 0.6, y: 0.42, w: PH ? 9.6 : SW - 1.2, h: 0.85, max: PH ? 32 : 30, min: 18, bold: true, color: T.title, valign: "bottom" });
     s.addShape(P.ShapeType.rect, { x: 0.6, y: 1.36, w: 0.7, h: 0.06, fill: { color: T.accent }, line: { color: T.accent } });
   };
-  const card = (s, x, y, w, h, fill) => s.addShape(P.ShapeType.roundRect, { x, y, w, h, rectRadius: 0.08, fill: { color: fill || T.card }, line: { color: fill || T.card } });
+  // Photo mavzu: shisha (yarim shaffof) karta; oddiy mavzu: tekis karta
+  const card = (s, x, y, w, h, fill) => PH
+    ? s.addShape(P.ShapeType.roundRect, { x, y, w, h, rectRadius: 0.1, fill: { color: fill || T.card, transparency: 22 }, line: { color: "FFFFFF", transparency: 78, width: 0.75 } })
+    : s.addShape(P.ShapeType.roundRect, { x, y, w, h, rectRadius: 0.08, fill: { color: fill || T.card }, line: { color: fill || T.card } });
+  // Photo mavzu: slayd foni — rasm + chapdan o'ngga yumshoq qorayish (matn o'qilishi uchun)
+  const paintPhoto = (s, img, strong) => {
+    if (img) addCover(s, img, 0, 0, SW, SH);
+    s.addShape(P.ShapeType.rect, { x: 0, y: 0, w: SW, h: SH, fill: { color: T.overlay, transparency: img ? (strong ? 38 : 50) : 0 }, line: { color: T.overlay, transparency: 100 } });
+    if (!img) return;
+    for (let k = 0; k < 20; k++) s.addShape(P.ShapeType.rect, { x: 0, y: 0, w: 10.5 - k * 0.5, h: SH, fill: { color: T.overlay, transparency: 93 }, line: { color: T.overlay, transparency: 100 } });
+  };
+  const CW = PH ? 7.9 : SW - 1.2; // photo mavzuda kontent chap qismda, o'ngda rasm ko'rinib turadi
   const dark = (c) => parseInt(c.slice(0, 2), 16) * 0.3 + parseInt(c.slice(2, 4), 16) * 0.59 + parseInt(c.slice(4, 6), 16) * 0.11 < 128;
   const onDark = "FFFFFF";
   let imgIdx = 0;
@@ -167,7 +187,16 @@ function renderSmart(data, d, images) {
     s.background = { color: T.bg };
     const items = (sl.items || []).filter((it) => clean(it.title) || clean(it.text));
     const type = sl.type;
+    if (PH) paintPhoto(s, images[i] || null, type === "title" || i === 0 || type === "thanks" || type === "quote");
 
+    if (PH && (type === "title" || i === 0)) {
+      if (clean(d.subject, 60)) txt(s, clean(d.subject, 60).toLocaleUpperCase(), { x: 0.9, y: 1.9, w: 8.4, h: 0.4, max: 14, min: 11, bold: true, color: T.accent });
+      txt(s, clean(sl.title || d.topic, 120).toLocaleUpperCase(), { x: 0.9, y: 2.4, w: 8.6, h: 2.4, max: 44, min: 24, bold: true, color: T.title, valign: "top" });
+      s.addShape(P.ShapeType.rect, { x: 0.9, y: 5.0, w: 0.9, h: 0.07, fill: { color: T.accent }, line: { color: T.accent } });
+      txt(s, clean(sl.subtitle || sl.text, 200), { x: 0.9, y: 5.25, w: 7.6, h: 0.9, max: 18, min: 12 });
+      if (d.author) txt(s, d.author, { x: 0.9, y: 6.6, w: 7.6, h: 0.4, max: 13, min: 10, color: T.accent, bold: true });
+      return;
+    }
     if (type === "title" || i === 0) {
       const img = nextImage();
       const tx = img ? 5.6 : 0.9;
@@ -190,8 +219,8 @@ function renderSmart(data, d, images) {
     const top = 1.65;
 
     if (type === "agenda") {
-      const n = Math.min(6, items.length), cols = n > 3 ? 2 : 1, rows = Math.ceil(n / cols);
-      const cw = (SW - 1.2 - (cols - 1) * 0.5) / cols, rh = Math.min(1.6, (SH - top - 0.5) / rows);
+      const n = Math.min(6, items.length), cols = n > 3 && !PH ? 2 : 1, rows = Math.ceil(n / cols);
+      const cw = (CW - (cols - 1) * 0.5) / cols, rh = Math.min(1.6, (SH - top - 0.5) / rows);
       items.slice(0, n).forEach((it, k) => {
         const x = 0.6 + (k % cols) * (cw + 0.5), y = top + 0.15 + Math.floor(k / cols) * rh;
         s.addShape(P.ShapeType.line, { x, y, w: cw, h: 0, line: { color: T.accent, width: 1.5 } });
@@ -201,7 +230,7 @@ function renderSmart(data, d, images) {
       });
     } else if (type === "bullets" || type === "conclusion") {
       const hasBox = type === "conclusion" && clean(sl.highlight);
-      const lw = hasBox ? 7.4 : SW - 1.2;
+      const lw = hasBox ? 7.4 : CW;
       let y = top;
       if (intro) { txt(s, intro, { x: 0.6, y, w: lw, h: 0.8, max: 19, min: 12 }); y += 0.95; }
       const n = Math.min(5, items.length), rh = (SH - y - 0.4) / Math.max(n, 1);
@@ -217,6 +246,17 @@ function renderSmart(data, d, images) {
         txt(s, clean(sl.highlight, 300), { x: 8.75, y: top + 1.4, w: SW - 9.7, h: 2.6, max: 17, min: 11, color: onDark });
       }
     } else if (type === "text_image") {
+      if (PH) {
+        const body = intro || items.map((it) => `${it.title}. ${it.text}`).join("\n");
+        const bw = CW - 0.7, bh = SH - top - 1.2;
+        const pt = fit(body, bw, bh, 20, 12);
+        const cpl = Math.max(4, (bw * 72) / (pt * 0.5));
+        const lines = body.split("\n").reduce((n, p) => n + Math.max(1, Math.ceil(p.length / cpl)), 0);
+        const ch = Math.min(SH - top - 0.55, (lines * pt * 1.3) / 72 + 0.6 + body.split("\n").length * 0.12);
+        card(s, 0.6, top, CW, ch);
+        txt(s, body, { x: 0.95, y: top + 0.3, w: bw, h: ch - 0.5, max: 20, min: 12, gap: 8 });
+        return;
+      }
       const img = nextImage();
       const tw = img ? 6.9 : SW - 1.2;
       txt(s, intro || items.map((it) => `${it.title}. ${it.text}`).join("\n"), { x: 0.6, y: top, w: tw, h: SH - top - 0.5, max: 18, min: 11, gap: 6 });
@@ -224,7 +264,7 @@ function renderSmart(data, d, images) {
     } else if (type === "comparison") {
       let y = top;
       if (intro) { txt(s, intro, { x: 0.6, y, w: SW - 1.2, h: 0.6, max: 18, min: 12 }); y += 0.75; }
-      const cw = (SW - 1.2 - 0.4) / 2, ch = SH - y - 0.45;
+      const cw = (SW - 1.2 - 0.4) / 2, ch = PH ? Math.min(4.3, SH - y - 0.45) : SH - y - 0.45;
       [[sl.left, T.card, T.title, T.text], [sl.right, T.dark, onDark, onDark]].forEach(([side, fill, tc, xc], k) => {
         const x = 0.6 + k * (cw + 0.4);
         card(s, x, y, cw, ch, fill);
@@ -248,6 +288,7 @@ function renderSmart(data, d, images) {
       const labels = (c.labels || []).map((l) => clean(l, 30)).slice(0, 8);
       const values = (c.values || []).map(Number).filter((v) => Number.isFinite(v)).slice(0, labels.length);
       if (labels.length >= 2 && values.length === labels.length) {
+        if (PH) card(s, 0.45, top, 7.9, SH - top - 0.45);
         const kind = { line: P.ChartType.line, bar: P.ChartType.bar, pie: P.ChartType.pie }[c.kind] || P.ChartType.bar;
         const pal = [T.accent, T.dark, T.title, "94A3B8", "F59E0B", "10B981", "EF4444", "8B5CF6"];
         s.addChart(kind, [{ name: clean(c.name, 60) || "", labels, values }], {
@@ -258,7 +299,8 @@ function renderSmart(data, d, images) {
           valGridLine: { color: dark(T.bg) ? "334155" : "E2E8F0", size: 0.5 }, catGridLine: { style: "none" },
           showTitle: !!clean(c.name), title: clean(c.name, 60), titleColor: T.text, titleFontSize: 12,
         });
-        txt(s, intro, { x: 8.6, y: top + 0.2, w: SW - 9.2, h: SH - top - 0.6, max: 18, min: 11, gap: 6 });
+        if (PH) card(s, 8.6, top, SW - 9.05, 2.6);
+        txt(s, intro, { x: PH ? 8.9 : 8.6, y: PH ? top + 0.3 : top + 0.2, w: PH ? SW - 9.65 : SW - 9.2, h: PH ? 2.0 : SH - top - 0.6, max: 18, min: 11, gap: 6 });
       } else {
         txt(s, intro, { x: 0.6, y: top, w: SW - 1.2, h: SH - top - 0.5, max: 18, min: 11 });
       }
@@ -317,13 +359,29 @@ async function generateSmart(f, photoBuffers, photoFinder) {
   data.slides = (data.slides || []).slice(0, d.count);
   if (!data.slides.length) throw new Error("AI slaydlarni yozmadi");
   // rasmlar: titul va "matn + rasm" slaydlari uchun (avval mijoz rasmlari)
-  const need = data.slides.filter((s, i) => i === 0 || s.type === "title" || s.type === "text_image");
   const images = [];
   const own = photoBuffers.slice();
-  for (const s of need) {
-    let buf = own.shift() || null;
-    if (!buf && d.images) buf = await photoFinder(clean(s.image_query, 80) || d.topic).catch(() => null);
-    images.push(buf ? toImage(buf) : null);
+  if (THEMES[data.theme] && THEMES[data.theme].photo) {
+    // Premium: HAR BIR slayd uchun fon rasmi (images[i] — i-slayd foni); 4 tadan parallel
+    const bufs = new Array(data.slides.length).fill(null);
+    let next = 0;
+    const worker = async () => {
+      while (next < data.slides.length) {
+        const i = next++, s = data.slides[i];
+        let buf = own.shift() || null;
+        if (!buf && d.images) buf = await photoFinder(clean(s.image_query, 80) || d.topic).catch(() => null);
+        bufs[i] = buf;
+      }
+    };
+    await Promise.all([worker(), worker(), worker(), worker()]);
+    bufs.forEach((b, i) => { images[i] = b ? toImage(b) : null; });
+  } else {
+    const need = data.slides.filter((s, i) => i === 0 || s.type === "title" || s.type === "text_image");
+    for (const s of need) {
+      let buf = own.shift() || null;
+      if (!buf && d.images) buf = await photoFinder(clean(s.image_query, 80) || d.topic).catch(() => null);
+      images.push(buf ? toImage(buf) : null);
+    }
   }
   const buffer = await renderSmart(data, d, images);
   return { buffer, name: `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90), ai: r, theme: data.theme };
