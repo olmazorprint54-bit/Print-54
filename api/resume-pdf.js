@@ -31,11 +31,11 @@ const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI's
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
-  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
+  img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", presentation_pro: "Super taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 // Egaga nusxa keladigan xizmatlar (AI yozgan ishlar)
-const COPY_TO_OWNER = new Set(["presentation", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword"]);
+const COPY_TO_OWNER = new Set(["presentation", "presentation_pro", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword"]);
 const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
@@ -209,6 +209,7 @@ async function sendQuiz(order, t) {
 
 const costTitle = (s, f) => ({
   presentation: `Taqdimot — ${f.slides || 10} slayd${f.photos && f.photos.length ? `, ${f.photos.length} ta o'z rasmi` : ""}`,
+  presentation_pro: `💎 Super taqdimot (${f.template || ""}) — ${f.slides || 10} slayd${f.photos && f.photos.length ? `, ${f.photos.length} ta o'z rasmi` : ""}`,
   test: `Test — ${f.count || 20} savol, ${f.variants || 1} variant`,
   essay: `Mustaqil ish — ${f.pages || 12} bet`,
   kurs: `Kurs ishi — ${f.pages || 30} bet`,
@@ -465,7 +466,7 @@ module.exports = async (req, res) => {
     } else if (order.service === "img2pdf") {
       // AI yo'q — rasmlardan PDF to'liq kodda
       file = await buildImgPdf(order);
-    } else if (order.service === "presentation") {
+    } else if (order.service === "presentation" || order.service === "presentation_pro") {
       // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
       const pres = await generatePresentation(fields, await photoUrls(order));
       ai = pres.ai;

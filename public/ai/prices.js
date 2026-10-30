@@ -15,7 +15,7 @@
   // (AI ularni o'qiydi): [shu betgacha, narx]
   var SOURCE_TIERS = [[10, 500], [15, 750], [25, 1200], [Infinity, 1500]];
   var SOURCE_FEE = SOURCE_TIERS[0][1]; // eng kami ("+500 so'mdan")
-  var SOURCE_SERVICES = ["essay", "kurs", "referat", "article", "presentation", "test", "questions", "lesson"];
+  var SOURCE_SERVICES = ["essay", "kurs", "referat", "article", "presentation", "presentation_pro", "test", "questions", "lesson"];
   var num = function (v, d) { var n = parseInt(v, 10); return isFinite(n) && n > 0 ? n : d; };
 
   function sourceFee(pages) {
@@ -27,6 +27,7 @@
   // base — shu hajmgacha (upTo); undan keyin har bir birlik uchun step
   var TABLE = {
     presentation: { base: 3500, upTo: 10, field: "slides", fallback: 10, step: 300 },
+    presentation_pro: { base: 7000, upTo: 10, field: "slides", fallback: 10, step: 500 }, // 💎 Morph animatsiyali shablonlar (15 slaydgacha)
     test:      { base: 2500, upTo: 30, field: "count", fallback: 20, step: 30 },
     questions: { base: 2500, upTo: 30, field: "count", fallback: 15, step: 30 },
     crossword: { base: 3500 },
@@ -67,7 +68,7 @@
 
   // Narxlar ro'yxati: botdagi "💲 Narxlar" va ilova profili uchun
   var LIST = [
-    ["presentation", "📊", "Taqdimot", "slayd"], ["referat", "📄", "Referat", "bet"], ["essay", "📝", "Mustaqil ish", "bet"],
+    ["presentation", "📊", "Taqdimot", "slayd"], ["presentation_pro", "💎", "Super taqdimot", "slayd"], ["referat", "📄", "Referat", "bet"], ["essay", "📝", "Mustaqil ish", "bet"],
     ["kurs", "🎓", "Kurs ishi", "bet"], ["article", "📰", "Maqola", "bet"], ["test", "✅", "Test tuzish", "savol"],
     ["questions", "❓", "Savollar tuzish", "savol"], ["crossword", "🧩", "Krossvord", ""], ["lesson", "👩‍🏫", "Dars ishlanma", ""],
   ];

@@ -32,7 +32,9 @@ const AUTO = {
   resume: canAutoResume, obyektivka: canAutoObyektivka, test: canAutoTest,
   essay: (f) => canAutoDoc("essay", f), kurs: (f) => canAutoDoc("kurs", f), referat: (f) => canAutoDoc("referat", f), article: (f) => canAutoDoc("article", f), lesson: (f) => canAutoDoc("lesson", f),
   questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
-  presentation: canAutoPres,
+  // PRO (Morph) shablonlar faqat Super taqdimotda; oddiy taqdimotda — oddiy shablonlar
+  presentation: (f) => !/^pro-/.test(f.template || "") && canAutoPres(f),
+  presentation_pro: (f) => /^pro-/.test(f.template || "") && (parseInt(f.slides, 10) || 10) <= 15 && canAutoPres(f),
   img2pdf: (f) => Array.isArray(f.photos) && f.photos.length > 0, // AI'siz, kod bilan PDF
 };
 // PDF vositalari (AI'siz): yuklangan fayllar bo'lsa — avtomatik (api/_lib/doc-tools.js)
@@ -45,6 +47,7 @@ const supabase = require("./_lib/db");
 
 const SERVICE_LABELS = {
   presentation: "Taqdimot",
+  presentation_pro: "Super taqdimot",
   essay: "Mustaqil ish",
   kurs: "Kurs ishi",
   referat: "Referat",
@@ -60,7 +63,7 @@ const SERVICE_LABELS = {
 };
 
 // Har bir xizmatning "hajm" maydoni (orders.qty ga yoziladi)
-const QTY_FIELD = { presentation: "slides", essay: "pages", kurs: "pages", referat: "pages", article: "pages", test: "count", questions: "count", crossword: "words" };
+const QTY_FIELD = { presentation: "slides", presentation_pro: "slides", essay: "pages", kurs: "pages", referat: "pages", article: "pages", test: "count", questions: "count", crossword: "words" };
 
 const BUCKET = "ai-uploads"; // mijoz rasmlari (api/ai-upload.js)
 const MAX_PHOTOS = 10;

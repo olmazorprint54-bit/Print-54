@@ -22,7 +22,7 @@ const MAX_FILES = 3;        // bitta buyurtmaga
 const MAX_PAGES = 100;      // jami (taxminiy)
 const MAX_BYTES = 20 * 1024 * 1024; // bitta fayl (Telegram ham 20 MB gacha beradi)
 const KEEP = 10;            // mijozda saqlanadigan eng ko'p manba
-const SERVICES = ["essay", "kurs", "referat", "article", "presentation", "test", "questions", "lesson"];
+const SERVICES = ["essay", "kurs", "referat", "article", "presentation", "presentation_pro", "test", "questions", "lesson"];
 
 const KINDS = { pdf: "pdf", docx: "docx", txt: "txt", jpg: "image", jpeg: "image", png: "image", webp: "image" };
 const MIME = { pdf: "application/pdf", jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };

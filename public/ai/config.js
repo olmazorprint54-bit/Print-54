@@ -751,8 +751,21 @@
     var svc = { id: "presentation_ai", title: "Rasmli taqdimot", sub: "Har slaydga AI chizgan rasm", icon: ICONS.presentation_ai, color: "#A78BFA", comingSoon: true, fields: fields };
     C.services.splice(C.services.indexOf(pres) + 1, 0, svc);
     // 🚀 Super taqdimot (PRO): eng kuchli model, boyroq dizayn, AI rasmlar va infografika — tez kunda
-    var proFields = pres.fields.map(function (f) { var o = {}; for (var k in f) o[k] = f[k]; return o; });
-    var superSvc = { id: "presentation_pro", title: "Super taqdimot", sub: "Eng kuchli AI, boy dizayn va infografika", icon: ICONS.presentation_pro, color: "#F59E0B", comingSoon: true, fields: proFields };
+    // Morph animatsiyali premium shablonlar (api/_lib/pres/pro-*.json, qat'iy tartib — 15 slaydgacha)
+    var proFields = pres.fields
+      .filter(function (f) { return ["design", "charts", "tables", "format"].indexOf(f.id) < 0; })
+      .map(function (f) {
+        var o = {}; for (var k in f) o[k] = f[k];
+        if (o.id === "template") { o.set = "presentation_pro"; o.default = "pro-kok"; o.label = "Animatsiyali dizayn"; delete o.showIf; }
+        if (o.id === "slides") { o.max = 15; o.placeholder = "3 dan 15 gacha"; o.hint = "Animatsiyali shablonlar — 15 slaydgacha"; }
+        return o;
+      });
+    var superSvc = { id: "presentation_pro", title: "Super taqdimot", sub: "Morph animatsiyali premium dizayn", icon: ICONS.presentation_pro, color: "#F59E0B", fields: proFields };
+    C.templates.presentation_pro = [
+      { id: "pro-kok", name: "💎 Steel Blue · aylanuvchi g'ildirak", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-qizil", name: "💎 Red Forge · bo'limli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yashil", name: "💎 Green Signal · kartalar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+    ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
     var img = C.services.filter(function (s) { return s.id === "image"; })[0];

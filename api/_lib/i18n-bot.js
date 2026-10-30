@@ -52,6 +52,7 @@ const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 // Xizmat nomlari
 const LABELS = {
   presentation: ["Taqdimot", "Презентация", "Presentation"],
+  presentation_pro: ["Super taqdimot", "Супер-презентация", "Super presentation"],
   essay: ["Mustaqil ish", "Самостоятельная работа", "Independent work"],
   kurs: ["Kurs ishi", "Курсовая работа", "Coursework"],
   referat: ["Referat", "Реферат", "Report"],
