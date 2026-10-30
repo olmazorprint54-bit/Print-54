@@ -301,7 +301,7 @@
   }
   function charStop() { if (charAudio) { charAudio.pause(); charAudio = null; } charPlaying = null; }
   function charRedraw(svc) {
-    root.querySelectorAll("[data-chars]").forEach((box) => { const f = svc.fields.find((x) => x.id === box.dataset.chars); if (f) box.innerHTML = charCards(f, getValues(svc)); });
+    root.querySelectorAll("[data-chars]").forEach((box) => { const f = svc.fields.find((x) => x.id === box.dataset.chars); if (f) { const sl = box.scrollLeft; box.innerHTML = charCards(f, getValues(svc)); box.scrollLeft = sl; } }); // gorizontal ro'yxat joyida qoladi
   }
 
   /* ---------- PDF vositalari: hujjat yuklash (api/ai-upload.js "doc-part") ---------- */
@@ -917,7 +917,9 @@
     const t = CFG.templates.presentation.find((x) => x.id === v.template);
     return !!(t && t.auto && v.format !== "pdf" && (parseInt(v.slides, 10) || 10) <= 30);
   };
-  const isAuto = (svc, v) => svc.id === "obyektivka" || svc.id === "img2pdf" || TOOL_IDS.includes(svc.id) || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
+  // Super taqdimot: Morph shablonlari (pro-*), 15 slaydgacha
+  const isAutoPro = (v) => !!(CFG.templates.presentation_pro || []).find((x) => x.id === v.template && x.auto) && (parseInt(v.slides, 10) || 10) <= 15;
+  const isAuto = (svc, v) => svc.id === "obyektivka" || svc.id === "img2pdf" || TOOL_IDS.includes(svc.id) || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : svc.id === "presentation_pro" ? isAutoPro(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
   // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
   const orderPrice = (svc, v) => {
     const p = PR && PR.priceOf(svc.id, { ...v, sourcePages: srcPages(v) });

@@ -315,6 +315,7 @@ async function handleBroadcast(msg) {
 // buyurtmaga biriktiriladi va mijozga bot orqali yuboriladi.
 const AI_LABELS = {
   presentation: "Taqdimot",
+  presentation_pro: "Super taqdimot",
   essay: "Mustaqil ish",
   kurs: "Kurs ishi",
   referat: "Referat",

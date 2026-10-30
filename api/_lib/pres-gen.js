@@ -90,7 +90,66 @@ const SYSTEM = `You create school and university presentations for students and 
 - TEXT slots: short complete sentences or list items separated by \\n. TITLE: short heading. LABEL: 1–4 words.
 - No markdown, no emojis, no numbering prefixes unless the slot is a list.`;
 
+/* PRO (Morph) shablonlar: slaydlar QAT'IY TARTIBDA (spec.sequence) — Morph o'tishlari va effektlar
+   ketma-ket slaydlardagi juft obyektlarga bog'langan, shuning uchun ko'rinishlar aralashtirilmaydi.
+   Kamroq slayd so'ralsa — boshidan N-1 tasi + oxirgi ("Rahmat"). Ekrandan tashqaridagi (off) yozuvlar
+   AI'ga berilmaydi: ular ekrandagi juftidan nusxalanadi (copy: [slayd, id]) — tools/pptx-shablon post.js. */
+function sequenceOf(spec, count) {
+  const all = spec.slides;
+  const pick = count >= all.length ? all : [...all.slice(0, Math.max(1, count - 1)), all[all.length - 1]];
+  return pick.map((s) => ({ ...s, editable: s.slots.filter((t) => t.kind !== "fixed") }));
+}
+async function writeSequence(d, spec) {
+  const seq = sequenceOf(spec, d.count);
+  const kindName = { title: "TITLE", text: "TEXT", label: "LABEL" };
+  const own = (L) => L.editable.filter((t) => !t.off);
+  const sample = (t) => String(t.text || "").replace(/\s+/g, " ").slice(0, 40);
+  const desc = seq.map((L, i) => `Slide ${i + 1}${L.role === "title" ? " (TITLE SLIDE)" : L.role === "end" ? " (CLOSING / THANK-YOU SLIDE)" : ""}: ` +
+    own(L).map((t, j) => `[${j + 1}] ${t.num ? "NUMBER" : kindName[t.kind]} max ${slotMax(t, L)} chars (sample: "${sample(t)}")`).join("; ")).join("\n");
+  const r = await askJson({
+    model: MODEL(), system: SYSTEM, effort: "medium", maxTokens: 32000,
+    schema: {
+      type: "object",
+      properties: { slides: { type: "array", items: { type: "object", properties: { texts: { type: "array", items: { type: "string" } }, image_query: { type: "string" } }, required: ["texts", "image_query"], additionalProperties: false } } },
+      required: ["slides"], additionalProperties: false,
+    },
+    prompt: require("./sources").sourcesBlock(d) + `Create a presentation in a premium animated design. The design has a FIXED sequence of ${seq.length} slides (listed below with their text slots in reading order); write the texts for every slide in this exact order.
+Topic: ${d.topic}
+Subject: ${d.subject || "—"}
+Language: ${LANG_NAMES[d.lang]}
+Author (for the title slide): ${d.author || "— (use the subject or a short subtitle instead)"}
+
+Slides:
+${desc}
+
+Rules:
+- Return exactly ${seq.length} slides; "texts" has exactly one string per slot, in slot order.
+- The sample shows what each slot is for in the English template (a heading, a section name, a description, a figure…) — keep that role but write about the topic in the requested language; never copy the English sample.
+- Slide 1: the main title slot = the FULL topic; other title-slide slots = subtitle / author / short tagline.
+- A slide that lists section names (an outline / contents) must use the same section names, in the same order, as the following slides' headings.
+- NUMBER slots: a short real figure for the topic (year, percent, count, e.g. "1991", "85%", "30+"); add the unit in the neighbouring LABEL slot.
+- The last slide: a short thank-you and closing words.
+- "image_query": 2–5 English words for a stock photo matching the slide.`,
+  });
+  const out = (r.data.slides || []).slice(0, seq.length);
+  if (out.length < Math.min(3, seq.length)) throw new Error("AI slaydlarni to'liq yozmadi");
+  const slides = seq.map((L, i) => {
+    const o = out[i] || { texts: [], image_query: "" };
+    let j = 0;
+    const texts = L.editable.map((t) => (t.off ? "" : clean((o.texts || [])[j++] || "", 2000)));
+    return { L, texts, query: clean(o.image_query, 80) };
+  });
+  return { slides, ai: r };
+}
+// ekrandan tashqaridagi yozuvlar — ekrandagi juftining (qisqartirilgan) matni; jufti tanlanmagan bo'lsa bo'sh
+function applyCopies(slides) {
+  const byKey = new Map();
+  slides.forEach((s) => s.L.editable.forEach((t, k) => byKey.set(`${s.L.n}:${t.id}`, () => s.texts[k])));
+  slides.forEach((s) => s.L.editable.forEach((t, k) => { if (t.off && t.copy) { const f = byKey.get(`${t.copy[0]}:${t.copy[1]}`); s.texts[k] = f ? f() : ""; } }));
+}
+
 async function writeSlides(d, spec) {
+  if (spec.sequence) return writeSequence(d, spec);
   const layouts = layoutsOf(spec);
   const titleL = layouts.find((s) => s.role === "title") || layouts[0];
   const endL = layouts.find((s) => s.role === "end");
@@ -322,7 +381,14 @@ function fillText(sp, text, slot, lang, opt = {}) {
   rPr = rPr.replace(/\blang="[^"]*"/, `lang="${lang}"`);
   if (slot.text && slot.text === slot.text.toUpperCase() && /[A-Z]/.test(slot.text) && !/\bcap="all"/.test(rPr)) text = text.toLocaleUpperCase(lang.slice(0, 2));
   const lines = text.split(/\n+/).map((l) => l.trim()).filter(Boolean);
-  const paras = (lines.length ? lines : [""]).map((l) => `<a:p>${pPr}<a:r>${rPr}<a:t>${xmlEsc(l)}</a:t></a:r></a:p>`).join("");
+  let paras = (lines.length ? lines : [""]).map((l) => `<a:p>${pPr}<a:r>${rPr}<a:t>${xmlEsc(l)}</a:t></a:r></a:p>`).join("");
+  // "01  Nom" (slot.prefix): birinchi run — raqam o'z rangida qoladi, matn ikkinchi run uslubida
+  const runs = slot.prefix ? [...firstP.matchAll(/<a:r>[\s\S]*?<\/a:r>/g)].map((x) => x[0]) : [];
+  if (runs.length >= 2) {
+    const r2 = (el(runs[1], "rPr") || rPr).replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * (k < 0.97 ? k : 1))}"`).replace(/\blang="[^"]*"/, `lang="${lang}"`);
+    const gap = /\s<\/a:t>/.test(runs[0]) ? "" : "  "; // raqamdan keyingi bo'shliq ikkinchi runda edi
+    paras = `<a:p>${pPr}${runs[0]}<a:r>${r2}<a:t>${gap}${xmlEsc(lines.join(" ").replace(/^\s*0?\d{1,2}[.)]?\s+/, ""))}</a:t></a:r></a:p>`;
+  }
   const algn = (/\balgn="(\w+)"/.exec(pPr) || /<a:lvl1pPr[^>]*\balgn="(\w+)"/.exec(lst) || [])[1];
   const vertical = /\bvert="(?!horz)/.test(bodyPr);
   return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical ? 1 : useOf(slot), algn, vertical ? 0 : opt.dy || 0);
@@ -456,8 +522,10 @@ async function generatePresentation(f, photoUrls = []) {
     images: f.images !== false, tables: !!f.tables,
   };
   const spec = specs()[f.template];
+  if (spec.sequence) d.count = Math.min(d.count, spec.slides.length);
   const [tpl, written] = await Promise.all([loadTemplate(f.template), writeSlides(d, spec)]);
   const shortened = await fitToSlots(written.slides);
+  if (spec.sequence) applyCopies(written.slides);
 
   // rasmlar: avval mijozniki, keyin Pexels (rasmlar o'chirilgan bo'lsa — shablonniki qoladi)
   const own = [];
@@ -465,12 +533,28 @@ async function generatePresentation(f, photoUrls = []) {
     try { const buf = await download(u); const sz = jpegSize(buf); if (sz) own.push({ buf, ...sz }); } catch (e) { /* o'tkazamiz */ }
   }
   const used = new Set();
-  const photosFor = async (s, frames) => Promise.all(frames.map(async (fr, k) => {
+  const fetchFor = async (s, fr, k) => {
     if (own.length) return own.shift();
     if (!d.images) return null;
     const orient = fr.w / fr.h > 1.2 ? "landscape" : fr.w / fr.h < 0.83 ? "portrait" : "square";
     try { return await stockPhoto(k ? `${s.query} ${["detail", "closeup", "people"][k % 3]}` : s.query || d.topic, orient, used); } catch (e) { return null; }
-  }));
+  };
+  let photosFor = async (s, frames) => Promise.all(frames.map((fr, k) => fetchFor(s, fr, k)));
+  if (spec.sequence) {
+    // Morph juftlari bitta rasm: ekrandan tashqaridagi ramka — o'z slaydidagi (ekrandagi) jufti bilan bir xil foto
+    const bySlide = new Map(written.slides.map((s) => [s.L.n, s]));
+    const cache = new Map();
+    const get = (s, fr, k) => {
+      const key = fr.copy ? `${fr.copy[0]}:${fr.copy[1]}` : `${s.L.n}:${fr.id}`;
+      if (!cache.has(key)) {
+        const owner = fr.copy ? bySlide.get(fr.copy[0]) : s;
+        const ofr = fr.copy && owner ? owner.L.photos.find((p) => p.id === fr.copy[1]) || fr : fr;
+        cache.set(key, fetchFor(owner || s, ofr, fr.copy ? 0 : k));
+      }
+      return cache.get(key);
+    };
+    photosFor = async (s, frames) => Promise.all(frames.map((fr, k) => get(s, fr, k)));
+  }
   const buffer = await buildPptx(tpl, spec, written.slides, photosFor, LANG_TAG[lang]);
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
   return { buffer, name, ai: sumAi(written.ai, shortened) };
