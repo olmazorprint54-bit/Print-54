@@ -34,7 +34,8 @@ const READY = {
   img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-
+// Egaga nusxa keladigan xizmatlar (AI yozgan ishlar)
+const COPY_TO_OWNER = new Set(["presentation", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword"]);
 const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
@@ -218,15 +219,55 @@ const costTitle = (s, f) => ({
   crossword: `Krossvord — ${f.words || 15} so'z`,
 }[s] || s);
 
-// AI narxi: buyurtmaga yoziladi va egaga qisqa hisobot (narxlarni belgilash uchun)
+// Kirim: mijoz haqiqatan to'lagan summa. Bonus / sinov / birinchi tekin bo'lsa — 0
+function incomeOf(o) {
+  const d = o.details || {};
+  if (d.trial || d.credit || d.firstFree) return 0;
+  return d.payment || d.spent ? Number(o.total) || 0 : 0;
+}
+const money = (n) => `${n < 0 ? "−" : ""}${Math.abs(Math.round(n)).toLocaleString("ru-RU")} so'm`;
+
+// Chiqim so'mda: costLine() ishlatadigan kursdan olinadi
+function somOf(ai) {
+  const m = String(costLine(ai)).match(/≈\s*([\d\s\u00a0\u202f]+)\s*so/);
+  const n = m ? parseInt(m[1].replace(/\D/g, ""), 10) : NaN;
+  return Number.isFinite(n) ? n : Math.round(ai.usd * 12600);
+}
+
+// Bugungi jami (Toshkent vaqti bilan)
+async function todayLine(rate) {
+  try {
+    const tk = new Date(Date.now() + 5 * 3600e3);
+    const from = new Date(Date.UTC(tk.getUTCFullYear(), tk.getUTCMonth(), tk.getUTCDate()) - 5 * 3600e3).toISOString();
+    const { data } = await supabase.from("orders").select("total, details").gte("created_at", from).limit(1000);
+    const list = (data || []).filter((o) => o.details && o.details.ai);
+    let inc = 0, exp = 0;
+    for (const o of list) {
+      inc += incomeOf(o);
+      exp += o.details.ai.som != null ? o.details.ai.som : Math.round(o.details.ai.usd * rate);
+    }
+    return `\n📅 Bugun: ${list.length} ta · kirim ${money(inc)} · chiqim ${money(exp)} · foyda ${money(inc - exp)}`;
+  } catch (e) {
+    console.error(e);
+    return "";
+  }
+}
+
+// AI narxi: buyurtmaga yoziladi va egaga hisobot (kim, xizmat, kirim-chiqim-foyda)
 async function reportCost(order, ai) {
-  const info = { model: ai.model, input: ai.usage.input, output: ai.usage.output, usd: Number(ai.usd.toFixed(5)) };
+  const som = somOf(ai);
+  const info = { model: ai.model, input: ai.usage.input, output: ai.usage.output, usd: Number(ai.usd.toFixed(5)), som };
   const { data } = await supabase.from("orders").select("details").eq("id", order.id).single();
   await supabase.from("orders").update({ details: { ...((data && data.details) || order.details), ai: info } }).eq("id", order.id);
   const f = order.details.fields || {};
+  const income = incomeOf(order);
+  const free = order.details.trial || order.details.credit || order.details.firstFree;
+  const summary =
+    `\n\n💰 Kirim: ${money(income)}${free ? " (tekin)" : ""}\n💸 Chiqim: ${money(som)}\n📊 Foyda: ${money(income - som)}` +
+    (await todayLine(ai.usd > 0 ? som / ai.usd : 12600));
   await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}`,
+    text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}${summary}`,
   }).catch((e) => console.error(e));
 }
 
@@ -340,6 +381,12 @@ async function deliver(order, file, host) {
       doc = sent.result.document;
       fileBot = sent.via;
     }
+  }
+    // 📥 Egaga ovozsiz nusxa (chop etish/xato bo'lsa nusxa allaqachon yuborilgan)
+  if (doc && !wantsPrint && COPY_TO_OWNER.has(order.service)) {
+    const cp = docForm(process.env.OWNER_CHAT_ID, file, `📥 #${order.id} — mijoz olgan fayl nusxasi`, order.telegram_message_id);
+    cp.append("disable_notification", "true");
+    await toOwner(bot, "sendDocument", cp).catch((e) => console.error("Nusxa:", e));
   }
   if (!doc) throw new Error("Fayl hech kimga yuborilmadi");
 
