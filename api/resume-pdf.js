@@ -468,7 +468,9 @@ module.exports = async (req, res) => {
       file = await buildImgPdf(order);
     } else if (order.service === "presentation" || order.service === "presentation_pro") {
       // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
-      const pres = await generatePresentation(fields, await photoUrls(order));
+      // joylashuv tekshiruvi: Chrome'da o'lchab, ustma-ust/sig'magan yozuvlar tuzatiladi (api/_lib/pres-fit.js)
+      const fit = require("./_lib/pres-fit");
+      const pres = await generatePresentation(fields, await photoUrls(order), { measure: (buf) => fit.measure(buf, withPage) });
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
     } else if (GENERATORS[order.service]) {
