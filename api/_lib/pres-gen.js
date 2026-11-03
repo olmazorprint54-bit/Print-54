@@ -78,7 +78,9 @@ const slotMax = (t, s) => (t.kind === "title" ? Math.max(t.max, s && s.role === 
 function describe(layouts) {
   const kindName = { title: "TITLE", text: "TEXT", label: "LABEL" };
   return layouts.map((s) => {
-    const slots = s.editable.map((t, i) => `[${i + 1}] ${kindName[t.kind]} max ${slotMax(t, s)} chars${t.paras > 1 && t.kind === "text" ? `, ${t.paras} paragraphs/list items in sample` : ""}`).join("; ");
+    // qisqa yorliq/sarlavha namunasi ko'rsatiladi: "of", "&", "01" kabi bog'lovchi/bezak joylarga AI uzun so'z yozmasin
+    const smp = (t) => (t.kind !== "text" && t.text && t.text.trim().length <= 16 ? ` (sample: "${t.text.trim().replace(/\s+/g, " ")}")` : "");
+    const slots = s.editable.map((t, i) => `[${i + 1}] ${kindName[t.kind]} max ${slotMax(t, s)} chars${smp(t)}${t.paras > 1 && t.kind === "text" ? `, ${t.paras} paragraphs/list items in sample` : ""}`).join("; ");
     return `Layout ${s.n}${s.role === "title" ? " (TITLE SLIDE)" : s.role === "end" ? " (CLOSING / THANK-YOU SLIDE)" : ""}: ${slots}${s.photos.length ? `; photo frames: ${s.photos.length}` : ""}`;
   }).join("\n");
 }
@@ -184,6 +186,7 @@ Rules:
 - Slide 1 uses Layout ${titleL.n}: title = the FULL topic (never cut it to a single word), other slots = subtitle / author.
 ${endL ? `- The last slide uses Layout ${endL.n}: a short thank-you and closing words.\n` : ""}- Other slides use content layouts (${content.map((s) => s.n).join(", ")}); vary them, repeating is allowed. Order: introduction / plan, main parts, conclusion.
 - "texts" has exactly one string per slot of the chosen layout, in slot order.
+- A short sample like "of", "&", "and", "the" marks a small connector placed over a heading: write an equally short connector in the requested language (e.g. "va", "&") or a 1–2 word phrase — never a long word.
 - "image_query": for layouts with photo frames, 2–5 English words for a stock photo search matching the slide (else "").`,
   });
   const byN = Object.fromEntries(layouts.map((s) => [s.n, s]));
@@ -373,7 +376,9 @@ function fillText(sp, text, slot, lang, opt = {}) {
   const m = /\bsz="(\d+)"/.exec(rPr);
   const pt = m ? m[1] / 100 : slot.sz;
   let k = Math.max(needScale(slot, text), minScale(slot, pt || MIN_PT));
-  if (k < 0.97) {
+  // pres-fit o'lchovi: shu shriftdan katta bo'lmasin (14 pt chegarasi saqlanadi)
+  if (opt.ptMax && pt) k = Math.max(Math.min(k, opt.ptMax / pt), minScale(slot, pt));
+  if (k < 0.97 || (opt.ptMax && k < 0.995)) {
     const scale = (s) => s.replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * k)}"`).replace(/<a:spcPts val="(\d+)"\/>/g, (_, v) => `<a:spcPts val="${Math.round(v * k)}"/>`);
     rPr = scale(rPr);
     pPr = scale(pPr);
@@ -391,7 +396,7 @@ function fillText(sp, text, slot, lang, opt = {}) {
   }
   const algn = (/\balgn="(\w+)"/.exec(pPr) || /<a:lvl1pPr[^>]*\balgn="(\w+)"/.exec(lst) || [])[1];
   const vertical = /\bvert="(?!horz)/.test(bodyPr);
-  return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical ? 1 : useOf(slot), algn, vertical ? 0 : opt.dy || 0);
+  return narrowBox(sp.replace(body[0], `<p:txBody>${bodyPr}${lst}${paras}</p:txBody>`), vertical || opt.wide ? 1 : useOf(slot), algn, vertical ? 0 : opt.dy || 0);
 }
 
 // Rasmni ramkaga "cover" qilib joylash (ortiqcha qismi kesiladi)
@@ -438,7 +443,8 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
     const lift = descLift(s.L, s.texts);
     s.L.editable.forEach((slot, k) => {
       const r = shapeRange(xml, slot.id);
-      if (r) xml = xml.slice(0, r[0]) + fillText(xml.slice(r[0], r[1]), s.texts[k] || "", slot, lang, { dy: lift.get(slot.id) }) + xml.slice(r[1]);
+      const fx = (s.fix && s.fix[k]) || {};
+      if (r) xml = xml.slice(0, r[0]) + fillText(xml.slice(r[0], r[1]), s.texts[k] || "", slot, lang, { dy: (lift.get(slot.id) || 0) - Math.round((fx.move || 0) * 9525), ptMax: fx.pt, wide: fx.wide }) + xml.slice(r[1]);
     });
     const imgs = s.L.photos.length ? await photosFor(s, s.L.photos) : [];
     imgs.forEach((img, k) => {
@@ -505,7 +511,7 @@ ${over.map((o, n) => `${n + 1}. [max ${o.max}] ${o.s.texts[o.k]}`).join("\n")}`,
   return ai;
 }
 
-async function generatePresentation(f, photoUrls = []) {
+async function generatePresentation(f, photoUrls = [], opts = {}) {
   if (isSmart(f.template)) {
     // mijoz rasmlari + Pixabay/Pexels (mavzu bo'yicha, gorizontal)
     const own = [];
@@ -555,9 +561,98 @@ async function generatePresentation(f, photoUrls = []) {
     };
     photosFor = async (s, frames) => Promise.all(frames.map((fr, k) => get(s, fr, k)));
   }
-  const buffer = await buildPptx(tpl, spec, written.slides, photosFor, LANG_TAG[lang]);
+  // qayta yig'ishda rasmlar qayta qidirilmaydi (bir slayd — bir xil rasmlar)
+  const photoMemo = new Map();
+  const photosOnce = (s, frames) => { if (!photoMemo.has(s)) photoMemo.set(s, photosFor(s, frames)); return photoMemo.get(s); };
+  let buffer = await buildPptx(tpl, spec, written.slides, photosOnce, LANG_TAG[lang]);
+  let fixedAi = null;
+  // Joylashuv tekshiruvi (opts.measure — resume-pdf.js dagi Chrome): ustma-ust tushgan, harflarga bo'lingan,
+  // qutidan chiqqan yozuvlar tuzatiladi va fayl qayta yig'iladi (2 marta gacha)
+  if (opts.measure) {
+    const F = require("./pres-fit");
+    // shablonning o'zida ustma-ust turgan yozuvlar (dizayn) — tuzatilmaydi; shablon bir marta o'lchanadi
+    let design = designCache.get(f.template);
+    if (!design) {
+      try { design = (await opts.measure(tpl)).map(F.designPairs); designCache.set(f.template, design); } catch (e) { design = []; }
+    }
+    for (let pass = 1; pass <= 2; pass++) {
+      let issues;
+      try { issues = F.issuesOf(await opts.measure(buffer), (n) => written.slides[n - 1] && written.slides[n - 1].L.n, (L) => design[L - 1], (n, id) => grownText(written.slides[n - 1], id)); }
+      catch (e) { console.error("Joylashuvni o'lchab bo'lmadi:", e.message); break; }
+      if (!issues || !issues.length) break;
+      if (process.env.FIT_DEBUG) console.log("fit", pass, JSON.stringify(issues.map((x) => [x.n, x.id, x.overY && "Y", x.broken && "B", x.move && Math.round(x.move), Math.round(x.ch), Math.round(x.innerH), x.fpx])));
+      const r = await fixLayout(written.slides, issues, pass);
+      fixedAi = sumAi(fixedAi, r.ai);
+      if (!r.changed) break;
+      if (spec.sequence) applyCopies(written.slides);
+      buffer = await buildPptx(tpl, spec, written.slides, photosOnce, LANG_TAG[lang]);
+      console.log(`Joylashuv tuzatildi (${pass}): ${issues.length} ta joy`);
+    }
+  }
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
-  return { buffer, name, ai: sumAi(written.ai, shortened) };
+  return { buffer, name, ai: sumAi(sumAi(written.ai, shortened), fixedAi) };
+}
+
+// pres-fit.js o'lchovi bo'yicha tuzatish: tor quti -> asl eni (narrowBox bekor); sig'masa -> shrift kichrayadi
+// (14 pt dan pastga emas); baribir sig'masa -> matn qisqartiriladi (1-o'tishda AI, keyin kod)
+// shablonda ustma-ust turgan yozuvlardan biri namunadan ancha uzun bo'lib qoldimi (unda dizayn ham tuzatiladi)
+function grownText(s, id) {
+  if (!s) return false;
+  const k = s.L.editable.findIndex((t) => t.id === id);
+  if (k < 0) return false;
+  const sample = String(s.L.editable[k].text || "").trim().length, now = String(s.texts[k] || "").trim().length;
+  return now > Math.max(sample * 1.5, sample + 4);
+}
+const designCache = new Map(); // shablon id -> [slayd -> Set(dizayn juftlari)]
+async function fixLayout(slides, issues, pass) {
+  const PX = 96 / 72;
+  let changed = false;
+  const shorten = [];
+  for (const it of issues) {
+    const s = slides[it.n - 1];
+    if (!s) continue;
+    const k = s.L.editable.findIndex((t) => t.id === it.id);
+    if (k < 0 || !s.texts[k]) continue;
+    const slot = s.L.editable[k];
+    s.fix = s.fix || {};
+    const fx = (s.fix[k] = s.fix[k] || {});
+    if (it.move) { fx.move = (fx.move || 0) + it.move; changed = true; } // ustidagi yozuv ostiga surish (px)
+    if (it.shrinkText) { const max = Math.max(3, String(slot.text || "").trim().length + 3); if (s.texts[k].length > max) shorten.push({ s, k, max }); }
+    let gain = 1;
+    if ((it.broken || it.overX) && !fx.wide && useOf(slot) < 0.995) { fx.wide = true; gain = 1 / useOf(slot); changed = true; }
+    let factor = 1;
+    if (it.broken && it.maxWord > 0) factor = Math.min(factor, (it.innerW * gain * 0.95) / it.maxWord);
+    if (it.overX && it.cw > 0) factor = Math.min(factor, (it.boxW * gain * 0.96) / it.cw);
+    if (it.overY && it.ch > 0) factor = Math.min(factor, Math.sqrt(Math.max(it.innerH, 4) / it.ch) * (gain > 1 ? Math.sqrt(gain) : 1) * 0.96);
+    if (factor >= 0.99 || !it.fpx) continue;
+    const cur = it.fpx / PX, floor = Math.min(MIN_PT, slot.sz || MIN_PT), target = cur * factor;
+    const pt = Math.max(floor, target);
+    if (!fx.pt || pt < fx.pt - 0.2) { fx.pt = pt; changed = true; }
+    if (target < floor * 0.98) {
+      // shrift chegarasida ham sig'maydi — matn qisqaradi
+      const ratio = slot.kind === "text" ? (target / floor) ** 2 : target / floor;
+      const max = Math.max(3, Math.floor(s.texts[k].length * ratio * 0.92));
+      if (max < s.texts[k].length) shorten.push({ s, k, max });
+    }
+  }
+  let ai = null;
+  if (shorten.length) {
+    changed = true;
+    if (pass === 1) {
+      try {
+        ai = await askJson({
+          model: MODEL(), system: SYSTEM, effort: "low", maxTokens: 8000,
+          schema: { type: "object", properties: { texts: { type: "array", items: { type: "string" } } }, required: ["texts"], additionalProperties: false },
+          prompt: `These presentation texts do not fit their text boxes on the slide. Rewrite each one SHORTER — at most the given number of characters (spaces included). Keep the language and the meaning; prefer shorter words; keep list items on separate lines (\\n). Return "texts": one string per item, in the same order.
+
+${shorten.map((o, n) => `${n + 1}. [max ${o.max}] ${o.s.texts[o.k]}`).join("\n")}`,
+        });
+        shorten.forEach((o, n) => { const t = clean((ai.data.texts || [])[n], 2000); if (t) o.s.texts[o.k] = t; });
+      } catch (e) { console.error("Qisqartirib bo'lmadi:", e.message); }
+    }
+    for (const o of shorten) if (o.s.texts[o.k].length > o.max) o.s.texts[o.k] = trimTo(o.s.texts[o.k], o.max);
+  }
+  return { changed, ai };
 }
 
 module.exports = { MIN_PT, useOf, narrowBox, descLift, kPlan, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };

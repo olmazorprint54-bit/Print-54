@@ -563,7 +563,9 @@ async function pptxToHtml(buf) {
       const hasText = txBody && chs(txBody, "p").some((p) => kids(p).some((k) => ["r", "fld"].includes(k.localName)) || false);
       const text = hasText ? renderText(txBody, ph, el, e, null, w) : "";
       if (!svg && !text) return "";
-      return `<div class="sh" style="${pos}${rot ? `transform:${rot};` : ""}">${svg}${text}</div>`;
+      // data-id — slayddagi yozuvli shakl raqami (api/_lib/pres-fit.js joylashuvni shu bo'yicha o'lchaydi)
+      const did = isSlide && text && cNv ? ` data-id="${at(cNv, "id", "")}"` : "";
+      return `<div class="sh"${did} style="${pos}${rot ? `transform:${rot};` : ""}">${svg}${text}</div>`;
     };
     let uid = 1;
     const css2svg = (fill) => (fill.isGrad ? "none" : fill.css);
@@ -621,7 +623,7 @@ async function pptxToHtml(buf) {
     if (showMaster && layoutShowMaster) for (const s of decor(masterShapes)) inner += await renderShape(s, { ...base, layoutLevel: true }, env, master.rels, false);
     if (showMaster) for (const s of decor(layoutShapes)) inner += await renderShape(s, { ...base, layoutLevel: true }, env, layout.rels, false);
     for (const s of treeShapes(slide.doc)) inner += await renderShape(s, base, env, slide.rels, true);
-    slidesHtml.push(`<section class="sl" style="${bg.css && !bg.image ? `background:${bg.css};` : "background:#fff;"}">${bgHtml}${inner}</section>`);
+    slidesHtml.push(`<section class="sl" data-n="${slidesHtml.length + 1}" style="${bg.css && !bg.image ? `background:${bg.css};` : "background:#fff;"}">${bgHtml}${inner}</section>`);
   }
   if (!slidesHtml.length) throw new Error("slides");
 
