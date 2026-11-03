@@ -382,7 +382,8 @@ function fillText(sp, text, slot, lang, opt = {}) {
   // pres-fit o'lchovi: shu shriftdan katta bo'lmasin (14 pt chegarasi saqlanadi)
   if (opt.ptMax && pt) k = Math.max(Math.min(k, opt.ptMax / pt), minScale(slot, pt));
   if (k < 0.97 || (opt.ptMax && k < 0.995)) {
-    const scale = (s) => s.replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * k)}"`).replace(/<a:spcPts val="(\d+)"\/>/g, (_, v) => `<a:spcPts val="${Math.round(v * k)}"/>`);
+    // harflar oralig'i (spc) ham shrift bilan kichrayadi — aks holda keng yozilgan sarlavha so'z o'rtasida bo'linadi
+    const scale = (s) => s.replace(/\bsz="(\d+)"/g, (_, v) => `sz="${Math.round(v * k)}"`).replace(/\bspc="(-?\d+)"/g, (_, v) => `spc="${Math.round(v * k)}"`).replace(/<a:spcPts val="(\d+)"\/>/g, (_, v) => `<a:spcPts val="${Math.round(v * k)}"/>`);
     rPr = scale(rPr);
     pPr = scale(pPr);
   }
@@ -449,6 +450,10 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
       const fx = (s.fix && s.fix[k]) || {};
       if (r) xml = xml.slice(0, r[0]) + fillText(xml.slice(r[0], r[1]), s.texts[k] || "", slot, lang, { dy: (lift.get(slot.id) || 0) - Math.round((fx.move || 0) * 9525), ptMax: fx.pt, wide: fx.wide }) + xml.slice(r[1]);
     });
+    for (const id of s.nowrap || []) {
+      const r = shapeRange(xml, id);
+      if (r) xml = xml.slice(0, r[0]) + xml.slice(r[0], r[1]).replace(/<a:bodyPr\b([^>]*?)(\/?)>/, (m, a, c) => `<a:bodyPr${a.replace(/\s+wrap="[^"]*"/, "")} wrap="none"${c}>`) + xml.slice(r[1]);
+    }
     const imgs = s.L.photos.length ? await photosFor(s, s.L.photos) : [];
     imgs.forEach((img, k) => {
       if (!img) return;
@@ -615,6 +620,8 @@ async function fixLayout(slides, issues, pass) {
     const s = slides[it.n - 1];
     if (!s) continue;
     const k = s.L.editable.findIndex((t) => t.id === it.id);
+    // shablonning o'z (o'zgarmas) yozuvi bo'linib qolsa ("0/1") — qatorga bo'linmaydigan qilinadi
+    if (k < 0 && it.broken && !(s.nowrap || []).includes(it.id)) { (s.nowrap = s.nowrap || []).push(it.id); changed = true; continue; }
     if (k < 0 || !s.texts[k]) continue;
     const slot = s.L.editable[k];
     s.fix = s.fix || {};
@@ -654,6 +661,21 @@ ${shorten.map((o, n) => `${n + 1}. [max ${o.max}] ${o.s.texts[o.k]}`).join("\n")
       } catch (e) { console.error("Qisqartirib bo'lmadi:", e.message); }
     }
     for (const o of shorten) if (o.s.texts[o.k].length > o.max) o.s.texts[o.k] = trimTo(o.s.texts[o.k], o.max);
+  }
+  // ro'yxat bandlari (bir slaydda bir xil turdagi va o'lchamdagi 3+ yozuv) bir xil shriftda bo'lsin
+  for (const s of slides) {
+    s.fix = s.fix || {};
+    const groups = new Map();
+    s.L.editable.forEach((t, k) => { const g = `${t.kind}:${Math.round(t.sz || 0)}`; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(k); });
+    for (const ks of groups.values()) {
+      if (ks.length < 3) continue;
+      // fillText o'zi kichraytirgan (uzun matn) yozuvlar ham hisobga olinadi
+      const natural = (k) => { const t = s.L.editable[k]; return t.sz ? Math.min(1, Math.max(needScale(t, s.texts[k]), minScale(t, t.sz))) * t.sz : 0; };
+      const pts = ks.filter((k) => s.texts[k]).map((k) => (s.fix[k] && s.fix[k].pt) || natural(k)).filter(Boolean);
+      if (!pts.length) continue;
+      const pt = Math.min(...pts);
+      for (const k of ks) if (s.texts[k]) { const fx = (s.fix[k] = s.fix[k] || {}); if (!fx.pt || fx.pt > pt + 0.2) { fx.pt = pt; changed = true; } }
+    }
   }
   return { changed, ai };
 }
