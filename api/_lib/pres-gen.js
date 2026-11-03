@@ -68,8 +68,11 @@ function layoutsOf(spec) {
   return spec.slides
     .map((s) => ({ ...s, editable: s.slots.filter((t) => t.kind !== "fixed") }))
     // 12 tadan ko'p mayda matn joyi (jadval, kalendar) — AI uchun noqulay, ishlatilmaydi
-    .filter((s) => s.editable.length && s.editable.length <= 12);
+    .filter((s) => s.editable.length && s.editable.length <= 12)
+    // Canva'ning yordamchi slaydlari (stikerlar to'plami, poll/quiz) — tahrirlanmaydigan inglizcha qismlari bor
+    .filter((s) => !s.slots.some((t) => CANVA_HELP.test(t.text || "")));
 }
+const CANVA_HELP = /Canva Presentation|Double-click to customi[sz]e|Elements Tab|Happy designing/i;
 
 // Sarlavha sig'imi kamida 22 (titulda 30) harf: Canva namunasi ko'pincha bitta qisqa so'z,
 // mavzu esa uzunroq — shrift fillText'da avtomatik kichrayadi
@@ -590,7 +593,7 @@ async function generatePresentation(f, photoUrls = [], opts = {}) {
     }
   }
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
-  return { buffer, name, ai: sumAi(sumAi(written.ai, shortened), fixedAi) };
+  return { buffer, name, ai: sumAi(sumAi(written.ai, shortened), fixedAi), layouts: written.slides.map((s) => s.L.n) };
 }
 
 // pres-fit.js o'lchovi bo'yicha tuzatish: tor quti -> asl eni (narrowBox bekor); sig'masa -> shrift kichrayadi
