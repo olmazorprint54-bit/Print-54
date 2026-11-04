@@ -16,7 +16,7 @@ const { askJson, hasKey } = require("./ai");
 const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
 const STYLES = ["classic", "twocol", "sheet"];
 
-const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
+const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English", ...require("./langs").EXTRA_NAMES };
 const LETTERS = { uz_lat: "ABCDE", en: "ABCDE", uz_cyr: "АБВГД", ru: "АБВГД" };
 const LABELS = {
   uz_lat: { subject: "Fan", topic: "Mavzu", grade: "Sinf", variant: "Variant", name: "F.I.Sh.", date: "Sana", key: "Javoblar kaliti", sheet: "Javoblar varaqasi", q: "Savol" },
@@ -310,4 +310,5 @@ async function testDocx(t, variants) {
 
 const fileBase = (d) => `Test - ${d.subject} - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
 
+require("./langs").withFallback(LETTERS); require("./langs").withFallback(LABELS);
 module.exports = { fracParts, MODEL, testData, canAutoTest, generateTest, makeVariants, testHtml, testDocx, fileBase, LETTERS };

@@ -11,7 +11,7 @@ const { askJson, askText, hasKey } = require("./ai");
 const SRC = require("./sources");
 
 const MODEL = () => require("./ai").modelFor("TEXT_MODEL"); // standart: Sonnet 5.5
-const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
+const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English", ...require("./langs").EXTRA_NAMES };
 const AUTO_STYLES = {
   essay: ["otm", "school", "modern"],
   referat: ["otm", "school", "modern"],
@@ -477,6 +477,7 @@ const ART = {
   en: { ann: "Abstract.", kw: "Keywords:", refs: "References", sci: ["Introduction", "Literature review", "Research methodology", "Analysis and results", "Conclusion and recommendations"] },
 };
 const ANN = { uz: ["Annotatsiya.", "Kalit so'zlar:", "Uzbek (Latin script)"], ru: ["Аннотация.", "Ключевые слова:", "Russian"], en: ["Abstract.", "Keywords:", "English"] };
+require("./langs").withFallback(L); require("./langs").withFallback(ART);
 
 async function generateArticle(f) {
   const lang = langOf(f);

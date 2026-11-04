@@ -20,8 +20,8 @@ const { isSmart, generateSmart } = require("./smart-gen");
 
 const MODEL = () => require("./ai").modelFor("PRES_MODEL"); // standart: Opus 5.5
 const MAX_SLIDES = 30; // 300 soniyalik chegara ichida
-const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
-const LANG_TAG = { uz_lat: "uz-Latn-UZ", uz_cyr: "uz-Cyrl-UZ", ru: "ru-RU", en: "en-US" };
+const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English", ...require("./langs").EXTRA_NAMES };
+const LANG_TAG = { uz_lat: "uz-Latn-UZ", uz_cyr: "uz-Cyrl-UZ", ru: "ru-RU", en: "en-US", ...require("./langs").EXTRA_TAGS };
 const SPEC_DIR = path.join(__dirname, "pres");
 const NOFOLD = { createFolders: false }; // PowerPoint zip ichidagi papka yozuvlarini "buzuq" deb hisoblaydi
 
