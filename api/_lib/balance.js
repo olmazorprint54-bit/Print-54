@@ -4,6 +4,8 @@
 // yo'q — balans "orders" jadvalidan hisoblanadi (daftar):
 //   + details.topup bor va to'lov tasdiqlangan (details.payment) -> payment.amount
 //   - details.spent — buyurtma uchun balansdan yechilgan summa (bekor qilinsa — qaytadi)
+//   ± balance_adjustments.amount — egasi Supabase'da qo'lda qo'shgan/ayirgan summa
+//     (jadval va "balances" ko'rinishi: supabase/balans.sql)
 // Birinchi to'ldirish kamida MIN_FIRST, keyingilari kamida MIN_NEXT so'm;
 // chek faqat to'ldirishda tekshiriladi.
 // ---------------------------------------------------------------
@@ -30,13 +32,24 @@ const NOT_AI = ["paper", "book", "binding", "topup", "resume", "obyektivka", "im
 const FIRST_FREE_EXCEPT = ["kurs", "char_add"]; // birinchi ish / obuna / referal bonusi bu xizmatlarga tegmaydi
 const hadAiOrder = (rows) => (rows || []).some((o) => !NOT_AI.includes(o.service) && o.status !== "cancelled" && !(o.details && o.details.awaitingPayment));
 
+// Egasining qo'lda tuzatishlari yig'indisi. Jadval hali yaratilmagan bo'lsa (SQL
+// ishga tushirilmagan) — 0, balans avvalgidek ishlaydi.
+async function adjustOf(userId) {
+  const { data, error } = await supabase.from("balance_adjustments").select("amount").eq("telegram_user_id", userId).limit(5000);
+  if (error) return 0;
+  return (data || []).reduce((s, r) => s + (Number(r.amount) || 0), 0);
+}
+
 // Balans, eng kam to'ldirish (avval to'ldirgan bo'lsa — MIN_NEXT) va birinchi ish tekinligi
 async function walletOf(userId) {
   if (!userId) return { balance: 0, minTopup: MIN_FIRST, firstFree: false };
-  const { data, error } = await supabase.from("orders").select("service, status, details").eq("telegram_user_id", userId).limit(5000);
+  const [{ data, error }, adjust] = await Promise.all([
+    supabase.from("orders").select("service, status, details").eq("telegram_user_id", userId).limit(5000),
+    adjustOf(userId),
+  ]);
   if (error) throw error;
   const topped = (data || []).some((o) => o.details && o.details.topup && o.details.payment);
-  return { balance: sumOf(data), minTopup: topped ? MIN_NEXT : MIN_FIRST, firstFree: !hadAiOrder(data) };
+  return { balance: sumOf(data) + adjust, minTopup: topped ? MIN_NEXT : MIN_FIRST, firstFree: !hadAiOrder(data) };
 }
 const balanceOf = async (userId) => (await walletOf(userId)).balance;
 
