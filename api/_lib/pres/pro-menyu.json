@@ -1,0 +1,2208 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 24,
+     "perLine": 24,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "QO'LLANMA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      797770,
+      5080000,
+      369332
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 26,
+     "max": 110,
+     "perLine": 36.6,
+     "lines": 3,
+     "caps": false,
+     "sz": 40,
+     "paras": 2,
+     "text": "Kurs ishi qanday\nyoziladi?",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1551214,
+      1861457,
+      8392886,
+      1948543
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 36,
+     "max": 47,
+     "perLine": 46.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "5 ta asosiy qism — bosqichma-bosqich",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1551214,
+      3619500,
+      5334000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 24,
+     "max": 94,
+     "perLine": 47.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4922157,
+      6006709,
+      4318000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1270000,
+      4572000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2209800,
+      4572000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3149600,
+      4572000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4089400,
+      4572000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      5029200,
+      4572000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QO'LLANMA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2032000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 26,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 2,
+     "text": "Kurs ishi qanday\nyoziladi?",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2362200,
+      5334000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 36,
+     "max": 47,
+     "perLine": 46.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "5 ta asosiy qism — bosqichma-bosqich",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3810000,
+      5334000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 24,
+     "max": 94,
+     "perLine": 47.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      5842000,
+      4318000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 95,
+     "perLine": 47.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1397000,
+      3810000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 21,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Mavzuning dolzarbligi",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1727200,
+      7112000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish ishning «yuzi»: o'quvchi birinchi bo'lib aynan shu qismni o'qiydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2540000,
+      6858000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3708400,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 31,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mavzu nega muhimligini asoslang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      3721100,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      4368800,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 33,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Maqsad va vazifalarni aniq yozing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      4381500,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      5029200,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 40,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti va predmetini belgilang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      5041900,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 95,
+     "perLine": 47.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1397000,
+      3810000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 15,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Nazariy asoslar",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1727200,
+      7112000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 84,
+     "max": 84,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bu bobda mavzu bo'yicha olimlarning fikrlari va asosiy tushunchalar tahlil qilinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2540000,
+      6858000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3708400,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 31,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Asosiy atamalarga ta'rif bering",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      3721100,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      4368800,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 37,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Turli mualliflar fikrini solishtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      4381500,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      5029200,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 31,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har bir fikrga manba ko'rsating",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      5041900,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 95,
+     "perLine": 47.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1397000,
+      3810000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 11,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Amaliy qism",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1727200,
+      7112000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariyani amalda sinab ko'ring: so'rovnoma, tajriba yoki hisob-kitob o'tkazing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2540000,
+      6858000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3708400,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 40,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot usulini tanlang va tushuntiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      3721100,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      4368800,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 37,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Natijalarni jadval va grafikda bering",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      4381500,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      5029200,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 25,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har bir natijani izohlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      5041900,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 95,
+     "perLine": 47.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  /  05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1397000,
+      3810000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 19,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Xulosa va takliflar",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1727200,
+      7112000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 86,
+     "max": 86,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosada yangi ma'lumot berilmaydi — ishning asosiy natijalari qisqa umumlashtiriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2540000,
+      6858000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3708400,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 29,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har bir vazifaga javob bering",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      3721100,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      4368800,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 25,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Amaliy takliflar kiriting",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      4381500,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      5029200,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 20,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1–2 betdan oshirmang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      5041900,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 95,
+     "perLine": 47.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05  /  05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1397000,
+      3810000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 20,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Adabiyotlar ro'yxati",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      1727200,
+      7112000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Manbalar ro'yxati ishning ilmiy asosini ko'rsatadi va standart bo'yicha rasmiylashtiriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2540000,
+      6858000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3708400,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 31,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kamida 15–20 ta manba keltiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      3721100,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      4368800,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 30,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Alifbo tartibida joylashtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      4381500,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      5029200,
+      381000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 38,
+     "max": 64,
+     "perLine": 64.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Internet manbalarida sanani ko'rsating",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4775200,
+      5041900,
+      6604000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      1905000,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "NAZARIYA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      2489200,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "AMALIYOT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3073400,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      3657600,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "MANBALAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      990600,
+      4241800,
+      2057400,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      4318000,
+      2489200,
+      7112000,
+      369332
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 60,
+     "perLine": 59.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Omadli himoya tilaymiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4318000,
+      3530600,
+      6858000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true
+}
