@@ -17,7 +17,7 @@ const { canAutoObyektivka } = require("./_lib/obyektivka-docx");
 const { canAutoTest } = require("./_lib/test-gen");
 const { canAutoDoc } = require("./_lib/doc-gen");
 const { canAutoPres } = require("./_lib/pres-gen");
-const { priceOf, TRIAL } = require("../public/ai/prices");
+const { priceOf, charFee, TRIAL } = require("../public/ai/prices");
 const { FREE_DAILY, providerToken, createInvoice, payCard, cardText } = require("./_lib/pay");
 const { takeCredit } = require("./_lib/referral");
 const { takeGiftAi } = require("./_lib/bonus");
@@ -324,6 +324,15 @@ module.exports = async (req, res) => {
         return;
       }
     }
+    // Taqdimotga jonli personaj: o'z musiqasi (ixtiyoriy) — faqat mijozning o'z papkasidan
+    if (/^presentation(_pro)?$/.test(body.service)) {
+      if (!saved.addChar) { delete saved.character; delete saved.music; delete saved.musicNames; }
+      else {
+        saved.music = u && fields.sound === "custom" ? cleanAudio(fields.music, u.id) : [];
+        saved.musicNames = saved.music.length ? (Array.isArray(fields.musicNames) ? fields.musicNames : []).filter((x) => typeof x === "string").slice(0, 1).map((x) => x.slice(0, 120)) : [];
+        if (u && fields.sound === "custom" && !saved.music.length) { res.status(400).json({ ok: false, error: "Musiqa faylini yuklang" }); return; }
+      }
+    }
     // Manbalar: faqat mijozning o'ziniki, 3 tagacha, jami 100 bet (narxga +5 000)
     const picked = u && SRC.SERVICES.includes(body.service) && Array.isArray(saved.sources) && saved.sources.length
       ? await SRC.pick(u.id, saved.sources).catch(() => []) : [];
@@ -353,7 +362,11 @@ module.exports = async (req, res) => {
     // Referal bonusi: 1 ta bepul AI buyurtma (kurs ishidan tashqari) — to'lov va sinov limitisiz
     // bonus: AI botda — referal/obuna bonusi; hisoblash botida — obuna sovg'asi (AI xizmat yoki 10 varaq)
     const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await (AI_MODE ? takeCredit(u.id) : takeGiftAi(u.id).catch(() => false)));
-    const mustPay = paid && !!u && !credit && !firstFree && !isOwner && !TRIAL;
+    // taqdimotga personaj qo'shilgan: tekin ish / bonus taqdimotni qoplaydi, personaj (2 500) to'lanadi
+    const cFee = charFee(body.service, saved);
+    const charOnly = (firstFree || credit) && cFee > 0 && !isOwner && !TRIAL;
+    const pay = charOnly ? cFee : price; // mijoz to'laydigan summa
+    const mustPay = paid && !!u && !isOwner && !TRIAL && (charOnly || (!credit && !firstFree));
     const payNow = mustPay && !!providerToken();
     // Click/Payme ulanmagan — balans: yetsa darhol yechiladi, yetmasa kartaga
     // to'ldirish (kamida 5 000 so'm, chekni AI tekshiradi), so'ng buyurtma boshlanadi
@@ -362,12 +375,12 @@ module.exports = async (req, res) => {
     if (cardCfg) {
       const w = await walletOf(u.id);
       bal = w.balance;
-      if (bal >= price) spend = price;
+      if (bal >= pay) spend = pay;
       else {
-        const need = topupNeed(price, bal, w.minTopup);
+        const need = topupNeed(pay, bal, w.minTopup);
         const topup = Math.round(Number(body.topup) || 0);
         if (!topup) {
-          res.status(200).json({ ok: true, needTopup: { price, balance: bal, ...need } });
+          res.status(200).json({ ok: true, needTopup: { price: pay, balance: bal, ...need } });
           return;
         }
         if (topup < need.min || topup > MAX_TOPUP) {
@@ -382,7 +395,7 @@ module.exports = async (req, res) => {
       res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
-    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}), ...(firstFree ? { firstFree: true, listPrice: price } : {}) };
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}), ...(firstFree ? { firstFree: true, listPrice: price } : {}), ...(charOnly ? { charOnly: true } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -392,7 +405,7 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: trial || credit || firstFree ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
+        total: charOnly ? pay : trial || credit || firstFree ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
@@ -410,9 +423,9 @@ module.exports = async (req, res) => {
       if (!orderId) throw new Error("Buyurtmani bazaga yozib bo'lmadi");
       const details = { bot, topic: topicOf(fields), summary, fields: saved, ...(photos.length ? { photos } : {}), ...flags };
       details.manualText = requestText({ ...body, autoResume: false }, summary, orderId);
-      const link = await createInvoice(bot, { id: orderId, service: body.service, details }, price);
+      const link = await createInvoice(bot, { id: orderId, service: body.service, details }, pay);
       await supabase.from("orders").update({ details: { ...details, invoice: link } }).eq("id", orderId);
-      res.status(200).json({ ok: true, orderId, auto: true, pay: link, price });
+      res.status(200).json({ ok: true, orderId, auto: true, pay: link, price: pay });
       return;
     }
 
@@ -427,14 +440,14 @@ module.exports = async (req, res) => {
       details.payAmount = await uniqueAmount(card.topup).catch(() => card.topup);
       const sent = await telegram(bot, "sendMessage", {
         chat_id: u.id,
-        text: cardText(card, { service: body.service, details, total: price }, details.payAmount, bal, ul),
+        text: cardText(card, { service: body.service, details, total: pay }, details.payAmount, bal, ul),
         parse_mode: "HTML",
         reply_markup: { inline_keyboard: [[{ text: LB.T(ul, "cancelBtn"), callback_data: `paycancel:${orderId}` }]] },
       }).catch((e) => ({ ok: false, description: String(e) }));
       if (!sent.ok) console.error("Karta xabarini yuborib bo'lmadi:", sent.description);
       else details.payMsg = sent.result.message_id;
       await supabase.from("orders").update({ details }).eq("id", orderId);
-      res.status(200).json({ ok: true, orderId, auto: true, card: { number: card.number, name: card.name, price: details.payAmount, topup: card.topup, orderPrice: price, balance: bal } });
+      res.status(200).json({ ok: true, orderId, auto: true, card: { number: card.number, name: card.name, price: details.payAmount, topup: card.topup, orderPrice: pay, balance: bal } });
       return;
     }
 

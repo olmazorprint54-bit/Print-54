@@ -997,7 +997,7 @@
       ...(AI_DOCS.includes(svc.id) ? [["Tayyor bo'ladi", isAutoDoc(svc, v) ? (svc.id === "kurs" ? "⚡ 3–5 daqiqada (AI)" : "⚡ 1–3 daqiqada (AI)") : "Dizayner tayyorlaydi"]] : []),
       ...(svc.id === "obyektivka" ? [["Tayyor bo'ladi", "⚡ 1 daqiqada (avtomatik)"], ["Qarindoshlar", `${(v.relatives || []).length} ta`]] : []),
       ...(v.photos && v.photos.length && shown(svc, v, "photos") ? [svc.id === "resume" ? ["Rasm", "Yuklandi"] : ["O'z rasmlari", `${v.photos.length} ta`]] : []),
-      ...(v.character && v.character !== "none" && shown(svc, v, "character") ? [["Personaj", pick("character")], ["Personaj ovozi", pick("charSound")]] : []),
+      ...(v.character && v.character !== "none" && shown(svc, v, "character") ? (v.addChar ? [["🎬 Personaj", pick("character") + (PR && PR.charFee && !PR.TRIAL ? " (+" + fmt(PR.charFee(svc.id, v)) + ")" : "")]] : [["Personaj", pick("character")], ["Personaj ovozi", pick("charSound")]]) : []),
       ...(v.charts ? [["Diagramma", "Ha"]] : []),
       ...(v.tables ? [["Jadval", "Ha"]] : []),
       ["Til", pick("lang")],
@@ -1008,7 +1008,8 @@
       : "";
     return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") + bonusRow +
       // tekin xizmatda chop etish alohida hisoblanadi
-      (() => { const t = firstFreeOn(svc, v) ? "🎁 Birinchi ish — tekin" : bonusOn(svc, v) ? "🎁 Bonus — bepul" : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
+      (() => { const cf = PR && PR.charFee ? PR.charFee(svc.id, v) : 0; // personaj puli tekin ishda ham olinadi
+        const t = firstFreeOn(svc, v) ? (cf ? fmt(cf) + " (taqdimot 🎁 tekin)" : "🎁 Birinchi ish — tekin") : bonusOn(svc, v) ? (cf ? fmt(cf) + " (taqdimot 🎁 bonus)" : "🎁 Bonus — bepul") : orderPrice(svc, v) === 0 && v.print && v.print !== "none" ? "Tekin (chop etish alohida)" : orderPriceText(svc, v);
         const tt = svc.comingSoon ? "🔜 Tez kunda" : t;
         return `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:${tt.length > 12 ? "16px" : "23px"}">${esc(tt)}</span></div>`; })();
   }
@@ -1695,9 +1696,6 @@
     const tpl = CFG.templates[f.set].find((t) => t.id === pick) || CFG.templates[f.set][0];
     document.getElementById("aiModalTitle").textContent = f.label;
 
-    let list = templateList(svc, f, v);
-    if (!list.includes(tpl)) list = [tpl].concat(list);
-    const chips = `<div class="chips">${list.map((t) => `<div class="chip${t.id === tpl.id ? " active" : ""}" data-mpick="${t.id}">${esc(t.name)}</div>`).join("")}</div>`;
     let pages;
     if (tpl.kind === "canva") {
       // kutubxona shablonlarida slayd turlari har xil — umumiy izoh yoziladi

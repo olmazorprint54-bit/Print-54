@@ -16,6 +16,10 @@
   var SOURCE_TIERS = [[10, 500], [15, 750], [25, 1200], [Infinity, 1500]];
   var SOURCE_FEE = SOURCE_TIERS[0][1]; // eng kami ("+500 so'mdan")
   var SOURCE_SERVICES = ["essay", "kurs", "referat", "article", "presentation", "presentation_pro", "test", "questions", "lesson"];
+  // Taqdimotga jonli personaj (presentation / presentation_pro: «addChar» yoqilsa) — alohida narx;
+  // birinchi tekin ish / bonus faqat taqdimot qismini qoplaydi, personaj puli baribir olinadi
+  var CHAR_FEE = 2500;
+  function charFee(service, f) { return f && f.addChar && f.character && f.format !== "pdf" && /^presentation(_pro)?$/.test(service) ? CHAR_FEE : 0; } // PDF da personaj yo'q
   var num = function (v, d) { var n = parseInt(v, 10); return isFinite(n) && n > 0 ? n : d; };
 
   function sourceFee(pages) {
@@ -56,6 +60,7 @@
     }
     if (t.extra) for (var k in t.extra) if (t.extra[k][f[k]]) p += t.extra[k][f[k]];
     if (f.sources && f.sources.length && SOURCE_SERVICES.indexOf(service) >= 0) p += sourceFee(f.sourcePages);
+    p += charFee(service, f);
     return Math.max(MIN, Math.round(p / 5) * 5);
   }
 
@@ -85,7 +90,7 @@
     return out;
   }
 
-  var api = { TRIAL: TRIAL, priceList: priceList, MIN: MIN, TABLE: TABLE, SOURCE_FEE: SOURCE_FEE, SOURCE_TIERS: SOURCE_TIERS, SOURCE_SERVICES: SOURCE_SERVICES, sourceFee: sourceFee, priceOf: priceOf, fromPrice: fromPrice };
+  var api = { TRIAL: TRIAL, priceList: priceList, MIN: MIN, TABLE: TABLE, SOURCE_FEE: SOURCE_FEE, SOURCE_TIERS: SOURCE_TIERS, SOURCE_SERVICES: SOURCE_SERVICES, sourceFee: sourceFee, priceOf: priceOf, charFee: charFee, CHAR_FEE: CHAR_FEE, fromPrice: fromPrice };
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.AI_PRICES = api;
 })(this);
