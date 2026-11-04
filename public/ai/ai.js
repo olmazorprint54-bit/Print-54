@@ -697,7 +697,6 @@
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}">
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
         <div class="tpl-name">${esc(t.name)}</div>
-        ${t.auto ? `<div class="tpl-badge">⚡ ${svc.id === "kurs" ? "3–5" : "1"} daqiqada</div>` : ""}
       </div>`).join("");
   }
 
