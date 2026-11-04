@@ -339,6 +339,8 @@ module.exports = async (req, res) => {
     saved.sources = picked.map((m) => m.id);
     // manba narxi jami betga qarab — mijoz yuborgan songa ishonilmaydi
     saved.sourcePages = picked.reduce((n, m) => n + (Number(m.pages) || 0), 0);
+    // Super taqdimot faqat pro-* shablonlarda ishlaydi — boshqa qiymat kelsa (buyurtma #130: «ai-dizayn») standart shablon
+    if (body.service === "presentation_pro" && !/^pro-/.test(String(saved.template || ""))) saved.template = "pro-kok";
     body.autoResume = !!(AUTO[body.service] && AUTO[body.service](saved));
 
     // Narx serverda hisoblanadi (public/ai/prices.js) — mijoz yuborganiga ishonilmaydi.

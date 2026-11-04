@@ -1510,6 +1510,8 @@
     const visible = { ...v };
     svc.fields.forEach((f) => { if (!shown(svc, v, f.id)) visible[f.id] = Array.isArray(v[f.id]) ? [] : ""; });
     if (svc.id === "presentation" && visible.design !== "tpl") visible.template = "ai-dizayn";
+    // Super taqdimot: faqat 💎 shablonlar — boshqa qiymat (masalan oddiy taqdimotdan qolgan «ai-dizayn») bo'lsa standart
+    if (svc.id === "presentation_pro" && !CFG.templates.presentation_pro.some((t) => t.id === visible.template)) visible.template = CFG.templates.presentation_pro[0].id;
     const user = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
     await sendOrder(svc, {
       service: svc.id,
