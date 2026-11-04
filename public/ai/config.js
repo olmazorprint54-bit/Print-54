@@ -801,6 +801,7 @@
       { id: "pro-fragment", name: "💎 Fragment raqam · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-asalari", name: "💎 Asalari uyasi · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-fokus", name: "💎 Fokus ramka · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-egri", name: "💎 Egri panel · ikki rangli so'z", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
