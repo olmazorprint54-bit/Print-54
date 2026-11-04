@@ -1,0 +1,1423 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 19,
+     "max": 231,
+     "perLine": 115.4,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BIZNES  ·  TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      4470400,
+      12192000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 26,
+     "max": 35,
+     "perLine": 34.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 50,
+     "paras": 1,
+     "text": "G'OYADAN MUVAFFAQIYATGACHA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4775200,
+      12192000,
+      369332
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 28,
+     "max": 107,
+     "perLine": 106.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Biznes loyihaning 6 bosqichi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      5613400,
+      12192000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 24,
+     "max": 266,
+     "perLine": 133.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      6197600,
+      12192000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "title",
+     "chars": 4,
+     "max": 53,
+     "perLine": 53.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      304800,
+      12192000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "1",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      3759200,
+      2458959,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      508000,
+      2535159,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 33,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Muammoni ko'rish va yechim topish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2890759,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      3759200,
+      3429000,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 8,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tadqiqot",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      508000,
+      3505200,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 34,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Bozor va raqobatchilarni o'rganish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      3860800,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      3759200,
+      4399041,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 14,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Rejalashtirish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      508000,
+      4475241,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 30,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Biznes-reja va moliyaviy hisob",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4830841,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "4",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      7899400,
+      4399041,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8636000,
+      4475241,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 29,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Birinchi mahsulot va mijozlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8636000,
+      4830841,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "5",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      7899400,
+      3429000,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 14,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Rivojlantirish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8636000,
+      3505200,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 37,
+     "max": 37,
+     "perLine": 18.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Mahsulotni yaxshilash va kengaytirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8636000,
+      3860800,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "6",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      7899400,
+      2458959,
+      533400,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 12,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muvaffaqiyat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8636000,
+      2535159,
+      3048000,
+      369332
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 26,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Barqaror daromad va o'sish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8636000,
+      2890759,
+      3048000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  01  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 32.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har qanday biznes kimningdir muammosini hal qilishdan boshlanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 34,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Atrofdagi muammolarni yozib boring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 36,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bir nechta yechim variantini o'ylang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 25,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eng qiziq g'oyani tanlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  02  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 8,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "Tadqiqot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 36.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "G'oya qanchalik yaxshi bo'lmasin, unga talab bor-yo'qligini bilish kerak.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 35,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mijozlar bilan suhbat va so'rovnoma",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 29,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqobatchilarni tahlil qiling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 32,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bozor hajmini taxminan hisoblang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  03  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 14,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "Rejalashtirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 46,
+     "max": 111,
+     "perLine": 55.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Reja g'oyani raqam va muddatlarga aylantiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 30,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xarajat va daromadni hisoblang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 30,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jamoa va vazifalarni belgilang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 29,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi 3 oy rejasini tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  04  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mukammallikni kutmang — oddiy versiya bilan boshlang va fikr yig'ing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 33,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sinov mahsulotini (MVP) chiqaring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 27,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Dastlabki mijozlarni toping",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 31,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Fikr-mulohazalarni yozib boring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  05  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 14,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "Rivojlantirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 54,
+     "max": 54,
+     "perLine": 27,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mijozlar fikri asosida mahsulotni muntazam yaxshilang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 25,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'rsatkichlarni kuzating",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 28,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Marketingga sarmoya kiriting",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 20,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jamoani kengaytiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 96,
+     "perLine": 48.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  06  /  06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1397000,
+      5080000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 12,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "Muvaffaqiyat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      1701800,
+      5334000,
+      369332
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 51,
+     "max": 51,
+     "perLine": 25.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muvaffaqiyat — manzil emas, doimiy o'sish jarayoni.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6350000,
+      2489200,
+      5080000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 20,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Barqaror foyda oling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3556000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 24,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangi bozorlarga chiqing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4191000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 38,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tajribangizni boshqalar bilan ulashing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4826000,
+      4953000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "26",
+     "kind": "title",
+     "chars": 7,
+     "max": 39,
+     "perLine": 39.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4572000,
+      12192000,
+      369332
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 28,
+     "max": 107,
+     "perLine": 106.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      5486400,
+      12192000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true
+}

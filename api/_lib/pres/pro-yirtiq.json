@@ -1,0 +1,845 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 18,
+     "max": 231,
+     "perLine": 115.4,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TARIX  ·  TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1524000,
+      12192000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 17,
+     "max": 25,
+     "perLine": 24.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 2,
+     "text": "TEMURIYLAR\nMEROSI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      0,
+      1879600,
+      12192000,
+      369332
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 35,
+     "max": 106,
+     "perLine": 106.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Samarqand me'morchiligi durdonalari",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      4089400,
+      12192000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 24,
+     "max": 266,
+     "perLine": 133.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      5588000,
+      12192000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8681716,
+     "h": 7874001,
+     "area": 0.818
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 4,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      5080000,
+      369332
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      2032000,
+      635000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Registon maydoni",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1498600,
+      2044700,
+      4318000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      2819400,
+      635000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 20,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Go'ri Amir maqbarasi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1498600,
+      2832100,
+      4318000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      3606800,
+      635000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 17,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Bibixonim masjidi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1498600,
+      3619500,
+      4318000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      4394200,
+      635000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 17,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Temuriylar uslubi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1498600,
+      4406900,
+      4318000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      5181600,
+      635000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 13,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Bugungi kunda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1498600,
+      5194300,
+      4318000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8681716,
+     "h": 7874001,
+     "area": 0.818,
+     "copy": [
+      1,
+      "3"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 14,
+     "max": 91,
+     "perLine": 45.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 · SAMARQAND",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1524000,
+      4826000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 16,
+     "max": 19,
+     "perLine": 19,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 2,
+     "text": "Registon\nmaydoni",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      1854200,
+      4826000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Uch madrasa: Ulug'bek (1417–1420), Sherdor (1619–1636) va Tillakori (1646–1660). O'rta Osiyo me'morchiligining yuksak namunasi.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      3505200,
+      4826000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8683642,
+     "h": 7874001,
+     "area": 0.818,
+     "copy": [
+      1,
+      "3"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 14,
+     "max": 91,
+     "perLine": 45.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · SAMARQAND",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6604000,
+      1524000,
+      4826000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 20,
+     "max": 19,
+     "perLine": 19,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 2,
+     "text": "Go'ri Amir\nmaqbarasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6604000,
+      1854200,
+      4826000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Amir Temur va temuriylar sulolasi maqbarasi (1403–1404). Qovurg'ali moviy gumbazi Samarqandning ramziga aylangan.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3505200,
+      4826000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8688468,
+     "h": 7874001,
+     "area": 0.818
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 14,
+     "max": 91,
+     "perLine": 45.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 · SAMARQAND",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1524000,
+      4826000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 17,
+     "max": 19,
+     "perLine": 19,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 2,
+     "text": "Bibixonim\nmasjidi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      1854200,
+      4826000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 125,
+     "max": 125,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Amir Temur Hindiston yurishidan so'ng 1399-yilda qurdira boshlagan jome masjidi — o'z davrining eng ulkan masjidlaridan biri.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      3505200,
+      4826000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8627406,
+     "h": 7874001,
+     "area": 0.812
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 91,
+     "perLine": 45.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 · ME'MORCHILIK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6604000,
+      1524000,
+      4826000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 17,
+     "max": 19,
+     "perLine": 19,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 2,
+     "text": "Temuriylar\nuslubi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6604000,
+      1854200,
+      4826000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Moviy koshinlar, naqshinkor peshtoqlar, ulkan gumbazlar va geometrik bezaklar — bu uslubning asosiy belgilari.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3505200,
+      4826000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8720613,
+     "h": 7874001,
+     "area": 0.821
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 10,
+     "max": 91,
+     "perLine": 45.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 · BUGUN",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1524000,
+      4826000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 17,
+     "max": 19,
+     "perLine": 19,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 2,
+     "text": "Butunjahon\nmerosi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      1854200,
+      4826000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Samarqandning tarixiy markazi 2001-yilda YUNESKO Butunjahon merosi ro'yxatiga kiritilgan.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      3505200,
+      4826000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8753019,
+     "h": 7874001,
+     "area": 0.824
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 7,
+     "max": 33,
+     "perLine": 32.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      0,
+      2362200,
+      12192000,
+      369332
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 28,
+     "max": 106,
+     "perLine": 106.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      3581400,
+      12192000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 8729327,
+     "h": 7874001,
+     "area": 0.822,
+     "copy": [
+      7,
+      "3"
+     ]
+    }
+   ]
+  }
+ ],
+ "sequence": true
+}

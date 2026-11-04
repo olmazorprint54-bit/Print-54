@@ -765,6 +765,17 @@
       { id: "pro-kok", name: "💎 Steel Blue · aylanuvchi g'ildirak", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-qizil", name: "💎 Red Forge · bo'limli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-yashil", name: "💎 Green Signal · kartalar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-diplom", name: "💎 Diplom himoyasi · reja zoom", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-menyu", name: "💎 Tik menyu · minimal", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-zinapoya", name: "💎 Zinapoya lentalar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-ustunlar", name: "💎 Kengayuvchi ustunlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-gear", name: "💎 Tishli g'ildiraklar · bosqichlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kartalar", name: "💎 Kartalar to'plami", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kalit", name: "💎 Kalit · foydasi va zarari", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-halqalar", name: "💎 Zanjir halqalar · neon", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-xemblema", name: "💎 X emblema · to'q ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yoriq", name: "💎 Yoriq · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yirtiq", name: "💎 Yirtiq qog'oz · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

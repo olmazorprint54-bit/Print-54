@@ -1,0 +1,2363 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 69,
+     "max": 189,
+     "perLine": 94.6,
+     "lines": 2,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'ZBEKISTON RESPUBLIKASI OLIY TA'LIM, FAN VA INNOVATSIYALAR VAZIRLIGI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1016000,
+      508000,
+      10160000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 48,
+     "max": 251,
+     "perLine": 125.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "[Universitet nomi]  ·  [Fakultet nomi] fakulteti",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1016000,
+      838200,
+      10160000,
+      369332
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 31,
+     "max": 168,
+     "perLine": 84.2,
+     "lines": 2,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "BITIRUV MALAKAVIY ISHI HIMOYASI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1016000,
+      1778000,
+      10160000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 54,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 2,
+     "text": "Ijtimoiy tarmoqlarning talabalar\nyozma nutqiga ta'siri",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1016000,
+      2311400,
+      10160000,
+      369332
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 25,
+     "max": 83,
+     "perLine": 41.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Bajardi:\n[Talaba F.I.Sh.]",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      4699000,
+      3810000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 37,
+     "max": 83,
+     "perLine": 41.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Ilmiy rahbar:\n[F.I.Sh., ilmiy daraja]",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7239000,
+      4699000,
+      3810000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 15,
+     "max": 222,
+     "perLine": 111,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toshkent — 2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      5969000,
+      10160000,
+      369332
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 4,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      0,
+      889000,
+      12192000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      1016000,
+      2527300,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 24,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      4508500,
+      2527300,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 21,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      8001000,
+      2527300,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      1016000,
+      3848100,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 26,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      4508500,
+      3848100,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 22,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      8001000,
+      3848100,
+      3175000,
+      838200
+     ],
+     "lineH": 259080,
+     "ins": 254000
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      19589750,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      19589750,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 186,
+     "max": 186,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ijtimoiy tarmoqlar bugun talabalar kundalik hayotining ajralmas qismiga aylangan: Telegram, Instagram va YouTube muloqot, ma'lumot almashish va til o'rganish uchun keng imkoniyat beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      1930400,
+      6477000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 173,
+     "max": 173,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ammo ularning talabalar yozma nutqiga — imlo, uslub va fikrni izchil bayon qilishga — ta'siri hali yetarlicha o'rganilmagan. Ushbu tadqiqot aynan shu masalaga bag'ishlangan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      3327400,
+      6477000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 24,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 177,
+     "max": 177,
+     "perLine": 73.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Talabalar ijtimoiy tarmoqlarda kuniga o'rtacha bir necha soat vaqt o'tkazadi. Qisqa xabarlar, qisqartmalar va imlo qoidalariga e'tiborsizlik akademik yozuvga ham o'tib ketmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1651000,
+      7112000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 34,
+     "max": 61,
+     "perLine": 61.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qisqartmalar va jargon ko'paymoqda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1574800,
+      3441700,
+      6350000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 42,
+     "max": 61,
+     "perLine": 61.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Imlo va tinish belgilari xatolari ortmoqda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1574800,
+      4305300,
+      6350000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 46,
+     "max": 61,
+     "perLine": 61.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Uzun, izchil matn yozish ko'nikmasi susaymoqda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1574800,
+      5168900,
+      6350000,
+      381000
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -15335250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -15335250,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      5683250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 21,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 18,
+     "max": 70,
+     "perLine": 35.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot savollari",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      1524000,
+      1676400,
+      3810000,
+      457200
+     ],
+     "lineH": 274320,
+     "ins": 182880
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 59,
+     "max": 47,
+     "perLine": 46.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1. Talabalar ijtimoiy tarmoqlar ta'sirini qanday baholaydi?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      2489200,
+      4826000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 46.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2. Tarmoqdagi faollik yozma ishlar sifatiga qanday ta'sir qiladi?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3886200,
+      4826000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 70,
+     "perLine": 35.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Farazlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      7239000,
+      1676400,
+      3810000,
+      457200
+     ],
+     "lineH": 274320,
+     "ins": 182880
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 46.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1. Tarmoqda ko'p vaqt o'tkazish imlo xatolarini ko'paytiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2489200,
+      4826000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 51,
+     "max": 47,
+     "perLine": 46.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2. Ta'limiy kanallar esa lug'at boyligini oshiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3886200,
+      4826000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      19589750,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      19589750,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 22,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 19,
+     "max": 90,
+     "perLine": 45,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xorijiy tadqiqotlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      762000,
+      1676400,
+      4826000,
+      533400
+     ],
+     "lineH": 274320,
+     "ins": 182880
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 48.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Xorijiy olimlar raqamli platformalarning lug'at boyligi va onlayn muloqot ko'nikmalariga ijobiy ta'sirini ko'rsatgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      863600,
+      2413000,
+      4699000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 20,
+     "max": 90,
+     "perLine": 45,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mahalliy tadqiqotlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      6477000,
+      1676400,
+      4826000,
+      533400
+     ],
+     "lineH": 274320,
+     "ins": 182880
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 48.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "O'zbek tilshunosligida bu mavzu endi o'rganila boshlangan: asosan nutq madaniyati va imlo muammolari tahlil qilingan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6578600,
+      2413000,
+      4699000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 15,
+     "max": 87,
+     "perLine": 14.5,
+     "lines": 6,
+     "caps": false,
+     "sz": 14,
+     "paras": 2,
+     "text": "Ijtimoiy\ntarmoq",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      7010400,
+      4470400,
+      1219200,
+      1219200
+     ],
+     "lineH": 213360,
+     "ins": 50800
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 10,
+     "max": 87,
+     "perLine": 14.5,
+     "lines": 6,
+     "caps": false,
+     "sz": 14,
+     "paras": 2,
+     "text": "Yozma\nnutq",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      8382000,
+      4470400,
+      1219200,
+      1219200
+     ],
+     "lineH": 213360,
+     "ins": 50800
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 14,
+     "max": 87,
+     "perLine": 14.5,
+     "lines": 6,
+     "caps": false,
+     "sz": 14,
+     "paras": 2,
+     "text": "Akademik\nuslub",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      9753600,
+      4470400,
+      1219200,
+      1219200
+     ],
+     "lineH": 213360,
+     "ins": 50800
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      10858500,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 26,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 9,
+     "max": 19,
+     "perLine": 19.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yondashuv",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      596900,
+      2108200,
+      2235200,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 33,
+     "max": 23,
+     "perLine": 23,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Aralash (miqdoriy va sifat) metod",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      596900,
+      2667000,
+      2235200,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 16,
+     "max": 19,
+     "perLine": 19.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tadqiqot dizayni",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      3517900,
+      2108200,
+      2235200,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 23,
+     "perLine": 23,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Tavsifiy tadqiqot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3517900,
+      2667000,
+      2235200,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 14,
+     "max": 19,
+     "perLine": 19.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Ishtirokchilar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6438900,
+      2108200,
+      2235200,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 29,
+     "max": 23,
+     "perLine": 23,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "3–4-kurs talabalari, 60 nafar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6438900,
+      2667000,
+      2235200,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 9,
+     "max": 19,
+     "perLine": 19.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Vositalar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      9359900,
+      2108200,
+      2235200,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 34,
+     "max": 23,
+     "perLine": 23,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "So'rovnoma va yozma ishlar tahlili",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9359900,
+      2667000,
+      2235200,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "1. Kirish",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -15335250,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "7"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "2. Muammoning qo'yilishi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 21,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "3. Tadqiqot savollari",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      -920750,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "9"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "4. Adabiyotlar tahlili",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -15335250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 26,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "5. Tadqiqot metodologiyasi",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      -6604000,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 90,
+     "perLine": 30.1,
+     "lines": 3,
+     "caps": false,
+     "sz": 42,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      2127250,
+      2381250,
+      7937500,
+      2095500
+     ],
+     "lineH": 640080,
+     "ins": 635000,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 22,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "6. Natijalar va xulosa",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      431800,
+      7874000,
+      711200
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "12"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 3,
+     "max": 21,
+     "perLine": 6.9,
+     "lines": 3,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "72%",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      1397000,
+      1778000,
+      1778000,
+      1778000
+     ],
+     "lineH": 609600,
+     "ins": 182880
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 41,
+     "max": 31,
+     "perLine": 31.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "talabalar kuniga 3 soatdan ortiq tarmoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3759200,
+      3048000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 21,
+     "perLine": 6.9,
+     "lines": 3,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "2×",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      5207000,
+      1778000,
+      1778000,
+      1778000
+     ],
+     "lineH": 609600,
+     "ins": 182880
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 38,
+     "max": 31,
+     "perLine": 31.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "ko'p vaqt o'tkazganlarda imlo xatolari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      3759200,
+      3048000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "fixed",
+     "chars": 3,
+     "max": 21,
+     "perLine": 6.9,
+     "lines": 3,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "64%",
+     "font": "Georgia",
+     "anchor": "ctr",
+     "box": [
+      9017000,
+      1778000,
+      1778000,
+      1778000
+     ],
+     "lineH": 609600,
+     "ins": 182880
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 34,
+     "max": 31,
+     "perLine": 31.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "ta'limiy kanallardan foyda ko'rgan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8382000,
+      3759200,
+      3048000,
+      369332
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 96.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosa: ijtimoiy tarmoqlar to'g'ri yo'naltirilsa, yozma nutqni rivojlantirish vositasiga aylanishi mumkin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      5054600,
+      9906000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 26,
+     "max": 40,
+     "perLine": 39.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1016000,
+      2540000,
+      10160000,
+      369332
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 30,
+     "max": 89,
+     "perLine": 88.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, marhamat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      3505200,
+      10160000,
+      381000
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true
+}
