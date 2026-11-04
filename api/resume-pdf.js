@@ -470,7 +470,7 @@ module.exports = async (req, res) => {
       // Claude Opus slaydlarni yozadi, asl Canva shabloni to'ldiriladi (api/_lib/pres-gen.js)
       // joylashuv tekshiruvi: Chrome'da o'lchab, ustma-ust/sig'magan yozuvlar tuzatiladi (api/_lib/pres-fit.js)
       const fit = require("./_lib/pres-fit");
-      const pres = await generatePresentation(fields, await photoUrls(order), { measure: (buf) => fit.measure(buf, withPage) });
+      const pres = await generatePresentation(fields, await photoUrls(order), { measure: (buf) => fit.measure(buf, withPage), withPage });
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
     } else if (GENERATORS[order.service]) {

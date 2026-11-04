@@ -76,7 +76,7 @@ const CANVA_HELP = /Canva Presentation|Double-click to customi[sz]e|Elements Tab
 
 // Sarlavha sig'imi kamida 22 (titulda 30) harf: Canva namunasi ko'pincha bitta qisqa so'z,
 // mavzu esa uzunroq — shrift fillText'da avtomatik kichrayadi
-const slotMax = (t, s) => (t.kind === "title" ? Math.max(t.max, s && s.role === "title" ? 30 : 22) : t.max);
+const slotMax = (t, s) => (t.word ? t.word : t.kind === "title" ? Math.max(t.max, s && s.role === "title" ? 30 : 22) : t.max);
 
 function describe(layouts) {
   const kindName = { title: "TITLE", text: "TEXT", label: "LABEL" };
@@ -110,7 +110,7 @@ async function writeSequence(d, spec) {
   const own = (L) => L.editable.filter((t) => !t.off);
   const sample = (t) => String(t.text || "").replace(/\s+/g, " ").slice(0, 40);
   const desc = seq.map((L, i) => `Slide ${i + 1}${L.role === "title" ? " (TITLE SLIDE)" : L.role === "end" ? " (CLOSING / THANK-YOU SLIDE)" : ""}: ` +
-    own(L).map((t, j) => `[${j + 1}] ${t.num ? "NUMBER" : kindName[t.kind]} max ${slotMax(t, L)} chars (sample: "${sample(t)}")`).join("; ")).join("\n");
+    own(L).map((t, j) => t.word ? `[${j + 1}] ONE KEYWORD (single word, max ${t.word} letters) (sample: "${sample(t)}")` : t.stack ? `[${j + 1}] ONE SHORT KEYWORD of the topic, 3-5 letters, no spaces (sample: "${sample(t).replace(/ /g, "")}")` : `[${j + 1}] ${t.num ? "NUMBER" : kindName[t.kind]} max ${slotMax(t, L)} chars (sample: "${sample(t)}")`).join("; ")).join("\n");
   const r = await askJson({
     model: MODEL(), system: SYSTEM, effort: "medium", maxTokens: 32000,
     schema: {
@@ -131,6 +131,7 @@ Rules:
 - Return exactly ${seq.length} slides; "texts" has exactly one string per slot, in slot order.
 - The sample shows what each slot is for in the English template (a heading, a section name, a description, a figure…) — keep that role but write about the topic in the requested language; never copy the English sample.
 - Slide 1: the main title slot = the FULL topic; other title-slide slots = subtitle / author / short tagline.
+- KEYWORD slots are huge decorative words: write ONE short word that names the slide (on slide 1 — the key word of the topic; then put the FULL topic into the next TEXT/LABEL slot of that slide). Never write a phrase there.
 - A slide that lists section names (an outline / contents) must use the same section names, in the same order, as the following slides' headings.
 - NUMBER slots: a short real figure for the topic (year, percent, count, e.g. "1991", "85%", "30+"); add the unit in the neighbouring LABEL slot.
 - The last slide: a short thank-you and closing words.
@@ -255,6 +256,47 @@ async function stockPhoto(query, orientation, used) {
   return (await pixabay(query, orientation, used).catch(() => null)) || (await pexels(query, orientation, used).catch(() => null));
 }
 
+/* Shablon suratlarini almashtirish (spec.media, PRO Morph shablonlar): rasm fayli (ppt/media/...) o'zi
+   mavzuga mos foto bilan almashtiriladi — fon, rasm, harf ichidagi rasm, kesilgan bo'laklar: hammasi
+   joyida qoladi, chunki yangi foto asl o'lcham va nisbatda (cover) kesiladi. derive — boshqa rasmdan
+   olinadigan nusxa (kesilgan qism / xiralashtirilgan fon). Kesish Chrome canvas'da (opts.withPage). */
+async function swapMedia(buffer, spec, slides, d, take, withPage) {
+  const zip = await JSZip.loadAsync(buffer);
+  const byN = new Map(slides.map((s) => [s.L.n, s]));
+  const src = [];
+  for (const m of spec.media) {
+    if (m.derive) continue;
+    const s = m.slides.map((n) => byN.get(n)).find(Boolean);
+    if (!s) continue;
+    const orient = m.w / m.h > 1.2 ? "landscape" : m.w / m.h < 0.83 ? "portrait" : "square";
+    src[spec.media.indexOf(m)] = await take(s.query || d.topic, orient);
+  }
+  const jobs = spec.media.map((m, i) => {
+    const from = m.derive ? src[m.derive.of] : src[i];
+    return from ? { i, files: m.files, w: m.w, h: m.h, crop: (m.derive && m.derive.crop) || [0, 0, 1, 1], filter: (m.derive && m.derive.filter) || "none", mime: from.buf[0] === 0x89 ? "image/png" : "image/jpeg", data: from.buf.toString("base64") } : null;
+  }).filter(Boolean);
+  if (!jobs.length) return buffer;
+  const out = await withPage(async (page) => page.evaluate(async (jobs) => {
+    const res = [];
+    for (const j of jobs) {
+      const img = new Image();
+      img.src = "data:" + j.mime + ";base64," + j.data;
+      await img.decode();
+      // asl rasm nisbatida "cover": derive.crop — manba fotoning qaysi qismi (0..1)
+      const [l, t, r, b] = j.crop, fullW = j.w / (r - l), fullH = j.h / (b - t);
+      const k = Math.max(fullW / img.width, fullH / img.height);
+      const ox = (fullW - img.width * k) / 2 - l * fullW, oy = (fullH - img.height * k) / 2 - t * fullH;
+      const c = document.createElement("canvas"); c.width = j.w; c.height = j.h;
+      const g = c.getContext("2d"); g.filter = j.filter;
+      g.drawImage(img, ox, oy, img.width * k, img.height * k);
+      res.push(c.toDataURL("image/jpeg", 0.86).split(",")[1]);
+    }
+    return res;
+  }, jobs));
+  jobs.forEach((j, k) => { for (const f of j.files) zip.file(f, Buffer.from(out[k], "base64"), NOFOLD); });
+  return zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
+}
+
 /* ---------------- PPTX yig'ish ---------------- */
 function shapeRange(xml, id) {
   const m = new RegExp(`<p:cNvPr\\b[^>]*\\bid="${id}"`).exec(xml);
@@ -369,6 +411,8 @@ function descLift(L, texts) {
 function fillText(sp, text, slot, lang, opt = {}) {
   const body = /<p:txBody>([\s\S]*?)<\/p:txBody>/.exec(sp);
   if (!body) return sp;
+  // tik qatordagi harflar (I/P/A/K): so'z harflarga bo'linib, har biri alohida qatorda
+  if (slot.stack) text = [...String(text).replace(/[^\p{L}\p{N}]/gu, "")].slice(0, slot.max || 5).join("\n");
   const inner = body[1];
   const bodyPr = el(inner, "bodyPr") || "<a:bodyPr/>";
   const lst = el(inner, "lstStyle") || "<a:lstStyle/>";
@@ -596,6 +640,10 @@ async function generatePresentation(f, photoUrls = [], opts = {}) {
       buffer = await buildPptx(tpl, spec, written.slides, photosOnce, LANG_TAG[lang]);
       console.log(`Joylashuv tuzatildi (${pass}): ${issues.length} ta joy`);
     }
+  }
+  if (spec.media && opts.withPage && (own.length || d.images)) {
+    const take = async (q, orient) => { if (own.length) return own.shift(); if (!d.images) return null; try { return await stockPhoto(q, orient, used); } catch (e) { return null; } };
+    try { buffer = await swapMedia(buffer, spec, written.slides, d, take, opts.withPage); } catch (e) { console.error("Shablon suratlari almashmadi:", e.message); }
   }
   const name = `Taqdimot - ${d.topic}`.replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, " ").slice(0, 90);
   return { buffer, name, ai: sumAi(sumAi(written.ai, shortened), fixedAi), layouts: written.slides.map((s) => s.L.n) };

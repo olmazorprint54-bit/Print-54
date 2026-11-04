@@ -776,6 +776,12 @@
       { id: "pro-xemblema", name: "💎 X emblema · to'q ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-yoriq", name: "💎 Yoriq · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-yirtiq", name: "💎 Yirtiq qog'oz · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-alpinizm", name: "💎 Suratli sarlavha · panel", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-ipak", name: "💎 Tik harflar · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-swot", name: "💎 SWOT tahlil · aylanuvchi karta", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-fragment", name: "💎 Fragment raqam · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-asalari", name: "💎 Asalari uyasi · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-fokus", name: "💎 Fokus ramka · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
