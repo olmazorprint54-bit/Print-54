@@ -1,0 +1,934 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 6.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 128,
+     "paras": 1,
+     "text": "TABIAT",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2785830,
+      2507615,
+      6620337,
+      1969770
+     ],
+     "lineH": 1950720,
+     "ins": 0,
+     "split": 540,
+     "word": 8
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 23,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "GEOGRAFIYA  ·  TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      1524000,
+      4191000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 36,
+     "max": 37,
+     "perLine": 36.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yer sayyorasining go'zal manzaralari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4572000,
+      4191000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 24,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      5969000,
+      4191000,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 4,
+     "max": 6,
+     "perLine": 5,
+     "lines": 1,
+     "caps": true,
+     "sz": 110,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      4037551,
+      2646115,
+      4116896,
+      1692771
+     ],
+     "lineH": 1676400,
+     "ins": 0,
+     "split": 380,
+     "word": 6
+    },
+    {
+     "id": "4",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5461000,
+      4572000,
+      508000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "O'rmon",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      4572000,
+      2540000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8636000,
+      4572000,
+      508000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9144000,
+      4572000,
+      2540000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5461000,
+      5207000,
+      508000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Cho'l",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      5207000,
+      2540000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8636000,
+      5207000,
+      508000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 3,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Suv",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9144000,
+      5207000,
+      2540000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 32,
+     "max": 52,
+     "perLine": 52.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tabiat zonalari bilan tanishamiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5461000,
+      1397000,
+      5969000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 7.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 110,
+     "paras": 1,
+     "text": "O'RMON",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2923656,
+      2646115,
+      6344686,
+      1692771
+     ],
+     "lineH": 1676400,
+     "ins": 0,
+     "split": 520,
+     "word": 8
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 9,
+     "max": 54,
+     "perLine": 53.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7366000,
+      1397000,
+      4318000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 35.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rmonlar quruqlikning qariyb uchdan bir qismini egallaydi va sayyoramizning «yashil o'pkasi» hisoblanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4445000,
+      4318000,
+      830997
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 30,
+     "max": 45,
+     "perLine": 45.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Havoni kislorod bilan boyitadi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7543800,
+      5486400,
+      4140200,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 27,
+     "max": 45,
+     "perLine": 45.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Minglab hayvon turlariga uy",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7543800,
+      6045200,
+      4140200,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 110,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2672850,
+      2646115,
+      6846297,
+      1692771
+     ],
+     "lineH": 1676400,
+     "ins": 0,
+     "split": 545,
+     "word": 9
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 9,
+     "max": 50,
+     "perLine": 49.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7683500,
+      1397000,
+      4000500,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar daryolarning boshlanishi va chuchuk suvning asosiy manbaidir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7683500,
+      4445000,
+      4000500,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 34,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Balandlikda iqlim keskin o'zgaradi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7861300,
+      5486400,
+      3822700,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 39,
+     "max": 39,
+     "perLine": 19.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'zbekistonda eng baland nuqta — 4643 m",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7861300,
+      6045200,
+      3822700,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 110,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      3706723,
+      2646115,
+      4778551,
+      1692771
+     ],
+     "lineH": 1676400,
+     "ins": 0,
+     "split": 505,
+     "word": 7
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 9,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7175500,
+      1397000,
+      4508500,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "text",
+     "chars": 83,
+     "max": 83,
+     "perLine": 41.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'llarda yog'in yiliga 250 mm dan kam, kunduzi issiq, kechasi esa salqin bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7175500,
+      4445000,
+      4508500,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 53,
+     "max": 53,
+     "perLine": 26.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qizilqum — O'rta Osiyodagi eng katta cho'llardan biri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7353300,
+      5486400,
+      4330700,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 34,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'simliklar suvsizlikka moslashgan",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7353300,
+      6045200,
+      4330700,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 3,
+     "max": 6,
+     "perLine": 4,
+     "lines": 1,
+     "caps": true,
+     "sz": 110,
+     "paras": 1,
+     "text": "SUV",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      4450516,
+      2646115,
+      3290965,
+      1692771
+     ],
+     "lineH": 1676400,
+     "ins": 0,
+     "split": 470,
+     "word": 6
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 9,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6731000,
+      1397000,
+      4953000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 45.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer yuzasining 71 foizi suv bilan qoplangan, ammo chuchuk suv atigi 3 foizni tashkil etadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4445000,
+      4953000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 29,
+     "max": 52,
+     "perLine": 52,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suv — hayotning asosiy manbai",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      5486400,
+      4775200,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 29,
+     "max": 52,
+     "perLine": 52,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir tomchini tejash muhim",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      6045200,
+      4775200,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 120,
+     "paras": 1,
+     "text": "RAHMAT",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2429995,
+      2569171,
+      7332007,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0,
+     "split": 540,
+     "word": 8
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 28,
+     "max": 37,
+     "perLine": 36.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4699000,
+      4191000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    5
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    7
+   ]
+  }
+ ],
+ "sequence": true
+}

@@ -28,6 +28,20 @@ const NOFOLD = { createFolders: false }; // PowerPoint zip ichidagi papka yozuvl
 const clean = (v, max = 300) => String(v == null ? "" : v).replace(/[ \t]+/g, " ").trim().slice(0, max);
 const xmlEsc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+/* Ikki rangli so'z (slot.split — panel qirrasi, pt): matn gradientining keskin to'xtashi yangi so'z uchun
+   qayta hisoblanadi. PowerPoint gradientni harflar siyohi eniga yoyadi; en — Arial Black harf enlaridan taxmin. */
+const ARIAL_BLACK = { A: 778, B: 778, C: 778, D: 778, E: 722, F: 667, G: 833, H: 833, I: 389, J: 667, K: 833, L: 667, M: 944, N: 833, O: 833, P: 722, Q: 833, R: 778, S: 722, T: 722, U: 833, V: 778, W: 1000, X: 778, Y: 778, Z: 722, " ": 333, "'": 278, "ʻ": 278, "’": 278, "‘": 278, "-": 333, ".": 333, "!": 333 };
+function splitGradient(rPr, text, slot) {
+  const m = /\bsz="(\d+)"/.exec(rPr);
+  const pt = m ? m[1] / 100 : slot.sz;
+  const adv = [...String(text).toUpperCase()].reduce((a, ch) => a + (ARIAL_BLACK[ch] || (/\d/.test(ch) ? 667 : 778)), 0) / 1000;
+  const ink = Math.max(1, (adv - 0.19) * pt);
+  const cx = (slot.box[0] + slot.box[2] / 2) / 12700;
+  const k = Math.min(0.98, Math.max(0.02, (slot.split - 4 - (cx - ink / 2)) / ink));
+  let n = 0;
+  return rPr.replace(/<a:gs pos="(\d+)">/g, (all, p) => (p === "0" || p === "100000" ? all : `<a:gs pos="${Math.round(k * 100000) + (n++ ? 50 : -50)}">`));
+}
+
 /* ---------------- shablonlar ---------------- */
 let specCache = null;
 function specs() {
@@ -432,6 +446,7 @@ function fillText(sp, text, slot, lang, opt = {}) {
     pPr = scale(pPr);
   }
   rPr = rPr.replace(/\blang="[^"]*"/, `lang="${lang}"`);
+  if (slot.split) rPr = splitGradient(rPr, text, slot);
   if (slot.text && slot.text === slot.text.toUpperCase() && /[A-Z]/.test(slot.text) && !/\bcap="all"/.test(rPr)) text = text.toLocaleUpperCase(lang.slice(0, 2));
   const lines = text.split(/\n+/).map((l) => l.trim()).filter(Boolean);
   let paras = (lines.length ? lines : [""]).map((l) => `<a:p>${pPr}<a:r>${rPr}<a:t>${xmlEsc(l)}</a:t></a:r></a:p>`).join("");

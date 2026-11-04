@@ -25,6 +25,9 @@ const JSZip = require(require.resolve("jszip", { paths: [process.cwd(), path.joi
       return g ? `${g.name}#${g.ids.indexOf(String(id))}` : own;
     };
     for (const t of s.slots) {
+      // ikki rangli so'z: AltText "split:<x pt>" — panel qirrasi (server gradientni qayta hisoblaydi)
+      const sp = new RegExp(`<p:cNvPr id="${t.id}"[^>]*descr="split:(\\d+)"`).exec(xml);
+      if (sp) t.split = +sp[1];
       if (t.kind === "fixed") continue;
       const nm = nameOf(t.id);
       if (!nm.startsWith("!!")) continue;
