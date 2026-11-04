@@ -1715,7 +1715,7 @@
       if ((svc.id === "test" || svc.id === "crossword") && v.key) kinds.push(["key", "Javoblar"]);
       pages = kinds.map(([k, cap]) => `${pageHtml(svc.id, tpl, k, d)}<div class="cap">${cap}</div>`);
     }
-    document.getElementById("aiModalBody").innerHTML = chips + pages.join("");
+    document.getElementById("aiModalBody").innerHTML = pages.join(""); // shablon nomlari ro'yxati ko'rsatilmaydi — faqat tanlangan shablon
   }
 
   modal.addEventListener("click", (e) => {
