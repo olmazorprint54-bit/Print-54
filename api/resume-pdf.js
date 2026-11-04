@@ -223,7 +223,7 @@ const costTitle = (s, f) => ({
 // Kirim: mijoz haqiqatan to'lagan summa. Bonus / sinov / birinchi tekin bo'lsa — 0
 function incomeOf(o) {
   const d = o.details || {};
-  if (d.trial || d.credit || d.firstFree) return 0;
+  if ((d.trial || d.credit || d.firstFree) && !d.charOnly) return 0; // charOnly: faqat personaj puli to'langan
   return d.payment || d.spent ? Number(o.total) || 0 : 0;
 }
 const money = (n) => `${n < 0 ? "−" : ""}${Math.abs(Math.round(n)).toLocaleString("ru-RU")} so'm`;
@@ -473,6 +473,20 @@ module.exports = async (req, res) => {
       const pres = await generatePresentation(fields, await photoUrls(order), { measure: (buf) => fit.measure(buf, withPage), withPage });
       ai = pres.ai;
       file = { buffer: pres.buffer, name: pres.name + ".pptx", mime: PPTX };
+      // «Jonli personaj qo'shish» yoqilgan bo'lsa — tayyor taqdimotga shu yerning o'zida qo'shiladi
+      if (fields.addChar && fields.character && fields.format !== "pdf" && CHARS.get(fields.character)) {
+        try {
+          const files = [{ name: file.name, buffer: file.buffer }];
+          const mp = Array.isArray(fields.music) ? fields.music[0] : null;
+          if (mp && fields.sound === "custom") {
+            const { data } = await supabase.storage.from(BUCKET).download(mp);
+            if (data) files.push({ name: String((fields.musicNames || [])[0] || mp.split("/").pop()), buffer: Buffer.from(await data.arrayBuffer()), role: "music" });
+          }
+          const r = await DT.runTool("char_add", files, fields, { renderPdf: (html) => renderPdf(html), renderHtmlFile, withPage });
+          file = { ...file, buffer: r.buffer };
+          if (mp) await supabase.storage.from(BUCKET).remove([mp]).catch(() => {});
+        } catch (e) { console.error("Taqdimotga personaj qo'shib bo'lmadi:", e && e.message); }
+      }
     } else if (GENERATORS[order.service]) {
       // Matnni Claude yozadi, hujjat shakli — kodda (api/_lib/doc-gen.js)
       const doc = await GENERATORS[order.service](fields, { png: (html) => renderPdf(html, "chart") });
