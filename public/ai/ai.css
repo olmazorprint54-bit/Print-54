@@ -382,3 +382,17 @@ body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 .ch-play{ border:none; border-radius:999px; padding:7px 14px; font: 700 12.5px/1 inherit; font-family:inherit; color:#fff; background: linear-gradient(135deg,#fbbf24,#d97706); cursor:pointer; transition: transform .15s ease; }
 .ch-play:active{ transform: scale(.94); }
 .ch-play.on{ background: linear-gradient(135deg,#ef4444,#b91c1c); }
+
+/* Til menyusi (yashirin ro'yxat, bayroqli) */
+.dd{ position:relative; }
+.dd-btn{ display:flex; align-items:center; gap:10px; width:100%; padding:12px 14px; border-radius:14px; cursor:pointer;
+  background: var(--glass); border:1px solid var(--glass-border); color: var(--ink); font: 600 14px/1.2 inherit; font-family: inherit; text-align:left; }
+.dd-btn span{ flex:1; }
+.dd-arr{ font-style:normal; opacity:.7; transition: transform .2s ease; }
+.dd.open .dd-arr{ transform: rotate(180deg); }
+.dd-flag{ width:22px; height:16px; object-fit:cover; border-radius:3px; box-shadow:0 0 0 1px rgba(0,0,0,.15); flex:none; }
+.dd-list.chips{ display:none; flex-direction:column; flex-wrap:nowrap; gap:2px; margin-top:6px; padding:6px; max-height:300px; overflow-y:auto;
+  border-radius:14px; background: var(--glass); border:1px solid var(--glass-border); }
+.dd.open .dd-list.chips{ display:flex; }
+.dd-list .chip.dd-item{ display:flex; align-items:center; gap:10px; border:none; background:transparent; border-radius:10px; padding:9px 10px; box-shadow:none; }
+.dd-list .chip.dd-item.active{ background: var(--glass-active); }

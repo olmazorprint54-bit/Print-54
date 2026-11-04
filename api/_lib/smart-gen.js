@@ -13,7 +13,7 @@ const { askJson } = require("./ai");
 
 const MODEL = () => require("./ai").modelFor("PRES_MODEL"); // standart: Opus 5.5
 const MAX_SLIDES = 30;
-const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English" };
+const LANG_NAMES = { uz_lat: "Uzbek (Latin script)", uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English", ...require("./langs").EXTRA_NAMES };
 
 // Rang uslublari: fon, sarlavha, matn, urg'u, karta foni, to'q blok, shrift
 const THEMES = {
@@ -242,7 +242,7 @@ function renderSmart(data, d, images) {
       });
       if (hasBox) {
         card(s, 8.4, top + 0.6, SW - 9.0, 3.6, T.dark);
-        txt(s, d.lang === "ru" ? "Итог" : d.lang === "en" ? "Key takeaway" : d.lang === "uz_cyr" ? "Якуний хулоса" : "Yakuniy xulosa", { x: 8.75, y: top + 0.85, w: SW - 9.7, h: 0.45, max: 16, bold: true, color: onDark });
+        txt(s, d.lang === "ru" ? "Итог" : d.lang === "uz_cyr" ? "Якуний хулоса" : d.lang === "uz_lat" ? "Yakuniy xulosa" : "Key takeaway", { x: 8.75, y: top + 0.85, w: SW - 9.7, h: 0.45, max: 16, bold: true, color: onDark });
         txt(s, clean(sl.highlight, 300), { x: 8.75, y: top + 1.4, w: SW - 9.7, h: 2.6, max: 17, min: 11, color: onDark });
       }
     } else if (type === "text_image") {

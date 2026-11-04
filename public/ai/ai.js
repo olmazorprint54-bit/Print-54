@@ -14,6 +14,7 @@
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const optV = (o) => (typeof o === "object" ? o.v : o);
   const optL = (o) => (typeof o === "object" ? o.l : o);
+  const ddItem = (o) => `${o.f ? `<img class="dd-flag" src="https://flagcdn.com/w40/${o.f}.png" alt="" loading="lazy">` : ""}<span>${esc(optL(o))}</span>`;
   const clip = (s, n) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
   const fmt = (n) => Math.round(n).toLocaleString("ru-RU") + " so'm";
   // Narxlar: ai/prices.js (server ham shundan hisoblaydi); u yerda yo'q xizmat — config.js
@@ -181,6 +182,14 @@
           <div class="ai-count" data-count="${f.id}">${String(v[f.id] || "").length} / ${f.max || 1000}</div>
           <div class="ai-err">Iltimos, shu maydonni to'ldiring</div></div>`;
       case "chips":
+        if (f.dd) {
+          // yashirin menyu: tugma (bayroq + nom) bosilganda tillar ustun bo'lib ochiladi
+          const cur = f.options.find((o) => optV(o) === v[f.id]) || f.options[0];
+          return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="dd" data-dd="${f.id}">
+            <button type="button" class="dd-btn" data-ddbtn="${f.id}">${ddItem(cur)}<i class="dd-arr">▾</i></button>
+            <div class="dd-list chips" data-chips="${f.id}">${f.options.map((o) => `<div class="chip dd-item${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${ddItem(o)}</div>`).join("")}</div>
+          </div></div>`;
+        }
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="chips${f.compact ? " compact" : ""}${f.seg ? " seg" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
           </div></div>`;
@@ -1051,6 +1060,10 @@
     refreshLive(current);
   });
   root.addEventListener("click", (e) => {
+    // til menyusi: tugma ochadi/yopadi, tashqariga bosilsa yopiladi
+    root.querySelectorAll(".dd.open").forEach((d) => { if (!d.contains(e.target)) d.classList.remove("open"); });
+    const ddb = e.target.closest("[data-ddbtn]");
+    if (ddb) { tick(); ddb.parentElement.classList.toggle("open"); return; }
     const sdel = e.target.closest("[data-src-del]");
     if (sdel && current) {
       e.preventDefault();
@@ -1169,6 +1182,7 @@
       v[fid] = chPick.dataset.charPick;
       tick();
       charRedraw(current);
+      applyShowIf(current); // video-slayd personajida slayd/o'lcham/joy yashiriladi
       refreshLive(current);
       return;
     }
@@ -1266,6 +1280,8 @@
       if (single) {
         v[single] = chip.dataset.v;
         chip.parentElement.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === chip));
+        const dd = chip.closest(".dd");
+        if (dd) { dd.querySelector(".dd-btn").innerHTML = chip.innerHTML + '<i class="dd-arr">▾</i>'; dd.classList.remove("open"); }
         // taqdimot: "AI o'zi yaratadi" — shablonsiz (smart-gen), galereya yopiladi
         if (single === "design" && chip.dataset.v === "ai") v.template = "ai-dizayn";
         refreshDeps(current, single);
