@@ -1,0 +1,709 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 24,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "URBANISTIKA  ·  TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1651000,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 18,
+     "max": 33,
+     "perLine": 16.3,
+     "lines": 2,
+     "caps": false,
+     "sz": 54,
+     "paras": 2,
+     "text": "Kelajak\nshaharlari",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2006600,
+      5080000,
+      1754326
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 63,
+     "max": 63,
+     "perLine": 31.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Aqlli texnologiyalar, yashil binolar va inson uchun qulay hayot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3810000,
+      4699000,
+      707886
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "label",
+     "chars": 24,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      5969000,
+      4064000,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 16,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "2050-YILGA BORIB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1219200,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "fixed",
+     "chars": 3,
+     "max": 32,
+     "perLine": 32.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "68%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      1524000,
+      4826000,
+      492443
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "title",
+     "chars": 18,
+     "max": 41,
+     "perLine": 20.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 42,
+     "paras": 2,
+     "text": "Shaharlar\no'smoqda",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2057400,
+      4953000,
+      1384995
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 43.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "BMT ma'lumotiga ko'ra, 2050-yilga kelib dunyo aholisining 68 foizi shaharlarda yashaydi. Bu yangi, aqlli yechimlarni talab qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      4699000,
+      830997
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 14,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  ·  HARAKAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1219200,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 9,
+     "max": 32,
+     "perLine": 32.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Transport",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      1524000,
+      4826000,
+      492443
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "title",
+     "chars": 15,
+     "max": 41,
+     "perLine": 20.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 42,
+     "paras": 2,
+     "text": "Aqlli\ntransport",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2057400,
+      4953000,
+      1384995
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Elektr avtobuslar, aqlli svetoforlar va onlayn xaritalar tirbandlikni kamaytiradi va havoni tozaroq qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      4699000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 18,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  ·  TEXNOLOGIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1219200,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 14,
+     "max": 32,
+     "perLine": 32.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Raqamli shahar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      1524000,
+      4826000,
+      492443
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "title",
+     "chars": 16,
+     "max": 41,
+     "perLine": 20.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 42,
+     "paras": 2,
+     "text": "Sun'iy\nintellekt",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2057400,
+      4953000,
+      1384995
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 48,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sensorlar va sun'iy intellekt yoritish, chiqindi yig'ish va xavfsizlikni real vaqtda boshqaradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      4699000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 18,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  ·  ARXITEKTURA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1219200,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 15,
+     "max": 32,
+     "perLine": 32.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Energiya tejash",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      1524000,
+      4826000,
+      492443
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "title",
+     "chars": 14,
+     "max": 41,
+     "perLine": 20.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 42,
+     "paras": 2,
+     "text": "Yashil\nbinolar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2057400,
+      4953000,
+      1384995
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 35.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh panellari, issiqlikni saqlovchi oynalar va tomdagi bog'lar binolarning energiya sarfini kamaytiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      4699000,
+      830997
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 14,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  ·  JAMIYAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1219200,
+      4826000,
+      307777
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 11,
+     "max": 32,
+     "perLine": 32.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Qulay muhit",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      1524000,
+      4826000,
+      492443
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "title",
+     "chars": 18,
+     "max": 41,
+     "perLine": 20.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 42,
+     "paras": 2,
+     "text": "Inson uchun\nshahar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2057400,
+      4953000,
+      1384995
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 50,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Piyodalar yo'laklari, velosiped yo'llari va parklar — shaharning eng katta boyligi uning aholisidir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      4699000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "title",
+     "chars": 7,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      2540000,
+      5080000,
+      830997
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 28,
+     "max": 42,
+     "perLine": 42.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3454400,
+      4826000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    3
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    5
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    7
+   ]
+  }
+ ],
+ "sequence": true
+}
