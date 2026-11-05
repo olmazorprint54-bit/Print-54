@@ -1,0 +1,1046 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 9,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "SAYOHAT",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      975720,
+      2190750,
+      10240559,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 9
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 24,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KINO USLUBIDAGI TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 9,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "SAYOHAT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      3040384,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "4"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 14,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TABIAT BO'YLAB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar, cho'llar, ko'llar va dengizlar — tabiatning eng go'zal manzaralari haqida qisqacha taqdimot.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 68,
+     "max": 68,
+     "perLine": 17,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Muallif: ____________\nGuruh: ____________\nIlmiy rahbar: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1337486,
+      7366000,
+      9517028,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 9
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1337486,
+      2190750,
+      9517028,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ],
+     "word": 9
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      2829236,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / TABIAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 164,
+     "max": 164,
+     "perLine": 54.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar quruqlikning qariyb to'rtdan bir qismini egallaydi. Ular iqlimni shakllantiradi, daryolarga suv beradi va noyob o'simlik hamda hayvonlarga boshpana bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 139,
+     "max": 139,
+     "perLine": 27.8,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eng baland cho'qqi — Everest (8 849 m)\nO'zbekistonda eng baland nuqta — Hazrati Sulton (4 643 m)\nHar 100 m balandlikda havo ~0,6 °C soviydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      1261884
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2772975,
+      7366000,
+      6646050,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 7
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2772975,
+      2190750,
+      6646050,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "11"
+     ],
+     "word": 7
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 6,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      1976503,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / TABIAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 148,
+     "max": 148,
+     "perLine": 49.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'llar quruqlikning taxminan uchdan bir qismini egallaydi. Kunduzi qattiq issiq, kechasi esa sovuq bo'ladi; yog'ingarchilik yiliga 250 mm dan kam.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 25.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eng katta issiq cho'l — Sahroi Kabir\nO'zbekistonda — Qizilqum cho'li\nSaksovul va tuya — cho'l ramzlari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 4,
+     "max": 6,
+     "perLine": 4.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "KO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      3566461,
+      7366000,
+      5059077,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 6
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 4,
+     "max": 6,
+     "perLine": 4.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "KO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      3566461,
+      2190750,
+      5059077,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "11"
+     ],
+     "word": 6
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 8,
+     "perLine": 4.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "KO'L",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      1505156,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / TABIAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 153,
+     "max": 153,
+     "perLine": 51,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'llar chuchuk suvning muhim manbai. Ular baliq va qushlarga makon bo'ladi, atrofdagi havoni salqinlashtiradi va dam olish uchun ajoyib joy hisoblanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 122,
+     "max": 122,
+     "perLine": 30.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eng chuqur ko'l — Baykal (1 642 m)\nO'zbekistonda — Aydarko'l va Charvoq suv ombori\nTog' ko'llari muzliklar suvidan to'ladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "DENGIZ",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1904147,
+      7366000,
+      8383705,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 8
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "DENGIZ",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1904147,
+      2190750,
+      8383705,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "11"
+     ],
+     "word": 8
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 6,
+     "max": 8,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "DENGIZ",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      2489464,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 / TABIAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Okean va dengizlar Yer yuzasining 71 foizini qoplaydi. Ular sayyoramiz iqlimini boshqaradi va biz nafas oladigan kislorodning katta qismini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 28,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eng katta okean — Tinch okeani\nMarjon riflari — dengizning «o'rmonlari»\nOrol dengizini asrash — umumiy vazifamiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "RAHMAT",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1437353,
+      7366000,
+      9317294,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 8
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "RAHMAT",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1437353,
+      2190750,
+      9317294,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "11"
+     ],
+     "word": 8
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 18,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "E'TIBORINGIZ UCHUN",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 30,
+     "max": 107,
+     "perLine": 106.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, marhamat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4870450,
+      12192000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    8
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    10
+   ]
+  }
+ ],
+ "sequence": true
+}
