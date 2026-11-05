@@ -29,6 +29,12 @@ const THEMES = {
   "s-pastel": { name: "Pastel (bolalar)", bg: "FFF7ED", title: "BE185D", text: "4B5563", accent: "8B5CF6", card: "FCE7F3", dark: "6D28D9", font: "Segoe UI", hint: "kids, primary school, kindergarten" },
   "s-texno": { name: "Texno", bg: "F8FAFC", title: "1E1B4B", text: "334155", accent: "7C3AED", card: "EDE9FE", dark: "1E1B4B", font: "Segoe UI", hint: "IT, programming, AI, innovation" },
   "s-tibbiy": { name: "Tibbiyot", bg: "F0F9FF", title: "0C4A6E", text: "334155", accent: "0EA5E9", card: "E0F2FE", dark: "0C4A6E", font: "Calibri", hint: "medicine, anatomy, chemistry, health" },
+  "s-lavanda": { name: "Lavanda", bg: "F7F5FF", title: "4C1D95", text: "3F3F46", accent: "A855F7", card: "EDE9FE", dark: "4C1D95", font: "Segoe UI", hint: "psychology, literature, arts, pedagogy" },
+  "s-shokolad": { name: "Shokolad", bg: "FAF6F1", title: "4A2C1A", text: "3F3A36", accent: "C2410C", card: "F1E6DA", dark: "4A2C1A", font: "Georgia", hint: "history, culture, traditions, cuisine" },
+  "s-maktab": { name: "Maktab ko'k-to'q sariq", bg: "F5F9FF", title: "1E3A8A", text: "334155", accent: "F97316", card: "DBEAFE", dark: "1E3A8A", font: "Calibri", hint: "school subjects, physics, mathematics, education" },
+  "s-mangal": { name: "Tungi yashil", bg: "0F172A", title: "F8FAFC", text: "CBD5E1", accent: "22C55E", card: "1E293B", dark: "14532D", font: "Segoe UI", hint: "ecology, energy, sustainability, modern technology" },
+  "s-marjon": { name: "Marjon", bg: "FFF5F6", title: "881337", text: "4B5563", accent: "F43F5E", card: "FFE4E6", dark: "881337", font: "Calibri", hint: "biology, medicine, family, social topics" },
+  "s-zaytun": { name: "Zaytun", bg: "F7F7EE", title: "3F4A1F", text: "3A3A32", accent: "84A21E", card: "ECEFD9", dark: "3F4A1F", font: "Georgia", hint: "agriculture, ecology, geography, economy" },
   // 📷 Premium: butun slayd mavzuga mos rasm ustida, qoraytirilgan qatlam va shisha kartalar bilan
   "p-kok": { photo: true, name: "Premium · Tungi ko'k", bg: "0A1226", overlay: "050B1C", title: "FFFFFF", text: "E2E8F0", accent: "38BDF8", card: "0B1630", dark: "0B1630", font: "Calibri", hint: "PHOTO background: medicine, science, technology, space, modern" },
   "p-zumrad": { photo: true, name: "Premium · Zumrad", bg: "06201C", overlay: "03130F", title: "FFFFFF", text: "E2F5EE", accent: "2DD4BF", card: "06231F", dark: "06231F", font: "Calibri", hint: "PHOTO background: nature, ecology, biology, health, agriculture" },
@@ -61,6 +67,8 @@ async function writeSmart(d) {
     type: "object",
     properties: {
       theme: { type: "string", enum: Object.keys(THEMES) },
+      // mavzuga mos 3 ta uslub (eng mosi birinchi) — kod ulardan birini tasodifan tanlaydi: bir xil mavzu har safar bir xil rangda chiqmasin
+      themes: { type: "array", items: { type: "string", enum: Object.keys(THEMES) } },
       slides: {
         type: "array",
         items: {
@@ -78,7 +86,7 @@ async function writeSmart(d) {
         },
       },
     },
-    required: ["theme", "slides"],
+    required: ["theme", "themes", "slides"],
     additionalProperties: false,
   };
   // "✨ AI dizayn" rasm-fonli Premium mavzularni o'zi tanlamaydi (ular mijoz tanlovi bilan ishlaydi)
@@ -96,7 +104,7 @@ Subject: ${d.subject || "—"}
 Language: ${LANG_NAMES[d.lang]}
 Number of slides: exactly ${d.count} (first = title, last = thanks)
 Author: ${d.author || "—"}
-${d.theme ? `Theme: ${d.theme} (fixed)` : `Choose the most suitable theme:\n${themeList}`}
+${d.theme ? `Theme: ${d.theme} (fixed); "themes": [${JSON.stringify(d.theme)}]` : `Choose the most suitable theme ("theme") and in "themes" list 3 DIFFERENT suitable themes, best first (variety matters — do not always pick the obvious color for the topic):\n${themeList}`}
 ${d.charts ? "Include at least one chart slide with real data.\n" : ""}${d.tables ? "Include at least one table slide.\n" : ""}
 Slide types (fields):
 ${Object.entries(TYPES).map(([k, v]) => `- ${k}: ${v}`).join("\n")}
@@ -121,6 +129,7 @@ function addCover(s, img, x, y, w, h) {
   s.addImage({ data: img.data, x, y, w, h: w * r, sizing: { type: "cover", w, h } });
 }
 const SW = 13.333, SH = 7.5;
+const DECORS = ["orbs", "wave", "band", "dots", "frame", "corner"];
 const clean = (v, n = 600) => String(v == null ? "" : v).replace(/[ \t]+/g, " ").trim().slice(0, n);
 
 // Matn qutiga sig'adigan shrift o'lchami (taxminiy: harf eni ~0.5 em)
@@ -182,9 +191,36 @@ function renderSmart(data, d, images) {
   let imgIdx = 0;
   const nextImage = () => images[imgIdx++] || null;
 
+  // Fon bezagi (oddiy mavzularda): shaffof shakllar matn ortida — har taqdimotga bittasi tasodifan
+  const style = DECORS.includes(data.decor) ? data.decor : DECORS[Math.floor(Math.random() * DECORS.length)];
+  const ghost = (c, t) => ({ fill: { color: c, transparency: t }, line: { type: "none" } });
+  const decorate = (s) => {
+    if (style === "orbs") {
+      s.addShape(P.ShapeType.ellipse, { x: SW - 2.3, y: -1.3, w: 3.6, h: 3.6, ...ghost(T.accent, 80) });
+      s.addShape(P.ShapeType.ellipse, { x: -1.2, y: SH - 1.6, w: 2.8, h: 2.8, ...ghost(T.dark, 86) });
+      s.addShape(P.ShapeType.ellipse, { x: SW - 0.95, y: 2.0, w: 0.35, h: 0.35, ...ghost(T.accent, 45) });
+    } else if (style === "wave") {
+      s.addShape(P.ShapeType.ellipse, { x: -2.2, y: SH - 0.75, w: SW + 4.4, h: 2.4, ...ghost(T.accent, 86) });
+      s.addShape(P.ShapeType.ellipse, { x: 4.0, y: SH - 0.45, w: SW + 2, h: 2.0, ...ghost(T.dark, 88) });
+    } else if (style === "band") {
+      s.addShape(P.ShapeType.rect, { x: SW - 0.22, y: 0, w: 0.22, h: SH, ...ghost(T.accent, 0) });
+      s.addShape(P.ShapeType.rect, { x: SW - 0.42, y: 0, w: 0.07, h: SH, ...ghost(T.accent, 55) });
+    } else if (style === "dots") {
+      for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) s.addShape(P.ShapeType.ellipse, { x: SW - 1.75 + c * 0.28, y: 0.3 + r * 0.28, w: 0.09, h: 0.09, ...ghost(T.accent, 50) });
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) s.addShape(P.ShapeType.ellipse, { x: 0.3 + c * 0.28, y: SH - 0.95 + r * 0.28, w: 0.09, h: 0.09, ...ghost(T.dark, 65) });
+    } else if (style === "frame") {
+      s.addShape(P.ShapeType.roundRect, { x: 0.2, y: 0.2, w: SW - 0.4, h: SH - 0.4, rectRadius: 0.12, fill: { color: T.bg, transparency: 100 }, line: { color: T.accent, width: 1.25, transparency: 55 } });
+      s.addShape(P.ShapeType.rect, { x: SW - 1.6, y: 0.2, w: 1.0, h: 0.08, ...ghost(T.accent, 0) });
+    } else if (style === "corner") {
+      s.addShape(P.ShapeType.rtTriangle, { x: SW - 2.8, y: SH - 2.8, w: 2.8, h: 2.8, flipH: true, ...ghost(T.accent, 84) });
+      s.addShape(P.ShapeType.rtTriangle, { x: 0, y: 0, w: 1.9, h: 1.9, flipV: true, ...ghost(T.dark, 88) });
+    }
+  };
+
   data.slides.forEach((sl, i) => {
     const s = P.addSlide();
     s.background = { color: T.bg };
+    if (!PH) decorate(s);
     const items = (sl.items || []).filter((it) => clean(it.title) || clean(it.text));
     const type = sl.type;
     if (PH) paintPhoto(s, images[i] || null, type === "title" || i === 0 || type === "thanks" || type === "quote");
@@ -356,6 +392,11 @@ async function generateSmart(f, photoBuffers, photoFinder) {
   const r = await writeSmart(d);
   const data = r.data;
   if (d.theme) data.theme = d.theme;
+  else {
+    // AI taklif qilgan 3 uslubdan biri: eng mosi 50%, qolganlari teng — bir mavzu har safar bir xil rangda chiqmaydi
+    const opts = [...new Set([data.theme, ...(data.themes || [])])].filter((t) => THEMES[t] && !THEMES[t].photo);
+    if (opts.length) data.theme = Math.random() < 0.5 ? opts[0] : opts[Math.floor(Math.random() * opts.length)];
+  }
   data.slides = (data.slides || []).slice(0, d.count);
   if (!data.slides.length) throw new Error("AI slaydlarni yozmadi");
   // rasmlar: titul va "matn + rasm" slaydlari uchun (avval mijoz rasmlari)
