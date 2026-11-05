@@ -262,13 +262,13 @@ async function reportCost(order, ai) {
   await supabase.from("orders").update({ details: { ...((data && data.details) || order.details), ai: info } }).eq("id", order.id);
   const f = order.details.fields || {};
   const income = incomeOf(order);
-  const free = order.details.trial || order.details.credit || order.details.firstFree;
+  const free = order.details.trial || order.details.ownerTest || order.details.credit || order.details.firstFree;
   const summary =
     `\n\n💰 Kirim: ${money(income)}${free ? " (tekin)" : ""}\n💸 Chiqim: ${money(som)}\n📊 Foyda: ${money(income - som)}` +
     (await todayLine(ai.usd > 0 ? som / ai.usd : 12600));
   const sent = await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
-    text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}${summary}`,
+    text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.ownerTest ? ` — 👑 egasi testi (mijozga narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}${summary}`,
   });
   // Telegram rad etsa — jim qolmasin: sababini egaga qisqa xabar bilan aytamiz
   if (!sent.ok) throw new Error("Telegram: " + (sent.description || "noma'lum xato"));

@@ -392,12 +392,21 @@ module.exports = async (req, res) => {
         card = { ...cardCfg, topup };
       }
     }
-    const trial = paid && !!u && !credit && !firstFree && !payNow && !cardCfg;
-    if (trial && !isOwner && (await trialsToday(u.id)) >= FREE_DAILY) {
+    // To'liq pulli rejim: to'lov usuli (Click/Payme yoki karta PAY_CARD) sozlanmagan bo'lsa — buyurtma tekin
+    // bajarilib ketmaydi (avval bunday holatda jimgina «bepul sinov» bo'lardi). Sinov faqat prices.js TRIAL=true da.
+    if (mustPay && !payNow && !cardCfg && !TRIAL) {
+      await toOwner(bot, "sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `🛑 To'lov usuli sozlanmagan (Vercel env PAY_CARD yo'q) — mijoz ${u.id} AI buyurtma bera olmadi (${SERVICE_LABELS[body.service] || body.service}).` }).catch(() => {});
+      res.status(503).json({ ok: false, error: "To'lov tizimi vaqtincha ishlamayapti. Iltimos, birozdan so'ng urinib ko'ring yoki biz bilan bog'laning." });
+      return;
+    }
+    // Bot egasi o'zi sinab ko'radi — to'lovsiz, «egasi testi» (hisobotda bepul sinov emas)
+    const ownerTest = paid && isOwner && !credit && !firstFree;
+    const trial = TRIAL && paid && !!u && !isOwner && !credit && !firstFree && !payNow && !cardCfg;
+    if (trial && (await trialsToday(u.id)) >= FREE_DAILY) {
       res.status(429).json({ ok: false, error: `Bepul sinov limiti (sutkasiga ${FREE_DAILY} ta) tugadi. Birozdan so'ng yana urinib ko'ring.` });
       return;
     }
-    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}), ...(firstFree ? { firstFree: true, listPrice: price } : {}), ...(charOnly ? { charOnly: true } : {}) };
+    const flags = { ...(payNow ? { awaitingPayment: true } : {}), ...(card ? { awaitingPayment: true, payMethod: "card", topup: card.topup } : {}), ...(spend ? { spent: spend, paidBy: "balance" } : {}), ...(trial ? { trial: true, listPrice: price } : {}), ...(ownerTest ? { ownerTest: true, listPrice: price } : {}), ...(credit ? { credit: true, listPrice: price } : {}), ...(firstFree ? { firstFree: true, listPrice: price } : {}), ...(charOnly ? { charOnly: true } : {}) };
 
     // Bazaga yozamiz. Yozib bo'lmasa ham (masalan, jadval ustunlari hali
     // qo'shilmagan bo'lsa) buyurtma yo'qolmasin — egasiga baribir yuboramiz.
@@ -407,7 +416,7 @@ module.exports = async (req, res) => {
       .insert({
         service: body.service,
         qty: Number.isFinite(qty) ? qty : null,
-        total: charOnly ? pay : trial || credit || firstFree ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
+        total: charOnly ? pay : trial || ownerTest || credit || firstFree ? 0 : Number.isFinite(price) && price >= 0 ? price : null,
         telegram_user_id: u ? u.id : null,
         telegram_username: u ? u.username || null : null,
         telegram_name: u ? [u.first_name, u.last_name].filter(Boolean).join(" ") : null,
