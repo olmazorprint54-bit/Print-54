@@ -1,0 +1,1731 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      6604000,
+      1676400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "title",
+     "chars": 14,
+     "max": 30,
+     "perLine": 14.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 60,
+     "paras": 2,
+     "text": "Startap\nloyiha",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2311400,
+      5080000,
+      1905000
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Pro taqdimot",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      6604000,
+      4267200,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 8,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Boshlash",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      6604000,
+      4978400,
+      1905000,
+      482600
+     ],
+     "lineH": 213360,
+     "ins": 182880
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 4,
+     "max": 6,
+     "perLine": 12.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 80,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2413000,
+      5588000,
+      1270000
+     ],
+     "lineH": 1219200,
+     "ins": 0,
+     "word": 6
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Pro taqdimot",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      6045200,
+      3759200,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 100,
+     "perLine": 100.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1422400,
+      2921000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 6,
+     "max": 14,
+     "perLine": 14,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2336800,
+      3048000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 29.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "G'oya qisqacha: kichik tadbirkorlar uchun onlayn buyurtma platformasi. Biz mahalliy biznesni internetga olib chiqamiz.",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3200400,
+      2921000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 100,
+     "perLine": 100.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1422400,
+      2921000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "title",
+     "chars": 6,
+     "max": 14,
+     "perLine": 14,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2336800,
+      3048000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 32.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kichik do'konlarning katta qismi hali ham faqat oflayn ishlaydi va har kuni mijozlarini yo'qotadi.",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3200400,
+      2921000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 100,
+     "perLine": 100.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1422400,
+      2921000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 6,
+     "max": 14,
+     "perLine": 14,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2336800,
+      3048000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 25.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bir necha daqiqada ochiladigan tayyor onlayn do'kon: katalog, to'lov va yetkazib berish bitta ilovada.",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3200400,
+      2921000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 100,
+     "perLine": 100.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1422400,
+      2921000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 5,
+     "max": 14,
+     "perLine": 14,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2336800,
+      3048000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 90,
+     "max": 90,
+     "perLine": 30,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Asosiy mijozlar — oziq-ovqat, kiyim va xizmat ko'rsatish sohasidagi kichik biznes egalari.",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3200400,
+      2921000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 100,
+     "perLine": 100.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3149600,
+      14224000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 3,
+     "max": 10,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6540500,
+      1930400,
+      1016000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 3,
+     "max": 10,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "SAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6540500,
+      2819400,
+      1016000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 3,
+     "max": 10,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "SOM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6540500,
+      3708400,
+      1016000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1422400,
+      2921000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 11,
+     "max": 14,
+     "perLine": 14,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2336800,
+      3048000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 25.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "TAM — butun mamlakat bo'yicha kichik biznes, SAM — yirik shaharlar, SOM — birinchi yildagi maqsadimiz.",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3200400,
+      2921000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yechim",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 5,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 11,
+     "max": 120,
+     "perLine": 120.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bozor hajmi",
+     "font": "Segoe UI Light",
+     "anchor": "ctr",
+     "box": [
+      -10287000,
+      3275111,
+      14224000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      5,
+      "7"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 12.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 80,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3556000,
+      5588000,
+      1270000
+     ],
+     "lineH": 1219200,
+     "ins": 0,
+     "word": 9
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 30,
+     "max": 49,
+     "perLine": 48.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, marhamat",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      5969000,
+      4876800,
+      5588000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true
+}

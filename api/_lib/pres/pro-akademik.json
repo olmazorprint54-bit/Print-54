@@ -1,0 +1,1397 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 13,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XUSH KELIBSIZ",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1397000,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 16,
+     "max": 78,
+     "perLine": 78.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 22,
+     "paras": 1,
+     "text": "UNIVERSITET NOMI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4572000,
+      12192000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 22,
+     "max": 60,
+     "perLine": 60.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BITIRUV MALAKAVIY ISHI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4826000,
+      1905000,
+      6350000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 37,
+     "max": 37,
+     "perLine": 18.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 40,
+     "paras": 2,
+     "text": "Sun'iy intellektning\nta'limdagi o'rni",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      2235200,
+      6604000,
+      1231106
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 21,
+     "max": 57,
+     "perLine": 56.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bajardi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5257800,
+      4089400,
+      5842000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 26,
+     "max": 69,
+     "perLine": 69.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ilmiy rahbar: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4597400,
+      6350000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 4,
+     "max": 13,
+     "perLine": 12.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 24,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1841500,
+      3225800,
+      2159000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 6,
+     "max": 66,
+     "perLine": 32.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      6858000,
+      1397000,
+      4572000,
+      762000
+     ],
+     "lineH": 335280,
+     "ins": 431800
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 66,
+     "perLine": 32.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      6858000,
+      2489200,
+      4572000,
+      762000
+     ],
+     "lineH": 335280,
+     "ins": 431800
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 66,
+     "perLine": 32.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Metodologiya",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      6858000,
+      3581400,
+      4572000,
+      762000
+     ],
+     "lineH": 335280,
+     "ins": 431800
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 6,
+     "max": 66,
+     "perLine": 32.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      6858000,
+      4673600,
+      4572000,
+      762000
+     ],
+     "lineH": 335280,
+     "ins": 431800
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 6,
+     "max": 85,
+     "perLine": 42.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      7112000,
+      889000,
+      4826000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      1778000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "10"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 12,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Metodologiya",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      2667000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      3556000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "12"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 11,
+     "max": 22,
+     "perLine": 21.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "DOLZARBLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3810000,
+      1524000,
+      4572000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 164,
+     "max": 164,
+     "perLine": 41,
+     "lines": 4,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Sun'iy intellekt (SI) bugun ta'limning ajralmas qismiga aylanmoqda: u o'quvchiga mos topshiriq tanlaydi, uy vazifasini tekshiradi va o'qituvchining vaqtini tejaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2235200,
+      4572000,
+      1046440
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 67,
+     "max": 67,
+     "perLine": 33.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Maqsad: SI vositalarining o'quv samaradorligiga ta'sirini aniqlash.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3810000,
+      4191000,
+      4572000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      889000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 85,
+     "perLine": 42.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      7112000,
+      1778000,
+      4826000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "10"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 12,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Metodologiya",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      2667000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      3556000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "12"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": true,
+     "sz": 24,
+     "paras": 1,
+     "text": "MUAMMO",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -635000,
+      3238500,
+      2540000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1651000,
+      1219200,
+      1524000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 46,
+     "max": 46,
+     "perLine": 23,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'qituvchilarning ish yuklamasi ortib bormoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      2159000,
+      2730500,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      5143500,
+      1219200,
+      1524000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bir sinfdagi o'quvchilar darajasi turlicha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      2159000,
+      2730500,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3886200,
+      1524000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 34,
+     "max": 60,
+     "perLine": 59.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "An'anaviy baholash ko'p vaqt oladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4826000,
+      6159500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      889000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      1778000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "10"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 12,
+     "max": 85,
+     "perLine": 42.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Metodologiya",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      7112000,
+      2667000,
+      4826000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      3556000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "12"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 12,
+     "max": 30,
+     "perLine": 30,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "METODOLOGIYA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      762000,
+      6350000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 10,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "So'rovnoma",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      2540000,
+      3048000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'quvchi va o'qituvchilar fikri o'rganildi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      2946400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 7,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kuzatuv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      2540000,
+      3048000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 37,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "SI vositalari bilan darslar kuzatildi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      2946400,
+      3048000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 13,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tajriba-sinov",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      5080000,
+      3048000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tajriba va nazorat guruhlari solishtirildi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      5486400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Adabiyot tahlili",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      5080000,
+      3048000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Xorijiy va mahalliy tadqiqotlar o'rganildi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      5486400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      889000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      1778000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "10"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 12,
+     "max": 46,
+     "perLine": 22.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Metodologiya",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      9144000,
+      2667000,
+      2794000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 6,
+     "max": 85,
+     "perLine": 42.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "ctr",
+     "box": [
+      7112000,
+      3556000,
+      4826000,
+      635000
+     ],
+     "lineH": 274320,
+     "ins": 431800,
+     "off": true,
+     "copy": [
+      3,
+      "12"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 11,
+     "max": 30,
+     "perLine": 30,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "AFZALLIKLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      762000,
+      6350000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Vaqt tejaladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      990600,
+      2540000,
+      1968500,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 36,
+     "max": 36,
+     "perLine": 18,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tekshirish va hisobot avtomatlashadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      990600,
+      3276600,
+      1968500,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 34,
+     "perLine": 17.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Shaxsiy yondashuv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3530600,
+      2540000,
+      1968500,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 32,
+     "max": 32,
+     "perLine": 16,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir o'quvchiga mos topshiriq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3530600,
+      3276600,
+      1968500,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 11,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Aniq natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6070600,
+      2540000,
+      1968500,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 39,
+     "max": 39,
+     "perLine": 13,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'zlashtirish ko'rsatkichlari ko'rinadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6070600,
+      3276600,
+      1968500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 56,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Xulosa: SI to'g'ri qo'llanilsa, o'qituvchining o'rnini bosmaydi — balki uning eng yaxshi yordamchisiga aylanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      4902200,
+      6858000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 25,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "E'TIBORINGIZ UCHUN RAHMAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1397000,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 30,
+     "max": 97,
+     "perLine": 96.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, marhamat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4572000,
+      12192000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1281,
+   "slides": [
+    4
+   ]
+  }
+ ],
+ "sequence": true
+}

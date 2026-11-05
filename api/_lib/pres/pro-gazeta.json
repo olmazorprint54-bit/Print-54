@@ -1,0 +1,2500 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 18,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TARIX  ·  TAQDIMOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1346200,
+      5080000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 22,
+     "max": 22,
+     "perLine": 7.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 54,
+     "paras": 3,
+     "text": "O'zbek\nmatbuoti\ntarixi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      1651000,
+      5080000,
+      2540000
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 23,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Gazetadan internetgacha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      4445000,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 24,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyorladi: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5969000,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 37,
+     "max": 70,
+     "perLine": 69.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.52,
+     "paras": 1,
+     "text": "Toshkent  ·  1870-yil 27-iyun  ·  № 1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6245996,
+      351174,
+      4632960,
+      177293
+     ],
+     "lineH": 175565,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 46.08,
+     "paras": 1,
+     "text": "GAZETA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6308442,
+      668196,
+      4632960,
+      731520
+     ],
+     "lineH": 702259,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 27.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 28.8,
+     "paras": 1,
+     "text": "O'ZBEK MATBUOTI TARIXI",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      6392554,
+      1612621,
+      4632960,
+      443198
+     ],
+     "lineH": 438912,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 28,
+     "max": 60,
+     "perLine": 59.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13.44,
+     "paras": 1,
+     "text": "1870-yildan bugungi kungacha",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6434609,
+      2130926,
+      4632960,
+      206851
+     ],
+     "lineH": 204826,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 15.36,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      9349718,
+      2398482,
+      1828800,
+      236347
+     ],
+     "lineH": 234086,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.52,
+     "paras": 1,
+     "text": "1870 · Birinchi gazeta",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9389225,
+      2803890,
+      1828800,
+      177293
+     ],
+     "lineH": 175565,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 21,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.52,
+     "paras": 1,
+     "text": "1906 · Jadid matbuoti",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9427458,
+      3167647,
+      1828800,
+      177293
+     ],
+     "lineH": 175565,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.52,
+     "paras": 1,
+     "text": "1913 · Behbudiy nashrlari",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9465690,
+      3531403,
+      1828800,
+      177293
+     ],
+     "lineH": 175565,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 21,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.52,
+     "paras": 1,
+     "text": "Bugun · Zamonaviy OAV",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9503922,
+      3895159,
+      1828800,
+      177293
+     ],
+     "lineH": 175565,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 37,
+     "max": 70,
+     "perLine": 69.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 24.6,
+     "paras": 1,
+     "text": "Toshkent  ·  1870-yil 27-iyun  ·  № 1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1149350,
+      -2194560,
+      9893300,
+      378565
+     ],
+     "lineH": 374904,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 98.4,
+     "paras": 1,
+     "text": "GAZETA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1149350,
+      -1465580,
+      9893300,
+      1562100
+     ],
+     "lineH": 1499616,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ],
+     "word": 8
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 27.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 61.5,
+     "paras": 1,
+     "text": "O'ZBEK MATBUOTI TARIXI",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      1149350,
+      461010,
+      9893300,
+      946413
+     ],
+     "lineH": 937260,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 28,
+     "max": 60,
+     "perLine": 59.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 28.7,
+     "paras": 1,
+     "text": "1870-yildan bugungi kungacha",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1149350,
+      1606550,
+      9893300,
+      441659
+     ],
+     "lineH": 437388,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "12"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 32.8,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      7293610,
+      2543810,
+      3905250,
+      504754
+     ],
+     "lineH": 499872,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "15"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 24.6,
+     "paras": 1,
+     "text": "1870 · Birinchi gazeta",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7293610,
+      3272790,
+      3905250,
+      378565
+     ],
+     "lineH": 374904,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "16"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 21,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 24.6,
+     "paras": 1,
+     "text": "1906 · Jadid matbuoti",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7293610,
+      4053840,
+      3905250,
+      378565
+     ],
+     "lineH": 374904,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 24.6,
+     "paras": 1,
+     "text": "1913 · Behbudiy nashrlari",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7293610,
+      4834890,
+      3905250,
+      378565
+     ],
+     "lineH": 374904,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "18"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 21,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 24.6,
+     "paras": 1,
+     "text": "Bugun · Zamonaviy OAV",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7293610,
+      5615940,
+      3905250,
+      378565
+     ],
+     "lineH": 374904,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "19"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 50,
+     "max": 104,
+     "perLine": 104,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "GAZETA  ·  O'ZBEK MATBUOTI TARIXI  ·  SAHIFA 1 / 4",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      279400,
+      11176000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1870",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Turkiston viloyatining gazeti»",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "O'zbek tilidagi birinchi gazeta 1870-yilda Toshkentda chiqa boshlagan va 1917-yilgacha nashr etilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 32,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi soni — 1870-yil 27-iyun",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6172200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1906",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      18161000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Taraqqiy» — jadid gazetasi",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      18161000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ismoil Obidov 1906-yilda Toshkentda «Taraqqiy» gazetasini chiqardi — bu jadidlarning birinchi gazetasi edi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      18161000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 45,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jadidlar matbuotni ma'rifat quroli deb bilgan",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      18364200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1913",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      30353000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 18,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Behbudiy nashrlari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      30353000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Mahmudxo'ja Behbudiy 1913-yilda Samarqandda «Samarqand» gazetasi va «Oyina» jurnalini nashr qildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      30353000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 47,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "«Oyina» — o'zbek tilidagi ilk jurnallardan biri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      30556200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11,
+     "lines": 1,
+     "caps": true,
+     "sz": 66,
+     "paras": 1,
+     "text": "BUGUN",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      42545000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Zamonaviy ommaviy axborot",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      42545000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Bugun gazeta va jurnallar bilan birga televidenie, radio va internet nashrlari axborot tarqatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      42545000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 38,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangiliklar endi telefonda — bir zumda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      42748200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 50,
+     "max": 104,
+     "perLine": 104,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "GAZETA  ·  O'ZBEK MATBUOTI TARIXI  ·  SAHIFA 2 / 4",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      279400,
+      11176000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1870",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Turkiston viloyatining gazeti»",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "O'zbek tilidagi birinchi gazeta 1870-yilda Toshkentda chiqa boshlagan va 1917-yilgacha nashr etilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 32,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi soni — 1870-yil 27-iyun",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -6019800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "13"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1906",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Taraqqiy» — jadid gazetasi",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "21"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ismoil Obidov 1906-yilda Toshkentda «Taraqqiy» gazetasini chiqardi — bu jadidlarning birinchi gazetasi edi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "23"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 45,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jadidlar matbuotni ma'rifat quroli deb bilgan",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6172200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "25"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1913",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      18161000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 18,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Behbudiy nashrlari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      18161000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Mahmudxo'ja Behbudiy 1913-yilda Samarqandda «Samarqand» gazetasi va «Oyina» jurnalini nashr qildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      18161000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "35"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 47,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "«Oyina» — o'zbek tilidagi ilk jurnallardan biri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      18364200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "37"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11,
+     "lines": 1,
+     "caps": true,
+     "sz": 66,
+     "paras": 1,
+     "text": "BUGUN",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      30353000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "44"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Zamonaviy ommaviy axborot",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      30353000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "45"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Bugun gazeta va jurnallar bilan birga televidenie, radio va internet nashrlari axborot tarqatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      30353000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "47"
+     ]
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 38,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangiliklar endi telefonda — bir zumda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      30556200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "49"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 50,
+     "max": 104,
+     "perLine": 104,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "GAZETA  ·  O'ZBEK MATBUOTI TARIXI  ·  SAHIFA 3 / 4",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      279400,
+      11176000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1870",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Turkiston viloyatining gazeti»",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "O'zbek tilidagi birinchi gazeta 1870-yilda Toshkentda chiqa boshlagan va 1917-yilgacha nashr etilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 32,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi soni — 1870-yil 27-iyun",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -18211800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "13"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1906",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Taraqqiy» — jadid gazetasi",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "21"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ismoil Obidov 1906-yilda Toshkentda «Taraqqiy» gazetasini chiqardi — bu jadidlarning birinchi gazetasi edi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "23"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 45,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jadidlar matbuotni ma'rifat quroli deb bilgan",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -6019800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "25"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1913",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 18,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Behbudiy nashrlari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Mahmudxo'ja Behbudiy 1913-yilda Samarqandda «Samarqand» gazetasi va «Oyina» jurnalini nashr qildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "35"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 47,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "«Oyina» — o'zbek tilidagi ilk jurnallardan biri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6172200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "37"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11,
+     "lines": 1,
+     "caps": true,
+     "sz": 66,
+     "paras": 1,
+     "text": "BUGUN",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      18161000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "44"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Zamonaviy ommaviy axborot",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      18161000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "45"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Bugun gazeta va jurnallar bilan birga televidenie, radio va internet nashrlari axborot tarqatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      18161000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "47"
+     ]
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 38,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangiliklar endi telefonda — bir zumda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      18364200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "49"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 50,
+     "max": 104,
+     "perLine": 104,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "GAZETA  ·  O'ZBEK MATBUOTI TARIXI  ·  SAHIFA 4 / 4",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      279400,
+      11176000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1870",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -30607000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Turkiston viloyatining gazeti»",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -30607000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "9"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "O'zbek tilidagi birinchi gazeta 1870-yilda Toshkentda chiqa boshlagan va 1917-yilgacha nashr etilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -30607000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "11"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 32,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi soni — 1870-yil 27-iyun",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -30403800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "13"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1906",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "«Taraqqiy» — jadid gazetasi",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "21"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ismoil Obidov 1906-yilda Toshkentda «Taraqqiy» gazetasini chiqardi — bu jadidlarning birinchi gazetasi edi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -18415000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "23"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 45,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jadidlar matbuotni ma'rifat quroli deb bilgan",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -18211800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "25"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "1913",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 18,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Behbudiy nashrlari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Mahmudxo'ja Behbudiy 1913-yilda Samarqandda «Samarqand» gazetasi va «Oyina» jurnalini nashr qildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6223000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "35"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 47,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "«Oyina» — o'zbek tilidagi ilk jurnallardan biri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -6019800,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "37"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11,
+     "lines": 1,
+     "caps": true,
+     "sz": 66,
+     "paras": 1,
+     "text": "BUGUN",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1016000,
+      5588000,
+      1016000
+     ],
+     "lineH": 1005840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "44"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Zamonaviy ommaviy axborot",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2082800,
+      5588000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "45"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Bugun gazeta va jurnallar bilan birga televidenie, radio va internet nashrlari axborot tarqatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3556000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "47"
+     ]
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 38,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangiliklar endi telefonda — bir zumda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6172200,
+      5207000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "49"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 120,
+     "paras": 1,
+     "text": "27-IYUN",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      1905000,
+      12192000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0,
+     "word": 9
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 52,
+     "max": 84,
+     "perLine": 84.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "MATBUOT VA OMMAVIY AXBOROT VOSITALARI XODIMLARI KUNI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1016000,
+      1143000,
+      10160000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 73,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1870-yil 27-iyunda «Turkiston viloyatining gazeti»ning birinchi soni chiqqan. Shu sana O'zbekistonda matbuot xodimlari kuni sifatida nishonlanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      8128000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 7,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 37.5,
+     "paras": 1,
+     "text": "27-IYUN",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      4191000,
+      1230313,
+      3810000,
+      577081
+     ],
+     "lineH": 571500,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "4"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 7,
+     "max": 16,
+     "perLine": 16.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      889000,
+      3429000,
+      5080000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 28,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      4292600,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    1,
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    8
+   ]
+  }
+ ],
+ "sequence": true
+}

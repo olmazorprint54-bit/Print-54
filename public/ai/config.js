@@ -802,6 +802,18 @@
       { id: "pro-asalari", name: "💎 Asalari uyasi · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-fokus", name: "💎 Fokus ramka · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-egri", name: "💎 Egri panel · ikki rangli so'z", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-doiralar", name: "💎 Ulangan doiralar · bosqichlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-sana", name: "💎 Suratli sana · tarix", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-gazeta", name: "💎 Gazeta uslubi · sepiya", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-akademik", name: "💎 Akademik · gerb va menyu", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-gildirak", name: "💎 Aylanma menyu · monoxrom", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kino", name: "💎 Kino titr · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-progress", name: "💎 Progress yo'lak · bosqichlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-spot", name: "💎 Yorug'lik dog'i · kino afisha", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yillar", name: "💎 Yillar g'ildiragi · tarix", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yer", name: "🌍 3D Yer · O'zbekiston (geografiya)", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-materik", name: "🌍 3D Yer · materiklar (geografiya)", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-osiyo", name: "🌍 3D Yer · Markaziy Osiyo davlatlari", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

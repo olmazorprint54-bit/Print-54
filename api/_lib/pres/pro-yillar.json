@@ -1,0 +1,2072 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TARIX  ·  XIV–XV ASR",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      1905000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 10,
+     "max": 12,
+     "perLine": 12.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 58,
+     "paras": 1,
+     "text": "AMIR TEMUR",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3276600,
+      2209800,
+      5334000,
+      892552
+     ],
+     "lineH": 883920,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 40,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Hayoti va merosi: yillar bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      3251200,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 21,
+     "max": 50,
+     "perLine": 49.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      5588000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1336-YIL  ·  01 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 10,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Tug'ilishi",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 154,
+     "max": 154,
+     "perLine": 38.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temur 1336-yil 9-aprelda Kesh (hozirgi Shahrisabz) yaqinidagi Xo'ja Ilg'or qishlog'ida tug'ilgan. Otasi — barlos urug'idan bo'lgan Muhammad Tarag'ay.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      1062150
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 24.3,
+     "lines": 6,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Yoshligidan chavandozlik va harbiy mahoratni o'rgangan\nKesh — bo'lajak sohibqironning vatani\nShahrisabzdagi Oqsaroy keyinchalik shu yerda qurilgan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1590179
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1370-YIL  ·  02 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 7,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Hukmdor",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 133,
+     "max": 133,
+     "perLine": 44.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1370-yil Balxda chaqirilgan qurultoyda Amir Temur Movarounnahrning oliy hukmdori deb e'lon qilindi. Poytaxt qilib Samarqand tanlandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 120,
+     "max": 120,
+     "perLine": 24,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Markazlashgan davlat barpo etildi\n«Temur tuzuklari» — davlat boshqaruvi qoidalari\nSavdo yo'llari xavfsizligi ta'minlandi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1313180
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1399-YIL  ·  03 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 17,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Bibixonim masjidi",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 129,
+     "max": 129,
+     "perLine": 43,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hindiston yurishidan so'ng Samarqandda ulkan jome masjidi qurilishi boshlandi. U o'z davrining eng yirik inshootlaridan biri edi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 26,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qurilish 1399–1404-yillarda olib borilgan\nUsta va hunarmandlar turli o'lkalardan to'plangan\nBugun — Samarqandning ramzlaridan biri",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1313180
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1402-YIL  ·  04 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 12,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Anqara jangi",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 48,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1402-yil 28-iyulda Anqara yonidagi jangda Amir Temur Usmonli sulton Boyazid I qo'shinini yengdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 22.5,
+     "lines": 6,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Sulton Boyazid asirga olindi\nYevropa davlatlari Temur bilan aloqa o'rnatishga intildi\nIspaniya elchisi Klavixo Samarqandga keldi (1404)",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1590179
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1405-YIL  ·  05 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 6,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Vafoti",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 42.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1405-yil 18-fevralda Xitoy yurishi paytida Amir Temur O'trorda vafot etdi. U Samarqanddagi Go'ri Amir maqbarasiga dafn etilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 30.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "35 yil davlatni boshqargan (1370–1405)\nGo'ri Amir — Temuriylar sulolasi maqbarasi\nMerosi — ilm, me'morchilik va madaniyat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 86,
+     "perLine": 86.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Black",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3124200,
+      13893800,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1420-YIL  ·  06 / 06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 18,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Ulug'bek madrasasi",
+     "font": "Segoe UI Semibold",
+     "anchor": "b",
+     "box": [
+      3327400,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 34,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temurning nabirasi Mirzo Ulug'bek Samarqanddagi Registon maydonida madrasa qurdirdi. Bu yerda astronomiya va matematika o'qitilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2641600,
+      4826000,
+      1062150
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 23.4,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qurilish 1417–1420-yillarda\n1420-yillar oxirida Ulug'bek rasadxonasi barpo etildi\nTemuriylar davri — Sharq Uyg'onishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4140200,
+      4826000,
+      1313180
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1336   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "6"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1370   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1399   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "8"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1402   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1405   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 404,
+     "perLine": 201.8,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "1420   ●",
+     "font": "Segoe UI Semibold",
+     "anchor": "ctr",
+     "box": [
+      -11137900,
+      3290500,
+      13893800,
+      276999
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "11"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 7,
+     "max": 12,
+     "perLine": 12.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 58,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3276600,
+      2413000,
+      5334000,
+      892552
+     ],
+     "lineH": 883920,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat. Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      3479800,
+      4572000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    1,
+    8
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    5
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    7
+   ]
+  }
+ ],
+ "sequence": true
+}
