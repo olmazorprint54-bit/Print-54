@@ -13,7 +13,7 @@ const crypto = require("crypto");
 const { resumeData, resumeHtml } = require("./_lib/resume-html");
 const { internalKey } = require("./_lib/internal-key");
 const { buildObyektivka } = require("./_lib/obyektivka-docx");
-const { orderBot, telegram, toOwner, token } = require("./_lib/bots");
+const { orderBot, telegram, toOwner, token, MAIN: MAIN_BOT } = require("./_lib/bots");
 const LB = require("./_lib/i18n-bot");
 const CHARS = require("./_lib/characters"); // «Trend qo'shish» tugmasi faqat personaj mavjud bo'lsa
 const { appUrl } = require("./_lib/setup");
@@ -266,10 +266,20 @@ async function reportCost(order, ai) {
   const summary =
     `\n\n💰 Kirim: ${money(income)}${free ? " (tekin)" : ""}\n💸 Chiqim: ${money(som)}\n📊 Foyda: ${money(income - som)}` +
     (await todayLine(ai.usd > 0 ? som / ai.usd : 12600));
-  await toOwner(orderBot(order), "sendMessage", {
+  const sent = await toOwner(orderBot(order), "sendMessage", {
     chat_id: process.env.OWNER_CHAT_ID,
     text: `👤 ${order.telegram_name || "Mijoz"}${order.telegram_username ? " (@" + order.telegram_username + ")" : ""}\n🤖 #${order.id} ${costTitle(order.service, f)}${Array.isArray(f.sources) && f.sources.length ? ` · 📎 ${f.sources.length} ta manba` : ""}${order.total ? ` — ${Number(order.total).toLocaleString("ru-RU")} so'm${order.details.payment ? " (to'langan)" : order.details.spent ? " (balansdan)" : ""}` : ""}${order.details.trial ? ` — bepul sinov (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm bo'lardi)` : ""}${order.details.credit ? ` — 🎁 bonus (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}${order.details.firstFree ? ` — 🎁 birinchi ish tekin (narxi ${Number(order.details.listPrice || 0).toLocaleString("ru-RU")} so'm)` : ""}\n${costLine(ai)}${summary}`,
-  }).catch((e) => console.error(e));
+  });
+  // Telegram rad etsa — jim qolmasin: sababini egaga qisqa xabar bilan aytamiz
+  if (!sent.ok) throw new Error("Telegram: " + (sent.description || "noma'lum xato"));
+}
+// Narx hisoboti hech qachon jim yo'qolmasin: xato bo'lsa egaga sababi bilan qisqa xabar boradi
+// (avval bu yerdagi xato "Avtomatik tayyorlab bo'lmadi" deb noto'g'ri xabar berardi — fayl esa allaqachon yuborilgan)
+async function reportSafe(order, ai) {
+  const why = !ai ? "AI xarajati ma'lumoti qaytmadi" : await reportCost(order, ai).then(() => null, (e) => (e && e.message) || String(e));
+  if (!why) return;
+  console.error(`#${order.id} narx hisoboti:`, why);
+  await toOwner(MAIN_BOT, "sendMessage", { chat_id: process.env.OWNER_CHAT_ID, text: `⚠️ #${order.id} (${order.service}) — narx hisobotini yuborib bo'lmadi: ${String(why).slice(0, 300)}` }).catch((e) => console.error(e));
 }
 
 /* ---------- Rasmdan PDF (AI'siz) ----------
@@ -523,7 +533,8 @@ module.exports = async (req, res) => {
     }
     await deliver(order, file, req.headers.host);
     ai = sumAi(ai, srcAi);
-    if (ai) await reportCost(order, ai);
+    // AI ishlatiladigan xizmatlarda hisobot har doim (AI'siz vositalar — PDF, rasmdan PDF, rezyume — hisobotsiz)
+    if (ai || GENERATORS[order.service] || /^presentation|^test$/.test(order.service)) await reportSafe(order, ai);
     await confirmReferral(orderBot(order), order).catch((e) => console.error("Referal:", e));
     // rasm PDF ichida — omborda saqlash shart emas (bepul joy 1 GB)
     if (order.details.photos && order.details.photos.length) {
