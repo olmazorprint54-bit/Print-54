@@ -272,7 +272,7 @@ async function handleBroadcast(msg) {
     text: `📤 Yuborish boshlandi... (${users.length} ta foydalanuvchi)`,
   });
 
-  const kb = TOPUP.keyboard("uz"); // eski mijozlarda ham pastki tugmalar paydo bo'ladi
+  const kb = TOPUP.keyboard("uz", AI_MODE); // eski mijozlarda ham pastki tugmalar paydo bo'ladi
   const send = (id) => {
     if (src) {
       // media/xabar nusxasi («Forwarded» yozuvisiz); media bo'lsa izohdan /elon olib tashlanadi
@@ -485,8 +485,8 @@ async function sendKeyboard(chatId, bot, l) {
   if (!l) l = await LB.getLang(chatId);
   return callTelegram("sendMessage", {
     chat_id: chatId,
-    text: LB.T(l, "kbHint"),
-    reply_markup: TOPUP.keyboard(l),
+    text: LB.T(l, isAiBot(bot) ? "kbHintAi" : "kbHint"),
+    reply_markup: TOPUP.keyboard(l, isAiBot(bot)),
   }, bot);
 }
 
@@ -553,7 +553,7 @@ async function handleMessage(msg, bot, host, req) {
   if (!msg.text) return;
 
   // Pastki tugmalar (hamma botda): hisobni to'ldirish, balans, narxlar, bog'lanish; summa javobi
-  if (!isOwnerReply(msg) && (await handleKbText(msg, bot))) return;
+  if (!isOwnerReply(msg) && (await handleKbText(msg, bot, host))) return;
 
   // AI botda oddiy xabar — AI suhbat (javob fonda tayyorlanadi, Telegram kutib qolmaydi)
   if (isAiBot(bot) && !msg.text.startsWith("/") && !(isOwner(msg.from) && msg.reply_to_message)) {
@@ -708,7 +708,13 @@ function startAi(req, orderId) {
 const isOwnerReply = (msg) => isOwner(msg.from) && !!msg.reply_to_message;
 const topupOn = () => !PR.TRIAL && !!payCard();
 
-async function handleKbText(msg, bot) {
+async function handleKbText(msg, bot, host) {
+  // AI bot: xizmat tugmasi — ilovada shu xizmat formasi ochiladi
+  const svc = isAiBot(bot) ? LB.svcKind(msg.text.trim()) : null;
+  if (svc) {
+    await TOPUP.sendService(bot, msg.chat.id, svc, await LB.getLang(msg.from.id), appUrl(host, bot) + "&open=" + svc);
+    return true;
+  }
   const kind = LB.kbKind(msg.text.trim());
   const r = msg.reply_to_message;
   const isAskReply = !!(r && r.from && r.from.is_bot && TOPUP.isAsk(r.text));
@@ -847,7 +853,7 @@ async function confirmPaid(order, extra, req) {
       chat_id: order.telegram_user_id,
       text: LB.T(l, "topupDone", { amount: S(payment.amount), left: left != null ? S(left) : "" }),
       parse_mode: "HTML",
-      reply_markup: TOPUP.keyboard(l),
+      reply_markup: TOPUP.keyboard(l, isAiBot(custBot)),
     }, custBot);
     return;
   }

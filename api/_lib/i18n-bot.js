@@ -87,6 +87,27 @@ const KB = {
   prices: ["💲 Narxlar", "💲 Цены", "💲 Prices"],
   contact: ["💬 Bog'lanish", "💬 Связаться", "💬 Contact"],
 };
+// AI botdagi xizmat tugmalari: bosilganda qisqa izoh va ilovada shu xizmatning formasini ochadigan tugma chiqadi.
+// price — narxi prices.js dagi qaysi xizmatdan olinadi (hub'lar uchun)
+const SVC = {
+  presentation: { t: ["📊 Taqdimot", "📊 Презентация", "📊 Presentation"], d: ["Mavzuni yozasiz — AI tayyor PowerPoint slaydlarni yasaydi.", "Напишите тему — AI подготовит готовые слайды PowerPoint.", "Enter a topic — AI builds ready PowerPoint slides."] },
+  presentation_pro: { t: ["💎 Super taqdimot", "💎 Супер-презентация", "💎 Super presentation"], d: ["Morph animatsiyali premium dizaynlar: 3D, kitob, pazl va boshqalar.", "Премиум-дизайны с анимацией Morph: 3D, книга, пазл и другие.", "Premium Morph-animated designs: 3D, book, puzzle and more."] },
+  essay: { t: ["📝 Mustaqil ish", "📝 Самостоятельная работа", "📝 Independent work"], d: ["OTM va maktab uchun tayyor mustaqil ish: Word yoki PDF.", "Готовая самостоятельная работа для вуза и школы: Word или PDF.", "Ready independent work for university and school: Word or PDF."] },
+  referat: { t: ["📄 Referat", "📄 Реферат", "📄 Report"], d: ["Mavzu bo'yicha tayyor referat: Word yoki PDF.", "Готовый реферат по теме: Word или PDF.", "A ready report on your topic: Word or PDF."] },
+  kurs: { t: ["🎓 Kurs ishi", "🎓 Курсовая работа", "🎓 Coursework"], d: ["30–40 bet: boblar, mundarija, snoskalar va adabiyotlar.", "30–40 страниц: главы, оглавление, сноски и литература.", "30–40 pages: chapters, contents, footnotes and references."] },
+  article: { t: ["📰 Maqola", "📰 Статья", "📰 Article"], d: ["Ilmiy maqola, tezis yoki publitsistik maqola.", "Научная статья, тезисы или публицистика.", "A scientific article, thesis or journalistic piece."] },
+  test: { t: ["✅ Test tuzish", "✅ Составить тест", "✅ Create a test"], d: ["Mavzu bo'yicha variantli testlar va javoblar kaliti.", "Тесты по теме с вариантами и ключом ответов.", "Multi-variant tests on your topic with an answer key."] },
+  questions: { t: ["❓ Savollar tuzish", "❓ Составить вопросы", "❓ Create questions"], d: ["Mavzu yoki matn bo'yicha savollar ro'yxati.", "Список вопросов по теме или тексту.", "A list of questions on a topic or text."] },
+  crossword: { t: ["🧩 Krossvord", "🧩 Кроссворд", "🧩 Crossword"], d: ["Mavzu bo'yicha chop etishga tayyor krossvord.", "Кроссворд по теме, готовый к печати.", "A print-ready crossword on your topic."] },
+  lesson: { t: ["👩‍🏫 Dars ishlanma", "👩‍🏫 Конспект урока", "👩‍🏫 Lesson plan"], d: ["O'qituvchilar uchun tayyor dars ishlanmasi.", "Готовый конспект урока для учителей.", "A ready lesson plan for teachers."] },
+  charstudio: { price: "char_add", t: ["🎬 Jonli personaj", "🎬 Живой персонаж", "🎬 Live character"], d: ["Taqdimotingizga raqsga tushuvchi, ovozli personaj qo'shing.", "Добавьте в презентацию танцующего персонажа со звуком.", "Add a dancing character with sound to your presentation."] },
+  pdftools: { price: "img2pdf", t: ["📑 PDF vositalari", "📑 PDF-инструменты", "📑 PDF tools"], d: ["Word, Excel, rasm → PDF, PDF birlashtirish va bo'lish.", "Word, Excel, фото → PDF, объединение и разделение PDF.", "Word, Excel, images → PDF, merge and split PDF."] },
+  resume: { t: ["👤 Resume / CV", "👤 Резюме / CV", "👤 Résumé / CV"], d: ["Ishga joylashish uchun chiroyli resume.", "Красивое резюме для устройства на работу.", "A polished résumé for job applications."] },
+  obyektivka: { t: ["📋 Obyektivka", "📋 Объективка", "📋 Official CV"], d: ["Rasmiy shakldagi ma'lumotnoma (obyektivka).", "Справка-объективка официального образца.", "An official-format personal record (obyektivka)."] },
+};
+const svcText = (l, id) => SVC[id].t[I(l)];
+const svcDesc = (l, id) => SVC[id].d[I(l)];
+const svcKind = (text) => Object.keys(SVC).find((k) => SVC[k].t.includes(text)) || null;
 const kbText = (l, k) => KB[k][I(l)];
 const kbKind = (text) => Object.keys(KB).find((k) => KB[k].includes(text)) || null;
 // "Boshqa summa" so'rovi — javob qaysi tilda bo'lsa ham taniladi
@@ -100,6 +121,14 @@ const M = {
     "👇 Пополнение, баланс, цены и связь с нами — на кнопках внизу.",
     "👇 Top-up, balance, prices and contact — on the buttons below.",
   ],
+  kbHintAi: [
+    "👇 Kerakli xizmatni pastdagi tugmalardan tanlang.",
+    "👇 Выберите нужную услугу на кнопках внизу.",
+    "👇 Choose a service using the buttons below.",
+  ],
+  svcGo: ["🚀 Boshlash", "🚀 Начать", "🚀 Start"],
+  svcFree: ["Tekin", "Бесплатно", "Free"],
+  svcFrom: ["so'mdan", "сум и выше", "UZS and up"],
   welcome: [
     (o) => `Assalomu alaykum${o.name}! 👋\n\nBu yerda taqdimot, mustaqil ish, referat, test, resume va obyektivkani bir necha daqiqada tayyorlashingiz mumkin. Resume va obyektivka — <b>tekin</b>.${o.ai ? "\n\n🎁 <b>Birinchi ishingiz — tekin!</b> (kurs ishidan tashqari)" : ""}\n\n💬 Savolingizni shu yerga yozing yoki masala rasmini yuboring — AI tushuntirib beradi (kuniga ${o.free} ta bepul). Yangi mavzu: /yangi${o.ai ? `\n\n🎁 Do'stlaringizni taklif qiling: ${o.step} ta do'st — 1 ta bepul AI buyurtma, keyin har 2 ta do'st — yana 1 ta. Havola «🎁 Bonuslar» bo'limida.` : ""}\n\n🌐 Til / Язык / Language: /til\n\nBoshlash uchun pastdagi tugmani bosing 👇`,
     (o) => `Здравствуйте${o.name}! 👋\n\nЗдесь можно за несколько минут подготовить презентацию, самостоятельную работу, реферат, тест, резюме и объективку. Резюме и объективка — <b>бесплатно</b>.${o.ai ? "\n\n🎁 <b>Первая работа — бесплатно!</b> (кроме курсовой)" : ""}\n\n💬 Напишите вопрос сюда или отправьте фото задачи — AI объяснит (${o.free} бесплатно в день). Новая тема: /yangi${o.ai ? `\n\n🎁 Приглашайте друзей: ${o.step} друга — 1 бесплатный AI-заказ, дальше за каждых 2 друзей — ещё 1. Ссылка в разделе «🎁 Бонусы».` : ""}\n\n🌐 Til / Язык / Language: /til\n\nНажмите кнопку ниже, чтобы начать 👇`,
@@ -258,4 +287,4 @@ function T(l, key, ...args) {
   return typeof v === "function" ? v(...args) : v;
 }
 
-module.exports = { LANGS, getLang, setLang, T, tr, sum, esc, label, kbText, kbKind, KB, ASK, I };
+module.exports = { LANGS, getLang, setLang, T, tr, sum, esc, label, kbText, kbKind, KB, ASK, I, SVC, svcText, svcDesc, svcKind };
