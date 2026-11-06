@@ -494,6 +494,12 @@
     if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank");
   });
 
+  // Botdagi xizmat tugmasi ilovani ?open=<xizmat> bilan ochadi — to'g'ridan-to'g'ri o'sha xizmat formasi
+  try {
+    const oq = new URLSearchParams(location.search).get("open");
+    if (oq && /^[a-z0-9_]+$/.test(oq)) setTimeout(() => { go("home"); if (window.aiOpenService) window.aiOpenService(oq); }, 400);
+  } catch (e) { /* havola parametrsiz */ }
+
   // 🔥 Trend qo'shish: bot yuborgan taqdimot ostidagi tugma ilovani ?char=<buyurtma> bilan ochadi
   try {
     const cq = new URLSearchParams(location.search).get("char");

@@ -12,13 +12,33 @@ const { walletOf, MAX_TOPUP, MIN_FIRST, MIN_NEXT } = require("./balance");
 const { uniqueAmount } = require("./receipt");
 
 const L = require("./i18n-bot");
+const PR = require("../../public/ai/prices");
 
 // Botdagi doimiy tugmalar (xabar yozish joyi ostida) — mijoz tilida
-const keyboard = (l = "uz") => ({
-  keyboard: [[{ text: L.kbText(l, "topup") }, { text: L.kbText(l, "balance") }], [{ text: L.kbText(l, "prices") }, { text: L.kbText(l, "contact") }]],
+// ai — AI bot: tepada xizmatlar (2 ustun), pastda hisob tugmalari
+const svcRows = (l) => {
+  const ids = Object.keys(L.SVC).filter((id) => id !== "charstudio" || require("./characters").list().length);
+  const rows = [];
+  for (let i = 0; i < ids.length; i += 2) rows.push(ids.slice(i, i + 2).map((id) => ({ text: L.svcText(l, id) })));
+  return rows;
+};
+const keyboard = (l = "uz", ai = false) => ({
+  keyboard: [...(ai ? svcRows(l) : []), [{ text: L.kbText(l, "topup") }, { text: L.kbText(l, "balance") }], [{ text: L.kbText(l, "prices") }, { text: L.kbText(l, "contact") }]],
   resize_keyboard: true,
   is_persistent: true,
 });
+// Xizmat tugmasi bosildi: qisqa izoh, narx va ilovada shu xizmat formasini ochadigan tugma.
+// (web_app faqat inline tugmada: pastki klaviatura tugmasidan ochilgan ilovaga Telegram foydalanuvchi ma'lumotini bermaydi)
+function sendService(bot, chatId, id, l, url) {
+  const key = L.SVC[id].price || id;
+  const from = PR.fromPrice(key);
+  const price = from === 0 ? L.T(l, "svcFree") : from ? from.toLocaleString("ru-RU") + " " + L.T(l, "svcFrom") : "";
+  return telegram(bot, "sendMessage", {
+    chat_id: chatId,
+    text: L.svcText(l, id) + "\n\n" + L.svcDesc(l, id) + (price ? "\n💰 " + price : ""),
+    reply_markup: { inline_keyboard: [[{ text: L.T(l, "svcGo"), web_app: { url } }]] },
+  });
+}
 const OWNER_URL = () => `https://t.me/${String(process.env.OWNER_USERNAME || "Print_54").replace(/^@/, "")}`;
 // "Boshqa summa" so'roviga javobmi (har qaysi tilda)
 const isAsk = (text) => L.ASK.some((a) => String(text || "").startsWith(a));
@@ -131,4 +151,4 @@ async function sendContact(bot, chatId, l = "uz") {
   });
 }
 
-module.exports = { keyboard, isAsk, sendPrices, sendContact, createTopup, sendMenu, sendBalance, askAmount, parseAmount };
+module.exports = { keyboard, sendService, isAsk, sendPrices, sendContact, createTopup, sendMenu, sendBalance, askAmount, parseAmount };
