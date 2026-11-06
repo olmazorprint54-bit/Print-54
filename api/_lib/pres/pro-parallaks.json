@@ -1,0 +1,637 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 9,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "EKOLOGIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      762000,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 15,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Tabiatni asrang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      1066800,
+      5461000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 26,
+     "max": 47,
+     "perLine": 46.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sayyoramiz — yagona uyimiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2717800,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 21,
+     "max": 58,
+     "perLine": 58.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      3429000,
+      5334000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  HAVO",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      660400,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 9,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Toza havo",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      939800,
+      5334000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 63.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza havo — sog'lik garovi. Transport va sanoat chiqindilari havoni ifloslantiradi, nafas yo'llari kasalliklarini ko'paytiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      1701800,
+      5334000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 33.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Jamoat transporti va velosipeddan foydalaning\nChiqindi va barglarni yoqmang\nUy atrofiga daraxt eking",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2641600,
+      5334000,
+      882293
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 10,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  SUV",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      660400,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 17,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Har tomchi qadrli",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      939800,
+      5334000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer yuzidagi suvning atigi 3 foizga yaqini chuchuk suv, uning katta qismi muzliklarda. Suvni tejash — kelajakni asrash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      1701800,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 30.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Jo'mrakni ochiq qoldirmang\nBog'larda tomchilatib sug'orish\nAriq va ko'llarni ifloslantirmang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2641600,
+      5334000,
+      882293
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 13,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  O'RMON",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      660400,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 15,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yashil o'pkamiz",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      939800,
+      5334000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 41.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rmonlar quruqlikning qariyb 31 foizini egallaydi. Ular havoni tozalaydi, tuproqni ushlab turadi va hayvonlarga uy bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      1701800,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 34,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Har yili kamida bitta ko'chat eking\nQog'ozni tejang va qayta ishlang\nO'rmonda olov yoqishdan saqlaning",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2641600,
+      5334000,
+      882293
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 15,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  /  HAYVONOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      660400,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 12,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Noyob turlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      939800,
+      5334000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'plab hayvon va o'simlik turlari yashash joyi yo'qolgani sababli kamayib bormoqda. Ularni asrash — barchaning burchi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      1701800,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 31.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "«Qizil kitob» — noyob turlar ro'yxati\nQo'riqxona va milliy bog'lar\nBrakonerlikka qarshi kurash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2641600,
+      5334000,
+      882293
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 10,
+     "max": 50,
+     "perLine": 50.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05  /  BIZ",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      838200,
+      660400,
+      5334000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 17,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Nima qila olamiz?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      939800,
+      5334000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Katta o'zgarish kichik odatlardan boshlanadi. Har birimiz bugunoq tabiatga yordam bera olamiz.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      1701800,
+      5334000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 74,
+     "max": 74,
+     "perLine": 24.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Chiqindini saralang\nElektr va gazni tejang\nEkologik aksiyalarda qatnashing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2641600,
+      5334000,
+      882293
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 7,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      812800,
+      1143000,
+      5461000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 2,
+     "text": "E'tiboringiz uchun rahmat.\nSavollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      838200,
+      2286000,
+      5334000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true
+}

@@ -1,0 +1,1529 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 13,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TARBIYA SOATI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      1905000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 15,
+     "max": 32,
+     "perLine": 16,
+     "lines": 2,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Jamoada ishlash",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      584200,
+      2184400,
+      4953000,
+      1661993
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 20,
+     "max": 42,
+     "perLine": 42.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Har bir bo'lak muhim",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4013200,
+      4826000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "label",
+     "chars": 21,
+     "max": 53,
+     "perLine": 52.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      5207000,
+      4826000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  MAQSAD",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      889000,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 13,
+     "max": 20,
+     "perLine": 20.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Umumiy maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      635000,
+      1168400,
+      4699000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Jamoa bitta aniq maqsad atrofida birlashadi. Har bir a'zo nimaga intilayotganini bilsa, kuchlar bir yo'nalishga sarflanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2565400,
+      4699000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 22.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Maqsadni aniq va qisqa yozing\nMuddatni birga belgilang\nNatijani qanday o'lchashni kelishing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4038600,
+      4699000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  ROLLAR",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      889000,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 21,
+     "max": 21,
+     "perLine": 10.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Har kimning o'rni bor",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      635000,
+      1168400,
+      4699000,
+      1270000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 41.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Pazlning har bir bo'lagi kabi, jamoada ham har bir a'zoning o'z vazifasi bor. Bir bo'lak yo'q bo'lsa, rasm to'liq bo'lmaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2565400,
+      4699000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 25,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Vazifalarni kuchli tomonlarga qarab bo'ling\nMas'uliyatni aniq belgilang\nHech kimni chetda qoldirmang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4038600,
+      4699000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 14,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  MULOQOT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      889000,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 13,
+     "max": 20,
+     "perLine": 20.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Ochiq muloqot",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      635000,
+      1168400,
+      4699000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 108,
+     "max": 108,
+     "perLine": 36,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yaxshi jamoada fikrlar ochiq aytiladi va hurmat bilan tinglanadi. Muammo yashirilmaydi — birga hal qilinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2565400,
+      4699000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Muntazam qisqa uchrashuvlar\nFikrni hurmat bilan bildiring\nTinglashni o'rganing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4038600,
+      4699000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  /  YORDAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      889000,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 18,
+     "max": 20,
+     "perLine": 20.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Bir-biriga tayanch",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      635000,
+      1168400,
+      4699000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 116,
+     "max": 116,
+     "perLine": 38.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kimdir qiynalsa, jamoa yordamga keladi. O'zaro yordam ishonchni oshiradi va eng qiyin vazifani ham yengillashtiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2565400,
+      4699000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 23.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Bilganingizni boshqalarga o'rgating\nYordam so'rashdan uyalmang\nMuvaffaqiyatni birga nishonlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4038600,
+      4699000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05  /  NATIJA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      635000,
+      889000,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "title",
+     "chars": 17,
+     "max": 20,
+     "perLine": 20.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Birgalikda — kuch",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      635000,
+      1168400,
+      4699000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 42.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Alohida bo'laklar o'zi hech narsa emas, ammo birlashganda to'liq rasm hosil bo'ladi. Jamoa natijasi — har birimizning hissamiz.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2565400,
+      4699000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "65",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Natijani tahlil qiling\nXatolardan saboq oling\nKeyingi maqsadni birga tanlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4038600,
+      4699000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "title",
+     "chars": 7,
+     "max": 16,
+     "perLine": 16,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      584200,
+      2413000,
+      4953000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat. Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      3479800,
+      4699000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "sequence": true,
+ "media": [
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    1
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    1
+   ],
+   "derive": {
+    "of": 0,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    1,
+    2
+   ],
+   "derive": {
+    "of": 7,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    3
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image15.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image16.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image17.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image18.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    2,
+    3
+   ],
+   "derive": {
+    "of": 14,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image19.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image20.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image21.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image22.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image23.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image24.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    3,
+    4
+   ],
+   "derive": {
+    "of": 21,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    5
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image25.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image26.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image27.png"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image28.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image29.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image30.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    4,
+    5
+   ],
+   "derive": {
+    "of": 28,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image31.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image32.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image33.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image34.png"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image35.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image36.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    5,
+    6
+   ],
+   "derive": {
+    "of": 35,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "files": [],
+   "w": 900,
+   "h": 600,
+   "slides": [
+    7
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image37.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0,
+     0,
+     0.40911,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image38.jpeg"
+   ],
+   "w": 368,
+   "h": 368,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0.33333,
+     0,
+     0.74244,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image39.jpeg"
+   ],
+   "w": 300,
+   "h": 368,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0.66667,
+     0,
+     1,
+     0.61367
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image40.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0,
+     0.5,
+     0.40911,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image41.jpeg"
+   ],
+   "w": 368,
+   "h": 300,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0.33333,
+     0.5,
+     0.74244,
+     1
+    ]
+   }
+  },
+  {
+   "files": [
+    "ppt/media/image42.jpeg"
+   ],
+   "w": 300,
+   "h": 300,
+   "slides": [
+    6,
+    7
+   ],
+   "derive": {
+    "of": 42,
+    "crop": [
+     0.66667,
+     0.5,
+     1,
+     1
+    ]
+   }
+  }
+ ]
+}
