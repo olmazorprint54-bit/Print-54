@@ -1,0 +1,819 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 25,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ME'MORIY ATAMALAR LUG'ATI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      1778000,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 19,
+     "max": 32,
+     "perLine": 16,
+     "lines": 2,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Sharq me'morchiligi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2082800,
+      4064000,
+      1397000
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 35,
+     "max": 39,
+     "perLine": 39,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Temuriylar davri obidalari misolida",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      3581400,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 21,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      5334000,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ATAMA  ·  01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      838200,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 6,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Gumbaz",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      6705600,
+      1092200,
+      4064000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 39,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "arab. qubba — yarim shar shaklidagi tom",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2336800,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 139,
+     "max": 139,
+     "perLine": 34.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Gumbaz — binoning yopilmasi; u ichki makonni kengaytiradi va uzoqdan ko'zga tashlanadi. Temuriylar davrida qo'sh gumbazlar keng qo'llangan.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2717800,
+      4064000,
+      1063176
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 108,
+     "max": 108,
+     "perLine": 27,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qo'sh gumbaz — balandlik va mustahkamlik\nQovurg'ali gumbaz — Go'ri Amirda\nSirti moviy koshin bilan qoplanadi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      4165600,
+      4064000,
+      1210588
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ATAMA  ·  02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      838200,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 6,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Minora",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      6705600,
+      1092200,
+      4064000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "arab. manora — chiroq qo'yiladigan joy",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2336800,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 29.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Minora — masjid yonidagi baland va ingichka inshoot. Undan azon aytilgan, karvonlar uchun esa mayoq vazifasini o'tagan.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2717800,
+      4064000,
+      1063176
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 26.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Minorai Kalon (Buxoro, 1127) — qariyb 46 m\nIchida aylanma zinapoya bo'ladi\nSirtiga g'ishtdan naqsh terilgan",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      4165600,
+      4064000,
+      1210588
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ATAMA  ·  03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      838200,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 7,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Peshtoq",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      6705600,
+      1092200,
+      4064000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 29,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "fors. pesh — old, toq — ravoq",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2336800,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Peshtoq — binoning baland va hashamatli kirish qismi. U binoning «yuzi» hisoblanadi, eng boy bezaklar aynan shu yerga ishlanadi.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2717800,
+      4064000,
+      792333
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 125,
+     "max": 125,
+     "perLine": 20.8,
+     "lines": 6,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Registon madrasalarining ulkan peshtoqlari\nKoshin, girih va yozuvlar bilan bezatiladi\nIchkarida chuqur ravoqli tokcha bo'ladi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      4165600,
+      4064000,
+      1764586
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ATAMA  ·  04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      838200,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 5,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Ravoq",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      6705600,
+      1092200,
+      4064000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "ikki tayanch orasidagi egri yopilma",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2336800,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 134,
+     "max": 134,
+     "perLine": 33.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ravoq yukni yon tomonlarga taqsimlab, keng va mustahkam o'tish yo'lini hosil qiladi. Sharq me'morchiligida uchli ravoq keng tarqalgan.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2717800,
+      4064000,
+      1063176
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 23.6,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Hovli atrofidagi ayvon va yo'laklarda\nUchli («sharqona») shakl — mustahkamroq\nMadrasa hujralari kirishida ham uchraydi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      4165600,
+      4064000,
+      1487587
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ATAMA  ·  05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      838200,
+      4064000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "title",
+     "chars": 6,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Koshin",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      6705600,
+      1092200,
+      4064000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 22,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "sirlangan sopol plitka",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2336800,
+      4064000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 142,
+     "max": 142,
+     "perLine": 35.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Koshin — sirti rangli sir bilan qoplangan sopol plitka. Moviy, firuza va oq koshinlar Samarqand va Buxoro obidalarining o'ziga xos belgisidir.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2717800,
+      4064000,
+      1063176
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 25.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Girih — geometrik naqsh\nIslimiy — o'simliksimon naqsh\nKufiy va suls yozuvlari",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      4165600,
+      4064000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 7,
+     "max": 15,
+     "perLine": 14.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      2159000,
+      4064000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat. Savollaringiz bo'lsa, marhamat.",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6705600,
+      3175000,
+      4064000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    1
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    2
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    4
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    5
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    6
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    7
+   ]
+  }
+ ],
+ "sequence": true
+}

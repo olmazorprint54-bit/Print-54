@@ -814,6 +814,13 @@
       { id: "pro-yer", name: "🌍 3D Yer · O'zbekiston (geografiya)", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-materik", name: "🌍 3D Yer · materiklar (geografiya)", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-osiyo", name: "🌍 3D Yer · Markaziy Osiyo davlatlari", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kitob", name: "💎 Ochiq kitob · varaq ag'dariladi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kundalik", name: "💎 Kundalik · muqova ochiladi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-konvert", name: "💎 Konvert va xat · qog'oz samolyot", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-parallaks", name: "💎 Parallaks manzara · tongdan tungacha", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-smartfon", name: "📱 Smartfon maketi · raqamli mavzular", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-pazl", name: "💎 Pazl · bo'laklar yig'iladi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kublar", name: "💎 3D kublar minorasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
