@@ -1,0 +1,2935 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 21,
+     "max": 21,
+     "perLine": 10.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "DUNYO BO'YLAB SAYOHAT",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 21,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "text",
+     "chars": 170,
+     "max": 170,
+     "perLine": 56.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'l va tog'lardan orollar va katta shaharlargacha: o'n ikki yo'nalish, har biri o'z go'zalligi, mavsumi va tayyorgarligi bilan. Keyingi safaringizni shu yerdan tanlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 5,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Cho'l",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      5080000,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qum va sukunat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      5410200,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tog'",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      5080000,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 15,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'qqilar sari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      5410200,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 4,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Orol",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      5080000,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 13,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moviy qirg'oq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      5410200,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'rmon",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      5080000,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yashil so'qmoq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      5410200,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 5,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Vodiy",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      5080000,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 13,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daryo bo'ylab",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      5410200,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "title",
+     "chars": 9,
+     "max": 21,
+     "perLine": 21.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "MUNDARIJA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2540000,
+      431800,
+      7112000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 12,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "CHO'L SAFARI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 20,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Oltin qumlar orasida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kechki payt qum tepalari rangini o'zgartiradi, tunda esa osmon yulduzlarga to'ladi. Yo'lga chiqishdan oldin suv va yo'l xaritasini tekshirib oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 12,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kuz va bahor",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "3-5 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 8,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rtacha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 19,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suv, shapka, kompas",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "title",
+     "chars": 16,
+     "max": 32,
+     "perLine": 16.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "TOG' CHO'QQILARI",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 25,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Toza havo va keng manzara",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "text",
+     "chars": 201,
+     "max": 201,
+     "perLine": 50.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' sayohati kuch bilan birga sabr ham talab qiladi. Yo'lni bosqichlarga bo'ling, ob-havoni kuzating va tajribali yo'lboshchi bilan yuring. Tepaga chiqqach ochiladigan manzara har bir qadamga arziydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 13,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "MOVIY OROLLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5905500,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 24,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Okean bag'rida dam olish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 155,
+     "max": 155,
+     "perLine": 51.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tiniq suv, marjon qoyalari va tinch qirg'oqlar shahardan charchaganlar uchun eng yaxshi tanlov. Suv osti hayotini ko'rish uchun sho'ng'ishni sinab ko'ring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 11,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quruq oylar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "5-7 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 4,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oson",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 19,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh kremi, niqob",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 18,
+     "max": 32,
+     "perLine": 16.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "O'RMON SO'QMOQLARI",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 21,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yashil sukunat ichida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 195,
+     "max": 195,
+     "perLine": 48.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daraxtlar orasidagi yo'lak bo'ylab yurish kayfiyatni ko'taradi va charchoqni kamaytiradi. Belgilangan so'qmoqdan chiqmang, chiqindini o'zingiz bilan qaytarib oling va hayvonlarni bezovta qilmang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 13,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "DARYO VODIYSI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 16,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv bo'ylab yo'l",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 145,
+     "max": 145,
+     "perLine": 48.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Vodiylar yumshoq iqlimi va unumdor yerlari bilan mashhur. Qayiqda suzish, baliq ovlash va qishloqlarga kirib ko'rish bu safarni unutilmas qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 9,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yoz boshi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2-4 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 4,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oson",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 21,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yengil kurtka, kamera",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 17,
+     "max": 32,
+     "perLine": 16.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "OKEAN TO'LQINLARI",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 25,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiat kuchini his qiling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 178,
+     "max": 178,
+     "perLine": 59.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Serfing va qirg'oq bo'ylab yurish yosh sayohatchilar orasida juda ommabop. To'lqin va oqim jadvalini oldindan bilib oling, boshlovchilar esa albatta murabbiy bilan shug'ullansin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 12,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "G'OR VA KO'L",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5905500,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 19,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yashirin manzaralar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 140,
+     "max": 140,
+     "perLine": 46.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qoyalar orasidan ochiladigan ko'l manzarasi suratga olish uchun ajoyib joy. Bunday maskanlarga mahalliy yo'lboshchi bilan borish xavfsizroq.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 10,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yoz va kuz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1-2 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 8,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rtacha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 21,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Fonar, qulay poyabzal",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 14,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "DO'STLAR BILAN",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birga sayohat qilish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 210,
+     "max": 210,
+     "perLine": 52.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Guruh bilan yo'lga chiqish ham xavfsizroq, ham arzonroq. Vazifalarni oldindan bo'lib oling: kim yo'lni, kim ovqatni, kim esa suratlarni o'z zimmasiga oladi. Eng yaxshi xotiralar aynan shunday safarlarda qoladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 13,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "OSMONO'PARLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 22,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Zamonaviy me'morchilik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 138,
+     "max": 138,
+     "perLine": 46,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Baland binolar, kuzatuv maydonchalari va tungi yoritish katta shaharga alohida ruh beradi. Shahar kartasini oling va metrodan foydalaning.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 12,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yil davomida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "3-4 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 4,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oson",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 17,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Transport kartasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3498850,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 11,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "TONG SHAHRI",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 19,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yuqoridan ko'rinish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 193,
+     "max": 193,
+     "perLine": 64.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh chiqishi paytida shahar tinch va yorug' bo'ladi. Eng yaxshi suratlar erta tongda olinadi, chunki ko'chalar hali bo'sh va yorug'lik yumshoq. Kuzatuv maydonchasiga chiptani oldindan oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "title",
+     "chars": 15,
+     "max": 18,
+     "perLine": 17.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 42,
+     "paras": 1,
+     "text": "JONLI KO'CHALAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5905500,
+      584200,
+      5778500,
+      646331
+     ],
+     "lineH": 640080,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 19,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shahar ritmi ichida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1371600,
+      5778500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "text",
+     "chars": 144,
+     "max": 144,
+     "perLine": 48,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng qiziqarli joylar ko'pincha yo'lboshchi kitoblarda yozilmaydi. Mahalliy ovqatni tatib ko'ring, bozorga kiring va odamlar bilan suhbatlashing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      1803400,
+      5778500,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAVSUM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 12,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bahor va kuz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVOMIYLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      3860800,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2-3 kun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      4140200,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 4,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oson",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OLIB OLING",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5181600,
+      2787650,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 14,
+     "max": 30,
+     "perLine": 30.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qulay poyabzal",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8896350,
+      5461000,
+      2787650,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 15,
+     "max": 32,
+     "perLine": 16.1,
+     "lines": 2,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "ESKI MAHALLALAR",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 24,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tarix va bugun yonma-yon",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 180,
+     "max": 180,
+     "perLine": 60,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimgi binolar yangi osmono'parlar yonida turgan ko'chalar shahar tarixini ko'rsatadi. Piyoda yuring, kichik kafelarga kiring va har bir burilishda yangi manzaraga tayyor bo'ling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11430000,
+      254000,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 7,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Georgia",
+     "anchor": "b",
+     "box": [
+      508000,
+      4648200,
+      4699000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 25,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yo'lingiz bexatar bo'lsin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6019800,
+      4699000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "text",
+     "chars": 115,
+     "max": 115,
+     "perLine": 28.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Dunyo keng, safar esa birinchi qadamdan boshlanadi. Eng yaxshi manzara hali oldinda.\n\nE'tiboringiz uchun tashakkur!",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4724400,
+      6096000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 14
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 15
+  }
+ ],
+ "sequence": true
+}

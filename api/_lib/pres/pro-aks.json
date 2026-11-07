@@ -1,0 +1,3367 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 16,
+     "max": 23,
+     "perLine": 22.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "MISR MO'JIZALARI",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      635000,
+      914400,
+      7112000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 42,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Ming yillar osha yetib kelgan yodgorliklar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      1905000,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 36.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Piramidalar, ibodatxonalar va masjidlar: har bir yodgorlik o'z davrining bilimi, mahorati va e'tiqodi haqida hikoya qiladi.\n\nMuallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2692400,
+      6985000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 8,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Piramida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      5435600,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Giza platosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      5765800,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sfinks",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      5435600,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tosh qo'riqchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      5765800,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Karnak",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      5435600,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng katta majmua",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      5765800,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Luksor",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      5435600,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimgi Fiva",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      5765800,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 10,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Abu Simbel",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      5435600,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 15,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qoyadagi ma'bad",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      5765800,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "MUNDARIJA",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      2540000,
+      584200,
+      7112000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 14,
+     "max": 29,
+     "perLine": 14.3,
+     "lines": 2,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "BUYUK PIRAMIDA",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      1354217
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 10,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Giza, Misr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 174,
+     "max": 174,
+     "perLine": 34.8,
+     "lines": 5,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimgi dunyoning yetti mo'jizasidan bugungacha saqlanib qolgan yagonasi. Fir'avn Xufu uchun qurilgan bu inshoot qariyb 4 ming yil davomida dunyodagi eng baland bino bo'lgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      1231106
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QURILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. taxminan 2560-yil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 10,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BALANDLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 16,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Dastlab 146 metr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TOSHLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 23,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qariyb 2,3 million blok",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAQOMI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "YuNESKO merosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 12,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "BUYUK SFINKS",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 10,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Giza, Misr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 139,
+     "max": 139,
+     "perLine": 34.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sher tanasi va inson boshiga ega ulkan haykal bitta ohaktosh qoyadan o'yib yasalgan. Olimlar uni ko'pincha fir'avn Xafra davriga bog'laydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "YARATILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 27,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. taxminan 2500-yil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "UZUNLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qariyb 73 metr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 10,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BALANDLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qariyb 20 metr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 9,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MATERIALI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yaxlit ohaktosh",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 6,
+     "max": 23,
+     "perLine": 22.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "KARNAK",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      635000,
+      914400,
+      7112000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 49,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Dunyodagi eng yirik ibodatxona majmualaridan biri",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      1905000,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 330,
+     "max": 330,
+     "perLine": 55,
+     "lines": 6,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Karnakni ikki ming yildan ortiq vaqt davomida ko'plab fir'avnlar kengaytirib borgan. Har bir hukmdar o'z ustuni, darvozasi yoki haykalini qo'shgan, shu sabab majmua tosh kitobga o'xshaydi.\n\nGipostil zalidagi 134 ta ulkan ustun bugun ham kishini hayratga soladi. Sfinkslar xiyoboni esa majmuani Luksor ibodatxonasi bilan bog'lagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2692400,
+      6985000,
+      1477328
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 6,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "LUKSOR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 19,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qadimgi Fiva shahri",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 163,
+     "max": 163,
+     "perLine": 32.6,
+     "lines": 5,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Nil sohilidagi bu ibodatxona Yangi podsholik davrida bunyod etilgan. Yillik Opet bayrami shu yerda o'tkazilgan va Karnakdan kelgan yurishlar shu yerda yakunlangan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      1231106
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QURILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 17,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. XIV asr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 4,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "JOYI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 22,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nilning sharqiy sohili",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 13,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BAG'ISHLANGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 18,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Amon, Mut va Xonsu",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAQOMI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "YuNESKO merosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 10,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "ABU SIMBEL",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 19,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nubiya, Misr janubi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 157,
+     "max": 157,
+     "perLine": 39.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ramzes II qoyani o'ydirib qurdirgan ikki ma'bad. Asvan to'g'oni tufayli suv bosish xavfi tug'ilganda, ular bo'laklarga kesilib, balandroq joyga ko'chirilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QURILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 18,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. XIII asr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "HAYKALLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 22,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qariyb 20 metrlik 4 ta",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 12,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'CHIRILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 16,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1964-1968-yillar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAQOMI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "YuNESKO merosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 11,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "FILAE OROLI",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      4572000,
+      914400,
+      7112000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 29,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Suvdan qutqarilgan ibodatxona",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      1752600,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 39,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ma'buda Isidaga bag'ishlangan bu majmua qadimda Nildagi Filae orolida bo'lgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      2362200,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 36.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Asvan to'g'onlari qurilgach, ibodatxona yiliga ko'p oy suv ostida qolgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      3327400,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "text",
+     "chars": 82,
+     "max": 82,
+     "perLine": 41,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1970-yillarda bino bo'lak-bo'lak qilinib, yaqindagi Agilkiya oroliga ko'chirilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      4292600,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bugun u faqat qayiqda boriladigan eng go'zal yodgorliklardan biridir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      5257800,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 16,
+     "max": 29,
+     "perLine": 14.3,
+     "lines": 2,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "QIROLLAR VODIYSI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      1354217
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 13,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Luksor g'arbi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 36.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yangi podsholik fir'avnlari qoyalar ichiga yashirin qabrlar o'ydirgan. Devorlardagi rangli rasmlar va yozuvlar hozirgacha yorqinligini yo'qotmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "DAVRI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 23,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. XVI-XI asrlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 7,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QABRLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 12,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "60 dan ortiq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 15,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MASHHUR TOPILMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 22,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tutanxamon qabri, 1922",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MAQOMI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "YuNESKO merosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 12,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "MUHAMMAD ALI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 14,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qohira qal'asi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 168,
+     "max": 168,
+     "perLine": 33.6,
+     "lines": 5,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Salohiddin qal'asi ustida qad ko'targan masjid usmonli uslubida qurilgan. Baland minoralari va gumbazlari tufayli Qohiraning eng taniqli manzaralaridan biriga aylangan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      1231106
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QURILGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 16,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1830-1848-yillar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "USLUBI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 21,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Usmonli me'morchiligi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 4,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "JOYI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 14,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qohira qal'asi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 9,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MATERIALI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 24,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Alebastr bilan qoplangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 14,
+     "max": 23,
+     "perLine": 22.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "ISLOMIY QOHIRA",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      635000,
+      914400,
+      7112000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 24,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Minglab minoralar shahri",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      1905000,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 308,
+     "max": 308,
+     "perLine": 51.3,
+     "lines": 6,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Qohiraning eski qismida yuzlab tarixiy masjid, madrasa va karvonsaroy saqlanib qolgan. Sulton Hasan masjidi-madrasasi mamluklar me'morchiligining eng yirik namunalaridan biri hisoblanadi.\n\nBu hudud 1979-yilda YuNESKOning Jahon merosi ro'yxatiga kiritilgan va bugun ham shaharning jonli qismi bo'lib qolmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2692400,
+      6985000,
+      1477328
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 11,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "NIL DARYOSI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 21,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Misrning hayot manbai",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 165,
+     "max": 165,
+     "perLine": 33,
+     "lines": 5,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimgi misrliklar uchun Nil ham yo'l, ham oziq-ovqat, ham e'tiqod edi. Har yilgi toshqin dalalarga unumdor loyqa olib kelgan, shaharlar esa uning bo'ylarida o'sgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      1231106
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "UZUNLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 15,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qariyb 6 650 km",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 6,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "OQISHI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 17,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Janubdan shimolga",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QUYILADI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 19,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'rta yer dengiziga",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 12,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "MISR AHOLISI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 21,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Asosan Nil bo'ylarida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "title",
+     "chars": 11,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "IEROGLIFLAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      787400,
+      3619500,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 19,
+     "max": 35,
+     "perLine": 35.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tosh ustidagi yozuv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2184400,
+      3619500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 151,
+     "max": 151,
+     "perLine": 37.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Misr yozuvi minglab yillar davomida qo'llangan, keyin esa unutilib ketgan. Rozetta toshi tufayli olimlar uni XIX asrda qayta o'qishga muvaffaq bo'lgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2616200,
+      3619500,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 13,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PAYDO BO'LGAN",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      990600,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 27,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mil. avv. taxminan 3200-yil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      1257300,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BELGILAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2159000,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 26,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "700 dan ortiq asosiy belgi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2425700,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 5,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KALIT",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3327400,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 13,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Rozetta toshi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3594100,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 12,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'QIGAN OLIM",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4495800,
+      3429000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 24,
+     "max": 33,
+     "perLine": 33.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Fransua Shampolyon, 1822",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4762500,
+      3429000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "FRESKALAR",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      4572000,
+      914400,
+      7112000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 35,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Devorlarda saqlangan kundalik hayot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      1752600,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 71,
+     "max": 71,
+     "perLine": 35.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Rasmlarda dehqonchilik, ov, bayram va marosimlar batafsil tasvirlangan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      2362200,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "text",
+     "chars": 72,
+     "max": 72,
+     "perLine": 36,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bo'yoqlar tabiiy minerallardan tayyorlangani uchun uzoq saqlanib qolgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      3327400,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Odam qiyofasi qat'iy qoidalar asosida chizilgan: bosh yondan, gavda oldidan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      4292600,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 36.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bu tasvirlar qadimgi jamiyatni o'rganishda eng muhim manbalardan biridir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4902200,
+      5257800,
+      6731000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "15 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 22.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      635000,
+      914400,
+      7112000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 24,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tarix toshlarda yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      1905000,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 28.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Bu yodgorliklarni asrash - kelajak avlodlarga qoldiradigan eng katta merosimizdir.\n\nE'tiboringiz uchun tashakkur.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      2692400,
+      6985000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1210,
+   "h": 1613,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1440,
+   "slides": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1280,
+   "slides": [
+    1,
+    2,
+    3
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1440,
+   "h": 1920,
+   "slides": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1280,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1248,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1920,
+   "h": 1280,
+   "slides": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1920,
+   "h": 1440,
+   "slides": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1920,
+   "h": 1208,
+   "slides": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1840,
+   "h": 1407,
+   "slides": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1920,
+   "h": 1285,
+   "slides": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 1920,
+   "h": 1280,
+   "slides": [
+    11,
+    12,
+    13,
+    14
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1920,
+   "h": 1101,
+   "slides": [
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 14
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    13,
+    14,
+    15
+   ],
+   "focus": 15
+  }
+ ],
+ "sequence": true
+}

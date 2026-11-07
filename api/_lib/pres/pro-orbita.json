@@ -1,0 +1,2942 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 14,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "SAYYORA ATLASI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 27,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'n ikki manzara, bitta Yer",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 150,
+     "max": 150,
+     "perLine": 30,
+     "lines": 5,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Osmono'par shaharlardan jim cho'llargacha: dunyoning turli burchaklari qanday ko'rinishi va ularni nima bog'lab turishi haqida.\n\nMuallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      1231106
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 9,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shaharlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      3962400,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Baland va gavjum",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      774700,
+      4318000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 9,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'chalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      3962400,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Shahar ritmi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2959100,
+      4318000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 8,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Cho'llar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      3962400,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qum va sukunat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      4318000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 7,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      3962400,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'qqilar sari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7327900,
+      4318000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 7,
+     "max": 18,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Orollar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      3962400,
+      1905000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moviy qirg'oqlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9512300,
+      4318000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "MUNDARIJA",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      2540000,
+      736600,
+      7112000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "OSMONO'PARLAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 26,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yuqoriga o'sayotgan shahar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 39.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer tanqis joyda shahar balandlikka intiladi. Shisha va po'lat minoralar kam maydonda minglab odamga ish va uy beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 19,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ixcham va zamonaviy",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 21,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Energiya sarfi yuqori",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 14,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh botishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 16,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "GAVJUM KO'CHALAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 13,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shahar yuragi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 244,
+     "max": 244,
+     "perLine": 34.9,
+     "lines": 7,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Do'konlar, sariq taksilar va odamlar oqimi katta shaharga jon baxsh etadi. Bunday ko'chalarda kun ham, tun ham to'xtamaydi.\n\nPiyoda yurish shaharni tanishning eng yaxshi usuli: har bir burilishda yangi kafe, yangi ovoz va yangi hid kutib oladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      1723549
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10541000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 17,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "CHO'L KENGLIKLARI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      7366000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 14,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qum va sukunat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 125,
+     "max": 125,
+     "perLine": 41.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Shamol qum tepalarini har kuni yangidan chizadi. Kunduzi jazirama, tunda sovuq bo'lsa ham, bu yerda hayot o'z yo'lini topgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 20,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tinchlik va keng ufq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 14,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suv tanqisligi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 12,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tong va shom",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 14,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "TOG' TIZMALARI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 30,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qor bilan qoplangan cho'qqilar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 32.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar daryolarni boqadi, iqlimni shakllantiradi va odamga kuchini sinab ko'rish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 23,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza havo, keng manzara",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 21,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ob-havo tez o'zgaradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 10,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yoz oylari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "MOVIY OROLLAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 25,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Okean bag'ridagi quruqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 218,
+     "max": 218,
+     "perLine": 31.1,
+     "lines": 7,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Orollar uzoq vaqt alohida rivojlangani uchun boshqa joyda uchramaydigan o'simlik va hayvonlarni saqlab qolgan.\n\nMarjon qoyalari minglab dengiz turiga boshpana beradi, shu sabab ularni asrash butun okean uchun muhimdir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      1723549
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10541000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 15,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "QALIN O'RMONLAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      7366000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 18,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sayyoramiz o'pkasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 84,
+     "max": 84,
+     "perLine": 42,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rmon havoni tozalaydi, tuproqni ushlab turadi va son-sanoqsiz jonzotga uy bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2565400,
+      4318000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 16,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Boy tabiat, soya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 20,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kesish va yong'inlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 12,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bahor va kuz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 15,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "DARYO VODIYLARI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 24,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sivilizatsiyalar beshigi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 36.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng qadimgi shaharlar aynan daryo bo'ylarida paydo bo'lgan. Vodiylar suv, unumdor tuproq va qulay yo'l beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 14,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Unumdor yerlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 13,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toshqin xavfi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 9,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yoz boshi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 17,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "OKEAN TO'LQINLARI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 12,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiat kuchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 207,
+     "max": 207,
+     "perLine": 29.6,
+     "lines": 7,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Okean Yer yuzasining katta qismini qoplaydi, iqlimni muvozanatda ushlab turadi va hali to'liq o'rganilmagan.\n\nTo'lqinlar qirg'oqni o'zgartiradi, ularning kuchidan esa toza energiya olish yo'llari izlanmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      1723549
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10541000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "TOG' KO'LLARI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      7366000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 19,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yashirin manzaralar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 38,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qoyalar orasidagi ko'llar toza suv zaxirasi hisoblanadi. Tinch suv yuzasi osmon va tog'larni oynadek aks ettiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 18,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza suv, sokinlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 18,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Borish yo'li qiyin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 10,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yoz va kuz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 14,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "TARIXIY MARKAZ",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 23,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eski va yangi yonma-yon",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 39.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'p shaharlarda bir asrlik binolar yangi minoralar yonida turadi. Bu ko'chalar shahar tarixini kitobdek o'qib beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 18,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Noyob me'morchilik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 16,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Binolarni asrash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 9,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Erta tong",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 16,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "QADIMIY OBIDALAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 28,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ming yillar sinovidan o'tgan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 213,
+     "max": 213,
+     "perLine": 35.5,
+     "lines": 6,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Piramidalar va qadimgi yo'llar insonning sabri va bilimiga guvoh. Bugun ham olimlar ularning qurilish sirlarini o'rganmoqda.\n\nBunday joylar butun insoniyat merosi, ularni avaylash esa har birimizning burchimizdir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      1477328
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10541000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 19,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "SHARQ ME'MORCHILIGI",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      7366000,
+      711200,
+      4318000,
+      1371600
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 18,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Gumbaz va naqshlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 32,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moviy gumbazlar, baland minoralar va murakkab naqshlar Sharq ustalarining mahoratini ko'rsatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      2565400,
+      4318000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KUCHLI TOMONI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4597400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 17,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Boy bezak va ramz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4851400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QIYINCHILIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5232400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 19,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ta'mirlash murakkab",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5486400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 43.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH VAQTI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5867400,
+      4318000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 16,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kechki yorug'lik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7366000,
+      6121400,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "15 / 15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      330200,
+      1143000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 7,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      508000,
+      711200,
+      4318000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 20,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Dunyo sizni kutmoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2159000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 31.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Sayyoramiz har bir burchagi bilan go'zal. Uni ko'rish, tanish va asrash o'zimizning qo'limizda.\n\nE'tiboringiz uchun tashakkur.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2565400,
+      4318000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 15
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    13,
+    14,
+    15
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    14,
+    15
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    15
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1920,
+   "h": 1280,
+   "slides": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 1360,
+   "h": 1240,
+   "slides": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}

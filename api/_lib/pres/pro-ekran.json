@@ -1,0 +1,2665 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "YER MANZARALARI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 54,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sayyoramizning eng go'zal panoramalari bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 148,
+     "max": 148,
+     "perLine": 49.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Cho'llardan okeanlargacha, tog' cho'qqilaridan o'rmonlargacha: tabiat bizga nimalarni ko'rsatadi va uni nega asrashimiz kerak.\nMuallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 9,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "MUNDARIJA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01  Quruqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      596900,
+      5588000,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 16,
+     "max": 28,
+     "perLine": 28.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'l va tog'lar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      596900,
+      5943600,
+      2603500,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 25.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02  Suv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3390900,
+      5588000,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 18,
+     "max": 28,
+     "perLine": 28.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Orol, daryo, okean",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3390900,
+      5943600,
+      2603500,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 9,
+     "max": 25,
+     "perLine": 25.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03  Inson",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6184900,
+      5588000,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 28.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tabiat bilan yonma-yon",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6184900,
+      5943600,
+      2603500,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04  Kelajak",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8978900,
+      5588000,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 17,
+     "max": 28,
+     "perLine": 28.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Asrash va sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8978900,
+      5943600,
+      2603500,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "title",
+     "chars": 8,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "CHO'LLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 29,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Quruqlikning uchdan bir qismi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 174,
+     "max": 174,
+     "perLine": 87,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'llar sayyora quruqligining qariyb uchdan birini egallaydi. Kunduzi jazirama, tunda esa sovuq bo'lishiga qaramay, bu yerda ham minglab o'simlik va hayvon turlari yashaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 9,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Balandlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 75,
+     "max": 75,
+     "perLine": 25,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng baland nuqta - Everest, dengiz sathidan 8 849 metr yuqorida joylashgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 10,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv manbai",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "text",
+     "chars": 88,
+     "max": 88,
+     "perLine": 29.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muzliklar va qorlar daryolarni to'yintiradi, millionlab odamlarni suv bilan ta'minlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 5,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Iqlim",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 81,
+     "max": 81,
+     "perLine": 27,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' tizmalari shamol va bulutlar yo'lini to'sib, atrofdagi ob-havoni belgilaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "OROLLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 30,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Okean o'rtasidagi alohida olam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 167,
+     "max": 167,
+     "perLine": 83.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Orollar uzoq vaqt alohida rivojlangani uchun ularda boshqa joyda uchramaydigan jonzotlar saqlanib qolgan. Marjon qoyalari esa minglab dengiz turlariga boshpana beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 9,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "O'RMONLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 3,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "31%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 36,
+     "max": 36,
+     "perLine": 18,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "quruqlik yuzasini o'rmonlar qoplagan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "4 mlrd",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 40,
+     "max": 40,
+     "perLine": 20,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "gektar o'rmon butun dunyo bo'ylab mavjud",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 3,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "80%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "quruqlikdagi tirik turlar o'rmonda yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 8,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "DARYOLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 24,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sivilizatsiyalar beshigi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 161,
+     "max": 161,
+     "perLine": 80.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng qadimgi shaharlar daryo bo'ylarida paydo bo'lgan. Daryolar ichimlik suvi, dehqonchilik va transport yo'lini beradi, vodiylarni unumdor tuproq bilan boyitadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 8,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "OKEANLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Maydon",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 82,
+     "max": 82,
+     "perLine": 27.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Okeanlar Yer yuzasining taxminan 71 foizini qoplaydi va hali to'liq o'rganilmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 8,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kislorod",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "text",
+     "chars": 86,
+     "max": 86,
+     "perLine": 28.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Atmosferadagi kislorodning taxminan yarmi okeandagi mikroskopik o'simliklardan keladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Harorat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 26,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oqimlar issiqlikni tarqatib, butun sayyora iqlimini muvozanatda ushlab turadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "KO'LLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 33,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Quruqlikdagi chuchuk suv zaxirasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 73.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'llar chuchuk suvni saqlaydi va atrofidagi hayotni qo'llab-quvvatlaydi. Dunyodagi eng chuqur ko'l - Baykal, uning chuqurligi 1 642 metrga yetadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 10,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "QUMTEPALAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "9 mln",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kvadrat km - Sahroi Kabir maydoni",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "180 m",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 46,
+     "max": 46,
+     "perLine": 23,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "ga yaqin balandlikka yetadigan qum tepalar bor",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Shamol",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 47,
+     "max": 47,
+     "perLine": 23.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "barxanlarni har yili bir necha metrga siljitadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      5232400,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "TABIAT VA INSON",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 27,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Biz tabiatning bir qismimiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 163,
+     "max": 163,
+     "perLine": 81.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Havo, suv, oziq-ovqat va dori-darmonning asosiy manbai tabiatdir. Tabiatda vaqt o'tkazish esa inson kayfiyati va sog'lig'iga ijobiy ta'sir ko'rsatishi isbotlangan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 8,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "FYORDLAR",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 14,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kelib chiqishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 30.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimgi muzliklar qoyalarni o'yib, chuqur vodiylar hosil qilgan, keyin ularni dengiz bosgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 10,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Joylashuvi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 25.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Norvegiya, Chili, Yangi Zelandiya va Alyaskada eng mashhur fyordlar uchraydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 7,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 24.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sokin suv va tik qoyalar har yili ko'plab sayyohlarni o'ziga jalb qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "BULUTLAR USTIDA",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 9,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Inversiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 85,
+     "max": 85,
+     "perLine": 28.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Issiq havo sovuq havo ustida qolsa, bulutlar vodiyda to'planib, oq dengizga aylanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 9,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Balandlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "text",
+     "chars": 72,
+     "max": 72,
+     "perLine": 24,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har 100 metr ko'tarilganda havo harorati o'rtacha 0,6 darajaga pasayadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4572000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 12,
+     "max": 30,
+     "perLine": 29.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tayyorgarlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4470400,
+      3048000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 25.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'ga chiqishdan oldin ob-havo, kiyim va yo'l xaritasini albatta tekshiring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7747000,
+      4826000,
+      3048000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 6,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "ASRASH",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 28,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Har birimiz nima qila olamiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 160,
+     "max": 160,
+     "perLine": 80,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daraxt eking, suv va energiyani tejang, tabiatda chiqindi qoldirmang. Kichik odatlar millionlab odamlarda takrorlansa, sayyora uchun katta o'zgarishga aylanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 8,
+     "max": 14,
+     "perLine": 14.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "PANORAMA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      381000,
+      1397000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "15",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10795000,
+      381000,
+      889000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1270000,
+      406400,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 31,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sayyoramiz go'zal bo'lib qolsin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5054600,
+      8128000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 2,
+     "text": "Bu manzaralarni kelajak avlodlar ham ko'rishi bizning qo'limizda.\nE'tiboringiz uchun katta rahmat!",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5435600,
+      8128000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 14
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 15
+  }
+ ],
+ "sequence": true
+}
