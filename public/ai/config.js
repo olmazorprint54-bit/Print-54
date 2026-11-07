@@ -15,6 +15,7 @@
   }
   const LANGS = [
     { v: "uz_lat", l: "O'zbek (lotin)", f: "uz" },
+    { v: "uz_new", l: "Özbek (yangi lotin)", f: "uz" },
     { v: "uz_cyr", l: "Ўзбек (кирилл)", f: "uz" },
     { v: "ru", l: "Rus", f: "ru" },
     { v: "en", l: "Ingliz", f: "gb" },

@@ -100,7 +100,8 @@ async function generateGazeta(f, { withPage }) {
   const lang = langOf(f);
   const r = await askJsonSafe(f, lang);
   const photos = f.images === false ? {} : await findPhotos(r.data, f.topic);
-  const data = buildData(f, r.data, photos, lang);
+  let data = buildData(f, r.data, photos, lang);
+  if (f.lang === "uz_new") data = require("./newlat").deep(data);
   const buffer = await renderGazeta(templateOf(f), data, withPage);
   return { buffer, name: `Devoriy gazeta - ${clean(f.topic, 60)}`.replace(/[\\/:*?"<>|]+/g, ""), ai: r, data };
 }

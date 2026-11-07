@@ -27,6 +27,10 @@ const { generatePresentation } = require("./_lib/pres-gen");
 const PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
 const { blocksToHtml, blocksToDocx } = require("./_lib/doc-render");
 const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI'siz
+// Yangi lotin alifbosi (til "uz_new"): shu buyurtma davomida tayyor matn Ö, Ğ, Ş, Ç bilan yoziladi (api/_lib/newlat.js)
+const NL = require("./_lib/newlat");
+const NEWLAT = new (require("async_hooks").AsyncLocalStorage)();
+const isNewLat = () => !!(NEWLAT.getStore() || {}).on;
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
@@ -72,6 +76,7 @@ async function getBrowser() {
 
 // kind: "pdf" (A4) yoki "png" (1-sahifa rasmi, krossvord uchun)
 async function renderPdf(html, kind = "pdf") {
+  if (isNewLat()) html = NL.convertHtml(html);
   const browser = await getBrowser();
   const page = await browser.newPage();
   try {
@@ -460,6 +465,7 @@ module.exports = async (req, res) => {
     let ai = null;
     // Mijoz manbalari: Claude bir marta o'qib konspekt tuzadi — generatorlar shu asosda yozadi
     const fields = { ...order.details.fields };
+    NEWLAT.enterWith({ on: fields.lang === "uz_new" });
     let srcAi = null;
     if (Array.isArray(fields.sources) && fields.sources.length && SRC.SERVICES.includes(order.service) && order.telegram_user_id) {
       try {
@@ -521,6 +527,7 @@ module.exports = async (req, res) => {
     } else if (order.service === "test") {
       // Savollarni Claude tuzadi; variantlar, kalit va fayl — avtomatik
       const t = await generateTest(fields);
+      if (isNewLat()) { t.title = NL.toNew(t.title); t.questions = NL.deep(t.questions); }
       ai = t.ai;
       const variants = makeVariants(t.questions, t.d.variants, order.id);
       if (t.d.format === "quiz") await sendQuiz(order, t);
@@ -537,6 +544,10 @@ module.exports = async (req, res) => {
       const d = resumeData(order.details.fields, await photoUrl(order));
       const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
       file = { buffer: await renderPdf(resumeHtml(d, origin)), name: fileName(d.name), mime: "application/pdf" };
+    }
+    if (isNewLat()) {
+      file.name = NL.toNew(file.name);
+      if (file.mime === DOCX || file.mime === PPTX) file.buffer = await NL.convertOffice(file.buffer);
     }
     await deliver(order, file, req.headers.host);
     ai = sumAi(ai, srcAi);
