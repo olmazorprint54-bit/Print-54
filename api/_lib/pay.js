@@ -19,7 +19,7 @@ const payload = (orderId) => `ai:${orderId}`;
 const orderIdOf = (p) => (/^ai:(\d+)$/.test(String(p)) ? parseInt(String(p).slice(3), 10) : null);
 
 const TITLES = {
-  test: "Test tuzish", questions: "Savollar tuzish", crossword: "Krossvord", lesson: "Dars ishlanma",
+  test: "Test tuzish", questions: "Savollar tuzish", crossword: "Krossvord", gazeta: "Devoriy gazeta", lesson: "Dars ishlanma",
   referat: "Referat", article: "Maqola", essay: "Mustaqil ish", kurs: "Kurs ishi", presentation: "Taqdimot", presentation_pro: "Super taqdimot",
 };
 

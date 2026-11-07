@@ -35,6 +35,7 @@
     test:      { base: 2500, upTo: 30, field: "count", fallback: 20, step: 30 },
     questions: { base: 2500, upTo: 30, field: "count", fallback: 15, step: 30 },
     crossword: { base: 3500 },
+    gazeta:    { base: 7000 }, // devoriy gazeta, bitta varaq
     lesson:    { base: 4500, extra: { duration: { "80": 25 } } },
     article:   { base: 7500, upTo: 5, field: "pages", fallback: 6, step: 350 },
     referat:   { base: 3500, upTo: 10, field: "pages", fallback: 10, step: 200 },
@@ -75,7 +76,7 @@
   var LIST = [
     ["presentation", "📊", "Taqdimot", "slayd"], ["presentation_pro", "💎", "Super taqdimot", "slayd"], ["referat", "📄", "Referat", "bet"], ["essay", "📝", "Mustaqil ish", "bet"],
     ["kurs", "🎓", "Kurs ishi", "bet"], ["article", "📰", "Maqola", "bet"], ["test", "✅", "Test tuzish", "savol"],
-    ["questions", "❓", "Savollar tuzish", "savol"], ["crossword", "🧩", "Krossvord", ""], ["lesson", "👩‍🏫", "Dars ishlanma", ""],
+    ["questions", "❓", "Savollar tuzish", "savol"], ["crossword", "🧩", "Krossvord", ""], ["gazeta", "📰", "Devoriy gazeta", ""], ["lesson", "👩‍🏫", "Dars ishlanma", ""],
   ];
   var som = function (n) { return Math.round(n).toLocaleString("ru-RU") + " so'm"; };
   function priceList() {

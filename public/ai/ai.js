@@ -912,7 +912,7 @@
   };
 
   // Matnli AI xizmatlar: oddiy dizaynlar avtomatik (api/_lib/doc-gen.js)
-  const AI_DOCS = ["essay", "kurs", "referat", "article", "lesson", "questions", "crossword"];
+  const AI_DOCS = ["essay", "kurs", "referat", "article", "lesson", "questions", "crossword", "gazeta"];
   const isAutoDoc = (svc, v) => {
     const f = svc.fields.find((x) => x.type === "templates");
     const t = f && CFG.templates[f.set].find((x) => x.id === v.template);
@@ -982,7 +982,7 @@
     }
     // bo'sh son maydonida standart (fallback) qiymat ko'rsatiladi
     const n = (id) => v[id] || (svc.fields.find((x) => x.id === id) || {}).fallback;
-    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, presentation_ai: `${n("slides")} ta slayd`, presentation_pro: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
+    const amount = { obyektivka: "2–3 bet, Word (.docx)", presentation: `${n("slides")} ta slayd`, presentation_ai: `${n("slides")} ta slayd`, presentation_pro: `${n("slides")} ta slayd`, essay: `${n("pages")} bet`, kurs: `${n("pages")} bet`, referat: `${n("pages")} bet`, article: `${n("pages")} bet`, resume: "1–2 bet", test: `${n("count")} ta savol`, questions: `${n("count")} ta savol`, crossword: `${n("words")} ta so'z`, gazeta: "1 varaq, A1, PDF", lesson: v.duration && `${v.duration} daqiqa` }[svc.id];
     const rows = [
       ["Xizmat", svc.title],
       [svc.id === "resume" ? "Lavozim" : svc.id === "obyektivka" ? "F.I.Sh." : "Mavzu", pick("topic") || pick("position") || pick("fio") || "—"],

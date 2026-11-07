@@ -144,7 +144,7 @@ async function reset(msg, bot, l = "uz") {
 const PR = require("../../public/ai/prices.js");
 const APP_SERVICES = [
   ["presentation", "Taqdimot (PowerPoint)"], ["essay", "Mustaqil ish"], ["referat", "Referat"], ["kurs", "Kurs ishi (30–40 bet)"],
-  ["article", "Ilmiy maqola / tezis"], ["test", "Test tuzish"], ["questions", "Savollar tuzish"], ["crossword", "Krossvord"],
+  ["article", "Ilmiy maqola / tezis"], ["test", "Test tuzish"], ["questions", "Savollar tuzish"], ["crossword", "Krossvord"], ["gazeta", "Devoriy gazeta"],
   ["lesson", "Dars ishlanma"], ["resume", "Resume / CV"], ["obyektivka", "Obyektivka"],
 ];
 const APP_IDS = APP_SERVICES.map((s) => s[0]);

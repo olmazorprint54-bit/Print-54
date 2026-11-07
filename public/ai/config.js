@@ -6,6 +6,13 @@
    ================================================================ */
 (function () {
   // f — bayroq (flagcdn kodi). Til maydoni yashirin menyu (dd): bosilganda ro'yxat ochiladi
+  // Devoriy gazeta: eng yaqin 4 bayram (bugundan keyingi sanalar) va doimiy mavzular
+  function gazetaTopics() {
+    var H = [[1, 1, "Yangi yil"], [1, 14, "Vatan himoyachilari kuni"], [2, 9, "Alisher Navoiy tavallud kuni"], [3, 8, "Xotin-qizlar kuni"], [3, 21, "Navro'z bayrami"], [5, 9, "Xotira va qadrlash kuni"], [9, 1, "Mustaqillik kuni"], [10, 1, "O'qituvchi va murabbiylar kuni"], [10, 21, "O'zbek tili bayrami"], [12, 8, "Konstitutsiya kuni"]];
+    var now = new Date(), key = (now.getMonth() + 1) * 100 + now.getDate();
+    var next = H.map(function (h) { var k = h[0] * 100 + h[1]; return { k: k < key ? k + 1200 : k, t: h[2] }; }).sort(function (a, b) { return a.k - b.k; }).slice(0, 4).map(function (x) { return x.t; });
+    return next.concat(["Suvni asraylik", "Kitob: bilim manbai", "Koinot sirlari", "Sog'lom turmush tarzi", "Tabiatni asraylik", "Kimyo haftaligi"]);
+  }
   const LANGS = [
     { v: "uz_lat", l: "O'zbek (lotin)", f: "uz" },
     { v: "uz_cyr", l: "Ўзбек (кирилл)", f: "uz" },
@@ -61,6 +68,7 @@
     presentation_pro: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m12 6.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4z"/></svg>',
     pdftools: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>',
     character: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/><path d="M6 5.5 4 3M18 5.5 20 3"/></svg>',
+    gazeta: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H6a2 2 0 0 1-2-2zM17 8h3v10a2 2 0 0 1-2 2h-1"/><path d="M7.5 8h6M7.5 12h6M7.5 16h3"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
 
@@ -119,6 +127,7 @@
       test: null,
       questions: null,
       crossword: null,
+      gazeta: null,
       resume: 0,
       obyektivka: 0,
     },
@@ -377,6 +386,21 @@
           { id: "extra", type: "textarea", label: "Qo'shimcha talablar (ixtiyoriy)", placeholder: "Masalan: o'qituvchi talabi bo'yicha 5 ta reja bo'lsin, misollar O'zbekiston hayotidan, sodda tilda yozilsin...", max: 1500 },
           { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "pdf", l: "PDF" }, { v: "png", l: "Rasm (PNG)" }, { v: "docx", l: "Word" }], default: "pdf" },
           PRINT_FIELD,
+        ],
+      },
+      {
+        id: "gazeta", title: "Devoriy gazeta", sub: "A1 varaq, chop etishga tayyor",
+        icon: ICONS.gazeta, color: "#F97316",
+        fields: [
+          { id: "topic", type: "text", label: "Gazeta mavzusi", placeholder: "Masalan: Navro'z bayrami", required: true, max: 300 },
+          { id: "examples", type: "examples", label: "💡 Tayyor mavzular: bosing", target: "topic", items: { free: gazetaTopics() } },
+          { id: "lang", type: "chips", dd: true, label: "Til", options: LANGS, default: "uz_lat" },
+          { id: "name", type: "text", label: "Gazeta nomi (ixtiyoriy)", placeholder: "Bo'sh qoldirsangiz, nomni AI o'ylab topadi", max: 34 },
+          { id: "school", type: "text", label: "Maktab yoki litsey (ixtiyoriy)", placeholder: "Masalan: 23-maktab", max: 50 },
+          { id: "klass", type: "text", label: "Sinf (ixtiyoriy)", placeholder: "Masalan: 8-«A» sinf", max: 24 },
+          { id: "authors", type: "text", label: "Tayyorlovchilar (ixtiyoriy)", placeholder: "Masalan: Aziza Karimova, Bobur Toshev", max: 90 },
+          { id: "extra", type: "textarea", label: "Qo'shimcha talablar (ixtiyoriy)", placeholder: "Masalan: 5-sinf o'quvchilari uchun sodda tilda bo'lsin", max: 500 },
+          { id: "template", type: "templates", label: "Ko'rinishi", set: "gazeta", default: "gz-milliy" },
         ],
       },
       {
@@ -716,6 +740,14 @@
       ],
       obyektivka: [
         { id: "rasmiy", name: "Rasmiy shakl", style: "rasmiy", auto: true },
+      ],
+      gazeta: [
+        { id: "gz-milliy", name: "Milliy naqsh", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
+        { id: "gz-tabiat", name: "Yashil tabiat", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
+        { id: "gz-bayram", name: "Bayram", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
+        { id: "gz-daftar", name: "Daftar varag'i", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
+        { id: "gz-jurnal", name: "Zamonaviy jurnal", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
+        { id: "gz-eski", name: "Eski gazeta", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },
       ],
       crossword: [
         // Canva kutubxonasidan krossvord varaqlari
