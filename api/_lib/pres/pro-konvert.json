@@ -705,6 +705,726 @@
    "photos": []
   },
   {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 18,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2026-yil, 5-noyabr",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 21,
+     "max": 21,
+     "perLine": 7,
+     "lines": 3,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Aziz kelajakdagi men,",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      1754326
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bu xatni 2026-yilda yozyapman. Hozir 9-sinfda o'qiyman va har kuni yangi narsa o'rganyapman. Ba'zan qiyin, lekin to'xtamayapman.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 83,
+     "max": 83,
+     "perLine": 27.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Sevimli fanim — biologiya\nHar kuni 20 bet kitob o'qiyman\nIngliz tilini o'rganyapman",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 9,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Orzularim",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 19,
+     "max": 37,
+     "perLine": 18.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Men orzu qilaman...",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 120,
+     "max": 120,
+     "perLine": 40,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Shifokor bo'lishni orzu qilaman. Odamlarga yordam berish — eng katta baxt deb bilaman. Umid qilamanki, sen bu yo'ldasan.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 32.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tibbiyot universitetiga kirish\nIkki chet tilini mukammal bilish\nOilam bilan dunyo bo'ylab sayohat",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 26,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Maqsadlarim — 3 yil ichida",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 10,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Rejam aniq",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Katta orzu kichik qadamlardan boshlanadi. Har bir maqsadni yozib qo'ydim — sen ularni tekshirib ko'r.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 25.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Har chorakda a'lo baholar\nIELTS imtihonidan 7.0\nFan olimpiadasida qatnashish",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 107,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 9,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Odatlarim",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Har kuni",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 47.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odatlar insonni yaratadi. Bugundan boshlagan kichik odatlarim seni kuchli qiladi deb ishonaman.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 25.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Erta turish — soat 6:00\nKuniga 30 daqiqa sport\nTelefonga kuniga 1 soatdan kam",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 7,
+   "cycle": 1
+  },
+  {
+   "n": 108,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 13,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Senga tilagim",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 25,
+     "max": 25,
+     "perLine": 12.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Hech qachon taslim bo'lma",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      1169551
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 35.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Agar qiyin bo'lsa, bu xatni eslab qol: sen buni boshlaganingda qanchalik ishonganing. Men senga ishonaman.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 67,
+     "max": 67,
+     "perLine": 22.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Yaqinlaringni qadrla\nO'rganishdan to'xtama\nSen — mening g'ururimsan",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 8,
+   "cycle": 1
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 16,
+     "max": 20,
+     "perLine": 19.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 7,
+     "paras": 1,
+     "text": "2026 · 3000 SO'M",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      1660639,
+      965200,
+      107722
+     ],
+     "lineH": 106680,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 18,
+     "max": 41,
+     "perLine": 41.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2026-yil, 5-noyabr",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      660400,
+      3302000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 21,
+     "max": 21,
+     "perLine": 7,
+     "lines": 3,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Aziz kelajakdagi men,",
+     "font": "Segoe Script",
+     "anchor": "b",
+     "box": [
+      3429000,
+      1016000,
+      4064000,
+      1754326
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bu xatni 2026-yilda yozyapman. Hozir 9-sinfda o'qiyman va har kuni yangi narsa o'rganyapman. Ba'zan qiyin, lekin to'xtamayapman.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2692400,
+      5334000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 83,
+     "max": 83,
+     "perLine": 27.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Sevimli fanim — biologiya\nHar kuni 20 bet kitob o'qiyman\nIngliz tilini o'rganyapman",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4216400,
+      5334000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
    "n": 9,
    "part": "ppt/slides/slide9.xml",
    "role": "end",
@@ -851,6 +1571,72 @@
    "slides": [
     8
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image1_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    104
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image2_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    105
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    106
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image4_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    107
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image5_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    108
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1_c2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    204
+   ],
+   "cycle": 2
   }
  ],
  "sequence": true

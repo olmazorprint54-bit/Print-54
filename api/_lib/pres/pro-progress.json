@@ -1366,6 +1366,1820 @@
    "photos": []
   },
   {
+   "n": 102,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 5,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Biznes muammoni hal qilishdan boshlanadi. Bizning g'oyamiz — mahalliy hunarmandlarning mahsulotlarini onlayn sotish uchun qulay platforma yaratish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Kimning muammosini hal qilamiz?\nNega aynan hozir?\nBizning ustunligimiz nimada?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 1
+  },
+  {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 13,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Bozor tahlili",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 48.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Raqobatchilar, narxlar va xaridorlar ehtiyojini o'rganamiz. Tahlil g'oyaning hayotiyligini tekshirish va xatolardan oldin qochish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 28,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Maqsadli auditoriya: 18–40 yosh\nAsosiy raqobatchilar va ularning kamchiliklari\nSo'rovnoma: 200 nafar ishtirokchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Ish rejasi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir bosqich uchun muddat, mas'ul shaxs va byudjet belgilanadi. Aniq reja jamoaning ishini tartibga soladi va natijani o'lchashga yordam beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 79,
+     "max": 79,
+     "perLine": 19.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "1–2 oy: platforma va dizayn\n3-oy: sinov savdolari\n4-oydan: reklama va kengayish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 15,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 45,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Loyiha birinchi mijozlarga taqdim etiladi. Ularning fikri asosida mahsulot tezda yaxshilanadi va sotuvlar bosqichma-bosqich oshiriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 75,
+     "max": 75,
+     "perLine": 18.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Birinchi 100 ta mijoz\nIjtimoiy tarmoqlarda reklama\nMijozlar fikrini yig'ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 19,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Kutilayotgan natija",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 116,
+     "max": 116,
+     "perLine": 58,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bir yil ichida loyiha o'zini oqlaydi va yangi ish o'rinlari yaratadi. Keyingi qadam — boshqa viloyatlarga kengayish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 74,
+     "max": 74,
+     "perLine": 18.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Yillik aylanma: 500 mln so'm\n15 ta yangi ish o'rni\n3 ta viloyatda faoliyat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 202,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 5,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Biznes muammoni hal qilishdan boshlanadi. Bizning g'oyamiz — mahalliy hunarmandlarning mahsulotlarini onlayn sotish uchun qulay platforma yaratish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Kimning muammosini hal qilamiz?\nNega aynan hozir?\nBizning ustunligimiz nimada?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 2
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 13,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Bozor tahlili",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 48.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Raqobatchilar, narxlar va xaridorlar ehtiyojini o'rganamiz. Tahlil g'oyaning hayotiyligini tekshirish va xatolardan oldin qochish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 28,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Maqsadli auditoriya: 18–40 yosh\nAsosiy raqobatchilar va ularning kamchiliklari\nSo'rovnoma: 200 nafar ishtirokchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 73,
+     "perLine": 72.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / 05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      889000,
+      711200,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Ish rejasi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      1016000,
+      6604000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 147,
+     "max": 147,
+     "perLine": 49,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir bosqich uchun muddat, mas'ul shaxs va byudjet belgilanadi. Aniq reja jamoaning ishini tartibga soladi va natijani o'lchashga yordam beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      5969000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 79,
+     "max": 79,
+     "perLine": 19.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "1–2 oy: platforma va dizayn\n3-oy: sinov savdolari\n4-oydan: reklama va kengayish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3403600,
+      5969000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      381000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2794000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "20"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5207000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "24"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "28"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 22.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10033000,
+      6426200,
+      1778000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      202,
+      "32"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "end",

@@ -724,6 +724,222 @@
    "photos": []
   },
   {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 230,
+     "paras": 1,
+     "text": "1336",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      0,
+      1778000,
+      12192000,
+      3539430
+     ],
+     "lineH": 3505200,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 84,
+     "paras": 1,
+     "text": "1336",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      4826000,
+      3810000,
+      1292662
+     ],
+     "lineH": 1280160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 20,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Amir Temur tavalludi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4902200,
+      6858000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 51,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temur 1336-yil 9-aprelda Kesh (hozirgi Shahrisabz) yaqinidagi Xo'ja Ilg'or qishlog'ida tug'ilgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      5461000,
+      6858000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 230,
+     "paras": 1,
+     "text": "1370",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      0,
+      1778000,
+      12192000,
+      3539430
+     ],
+     "lineH": 3505200,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 84,
+     "paras": 1,
+     "text": "1370",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      635000,
+      4826000,
+      3810000,
+      1292662
+     ],
+     "lineH": 1280160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 16,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Davlat asoschisi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4902200,
+      6858000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1370-yilda Balxdagi qurultoyda Amir Temur hukmdor deb e'lon qilindi va Samarqandni poytaxt qildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      5461000,
+      6858000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
    "n": 11,
    "part": "ppt/slides/slide11.xml",
    "role": "end",
@@ -841,6 +1057,30 @@
    "slides": [
     11
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image2_c1.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    103,
+    104
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3_c1.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    105,
+    106
+   ],
+   "cycle": 1
   }
  ],
  "sequence": true

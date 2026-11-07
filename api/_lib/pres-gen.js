@@ -147,6 +147,7 @@ Rules:
 - Slide 1: the main title slot = the FULL topic; other title-slide slots = subtitle / author / short tagline.
 - KEYWORD slots are huge decorative words: write ONE short word that names the slide (on slide 1 — the key word of the topic; then put the FULL topic into the next TEXT/LABEL slot of that slide). Never write a phrase there.
 - A slide that lists section names (an outline / contents) must use the same section names, in the same order, as the following slides' headings.
+- Later slides may repeat an earlier layout and sample: treat each as a NEW part of the topic. Every slide has its own new heading and new facts; never repeat a heading, a sentence or an image_query from another slide, and never copy the sample.
 - NUMBER slots: a short real figure for the topic (year, percent, count, e.g. "1991", "85%", "30+"); add the unit in the neighbouring LABEL slot.
 - The last slide: a short thank-you and closing words.
 - "image_query": 2–5 English words for a stock photo matching the slide.`,
@@ -503,6 +504,16 @@ async function buildPptx(tplBuf, spec, slides, photosFor, lang) {
     let xml = src[s.L.n].xml;
     let rels = (src[s.L.n].rels || '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"></Relationships>')
       .replace(/<Relationship [^>]*notesSlide[^>]*\/>/g, "");
+    // takror slayd (extend-sequence.js): shablon suratlari shu takror uchun alohida fayl — keyin swapMedia o'z suratini qo'yadi
+    if (s.L.cycle && spec.media) {
+      const own = new Set(spec.media.filter((m) => !m.cycle).flatMap((m) => m.files).map((f) => f.replace("ppt/media/", "")));
+      for (const m of [...rels.matchAll(/\.\.\/media\/([^"]+)/g)]) {
+        if (!own.has(m[1])) continue;
+        const copy = m[1].replace(/(\.[^.]+)$/, `_c${s.L.cycle}$1`);
+        if (!zip.file(`ppt/media/${copy}`)) zip.file(`ppt/media/${copy}`, await zip.file(`ppt/media/${m[1]}`).async("nodebuffer"), NOFOLD);
+        rels = rels.split(`../media/${m[1]}"`).join(`../media/${copy}"`);
+      }
+    }
     const lift = descLift(s.L, s.texts);
     s.L.editable.forEach((slot, k) => {
       const r = shapeRange(xml, slot.id);
@@ -644,7 +655,7 @@ async function generatePresentation(f, photoUrls = [], opts = {}) {
     }
     for (let pass = 1; pass <= 2; pass++) {
       let issues;
-      try { issues = F.issuesOf(await opts.measure(buffer), (n) => written.slides[n - 1] && written.slides[n - 1].L.n, (L) => design[L - 1], (n, id) => grownText(written.slides[n - 1], id)); }
+      try { issues = F.issuesOf(await opts.measure(buffer), (n) => written.slides[n - 1] && (written.slides[n - 1].L.src || written.slides[n - 1].L.n), (L) => design[L - 1], (n, id) => grownText(written.slides[n - 1], id)); }
       catch (e) { console.error("Joylashuvni o'lchab bo'lmadi:", e.message); break; }
       if (!issues || !issues.length) break;
       if (process.env.FIT_DEBUG) console.log("fit", pass, JSON.stringify(issues.map((x) => [x.n, x.id, x.overY && "Y", x.broken && "B", x.move && Math.round(x.move), Math.round(x.ch), Math.round(x.innerH), x.fpx])));
