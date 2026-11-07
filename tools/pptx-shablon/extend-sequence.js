@@ -54,7 +54,7 @@ for (let c = 1; clones.length < need; c++) {
     base.forEach((m, i) => { if (m.slides.some((n) => cut.has(n))) map.set(i, spec.media.length + map.size); });
     base.forEach((m, i) => {
       if (!map.has(i)) return;
-      const g = { ...m, cycle: c, files: m.files.map((f) => f.replace(/(\.[^.]+)$/, `_c${c}$1`)), slides: m.slides.filter((n) => cut.has(n)).map((n) => newN(n, c)) };
+      const g = { ...m, focus: cut.has(m.focus) ? newN(m.focus, c) : undefined, cycle: c, files: m.files.map((f) => f.replace(/(\.[^.]+)$/, `_c${c}$1`)), slides: m.slides.filter((n) => cut.has(n)).map((n) => newN(n, c)) };
       if (m.derive) g.derive = { ...m.derive, of: map.has(m.derive.of) ? map.get(m.derive.of) : m.derive.of };
       spec.media.push(g);
     });
