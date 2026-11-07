@@ -2065,6 +2065,3048 @@
    "photos": []
   },
   {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  01  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 11,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 37.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Rejasiz kun — boshqalarning rejasi bilan o'tgan kun. Kechqurun 5 daqiqa ajratib, ertangi ishlarni yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      830997
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 30,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eng muhim 3 vazifani belgilang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      3623452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 31,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har biriga taxminiy vaqt yozing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      4131452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Rejani ko'rinadigan joyga qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      4639452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      1163473,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      3417038,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      3608739,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      1315464,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      3569029,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      3760730,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      1493163,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3746728,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3938429,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  02  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 15,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 53,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hamma ish bir xil muhim emas. Eyzenxauer matritsasi ishlarni muhimlik va shoshilinchlik bo'yicha ajratadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 38,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim va shoshilinch — darhol bajaring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3530600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 40,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim, lekin shoshilinch emas — rejalang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4038600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 40,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim emas — topshiring yoki voz keching",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4546600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      1269423,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      3553766,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      3760856,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "14"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      1447084,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      3731427,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      3938517,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "19"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "23"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "24"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      6370531,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8570235,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8773478,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "29"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  03  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 14,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ishni qisqa, to'liq diqqatli bo'laklarga bo'lish usuli. Miya charchamaydi, ish esa tezroq bitadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "25 daqiqa ish — 5 daqiqa dam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3530600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 39,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "4 bo'lakdan keyin 15–30 daqiqa tanaffus",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4038600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Vaqtni taymer bilan o'lchang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4546600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      1493163,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3746728,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3938429,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "14"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "19"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      10371031,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12570735,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12773978,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "29"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      6370531,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8570235,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "23"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8773478,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "24"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  04  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 11,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 40,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bitta bildirishnoma ham diqqatni bo'ladi — ishga qaytish uchun yana vaqt ketadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Telefonni ko'zdan uzoqroq qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3530600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 37,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Keraksiz bildirishnomalarni o'chiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4038600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 42,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ijtimoiy tarmoqlarga alohida vaqt ajrating",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4546600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "14"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      10371031,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12570735,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12773978,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "29"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      10371031,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12570735,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "23"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12773978,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "24"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      6370531,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 14,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8570235,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "18"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 21.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8854269,
+      2159000,
+      415498
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "19"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  01  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 11,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 37.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Rejasiz kun — boshqalarning rejasi bilan o'tgan kun. Kechqurun 5 daqiqa ajratib, ertangi ishlarni yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      830997
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 30,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eng muhim 3 vazifani belgilang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      3623452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 31,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har biriga taxminiy vaqt yozing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      4131452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Rejani ko'rinadigan joyga qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1092200,
+      4639452,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      1163473,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      3417038,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7946883,
+      3608739,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      1315464,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      3569029,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7575630,
+      3760730,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      1493163,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3746728,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3938429,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  02  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 15,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 53,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hamma ish bir xil muhim emas. Eyzenxauer matritsasi ishlarni muhimlik va shoshilinchlik bo'yicha ajratadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 38,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim va shoshilinch — darhol bajaring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3530600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 40,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim, lekin shoshilinch emas — rejalang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4038600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 40,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhim emas — topshiring yoki voz keching",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4546600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      1269423,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      3553766,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7573217,
+      3760856,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "14"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      1447084,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      3731427,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7893940,
+      3938517,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "19"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1107996
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 15,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      400110
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "23"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "24"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      6370531,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8570235,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8773478,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "29"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
+   "n": 205,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 92,
+     "perLine": 45.9,
+     "lines": 2,
+     "caps": true,
+     "sz": 11,
+     "paras": 1,
+     "text": "QOIDA  03  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1422400,
+      3810000,
+      261610
+     ],
+     "lineH": 167640,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 14,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      1701800,
+      5588000,
+      677108
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ishni qisqa, to'liq diqqatli bo'laklarga bo'lish usuli. Miya charchamaydi, ish esa tezroq bitadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      2438400,
+      5080000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "25 daqiqa ish — 5 daqiqa dam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3530600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 39,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "4 bo'lakdan keyin 15–30 daqiqa tanaffus",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4038600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Vaqtni taymer bilan o'lchang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4546600,
+      5080000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      1493163,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 11,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chalg'imang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3746728,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 19,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Telefonni ovozsiz qiling va ish vaqtida bildirishnomalarni o'chirib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7891928,
+      3938429,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "14"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      2044700,
+      2032000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 14,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Pomodoro usuli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      3975100,
+      2159000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "text",
+     "chars": 64,
+     "max": 64,
+     "perLine": 16,
+     "lines": 4,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "25 daqiqa to'liq diqqat bilan ishlang, so'ng 5 daqiqa dam oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7708900,
+      4305300,
+      2159000,
+      646331
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "19"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      10371031,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Reja tuzing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12570735,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "28"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Kunni kechqurundan rejalashtiring: ertangi eng muhim 3 vazifani yozib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      12773978,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "29"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      6370531,
+      2032000,
+      861774
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 25,
+     "perLine": 25.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Muhimi birinchi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8570235,
+      2159000,
+      323165
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "23"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 10.5,
+     "paras": 1,
+     "text": "Ishlarni muhim va shoshilinchga ajrating — avval eng qiyin va muhimini bajaring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7631200,
+      8773478,
+      2159000,
+      577081
+     ],
+     "lineH": 160020,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "24"
+     ]
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "content",

@@ -786,6 +786,373 @@
    "photos": []
   },
   {
+   "n": 102,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 9,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "SAYOHAT",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      3040384,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 14,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TABIAT BO'YLAB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar, cho'llar, ko'llar va dengizlar — tabiatning eng go'zal manzaralari haqida qisqacha taqdimot.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 68,
+     "max": 68,
+     "perLine": 17,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Muallif: ____________\nGuruh: ____________\nIlmiy rahbar: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1337486,
+      7366000,
+      9517028,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 9
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 1
+  },
+  {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      1337486,
+      2190750,
+      9517028,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "11"
+     ],
+     "word": 9
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 9,
+     "perLine": 8.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 44,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      1168400,
+      2829236,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 11,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / TABIAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      838200,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 164,
+     "max": 164,
+     "perLine": 54.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog'lar quruqlikning qariyb to'rtdan bir qismini egallaydi. Ular iqlimni shakllantiradi, daryolarga suv beradi va noyob o'simlik hamda hayvonlarga boshpana bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2108200,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 139,
+     "max": 139,
+     "perLine": 27.8,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eng baland cho'qqi — Everest (8 849 m)\nO'zbekistonda eng baland nuqta — Hazrati Sulton (4 643 m)\nHar 100 m balandlikda havo ~0,6 °C soviydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3505200,
+      5588000,
+      1261884
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2772975,
+      7366000,
+      6646050,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "word": 7
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 5.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 150,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Arial Black",
+     "anchor": "ctr",
+     "box": [
+      2772975,
+      2190750,
+      6646050,
+      2308324
+     ],
+     "lineH": 2286000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      104,
+      "11"
+     ],
+     "word": 7
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 152,
+     "perLine": 151.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      1809750,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
    "n": 10,
    "part": "ppt/slides/slide10.xml",
    "role": "content",
@@ -1040,6 +1407,28 @@
    "slides": [
     10
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image2_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    102
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image4_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    104
+   ],
+   "cycle": 1
   }
  ],
  "sequence": true

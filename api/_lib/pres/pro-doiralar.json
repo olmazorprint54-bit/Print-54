@@ -1739,6 +1739,2494 @@
    "photos": []
   },
   {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      13589000,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      104,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      13589000,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      19456400,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      105,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      19456400,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  01  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 14,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Rejalashtirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Yaxshi reja — ishning yarmi. Bu bosqichda loyiha maqsadi, vazifalar ro'yxati va muddatlar aniqlanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 36,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Aniq va o'lchanadigan maqsad qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 39,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Vazifalarni jamoa a'zolariga taqsimlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      13589000,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      105,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      13589000,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  02  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 8,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Bajarish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 38.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Reja amalga oshiriladi: jamoa vazifalarni bajaradi, resurslar ishga solinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 34,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har kuni qisqa uchrashuv o'tkazing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 34,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammolarni o'z vaqtida hal qiling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      104,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  03  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 7,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Nazorat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ish rejaga muvofiq ketyaptimi — ko'rsatkichlar muntazam tekshiriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 35,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muddat va xarajatlarni solishtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 33,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kerak bo'lsa rejani moslashtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -15748000,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -15748000,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      104,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      105,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  04  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 9,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Yakunlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 46,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Loyiha natijasi topshiriladi, tajriba tahlil qilinadi va keyingi ishlar uchun saboq olinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 35,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Natijani buyurtmachiga taqdim eting",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 37,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yutuq va kamchiliklarni yozib qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      13589000,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      204,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      13589000,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      19456400,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      205,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      19456400,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  01  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 14,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Rejalashtirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Yaxshi reja — ishning yarmi. Bu bosqichda loyiha maqsadi, vazifalar ro'yxati va muddatlar aniqlanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 36,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Aniq va o'lchanadigan maqsad qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 39,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Vazifalarni jamoa a'zolariga taqsimlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      13589000,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      205,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      13589000,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  02  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 8,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Bajarish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 38.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Reja amalga oshiriladi: jamoa vazifalarni bajaradi, resurslar ishga solinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 34,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har kuni qisqa uchrashuv o'tkazing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 34,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammolarni o'z vaqtida hal qiling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
+   "n": 205,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      204,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7721600,
+      -220980,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7721600,
+      205740,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  03  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 7,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Nazorat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Ish rejaga muvofiq ketyaptimi — ko'rsatkichlar muntazam tekshiriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 35,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muddat va xarajatlarni solishtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 33,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kerak bo'lsa rejani moslashtiring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 2
+  },
+  {
+   "n": 206,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -15748000,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -15748000,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      203,
+      "28"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -9880600,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6179820,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      204,
+      "31"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -4013200,
+      6606540,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 23,
+     "paras": 1,
+     "text": "QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2979420,
+      2133600,
+      353943
+     ],
+     "lineH": 350520,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      205,
+      "34"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 54.6,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3406140,
+      2133600,
+      840230
+     ],
+     "lineH": 832104,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 53,
+     "perLine": 52.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH  04  /  04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1397000,
+      5588000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 9,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Yakunlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1727200,
+      5588000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 46,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Loyiha natijasi topshiriladi, tajriba tahlil qilinadi va keyingi ishlar uchun saboq olinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2540000,
+      5588000,
+      523220
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 35,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Natijani buyurtmachiga taqdim eting",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      3937000,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 37,
+     "max": 52,
+     "perLine": 51.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yutuq va kamchiliklarni yozib qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6299200,
+      4546600,
+      5334000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "end",

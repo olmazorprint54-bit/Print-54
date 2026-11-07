@@ -757,6 +757,846 @@
    "photos": []
   },
   {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 15,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Kuchli tomonlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hududning betakror tabiati va boy tarixi — loyihaning asosiy boyligi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 37,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Toza havo, o'rmon va tog' manzaralari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 41,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qadimiy obidalar va mahalliy hunarmandlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 34,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shaharga yaqinlik — 2 soatlik yo'l",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 13,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Zaif tomonlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 66,
+     "max": 66,
+     "perLine": 33,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Loyiha boshlanishida hal qilinishi kerak bo'lgan kamchiliklar bor.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 34,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mehmonxona va yo'llar yetarli emas",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 28,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Malakali gid va xodimlar kam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 45,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Reklama uchun boshlang'ich mablag' cheklangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 12,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Imkoniyatlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 44,
+     "max": 58,
+     "perLine": 58.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tashqi sharoit ekoturizm rivoji uchun qulay.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 43,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ichki va xalqaro turizmga qiziqish o'smoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 35,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Davlat turizmni qo'llab-quvvatlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 39,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ijtimoiy tarmoqlar orqali arzon reklama",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 7,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Xavflar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 38.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oldindan rejalashtirilmasa, loyihaga zarar yetkazishi mumkin bo'lgan omillar.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 31,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mavsumiylik — qishda sayyoh kam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 37,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiatga zarar yetishi va ifloslanish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 28,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qo'shni hududlardagi raqobat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 15,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Kuchli tomonlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 34.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hududning betakror tabiati va boy tarixi — loyihaning asosiy boyligi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 37,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Toza havo, o'rmon va tog' manzaralari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 41,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qadimiy obidalar va mahalliy hunarmandlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 34,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shaharga yaqinlik — 2 soatlik yo'l",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 13,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Zaif tomonlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 66,
+     "max": 66,
+     "perLine": 33,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Loyiha boshlanishida hal qilinishi kerak bo'lgan kamchiliklar bor.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      584775
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 34,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mehmonxona va yo'llar yetarli emas",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 28,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Malakali gid va xodimlar kam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 45,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Reklama uchun boshlang'ich mablag' cheklangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
+   "n": 205,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 12,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Imkoniyatlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2108200,
+      5969000,
+      646331
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 44,
+     "max": 58,
+     "perLine": 58.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tashqi sharoit ekoturizm rivoji uchun qulay.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2794000,
+      5334000,
+      338554
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 43,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ichki va xalqaro turizmga qiziqish o'smoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      3759200,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 35,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Davlat turizmni qo'llab-quvvatlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4318000,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 39,
+     "max": 54,
+     "perLine": 54.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ijtimoiy tarmoqlar orqali arzon reklama",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1676400,
+      4876800,
+      5588000,
+      369332
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "content",
@@ -988,6 +1828,33 @@
     7,
     8
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image1_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    103,
+    104,
+    105,
+    106
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1_c2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    203,
+    204,
+    205
+   ],
+   "cycle": 2
   }
  ],
  "sequence": true

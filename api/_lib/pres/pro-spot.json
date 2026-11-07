@@ -605,6 +605,790 @@
    "photos": []
   },
   {
+   "n": 102,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  TUSHUNCHA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "QO'RQUV NIMA?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      6908800,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 42,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qo'rquv — xavfga qarshi tabiiy himoya reaksiyasi. U bizni ehtiyotkor qiladi, lekin haddan oshsa, orzularimizga to'siq bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2463800,
+      4699000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 24.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Yurak tez uradi, nafas tezlashadi\nDiqqat xavfga qaratiladi\nTana «kurash yoki qoch» holatiga o'tadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 1
+  },
+  {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 15,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  SABABLAR",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 15,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "NEGA QO'RQAMIZ?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      711200,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 35.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'pincha biz noma'lum narsadan qo'rqamiz: yangi joy, yangi odamlar, xato qilish yoki boshqalarning fikri.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2463800,
+      4699000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 25,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Noma'lumlik va kutilmagan vaziyatlar\nMuvaffaqiyatsizlikdan qo'rqish\nBoshqalarning fikriga bog'liqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  YECHIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 16,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "QANDAY YENGAMIZ?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      6908800,
+      914400,
+      4699000,
+      1477328
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 39,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qo'rquvni butunlay yo'qotib bo'lmaydi, ammo uni boshqarishni o'rganish mumkin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2463800,
+      4699000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 122,
+     "max": 122,
+     "perLine": 24.4,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qo'rquvni nomlang va yozib qo'ying\nChuqur nafas oling: 4 soniya ichga, 4 soniya tashqariga\nIshonchli odam bilan gaplashing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3886200,
+      4699000,
+      1313180
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 11,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  /  ODAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 15,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "KICHIK QADAMLAR",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      711200,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 44.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Katta cho'qqi ham bitta qadamdan boshlanadi. Har kuni qo'rquvingizga bir oz yaqinlashing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2463800,
+      4699000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 74,
+     "max": 74,
+     "perLine": 18.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Kichik maqsad qo'ying\nHar bir yutuqni nishonlang\nXatoni tajriba deb biling",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05  /  NATIJA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 7,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "G'ALABA",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      6908800,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 44.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qo'rquvni yenggan inson o'ziga ishonadi va hayotida yangi imkoniyatlarni ko'ra boshlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2463800,
+      4699000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 74,
+     "max": 74,
+     "perLine": 18.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "O'ziga ishonch ortadi\nYangi tajribalar ochiladi\nStress va xavotir kamayadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 202,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  /  TUSHUNCHA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "QO'RQUV NIMA?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      6908800,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 42,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qo'rquv — xavfga qarshi tabiiy himoya reaksiyasi. U bizni ehtiyotkor qiladi, lekin haddan oshsa, orzularimizga to'siq bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2463800,
+      4699000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 24.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Yurak tez uradi, nafas tezlashadi\nDiqqat xavfga qaratiladi\nTana «kurash yoki qoch» holatiga o'tadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 2
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 15,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  /  SABABLAR",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      711200,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 15,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "NEGA QO'RQAMIZ?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      711200,
+      914400,
+      4699000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 35.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'pincha biz noma'lum narsadan qo'rqamiz: yangi joy, yangi odamlar, xato qilish yoki boshqalarning fikri.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      2463800,
+      4699000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 25,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Noma'lumlik va kutilmagan vaziyatlar\nMuvaffaqiyatsizlikdan qo'rqish\nBoshqalarning fikriga bog'liqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      711200,
+      3886200,
+      4699000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 13,
+     "max": 44,
+     "perLine": 44.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  /  YECHIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6908800,
+      609600,
+      4699000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 16,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "QANDAY YENGAMIZ?",
+     "font": "Impact",
+     "anchor": "b",
+     "box": [
+      6908800,
+      914400,
+      4699000,
+      1477328
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 39,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qo'rquvni butunlay yo'qotib bo'lmaydi, ammo uni boshqarishni o'rganish mumkin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2463800,
+      4699000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 122,
+     "max": 122,
+     "perLine": 24.4,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qo'rquvni nomlang va yozib qo'ying\nChuqur nafas oling: 4 soniya ichga, 4 soniya tashqariga\nIshonchli odam bilan gaplashing",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3886200,
+      4699000,
+      1313180
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "end",
@@ -692,6 +1476,64 @@
     6,
     7
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image1_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    102,
+    103
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image2_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    104,
+    105
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    106
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1_c2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    202,
+    203
+   ],
+   "cycle": 2
+  },
+  {
+   "files": [
+    "ppt/media/image2_c2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    204
+   ],
+   "cycle": 2
   }
  ],
  "sequence": true

@@ -669,6 +669,966 @@
    "photos": []
   },
   {
+   "n": 102,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 16,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qorli cho'qqilar",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "1-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 14,
+     "max": 28,
+     "perLine": 14.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tog'larga yo'l",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      1168400
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 131,
+     "max": 131,
+     "perLine": 32.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ertalab yo'lga chiqdik. Havo salqin, yo'l bo'ylab archazorlar. Tepaga ko'tarilgan sari nafas olish og'irlashdi — balandlik sezildi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 18.3,
+     "lines": 6,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Archa — tog'larning doimiy yashil daraxti\nHar 100 m da havo ~0,6 °C soviydi\nSuv va issiq kiyim — eng muhim yuk",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1713290
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 1
+  },
+  {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 14,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cheksiz qumlar",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "2-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 14,
+     "max": 28,
+     "perLine": 14.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'l sukunati",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      1168400
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 133,
+     "max": 133,
+     "perLine": 33.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kunduzi qum qizib ketdi, kechasi esa salqin tushdi. Barxanlar shamol bilan sekin siljiydi — cho'l har kuni o'z shaklini o'zgartiradi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 19,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Barxan — o'roqsimon qum tepaligi\nSaksovul — qumni ushlab turadi\nKechasi osmon yulduzlarga to'la",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1436291
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 10,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' ko'li",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "3-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 10,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Moviy ko'l",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 29.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'l suvi shunchalik tiniq ediki, tubidagi toshlar ko'rinib turardi. Muzliklar erib, ko'lni har yili to'ldirib turadi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 20,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tog' ko'llari — chuchuk suv manbai\nQirg'oqda qushlar uyasi ko'p\nChiqindini o'zimiz bilan olib ketdik",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1436291
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 16,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rmon so'qmog'i",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "4-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 15,
+     "max": 28,
+     "perLine": 14.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Archazor ichida",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      1168400
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 134,
+     "max": 134,
+     "perLine": 33.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "So'qmoq bo'ylab o'rmonga kirdik. Qushlarning sayrashi va qarag'ay hidi charchoqni unuttirdi. Xarita va kompas yordamida yo'lni topdik.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 19.2,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Kompas shimolni ko'rsatadi\nBelgilangan so'qmoqdan chiqmaslik kerak\nDaraxtga hech narsa yozmaymiz",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1436291
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 18,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bulutlardan baland",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "5-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 10,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'qqida!",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 32.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Nihoyat cho'qqiga chiqdik. Bulutlar oyog'imiz ostida edi. Bu sayohat sabr, do'stlik va tabiatni asrash haqida ko'p narsa o'rgatdi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Maqsad sari kichik qadamlar\nJamoada ishlash kuchi\nTabiat — hammamizning uyimiz",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1159292
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 202,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 16,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qorli cho'qqilar",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "1-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 14,
+     "max": 28,
+     "perLine": 14.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tog'larga yo'l",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      1168400
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 131,
+     "max": 131,
+     "perLine": 32.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ertalab yo'lga chiqdik. Havo salqin, yo'l bo'ylab archazorlar. Tepaga ko'tarilgan sari nafas olish og'irlashdi — balandlik sezildi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 18.3,
+     "lines": 6,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Archa — tog'larning doimiy yashil daraxti\nHar 100 m da havo ~0,6 °C soviydi\nSuv va issiq kiyim — eng muhim yuk",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1713290
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 2
+  },
+  {
+   "n": 203,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 14,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cheksiz qumlar",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "2-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 14,
+     "max": 28,
+     "perLine": 14.2,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'l sukunati",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      1168400
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 133,
+     "max": 133,
+     "perLine": 33.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kunduzi qum qizib ketdi, kechasi esa salqin tushdi. Barxanlar shamol bilan sekin siljiydi — cho'l har kuni o'z shaklini o'zgartiradi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 19,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Barxan — o'roqsimon qum tepaligi\nSaksovul — qumni ushlab turadi\nKechasi osmon yulduzlarga to'la",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1436291
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 2
+  },
+  {
+   "n": 204,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 10,
+     "max": 36,
+     "perLine": 35.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' ko'li",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      1828800,
+      4855289,
+      3276600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 5,
+     "max": 8,
+     "perLine": 8.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "3-KUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10033000,
+      1108789,
+      990600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "title",
+     "chars": 10,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Moviy ko'l",
+     "font": "Segoe Print",
+     "anchor": "b",
+     "box": [
+      6908800,
+      889000,
+      3098800,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 29.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'l suvi shunchalik tiniq ediki, tubidagi toshlar ko'rinib turardi. Muzliklar erib, ko'lni har yili to'ldirib turadi.",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      2184400,
+      3987800,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 20,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tog' ko'llari — chuchuk suv manbai\nQirg'oqda qushlar uyasi ko'p\nChiqindini o'zimiz bilan olib ketdik",
+     "font": "Segoe Print",
+     "anchor": "t",
+     "box": [
+      6908800,
+      3962400,
+      3987800,
+      1436291
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 2
+  },
+  {
    "n": 7,
    "part": "ppt/slides/slide7.xml",
    "role": "end",
@@ -803,6 +1763,94 @@
    "slides": [
     7
    ]
+  },
+  {
+   "files": [
+    "ppt/media/image1_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    102
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image2_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    103
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3_c1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    104
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image4_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    105
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image5_c1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    106
+   ],
+   "cycle": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1_c2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    202
+   ],
+   "cycle": 2
+  },
+  {
+   "files": [
+    "ppt/media/image2_c2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    203
+   ],
+   "cycle": 2
+  },
+  {
+   "files": [
+    "ppt/media/image3_c2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    204
+   ],
+   "cycle": 2
   }
  ],
  "sequence": true

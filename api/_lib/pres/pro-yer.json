@@ -866,6 +866,900 @@
    "photos": []
   },
   {
+   "n": 102,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 14,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  ·  AMERIKA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 26,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Sayyoramiz bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Shimoliy Amerika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1905000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 56,
+     "max": 56,
+     "perLine": 28,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 24,7 mln km². Eng katta davlati — Kanada.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2311400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Janubiy Amerika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4191000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 30.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 17,8 mln km². Bu yerda Amazonka daryosi oqadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4597400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 1
+  },
+  {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 24,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  ·  YEVROPA VA AFRIKA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 26,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Sayyoramiz bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "3"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yevropa",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1905000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 10 mln km². 40 dan ortiq davlat joylashgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2311400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 6,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Afrika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4191000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 55,
+     "max": 55,
+     "perLine": 27.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 30,3 mln km² — ikkinchi eng katta qit'a.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4597400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 12,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  ·  OSIYO",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 26,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Sayyoramiz bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      102,
+      "3"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Eng katta qit'a",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1905000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 32.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Osiyoning maydoni qariyb 44,6 mln km² — quruqlikning uchdan biri.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2311400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 7,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Aholisi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4191000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 50,
+     "max": 50,
+     "perLine": 25,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dunyo aholisining yarmidan ko'pi Osiyoda yashaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4597400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 21,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  ·  MARKAZIY OSIYO",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 19,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Mana — O'zbekiston!",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 11,
+     "max": 19,
+     "perLine": 19.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'zbekiston",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      2413000,
+      3556000,
+      508000
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Poytaxti: Toshkent\nMaydoni: 448,9 ming km²\nAholisi: 37 milliondan ortiq (2024)",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7924800,
+      3048000,
+      3556000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 17,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05  ·  GEOGRAFIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 10,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Joylashuvi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 43,
+     "max": 58,
+     "perLine": 58,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Markaziy Osiyoning qoq markazida joylashgan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5638800,
+      1905000,
+      5969000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 46,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "5 davlat bilan chegaradosh: Qozog'iston, Qirg'iziston, Tojikiston, Afg'oniston, Turkmaniston",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5638800,
+      3175000,
+      5969000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 54,
+     "max": 58,
+     "perLine": 58,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eng baland nuqtasi — Hazrati Sulton cho'qqisi (4643 m)",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5638800,
+      4445000,
+      5969000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 6,
+   "cycle": 1
+  },
+  {
+   "n": 107,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 16,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "06  ·  QIZIQARLI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 10,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Noyob fakt",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 4,
+     "max": 13,
+     "perLine": 12.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 90,
+     "paras": 1,
+     "text": "2 ta",
+     "font": "Arial Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      1778000,
+      6604000,
+      1397000
+     ],
+     "lineH": 1371600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 43.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Dunyoda dengizga chiqish uchun ikki marta chegarani kesib o'tish kerak bo'lgan atigi ikki davlat bor: O'zbekiston va Lixtenshteyn.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3429000,
+      6604000,
+      923330
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 7,
+   "cycle": 1
+  },
+  {
+   "n": 202,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "label",
+     "chars": 14,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  ·  AMERIKA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      330200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 26,
+     "max": 56,
+     "perLine": 56.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Sayyoramiz bo'ylab sayohat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      609600,
+      12192000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Shimoliy Amerika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      1905000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 56,
+     "max": 56,
+     "perLine": 28,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 24,7 mln km². Eng katta davlati — Kanada.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      2311400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 27.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Janubiy Amerika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4191000,
+      3429000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 30.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maydoni qariyb 17,8 mln km². Bu yerda Amazonka daryosi oqadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4597400,
+      3429000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": [],
+   "src": 2,
+   "cycle": 2
+  },
+  {
    "n": 8,
    "part": "ppt/slides/slide8.xml",
    "role": "end",

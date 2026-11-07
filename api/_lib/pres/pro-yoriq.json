@@ -1079,6 +1079,400 @@
    ]
   },
   {
+   "n": 103,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 96,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      3810000,
+      1569660
+     ],
+     "lineH": 1463040,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 9,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "Samarqand",
+     "font": "Segoe Script",
+     "anchor": "t",
+     "box": [
+      889000,
+      3327400,
+      5842000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 6858000,
+     "h": 6858000,
+     "area": 0.562
+    }
+   ],
+   "src": 3,
+   "cycle": 1
+  },
+  {
+   "n": 104,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 16,
+     "perLine": 15.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      889000,
+      762000,
+      2540000,
+      523220
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 9,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Samarqand",
+     "font": "Segoe Script",
+     "anchor": "t",
+     "box": [
+      889000,
+      1219200,
+      5842000,
+      923330
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      103,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 70,
+     "max": 70,
+     "perLine": 35,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2750 yildan ortiq tarixga ega shahar — Buyuk Ipak yo'lining durdonasi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      2489200,
+      5080000,
+      646331
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 40,
+     "max": 50,
+     "perLine": 49.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Registon maydoni va Go'ri Amir maqbarasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3683000,
+      4826000,
+      353943
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 37,
+     "max": 50,
+     "perLine": 49.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "2001-yildan YUNESKO Butunjahon merosi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4521200,
+      4826000,
+      353943
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 6858000,
+     "h": 6858000,
+     "area": 0.562,
+     "copy": [
+      103,
+      "3"
+     ]
+    }
+   ],
+   "src": 4,
+   "cycle": 1
+  },
+  {
+   "n": 105,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 96,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      889000,
+      1905000,
+      3810000,
+      1569660
+     ],
+     "lineH": 1463040,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 7,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Segoe Script",
+     "anchor": "t",
+     "box": [
+      889000,
+      3327400,
+      5842000,
+      1015663
+     ],
+     "lineH": 914400,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 6858000,
+     "h": 6858000,
+     "area": 0.562
+    }
+   ],
+   "src": 5,
+   "cycle": 1
+  },
+  {
+   "n": 106,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 16,
+     "perLine": 15.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      889000,
+      762000,
+      2540000,
+      523220
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 7,
+     "max": 19,
+     "perLine": 18.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Segoe Script",
+     "anchor": "t",
+     "box": [
+      889000,
+      1219200,
+      5842000,
+      923330
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      105,
+      "7"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 62,
+     "max": 62,
+     "perLine": 31,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tyan-Shan va Pomir-Oloy tizmalari mamlakat sharqini egallaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      2489200,
+      5080000,
+      646331
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 42,
+     "max": 50,
+     "perLine": 49.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Eng baland nuqta — Hazrati Sulton (4643 m)",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      3683000,
+      4826000,
+      353943
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 47,
+     "max": 47,
+     "perLine": 23.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Chimyon va Zomin — sevimli dam olish maskanlari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1117600,
+      4521200,
+      4826000,
+      615553
+     ],
+     "lineH": 259080,
+     "ins": 0
+    }
+   ],
+   "photos": [
+    {
+     "id": "3",
+     "w": 6858000,
+     "h": 6858000,
+     "area": 0.562,
+     "copy": [
+      105,
+      "3"
+     ]
+    }
+   ],
+   "src": 6,
+   "cycle": 1
+  },
+  {
    "n": 11,
    "part": "ppt/slides/slide11.xml",
    "role": "end",
