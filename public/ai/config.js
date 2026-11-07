@@ -870,6 +870,33 @@
       { id: "pro-infografika", name: "📊 Jonli infografika · 12 xil sxema", kind: "canva", category: "umumiy", pages: 7, auto: true },
 
       { id: "pro-orbita", name: "🪐 Ko'k orbita · aylanuvchi rasmlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-pult", name: "🎛️ Ikonli pult · aylanma nuqta", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-jonli", name: "📊 Jonli kartalar · ko'k-feruza", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-slayder", name: "🪟 Shisha slayder · tabiat foni", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-nishon", name: "🎯 Nishon · amaliyot hisoboti", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-pufak", name: "🫧 Uchar pufakchalar · rasmli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-qiya", name: "🔷 Qiya oynalar · rasm javoni", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-chontak", name: "🗂️ Cho'ntak kartalar · 4 rang", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-papka", name: "📁 Papka kartalar · jamoa", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+
+      { id: "pro-nur", name: "🔦 Nur sahnasi · qora-oq tasma", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

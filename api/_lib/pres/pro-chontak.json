@@ -1,0 +1,4234 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 12,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "KASB TANLASH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      10668000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 36,
+     "max": 85,
+     "perLine": 84.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'rt qadamda o'z yo'lingizni toping",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1981200,
+      10668000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 21,
+     "max": 117,
+     "perLine": 116.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2438400,
+      10668000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 12,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      876300,
+      1422400,
+      2057400,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 14.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Nimani sevib bajarasiz, o'shandan boshlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      927100,
+      2006600,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 12,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3670300,
+      1422400,
+      2057400,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 37,
+     "max": 37,
+     "perLine": 18.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kuchli tomonlaringiz yo'l ko'rsatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3721100,
+      2006600,
+      1955800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 12,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6464300,
+      1422400,
+      2057400,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 11.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bozor qaysi mutaxassisni kutyapti?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6515100,
+      2006600,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 12,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9258300,
+      1422400,
+      2057400,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 39,
+     "max": 39,
+     "perLine": 13,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maqsadga olib boradigan yo'lni tanlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9309100,
+      2006600,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 9,
+     "max": 104,
+     "perLine": 103.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mundarija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      50800,
+      10668000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 22,
+     "max": 22,
+     "perLine": 11,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qiziqishingizni toping",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      927100,
+      1422400,
+      1955800,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 14.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Nimani sevib bajarasiz, o'shandan boshlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      927100,
+      2286000,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7,
+     "lines": 1,
+     "caps": false,
+     "sz": 120,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      635000,
+      4826000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 159,
+     "max": 159,
+     "perLine": 39.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sevimli mashg'ulot kasb tanlashning eng yaxshi kompasi. Bo'sh vaqtingizda nima bilan shug'ullanasiz, qaysi fanlar sizni zeriktirmaydi - shularni yozib chiqing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2413000,
+      4826000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 22,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Qiziqishingizni toping",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "30"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      2082800,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 38,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bo'sh vaqtda nima bilan band bo'lasiz?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2057400,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      3149600,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 36,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qaysi fan darslari tez o'tib ketadi?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      3124200,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      4216400,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 36,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qaysi ishni maqtovsiz ham bajarasiz?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      4191000,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      5283200,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 36,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kimning kasbi sizga havas uyg'otadi?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      5257800,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 22,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Qiziqishingizni toping",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "30"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "text",
+     "chars": 159,
+     "max": 159,
+     "perLine": 79.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sevimli mashg'ulot kasb tanlashning eng yaxshi kompasi. Bo'sh vaqtingizda nima bilan shug'ullanasiz, qaysi fanlar sizni zeriktirmaydi - shularni yozib chiqing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1651000,
+      9906000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "70%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1143000,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 44,
+     "max": 44,
+     "perLine": 22,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "o'quvchilar kasbni qiziqishga qarab tanlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "3-5",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4546600,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "asosiy qiziqish yo'nalishi bo'ladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4800600,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "1 yil",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7950200,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "qiziqishni sinash uchun yetarli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8204200,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 20,
+     "max": 20,
+     "perLine": 10,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qobiliyatni baholang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3721100,
+      1422400,
+      1955800,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 37,
+     "max": 37,
+     "perLine": 18.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kuchli tomonlaringiz yo'l ko'rsatadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3721100,
+      2286000,
+      1955800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7,
+     "lines": 1,
+     "caps": false,
+     "sz": 120,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      635000,
+      4826000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 162,
+     "max": 162,
+     "perLine": 40.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har kimning o'z kuchli tomoni bor: kimdir hisob-kitobda, kimdir muloqotda, kimdir chizishda ustun. Kasb aynan shu qobiliyatga tayansa, muvaffaqiyat tezroq keladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2413000,
+      4826000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 20,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Qobiliyatni baholang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "30"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      2082800,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 31,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mantiqiy fikrlash va matematika",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2057400,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      3149600,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 27,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Odamlar bilan til topishish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      3124200,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      4216400,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 32,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ijodkorlik: rasm, musiqa, dizayn",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      4191000,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      5283200,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 37,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qo'l mehnati va texnika bilan ishlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      5257800,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 20,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Qobiliyatni baholang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "30"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "text",
+     "chars": 162,
+     "max": 162,
+     "perLine": 81,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har kimning o'z kuchli tomoni bor: kimdir hisob-kitobda, kimdir muloqotda, kimdir chizishda ustun. Kasb aynan shu qobiliyatga tayansa, muvaffaqiyat tezroq keladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1651000,
+      9906000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "8 xil",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1143000,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 28,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "turdagi qobiliyat ajratiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 6,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "15 min",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4546600,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kasbiy test uchun yetarli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4800600,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 2,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "2x",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7950200,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 26,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "sevgan ishda natija yuqori",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8204200,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 24,
+     "max": 24,
+     "perLine": 12,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bozor talabini o'rganing",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6515100,
+      1422400,
+      1955800,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 11.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bozor qaysi mutaxassisni kutyapti?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6515100,
+      2286000,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7,
+     "lines": 1,
+     "caps": false,
+     "sz": 120,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      635000,
+      4826000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 182,
+     "max": 182,
+     "perLine": 45.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng yaxshi kasb - ham sizga yoqadigan, ham jamiyatga kerak bo'lgan kasb. Ish e'lonlarini kuzating, mutaxassislar bilan suhbatlashing va kelajakda qaysi sohalar o'sishini bilib oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2413000,
+      4826000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 24,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Bozor talabini o'rganing",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "30"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      2082800,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 16,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "IT va dasturlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2057400,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      3149600,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 29,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tibbiyot va sog'liqni saqlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      3124200,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      4216400,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 23,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muhandislik va qurilish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      4191000,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      5283200,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 27,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ta'lim va xizmat ko'rsatish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      5257800,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 24,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Bozor talabini o'rganing",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "30"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "text",
+     "chars": 182,
+     "max": 182,
+     "perLine": 91,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng yaxshi kasb - ham sizga yoqadigan, ham jamiyatga kerak bo'lgan kasb. Ish e'lonlarini kuzating, mutaxassislar bilan suhbatlashing va kelajakda qaysi sohalar o'sishini bilib oling.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1651000,
+      9906000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "Top 5",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1143000,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "eng ko'p talab qilinadigan soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "40%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4546600,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 35,
+     "max": 35,
+     "perLine": 17.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yangi kasblar texnologiyaga bog'liq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4800600,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 6,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "10 yil",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7950200,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "ichida ko'p kasblar yangilanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8204200,
+      4521200,
+      2590800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 24,
+     "max": 24,
+     "perLine": 12,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ta'lim yo'lini belgilang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9309100,
+      1422400,
+      1955800,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 39,
+     "max": 39,
+     "perLine": 13,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maqsadga olib boradigan yo'lni tanlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9309100,
+      2286000,
+      1955800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7,
+     "lines": 1,
+     "caps": false,
+     "sz": 120,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      635000,
+      4826000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 180,
+     "max": 180,
+     "perLine": 45,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kasbni tanlagach, unga qanday yetib borishni rejalashtiring: qaysi oliygoh yoki kollej, qaysi fanlardan imtihon, qanday qo'shimcha kurslar kerak - hammasini oldindan bilib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2413000,
+      4826000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 24,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Ta'lim yo'lini belgilang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      12,
+      "30"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      2082800,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 30,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Oliygoh va yo'nalishni tanlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2057400,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      3149600,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 38,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kirish imtihoni fanlariga tayyorlanish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      3124200,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      4216400,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 25,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Til va kompyuter kurslari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      4191000,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1371600,
+      5283200,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 34,
+     "max": 84,
+     "perLine": 83.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Amaliyot va ko'ngillilik tajribasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      5257800,
+      8636000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      9144000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 24,
+     "max": 43,
+     "perLine": 43,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Ta'lim yo'lini belgilang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      660400,
+      8890000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      12,
+      "30"
+     ]
+    },
+    {
+     "id": "32",
+     "kind": "text",
+     "chars": 180,
+     "max": 180,
+     "perLine": 90,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kasbni tanlagach, unga qanday yetib borishni rejalashtiring: qaysi oliygoh yoki kollej, qaysi fanlardan imtihon, qanday qo'shimcha kurslar kerak - hammasini oldindan bilib qo'ying.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1651000,
+      9906000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      12,
+      "33"
+     ]
+    },
+    {
+     "id": "35",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "4 yil",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1143000,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 23,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "bakalavriat davomiyligi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "2-3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4546600,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "fandan kirish imtihoni",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4800600,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 7,
+     "max": 11,
+     "perLine": 11.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "1 qadam",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7950200,
+      3429000,
+      3098800,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 20,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "har kuni maqsad sari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8204200,
+      4521200,
+      2590800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11176000,
+      6477000,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QIZIQISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      698500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "17"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 9,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "QOBILIYAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3492500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "21"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TALAB",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6286500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "TA'LIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5842000,
+      2413000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "29"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 7,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      10668000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "text",
+     "chars": 69,
+     "max": 85,
+     "perLine": 84.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'g'ri tanlangan kasb - har kuni quvonch bilan ishga borish demakdir",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1981200,
+      10668000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [],
+ "sequence": true
+}

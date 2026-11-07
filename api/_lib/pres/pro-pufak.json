@@ -1,0 +1,2716 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 16,
+     "max": 24,
+     "perLine": 23.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "ZAMONAVIY SHAHAR",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2717800,
+      9652000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 48,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Megapolislar qanday yashaydi va qayerga intiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2540000,
+      3708400,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 21,
+     "max": 78,
+     "perLine": 77.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2540000,
+      4140200,
+      7112000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 9,
+     "max": 27,
+     "perLine": 26.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "MUNDARIJA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2032000,
+      889000,
+      8128000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2057400,
+      635000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 16,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Shahar manzarasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      2070100,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3429000,
+      2870200,
+      635000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 13,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Hayot sur'ati",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      2882900,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3429000,
+      3683000,
+      635000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 14,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Texnologiyalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      3695700,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3429000,
+      4495800,
+      635000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 19,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Uy-joy va muammolar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      4508500,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3429000,
+      5308600,
+      635000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 14,
+     "max": 40,
+     "perLine": 40,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tarix va meros",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      5321300,
+      4572000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 21,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 · SHAHAR MANZARASI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 13,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Osmono'parlar",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 35.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer qimmatlashgan sari shahar yuqoriga o'sadi. Baland binolar kam maydonda minglab odamga ish va uy beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 37,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eng baland binolar 800 metrdan oshadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bir minorada butun mahalla yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 36,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tepadan shahar kaftdagidek ko'rinadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 21,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 · SHAHAR MANZARASI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 13,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Shahar va suv",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 140,
+     "max": 140,
+     "perLine": 46.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'plab yirik shaharlar dengiz, daryo yoki ko'l bo'yida joylashgan. Suv savdo yo'li, ichimlik manbai va dam olish joyi bo'lib xizmat qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 40,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Port shaharlari savdo markaziga aylangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 34,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qirg'oq bo'yi sayr joylari ommabop",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 30,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv shahar iqlimini yumshatadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 18,
+     "max": 82,
+     "perLine": 82.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · HAYOT SUR'ATI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      889000,
+      8128000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 17,
+     "max": 35,
+     "perLine": 35.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Raqamlarda shahar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1193800,
+      8128000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "56%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      2794000,
+      2413000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "dunyo aholisi shaharlarda yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2362200,
+      3937000,
+      2006600,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "30+",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      2794000,
+      2413000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 35,
+     "max": 35,
+     "perLine": 17.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "aholisi 10 milliondan oshgan shahar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5029200,
+      3937000,
+      2006600,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 48,
+     "paras": 1,
+     "text": "70%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      2794000,
+      2413000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "energiya shaharlarda sarflanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7696200,
+      3937000,
+      2006600,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 18,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · HAYOT SUR'ATI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Shisha va po'lat",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 165,
+     "max": 165,
+     "perLine": 41.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Zamonaviy fasadlar yorug'likni ichkariga olib kiradi, lekin yozda issiqlikni ham ushlab qoladi. Shuning uchun yangi binolar energiya tejovchi oynalar bilan quriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      984885
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yorug' xonalar kayfiyatni ko'taradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Maxsus oynalar issiqlikni qaytaradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 37,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tomlarda quyosh panellari o'rnatiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 18,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · HAYOT SUR'ATI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Gavjum ko'chalar",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 111,
+     "max": 111,
+     "perLine": 37,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Do'konlar, taksilar va odamlar oqimi shaharga jon baxsh etadi. Bunday ko'chalarda kun ham, tun ham to'xtamaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Piyoda yurish shaharni yaxshi tanitadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 36,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kichik kafelar ko'chaga jon kiritadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 29,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Svetoforlar oqimni boshqaradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 19,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 · TEXNOLOGIYALAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 17,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Jamoat transporti",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 42.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Metro va avtobuslar millionlab odamni har kuni manziliga yetkazadi. Elektr transport havoni tozalaydi va shovqinni kamaytiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 43,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bitta avtobus o'nlab mashina o'rnini bosadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Velosiped yo'laklari ko'paymoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 39,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Onlayn xarita kutish vaqtini ko'rsatadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 19,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 · TEXNOLOGIYALAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 12,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Aqlli shahar",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 127,
+     "max": 127,
+     "perLine": 42.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sensorlar havo sifati, transport oqimi va energiya sarfini o'lchaydi. Ma'lumotlar asosida svetofor va yoritish o'zi moslashadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 33,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Robotlar xavfli ishlarni bajaradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 43,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'cha chiroqlari odam bo'lmasa xiralashadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Xizmatlar telefon orqali olinadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 24,
+     "max": 82,
+     "perLine": 82.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 · UY-JOY VA MUAMMOLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      889000,
+      8128000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 17,
+     "max": 35,
+     "perLine": 35.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Shahar muammolari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1193800,
+      8128000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2540000,
+      2413000,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 37,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tirbandlik va yo'lda yo'qotilgan vaqt",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2438400,
+      6350000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2540000,
+      3352800,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 28,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Havo ifloslanishi va shovqin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      3378200,
+      6350000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2540000,
+      4292600,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 28,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Uy-joy narxining tez o'sishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4318000,
+      6350000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2540000,
+      5232400,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 29,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yashil hududlarning kamayishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3327400,
+      5257800,
+      6350000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 24,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 · UY-JOY VA MUAMMOLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 6,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Uy-joy",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Aholi ko'paygani sari ko'p qavatli mahallalar quriladi. Eng qadrli hududlar maktab, bog'cha va bog' yaqinidagi joylardir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yashil hovli uy narxini oshiradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 39,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangi mahallalar metroga yaqin quriladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 45,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eski binolar ta'mirlanib, qayta foydalaniladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 19,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 · TARIX VA MEROS",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 13,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Eski va yangi",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 122,
+     "max": 122,
+     "perLine": 40.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'p shaharlarda bir asrlik binolar yangi minoralar yonida turadi. Bunday ko'chalar shahar tarixini kitobdek o'qib beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 33,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tarixiy binolar davlat himoyasida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eski fasadlar ichida zamonaviy ofislar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 39,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sayyohlar aynan eski ko'chalarni sevadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 19,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 · TARIX VA MEROS",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Sharq shaharlari",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 101,
+     "max": 101,
+     "perLine": 50.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moviy gumbazlar, naqshli peshtoqlar va minoralar Sharq shaharlarining o'ziga xos qiyofasini yaratadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 39,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Samarqand, Buxoro, Xiva dunyoga mashhur",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Koshin naqshlari asrlar osha saqlangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 46,
+     "max": 46,
+     "perLine": 23,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eski shahar markazi sayyohlar jamlanadigan joy",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 19,
+     "max": 49,
+     "perLine": 48.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "05 · TARIX VA MEROS",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      889000,
+      4826000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 14,
+     "max": 21,
+     "perLine": 21,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Kelajak shahri",
+     "font": "Segoe UI Black",
+     "anchor": "b",
+     "box": [
+      6223000,
+      1193800,
+      4826000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 53,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ertangi shahar katta emas, balki qulay, yashil va xavfsiz bo'lishi kerak. Uni bugungi yoshlar loyihalaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      2667000,
+      4826000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 30,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'proq bog' va piyoda zonalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      4470400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Toza energiya va aqlli transport",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5029200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 33,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tarixni asragan holda rivojlanish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      5588000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      11049000,
+      431800,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "title",
+     "chars": 7,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 58,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      8128000,
+      892552
+     ],
+     "lineH": 883920,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 50,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Shahar - bu binolar emas, unda yashaydigan odamlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2540000,
+      3708400,
+      7112000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1360,
+   "h": 1240,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 14
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1360,
+   "h": 1240,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 12
+  }
+ ],
+ "sequence": true
+}
