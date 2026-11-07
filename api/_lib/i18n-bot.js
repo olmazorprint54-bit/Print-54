@@ -129,6 +129,10 @@ const M = {
     "👇 Choose a service using the buttons below.",
   ],
   svcGo: ["🚀 Boshlash", "🚀 Начать", "🚀 Start"],
+  subAsk: ["📢 Botdan foydalanish uchun kanalimizga obuna bo'ling, so'ng «Tekshirish» tugmasini bosing.", "📢 Чтобы пользоваться ботом, подпишитесь на наш канал и нажмите «Проверить».", "📢 To use the bot, subscribe to our channel and tap «Check»."],
+  subJoin: ["📢 Kanalga obuna bo'lish", "📢 Подписаться на канал", "📢 Subscribe to the channel"],
+  subCheck: ["✅ Tekshirish", "✅ Проверить", "✅ Check"],
+  subNo: ["Hali obuna bo'lmagansiz. Avval kanalga obuna bo'ling.", "Вы ещё не подписаны. Сначала подпишитесь на канал.", "You are not subscribed yet. Subscribe to the channel first."],
   svcFree: ["Tekin", "Бесплатно", "Free"],
   svcFrom: ["so'mdan", "сум и выше", "UZS and up"],
   welcome: [

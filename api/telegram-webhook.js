@@ -130,6 +130,19 @@ async function handleCallbackQuery(cq, bot, req) {
     }));
     return;
   }
+  if (/^subcheck:/.test(cq.data || "") && isAiBot(bot)) {
+    const svc = cq.data.slice(9);
+    const l = await LB.getLang(cq.from.id);
+    const sub = await require("./_lib/bonus").subscription(bot, cq.from.id);
+    if (!sub.ok) {
+      await callTelegram("answerCallbackQuery", { callback_query_id: cq.id, text: LB.T(l, "subNo"), show_alert: true }, bot);
+      return;
+    }
+    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
+    if (cq.message) await callTelegram("deleteMessage", { chat_id: cq.message.chat.id, message_id: cq.message.message_id }, bot).catch(() => {});
+    if (LB.SVC[svc] && cq.message) await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&open=" + svc);
+    return;
+  }
   if (cq.data === "noop" || isAiBot(bot)) {
     await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     return;
@@ -713,7 +726,17 @@ async function handleKbText(msg, bot, host) {
   // AI bot: xizmat tugmasi — ilovada shu xizmat formasi ochiladi
   const svc = isAiBot(bot) ? LB.svcKind(msg.text.trim()) : null;
   if (svc) {
-    await TOPUP.sendService(bot, msg.chat.id, svc, await LB.getLang(msg.from.id), appUrl(host, bot) + "&open=" + svc);
+    const l = await LB.getLang(msg.from.id);
+    // Kanalga obuna bo'lmagan mijozga avval obuna va «Tekshirish» tugmasi
+    const sub = isOwner(msg.from) ? { ok: true } : await require("./_lib/bonus").subscription(bot, msg.from.id);
+    if (!sub.ok) {
+      await callTelegram("sendMessage", {
+        chat_id: msg.chat.id, text: LB.T(l, "subAsk"),
+        reply_markup: { inline_keyboard: [[{ text: LB.T(l, "subJoin"), url: sub.url }], [{ text: LB.T(l, "subCheck"), callback_data: "subcheck:" + svc }]] },
+      }, bot);
+      return true;
+    }
+    await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&open=" + svc);
     return true;
   }
   const kind = LB.kbKind(msg.text.trim());

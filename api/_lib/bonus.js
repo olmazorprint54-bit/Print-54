@@ -131,6 +131,18 @@ async function isMember(bot, chat, uid) {
   return s === "member" || s === "administrator" || s === "creator" || (s === "restricted" && r.result.is_member);
 }
 
+// Xizmat tugmalari oldidan majburiy obuna. Kanal sozlanmagan yoki bot uni tekshira olmasa, mijoz to'sib qo'yilmaydi.
+async function subscription(bot, uid) {
+  const c = channel();
+  if (!c) return { ok: true };
+  try {
+    return { ok: await isMember(bot, c.chat, uid), url: c.url };
+  } catch (e) {
+    console.error("Kanal obunasini tekshirib bo'lmadi (bot kanalda adminmi?):", e.message);
+    return { ok: true };
+  }
+}
+
 // 1 ta bonus qo'shamiz (shartli yangilash — parallel so'rovda yo'qolmasin)
 async function addCredit(uid) {
   for (let i = 0; i < 4; i++) {
@@ -179,4 +191,4 @@ async function claimBonus(bot, uid, kind) {
   }
 }
 
-module.exports = { bonusTasks, claimBonus, channel, instagram, giftsOf, takeGiftAi, takeGiftPages, returnGiftPages, GIFT_PAGES };
+module.exports = { bonusTasks, claimBonus, channel, subscription, instagram, giftsOf, takeGiftAi, takeGiftPages, returnGiftPages, GIFT_PAGES };
