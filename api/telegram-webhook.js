@@ -140,7 +140,16 @@ async function handleCallbackQuery(cq, bot, req) {
     }
     await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     if (cq.message) await callTelegram("deleteMessage", { chat_id: cq.message.chat.id, message_id: cq.message.message_id }, bot).catch(() => {});
-    if (LB.SVC[svc] && cq.message) await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&open=" + svc);
+    if (LB.SVC[svc] && cq.message) {
+      await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&open=" + svc);
+      await require("./_lib/remind").noteView(bot, cq.from, cq.message.chat.id, svc);
+    }
+    return;
+  }
+  if (/^remindoff:/.test(cq.data || "") && isAiBot(bot)) {
+    await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
+    if (cq.message) await callTelegram("deleteMessage", { chat_id: cq.message.chat.id, message_id: cq.message.message_id }, bot).catch(() => {});
+    await require("./_lib/remind").mute(bot, cq.from.id, cq.data.slice(10)).catch((e) => console.error(e));
     return;
   }
   if (cq.data === "noop" || isAiBot(bot)) {
@@ -737,6 +746,7 @@ async function handleKbText(msg, bot, host) {
       return true;
     }
     await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&open=" + svc);
+    if (!isOwner(msg.from)) await require("./_lib/remind").noteView(bot, msg.from, msg.chat.id, svc);
     return true;
   }
   const kind = LB.kbKind(msg.text.trim());

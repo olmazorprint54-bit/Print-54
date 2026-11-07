@@ -20,6 +20,7 @@ function envHtml() {
     { name: "GITHUB_TOKEN", state: process.env.GITHUB_TOKEN ? "ok" : "missing", hint: "Taqdimot shablonlarini o'qish uchun (yopiq repozitoriya)" },
     { name: "PIXABAY_API_KEY", state: process.env.PIXABAY_API_KEY || process.env.PEXELS_API_KEY ? "ok" : "missing", hint: "Taqdimotga mavzuga mos rasmlar (pixabay.com/api/docs)" },
     { name: "TG_CHANNEL", state: process.env.TG_CHANNEL ? "ok" : "missing", hint: "Majburiy obuna kanali (@nomi). Bot shu kanalda admin bo'lishi kerak, aks holda tekshiruv o'chiq turadi" },
+    { name: "CRON_SECRET", state: process.env.CRON_SECRET ? "ok" : "missing", hint: "Unutilgan buyurtma eslatmasi uchun shart (supabase/eslatma.sql dagi qiymat bilan bir xil)" },
     { name: "UNSPLASH_ACCESS_KEY", state: process.env.UNSPLASH_ACCESS_KEY ? "ok" : "missing", hint: "Ikkinchi rasm manbasi, Pixabay topmasa ishlaydi (unsplash.com/developers, Access Key)" },
     ...["PRES_MODEL", "TEXT_MODEL", "CHAT_MODEL"].map((name) => {
       const { modelChoice, MODELS, MODEL_NAMES } = require("./ai");

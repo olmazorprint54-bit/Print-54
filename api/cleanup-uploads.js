@@ -19,6 +19,20 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Unutilgan buyurtma eslatmalari (Supabase pg_cron har 5 daqiqada chaqiradi, supabase/eslatma.sql)
+  if (req.query && req.query.remind) {
+    if (!process.env.CRON_SECRET) { res.status(401).json({ ok: false, error: "CRON_SECRET yo'q" }); return; }
+    try {
+      const { appUrl } = require("./_lib/setup");
+      const host = req.headers["x-forwarded-host"] || req.headers.host;
+      res.status(200).json({ ok: true, ...(await require("./_lib/remind").runReminders((bot) => appUrl(host, bot))) });
+    } catch (err) {
+      console.error("Eslatmalar:", err);
+      res.status(500).json({ ok: false });
+    }
+    return;
+  }
+
   try {
     const store = supabase.storage.from(BUCKET);
     const cutoff = Date.now() - KEEP_DAYS * 24 * 60 * 60 * 1000;
