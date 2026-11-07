@@ -30,12 +30,13 @@ const DT = require("./_lib/doc-tools"); // PDF vositalari (Word/Excel/PDF), AI's
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
+  gazeta: "Devoriy gazetangiz",
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
   img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", presentation_pro: "Super taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 // Egaga nusxa keladigan xizmatlar (AI yozgan ishlar)
-const COPY_TO_OWNER = new Set(["presentation", "presentation_pro", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword"]);
+const COPY_TO_OWNER = new Set(["presentation", "presentation_pro", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword", "gazeta"]);
 const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
@@ -218,6 +219,7 @@ const costTitle = (s, f) => ({
   lesson: `Dars ishlanma — ${f.duration || 45} daqiqa`,
   questions: `Savollar — ${f.count || 15} ta`,
   crossword: `Krossvord — ${f.words || 15} so'z`,
+  gazeta: `Devoriy gazeta (${f.template || ""})`,
 }[s] || s);
 
 // Kirim: mijoz haqiqatan to'lagan summa. Bonus / sinov / birinchi tekin bo'lsa — 0
@@ -473,6 +475,11 @@ module.exports = async (req, res) => {
     if (DT.TOOLS.includes(order.service)) {
       // AI yo'q — Word/Excel/PDF vositalari to'liq kodda
       file = await buildDocTool(order);
+    } else if (order.service === "gazeta") {
+      // Claude matn yozadi, rasm stock'dan, PDF kodda (api/_lib/gazeta.js)
+      const gz = await require("./_lib/gazeta").generateGazeta(fields, { withPage });
+      ai = gz.ai;
+      file = { buffer: gz.buffer, name: gz.name + ".pdf", mime: "application/pdf" };
     } else if (order.service === "img2pdf") {
       // AI yo'q — rasmlardan PDF to'liq kodda
       file = await buildImgPdf(order);

@@ -324,6 +324,7 @@ const AI_LABELS = {
   test: "Test",
   questions: "Savollar",
   crossword: "Krossvord",
+  gazeta: "Devoriy gazeta",
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
 };
