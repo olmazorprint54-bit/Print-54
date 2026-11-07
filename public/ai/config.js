@@ -821,6 +821,22 @@
       { id: "pro-smartfon", name: "📱 Smartfon maketi · raqamli mavzular", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-pazl", name: "💎 Pazl · bo'laklar yig'iladi", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-kublar", name: "💎 3D kublar minorasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-romb", name: "💎 Oltin romb · bo'limli", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-parda", name: "🎬 Qizil parda · kino uslubi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-ekran", name: "🎞️ Egilgan ekran · panorama", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-keskin", name: "🔺 Qizil keskin · qiya shakllar", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-aks", name: "🪞 Aksli kartalar · ko'k fon", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-galereya", name: "🖼️ 3D galereya · yumshoq qizil", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-infografika", name: "📊 Jonli infografika · 12 xil sxema", kind: "canva", category: "umumiy", pages: 7, auto: true },
+
+      { id: "pro-orbita", name: "🪐 Ko'k orbita · aylanuvchi rasmlar", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

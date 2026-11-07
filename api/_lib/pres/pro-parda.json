@@ -1,0 +1,3315 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 120,
+     "paras": 1,
+     "text": "TURIZM",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      2032000,
+      12192000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0,
+     "word": 8
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 120,
+     "paras": 1,
+     "text": "TURIZM",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      1905000,
+      12192000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "9"
+     ],
+     "word": 8
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 27,
+     "max": 76,
+     "perLine": 75.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "O'ZBEKISTON BO'YLAB SAYOHAT",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      4089400,
+      12192000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 21,
+     "max": 133,
+     "perLine": 133.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: ____________",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4724400,
+      12192000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 10,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "RAQAMLARDA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      508000,
+      355600,
+      5080000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 4,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "4 ta",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      508000,
+      3048000,
+      2641600,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 35,
+     "max": 35,
+     "perLine": 17.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "YUNESKO ro'yxatidagi tarixiy shahar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      3759200,
+      2641600,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "6,6 mln",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3352800,
+      3048000,
+      2641600,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 25,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "xorijiy sayyoh (2023-yil)",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3352800,
+      3759200,
+      2641600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 9,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "2 750 yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      6197600,
+      3048000,
+      2641600,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 19,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Samarqandning yoshi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6197600,
+      3759200,
+      2641600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "4 643 m",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3048000,
+      2641600,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 18,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "eng baland cho'qqi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3759200,
+      2641600,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "text",
+     "chars": 152,
+     "max": 152,
+     "perLine": 76,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Mustaqillikdan keyin O'zbekiston Markaziy Osiyoning eng yirik sayyohlik yo'nalishlaridan biriga aylandi: tarix, tabiat va mehmondo'stlik bir mamlakatda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      4699000,
+      11176000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 16,
+     "max": 115,
+     "perLine": 115.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BUYUK IPAK YO'LI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      0,
+      3886200,
+      12192000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 21,
+     "max": 44,
+     "perLine": 44.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 48,
+     "paras": 1,
+     "text": "HAR KIM UCHUN SAYOHAT",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      4191000,
+      12192000,
+      738664
+     ],
+     "lineH": 731520,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 138,
+     "max": 138,
+     "perLine": 69,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qadimiy shaharlar, qorli tog'lar va cheksiz cho'llar: oilaviy dam olish, tarixiy sayohat yoki ekstremal sarguzasht uchun ham joy topiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      5054600,
+      8890000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 750 yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 9,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Samarqand",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 57,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sharqning sayqali: Buyuk Ipak yo'lidagi qadimiy shahar va Temuriylar poytaxti. Tarixiy markazi YUNESKO ro'yxatida.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 58,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Registon maydoni\nGo'ri Amir maqbarasi\nShohi Zinda majmuasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 500+ yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 6,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Buxoro",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'hna shahar yuzlab me'moriy yodgorliklarni saqlab qolgan. Tarixiy markazi 1993-yildan YUNESKO ro'yxatida.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 50,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ark qal'asi\nPoi Kalon majmuasi\nLabi Hovuz ansambli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 750 yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "38"
+     ]
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 9,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Samarqand",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "39"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 57,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sharqning sayqali: Buyuk Ipak yo'lidagi qadimiy shahar va Temuriylar poytaxti. Tarixiy markazi YUNESKO ro'yxatida.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "40"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 58,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Registon maydoni\nGo'ri Amir maqbarasi\nShohi Zinda majmuasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "41"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 500+ yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "44"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 6,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Buxoro",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "45"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'hna shahar yuzlab me'moriy yodgorliklarni saqlab qolgan. Tarixiy markazi 1993-yildan YUNESKO ro'yxatida.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "46"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 50,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ark qal'asi\nPoi Kalon majmuasi\nLabi Hovuz ansambli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "47"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "1990",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 4,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Xiva",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 59,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ichan Qal'a O'zbekistondan YUNESKO ro'yxatiga birinchi bo'lib kiritilgan. Shahar ichida go'yo tarix to'xtab qolgandek.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 60,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ichan Qal'a devorlari\nKalta Minor minorasi\nKo'hna Ark saroyi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 500+ yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "44"
+     ]
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 6,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Buxoro",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "45"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'hna shahar yuzlab me'moriy yodgorliklarni saqlab qolgan. Tarixiy markazi 1993-yildan YUNESKO ro'yxatida.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "46"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 50,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ark qal'asi\nPoi Kalon majmuasi\nLabi Hovuz ansambli",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "47"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "1990",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 4,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Xiva",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 59,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ichan Qal'a O'zbekistondan YUNESKO ro'yxatiga birinchi bo'lib kiritilgan. Shahar ichida go'yo tarix to'xtab qolgandek.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 60,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ichan Qal'a devorlari\nKalta Minor minorasi\nKo'hna Ark saroyi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "53"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2000",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 10,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Shahrisabz",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 63,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temurning vatani. Tarixiy markazi 2000-yilda YUNESKO ro'yxatiga kiritilgan, Oqsaroy qoldiqlari hozir ham hayratga soladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 59,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Oqsaroy peshtoqi\nDor us-Saodat majmuasi\nKo'k gumbaz masjidi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "1990",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 4,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Xiva",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "51"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 59,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ichan Qal'a O'zbekistondan YUNESKO ro'yxatiga birinchi bo'lib kiritilgan. Shahar ichida go'yo tarix to'xtab qolgandek.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "52"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 60,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ichan Qal'a devorlari\nKalta Minor minorasi\nKo'hna Ark saroyi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "53"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2000",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 10,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Shahrisabz",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 63,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temurning vatani. Tarixiy markazi 2000-yilda YUNESKO ro'yxatiga kiritilgan, Oqsaroy qoldiqlari hozir ham hayratga soladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 59,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Oqsaroy peshtoqi\nDor us-Saodat majmuasi\nKo'k gumbaz masjidi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "53"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "title",
+     "chars": 5,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "3 mln",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 8,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Toshkent",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Poytaxt zamonaviy binolar va qadimiy obidalarni birlashtiradi. Bu yerda 3 millionga yaqin aholi yashaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 65,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Hazrati Imom majmuasi\nChorsu bozori\nSan'atkorona bezatilgan metro",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2000",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 10,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Shahrisabz",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "51"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 63,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Amir Temurning vatani. Tarixiy markazi 2000-yilda YUNESKO ro'yxatiga kiritilgan, Oqsaroy qoldiqlari hozir ham hayratga soladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "52"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 59,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Oqsaroy peshtoqi\nDor us-Saodat majmuasi\nKo'k gumbaz masjidi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "53"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 5,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "3 mln",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "50"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 8,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Toshkent",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Poytaxt zamonaviy binolar va qadimiy obidalarni birlashtiradi. Bu yerda 3 millionga yaqin aholi yashaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 65,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Hazrati Imom majmuasi\nChorsu bozori\nSan'atkorona bezatilgan metro",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "53"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 7,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "4 643 m",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 60.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mamlakatning eng baland nuqtasi Hazrati Sulton cho'qqisi. Toshkent yaqinidagi tog'lar yil davomida sayyohlarni chorlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 58,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Chimyon va Beldersoy\nCharvoq suv ombori\nZomin milliy bog'i",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 5,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "3 mln",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "50"
+     ]
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 8,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Toshkent",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "51"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Poytaxt zamonaviy binolar va qadimiy obidalarni birlashtiradi. Bu yerda 3 millionga yaqin aholi yashaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "52"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 65,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Hazrati Imom majmuasi\nChorsu bozori\nSan'atkorona bezatilgan metro",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "53"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 7,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "4 643 m",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "50"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 60.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mamlakatning eng baland nuqtasi Hazrati Sulton cho'qqisi. Toshkent yaqinidagi tog'lar yil davomida sayyohlarni chorlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 58,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Chimyon va Beldersoy\nCharvoq suv ombori\nZomin milliy bog'i",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "53"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "300 ming km²",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'l safari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 62,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qizilqum cho'li mamlakat hududining katta qismini egallaydi. Yurtalarda tunash va tuya safari sayyohlar uchun noyob tajriba.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 63,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Aydarko'l yurtalari\nNukusdagi Savitskiy muzeyi\nMo'ynoq kemalari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 7,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "4 643 m",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "50"
+     ]
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tog'lar",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "51"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 60.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mamlakatning eng baland nuqtasi Hazrati Sulton cho'qqisi. Toshkent yaqinidagi tog'lar yil davomida sayyohlarni chorlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "52"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 58,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Chimyon va Beldersoy\nCharvoq suv ombori\nZomin milliy bog'i",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "53"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "300 ming km²",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "50"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'l safari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 62,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qizilqum cho'li mamlakat hududining katta qismini egallaydi. Yurtalarda tunash va tuya safari sayyohlar uchun noyob tajriba.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 63,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Aydarko'l yurtalari\nNukusdagi Savitskiy muzeyi\nMo'ynoq kemalari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "53"
+     ]
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 000+ yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      9245600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Hunarmandlar",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10109200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 145,
+     "max": 145,
+     "perLine": 72.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Marg'ilonning tarixi 2 000 yildan oshadi. Farg'ona vodiysi ipak va kulolchilik bilan mashhur, ustalar ishini ko'zingiz bilan ko'rishingiz mumkin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      10769600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 59,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Marg'ilon atlasi\nRishton kulolchiligi\nQo'qon xonligi saroyi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      11684000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 12,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "300 ming km²",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4978400,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "50"
+     ]
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Cho'l safari",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -4114800,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "51"
+     ]
+    },
+    {
+     "id": "40",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 62,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qizilqum cho'li mamlakat hududining katta qismini egallaydi. Yurtalarda tunash va tuya safari sayyohlar uchun noyob tajriba.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -3454400,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "52"
+     ]
+    },
+    {
+     "id": "41",
+     "kind": "text",
+     "chars": 63,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Aydarko'l yurtalari\nNukusdagi Savitskiy muzeyi\nMo'ynoq kemalari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      -2540000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "53"
+     ]
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 26.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "2 000+ yil",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2133600,
+      7620000,
+      838200
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      11,
+      "50"
+     ]
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Hunarmandlar",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      3632200,
+      2997200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      11,
+      "51"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 145,
+     "max": 145,
+     "perLine": 72.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Marg'ilonning tarixi 2 000 yildan oshadi. Farg'ona vodiysi ipak va kulolchilik bilan mashhur, ustalar ishini ko'zingiz bilan ko'rishingiz mumkin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      3657600,
+      7620000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      11,
+      "52"
+     ]
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 59,
+     "max": 222,
+     "perLine": 74,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Marg'ilon atlasi\nRishton kulolchiligi\nQo'qon xonligi saroyi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3632200,
+      4572000,
+      7620000,
+      933589
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      11,
+      "53"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2019",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5905500,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2022",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7747000,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2023",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9588500,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 22,
+     "max": 71,
+     "perLine": 70.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XORIJIY SAYYOHLAR SONI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      508000,
+      7493000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 11,
+     "max": 22,
+     "perLine": 21.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 60,
+     "paras": 1,
+     "text": "6,6 MILLION",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      4064000,
+      787400,
+      7493000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 44,
+     "max": 73,
+     "perLine": 72.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2023-yilda: pandemiyadan keyin tez tiklanish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4064000,
+      1778000,
+      7493000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2019",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "6,7 mln",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      3479800,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5905500,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 7,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1,8 mln",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5905500,
+      5058770,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2022",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7747000,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 7,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "5,2 mln",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7747000,
+      3963158,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2023",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9588500,
+      6070600,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 7,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "6,6 mln",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9588500,
+      3512024,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 22,
+     "max": 71,
+     "perLine": 70.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XORIJIY SAYYOHLAR SONI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      508000,
+      7493000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      13,
+      "13"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "title",
+     "chars": 11,
+     "max": 22,
+     "perLine": 21.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 60,
+     "paras": 1,
+     "text": "6,6 MILLION",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      4064000,
+      787400,
+      7493000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      13,
+      "14"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 44,
+     "max": 73,
+     "perLine": 72.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2023-yilda: pandemiyadan keyin tez tiklanish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4064000,
+      1778000,
+      7493000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      13,
+      "15"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 6,
+     "max": 8,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 120,
+     "paras": 1,
+     "text": "RAHMAT",
+     "font": "Impact",
+     "anchor": "t",
+     "box": [
+      0,
+      1905000,
+      12192000,
+      1846659
+     ],
+     "lineH": 1828800,
+     "ins": 0,
+     "word": 8
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 58,
+     "max": 107,
+     "perLine": 106.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat! Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      4191000,
+      12192000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    4,
+    5,
+    6
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    5,
+    6,
+    7
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    6,
+    7,
+    8
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1600,
+   "h": 1080,
+   "slides": [
+    7,
+    8,
+    9
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    8,
+    9,
+    10
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image16.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    10,
+    11,
+    12
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image18.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    11,
+    12
+   ],
+   "focus": 12
+  }
+ ],
+ "sequence": true
+}
