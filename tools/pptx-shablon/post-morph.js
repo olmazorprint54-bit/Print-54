@@ -52,21 +52,44 @@ const JSZip = require(require.resolve("jszip", { paths: [process.cwd(), path.joi
     const crypto = require("crypto");
     const size = (b) => { for (let i = 2; i < b.length - 9;) { if (b[i] !== 0xff) return null; const m = b[i + 1], len = b.readUInt16BE(i + 2); if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) }; i += 2 + len; } return null; };
     const groups = new Map();
+    // focus: rasm eng katta ko'rinadigan slayd — surat shu slayd mavzusi bo'yicha qidiriladi (karta oldingi slaydlarda kichik turgan bo'lsa ham)
+    const pres = await zip.file("ppt/presentation.xml").async("string");
+    const sldSz = /<p:sldSz cx="(\d+)" cy="(\d+)"/.exec(pres) || [0, 12192000, 6858000];
+    const SW = +sldSz[1], SH = +sldSz[2];
+    const best = new Map();
     for (const s of spec.slides) {
       s.photos = [];
-      const rels = (await zip.file(s.part.replace(/slides\/(slide\d+\.xml)$/, "slides/_rels/$1.rels"))?.async("string")) || "";
-      for (const m of rels.matchAll(/Target="\.\.\/media\/([^"]+\.jpe?g)"/gi)) {
-        const file = "ppt/media/" + m[1], buf = await zip.file(file).async("nodebuffer"), sz = size(buf);
+      const relFile = s.part.replace(/slides\/(slide\d+\.xml)$/, "slides/_rels/$1.rels");
+      const rels = (await zip.file(relFile)?.async("string")) || "";
+      const xml = await zip.file(s.part).async("string");
+      const areaOf = (rid) => {
+        let top = 0;
+        for (const p of xml.matchAll(/<p:pic>[\s\S]*?<\/p:pic>/g)) {
+          if (!p[0].includes(`r:embed="${rid}"`)) continue;
+          const b = /<a:off x="(-?\d+)" y="(-?\d+)"\/>\s*<a:ext cx="(\d+)" cy="(\d+)"\/>/.exec(p[0]);
+          if (!b) continue;
+          const [x, y, w, h] = b.slice(1).map(Number);
+          const vw = Math.min(x + w, SW) - Math.max(x, 0), vh = Math.min(y + h, SH) - Math.max(y, 0);
+          if (vw > 0 && vh > 0) top = Math.max(top, vw * vh);
+        }
+        return top;
+      };
+      for (const m of rels.matchAll(/<Relationship\b[^>]*>/g)) {
+        const t = /Target="\.\.\/media\/([^"]+\.jpe?g)"/i.exec(m[0]), id = /\bId="([^"]+)"/.exec(m[0]);
+        if (!t || !id) continue;
+        const file = "ppt/media/" + t[1], buf = await zip.file(file).async("nodebuffer"), sz = size(buf);
         if (!sz || Math.min(sz.w, sz.h) < 400) continue;
         const h = crypto.createHash("md5").update(buf).digest("hex");
         if (!groups.has(h)) groups.set(h, { files: [], w: sz.w, h: sz.h, slides: [] });
         const g = groups.get(h);
         if (!g.files.includes(file)) g.files.push(file);
         if (!g.slides.includes(s.n)) g.slides.push(s.n);
+        const area = areaOf(id[1]);
+        if (area > (best.get(h) || 0)) { best.set(h, area); g.focus = s.n; }
       }
     }
     spec.media = [...groups.values()];
-    spec.media.forEach((g, i) => console.log(`  media ${i}: ${g.w}x${g.h} slaydlar ${g.slides.join(",")} ${g.files.join(" ")}`));
+    spec.media.forEach((g, i) => console.log(`  media ${i}: ${g.w}x${g.h} slaydlar ${g.slides.join(",")} focus ${g.focus} ${g.files.join(" ")}`));
   }
   spec.sequence = true;
   fs.writeFileSync(specFile, JSON.stringify(spec, null, 1));

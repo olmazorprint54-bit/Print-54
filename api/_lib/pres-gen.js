@@ -256,7 +256,7 @@ async function pexels(query, orientation, used) {
 async function pixabay(query, orientation, used) {
   if (!process.env.PIXABAY_API_KEY || !query) return null;
   const orient = orientation === "landscape" ? "horizontal" : orientation === "portrait" ? "vertical" : "all";
-  const res = await fetch(`https://pixabay.com/api/?key=${encodeURIComponent(process.env.PIXABAY_API_KEY)}&q=${encodeURIComponent(query.slice(0, 100))}&image_type=photo&orientation=${orient}&safesearch=true&per_page=10`);
+  const res = await fetch(`https://pixabay.com/api/?key=${encodeURIComponent(process.env.PIXABAY_API_KEY)}&q=${encodeURIComponent(query.slice(0, 100))}&image_type=photo&orientation=${orient}&safesearch=true&per_page=30`);
   if (!res.ok) return null;
   const data = await res.json();
   const p = (data.hits || []).find((x) => !used.has("pb" + x.id));
@@ -266,9 +266,35 @@ async function pixabay(query, orientation, used) {
   return { buf, w: p.imageWidth, h: p.imageHeight };
 }
 
-// Foto qidirish: Pixabay, bo'lmasa Pexels
+// Unsplash: UNSPLASH_ACCESS_KEY (sinov rejimida soatiga 50 so'rov; limit tugasa null, keyingi manbaga o'tiladi)
+async function unsplash(query, orientation, used) {
+  const key = process.env.UNSPLASH_ACCESS_KEY;
+  if (!key || !query) return null;
+  const headers = { Authorization: `Client-ID ${key}`, "Accept-Version": "v1" };
+  const orient = orientation === "square" ? "squarish" : orientation;
+  const res = await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query.slice(0, 100))}&per_page=30&orientation=${orient}&content_filter=high`, { headers });
+  if (!res.ok) return null;
+  const data = await res.json();
+  const p = (data.results || []).find((x) => !used.has("us" + x.id));
+  if (!p) return null;
+  used.add("us" + p.id);
+  const buf = await download(`${p.urls.raw}&w=1920&q=80&fm=jpg&fit=max`);
+  // Unsplash qoidasi: rasm ishlatilganda yuklab olish hisobga olinadi
+  if (p.links && p.links.download_location) await fetch(p.links.download_location, { headers }).catch(() => {});
+  return { buf, w: p.width, h: p.height };
+}
+
+// Foto qidirish: Pixabay, Unsplash, Pexels; hech biri topmasa, so'rovning birinchi ikki so'zi bilan yana bir bor
 async function stockPhoto(query, orientation, used) {
-  return (await pixabay(query, orientation, used).catch(() => null)) || (await pexels(query, orientation, used).catch(() => null));
+  const words = String(query || "").trim().split(/\s+/);
+  const tries = words.length > 2 ? [query, words.slice(0, 2).join(" ")] : [query];
+  for (const q of tries) {
+    for (const source of [pixabay, unsplash, pexels]) {
+      const r = await source(q, orientation, used).catch(() => null);
+      if (r) return r;
+    }
+  }
+  return null;
 }
 
 /* Shablon suratlarini almashtirish (spec.media, PRO Morph shablonlar): rasm fayli (ppt/media/...) o'zi
@@ -281,7 +307,8 @@ async function swapMedia(buffer, spec, slides, d, take, withPage) {
   const src = [];
   for (const m of spec.media) {
     if (m.derive) continue;
-    const s = m.slides.map((n) => byN.get(n)).find(Boolean);
+    // focus: rasm eng katta ko'rinadigan slayd; u qisqartirilgan buyurtmada bo'lmasa, rasm turgan birinchi slayd
+    const s = byN.get(m.focus) || m.slides.map((n) => byN.get(n)).find(Boolean);
     if (!s) continue;
     const orient = m.w / m.h > 1.2 ? "landscape" : m.w / m.h < 0.83 ? "portrait" : "square";
     src[spec.media.indexOf(m)] = await take(s.query || d.topic, orient);
@@ -754,4 +781,4 @@ ${shorten.map((o, n) => `${n + 1}. [max ${o.max}] ${o.s.texts[o.k]}`).join("\n")
   return { changed, ai };
 }
 
-module.exports = { MIN_PT, useOf, narrowBox, descLift, kPlan, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
+module.exports = { stockPhoto, MIN_PT, useOf, narrowBox, descLift, kPlan, needScale, minScale, overflows, maxCharsAt, trimTo, fitToSlots, slotMax, MODEL, MAX_SLIDES, canAutoPres, hasTemplate, generatePresentation, buildPptx, layoutsOf, describe, jpegSize, fillText, fillPhoto };
