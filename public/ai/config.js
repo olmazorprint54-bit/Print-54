@@ -14,8 +14,8 @@
     return next.concat(["Suvni asraylik", "Kitob: bilim manbai", "Koinot sirlari", "Sog'lom turmush tarzi", "Tabiatni asraylik", "Kimyo haftaligi"]);
   }
   const LANGS = [
-    { v: "uz_lat", l: "O'zbek (lotin)", f: "uz" },
-    { v: "uz_new", l: "Özbek (yangi lotin)", f: "uz" },
+    { v: "uz_lat", l: "O'zbek", f: "uz" },
+    { v: "uz_new", l: "Özbek (Ö, Ğ, Ş, Ç)", f: "uz" },
     { v: "uz_cyr", l: "Ўзбек (кирилл)", f: "uz" },
     { v: "ru", l: "Rus", f: "ru" },
     { v: "en", l: "Ingliz", f: "gb" },
