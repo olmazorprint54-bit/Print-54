@@ -140,15 +140,11 @@ async function handleCallbackQuery(cq, bot, req) {
     }
     await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     if (cq.message) await callTelegram("deleteMessage", { chat_id: cq.message.chat.id, message_id: cq.message.message_id }, bot).catch(() => {});
-    if (svc === "quiz" && cq.message) { await require("./_lib/quiz").intro(bot, cq.message.chat.id, cq.from.id, l); return; }
+    if (svc === "bonus" && cq.message) { await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&view=bonus"); return; }
     if (LB.SVC[svc] && cq.message) {
       await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&open=" + svc);
       await require("./_lib/remind").noteView(bot, cq.from, cq.message.chat.id, svc);
     }
-    return;
-  }
-  if (/^qz:/.test(cq.data || "") && isAiBot(bot)) {
-    await require("./_lib/quiz").onCallback(bot, cq, await LB.getLang(cq.from.id)).catch((e) => console.error("Viktorina:", e));
     return;
   }
   if (/^remindoff:/.test(cq.data || "") && isAiBot(bot)) {
@@ -750,7 +746,7 @@ async function handleKbText(msg, bot, host) {
       }, bot);
       return true;
     }
-    if (svc === "quiz") { await require("./_lib/quiz").intro(bot, msg.chat.id, msg.from.id, l); return true; }
+    if (svc === "bonus") { await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&view=bonus"); return true; }
     await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&open=" + svc);
     if (!isOwner(msg.from)) await require("./_lib/remind").noteView(bot, msg.from, msg.chat.id, svc);
     return true;

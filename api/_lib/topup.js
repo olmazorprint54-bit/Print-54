@@ -17,7 +17,7 @@ const PR = require("../../public/ai/prices");
 // Botdagi doimiy tugmalar (xabar yozish joyi ostida) — mijoz tilida
 // ai — AI bot: tepada xizmatlar (2 ustun), pastda hisob tugmalari
 const svcRows = (l) => {
-  const ids = Object.keys(L.SVC).filter((id) => (id !== "charstudio" || require("./characters").list().length) && (id !== "quiz" || require("./bots").AI_MODE));
+  const ids = Object.keys(L.SVC).filter((id) => (id !== "charstudio" || require("./characters").list().length) && (id !== "bonus" || require("./bots").AI_MODE));
   const rows = [];
   for (let i = 0; i < ids.length; i += 2) rows.push(ids.slice(i, i + 2).map((id) => ({ text: L.svcText(l, id) })));
   return rows;
