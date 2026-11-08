@@ -91,6 +91,7 @@ const KB = {
 // AI botdagi xizmat tugmalari: bosilganda qisqa izoh va ilovada shu xizmatning formasini ochadigan tugma chiqadi.
 // price — narxi prices.js dagi qaysi xizmatdan olinadi (hub'lar uchun)
 const SVC = {
+  quiz: { t: ["🎮 Viktorina", "🎮 Викторина", "🎮 Quiz"], d: ["10 ta savol, 9 tasini topsangiz 1 ta tekin ish.", "10 вопросов, 9 верных — 1 бесплатная работа.", "10 questions, 9 right — 1 free order."] },
   presentation: { t: ["📊 Taqdimot", "📊 Презентация", "📊 Presentation"], d: ["Mavzuni yozasiz — AI tayyor PowerPoint slaydlarni yasaydi.", "Напишите тему — AI подготовит готовые слайды PowerPoint.", "Enter a topic — AI builds ready PowerPoint slides."] },
   presentation_pro: { t: ["💎 Super taqdimot", "💎 Супер-презентация", "💎 Super presentation"], d: ["Morph animatsiyali premium dizaynlar: 3D, kitob, pazl va boshqalar.", "Премиум-дизайны с анимацией Morph: 3D, книга, пазл и другие.", "Premium Morph-animated designs: 3D, book, puzzle and more."] },
   essay: { t: ["📝 Mustaqil ish", "📝 Самостоятельная работа", "📝 Independent work"], d: ["OTM va maktab uchun tayyor mustaqil ish: Word yoki PDF.", "Готовая самостоятельная работа для вуза и школы: Word или PDF.", "Ready independent work for university and school: Word or PDF."] },

@@ -191,4 +191,4 @@ async function claimBonus(bot, uid, kind) {
   }
 }
 
-module.exports = { bonusTasks, claimBonus, channel, subscription, instagram, giftsOf, takeGiftAi, takeGiftPages, returnGiftPages, GIFT_PAGES };
+module.exports = { addCredit, bonusTasks, claimBonus, channel, subscription, instagram, giftsOf, takeGiftAi, takeGiftPages, returnGiftPages, GIFT_PAGES };
