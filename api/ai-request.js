@@ -365,7 +365,9 @@ module.exports = async (req, res) => {
     const firstFree = paid && !!u && !isOwner && !TRIAL && AI_MODE && process.env.FIRST_FREE !== "0" && freeOk && (await walletOf(u.id)).firstFree;
     // Referal bonusi: 1 ta bepul AI buyurtma (kurs ishidan tashqari) — to'lov va sinov limitisiz
     // bonus: AI botda — referal/obuna bonusi; hisoblash botida — obuna sovg'asi (AI xizmat yoki 10 varaq)
-    const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await (AI_MODE ? takeCredit(u.id) : takeGiftAi(u.id).catch(() => false)));
+    // viktorina tekin ishi (faqat oddiy xizmatlar) avval ishlatiladi, keyin umumiy bonus
+    let creditQuiz = false;
+    const credit = paid && !!u && !firstFree && freeOk && body.useBonus === true && (await (AI_MODE ? (async () => ((creditQuiz = await require("./_lib/quiz").takeQuizCredit(u.id, body.service).catch(() => false)) || takeCredit(u.id)))() : takeGiftAi(u.id).catch(() => false)));
     // taqdimotga personaj qo'shilgan: tekin ish / bonus taqdimotni qoplaydi, personaj (2 500) to'lanadi
     const cFee = charFee(body.service, saved);
     const charOnly = (firstFree || credit) && cFee > 0 && !isOwner && !TRIAL;
@@ -498,7 +500,7 @@ module.exports = async (req, res) => {
 
     if (auto) waitUntil(startResumePdf(req, orderId).catch((err) => console.error(err)));
 
-    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true } : {}), ...(firstFree ? { firstFree: true } : {}), ...(spend ? { balance: { spent: spend, left: bal - spend } } : {}) });
+    res.status(200).json({ ok: true, orderId, auto, ...(credit ? { credit: true, creditQuiz } : {}), ...(firstFree ? { firstFree: true } : {}), ...(spend ? { balance: { spent: spend, left: bal - spend } } : {}) });
   } catch (err) {
     console.error(err);
     // Sababi egaga ham boradi — Vercel loglarini ochmasdan ko'rish uchun

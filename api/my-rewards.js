@@ -42,6 +42,16 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Viktorina: { quiz: "start", cat } | { quiz: "answer", id, i, k }
+    if ((req.body || {}).quiz && AI_MODE) {
+      const QZ = require("./_lib/quiz"), b = req.body;
+      const r = b.quiz === "start" ? await QZ.start(auth.bot, userId, b.cat)
+        : b.quiz === "answer" ? await QZ.answer(userId, String(b.id || ""), parseInt(b.i, 10), b.k == null ? null : parseInt(b.k, 10))
+          : { ok: true, ...(await QZ.status(userId)) };
+      res.status(200).json(r);
+      return;
+    }
+
     // Alohida AI bot: bepul AI buyurtmalar (referal va obuna bonuslari)
     if (AI_MODE) {
       const [ai, w, tasks] = await Promise.all([
@@ -49,7 +59,8 @@ module.exports = async (req, res) => {
         walletOf(userId).catch(() => ({ balance: 0, minTopup: MIN_FIRST, firstFree: false })),
         bonusTasks(userId).catch(() => ({})),
       ]);
-      res.status(200).json({ ok: true, ai, tasks, balance: w.balance, minTopup: w.minTopup, firstFree: !!w.firstFree && process.env.FIRST_FREE !== "0" });
+      const quiz = await require("./_lib/quiz").status(userId).catch(() => null);
+      res.status(200).json({ ok: true, ai, tasks, quiz, balance: w.balance, minTopup: w.minTopup, firstFree: !!w.firstFree && process.env.FIRST_FREE !== "0" });
       return;
     }
 

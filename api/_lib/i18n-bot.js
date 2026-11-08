@@ -91,7 +91,6 @@ const KB = {
 // AI botdagi xizmat tugmalari: bosilganda qisqa izoh va ilovada shu xizmatning formasini ochadigan tugma chiqadi.
 // price — narxi prices.js dagi qaysi xizmatdan olinadi (hub'lar uchun)
 const SVC = {
-  quiz: { t: ["🎮 Viktorina", "🎮 Викторина", "🎮 Quiz"], d: ["10 ta savol, 9 tasini topsangiz 1 ta tekin ish.", "10 вопросов, 9 верных — 1 бесплатная работа.", "10 questions, 9 right — 1 free order."] },
   presentation: { t: ["📊 Taqdimot", "📊 Презентация", "📊 Presentation"], d: ["Mavzuni yozasiz — AI tayyor PowerPoint slaydlarni yasaydi.", "Напишите тему — AI подготовит готовые слайды PowerPoint.", "Enter a topic — AI builds ready PowerPoint slides."] },
   presentation_pro: { t: ["💎 Super taqdimot", "💎 Супер-презентация", "💎 Super presentation"], d: ["Morph animatsiyali premium dizaynlar: 3D, kitob, pazl va boshqalar.", "Премиум-дизайны с анимацией Morph: 3D, книга, пазл и другие.", "Premium Morph-animated designs: 3D, book, puzzle and more."] },
   essay: { t: ["📝 Mustaqil ish", "📝 Самостоятельная работа", "📝 Independent work"], d: ["OTM va maktab uchun tayyor mustaqil ish: Word yoki PDF.", "Готовая самостоятельная работа для вуза и школы: Word или PDF.", "Ready independent work for university and school: Word or PDF."] },
@@ -107,6 +106,7 @@ const SVC = {
   pdftools: { price: "img2pdf", t: ["📑 PDF vositalari", "📑 PDF-инструменты", "📑 PDF tools"], d: ["Word, Excel, rasm → PDF, PDF birlashtirish va bo'lish.", "Word, Excel, фото → PDF, объединение и разделение PDF.", "Word, Excel, images → PDF, merge and split PDF."] },
   resume: { t: ["👤 Resume / CV", "👤 Резюме / CV", "👤 Résumé / CV"], d: ["Ishga joylashish uchun chiroyli resume.", "Красивое резюме для устройства на работу.", "A polished résumé for job applications."] },
   obyektivka: { t: ["📋 Obyektivka", "📋 Объективка", "📋 Official CV"], d: ["Rasmiy shakldagi ma'lumotnoma (obyektivka).", "Справка-объективка официального образца.", "An official-format personal record (obyektivka)."] },
+  bonus: { t: ["🎁 Bonuslar", "🎁 Бонусы", "🎁 Bonuses"], d: ["Viktorina, obuna va do'stlarni taklif qilish orqali tekin ishlar oling.", "Получайте бесплатные работы: викторина, подписки и приглашения друзей.", "Get free orders: quiz, subscriptions and inviting friends."] },
 };
 const svcText = (l, id) => SVC[id].t[I(l)];
 const svcDesc = (l, id) => SVC[id].d[I(l)];

@@ -252,6 +252,7 @@
       if (window.aiBonusChanged) window.aiBonusChanged();
       showRewards(data.ai);
       showBonus(data);
+      showQuiz(data.quiz);
     } catch (e) {}
   }
   // Hisobni to'ldirish (buyurtmasiz): karta va noyob summa, chek botga yuboriladi.
@@ -377,6 +378,92 @@
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) Object.keys(tasks).forEach((k) => tasks[k] && paintTask(k)); });
 
+  /* ---------- Viktorina: fan tanlash, 10 savol, 30 soniyalik taymer (javoblar serverda tekshiriladi) ---------- */
+  const QZ = { st: null, timer: 0, end: 0, busy: false, dots: [], pass: 8 };
+  const LETS = ["A", "B", "C", "D"];
+  function showQuiz(q) {
+    if (!q) return;
+    window.AI_QUIZ = q.left || 0; window.AI_QUIZ_OK = q.ok || [];
+    if (window.aiBonusChanged) window.aiBonusChanged();
+    QZ.pass = q.pass || 8;
+    $("quizCard").hidden = false;
+    $("quizSub").textContent = `10 ta savoldan ${QZ.pass} tasini toping — 1 ta tekin ish`;
+    $("quizNote").innerHTML = q.taken
+      ? (q.left > 0 ? "🎁 Viktorina bonusi sizda bor — oddiy xizmatga buyurtma berganda ishlatiladi." : "✅ Viktorina bonusini olgansiz. Endi shunchaki bilimingizni sinang!")
+      : "Telegram kanal va Instagram'ga obuna bo'lganlar o'ynay oladi. Tekin ish <b>bir marta</b> beriladi. Fanni tanlang:";
+    if (!QZ.st) $("quizCats").innerHTML = q.cats.map((c) => `<button type="button" class="qz-cat" data-qcat="${esc(c.id)}"><span>${c.icon}</span>${esc(c.name)}</button>`).join("");
+  }
+  function qzStop() { clearInterval(QZ.timer); QZ.timer = 0; }
+  function qzRender(q) {
+    QZ.st.i = q.i; QZ.busy = false;
+    $("qzNum").textContent = `${q.i + 1}/${q.n}`;
+    $("qzQ").textContent = q.text;
+    $("qzOpts").innerHTML = q.opts.map((o, k) => `<button type="button" class="qz-opt" data-qk="${k}"><b>${LETS[k]}</b><span>${esc(o)}</span></button>`).join("");
+    $("qzDots").innerHTML = Array.from({ length: q.n }, (_, i) => `<i class="${QZ.dots[i] || (i === q.i ? "c" : "")}"></i>`).join("");
+    QZ.end = Date.now() + q.limit * 1000;
+    qzStop();
+    const tickT = () => {
+      const left = Math.max(0, QZ.end - Date.now());
+      const s = Math.ceil(left / 1000);
+      $("qzTime").textContent = s;
+      $("qzTime").classList.toggle("warn", s <= 5);
+      $("qzBar").style.transform = `scaleX(${left / (q.limit * 1000)})`;
+      if (left <= 0) { qzStop(); qzAnswer(null); }
+    };
+    tickT(); QZ.timer = setInterval(tickT, 100);
+  }
+  async function qzStart(cat) {
+    if (!user || QZ.busy) return;
+    QZ.busy = true; tick();
+    try {
+      const r = await api("/api/my-rewards", { quiz: "start", cat });
+      QZ.busy = false;
+      if (!r.ok) {
+        if (r.code === "needSub") {
+          toast("Avval " + r.need.map((k) => (k === "tg" ? "Telegram kanalga" : "Instagram sahifamizga")).join(" va ") + " obuna bo'ling");
+          const el = $(r.need[0] === "tg" ? "taskTg" : "taskIg"); if (el && !el.hidden) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else toast(r.error || "Hozir boshlab bo'lmadi");
+        return;
+      }
+      QZ.st = { id: r.id, i: 0 }; QZ.dots = [];
+      $("quizCats").hidden = true; $("quizNote").hidden = true; $("quizRes").hidden = true; $("quizGame").hidden = false;
+      qzRender(r.q);
+      $("quizCard").scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (e) { QZ.busy = false; toast("Internet aloqasini tekshiring"); }
+  }
+  async function qzAnswer(k) {
+    if (!QZ.st || QZ.busy) return;
+    QZ.busy = true; qzStop();
+    const btns = [...document.querySelectorAll("#qzOpts .qz-opt")];
+    btns.forEach((b) => (b.disabled = true));
+    try {
+      const r = await api("/api/my-rewards", { quiz: "answer", id: QZ.st.id, i: QZ.st.i, k });
+      if (!r.ok) { toast("Bu o'yin tugagan"); qzReset(); return; }
+      if (btns[r.right]) btns[r.right].classList.add("good");
+      if (!r.good && k != null && btns[k]) btns[k].classList.add("bad");
+      if (r.late) toast("⏰ Vaqt tugadi");
+      try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred(r.good ? "success" : "error"); } catch (e) {}
+      QZ.dots[QZ.st.i] = r.good ? "g" : "b";
+      setTimeout(() => (r.done ? qzResult(r) : qzRender(r.q)), 900);
+    } catch (e) { QZ.busy = false; btns.forEach((b) => (b.disabled = false)); toast("Internet aloqasini tekshiring"); }
+  }
+  function qzResult(r) {
+    $("quizGame").hidden = true;
+    const msg = r.granted ? "🎉 Tabriklaymiz! Sizga <b>1 ta tekin ish</b> berildi. Oddiy xizmatga buyurtma berganda «🎁 Bonusdan foydalanish» yoqilgan bo'ladi."
+      : r.passed ? "👏 Ajoyib natija! Viktorina bonusi avval berilgan, lekin bilimingiz zo'r."
+        : `Bonus uchun kamida ${QZ.pass} ta to'g'ri javob kerak. Yana urinib ko'ring!`;
+    $("quizRes").innerHTML = `<div class="qr-big">${r.score} / 10</div><div class="qr-msg">${msg}</div><button type="button" class="order-btn" id="qzAgain">🔁 Yana o'ynash</button>`;
+    $("quizRes").hidden = false;
+    if (r.granted) { try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred("success"); } catch (e) {} loadRewards(); }
+    QZ.st = null; QZ.busy = false;
+  }
+  function qzReset() { qzStop(); QZ.st = null; QZ.busy = false; $("quizGame").hidden = true; $("quizRes").hidden = true; $("quizCats").hidden = false; $("quizNote").hidden = false; }
+  $("quizCard").addEventListener("click", (e) => {
+    const c = e.target.closest("[data-qcat]"); if (c) return qzStart(c.dataset.qcat);
+    const o = e.target.closest("[data-qk]"); if (o && !o.disabled) { tick(); return qzAnswer(+o.dataset.qk); }
+    if (e.target.closest("#qzAgain")) { tick(); qzReset(); }
+  });
+
   /* ---------- AI yordamchi: suzuvchi 🤖 tugma va chat ----------
      Server: /api/ai-request {service:"chat"} — bot suhbati bilan bir xil xotira va kunlik limit.
      Javobdagi tavsiya qilingan xizmatlar — tugma (bosilsa shu xizmat ochiladi). */
@@ -499,6 +586,9 @@
     const oq = new URLSearchParams(location.search).get("open");
     if (oq && /^[a-z0-9_]+$/.test(oq)) setTimeout(() => { go("home"); if (window.aiOpenService) window.aiOpenService(oq); }, 400);
   } catch (e) { /* havola parametrsiz */ }
+
+  // Botdagi «🎁 Bonuslar» tugmasi ilovani ?view=bonus bilan ochadi
+  try { if (new URLSearchParams(location.search).get("view") === "bonus") setTimeout(() => go("bonus"), 300); } catch (e) { /* parametrsiz */ }
 
   // 🔥 Trend qo'shish: bot yuborgan taqdimot ostidagi tugma ilovani ?char=<buyurtma> bilan ochadi
   try {
