@@ -897,6 +897,10 @@
 
 
       { id: "pro-nur", name: "🔦 Nur sahnasi · qora-oq tasma", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-portlash", name: "💥 Portlovchi doiralar · sog'lom turmush", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-smart", name: "🎯 SMART maqsad · tepaga aylanuvchi karta", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-shisha", name: "💧 Shisha karta · moviy aks", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-charx", name: "🎡 Charxpalak · yashil-sariq", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
