@@ -1,0 +1,2672 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "SAYOHAT LOYIHASI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1498600,
+      1473200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 9,
+     "max": 11,
+     "perLine": 11.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "EKOTURIZM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1981200,
+      4572000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 34,
+     "max": 38,
+     "perLine": 37.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tabiatni ko'rish, asrash va sevish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3022600,
+      4318000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 21,
+     "max": 47,
+     "perLine": 47.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4267200,
+      4318000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 4,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1092200,
+      5080000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2590800,
+      2006600,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 15,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Ekoturizm nima?",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3302000,
+      2032000,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2590800,
+      2794000,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 19,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tog'lar va vodiylar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3302000,
+      2819400,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2590800,
+      3581400,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Cho'l va ko'llar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3302000,
+      3606800,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2590800,
+      4368800,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 19,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Mas'uliyatli sayyoh",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3302000,
+      4394200,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2590800,
+      5156200,
+      635000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 21,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kelajak imkoniyatlari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5181600,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 14,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 · TUSHUNCHA",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1219200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 15,
+     "max": 25,
+     "perLine": 25.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Ekoturizm nima?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      1676400,
+      4318000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 43.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ekoturizm - tabiatga zarar yetkazmasdan, uning go'zalligini ko'rish va mahalliy aholiga foyda keltirish uchun qilinadigan sayohat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      2362200,
+      4876800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 32,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tabiatni asrash birinchi o'rinda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4051300,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 28,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mahalliy aholi daromad oladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4660900,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 37,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sayyoh yangi bilim va taassurot oladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      5270500,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Ekoturizm nima?: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2286000,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 32,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "atama keng tarqala boshlagan yil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2768600,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 1,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3479800,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 35,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "asosiy tamoyil: tabiat, odam, bilim",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3962400,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 3,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "20%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      4673600,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 37,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "turizmda eng tez o'sayotgan yo'nalish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      5156200,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 17,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · YO'NALISHLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1219200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 19,
+     "max": 25,
+     "perLine": 25.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Tog'lar va vodiylar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      1676400,
+      4318000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 134,
+     "max": 134,
+     "perLine": 44.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' so'qmoqlari, sharsharalar va vodiylar piyoda sayohat uchun eng mashhur joylar. Ular toza havo va keng manzara bilan maftun etadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      2362200,
+      4876800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 25,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Piyoda yurish va alpinizm",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4051300,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 33,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tog' qishloqlarida mehmon bo'lish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4660900,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 33,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qushlar va o'simliklarni kuzatish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      5270500,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Tog'lar va vodiylar: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      889000
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "4 000 m",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2286000,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 25,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "dan baland cho'qqilar bor",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2768600,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 7,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "2-5 kun",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3479800,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 24,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "o'rtacha piyoda marshrut",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3962400,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "May-oktabr",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      4673600,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 16,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "eng qulay mavsum",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      5156200,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 17,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · YO'NALISHLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1219200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Cho'l va ko'llar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      1676400,
+      4318000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 43.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qumli cho'llar, sho'r ko'llar va vohalar o'zgacha go'zallikka ega. Bu yerda yulduzli tunlar va sukunat sayyohlarni o'ziga tortadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      2362200,
+      4876800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 32,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tuyada sayohat va o'tovda tunash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4051300,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 22,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'l bo'yida baliq ovi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4660900,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 34,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Cho'l o'simliklari bilan tanishish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      5270500,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 26,
+     "max": 31,
+     "perLine": 30.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Cho'l va ko'llar: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 5,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "1 tun",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2286000,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 30,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "o'tovda - eng yorqin taassurot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2768600,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 19,
+     "perLine": 19.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 26,
+     "paras": 1,
+     "text": "40°C",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3479800,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 23,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yozda kunduzgi issiqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3962400,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 5,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Bahor",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      4673600,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 22,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "cho'l gullaydigan payt",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      5156200,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 · QOIDALAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1219200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 19,
+     "max": 25,
+     "perLine": 25.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Mas'uliyatli sayyoh",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      1676400,
+      4318000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 129,
+     "max": 129,
+     "perLine": 43,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Haqiqiy ekosayyoh tabiatda iz qoldirmaydi: so'qmoqdan chiqmaydi, chiqindini olib qaytadi va mahalliy urf-odatlarni hurmat qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      2362200,
+      4876800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 37,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Chiqindini o'zingiz bilan olib keting",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4051300,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 29,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Belgilangan so'qmoqdan yuring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4660900,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 38,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayvonlarni boqmang va bezovta qilmang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      5270500,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Mas'uliyatli sayyoh: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      889000
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 1,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "0",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2286000,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 32,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "tabiatda qoldiriladigan chiqindi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2768600,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 7,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "100 yil",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3479800,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 30,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "plastik shisha chirish muddati",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3962400,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 5,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "1 qop",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      4673600,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 27,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "har sayyohda chiqindi uchun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      5156200,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 · RIVOJLANISH",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1219200,
+      1701800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 21,
+     "max": 25,
+     "perLine": 25.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Kelajak imkoniyatlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      1676400,
+      4318000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 144,
+     "max": 144,
+     "perLine": 48,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "To'g'ri tashkil qilingan ekoturizm qishloqlarda ish o'rni yaratadi, hunarmandchilikni jonlantiradi va tabiatni muhofaza qilishga mablag' beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      2362200,
+      4876800,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 31,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mehmon uylari va oilaviy biznes",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4051300,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 25,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mahalliy gidlar uchun ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      4660900,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 31,
+     "max": 46,
+     "perLine": 45.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Milliy bog'larni rivojlantirish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6477000,
+      5270500,
+      4191000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Kelajak imkoniyatlari: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      889000
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 2,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "2x",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2286000,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 31,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "qishloq daromadi o'sishi mumkin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      2768600,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 3,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "10+",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3479800,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 32,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yangi ish o'rni har mehmon uyida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      3962400,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 4,
+     "max": 26,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "2030",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2489200,
+      4673600,
+      3810000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 27,
+     "max": 42,
+     "perLine": 41.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "ekoturizm strategiyasi ufqi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2489200,
+      5156200,
+      3810000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 25,
+     "max": 51,
+     "perLine": 51.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Oddiy turizm va ekoturizm",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1092200,
+      9398000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 12,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Oddiy turizm",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1701800,
+      2489200,
+      3962400,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 32.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Katta mehmonxonalar, gavjum plyajlar va ko'p chiqindi. Daromad asosan yirik kompaniyalarga ketadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1701800,
+      3124200,
+      3962400,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 9,
+     "max": 27,
+     "perLine": 26.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Ekoturizm",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6527800,
+      2489200,
+      3962400,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "text",
+     "chars": 88,
+     "max": 88,
+     "perLine": 29.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kichik mehmon uylari, toza tabiat va mahalliy taomlar. Daromad qishloq aholisiga qoladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6527800,
+      3124200,
+      3962400,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 6,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1143000,
+      4953000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2146300,
+      533400,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 41,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ekoturizm tabiat va odamni birlashtiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2032000,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3060700,
+      533400,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 38,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har bir sayyoh iz qoldirmasligi kerak.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      2946400,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3975100,
+      533400,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 40,
+     "max": 42,
+     "perLine": 41.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qishloqlarga daromad va ish olib keladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      3860800,
+      4318000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4889500,
+      533400,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 47,
+     "max": 47,
+     "perLine": 23.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kelajakda turizmning asosiy yo'nalishi bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2133600,
+      4775200,
+      4318000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5689600,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 7,
+     "max": 10,
+     "perLine": 10.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 58,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2159000,
+      4572000,
+      892552
+     ],
+     "lineH": 883920,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 32.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiatni asraylik, u bizga meros emas - kelajak avlodlardan qarz.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3251200,
+      4318000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    4,
+    5
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    6,
+    15
+   ],
+   "focus": 15
+  },
+  {
+   "files": [
+    "ppt/media/image15.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image17.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image19.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    12,
+    14
+   ],
+   "focus": 12
+  }
+ ],
+ "sequence": true
+}

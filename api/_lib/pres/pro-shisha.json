@@ -1,0 +1,2696 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 9,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "EKOLOGIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1524000,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 14,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 50,
+     "paras": 1,
+     "text": "SUVNI ASRAYLIK",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      1524000
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 30,
+     "max": 42,
+     "perLine": 42.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Har bir tomchi - kelajak uchun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3454400,
+      4826000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 21,
+     "max": 53,
+     "perLine": 52.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muallif: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4013200,
+      4826000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "title",
+     "chars": 4,
+     "max": 53,
+     "perLine": 53.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      0,
+      304800,
+      12192000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      914400,
+      3251200,
+      1727200,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 18,
+     "max": 35,
+     "perLine": 17.3,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv - hayot manbai",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      889000,
+      3810000,
+      1778000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3098800,
+      3251200,
+      1727200,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 16,
+     "max": 17,
+     "perLine": 17.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Daryo va ko'llar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3073400,
+      3810000,
+      1778000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5283200,
+      3251200,
+      1727200,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 9,
+     "max": 17,
+     "perLine": 17.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammolar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5257800,
+      3810000,
+      1778000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7467600,
+      3251200,
+      1727200,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 11,
+     "max": 17,
+     "perLine": 17.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Uyda tejash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7442200,
+      3810000,
+      1778000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9652000,
+      3251200,
+      1727200,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 19,
+     "max": 35,
+     "perLine": 17.3,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birgalikda asraymiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9626600,
+      3810000,
+      1778000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 18,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Suv - hayot manbai",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer yuzasining katta qismi suv bilan qoplangan, lekin ichishga yaroqli chuchuk suv juda oz. Shuning uchun har bir tomchi qadrli.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2514600,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 29,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Inson tanasining 60 foizi suv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4064000,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 34,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Chuchuk suv umumiy suvning 3 foizi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4648200,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 38,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suvsiz hayot bir necha kun davom etadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      5232400,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 28,
+     "max": 28,
+     "perLine": 14,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Suv - hayot manbai: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      1219200,
+      4826000,
+      889000
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "71%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2489200,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 30,
+     "max": 30,
+     "perLine": 15,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yer yuzasi suv bilan qoplangan",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2463800,
+      2362200,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "3%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      3581400,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 18,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "chuchuk suv ulushi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3556000,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      4673600,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 22,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "ichishga oson topiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4648200,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 16,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Daryo va ko'llar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 53,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daryo va ko'llar dalalarni sug'oradi, shaharlarni suv bilan ta'minlaydi va minglab jonzotlarga uy bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2514600,
+      4826000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 44,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dehqonchilik suvning eng katta iste'molchisi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4064000,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 39,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'llar chuchuk suv zaxirasini saqlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4648200,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 41,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daryo bo'yidagi o'rmonlar suvni tozalaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      5232400,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 26,
+     "max": 30,
+     "perLine": 30,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Daryo va ko'llar: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      1219200,
+      4826000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "70%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2489200,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "suv dehqonchilikka sarflanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2463800,
+      2362200,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      3581400,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "buyuk daryo: Amudaryo va Sirdaryo",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3556000,
+      2362200,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 7,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1 642 m",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      4673600,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 24,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "eng chuqur ko'l - Baykal",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4648200,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Muammolar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suvdan noto'g'ri foydalanish, ifloslanish va iqlim o'zgarishi ko'plab hududlarda suv tanqisligini keltirib chiqarmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2514600,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 42,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ochiq qolgan jo'mrak va oqayotgan quvurlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4064000,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Zavod va maishiy chiqindilar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4648200,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 36,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Issiqlik oshib, muzliklar kamaymoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      5232400,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 19,
+     "max": 30,
+     "perLine": 30,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Muammolar: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      1219200,
+      4826000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 6,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "2 mlrd",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2489200,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 26,
+     "max": 26,
+     "perLine": 13,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "odam toza suvdan qiynaladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2463800,
+      2362200,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "15 l",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      3581400,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 24,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "oqayotgan jo'mrak kuniga",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3556000,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "30%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      4673600,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "quvurlarda yo'qotiladigan suv",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4648200,
+      2362200,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 11,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Uyda tejash",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 126,
+     "max": 126,
+     "perLine": 42,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir oila kundalik oddiy odatlar bilan suv sarfini sezilarli kamaytira oladi. Bu ham tabiatga, ham oila byudjetiga foydali.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2514600,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 30,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tish yuvganda jo'mrakni yoping",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4064000,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 36,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Vannadan ko'ra dush qisqaroq bo'lsin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4648200,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 34,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kir va idishni to'la yuklab yuving",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      5232400,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 21,
+     "max": 30,
+     "perLine": 30,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Uyda tejash: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      1219200,
+      4826000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "12 l",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2489200,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 22,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "tish yuvganda tejaladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2463800,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "5 min",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      3581400,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 18,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yetarli dush vaqti",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3556000,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "40%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      4673600,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 22,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "oilaviy sarf kamayishi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4648200,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 19,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Birgalikda asraymiz",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1854200,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "text",
+     "chars": 129,
+     "max": 129,
+     "perLine": 43,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suvni asrash faqat davlatning emas, har birimizning vazifamiz. Maktab, mahalla va oila birga harakat qilsa, natija katta bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2514600,
+      4826000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maktabda «suvni tejash» haftaligi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4064000,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daryo va ariq bo'ylarini tozalash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      4648200,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 31,
+     "max": 49,
+     "perLine": 49.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yomg'ir suvini yig'ib sug'orish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      5232400,
+      4521200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Birgalikda asraymiz: raqamlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      1219200,
+      4826000,
+      889000
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 7,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "22-mart",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2489200,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 19,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Butunjahon suv kuni",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      2463800,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 8,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "1 daraxt",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      3581400,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 23,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "tuproqda suvni ushlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      3556000,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "100%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6324600,
+      4673600,
+      1905000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 24,
+     "max": 26,
+     "perLine": 25.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "har birimizning hissamiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4648200,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 16,
+     "max": 46,
+     "perLine": 45.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Besh oddiy qadam",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1168400,
+      8890000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3175000,
+      762000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Jo'mrakni yoping",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      952500,
+      3937000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3619500,
+      3175000,
+      762000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oqishni tuzating",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3048000,
+      3937000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5715000,
+      3175000,
+      762000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 10,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qisqa dush",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5143500,
+      3937000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7810500,
+      3175000,
+      762000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yomg'ir suvi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7239000,
+      3937000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9906000,
+      3175000,
+      762000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9334500,
+      3937000,
+      1905000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 6,
+     "max": 26,
+     "perLine": 26,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      1168400,
+      5080000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2159000,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv cheksiz emas, uni asrash kerak.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      2108200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3048000,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kichik odatlar katta natija beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      2997200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3937000,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 36,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Oila va maktab birga harakat qilsin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      3886200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      4826000,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 34,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bugun tejagan suv - ertangi hayot.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      4775200,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      10414000,
+      5740400,
+      635000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 7,
+     "max": 11,
+     "perLine": 11.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 60,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2159000,
+      5080000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 33,
+     "max": 42,
+     "perLine": 42.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Suvni asraylik - hayotni asraylik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3251200,
+      4826000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    2,
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1080,
+   "h": 1080,
+   "slides": [
+    2,
+    5,
+    15
+   ],
+   "focus": 15
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    4,
+    14
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image15.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  }
+ ],
+ "sequence": true
+}
