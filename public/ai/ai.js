@@ -693,11 +693,12 @@
     ? `<div class="page-box"><div class="page"${t.ratio ? ` style="aspect-ratio:${t.ratio}"` : ""}><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div></div>`
     : `<div class="slide-box"><div class="slide"><img class="el" src="/ai/templates/${t.id}/${n}.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>`;
 
+  // Shablon nomi: emoji va bezak belgilarisiz (💎, 🎯, «·» ...) — faqat «Kattaroq ko'rish» oynasida chiqadi
+  const tplName = (t) => String(t.name || "").replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}\u{1F1E6}-\u{1F1FF}]/gu, "").replace(/\s*[·•|]\s*/g, " — ").replace(/\s+/g, " ").replace(/^[\s—-]+|[\s—-]+$/g, "");
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
-      <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}">
+      <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}" aria-label="${esc(tplName(t))}">
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
-        <div class="tpl-name">${esc(t.name)}</div>
       </div>`).join("");
   }
 
@@ -1697,7 +1698,7 @@
     const v = getValues(svc);
     const d = sampleData(svc, v);
     const tpl = CFG.templates[f.set].find((t) => t.id === pick) || CFG.templates[f.set][0];
-    document.getElementById("aiModalTitle").textContent = f.label;
+    document.getElementById("aiModalTitle").textContent = tplName(tpl) || f.label;
 
     let pages;
     if (tpl.kind === "canva") {
