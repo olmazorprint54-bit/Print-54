@@ -102,6 +102,14 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 .chips.compact .chip{ text-align:center; padding:9px 0; }
 .chip.active{ background: var(--glass-active); border-color: rgba(79,168,255,.55); box-shadow: 0 0 18px -5px var(--accent-glow); }
 .chip.multi.active::before{ content:"✓ "; color:#4ADE80; }
+/* multichips: mijoz o'zi yozib qo'shadigan qiymat */
+.chip.mc-add-chip{ border-style:dashed; color: var(--ink-soft); }
+.chip .mc-x{ margin-left:7px; font-size:15px; line-height:1; opacity:.7; }
+.mc-box{ display:flex; gap:8px; margin-top:9px; }
+.mc-box[hidden]{ display:none; }
+.mc-box .ai-input{ flex:1; min-width:0; }
+.mc-ok{ flex:none; padding:0 16px; border:none; border-radius:14px; background: var(--accent); color:#fff; font-weight:600; font-size:13.5px; cursor:pointer; }
+.mc-err{ font-size:11.5px; color:#F87171; margin-top:6px; }
 
 /* ---------- obyektivka: qarindoshlar ---------- */
 .rel-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:10px; }

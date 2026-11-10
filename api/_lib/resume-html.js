@@ -22,6 +22,38 @@ const LANG_NAMES = {
   en: { "O'zbek": "Uzbek", Rus: "Russian", Ingliz: "English", Turk: "Turkish", Koreys: "Korean", Nemis: "German", Arab: "Arabic" },
 };
 
+// Mijoz «+ Boshqa til» bilan o'zi yozgan tillar: ko'p uchraydiganlari resume tiliga
+// tarjima qilinadi (kalit — kichik harf, tutuq belgilarsiz, «tili» so'zisiz), qolgani yozilganidek.
+const EXTRA_LANGS = {
+  fransuz: ["Французский", "French"], frantsuz: ["Французский", "French"], xitoy: ["Китайский", "Chinese"],
+  tojik: ["Таджикский", "Tajik"], qozoq: ["Казахский", "Kazakh"], qirgiz: ["Киргизский", "Kyrgyz"],
+  turkman: ["Туркменский", "Turkmen"], qoraqalpoq: ["Каракалпакский", "Karakalpak"], ozarbayjon: ["Азербайджанский", "Azerbaijani"],
+  tatar: ["Татарский", "Tatar"], ukrain: ["Украинский", "Ukrainian"], ispan: ["Испанский", "Spanish"],
+  italyan: ["Итальянский", "Italian"], portugal: ["Португальский", "Portuguese"], yapon: ["Японский", "Japanese"],
+  fors: ["Персидский", "Persian"], hind: ["Хинди", "Hindi"], urdu: ["Урду", "Urdu"], polyak: ["Польский", "Polish"],
+  "uyg'ur": ["Уйгурский", "Uyghur"], uygur: ["Уйгурский", "Uyghur"], ivrit: ["Иврит", "Hebrew"], gruzin: ["Грузинский", "Georgian"],
+  arman: ["Армянский", "Armenian"], "afg'on": ["Пушту", "Pashto"], pushtu: ["Пушту", "Pashto"], dari: ["Дари", "Dari"],
+};
+const langKey = (s) => s.toLowerCase().replace(/[‘’ʻʼ`]/g, "'").replace(/\s+tili$/, "").trim();
+const LANG_MAX = 30, LANGS_MAX = 10;
+// Tillar ro'yxati: faqat matn, bo'sh/takror yo'q, har biri 30 belgigacha, ko'pi bilan 10 ta
+function langList(list, lang) {
+  const names = LANG_NAMES[lang] || {};
+  const seen = new Set(), out = [];
+  for (const x of Array.isArray(list) ? list : []) {
+    if (typeof x !== "string") continue;
+    const s = x.replace(/[\u0000-\u001f<>]/g, "").replace(/\s+/g, " ").trim().slice(0, LANG_MAX);
+    const key = langKey(s).replace(/'/g, "");
+    if (!s || !/\p{L}/u.test(s) || seen.has(key)) continue;
+    seen.add(key);
+    const ex = EXTRA_LANGS[langKey(s)] || EXTRA_LANGS[key];
+    const std = Object.keys(names).find((k) => langKey(k).replace(/'/g, "") === key); // «O‘zbek», «rus» ham tayyor nomga
+    out.push(std ? names[std] : ex && lang === "ru" ? ex[0] : ex && lang === "en" ? ex[1] : s);
+    if (out.length >= LANGS_MAX) break;
+  }
+  return out;
+}
+
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const text = (v, max) => String(v == null ? "" : v).trim().slice(0, max);
 
@@ -54,7 +86,7 @@ function resumeData(fields, photoUrl) {
     experience: linesOf(f.experience).map(splitItem),
     education: linesOf(f.education).map(splitItem),
     skills: text(f.skills, 600).split(/[,;\n]+/).map((x) => x.trim()).filter(Boolean).slice(0, 20),
-    langs: (Array.isArray(f.langs) ? f.langs : []).map((x) => names[x] || x),
+    langs: langList(f.langs, lang),
     photoUrl: f.photo !== false && photoUrl ? photoUrl : "",
   };
 }

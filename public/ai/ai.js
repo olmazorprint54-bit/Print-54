@@ -229,10 +229,19 @@
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="vs-box" data-sample="${f.id}">${sampleHtml(f, v)}</div></div>`;
       case "examples":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="ex-list" data-examples="${f.id}">${examplesHtml(f, v)}</div></div>`;
-      case "multichips":
-        return `<div class="ai-field">${label(f)}<div class="chips" data-multi="${f.id}">
+      case "multichips": {
+        // f.custom — ro'yxatda yo'q qiymatni mijoz o'zi yozib qo'shadi (masalan, resume'da «Fransuz» tili)
+        const opts = f.options.map(optV);
+        const extra = f.custom ? v[f.id].filter((x) => !opts.includes(x)) : [];
+        return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="chips" data-multi="${f.id}">
           ${f.options.map((o) => `<div class="chip multi${v[f.id].includes(optV(o)) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
-          </div></div>`;
+          ${extra.map(customChip).join("")}
+          ${f.custom ? `<div class="chip mc-add-chip" data-mc-add="${f.id}">${esc(f.custom.add)}</div>` : ""}
+          </div>${f.custom ? `<div class="mc-box" data-mc-box="${f.id}" hidden>
+            <input class="ai-input" data-mc-in="${f.id}" maxlength="${f.custom.max}" placeholder="${esc(f.custom.placeholder || "")}" enterkeyhint="done" autocomplete="off">
+            <button type="button" class="mc-ok" data-mc-ok="${f.id}">Qo'shish</button></div>
+            <div class="mc-err" data-mc-err="${f.id}" hidden></div>` : ""}</div>`;
+      }
       case "switch":
         return `<div class="ai-field"><label class="switch-row glass"><span>${esc(f.label)}</span>
           <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label></div>`;
@@ -268,6 +277,49 @@
       default:
         return "";
     }
+  }
+
+  /* ---------- multichips: mijoz o'zi yozib qo'shadigan qiymat (f.custom) ---------- */
+  // data-no-i18n — mijoz yozgan so'z tarjima qilinmaydi; × bosilsa olib tashlanadi
+  const customChip = (x) => `<div class="chip multi active custom" data-v="${esc(x)}" data-no-i18n>${esc(x)}<span class="mc-x" aria-label="O'chirish">×</span></div>`;
+  function mcError(fid, msg) {
+    const er = root.querySelector(`[data-mc-err="${fid}"]`);
+    if (!er) return;
+    er.textContent = msg || "";
+    er.hidden = !msg;
+  }
+  // qo'shildi — true; xato — matn yoziladi va false
+  function addCustom(svc, fid) {
+    const f = svc.fields.find((x) => x.id === fid);
+    const inp = root.querySelector(`[data-mc-in="${fid}"]`);
+    if (!f || !f.custom || !inp) return false;
+    const arr = getValues(svc)[fid];
+    const s = inp.value.replace(/\s+/g, " ").trim();
+    const box = root.querySelector(`[data-multi="${fid}"]`);
+    let err = "";
+    if (!s) err = "Til nomini yozing";
+    else if (s.length > f.custom.max) err = `Ko'pi bilan ${f.custom.max} ta belgi`;
+    else if (!/\p{L}/u.test(s) || /[<>{}\[\]\\|=_~^$#@]/.test(s)) err = "Til nomini harflar bilan yozing";
+    else {
+      // tayyor chip bilan bir xil bo'lsa (ekrandagi tarjimasi ham hisobga olinadi) — o'sha chip yoqiladi
+      const same = [...box.querySelectorAll(".chip.multi:not(.custom)")].find((c) => norm(c.textContent) === norm(s) || norm(c.dataset.v) === norm(s));
+      if (same) {
+        if (arr.includes(same.dataset.v)) err = "Bu til allaqachon tanlangan";
+        else { arr.push(same.dataset.v); same.classList.add("active"); }
+      } else if (arr.some((x) => norm(x) === norm(s))) err = "Bu til allaqachon qo'shilgan";
+      else if (arr.length >= f.custom.limit) err = `Ko'pi bilan ${f.custom.limit} ta til tanlash mumkin`;
+      else {
+        arr.push(s);
+        box.querySelector("[data-mc-add]").insertAdjacentHTML("beforebegin", customChip(s));
+      }
+    }
+    mcError(fid, err);
+    if (err) { inp.focus(); return false; }
+    inp.value = "";
+    root.querySelector(`[data-mc-box="${fid}"]`).hidden = true;
+    tick();
+    refreshLive(svc);
+    return true;
   }
 
   // namuna video: tanlangan modelga qarab (f.items[qiymat].src — keyin qo'shiladi)
@@ -1301,6 +1353,19 @@
       return;
     }
 
+    const mcAdd = e.target.closest("[data-mc-add]");
+    if (mcAdd) {
+      const fid = mcAdd.dataset.mcAdd;
+      const mbox = root.querySelector(`[data-mc-box="${fid}"]`);
+      mbox.hidden = !mbox.hidden;
+      mcError(fid, "");
+      if (!mbox.hidden) mbox.querySelector("input").focus();
+      tick();
+      return;
+    }
+    const mcOk = e.target.closest("[data-mc-ok]");
+    if (mcOk) { addCustom(current, mcOk.dataset.mcOk); return; }
+
     const chip = e.target.closest(".chip");
     if (chip) {
       const single = chip.parentElement.dataset.chips;
@@ -1317,8 +1382,15 @@
       } else if (multi) {
         const arr = v[multi];
         const i = arr.indexOf(chip.dataset.v);
-        if (i >= 0) arr.splice(i, 1); else arr.push(chip.dataset.v);
-        chip.classList.toggle("active", i < 0);
+        if (chip.classList.contains("custom")) {
+          // mijoz yozgan qiymat ro'yxatda yo'q — bosilsa butunlay olib tashlanadi
+          if (i >= 0) arr.splice(i, 1);
+          chip.remove();
+          mcError(multi, "");
+        } else {
+          if (i >= 0) arr.splice(i, 1); else arr.push(chip.dataset.v);
+          chip.classList.toggle("active", i < 0);
+        }
       }
       tick();
       refreshLive(current);
@@ -1377,8 +1449,17 @@
     return bad;
   }
 
+  // «Boshqa til» maydonida Enter — qo'shish
+  root.addEventListener("keydown", (e) => {
+    const fid = e.target.dataset && e.target.dataset.mcIn;
+    if (!fid || !current || e.key !== "Enter") return;
+    e.preventDefault();
+    addCustom(current, fid);
+  });
+
   root.addEventListener("input", (e) => {
     if (!current) return;
+    if (e.target.dataset.mcIn) { mcError(e.target.dataset.mcIn, ""); return; }
     const v = getValues(current);
     const ri = e.target.dataset.rin;
     if (ri !== undefined) {
@@ -1468,6 +1549,13 @@
     svc.fields.forEach((f) => {
       if (!shown(svc, v, f.id)) return;
       const el0 = root.querySelector(`.ai-field[data-f="${f.id}"]`);
+      if (f.type === "multichips" && f.custom) {
+        // yozilgan, lekin «Qo'shish» bosilmagan til — yuborishda qo'shib olinadi
+        const inp = root.querySelector(`[data-mc-in="${f.id}"]`);
+        const bad = !!(inp && inp.value.trim()) && !addCustom(svc, f.id);
+        if (bad && !firstBad) firstBad = el0;
+        return;
+      }
       if (f.type === "relatives") {
         const bad = validateRelatives(svc, v, f);
         if (el0) el0.classList.toggle("error", bad);
