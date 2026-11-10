@@ -418,7 +418,7 @@
           { id: "experience", type: "textarea", label: "Ish tajribasi", placeholder: "Qayerda, qaysi yillarda, qanday lavozimda ishlagansiz. Tajriba bo'lmasa, bo'sh qoldiring", max: 800 },
           { id: "education", type: "textarea", label: "Ma'lumoti", placeholder: "Masalan: 2016–2020, TDIU, Buxgalteriya hisobi (bakalavr)", max: 600 },
           { id: "skills", type: "textarea", label: "Ko'nikmalar", placeholder: "Masalan: 1C, Excel, hujjatlar bilan ishlash, muloqot", max: 600 },
-          { id: "langs", type: "multichips", label: "Qaysi tillarni bilasiz", options: ["O'zbek", "Rus", "Ingliz", "Turk", "Koreys", "Nemis", "Arab"], default: ["O'zbek", "Rus"] },
+          { id: "langs", type: "multichips", label: "Qaysi tillarni bilasiz", options: ["O'zbek", "Rus", "Ingliz", "Turk", "Koreys", "Nemis", "Arab"], default: ["O'zbek", "Rus"], custom: { add: "+ Boshqa til", placeholder: "Masalan: Fransuz", max: 30, limit: 10 } },
           { id: "photo", type: "switch", label: "Resume rasm bilan bo'lsin", default: true },
           { id: "photos", type: "photos", label: "Rasmingiz", hint: "Yuzingiz aniq ko'rinadigan rasm (hujjat rasmiga o'xshash). Hozir yuklamasangiz, keyin botga yuborishingiz mumkin", max: 1, default: [], showIf: "photo" },
           { id: "lang", type: "chips", label: "Resume tili", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "ru", l: "Rus" }, { v: "en", l: "Ingliz" }], default: "uz_lat" },
