@@ -12,6 +12,8 @@ const supabase = require("./db");
 const BANK = require("./quiz-bank");
 
 const BUCKET = "ai-uploads";
+// Viktorina vaqtincha yopiq («Tez kunda»): bonuslar ko'payib ketdi. Qayta ochish — Vercel env QUIZ=1
+const QUIZ_ON = () => process.env.QUIZ === "1";
 const N = 10, PASS = 8, LIMIT_SEC = 30, GRACE_MS = 3000; // internet kechikishi uchun 3 soniya
 const QUIZ_OK = ["presentation", "essay", "referat", "test", "questions", "crossword", "lesson"];
 const statePath = (uid) => `${parseInt(uid, 10)}/prefs/quiz.json`;
@@ -52,11 +54,12 @@ async function status(uid) {
   const mark = await readJson(markPath(uid)).catch(() => null);
   return {
     cats: [...BANK.map((c) => ({ id: c.id, icon: c.icon, name: c.name, n: c.qs.length })), { id: "mix", icon: ALL.icon, name: ALL.name, n: ALL.qs.length }],
-    taken: !!mark, left: mark ? mark.left || 0 : 0, pass: PASS, n: N, ok: QUIZ_OK,
+    taken: !!mark, left: mark ? mark.left || 0 : 0, pass: PASS, n: N, ok: QUIZ_OK, soon: !QUIZ_ON(),
   };
 }
 
 async function start(bot, uid, catId) {
+  if (!QUIZ_ON()) return { ok: false, error: "Viktorina tez kunda ochiladi" };
   const cat = catOf(String(catId || ""));
   if (!cat) return { ok: false, error: "Fan topilmadi" };
   const need = await needSub(bot, uid);
@@ -73,6 +76,7 @@ async function grant(uid) {
 }
 
 async function answer(uid, id, i, k) {
+  if (!QUIZ_ON()) return { ok: false, code: "old" };
   const st = await readJson(statePath(uid)).catch(() => null);
   if (!st || st.id !== id || +i !== st.i || st.done) return { ok: false, code: "old" };
   const cat = catOf(st.cat), it = st.qs[st.i];

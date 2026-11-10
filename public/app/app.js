@@ -387,6 +387,13 @@
     if (window.aiBonusChanged) window.aiBonusChanged();
     QZ.pass = q.pass || 8;
     $("quizCard").hidden = false;
+    if (q.soon) { // vaqtincha yopiq
+      $("quizSub").textContent = "⏳ Tez kunda";
+      $("quizNote").innerHTML = q.left > 0 ? "🎁 Viktorina bonusi sizda bor — oddiy xizmatga buyurtma berganda ishlatiladi." : "Tez kunda viktorinada bilimingizni sinab, <b>bonus</b> olishingiz mumkin bo'ladi!";
+      $("quizCats").innerHTML = ""; $("quizCats").hidden = true;
+      return;
+    }
+    $("quizCats").hidden = false;
     $("quizSub").textContent = `10 ta savoldan ${QZ.pass} tasini toping — 1 ta tekin ish`;
     $("quizNote").innerHTML = q.taken
       ? (q.left > 0 ? "🎁 Viktorina bonusi sizda bor — oddiy xizmatga buyurtma berganda ishlatiladi." : "✅ Viktorina bonusini olgansiz. Endi shunchaki bilimingizni sinang!")
