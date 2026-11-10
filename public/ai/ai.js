@@ -8,6 +8,20 @@
   const root = document.getElementById("aiRoot");
   if (!CFG || !root) return;
 
+  // Profildagi «Titul ma'lumotlarim» (app.js saqlaydi): mustaqil ish, referat, kurs ishi va taqdimotda
+  // «Titul ma'lumotlarimdan foydalanish» kaliti — yoqilsa OTM, F.I.Sh, guruh... maydonlari yashiriladi
+  const myTitul = () => { if (window.AI_MY_TITUL !== undefined) return window.AI_MY_TITUL; try { return JSON.parse(localStorage.getItem("my-titul") || "null"); } catch (e) { return null; } };
+  const MYT_HIDE = ["institution", "titul", "faculty", "student", "group", "city", "author"];
+  const PLAN_SVCS = ["presentation", "presentation_pro", "essay", "referat", "kurs"]; // «Tayyorlash»dan keyin reja ko'rsatiladi
+  CFG.services.forEach((s) => {
+    if (!PLAN_SVCS.includes(s.id) || !Array.isArray(s.fields) || s.fields.some((f) => f.id === "useTitul")) return;
+    let at = s.fields.findIndex((f) => f.id === "_h1");
+    if (at >= 0) at += 1; else at = s.fields.findIndex((f) => f.id === "author");
+    if (at < 0) return;
+    s.myTitul = true;
+    s.fields.splice(at, 0, { id: "useTitul", type: "mytitul" });
+  });
+
   const tg = window.Telegram ? window.Telegram.WebApp : null;
   const YEAR = new Date().getFullYear();
 
@@ -152,6 +166,7 @@
       const v = {};
       svc.fields.forEach((f) => {
         if (f.type === "heading") return;
+        if (f.type === "mytitul") { v[f.id] = !!myTitul(); return; }
         if (Array.isArray(f.default)) v[f.id] = f.default.map((x) => (x && typeof x === "object" ? { ...x } : x));
         else if (f.default !== undefined) v[f.id] = f.default;
         else v[f.id] = f.type === "switch" ? false : "";
@@ -168,6 +183,16 @@
     switch (f.type) {
       case "heading":
         return `<div class="ai-heading">${esc(f.label)}</div>`;
+      case "mytitul": {
+        const t = myTitul();
+        if (!t) return `<div class="ai-field" data-f="${f.id}"><div class="myt-box glass"><div class="myt-t">📋 Titul ma'lumotlarini bir marta saqlang</div>
+          <div class="ai-hint">O'quv yurti, ism-familiya, yo'nalish va guruhni profilga yozib qo'ysangiz, keyingi ishlarda qayta kiritmaysiz — faqat fan va mavzuni yozasiz.</div>
+          <button type="button" class="pill-btn glass" data-myt-edit="1">✏️ Profilda to'ldirish</button></div></div>`;
+        const sum = [t.student, t.institution, t.direction, t.group].filter(Boolean).join(" · ");
+        return `<div class="ai-field" data-f="${f.id}"><label class="switch-row glass"><span>📋 Titul ma'lumotlarimdan foydalanish<small class="myt-sum">${esc(sum)}</small></span>
+          <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label>
+          <div class="myt-edit" data-myt-edit="1">✏️ O'zgartirish</div></div>`;
+      }
       case "text":
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
           <input class="ai-input" data-input="${f.id}"${f.inputmode ? ` inputmode="${f.inputmode}"` : ""}${f.suggest ? ' autocomplete="off"' : ""} maxlength="${f.max || 200}" placeholder="${esc(f.placeholder || "")}" value="${esc(v[f.id])}">
@@ -704,7 +729,7 @@
 
   // showIf: maydon faqat bog'liq kalit yoqilganda ko'rinadi
   const cond = (v, expr) => { const [k, val] = String(expr).split("="); return val === undefined ? !!v[k] : val.split("|").includes(String(v[k])); };
-  const shown = (svc, v, id) => { const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || cond(v, f.showIf)) && (!f.hideIf || !cond(v, f.hideIf))); };
+  const shown = (svc, v, id) => { if (svc.myTitul && v.useTitul && myTitul() && MYT_HIDE.includes(id)) return false; const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || cond(v, f.showIf)) && (!f.hideIf || !cond(v, f.hideIf))); };
   function applyShowIf(svc) {
     const v = getValues(svc);
     svc.fields.filter((f) => f.showIf || f.hideIf).forEach((f) => {
@@ -736,6 +761,7 @@
       return { t, score };
     }).filter((x) => x.score).sort((a, b) => b.score - a.score || a.t.name.length - b.t.name.length).slice(0, 6).map((x) => x.t);
   }
+  window.aiTitulMatches = titulMatches; // profildagi «Titul ma'lumotlarim» uchun
   function renderSuggest(f, value) {
     const box = root.querySelector(`[data-sug="${f.id}"]`);
     if (!box) return;
@@ -896,7 +922,7 @@
 
   function summaryPairs(svc, v) {
     return svc.fields
-      .filter((f) => f.type !== "heading")
+      .filter((f) => f.type !== "heading" && f.type !== "mytitul")
       .map((f) => ({ label: f.label, value: displayValue(f, v[f.id]) }))
       .filter((p) => p.value !== "");
   }
@@ -1514,8 +1540,13 @@
     if (svc.id === "presentation" && visible.design !== "tpl") visible.template = "ai-dizayn";
     // Super taqdimot: faqat 💎 shablonlar — boshqa qiymat (masalan oddiy taqdimotdan qolgan «ai-dizayn») bo'lsa standart
     if (svc.id === "presentation_pro" && !CFG.templates.presentation_pro.some((t) => t.id === visible.template)) visible.template = CFG.templates.presentation_pro[0].id;
+    const myt = svc.myTitul && v.useTitul ? myTitul() : null;
+    if (myt) {
+      ["institution", "titul", "faculty", "direction", "student", "group", "city"].forEach((k) => { if (myt[k]) visible[k] = myt[k]; });
+      if (svc.fields.some((f) => f.id === "author") && myt.student) visible.author = myt.student;
+    }
     const user = tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
-    await sendOrder(svc, {
+    const payload = ({
       service: svc.id,
       fields: visible,
       summary: summaryPairs(svc, visible),
@@ -1525,6 +1556,9 @@
       bot: (window.AI_APP || {}).bot, // umumiy ilovada — qaysi bot ochgani
       useBonus: bonusOn(svc, visible),
     });
+    // Reja: AI tuzadi, mijoz tahrirlaydi yoki qayta tuzdiradi, keyin buyurtma ketadi
+    if (PLAN_SVCS.includes(svc.id) && payload.initData) { openPlan(svc, payload); return; }
+    await sendOrder(svc, payload);
   }
 
   async function sendOrder(svc, payload) {
@@ -1666,6 +1700,106 @@
     const url = "https://t.me/Print_54";
     if (tg && tg.openTelegramLink) tg.openTelegramLink(url); else window.open(url, "_blank");
   }
+
+  /* ---------------------------------------------------------------
+     REJA OYNASI: «So'rov yuborish» bosilgach AI mavzuga mos reja tuzadi.
+     Mijoz bandlarni tahrirlaydi, qo'shadi/o'chiradi yoki «Qayta tuzish» bosadi;
+     «Tasdiqlash» — buyurtma shu reja bilan yuboriladi (fields.plan).
+     --------------------------------------------------------------- */
+  const planBox = document.createElement("div");
+  planBox.className = "ai-modal plan-modal";
+  planBox.innerHTML = `
+    <div class="ai-modal-head"><div class="t">📝 Ishingiz rejasi</div><div class="x glass" data-plan-close="1">×</div></div>
+    <div class="ai-modal-body" id="planBody"></div>
+    <div class="plan-foot" id="planFoot" hidden>
+      <button type="button" class="pill-btn glass plan-again" data-plan-again="1">🔄 Qayta tuzish</button>
+      <button type="button" class="order-btn" data-plan-ok="1">✅ Tasdiqlash va tayyorlash</button>
+    </div>`;
+  document.body.appendChild(planBox);
+  let planCtx = null;
+  const planBody = () => document.getElementById("planBody");
+
+  function planRows(ch, ci) {
+    return ch.sections.map((s, si) => `<div class="pl-row"><span class="pl-n">${planCtx.flat ? si + 1 : `${ci + 1}.${si + 1}`}.</span>
+      <textarea class="pl-in" rows="1" maxlength="200" data-pl="${ci}.${si}">${esc(s)}</textarea>
+      <button type="button" class="pl-del" data-pl-del="${ci}.${si}" aria-label="O'chirish">×</button></div>`).join("") +
+      (ch.sections.length < (planCtx.flat ? 8 : 5) ? `<button type="button" class="pl-add" data-pl-add="${ci}">➕ Band qo'shish</button>` : "");
+  }
+  function drawPlan() {
+    const P = planCtx;
+    planBody().innerHTML = `<div class="pl-note">AI mavzuga mos reja tuzdi. Bandni bosib tahrirlashingiz, qo'shishingiz yoki o'chirishingiz mumkin. Yoqmasa — «Qayta tuzish».</div>` +
+      P.chapters.map((ch, ci) => P.flat ? `<div class="pl-list">${planRows(ch, ci)}</div>`
+        : `<div class="pl-ch"><div class="pl-row pl-chrow"><span class="pl-n">${ci + 1}-bob.</span><textarea class="pl-in pl-cht" rows="1" maxlength="200" data-pl-ch="${ci}">${esc(ch.title)}</textarea>
+          ${P.chapters.length > 1 ? `<button type="button" class="pl-del" data-pl-chdel="${ci}" aria-label="O'chirish">×</button>` : ""}</div>${planRows(ch, ci)}</div>`).join("") +
+      (!P.flat && P.chapters.length < 4 ? `<button type="button" class="pl-add" data-pl-chadd="1">➕ Bob qo'shish</button>` : "");
+    planBody().querySelectorAll(".pl-in").forEach(fitArea);
+    document.getElementById("planFoot").hidden = false;
+  }
+  const fitArea = (t) => { t.style.height = "auto"; t.style.height = t.scrollHeight + "px"; };
+  // DOM dagi tahrirlarni holatga yozish
+  function readPlan() {
+    planBody().querySelectorAll("[data-pl]").forEach((t) => { const [ci, si] = t.dataset.pl.split(".").map(Number); planCtx.chapters[ci].sections[si] = t.value; });
+    planBody().querySelectorAll("[data-pl-ch]").forEach((t) => { planCtx.chapters[+t.dataset.plCh].title = t.value; });
+  }
+  async function loadPlan() {
+    document.getElementById("planFoot").hidden = true;
+    planBody().innerHTML = `<div class="pl-wait"><div class="pl-spin"></div>AI mavzuga mos reja tuzmoqda…<small>10–20 soniya</small></div>`;
+    const { svc, payload } = planCtx;
+    try {
+      const res = await fetch(CFG.endpoint, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ service: "plan", for: svc.id, fields: payload.fields, initData: payload.initData, bot: payload.bot }) });
+      const data = await res.json().catch(() => ({}));
+      if (!planCtx) return;
+      if (!res.ok || !data.ok || !Array.isArray(data.plan) || !data.plan.length) throw Object.assign(new Error(data.error || "Server xatosi"), { show: data.error });
+      planCtx.chapters = data.plan.map((c) => ({ title: c.title || "", sections: (c.sections || []).slice() }));
+      planCtx.flat = !!data.flat;
+      haptic("success");
+      drawPlan();
+    } catch (err) {
+      if (!planCtx) return;
+      planBody().innerHTML = `<div class="pl-wait">😕 ${esc(err.show || "Reja tuzib bo'lmadi — internetni tekshiring.")}
+        <button type="button" class="pill-btn glass" data-plan-again="1">🔄 Qayta urinish</button>
+        <button type="button" class="pill-btn glass" data-plan-skip="1">Rejasiz davom etish</button></div>`;
+    }
+  }
+  function openPlan(svc, payload) {
+    planCtx = { svc, payload, chapters: [], flat: true };
+    planBox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    loadPlan();
+  }
+  function closePlan() { planBox.classList.remove("open"); document.body.style.overflow = ""; planCtx = null; }
+  planBox.addEventListener("input", (e) => { if (e.target.classList.contains("pl-in")) fitArea(e.target); });
+  planBox.addEventListener("click", (e) => {
+    if (!planCtx) return;
+    const el = (s) => e.target.closest(s);
+    if (el("[data-plan-close]")) { closePlan(); return; }
+    if (el("[data-plan-again]")) { tick(); loadPlan(); return; }
+    if (el("[data-plan-skip]")) { const { svc, payload } = planCtx; closePlan(); sendOrder(svc, payload); return; }
+    if (el("[data-pl-del]")) { readPlan(); const [ci, si] = el("[data-pl-del]").dataset.plDel.split(".").map(Number); const ch = planCtx.chapters[ci]; if (ch.sections.length > 1) ch.sections.splice(si, 1); tick(); drawPlan(); return; }
+    if (el("[data-pl-add]")) { readPlan(); const ci = +el("[data-pl-add]").dataset.plAdd; planCtx.chapters[ci].sections.push(""); tick(); drawPlan(); const ins = planBody().querySelectorAll(`[data-pl^="${ci}."]`); if (ins.length) ins[ins.length - 1].focus(); return; }
+    if (el("[data-pl-chdel]")) { readPlan(); planCtx.chapters.splice(+el("[data-pl-chdel]").dataset.plChdel, 1); tick(); drawPlan(); return; }
+    if (el("[data-pl-chadd]")) { readPlan(); planCtx.chapters.push({ title: "", sections: ["", ""] }); tick(); drawPlan(); return; }
+    if (el("[data-plan-ok]")) {
+      readPlan();
+      const chapters = planCtx.chapters.map((c) => ({ title: c.title.trim(), sections: c.sections.map((s) => s.trim()).filter(Boolean) })).filter((c) => c.sections.length);
+      const n = chapters.reduce((k, c) => k + c.sections.length, 0);
+      if (n < 2 || (!planCtx.flat && chapters.some((c) => !c.title))) { haptic("error"); planBody().querySelector(".pl-note").textContent = planCtx.flat ? "Rejada kamida 2 ta band bo'lsin." : "Har bir bobning nomi va kamida bitta bandi bo'lsin."; return; }
+      const { svc, payload } = planCtx;
+      payload.fields = { ...payload.fields, plan: JSON.stringify(chapters) };
+      closePlan();
+      sendOrder(svc, payload);
+    }
+  });
+  // forma ichidagi «✏️ Profilda to'ldirish / O'zgartirish»
+  root.addEventListener("click", (e) => { if (e.target.closest("[data-myt-edit]") && window.aiEditTitul) { e.preventDefault(); tick(); window.aiEditTitul(); } });
+  // profil saqlangach ochiq forma yangilanadi
+  window.aiTitulChanged = () => {
+    if (!current || !current.myTitul) return;
+    const v = getValues(current);
+    v.useTitul = !!myTitul();
+    renderForm(current); applyShowIf(current);
+  };
 
   /* ---------------------------------------------------------------
      KATTA KO'RISH OYNASI

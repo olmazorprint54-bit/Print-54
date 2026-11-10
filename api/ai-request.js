@@ -250,6 +250,30 @@ async function appChatReq(body, res) {
   res.status(200).json({ ok: true, ...out });
 }
 
+// Reja (buyurtmadan oldin): {service:"plan", for, fields} → AI reja tuzadi, mijoz ilovada tahrirlaydi.
+// Isrof bo'lmasligi uchun mijozga kuniga PLAN_DAILY ta (egasiga cheklovsiz).
+const PLAN_DAILY = 40;
+async function planReq(body, res) {
+  const auth = authUser(body);
+  if (!auth) { res.status(401).json({ ok: false, error: "Ilovani Telegram ichida oching" }); return; }
+  const D = require("./_lib/doc-gen");
+  const svc = String(body.for || "");
+  const f = body.fields || {};
+  if (!D.PLAN_SERVICES.includes(svc) || !String(f.topic || "").trim()) { res.status(400).json({ ok: false, error: "Avval mavzuni yozing" }); return; }
+  const uid = parseInt(auth.user.id, 10);
+  if (String(uid) !== String(process.env.OWNER_CHAT_ID)) {
+    const path = `${uid}/prefs/plan-count.json`, day = new Date().toISOString().slice(0, 10);
+    let c = { day, n: 0 };
+    try { const { data } = await supabase.storage.from("ai-uploads").download(path); if (data) { const j = JSON.parse(Buffer.from(await data.arrayBuffer()).toString("utf8")); if (j.day === day) c = j; } } catch (e) { /* yangi kun */ }
+    if (c.n >= PLAN_DAILY) { res.status(429).json({ ok: false, error: "Bugungi reja tuzish limiti tugadi — ertaga urinib ko'ring" }); return; }
+    c.n++;
+    await supabase.storage.from("ai-uploads").upload(path, Buffer.from(JSON.stringify(c)), { contentType: "application/json", upsert: true }).catch(() => {});
+  }
+  const fields = { topic: String(f.topic).slice(0, 200), subject: String(f.subject || "").slice(0, 120), lang: String(f.lang || ""), pages: f.pages, slides: f.slides, extra: String(f.extra || "").slice(0, 1500) };
+  const out = await D.makePlan(svc, fields);
+  res.status(200).json({ ok: true, plan: out.chapters, flat: out.flat });
+}
+
 // Profildan hisobni to'ldirish (buyurtmasiz): karta + noyob summa, chek botga.
 // Buyurtma "topup" — narxi 0, tasdiqlangach to'lov summasi balansga qo'shiladi.
 async function topupOnly(body, res) {
@@ -277,6 +301,10 @@ module.exports = async (req, res) => {
     // ilovadagi AI yordamchi (suzuvchi 🤖 tugma)
     if (body.service === "chat") {
       await appChatReq(body, res);
+      return;
+    }
+    if (body.service === "plan") {
+      await planReq(body, res);
       return;
     }
     if (!SERVICE_LABELS[body.service]) {

@@ -627,7 +627,7 @@ async function generatePresentation(f, photoUrls = [], opts = {}) {
   }
   const lang = LANG_NAMES[f.lang] ? f.lang : "uz_lat";
   const d = {
-    sourceNotes: f.sourceNotes, extra: f.extra,
+    sourceNotes: f.sourceNotes, extra: f.extra, presPlan: require("./doc-gen").presPlanText(f),
     topic: clean(f.topic, 200), subject: clean(f.subject, 120), author: clean(f.author, 120), lang,
     count: Math.min(MAX_SLIDES, Math.max(3, parseInt(f.slides, 10) || 10)),
     images: f.images !== false, tables: !!f.tables,

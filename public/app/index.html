@@ -19,8 +19,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../ai/ai.css?v=41">
-<link rel="stylesheet" href="app.css?v=17">
+<link rel="stylesheet" href="../ai/ai.css?v=42">
+<link rel="stylesheet" href="app.css?v=18">
 </head>
 <body class="app ai-mode">
   <header class="app-top">
@@ -112,6 +112,27 @@
           <div class="set-note">Hujjat 1–5 daqiqada tayyor bo'ladi. Narx balansdan avtomatik yechiladi.</div>
         </div>
       </div>
+      <div class="card setting myt-card" id="mytCard">
+        <div class="price-head" id="mytHead"><span>📋 Titul ma'lumotlarim</span><span class="price-arrow">›</span></div>
+        <div class="set-note" id="mytSum">Mustaqil ish, referat, kurs ishi va taqdimot titul varag'i uchun bir marta yozib qo'ying</div>
+        <div id="mytBody" hidden>
+          <label class="myt-l">O'quv yurti</label>
+          <input class="myt-in" id="mytInst" maxlength="160" autocomplete="off" placeholder="Masalan: TDIU yoki 54-maktab">
+          <div class="myt-sug" id="mytSug" hidden></div>
+          <label class="myt-l">Fakultet</label>
+          <input class="myt-in" id="mytFac" maxlength="120" placeholder="Masalan: Iqtisodiyot">
+          <label class="myt-l">Yo'nalish / mutaxassislik</label>
+          <input class="myt-in" id="mytDir" maxlength="160" placeholder="Masalan: Buxgalteriya hisobi">
+          <label class="myt-l">Guruh / sinf</label>
+          <input class="myt-in" id="mytGroup" maxlength="40" placeholder="Masalan: BMI-21 yoki 9-B">
+          <label class="myt-l">Ism-familiya (F.I.Sh)</label>
+          <input class="myt-in" id="mytName" maxlength="120" placeholder="Masalan: Aliyev Ali Valiyevich">
+          <label class="myt-l">Shahar</label>
+          <input class="myt-in" id="mytCity" maxlength="60" placeholder="Toshkent">
+          <button type="button" class="order-btn myt-save" id="mytSave">💾 Saqlash</button>
+          <button type="button" class="myt-del" id="mytDel" hidden>🗑 O'chirish</button>
+        </div>
+      </div>
       <div class="card setting">
         <div class="set-title">🌐 Til</div>
         <div class="seg" id="langSeg" data-no-i18n>
@@ -194,7 +215,7 @@
     };
   </script>
   <script src="../ai/i18n.js?v=22"></script>
-  <script src="../ai/ai.js?v=69"></script>
-  <script src="app.js?v=22"></script>
+  <script src="../ai/ai.js?v=70"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>
