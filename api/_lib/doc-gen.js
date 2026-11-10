@@ -109,6 +109,51 @@ const WRITER = `You are an experienced academic writer from Uzbekistan who write
 - Academic, clear style suited to the level. No markdown, no bullet symbols inside paragraphs, no headings inside paragraphs.
 - Each paragraph is 4–8 sentences.`;
 
+/* =================== REJA (mijoz ko'rib tasdiqlaydi) =================== */
+// Ilovada «Tayyorlash» bosilgach AI reja tuzadi, mijoz tahrirlaydi yoki qayta tuzdiradi;
+// tasdiqlangan reja buyurtmaga f.plan (JSON: [{title, sections[]}]) bo'lib keladi.
+function userPlan(f, maxCh, maxSec) {
+  let p = f && f.plan;
+  if (typeof p === "string") { try { p = JSON.parse(p); } catch (e) { return null; } }
+  if (!Array.isArray(p)) return null;
+  const ch = p.slice(0, maxCh).map((c) => ({
+    title: clean(c && c.title, 200),
+    sections: (Array.isArray(c && c.sections) ? c.sections : []).map((s) => clean(s, 200)).filter(Boolean).slice(0, maxSec),
+  })).filter((c) => c.sections.length);
+  return ch.length ? ch : null;
+}
+const planSizes = (service, f) => {
+  if (service === "kurs") { const pages = clamp(parseInt(f.pages, 10), 30, MAX_PAGES.kurs, 30); return { nCh: pages >= 36 ? 3 : 2, nSec: 3 }; }
+  const pages = clamp(parseInt(f.pages, 10), 3, MAX_PAGES[service] || 30, service === "essay" ? 12 : 10);
+  return { nCh: 1, nSec: service === "essay" ? (pages <= 13 ? 3 : pages <= 18 ? 4 : 5) : clamp(Math.round(pages / 3), 2, 5, 3) };
+};
+const PLAN_SERVICES = ["presentation", "presentation_pro", "essay", "referat", "kurs"];
+async function makePlan(service, f) {
+  const lang = LANG_NAMES[langOf(f)];
+  const ctx = `Subject: ${clean(f.subject, 120) || "—"}\nTopic: ${clean(f.topic, 200)}\nLanguage: ${lang}`;
+  const schema = obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } });
+  let prompt;
+  if (/^presentation/.test(service)) {
+    const slides = Math.min(60, Math.max(3, parseInt(f.slides, 10) || 10));
+    const n = clamp(Math.round((slides - 2) / 2), 3, 6, 4);
+    prompt = `Presentation (${slides} slides)\n${ctx}\n\nMake the plan of the presentation: exactly 1 chapter (its title = the topic) with exactly ${n} section titles — the main parts the slides will cover, in logical order. Short (2–6 words), specific. Do not include introduction, "plan" or conclusion.`;
+  } else if (service === "kurs") {
+    const { nCh, nSec } = planSizes(service, f);
+    prompt = `Paper type: kurs ishi (university course work)\n${ctx}\n\nMake the plan of the course work: exactly ${nCh} chapters (the first — theoretical foundations, the last — practical analysis of the current state in Uzbekistan and proposals), each with exactly ${nSec} section titles. Titles are specific, academic and logically ordered. Do not include introduction or conclusion.`;
+  } else {
+    const { nSec } = planSizes(service, f);
+    prompt = `Paper type: ${service === "essay" ? "mustaqil ish (independent study paper)" : "referat (short report)"}\n${ctx}\n\nMake the plan: exactly 1 chapter (its title can repeat the topic) with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`;
+  }
+  const r = await askJson({ model: MODEL(), system: WRITER, effort: "low", maxTokens: 3000, schema, prompt: prompt + SRC.sourcesBlock({ extra: f.extra }) });
+  const chapters = (r.data.chapters || []).map((c) => ({ title: clean(c.title, 200), sections: (c.sections || []).map((s) => clean(s, 200)).filter(Boolean) })).filter((c) => c.sections.length);
+  return { chapters: service === "kurs" ? chapters.slice(0, 4) : [{ title: clean(f.topic, 200), sections: chapters.flatMap((c) => c.sections).slice(0, 8) }], flat: service !== "kurs", cost: r };
+}
+// Taqdimot uchun tasdiqlangan reja matni (prompt'ga qo'shiladi)
+function presPlanText(f) {
+  const p = userPlan(f, 1, 8);
+  return p ? p[0].sections.map((s, i) => `${i + 1}. ${s}`).join("\n") : "";
+}
+
 /* =================== MUSTAQIL ISH / REFERAT =================== */
 function paperData(service, f) {
   const lang = langOf(f);
@@ -121,7 +166,7 @@ function paperData(service, f) {
     style: AUTO_STYLES[service].includes(f.template) ? f.template : "otm",
     institution: clean(f.institution, 160), student: clean(f.student, 120), group: clean(f.group, 40),
     teacher: clean(f.teacher, 120), city: clean(f.city, 60) || (lang === "ru" ? "Ташкент" : lang === "uz_cyr" ? "Тошкент" : lang === "en" ? "Tashkent" : "Toshkent"),
-    titul: clean(f.titul, 160), faculty: clean(f.faculty, 120),
+    titul: clean(f.titul, 160), faculty: clean(f.faculty, 120), direction: clean(f.direction, 160),
     parts: new Set(parts),
   };
 }
@@ -131,6 +176,8 @@ function titlePage(d) {
   const year = new Date().getFullYear();
   const lines = [];
   lines.push({ text: d.institution || " ", bold: true, size: 14 });
+  const sub = [d.faculty, d.direction].filter(Boolean).join(", ");
+  if (sub) lines.push({ text: sub, size: 14 });
   lines.push({ text: d.service === "kurs" ? t.kurs : d.service === "essay" ? t.essay : t.referat, bold: true, size: d.style === "modern" ? 28 : 24, gap: 55 });
   if (d.subject) lines.push({ text: `${t.subject}: ${d.subject}`, size: 14, gap: 8 });
   lines.push({ text: `${t.topic}: «${d.topic}»`, bold: true, size: 16, gap: 4 });
@@ -158,14 +205,19 @@ async function generatePaper(service, f) {
   const ctx = `Paper type: ${essay ? "mustaqil ish (independent study paper)" : "referat (short report)"}\nSubject: ${d.subject || "—"}\nTopic: ${d.topic}\nAudience: ${LEVELS[d.level]}\nLanguage: ${lang}` + SRC.sourcesBlock(f);
   let cost = null;
 
-  // 1) Reja
-  const outline = await askJson({
-    model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
-    schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
-    prompt: `${ctx}\n\nMake the plan: exactly ${nCh} chapter(s)${chap ? "" : " (one chapter that just groups the sections; its title can repeat the topic)"}, each with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`,
-  });
-  cost = addCost(cost, outline);
-  const chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
+  // 1) Reja: mijoz tasdiqlagan bo'lsa — o'sha (bo'limlar bitta ro'yxatga), aks holda AI tuzadi
+  const own = userPlan(f, 4, 8);
+  let chapters;
+  if (own) chapters = [{ title: d.topic, sections: own.flatMap((c) => c.sections).slice(0, 8) }];
+  else {
+    const outline = await askJson({
+      model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
+      schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
+      prompt: `${ctx}\n\nMake the plan: exactly ${nCh} chapter(s)${chap ? "" : " (one chapter that just groups the sections; its title can repeat the topic)"}, each with exactly ${nSec} section titles. Titles are short, specific and logically ordered. Do not include introduction or conclusion.`,
+    });
+    cost = addCost(cost, outline);
+    chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
+  }
   const allSections = chapters.flatMap((c) => c.sections);
   const introW = d.parts.has("intro") ? Math.round(words * 0.1) : 0;
   const conclW = d.parts.has("conclusion") ? Math.round(words * 0.08) : 0;
@@ -203,7 +255,7 @@ async function generatePaper(service, f) {
     try {
       const T = require("./titul");
       if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
-        titul = { id: d.titul, values: { workType: essay ? "MUSTAQIL ISH" : "REFERAT", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty } };
+        titul = { id: d.titul, values: { workType: essay ? "MUSTAQIL ISH" : "REFERAT", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
       }
     } catch (e) { console.error("Titul:", e.message); }
   }
@@ -655,8 +707,10 @@ async function generateKurs(f, tools = {}) {
   let cost = null;
 
   // 1) reja, adabiyotlar va internetdan tadqiqot — parallel
+  const own = userPlan(f, 4, 5); // mijoz tasdiqlagan reja (boblar)
+  if (own) own.forEach((c) => { if (!c.title) c.title = c.sections[0]; });
   const [outline, refsR, web] = await Promise.all([
-    askJson({
+    own ? { data: { chapters: own }, usage: null } : askJson({
       model: MODEL(), system: WRITER, effort: "medium", maxTokens: 4000,
       schema: obj({ chapters: { type: "array", items: obj({ title: STR, sections: STRS }) } }),
       prompt: `${ctx0}\n\nMake the plan of the course work: exactly ${nCh} chapters (the first — theoretical foundations, the last — practical analysis of the current state in Uzbekistan and proposals), each with exactly ${nSec} section titles. Titles are specific, academic and logically ordered. Do not include introduction or conclusion.`,
@@ -667,22 +721,22 @@ async function generateKurs(f, tools = {}) {
     }),
     research(ctx0, lang, year),
   ]);
-  cost = addCost(addCost(addCost(cost, outline), refsR), web.ai);
+  cost = addCost(addCost(own ? cost : addCost(cost, outline), refsR), web.ai);
   const ctx = ctx0 + (web.notes ? `\n\nUp-to-date facts found on the internet (prefer them to memory; give figures with their year):\n<research>\n${web.notes}\n</research>` : "") +
     "\nIf the customer's sources or these facts are not enough, use your own reliable knowledge.";
-  const chapters = outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
+  const chapters = own || outline.data.chapters.slice(0, nCh).map((c) => ({ title: clean(c.title, 200), sections: c.sections.slice(0, nSec).map((s) => clean(s, 200)) }));
   const refs = SRC.mergeRefs(f, [...(refsR.data.references || []), ...web.refs]).map((x) => clean(x, 400)).filter(Boolean).slice(0, 20);
   const planText = chapters.map((c, i) => `${i + 1}-${t.ch}. ${c.title}\n${c.sections.map((s, j) => `  ${i + 1}.${j + 1}. ${s}`).join("\n")}`).join("\n");
   const cite = (n) => `\n\nSources of the work (numbered):\n${refs.map((r, i) => `[${i + 1}] ${r}`).join("\n")}\n\nWhere a fact, figure, definition or quotation comes from one of these sources, put its number in square brackets after the sentence, e.g. "... samaradorlik oshadi [3]." Cite ${n} in this whole text — NOT in every paragraph, at most once per paragraph, only these numbers.`;
   const introW = Math.round(words * 0.07);
   const conclW = Math.round(words * 0.06);
-  const secW = Math.round((words - introW - conclW) / (nCh * nSec));
+  const secW = Math.round((words - introW - conclW) / Math.max(1, chapters.reduce((n, ch) => n + ch.sections.length, 0)));
   const paraN = (w) => Math.max(3, Math.round(w / 130));
   const body = (w) => `Write exactly ${paraN(w)} paragraphs, each 110–150 words (about ${w} words in total).`;
 
   // Jadval va grafiklar: amaliy (oxirgi) bobning 1- va 2-bo'limida; 3 bob bo'lsa — 2-bobda ham grafik
   const last = chapters.length - 1;
-  const visuals = new Map([[`${last}.0`, { table: true, chart: true }], [`${last}.1`, { table: true }], ...(nCh === 3 ? [[`1.0`, { chart: true }]] : [])]);
+  const visuals = new Map([[`${last}.0`, { table: true, chart: true }], [`${last}.1`, { table: true }], ...(chapters.length >= 3 ? [[`1.0`, { chart: true }]] : [])]);
 
   // 2) matn (parallel)
   const PARAS = { type: "array", items: STR };
@@ -714,7 +768,7 @@ async function generateKurs(f, tools = {}) {
     try {
       const T = require("./titul");
       if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
-        titul = { id: d.titul, values: { workType: "KURS ISHI", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty } };
+        titul = { id: d.titul, values: { workType: "KURS ISHI", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
       }
     } catch (e) { console.error("Titul:", e.message); }
   }
@@ -776,4 +830,4 @@ const GENERATORS = {
   crossword: generateCrossword,
 };
 
-module.exports = { MODEL, AUTO_STYLES, MAX_PAGES, GENERATORS, canAutoDoc, layoutCrossword, units };
+module.exports = { makePlan, presPlanText, PLAN_SERVICES, MODEL, AUTO_STYLES, MAX_PAGES, GENERATORS, canAutoDoc, layoutCrossword, units };

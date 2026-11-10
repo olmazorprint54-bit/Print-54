@@ -361,3 +361,18 @@ body.ai-form .ai-fab{ display:none; }
 .quiz-res .qr-msg{ font-size:14px; line-height:1.45; margin:6px 0 14px; }
 
 .quiz-cats[hidden], .quiz-game[hidden], .quiz-res[hidden], .quiz-note[hidden]{ display:none; }
+
+/* Titul ma'lumotlarim (profil) */
+.myt-card #mytSum{ margin-top:6px; }
+#mytBody{ display:flex; flex-direction:column; gap:6px; margin-top:12px; }
+#mytBody[hidden]{ display:none; }
+.myt-l{ font-size:12px; font-weight:700; color: var(--ink-soft); margin-top:4px; }
+.myt-in{ width:100%; box-sizing:border-box; padding:11px 12px; border-radius:12px; border:1px solid var(--line); background: var(--surface-2); color: var(--ink); font:inherit; font-size:14px; }
+.myt-in:focus{ outline:none; border-color: var(--accent); }
+.myt-sug{ display:flex; flex-direction:column; border-radius:12px; border:1px solid var(--line); background: var(--surface-2); overflow:hidden; }
+.myt-sug[hidden]{ display:none; }
+.myt-sug div{ padding:10px 12px; font-size:13px; cursor:pointer; border-bottom:1px solid var(--line); }
+.myt-sug div:last-child{ border-bottom:0; }
+.myt-save{ margin-top:10px; }
+.myt-del{ border:0; background:none; color:#EF4444; font:inherit; font-size:13px; padding:8px; cursor:pointer; }
+.myt-del[hidden]{ display:none; }

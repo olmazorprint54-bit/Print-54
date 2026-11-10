@@ -163,7 +163,7 @@ function valuesFor(v) {
   const year = String(new Date().getFullYear());
   return {
     FAKULTET: v.faculty, FAN_NOMI: v.subject, FAN: v.subject, ISH_TURI: v.workType, MAVZU: v.topic,
-    GURUH: v.group, TALABA: v.student, OQITUVCHI: v.teacher, KAFEDRA: v.department, YIL: year,
+    GURUH: v.group, TALABA: v.student, OQITUVCHI: v.teacher, KAFEDRA: v.department, YONALISH: v.direction, YIL: year,
   };
 }
 // Bitta paragraf: uslublar pishiriladi, {BELGI}lar (bir necha bo'lakka bo'linib ketgan bo'lsa ham) almashtiriladi

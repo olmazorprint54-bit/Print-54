@@ -34,6 +34,28 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Profildagi titul ma'lumotlari (OTM, fakultet, yo'nalish, guruh, F.I.Sh, shahar):
+    // { titul: "get" } | { titul: {...} } saqlash | { titul: null } o'chirish.
+    // Storage ai-uploads/<mijoz>/prefs/titul.json (cron tozalamaydi — prefs)
+    if ((req.body || {}).titul !== undefined) {
+      const path = `${parseInt(userId, 10)}/prefs/titul.json`;
+      const t = req.body.titul;
+      if (t === "get") {
+        let data = null;
+        try { const r = await supabase.storage.from("ai-uploads").download(path); if (r.data) data = JSON.parse(Buffer.from(await r.data.arrayBuffer()).toString("utf8")); } catch (e) { /* yo'q */ }
+        res.status(200).json({ ok: true, titul: data });
+        return;
+      }
+      if (t === null) { await supabase.storage.from("ai-uploads").remove([path]).catch(() => {}); res.status(200).json({ ok: true, titul: null }); return; }
+      const LIM = { institution: 160, titul: 160, faculty: 120, direction: 160, group: 40, student: 120, city: 60 };
+      const out = {};
+      for (const [k, max] of Object.entries(LIM)) { const v = String((t && t[k]) || "").replace(/\s+/g, " ").trim().slice(0, max); if (v) out[k] = v; }
+      if (!out.student && !out.institution) { res.status(400).json({ ok: false, error: "Kamida ism-familiya yoki o'quv yurtini yozing" }); return; }
+      const { error } = await supabase.storage.from("ai-uploads").upload(path, Buffer.from(JSON.stringify(out)), { contentType: "application/json", upsert: true });
+      res.status(error ? 500 : 200).json({ ok: !error, titul: out });
+      return;
+    }
+
     // Obuna bonusi: Telegram kanal (bot tekshiradi) yoki Instagram — bir martalik sovg'a
     // (AI bot: 1 ta bepul buyurtma; hisoblash boti: 1 ta AI xizmat yoki 10 ta bepul varaq)
     if ((req.body || {}).claim) {

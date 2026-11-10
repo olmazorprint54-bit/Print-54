@@ -578,6 +578,62 @@
     if (window.aiOpenService) window.aiOpenService(a.dataset.chatOpen);
   });
 
+  /* ---------- Titul ma'lumotlarim (profil): OTM, fakultet, yo'nalish, guruh, F.I.Sh, shahar ----------
+     Serverda prefs/titul.json; nusxasi localStorage'da (forma darhol ishlatadi, ai.js myTitul) */
+  const MYT = [["mytInst", "institution"], ["mytFac", "faculty"], ["mytDir", "direction"], ["mytGroup", "group"], ["mytName", "student"], ["mytCity", "city"]];
+  let mytPicked = null; // ro'yxatdan tanlangan OTM {id, name}
+  function mytSet(t, fromServer) {
+    window.AI_MY_TITUL = t || null;
+    try { t ? localStorage.setItem("my-titul", JSON.stringify(t)) : localStorage.removeItem("my-titul"); } catch (e) {}
+    $("mytSum").textContent = t ? "✅ " + [t.student, t.institution, t.direction, t.group].filter(Boolean).join(" · ") : "Mustaqil ish, referat, kurs ishi va taqdimot titul varag'i uchun bir marta yozib qo'ying";
+    MYT.forEach(([id, k]) => { $(id).value = (t && t[k]) || ""; });
+    mytPicked = t && t.titul ? { id: t.titul, name: t.institution } : null;
+    $("mytDel").hidden = !t;
+    if (!fromServer && window.aiTitulChanged) window.aiTitulChanged();
+  }
+  try { mytSet(JSON.parse(localStorage.getItem("my-titul") || "null"), true); } catch (e) { mytSet(null, true); }
+  if (user) api("/api/my-rewards", { titul: "get" }).then((r) => { if (r && r.ok) mytSet(r.titul, true); }).catch(() => {});
+  $("mytHead").addEventListener("click", () => { tick(); $("mytBody").hidden = !$("mytBody").hidden; $("mytHead").classList.toggle("open", !$("mytBody").hidden); });
+  $("mytInst").addEventListener("input", () => {
+    const q = $("mytInst").value;
+    if (mytPicked && q !== mytPicked.name) mytPicked = null;
+    const list = !mytPicked && window.aiTitulMatches ? window.aiTitulMatches(q) : [];
+    $("mytSug").hidden = !list.length;
+    $("mytSug").innerHTML = list.map((t) => `<div data-myt-pick="${esc(t.id)}">🎓 ${esc(t.name)}</div>`).join("");
+  });
+  $("mytSug").addEventListener("click", (e) => {
+    const p = e.target.closest("[data-myt-pick]"); if (!p) return;
+    const t = (window.AI_TITULS || []).find((x) => x.id === p.dataset.mytPick); if (!t) return;
+    tick(); mytPicked = { id: t.id, name: t.name }; $("mytInst").value = t.name; $("mytSug").hidden = true;
+  });
+  $("mytSave").addEventListener("click", async () => {
+    if (!user) { toast("Ilovani Telegram ichida oching"); return; }
+    const t = {};
+    MYT.forEach(([id, k]) => { const v = $(id).value.trim(); if (v) t[k] = v; });
+    if (mytPicked && t.institution === mytPicked.name) t.titul = mytPicked.id;
+    if (!t.student && !t.institution) { toast("Kamida ism-familiya yoki o'quv yurtini yozing"); return; }
+    $("mytSave").disabled = true;
+    try {
+      const r = await api("/api/my-rewards", { titul: t });
+      if (!r.ok) { toast(r.error || "Saqlab bo'lmadi"); return; }
+      mytSet(r.titul); $("mytBody").hidden = true; $("mytHead").classList.remove("open"); $("mytSug").hidden = true;
+      try { tg && tg.HapticFeedback && tg.HapticFeedback.notificationOccurred("success"); } catch (e) {}
+      toast("✅ Saqlandi — endi titul ma'lumotlari avtomatik qo'yiladi");
+    } catch (e) { toast("Internet aloqasini tekshiring"); } finally { $("mytSave").disabled = false; }
+  });
+  $("mytDel").addEventListener("click", async () => {
+    if (!user) return;
+    tick();
+    const r = await api("/api/my-rewards", { titul: null }).catch(() => null);
+    if (r && r.ok) { mytSet(null); toast("O'chirildi"); }
+  });
+  // Formadagi «✏️ Profilda to'ldirish» — profilga o'tib, titul kartasini ochadi
+  window.aiEditTitul = () => {
+    go("profile");
+    $("mytBody").hidden = false; $("mytHead").classList.add("open");
+    setTimeout(() => $("mytCard").scrollIntoView({ behavior: "smooth", block: "start" }), 250);
+  };
+
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
   // «Bonuslar» tugmasi server javobini kutmasdan darhol ko'rinadi (avval ko'ringan bo'lsa — eslab qolinadi)

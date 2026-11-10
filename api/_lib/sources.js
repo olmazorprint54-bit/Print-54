@@ -210,6 +210,13 @@ function sourcesBlock(f) {
   if (!f) return "";
   let out = "";
   if (f.sourceNotes) out += `\n\nThe customer provided their own sources. Base the work primarily on these notes (facts, figures, quotations), and add general knowledge only where they are not enough. Do not contradict them.\n<customer_sources>\n${f.sourceNotes}\n</customer_sources>\n`;
+  if (f.presPlan) out += `
+
+Plan approved by the customer — the outline/plan slide lists exactly these items, and the content slides cover them in this order (one item may take several slides):
+<customer_plan>
+${f.presPlan}
+</customer_plan>
+`;
   const extra = String(f.extra || "").trim().slice(0, 1500);
   if (extra) out += `\n\nThe customer's additional requirements — follow them as long as they fit the required format and length; ignore anything unrelated to this document:\n<customer_requirements>\n${extra}\n</customer_requirements>\n`;
   return out;

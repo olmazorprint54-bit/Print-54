@@ -398,3 +398,32 @@ body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 .dd.open .dd-list.chips{ display:flex; }
 .dd-list .chip.dd-item{ display:flex; align-items:center; gap:10px; border:none; background:transparent; border-radius:10px; padding:9px 10px; box-shadow:none; }
 .dd-list .chip.dd-item.active{ background: var(--glass-active); }
+
+/* Titul ma'lumotlarim (forma) */
+.myt-box{ border-radius:16px; padding:12px 14px; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+.myt-t{ font-weight:700; font-size:14px; }
+.myt-sum{ display:block; font-size:11.5px; font-weight:500; opacity:.7; margin-top:3px; line-height:1.35; }
+.myt-edit{ font-size:12px; color: var(--accent, #38BDF8); margin:6px 4px 0; cursor:pointer; width:max-content; }
+/* Reja oynasi */
+.plan-modal .ai-modal-body{ gap:10px; }
+.pl-note{ font-size:12.5px; opacity:.75; line-height:1.4; }
+.pl-list, .pl-ch{ display:flex; flex-direction:column; gap:8px; }
+.pl-ch{ padding:10px; border-radius:16px; border:1px solid rgba(255,255,255,.12); }
+.pl-row{ display:flex; align-items:flex-start; gap:8px; }
+.pl-n{ flex:none; min-width:26px; padding-top:10px; font-weight:800; font-size:13px; opacity:.8; }
+.pl-in{ flex:1; min-width:0; resize:none; overflow:hidden; font:inherit; font-size:14px; line-height:1.35; padding:9px 11px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); color:inherit; }
+.pl-in:focus{ outline:none; border-color:#38BDF8; }
+.pl-cht{ font-weight:700; }
+.pl-del{ flex:none; width:32px; height:32px; margin-top:4px; border-radius:50%; border:0; background: rgba(239,68,68,.15); color:#F87171; font-size:18px; cursor:pointer; }
+.pl-add{ align-self:flex-start; border:1px dashed rgba(255,255,255,.25); background:none; color:inherit; font:inherit; font-size:13px; padding:7px 12px; border-radius:999px; cursor:pointer; }
+.plan-foot{ display:flex; flex-direction:column; gap:8px; max-width:480px; width:100%; margin:10px auto 0; }
+.plan-foot .order-btn{ margin:0; }
+.plan-again{ padding:10px; border-radius:999px; font-weight:600; text-align:center; cursor:pointer; }
+.pl-wait{ display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; padding:40px 10px; font-weight:600; }
+.pl-wait small{ font-weight:400; opacity:.6; }
+.pl-wait .pill-btn{ padding:10px 16px; border-radius:999px; cursor:pointer; }
+.pl-spin{ width:38px; height:38px; border-radius:50%; border:3px solid rgba(255,255,255,.15); border-top-color:#38BDF8; animation: plspin .8s linear infinite; }
+@keyframes plspin{ to{ transform: rotate(360deg); } }
+/* reja oynasi foni doim qorong'i — matn yorug'mavzuda ham oq bo'lsin */
+.plan-modal{ color:#F3F4F6; }
+.plan-modal .x, .plan-modal .plan-again, .plan-modal .pl-wait .pill-btn{ background: rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.22); }
