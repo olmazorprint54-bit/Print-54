@@ -427,3 +427,4 @@ body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 /* reja oynasi foni doim qorong'i — matn yorug'mavzuda ham oq bo'lsin */
 .plan-modal{ color:#F3F4F6; }
 .plan-modal .x, .plan-modal .plan-again, .plan-modal .pl-wait .pill-btn{ background: rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.22); }
+.myt-off{ margin:8px 4px 0; }

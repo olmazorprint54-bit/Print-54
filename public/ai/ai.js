@@ -187,11 +187,11 @@
         const t = myTitul();
         if (!t) return `<div class="ai-field" data-f="${f.id}"><div class="myt-box glass"><div class="myt-t">📋 Titul ma'lumotlarini bir marta saqlang</div>
           <div class="ai-hint">O'quv yurti, ism-familiya, yo'nalish va guruhni profilga yozib qo'ysangiz, keyingi ishlarda qayta kiritmaysiz — faqat fan va mavzuni yozasiz.</div>
-          <button type="button" class="pill-btn glass" data-myt-edit="1">✏️ Profilda to'ldirish</button></div></div>`;
+          <div class="ai-hint">👉 Profil → «📋 Titul ma'lumotlarim»</div></div></div>`;
         const sum = [t.student, t.institution, t.direction, t.group].filter(Boolean).join(" · ");
         return `<div class="ai-field" data-f="${f.id}"><label class="switch-row glass"><span>📋 Titul ma'lumotlarimdan foydalanish<small class="myt-sum">${esc(sum)}</small></span>
           <span class="switch"><input type="checkbox" data-switch="${f.id}"${v[f.id] ? " checked" : ""}><span class="slider"></span></span></label>
-          <div class="myt-edit" data-myt-edit="1">✏️ O'zgartirish</div></div>`;
+          ${v[f.id] ? "" : `<div class="ai-hint myt-off">Boshqa odam uchun tayyorlasangiz — quyidagi ma'lumotlarni o'zgartiring</div>`}</div>`;
       }
       case "text":
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
@@ -732,7 +732,7 @@
   const shown = (svc, v, id) => { if (svc.myTitul && v.useTitul && myTitul() && MYT_HIDE.includes(id)) return false; const f = svc.fields.find((x) => x.id === id); return !f || ((!f.showIf || cond(v, f.showIf)) && (!f.hideIf || !cond(v, f.hideIf))); };
   function applyShowIf(svc) {
     const v = getValues(svc);
-    svc.fields.filter((f) => f.showIf || f.hideIf).forEach((f) => {
+    svc.fields.filter((f) => f.showIf || f.hideIf || (svc.myTitul && MYT_HIDE.includes(f.id))).forEach((f) => {
       const el = root.querySelector(`.ai-field[data-f="${f.id}"]`);
       if (el) el.hidden = !shown(svc, v, f.id);
     });
@@ -1418,6 +1418,22 @@
   root.addEventListener("change", (e) => {
     if (!current) return;
     const id = e.target.dataset.switch;
+    // Titul kaliti o'chirilsa: titul maydonlari profildagi ma'lumot bilan to'ldirilib ochiladi —
+    // boshqa odam uchun tayyorlayotgan mijoz shu yerning o'zida o'zgartiradi (profil o'zgarmaydi)
+    if (id === "useTitul") {
+      const v = getValues(current), t = myTitul();
+      v.useTitul = e.target.checked; tick();
+      if (!v.useTitul && t) {
+        const has = (k) => current.fields.some((x) => x.id === k);
+        const map = { institution: t.institution, student: t.student, group: t.group, city: t.city, faculty: t.faculty, author: t.student };
+        Object.entries(map).forEach(([k, val]) => { if (val && has(k) && !String(v[k] || "").trim()) v[k] = val; });
+        if (has("titul") && t.titul && v.institution === t.institution) v.titul = t.titul;
+      }
+      const y = window.scrollY;
+      renderForm(current); applyShowIf(current); refreshLive(current);
+      window.scrollTo(0, y);
+      return;
+    }
     if (id) { getValues(current)[id] = e.target.checked; tick(); applyShowIf(current); refreshLive(current); return; }
     const rsw = e.target.dataset.rsw;
     if (rsw !== undefined) {
