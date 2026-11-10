@@ -238,7 +238,8 @@
     if (!user) return;
     try {
       const data = await api("/api/my-rewards");
-      if (!data.ok || !data.ai) return; // Print 54 loyihasidagi botlarda — referal yo'q
+      if (data.ok && !data.ai) { navBonusMark(false); $("navBonus").hidden = true; } // Print 54 loyihasidagi botlarda — bonus bo'limi yo'q
+      if (!data.ok || !data.ai) return;
       window.AI_BONUS = data.ai.credits;
       window.AI_FIRST_FREE = !!data.firstFree;
       if (data.balance != null) {
@@ -312,7 +313,7 @@
   function showBonus(data) {
     tasks = data.tasks || {};
     firstFree = !!data.firstFree;
-    $("navBonus").hidden = false;
+    $("navBonus").hidden = false; navBonusMark(true);
     $("bonusNum").textContent = data.ai.credits;
     $("taskFirst").hidden = !firstFree;
     [["tg", "taskTg"], ["ig", "taskIg"]].forEach(([k, id]) => {
@@ -579,6 +580,9 @@
 
   window.aiBonusUsed = loadRewards;
   window.aiBalanceChanged = loadRewards;
+  // «Bonuslar» tugmasi server javobini kutmasdan darhol ko'rinadi (avval ko'ringan bo'lsa — eslab qolinadi)
+  function navBonusMark(on) { try { on ? localStorage.setItem("nav-bonus", "1") : localStorage.removeItem("nav-bonus"); } catch (e) {} }
+  try { if (localStorage.getItem("nav-bonus") === "1") $("navBonus").hidden = false; } catch (e) {}
   loadRewards();
   $("refShare").addEventListener("click", () => {
     if (!refLink) return;
