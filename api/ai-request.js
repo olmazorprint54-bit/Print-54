@@ -321,6 +321,12 @@ module.exports = async (req, res) => {
       return;
     }
     const u = auth ? auth.user : null;
+    // AI botda mijozsiz buyurtma qabul qilinmaydi: to'lov olinmaydi va tayyor fayl hech kimga
+    // yetib bormaydi (#157 — ilova brauzerda ochilgan). Ilovani bot orqali ochish kerak.
+    if (AI_MODE && !u) {
+      res.status(401).json({ ok: false, error: "Buyurtma berish uchun ilovani Telegram'dagi bot orqali oching (botdagi «Ilova» tugmasi)." });
+      return;
+    }
     const bot = auth ? auth.bot : botKey(body.bot);
     body.user = u;
     body.bot = bot;

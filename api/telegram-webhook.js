@@ -384,7 +384,7 @@ async function deliverAiFile(order, doc, ownerChatId, viaBot) {
     await callTelegram("editMessageText", {
       chat_id: ownerChatId,
       message_id: order.telegram_message_id,
-      text: `${order.details.text}\n\n✅ <b>Fayl yuborildi</b>`,
+      text: `${order.details.text}\n\n${delivered ? "✅ <b>Fayl yuborildi</b>" : order.telegram_user_id ? "⚠️ <b>Faylni mijozga yuborib bo'lmadi</b>" : "⚠️ <b>Mijoz Telegram'siz — fayl hech kimga yuborilmadi</b>"}`,
       parse_mode: "HTML",
       disable_web_page_preview: true,
     }, viaBot);
