@@ -1007,7 +1007,7 @@
   };
   // Super taqdimot: Morph shablonlari (pro-*), 15 slaydgacha
   const isAutoPro = (v) => !!(CFG.templates.presentation_pro || []).find((x) => x.id === v.template && x.auto) && (parseInt(v.slides, 10) || 10) <= 15;
-  const isAuto = (svc, v) => svc.id === "obyektivka" || svc.id === "img2pdf" || TOOL_IDS.includes(svc.id) || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : svc.id === "presentation_pro" ? isAutoPro(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
+  const isAuto = (svc, v) => svc.id === "obyektivka" || svc.id === "img2pdf" || svc.id === "taklif" || TOOL_IDS.includes(svc.id) || (svc.id === "resume" ? isAutoResume(v) : svc.id === "test" ? isAutoTest(v) : svc.id === "presentation" ? isAutoPres(v) : svc.id === "presentation_pro" ? isAutoPro(v) : AI_DOCS.includes(svc.id) ? isAutoDoc(svc, v) : false);
   // Buyurtma narxi: avtomatik bo'lsa — hajmga qarab, aks holda kelishiladi
   const orderPrice = (svc, v) => {
     const p = PR && PR.priceOf(svc.id, { ...v, sourcePages: srcPages(v) });
@@ -1024,6 +1024,14 @@
       const rows = [["Kategoriya", svc.title], ["Namuna", GL(it.t)], ["O'lcham", it.r], ["Uslub", pick("style")], ["Sifat", pick("quality")], ["Variantlar", pick("variants")]];
       return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
         `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(svc.comingSoon ? "🔜 Tez kunda" : orderPriceText(svc, v))}</span></div>`;
+    }
+    // Taklifnoma / tabrik: o'z qatorlari
+    if (svc.id === "taklif") {
+      const who = v.kind === "toy" ? [v.kuyov, v.kelin].filter(Boolean).join(" va ") : v.name;
+      const rows = [["Xizmat", svc.title], ["Turi", pick("kind")], ["Ism", who || "—"], ["Dizayn", pick(v.kind === "toy" ? "tplToy" : "tplTk")],
+        ...(v.kind === "tabrik" ? [] : [["Sana", [v.sana, v.vaqt].filter(Boolean).join(", ") || "—"]]), ["Fayl", pick("format")], ["Tayyor bo'ladi", "⚡ 1 daqiqada"]];
+      return rows.map(([k, val]) => `<div class="receipt-line"><span>${esc(k)}</span><span>${esc(val)}</span></div>`).join("") +
+        `<div class="receipt-total"><span class="t-label">NARXI</span><span class="t-value" style="font-size:16px">${esc(orderPriceText(svc, v))}</span></div>`;
     }
     // Rasmdan PDF: o'z qatorlari
     if (svc.id === "img2pdf") {

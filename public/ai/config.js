@@ -69,6 +69,7 @@
     presentation_pro: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="m12 6.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4z"/></svg>',
     pdftools: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>',
     character: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.4 2.2 2 3.5 2s2.5-.6 3.5-2"/><circle cx="9" cy="10" r=".6"/><circle cx="15" cy="10" r=".6"/><path d="M6 5.5 4 3M18 5.5 20 3"/></svg>',
+    taklif: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/><path d="M12 16.5c-1.2-1-2.5-1.7-2.5-2.8 0-.8.6-1.3 1.3-1.3.5 0 .9.3 1.2.7.3-.4.7-.7 1.2-.7.7 0 1.3.5 1.3 1.3 0 1.1-1.3 1.8-2.5 2.8z"/></svg>',
     gazeta: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H6a2 2 0 0 1-2-2zM17 8h3v10a2 2 0 0 1-2 2h-1"/><path d="M7.5 8h6M7.5 12h6M7.5 16h3"/></svg>',
     crossword: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linejoin="round"><path d="M3 9h6v6H3zM9 9h6v6H9zM15 9h6v6h-6zM9 3h6v6H9zM9 15h6v6H9z"/></svg>',
   };
@@ -402,6 +403,28 @@
           { id: "authors", type: "text", label: "Tayyorlovchilar (ixtiyoriy)", placeholder: "Masalan: Aziza Karimova, Bobur Toshev", max: 90 },
           { id: "extra", type: "textarea", label: "Qo'shimcha talablar (ixtiyoriy)", placeholder: "Masalan: 5-sinf o'quvchilari uchun sodda tilda bo'lsin", max: 500 },
           { id: "template", type: "templates", label: "Ko'rinishi", set: "gazeta", default: "gz-milliy" },
+        ],
+      },
+      {
+        id: "taklif", title: "Taklifnoma va tabrik", sub: "To'y, tug'ilgan kun · rasm yoki PDF",
+        icon: ICONS.taklif, color: "#E0457B",
+        fields: [
+          { id: "kind", type: "chips", label: "Nima tayyorlaymiz", options: [{ v: "toy", l: "💍 To'y taklifnomasi" }, { v: "tk", l: "🎂 Tug'ilgan kun taklifnomasi" }, { v: "tabrik", l: "🎉 Tug'ilgan kun tabrigi" }], default: "toy" },
+          { id: "tplToy", type: "templates", label: "Dizayn", set: "taklif_toy", default: "toy-atirgul", showIf: "kind=toy" },
+          { id: "tplTk", type: "templates", label: "Dizayn", set: "taklif_tk", default: "tk-pushti", showIf: "kind=tk|tabrik" },
+          { id: "kuyov", type: "text", label: "Kuyovning ismi", placeholder: "Masalan: Ibroxim", required: true, max: 30, showIf: "kind=toy" },
+          { id: "kelin", type: "text", label: "Kelinning ismi", placeholder: "Masalan: Ruxsora", required: true, max: 30, showIf: "kind=toy" },
+          { id: "name", type: "text", label: "Kimning tug'ilgan kuni", placeholder: "Masalan: Sevinch yoki Onajonim", required: true, max: 30, showIf: "kind=tk|tabrik" },
+          { id: "age", type: "text", label: "Necha yosh (ixtiyoriy)", placeholder: "Masalan: 7", inputmode: "numeric", max: 3, showIf: "kind=tk|tabrik" },
+          { id: "photos", type: "photos", label: "Rasm (ixtiyoriy)", hint: "Doira ichiga qo'yiladi. Qo'ymasangiz — yosh raqami chiqadi", max: 1, default: [], showIf: "kind=tk|tabrik" },
+          { id: "sana", type: "text", label: "Sana", placeholder: "Masalan: 23-noyabr", max: 40, hideIf: "kind=tabrik" },
+          { id: "vaqt", type: "text", label: "Soat", placeholder: "Masalan: 18:00", max: 20, hideIf: "kind=tabrik" },
+          { id: "joy", type: "text", label: "Joy (to'yxona, kafe)", placeholder: "Masalan: Orastabarda", max: 50, hideIf: "kind=tabrik" },
+          { id: "manzil", type: "text", label: "Manzil (ixtiyoriy)", placeholder: "Masalan: Toshkent sh., Chilonzor tumani", max: 120, hideIf: "kind=tabrik" },
+          { id: "mezbon", type: "text", label: "«Hurmat bilan» (ixtiyoriy)", placeholder: "Masalan: Karimovlar oilasi", max: 80 },
+          { id: "text", type: "textarea", label: "Taklif yoki tabrik matni (ixtiyoriy)", placeholder: "Bo'sh qoldirsangiz, chiroyli matnni AI o'zi yozadi", max: 300 },
+          { id: "lang", type: "chips", label: "Til", options: [{ v: "uz_lat", l: "O'zbek" }, { v: "uz_cyr", l: "Ўзбек" }, { v: "ru", l: "Русский" }], default: "uz_lat" },
+          { id: "format", type: "chips", label: "Fayl turi", options: [{ v: "png", l: "🖼 Rasm (Telegram uchun)" }, { v: "pdf", l: "🖨 PDF (chop etish uchun)" }], default: "png" },
         ],
       },
       {
@@ -741,6 +764,17 @@
       ],
       obyektivka: [
         { id: "rasmiy", name: "Rasmiy shakl", style: "rasmiy", auto: true },
+      ],
+      taklif_toy: [
+        { id: "toy-atirgul", name: "Oq atirgullar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "toy-barg", name: "Pushti barglar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "toy-bordo", name: "Bordo-oltin naqsh", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "toy-kok", name: "Ko'k gullar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+      ],
+      taklif_tk: [
+        { id: "tk-pushti", name: "Pushti sharlar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "tk-bolalar", name: "Bolalar bayrami", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "tk-oltin", name: "Oltin kecha", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
       ],
       gazeta: [
         { id: "gz-milliy", name: "Milliy naqsh", kind: "canva", page: true, pages: 1, ratio: "1122/1587", auto: true },

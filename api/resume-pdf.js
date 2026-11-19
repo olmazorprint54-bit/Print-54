@@ -34,13 +34,13 @@ const isNewLat = () => !!(NEWLAT.getStore() || {}).on;
 
 // Avtomatik tayyorlanadigan xizmatlar (mijozga boradigan izoh uchun)
 const READY = {
-  gazeta: "Devoriy gazetangiz",
+  gazeta: "Devoriy gazetangiz", taklif: "Taklifnomangiz",
   resume: "Resume'ingiz", obyektivka: "Obyektivkangiz", test: "Testingiz",
   img2pdf: "PDF faylingiz", word2pdf: "PDF faylingiz", excel2pdf: "PDF faylingiz", pptx2pdf: "PDF faylingiz", char_add: "Jonli personajli taqdimotingiz", pdfmerge: "Birlashtirilgan PDF", pdfsplit: "Fayllaringiz", pdf2word: "Word faylingiz", pdf2pptx: "PowerPoint faylingiz", presentation: "Taqdimotingiz", presentation_pro: "Super taqdimotingiz", essay: "Mustaqil ishingiz", kurs: "Kurs ishingiz", referat: "Referatingiz", article: "Maqolangiz", lesson: "Dars ishlanmangiz", questions: "Savollaringiz", crossword: "Krossvordingiz",
 };
 const DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
 // Egaga nusxa keladigan xizmatlar (AI yozgan ishlar)
-const COPY_TO_OWNER = new Set(["presentation", "presentation_pro", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword", "gazeta"]);
+const COPY_TO_OWNER = new Set(["presentation", "presentation_pro", "essay", "kurs", "referat", "article", "lesson", "test", "questions", "crossword", "gazeta", "taklif"]);
 const supabase = require("./_lib/db");
 
 const BUCKET = "ai-uploads";
@@ -486,6 +486,12 @@ module.exports = async (req, res) => {
       const gz = await require("./_lib/gazeta").generateGazeta(fields, { withPage });
       ai = gz.ai;
       file = { buffer: gz.buffer, name: gz.name + ".pdf", mime: "application/pdf" };
+    } else if (order.service === "taklif") {
+      // To'y / tug'ilgan kun taklifnomasi: fon + matn qatlami, Chrome'da PNG yoki PDF (api/_lib/taklif.js)
+      const origin = `${req.headers["x-forwarded-proto"] || "https"}://${req.headers.host}`;
+      const tk = await require("./_lib/taklif").generateTaklif(fields, { withPage, origin, photoUrl: await photoUrl(order) });
+      ai = tk.ai;
+      file = { buffer: tk.buffer, name: tk.name + "." + tk.ext, mime: tk.mime };
     } else if (order.service === "img2pdf") {
       // AI yo'q — rasmlardan PDF to'liq kodda
       file = await buildImgPdf(order);

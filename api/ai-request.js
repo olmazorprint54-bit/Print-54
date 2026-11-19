@@ -33,6 +33,7 @@ const AUTO = {
   essay: (f) => canAutoDoc("essay", f), kurs: (f) => canAutoDoc("kurs", f), referat: (f) => canAutoDoc("referat", f), article: (f) => canAutoDoc("article", f), lesson: (f) => canAutoDoc("lesson", f),
   questions: (f) => canAutoDoc("questions", f), crossword: (f) => canAutoDoc("crossword", f),
   gazeta: (f) => require("./_lib/gazeta").canAutoGazeta(f),
+  taklif: (f) => require("./_lib/taklif").canAutoTaklif(f), // to'y / tug'ilgan kun: rasm yoki PDF
   // PRO (Morph) shablonlar faqat Super taqdimotda; oddiy taqdimotda — oddiy shablonlar
   presentation: (f) => !/^pro-/.test(f.template || "") && canAutoPres(f),
   presentation_pro: (f) => /^pro-/.test(f.template || "") && (parseInt(f.slides, 10) || 10) <= 15 && canAutoPres(f),
@@ -58,6 +59,7 @@ const SERVICE_LABELS = {
   questions: "Savollar tuzish",
   crossword: "Krossvord",
   gazeta: "Devoriy gazeta",
+  taklif: "Taklifnoma / tabrik",
   resume: "Resume / CV",
   obyektivka: "Obyektivka",
   img2pdf: "Rasmdan PDF",

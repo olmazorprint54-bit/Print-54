@@ -62,6 +62,7 @@ const LABELS = {
   questions: ["Savollar", "Вопросы", "Questions"],
   crossword: ["Krossvord", "Кроссворд", "Crossword"],
   gazeta: ["Devoriy gazeta", "Стенгазета", "Wall newspaper"],
+  taklif: ["Taklifnoma / tabrik", "Приглашение / открытка", "Invitation / card"],
   resume: ["Resume / CV", "Резюме / CV", "Résumé / CV"],
   obyektivka: ["Obyektivka", "Объективка", "Obyektivka"],
   img2pdf: ["Rasmdan PDF", "Фото в PDF", "Images to PDF"],
