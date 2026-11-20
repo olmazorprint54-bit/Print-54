@@ -955,6 +955,7 @@
       { id: "pro-smart", name: "🎯 SMART maqsad · tepaga aylanuvchi karta", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-shisha", name: "💧 Shisha karta · moviy aks", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-charx", name: "🎡 Charxpalak · yashil-sariq", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-moviy", name: "💠 Moviy romb · kompaniya profili", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
