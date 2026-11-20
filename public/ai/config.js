@@ -770,6 +770,7 @@
         { id: "toy-barg", name: "Pushti barglar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
         { id: "toy-bordo", name: "Bordo-oltin naqsh", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
         { id: "toy-kok", name: "Ko'k gullar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
+        { id: "toy-yashil-islom", name: "Yashil barglar", kind: "canva", page: true, pages: 1, ratio: "1080/1522", auto: true },
       ],
       taklif_tk: [
         { id: "tk-pushti", name: "Pushti sharlar", kind: "canva", page: true, pages: 1, ratio: "9/16", auto: true },
