@@ -1,0 +1,5081 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 19,
+     "max": 43,
+     "perLine": 43.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KASBGA YO'NALTIRISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1397000,
+      4572000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 16,
+     "max": 23,
+     "perLine": 11.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "KELAJAK KASBLARI",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1651000,
+      4699000,
+      1661993
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 44,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qaysi kasb sizga mos? 5 ta talab yuqori soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4572000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 28,
+     "max": 50,
+     "perLine": 49.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5461000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 43,
+     "perLine": 43.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1979750,
+      1476213,
+      4572000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 30,
+     "max": 30,
+     "perLine": 15,
+     "lines": 2,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Kasb tanlash — kelajak tanlash",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1982263,
+      2033819,
+      4699000,
+      1231106
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 108,
+     "max": 108,
+     "perLine": 36,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Texnologiya tez o'zgarmoqda. Bugun to'g'ri tanlangan kasb ertangi kunda barqaror daromad va qoniqish beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2057875,
+      4151913,
+      4572000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      1079997,
+      -3840941,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 9,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1202476,
+      -3248249,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      4894037,
+      -4469369,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      4786306,
+      -3694928,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      8324369,
+      -3921257,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      8406115,
+      -3285954,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      3118263,
+      -4756335,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2984335,
+      -3968378,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "57",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      6538439,
+      -4341561,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 10,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6598727,
+      -3686044,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 26,
+     "max": 61,
+     "perLine": 60.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "5 ta kasb — birini tanlang",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      508000,
+      304800,
+      11176000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 36,
+     "max": 122,
+     "perLine": 122.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har biri keyingi slaydlarda batafsil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      889000,
+      11176000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      1156988,
+      1887186,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 9,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1183801,
+      2571589,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      4818289,
+      1604027,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      4786100,
+      2332555,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      8380838,
+      1906379,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      8396162,
+      2600016,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "49",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      3026748,
+      4151486,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 8,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2982309,
+      4888211,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      6582687,
+      4309994,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "61",
+     "kind": "label",
+     "chars": 10,
+     "max": 19,
+     "perLine": 18.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6592206,
+      5008172,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 93,
+     "max": 93,
+     "perLine": 46.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dasturchilar ilova, sayt va o'yinlarni yaratadi. Bu kasbga talab yildan-yilga oshib bormoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 60,
+     "max": 60,
+     "perLine": 15,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Mantiqiy fikrlash\nIngliz tili va matematika\nDoimiy o'rganish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 35,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Python yoki JavaScript'dan boshlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 25,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kichik loyihalar yarating",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 36,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Olimpiada va xakatonlarda qatnashing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 59,
+     "max": 59,
+     "perLine": 19.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Har kuni 30 daqiqa kod yozish — eng yaxshi mashq.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 104,
+     "max": 104,
+     "perLine": 34.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Shifokor odamlar sog'lig'ini tiklaydi va kasalliklarning oldini oladi. Bu mas'uliyatli va hurmatli kasb.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 62,
+     "max": 62,
+     "perLine": 15.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Biologiya va kimyo bilimi\nSabr va mehr\nUzoq o'qishga tayyorlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 37,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Biologiya va kimyoni chuqur o'rganing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 33,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tibbiyot institutiga tayyorlaning",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 36,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'ngilli bo'lib shifoxonada ishlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 62,
+     "max": 62,
+     "perLine": 20.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Shifokor bo'lish uchun 6–8 yil o'qish kerak bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 35.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muhandislar mashina, bino, ko'prik va qurilmalarni loyihalaydi. Har bir zavod va shahar ularsiz ishlamaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 52,
+     "max": 52,
+     "perLine": 13,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Fizika va matematika\nChizmachilik\nAmaliy ko'nikmalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 29,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Fizika to'garagiga qatnashing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 33,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Robototexnika bilan shug'ullaning",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 30,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Texnika universitetini tanlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 56,
+     "max": 56,
+     "perLine": 28,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: O'z qo'lingiz bilan biror narsa yasab ko'ring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4574231,
+      2819400,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 36.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dizaynerlar sayt, ilova, kiyim va mahsulotlarni chiroyli va qulay qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 71,
+     "max": 71,
+     "perLine": 17.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Ijodkorlik va did\nFigma, Photoshop dasturlari\nFoydalanuvchini tushunish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 25,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har kuni eskizlar chizing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 30,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bepul dizayn kurslarini o'ting",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ishlaringizdan portfolio yig'ing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 20.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Yaxshi dizayn — ko'zga emas, odamga qulay bo'lgani.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 48,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'qituvchi kelajak avlodni tarbiyalaydi. Har bir kasb egasi qachondir o'qituvchidan saboq olgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 60,
+     "max": 60,
+     "perLine": 15,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Fanni chuqur bilish\nTushuntira olish mahorati\nBolalarga mehr",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 8,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 10,
+     "max": 26,
+     "perLine": 25.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 26,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sevimli faningizni tanlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sinfdoshlaringizga yordam bering",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 34,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Pedagogika oliygohiga tayyorlaning",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 20.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Eng yaxshi o'qituvchi — hamisha o'rganadigan inson.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      646974,
+      1424327,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      658546,
+      1911119,
+      939800,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      2986031,
+      1314732,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      2963918,
+      1823330,
+      939800,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      5276385,
+      1438024,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5279680,
+      1930487,
+      939800,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      7616243,
+      1316218,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 8,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      7585477,
+      1829897,
+      939800,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      9892574,
+      1424327,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 10,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      9904146,
+      1911119,
+      939800,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "title",
+     "chars": 6,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      762000,
+      3429000,
+      10668000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 29.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Kasb qiziqish va qobiliyatga mos bo'lsin\nBugundan ko'nikma yig'ishni boshlang\nHar qanday kasbda o'rganish davom etadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      4191000,
+      10668000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      438269,
+      986181,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 9,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Dasturchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      516997,
+      1449680,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      9968650,
+      629555,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Shifokor",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      9887957,
+      1203374,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      298460,
+      4970868,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Muhandis",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      237092,
+      5534975,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      10101329,
+      5276757,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 8,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Dizayner",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      10164157,
+      5754919,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      5201920,
+      -3031744,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 10,
+     "max": 15,
+     "perLine": 15,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "O'qituvchi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5196332,
+      -2726944,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "title",
+     "chars": 7,
+     "max": 13,
+     "perLine": 12.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2489200,
+      2921000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "61",
+     "kind": "label",
+     "chars": 52,
+     "max": 52,
+     "perLine": 17.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kasb tanlashda omad! Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3810000,
+      3251200,
+      2921000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    1,
+    15
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 636,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    2,
+    3
+   ],
+   "focus": 2
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 720,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 6
+  }
+ ],
+ "sequence": true
+}

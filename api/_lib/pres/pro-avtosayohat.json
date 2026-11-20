@@ -1,0 +1,2124 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "START",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3111500,
+      3810000,
+      635000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 16,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "SAYOHAT LOYIHASI",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      1524000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "title",
+     "chars": 11,
+     "max": 16,
+     "perLine": 15.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 60,
+     "paras": 1,
+     "text": "AVTOSAYOHAT",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      660400,
+      1854200,
+      7112000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 45,
+     "max": 47,
+     "perLine": 46.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "To'rt manzil, bitta yo'l: tog'dan dengizgacha",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      3175000,
+      5842000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 28,
+     "max": 59,
+     "perLine": 58.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      5080000,
+      5842000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "START",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3111500,
+      3810000,
+      635000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 6,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      889000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "title",
+     "chars": 17,
+     "max": 26,
+     "perLine": 25.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Nega avtosayohat?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      1219200,
+      7112000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Avtomobilda sayohat yo'l davomidagi har bir manzarani shoshmasdan ko'rish va marshrutni o'zingiz tanlash imkonini beradi.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      2159000,
+      6604000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "text",
+     "chars": 60,
+     "max": 60,
+     "perLine": 15,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Erkin marshrut\nShoshilmasdan tomosha\nYangi joylar va odamlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      3683000,
+      6096000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "START",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3111500,
+      3810000,
+      635000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 8,
+     "max": 31,
+     "perLine": 30.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Marshrut",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      469900,
+      457200,
+      7620000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "1-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      508000,
+      3378200,
+      2603500,
+      444500
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "label",
+     "chars": 7,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      508000,
+      3886200,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 37,
+     "max": 37,
+     "perLine": 18.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qorli cho'qqilar va serpantin yo'llar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      508000,
+      4267200,
+      2603500,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "3-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      3365500,
+      3378200,
+      2603500,
+      444500
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "label",
+     "chars": 7,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "KO'LLAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3365500,
+      3886200,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "54",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tiniq ko'llar va qirg'oqdagi lager",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3365500,
+      4267200,
+      2603500,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "57",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "5-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6223000,
+      3378200,
+      2603500,
+      444500
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 5,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6223000,
+      3886200,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 25,
+     "max": 30,
+     "perLine": 29.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Barxanlar va yulduzli tun",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6223000,
+      4267200,
+      2603500,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 12.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 28,
+     "paras": 1,
+     "text": "7-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      9080500,
+      3378200,
+      2603500,
+      444500
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "DENGIZ",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9080500,
+      3886200,
+      2603500,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 31,
+     "max": 31,
+     "perLine": 15.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ko'm-ko'k suv va orol manzarasi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9080500,
+      4267200,
+      2603500,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 7.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 100,
+     "paras": 1,
+     "text": "1-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5969000,
+      177800,
+      5842000,
+      1587500
+     ],
+     "lineH": 1524000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "47"
+     ],
+     "word": 7
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 7,
+     "max": 21,
+     "perLine": 20.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "TOG'LAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5994400,
+      1803400,
+      5715000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "48"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 15,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Yo'l boshlanadi",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6019800,
+      2489200,
+      5715000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 38,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sayohat tog' yo'llaridan boshlanadi. Serpantin yo'llar va qorli cho'qqilar birinchi kunning eng yorqin taassuroti.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6019800,
+      3175000,
+      5588000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 9,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "1-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      7188200,
+      3759200,
+      4318000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "47"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 15,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1-KUN · TOG'LAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      635000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 19,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yo'lda nima qilamiz",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      965200,
+      6096000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 19.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Erta tongda yo'lga chiqish\nDovonda dam olish\nManzarali joylarda suratga olish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      1905000,
+      5842000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 7,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "2 400 m",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1016000,
+      3962400,
+      5080000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 16,
+     "max": 51,
+     "perLine": 50.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "dovon balandligi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1041400,
+      4673600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 7.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 100,
+     "paras": 1,
+     "text": "3-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5969000,
+      177800,
+      5842000,
+      1587500
+     ],
+     "lineH": 1524000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "52"
+     ],
+     "word": 7
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 7,
+     "max": 21,
+     "perLine": 20.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "KO'LLAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5994400,
+      1803400,
+      5715000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "53"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Tinch suv bo'yida",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6019800,
+      2489200,
+      5715000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 50,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tog'lardan keyin yo'l tiniq ko'llar tomon buriladi. Kechqurun qirg'oqda chodir tikib, tunab qolamiz.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6019800,
+      3175000,
+      5588000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 9,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "3-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      7188200,
+      3759200,
+      4318000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "52"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 15,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "3-KUN · KO'LLAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      635000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 19,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yo'lda nima qilamiz",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      965200,
+      6096000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 16.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qirg'oqda chodir tikish\nQayiqda sayr\nGulxan atrofida kechki ovqat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      1905000,
+      5842000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "12 km",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1016000,
+      3962400,
+      5080000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 14,
+     "max": 51,
+     "perLine": 50.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "piyoda so'qmoq",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1041400,
+      4673600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 7.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 100,
+     "paras": 1,
+     "text": "5-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5969000,
+      177800,
+      5842000,
+      1587500
+     ],
+     "lineH": 1524000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "57"
+     ],
+     "word": 7
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 5,
+     "max": 21,
+     "perLine": 20.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "CHO'L",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5994400,
+      1803400,
+      5715000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "58"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 14,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Qumlar orasida",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6019800,
+      2489200,
+      5715000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 90,
+     "max": 90,
+     "perLine": 45,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Cho'l yo'li sabr talab qiladi: suv, yoqilg'i va soya zaxirasini oldindan tayyorlash kerak.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6019800,
+      3175000,
+      5588000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 9,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "5-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      7188200,
+      3759200,
+      4318000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "57"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 13,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "5-KUN · CHO'L",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      635000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 19,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yo'lda nima qilamiz",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      965200,
+      6096000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 78,
+     "max": 78,
+     "perLine": 19.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Suv va yoqilg'i zaxirasi\nKunduzgi issiqdan saqlanish\nYulduzli osmonni kuzatish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      1905000,
+      5842000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 17,
+     "perLine": 16.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "40°C",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      1016000,
+      3962400,
+      5080000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 16,
+     "max": 51,
+     "perLine": 50.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kunduzgi harorat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1041400,
+      4673600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 7,
+     "perLine": 7.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 100,
+     "paras": 1,
+     "text": "7-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      5969000,
+      177800,
+      5842000,
+      1587500
+     ],
+     "lineH": 1524000,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "62"
+     ],
+     "word": 7
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 6,
+     "max": 21,
+     "perLine": 20.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 38,
+     "paras": 1,
+     "text": "DENGIZ",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5994400,
+      1803400,
+      5715000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "63"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Marra — qirg'oqda",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      6019800,
+      2489200,
+      5715000,
+      369332
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 32.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yo'l dengiz bo'yida tugaydi. Bir haftalik sayohatdan keyin qirg'oqda dam olish eng yaxshi mukofot.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6019800,
+      3175000,
+      5588000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 5,
+     "max": 9,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 64,
+     "paras": 1,
+     "text": "7-KUN",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      7188200,
+      3759200,
+      4318000,
+      1016000
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "62"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 14,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "7-KUN · DENGIZ",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      635000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 19,
+     "max": 26,
+     "perLine": 25.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yo'lda nima qilamiz",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      965200,
+      6096000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 58,
+     "max": 58,
+     "perLine": 14.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qirg'oqda dam olish\nOrolga sayr\nSayohat kundaligini yozish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      1905000,
+      5842000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 5,
+     "max": 22,
+     "perLine": 22.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "1 850",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      1016000,
+      3962400,
+      5080000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 22,
+     "max": 51,
+     "perLine": 50.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "km bosib o'tilgan yo'l",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1041400,
+      4673600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 9,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "NATIJALAR",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      635000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 18,
+     "max": 36,
+     "perLine": 35.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Sayohat raqamlarda",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      965200,
+      8890000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 5,
+     "max": 11,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "7 kun",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      965200,
+      2616200,
+      2794000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 18,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "yo'lda o'tgan vaqt",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      990600,
+      3810000,
+      2743200,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 11,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "1 850 km",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      4648200,
+      2616200,
+      2794000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 13,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "umumiy masofa",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4673600,
+      3810000,
+      2743200,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "4",
+     "font": "+mn-lt",
+     "anchor": "t",
+     "box": [
+      8331200,
+      2616200,
+      2794000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 13,
+     "max": 24,
+     "perLine": 24.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "tabiat zonasi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8356600,
+      3810000,
+      2743200,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 20,
+     "max": 36,
+     "perLine": 35.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Yo'l qiyinchiliklari",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      508000,
+      8890000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 14,
+     "max": 25,
+     "perLine": 24.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Qiyinchiliklar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1066800,
+      1930400,
+      4318000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 57,
+     "max": 57,
+     "perLine": 14.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Uzoq masofa va charchoq\nOb-havo o'zgarishi\nAloqa yo'qligi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1066800,
+      2616200,
+      4318000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 9,
+     "max": 25,
+     "perLine": 24.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Yechimlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6527800,
+      1930400,
+      4318000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 18.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Har 2 soatda dam olish\nIssiq va yengil kiyim\nOflayn xarita, zaxira quvvat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6527800,
+      2616200,
+      4318000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "MARRA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3111500,
+      3810000,
+      635000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "label",
+     "chars": 6,
+     "max": 57,
+     "perLine": 57,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      889000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "title",
+     "chars": 24,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Marra — yangi sarguzasht",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      673100,
+      1219200,
+      7620000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "text",
+     "chars": 137,
+     "max": 137,
+     "perLine": 27.4,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 4,
+     "text": "Avtosayohat — erkinlik va kashfiyot\nTayyorgarlik — xavfsizlik kafolati\nTabiatni asraymiz, iz qoldirmaymiz\nHar bir yo'l yangi do'st beradi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      2286000,
+      6604000,
+      1415772
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13,
+     "lines": 1,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "MARRA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      3111500,
+      3810000,
+      635000
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "title",
+     "chars": 7,
+     "max": 10,
+     "perLine": 12.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 72,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Rockwell",
+     "anchor": "t",
+     "box": [
+      635000,
+      2159000,
+      6604000,
+      1107996
+     ],
+     "lineH": 1097280,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Yo'lingiz bexatar bo'lsin! Savollaringiz bo'lsa, marhamat.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      711200,
+      3556000,
+      5842000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 6
+  }
+ ],
+ "sequence": true
+}
