@@ -29,6 +29,15 @@ const TPL = {
   "toy-yashil-mehrob": { kind: "toy", bg: "toy-yashil-mehrob.jpg", h: 1512, area: [170, 300, 740, 920], ink: "#f5f5dc", acc: "#e4b964", soft: "#e9dfb8", dark: true }, // Canva: 5-varaq 59 DAHbbTI4_eM
   "toy-firuza": { kind: "toy", bg: "toy-firuza.jpg", h: 1350, area: [275, 390, 530, 770], ink: "#7a4a1e", acc: "#b8893c", soft: "#3d5a55" }, // Canva: 5-varaq 66 DAHbbdr0ifA
   "toy-oq-oltin": { kind: "toy", bg: "toy-oq-oltin.jpg", h: 1512, area: [160, 270, 760, 800], ink: "#6b5a12", acc: "#bc9c22", soft: "#8a7630" }, // Canva: 5-varaq 84 DAHbbR3RKsU
+  "tk-safari": { kind: "tk", bg: "tk-safari.jpg", h: 1512, area: [300, 430, 480, 530], ink: "#5e4a32", acc: "#b68a52", soft: "#6b6058" }, // Canva: 6-varaq 9 DAHbbSsTU_s
+  "tk-qasr": { kind: "tk", bg: "tk-qasr.jpg", h: 1512, area: [90, 890, 900, 580], ink: "#5b4f9c", acc: "#f078b1", soft: "#786fac" }, // Canva: 6-varaq 23 DAHbbY_Ibf0
+  "tk-suv-pari": { kind: "tk", bg: "tk-suv-pari.jpg", h: 1512, area: [250, 215, 580, 1135], ink: "#685aba", acc: "#ff6eb4", soft: "#7a6fb0" }, // Canva: 6-varaq 24 DAHbbZX-eFY
+  "tk-koinot": { kind: "tk", bg: "tk-koinot.jpg", h: 1512, area: [260, 150, 560, 1080], ink: "#fff4b9", acc: "#f6b94a", soft: "#f3e6b0", dark: true }, // Canva: 6-varaq 26 DAHbbXlsnN0
+  "tk-pushti-katak": { kind: "tk", bg: "tk-pushti-katak.jpg", h: 1512, area: [170, 170, 740, 1170], ink: "#c9524a", acc: "#e985a6", soft: "#b0656a" }, // Canva: 6-varaq 32 DAHbbaE_GRU
+  "tk-kraft": { kind: "tk", bg: "tk-kraft.jpg", h: 1512, area: [200, 230, 680, 1080], ink: "#744c42", acc: "#b58863", soft: "#8a6a5c" }, // Canva: 6-varaq 41 DAHbbTgIda4
+  "tk-pushti-yurak": { kind: "tk", bg: "tk-pushti-yurak.jpg", h: 1512, area: [150, 150, 780, 1220], ink: "#a23558", acc: "#ed88b2", soft: "#b0607a" }, // Canva: 6-varaq 42 DAHbbdDKyDw
+  "tk-dengiz": { kind: "tk", bg: "tk-dengiz.jpg", h: 1512, area: [260, 130, 560, 1120], ink: "#1a4779", acc: "#8f7fd6", soft: "#3d5f8c" }, // Canva: 6-varaq 55 DAHbba_EVB0
+  "tk-yashil-akvarel": { kind: "tk", bg: "tk-yashil-akvarel.jpg", h: 1512, area: [150, 170, 780, 1170], ink: "#3d3131", acc: "#5fb89a", soft: "#55605a" }, // Canva: 6-varaq 63 DAHbbYhm7P8
   "tk-pushti": { kind: "tk", draw: "pushti", area: [150, 300, 780, 1430], ink: "#7a3550", acc: "#d98aa6", soft: "#8c5a6c" },
   "tk-bolalar": { kind: "tk", draw: "bolalar", area: [150, 330, 780, 1360], ink: "#1f4f8a", acc: "#ff8a3d", soft: "#3d6aa3" },
   "tk-oltin": { kind: "tk", draw: "oltin", area: [150, 300, 780, 1430], ink: "#f3d48a", acc: "#d4a94e", soft: "#e8dcc0", dark: true },
