@@ -1,0 +1,2543 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "6",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5842000,
+      3251200,
+      508000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 88,
+     "paras": 1,
+     "text": "6",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5080000,
+      1905000,
+      2032000,
+      1397000
+     ],
+     "lineH": 1341120,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 19,
+     "perLine": 19.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5080000,
+      3200400,
+      2032000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 17,
+     "max": 22,
+     "perLine": 21.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4419600,
+      8890000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 36,
+     "max": 67,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muvaffaqiyatli loyihaning 6 bosqichi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2286000,
+      5334000,
+      7620000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 28,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      5816600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "6",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5461000,
+      3048000,
+      1270000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      3911600,
+      1524000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 12,
+     "max": 23,
+     "perLine": 23.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Loyiha nima?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      5080000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4470400,
+      2349500,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 24.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      1905000,
+      3048000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 44,
+     "max": 44,
+     "perLine": 22,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Aniq natijaga erishish uchun qilinadigan ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2336800,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7213600,
+      2349500,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 24.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Muddat",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8382000,
+      1905000,
+      3048000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 39,
+     "max": 39,
+     "perLine": 19.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Boshlanishi va tugashi belgilangan vaqt",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8382000,
+      2336800,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4470400,
+      4737100,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 5,
+     "max": 24,
+     "perLine": 24.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Jamoa",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      4318000,
+      3048000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 36,
+     "max": 36,
+     "perLine": 18,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Birgalikda ishlaydigan mutaxassislar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      4749800,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7213600,
+      4737100,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 24.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8382000,
+      4318000,
+      3048000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 38,
+     "max": 38,
+     "perLine": 19,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Buyurtmachiga topshiriladigan mahsulot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8382000,
+      4749800,
+      3048000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 21,
+     "max": 35,
+     "perLine": 35,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Loyihaning 6 bosqichi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      952500,
+      2641600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "G'OYA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      825500,
+      3098800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Muammo va maqsad",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      749300,
+      4902200,
+      1676400,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2755900,
+      3149600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 4,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2628900,
+      3606800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 19,
+     "max": 21,
+     "perLine": 20.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Vazifa va muddatlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2552700,
+      5410200,
+      1676400,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4559300,
+      2641600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "JAMOA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4432300,
+      3098800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 19,
+     "max": 21,
+     "perLine": 20.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Rollarni taqsimlash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4356100,
+      4902200,
+      1676400,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6362700,
+      3149600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 8,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "BAJARISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6235700,
+      3606800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 17,
+     "max": 42,
+     "perLine": 20.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qadamma-qadam ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6159500,
+      5410200,
+      1676400,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8166100,
+      2641600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "NAZORAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8039100,
+      3098800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 21,
+     "perLine": 20.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natijani o'lchash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7962900,
+      4902200,
+      1676400,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9969500,
+      3149600,
+      1270000,
+      381000
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "YAKUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9842500,
+      3606800,
+      1524000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 20,
+     "max": 21,
+     "perLine": 20.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Topshirish va xulosa",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9766300,
+      5410200,
+      1676400,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 10,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "01 · G'OYA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 16,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo va maqsad",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir loyiha aniq muammodan boshlanadi. Avval nimani o'zgartirmoqchi ekanimizni va qanday natija kutayotganimizni belgilaymiz.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 30.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Maqsad aniq, o'lchanadigan va erishiladigan bo'lsin.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 9,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "02 · REJA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 19,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Vazifa va muddatlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 57,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Katta maqsad kichik vazifalarga bo'linadi. Har bir vazifaga muddat, mas'ul shaxs va kerakli resurslar belgilanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 46,
+     "max": 56,
+     "perLine": 56,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Rejaga har doim zaxira vaqt qo'shing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 10,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "03 · JAMOA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 19,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Rollarni taqsimlash",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 55,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir a'zo o'z kuchli tomoniga qarab vazifa oladi. Kim nima uchun javob berishi hammaga aniq bo'lishi kerak.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 59,
+     "max": 59,
+     "perLine": 29.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Haftalik qisqa uchrashuvlar jamoani birlashtiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 13,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "04 · BAJARISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 17,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Qadamma-qadam ish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Vazifalar ketma-ket bajariladi, tayyor qismlar darhol tekshiriladi. Muammo chiqsa, u erta aniqlanadi va tez hal qilinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 41,
+     "max": 56,
+     "perLine": 56,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Eng muhim vazifalardan boshlang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 12,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "05 · NAZORAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 17,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Natijani o'lchash",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 56,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Loyiha holati muntazam ko'rib chiqiladi: reja bilan haqiqiy natija solishtiriladi, kerak bo'lsa reja tuzatiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 42,
+     "max": 56,
+     "perLine": 56,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Natijani raqamlar bilan o'lchang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 10,
+     "max": 22,
+     "perLine": 22.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "06 · YAKUN",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6121400,
+      1092200,
+      5080000,
+      461665
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 46.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Topshirish va xulosa",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1676400,
+      5334000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 59.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tayyor natija buyurtmachiga topshiriladi. Jamoa nima yaxshi bo'lgani va nimani yaxshilash mumkinligini muhokama qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2133600,
+      5588000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 30.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma: Xulosalar keyingi loyiha uchun eng qimmatli tajriba.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      3886200,
+      5130800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 21,
+     "max": 35,
+     "perLine": 35,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Muvaffaqiyat omillari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      7620000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Aniq maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      1778000,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hamma bir natija sari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2159000,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Puxta reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      3327400,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 21,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Vazifa va muddat aniq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3708400,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kuchli jamoa",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      4876800,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 19,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har kim o'z o'rnida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5257800,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 13,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Ochiq muloqot",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8509000,
+      1778000,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 20,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Muammo yashirilmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8509000,
+      2159000,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Nazorat",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8509000,
+      3327400,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Natija o'lchanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8509000,
+      3708400,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 9,
+     "max": 25,
+     "perLine": 25.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Moslashuv",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8509000,
+      4876800,
+      2921000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 27,
+     "max": 32,
+     "perLine": 31.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Reja kerak bo'lsa o'zgaradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8509000,
+      5257800,
+      2921000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "title",
+     "chars": 14,
+     "max": 28,
+     "perLine": 28,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Xavf va yechim",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      6096000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 24,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Xavf: muddat cho'zilishi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2108200,
+      2006600,
+      4318000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 74,
+     "max": 74,
+     "perLine": 37,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Vazifalar kechiksa, butun loyiha kechikadi. Muddatni har hafta tekshiring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      2463800,
+      4368800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 24,
+     "max": 38,
+     "perLine": 37.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Xavf: mablag' yetmasligi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2108200,
+      4241800,
+      4318000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 81,
+     "max": 81,
+     "perLine": 40.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Xarajatlar oldindan hisoblanmasa, loyiha to'xtab qoladi. Zaxira byudjet ajrating.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2108200,
+      4699000,
+      4368800,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 11,
+     "max": 20,
+     "perLine": 19.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "01 MASLAHAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1981200,
+      1282700,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 27,
+     "max": 36,
+     "perLine": 36.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Kichik qadamlardan boshlang",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2108200,
+      5842000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 110,
+     "max": 110,
+     "perLine": 55,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Katta loyihani bir kunda tugatib bo'lmaydi. Har kuni bitta aniq vazifani bajaring va natijani belgilab boring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1270000,
+      3175000,
+      5842000,
+      585481
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "title",
+     "chars": 19,
+     "max": 41,
+     "perLine": 20.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Foydali maslahatlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8128000,
+      1524000,
+      3302000,
+      861774
+     ],
+     "lineH": 426720,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA BOSHQARUVI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4191000,
+      215900,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "4"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 11,
+     "max": 20,
+     "perLine": 19.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "02 MASLAHAT",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1981200,
+      1282700,
+      2362200,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 28,
+     "max": 36,
+     "perLine": 36.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Jamoa bilan ochiq gaplashing",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2108200,
+      5842000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muammoni yashirmang: uni qancha erta aytsangiz, shuncha oson hal qilinadi. Har bir fikr muhim.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1270000,
+      3175000,
+      5842000,
+      585481
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "title",
+     "chars": 19,
+     "max": 41,
+     "perLine": 20.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Foydali maslahatlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8128000,
+      1524000,
+      3302000,
+      861774
+     ],
+     "lineH": 426720,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "title",
+     "chars": 7,
+     "max": 12,
+     "perLine": 11.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      2540000,
+      2540000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 58,
+     "max": 67,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat! Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2286000,
+      5334000,
+      7620000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    5
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image15.jpg"
+   ],
+   "w": 1920,
+   "h": 1281,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image16.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image17.jpg"
+   ],
+   "w": 1600,
+   "h": 1100,
+   "slides": [
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image18.jpg"
+   ],
+   "w": 1920,
+   "h": 1080,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  }
+ ],
+ "sequence": true
+}

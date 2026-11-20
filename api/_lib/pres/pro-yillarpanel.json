@@ -1,0 +1,6899 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 16,
+     "max": 60,
+     "perLine": 60.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LOYIHA TAQDIMOTI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1168400,
+      6350000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 19,
+     "max": 31,
+     "perLine": 15.7,
+     "lines": 2,
+     "caps": true,
+     "sz": 60,
+     "paras": 1,
+     "text": "KOSMOSNI ZABT ETISH",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1498600,
+      7112000,
+      1905000
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 66,
+     "max": 66,
+     "perLine": 33,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sputnikdan Jeyms Uebb teleskopigacha: insoniyatning koinotga yo'li",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3556000,
+      6096000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 28,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      4699000,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "BOSHLANISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 24,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi sun'iy yo'ldosh",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 50,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sputnik-1 Yer orbitasiga chiqarildi va kosmik asr boshlandi. U 92 kun davomida Yer atrofida aylandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 6,
+     "max": 60,
+     "perLine": 60.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1168400,
+      6350000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Inson va koinot",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1498600,
+      7112000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ming yillar davomida odamlar yulduzlarga qarab orzu qilgan. XX asrda bu orzu haqiqatga aylandi — inson koinotga yo'l ochdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2362200,
+      6096000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 43,
+     "max": 59,
+     "perLine": 59,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Quyida — shu yo'ldagi 8 ta eng muhim qadam.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      3810000,
+      6096000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "BOSHLANISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "16"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 24,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi sun'iy yo'ldosh",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 50,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sputnik-1 Yer orbitasiga chiqarildi va kosmik asr boshlandi. U 92 kun davomida Yer atrofida aylandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "JASORAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi inson koinotda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 49.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yuriy Gagarin 108 daqiqada Yerni bir marta aylanib chiqdi. Inson koinotda yashay olishi isbotlandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "BOSHLANISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "16"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 24,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi sun'iy yo'ldosh",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 100,
+     "max": 100,
+     "perLine": 50,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sputnik-1 Yer orbitasiga chiqarildi va kosmik asr boshlandi. U 92 kun davomida Yer atrofida aylandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "JASORAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "20"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi inson koinotda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 49.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yuriy Gagarin 108 daqiqada Yerni bir marta aylanib chiqdi. Inson koinotda yashay olishi isbotlandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "22"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 2,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "OY",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 19,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Oyga birinchi qadam",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 45.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Apollon-11 ekipaji Oyga qo'ndi. Nil Armstrong va Bazz Oldrin Oy yuzasida 2,5 soat yurishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 7,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "JASORAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "20"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Birinchi inson koinotda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "21"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 49.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yuriy Gagarin 108 daqiqada Yerni bir marta aylanib chiqdi. Inson koinotda yashay olishi isbotlandi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "22"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 2,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "OY",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 19,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Oyga birinchi qadam",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 45.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Apollon-11 ekipaji Oyga qo'ndi. Nil Armstrong va Bazz Oldrin Oy yuzasida 2,5 soat yurishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "26"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "STANSIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 13,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Kosmosdagi uy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Skylab stansiyasida astronavtlar oylab yashab, Quyosh va Yerni kuzatishdi, yuzlab tajribalar o'tkazishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 2,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "OY",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 19,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Oyga birinchi qadam",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 45.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Apollon-11 ekipaji Oyga qo'ndi. Nil Armstrong va Bazz Oldrin Oy yuzasida 2,5 soat yurishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      4,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "STANSIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 13,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Kosmosdagi uy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Skylab stansiyasida astronavtlar oylab yashab, Quyosh va Yerni kuzatishdi, yuzlab tajribalar o'tkazishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "26"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "TELESKOP",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Hubble ko'zi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hubble teleskopi orbitaga chiqarildi. U olam yoshini aniqlashga va minglab galaktikalarni ko'rishga yordam berdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "STANSIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 13,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Kosmosdagi uy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 52.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Skylab stansiyasida astronavtlar oylab yashab, Quyosh va Yerni kuzatishdi, yuzlab tajribalar o'tkazishdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "TELESKOP",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 12,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Hubble ko'zi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hubble teleskopi orbitaga chiqarildi. U olam yoshini aniqlashga va minglab galaktikalarni ko'rishga yordam berdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "26"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 9,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "HAMKORLIK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Xalqaro kosmik stansiya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 51,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "15 davlat birgalikda XKSni qura boshladi. 2000-yildan beri unda doimo odamlar yashab, ishlab kelmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "TELESKOP",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 12,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Hubble ko'zi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hubble teleskopi orbitaga chiqarildi. U olam yoshini aniqlashga va minglab galaktikalarni ko'rishga yordam berdi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 9,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "HAMKORLIK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Xalqaro kosmik stansiya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 51,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "15 davlat birgalikda XKSni qura boshladi. 2000-yildan beri unda doimo odamlar yashab, ishlab kelmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "26"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "MARS",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 16,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Curiosity Marsda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 88,
+     "max": 88,
+     "perLine": 44,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Curiosity marsoxodi Geyl krateriga qo'ndi va Marsda qachonlardir suv oqqanini isbotladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 9,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "HAMKORLIK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 23,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Xalqaro kosmik stansiya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 51,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "15 davlat birgalikda XKSni qura boshladi. 2000-yildan beri unda doimo odamlar yashab, ishlab kelmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "MARS",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 16,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Curiosity Marsda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 88,
+     "max": 88,
+     "perLine": 44,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Curiosity marsoxodi Geyl krateriga qo'ndi va Marsda qachonlardir suv oqqanini isbotladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "26"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -11988800,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "UEBB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      -11912600,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 20,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Jeyms Uebb teleskopi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng kuchli kosmik teleskop uchirildi. U koinotdagi ilk galaktikalarni ko'rish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      -6096000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5867400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "MARS",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 16,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Curiosity Marsda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 88,
+     "max": 88,
+     "perLine": 44,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Curiosity marsoxodi Geyl krateriga qo'ndi va Marsda qachonlardir suv oqqanini isbotladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      2489200,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "UEBB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      3911600,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "24"
+     ]
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 20,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Jeyms Uebb teleskopi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      2717800,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng kuchli kosmik teleskop uchirildi. U koinotdagi ilk galaktikalarni ko'rish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3251200,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "26"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      7645400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 92,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      -2844800,
+      5334000,
+      1415772
+     ],
+     "lineH": 1402080,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 4,
+     "max": 42,
+     "perLine": 42.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "UEBB",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      -1422400,
+      5080000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "24"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 20,
+     "max": 34,
+     "perLine": 34.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Jeyms Uebb teleskopi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2616200,
+      5080000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eng kuchli kosmik teleskop uchirildi. U koinotdagi ilk galaktikalarni ko'rish imkonini beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      -2082800,
+      5080000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "26"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 21,
+     "max": 72,
+     "perLine": 72.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'ZBEKISTON VA KOSMOS",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      7620000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "title",
+     "chars": 18,
+     "max": 30,
+     "perLine": 30.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Vladimir Jonibekov",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1219200,
+      7620000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 56,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Toshkent viloyatida tug'ilgan kosmonavt koinotga 5 marta uchgan va ikki marta Qahramon unvoniga sazovor bo'lgan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2108200,
+      6604000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "5",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      3683000,
+      2286000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 13,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kosmik parvoz",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      787400,
+      4572000,
+      2286000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "145",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      3683000,
+      2286000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kun koinotda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4572000,
+      2286000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "1942",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5842000,
+      3683000,
+      2286000,
+      830997
+     ],
+     "lineH": 822960,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 14,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "tug'ilgan yili",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5867400,
+      4572000,
+      2286000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      7645400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 8,
+     "max": 72,
+     "perLine": 72.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "RAQAMLAR",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      7620000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 30,
+     "perLine": 30.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Koinot raqamlarda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1219200,
+      7620000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      2362200,
+      3302000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 17,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Oyda yurgan inson",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4191000,
+      2667000,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "600+",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      3632200,
+      3302000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 21,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "koinotga chiqqan odam",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4191000,
+      3937000,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "title",
+     "chars": 6,
+     "max": 10,
+     "perLine": 9.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "400 km",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      4902200,
+      3302000,
+      923330
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 25,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "XKSning uchish balandligi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4191000,
+      5207000,
+      5080000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      7645400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 7,
+     "max": 72,
+     "perLine": 72.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KELAJAK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      7620000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 20,
+     "max": 30,
+     "perLine": 30.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Oyga qaytish va Mars",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1219200,
+      7620000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Artemida dasturi odamlarni yana Oyga qaytarishni, keyin esa Marsga yo'l ochishni rejalashtirmoqda.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2108200,
+      6604000,
+      553998
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 59,
+     "max": 59,
+     "perLine": 14.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Oyda doimiy baza\nMarsga birinchi ekspeditsiya\nKosmik turizm",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3429000,
+      6350000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      7696200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      7645400,
+      1397000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 6,
+     "max": 72,
+     "perLine": 72.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      889000,
+      7620000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 24,
+     "max": 30,
+     "perLine": 30.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Koinot yo'li davom etadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1219200,
+      7620000,
+      677108
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      2425700,
+      558800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 40,
+     "max": 58,
+     "perLine": 57.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "64 yilda yo'ldoshdan Uebb teleskopigacha",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      2400300,
+      6604000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      3213100,
+      558800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 38,
+     "max": 58,
+     "perLine": 57.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Har bir qadam — ko'p davlatlar mehnati",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3187700,
+      6604000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      4000500,
+      558800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 37,
+     "max": 58,
+     "perLine": 57.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kosmos texnologiyasi kundalik hayotda",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3975100,
+      6604000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      762000,
+      4787900,
+      558800,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 20,
+     "max": 58,
+     "perLine": 57.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Keyingi qadam — Mars",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      4762500,
+      6604000,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1957",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      508000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      2,
+      "15"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1961",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1905000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      3,
+      "19"
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1969",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3302000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      4,
+      "23"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1973",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4699000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      5,
+      "23"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1990",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6096000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      6,
+      "23"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "1998",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7493000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      7,
+      "23"
+     ]
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2012",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      8,
+      "23"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2021",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5918200,
+      1397000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "num": true,
+     "off": true,
+     "copy": [
+      9,
+      "23"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 7,
+     "max": 10,
+     "perLine": 12,
+     "lines": 1,
+     "caps": true,
+     "sz": 84,
+     "paras": 1,
+     "text": "RAHMAT!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      711200,
+      1905000,
+      7620000,
+      1292662
+     ],
+     "lineH": 1280160,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat! Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3429000,
+      6096000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1600,
+   "h": 900,
+   "slides": [
+    1,
+    11,
+    15
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1245,
+   "h": 1280,
+   "slides": [
+    2,
+    12
+   ],
+   "focus": 2
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 1280,
+   "h": 815,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 1490,
+   "h": 1920,
+   "slides": [
+    4
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 1600,
+   "h": 1657,
+   "slides": [
+    5,
+    14
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1600,
+   "h": 1581,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1600,
+   "h": 1052,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1600,
+   "h": 1181,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 1600,
+   "h": 900,
+   "slides": [
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 1600,
+   "h": 926,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1600,
+   "h": 915,
+   "slides": [
+    13
+   ],
+   "focus": 13
+  }
+ ],
+ "sequence": true
+}

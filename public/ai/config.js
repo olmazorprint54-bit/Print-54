@@ -956,6 +956,16 @@
       { id: "pro-shisha", name: "💧 Shisha karta · moviy aks", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-charx", name: "🎡 Charxpalak · yashil-sariq", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-moviy", name: "💠 Moviy romb · kompaniya profili", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-oqromb", name: "🤍 Oq romb · kompaniya profili", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-poyga", name: "🏁 Poyga yo'li · to'q sariq", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-avtosayohat", name: "🚗 Avtosayohat · firuza yo'l", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-sakkiz", name: "🔷 Sakkizburchak infografika", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-sahna", name: "🎤 Sahna qomati · qizil", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yillarpanel", name: "🚀 Yillar paneli · kosmos", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-knopka", name: "📌 Knopkali kartochkalar · qora", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-knopka2", name: "📌 Knopkali kartochkalar · probka", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-knopka3", name: "📌 Knopkali kartochkalar · to'q ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-knopka4", name: "📌 Knopkali kartochkalar · yashil", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

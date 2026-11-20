@@ -1,0 +1,5081 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 9,
+     "max": 43,
+     "perLine": 43.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "EKOLOGIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1397000,
+      4572000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 17,
+     "max": 23,
+     "perLine": 11.3,
+     "lines": 2,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "TABIATNI ASRAYLIK",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1651000,
+      4699000,
+      1661993
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 40,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har birimiz qila oladigan 5 ta oddiy ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4572000,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 28,
+     "max": 50,
+     "perLine": 49.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2032000,
+      5461000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 43,
+     "perLine": 43.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KIRISH",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1979750,
+      1476213,
+      4572000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 16,
+     "max": 20,
+     "perLine": 20.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Sayyoramiz bitta",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1982263,
+      2341595,
+      4699000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ifloslanish, suv tanqisligi va o'rmonlarning kamayishi hammamizga ta'sir qiladi. Kichik ishlar ham katta o'zgarish yasaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2057875,
+      4151913,
+      4572000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1079997,
+      -3840941,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 16,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1202476,
+      -3248249,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4894037,
+      -4469369,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4786306,
+      -3694928,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      8324369,
+      -3921257,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      8406115,
+      -3285954,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      3118263,
+      -4756335,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "label",
+     "chars": 17,
+     "max": 37,
+     "perLine": 18.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2984335,
+      -4076100,
+      1503680,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "57",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6538439,
+      -4341561,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 18,
+     "max": 37,
+     "perLine": 18.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6598727,
+      -3793766,
+      1503680,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 25,
+     "max": 60,
+     "perLine": 60.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "5 ta ish — birini tanlang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      508000,
+      304800,
+      11176000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 36,
+     "max": 122,
+     "perLine": 122.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har biri keyingi slaydlarda batafsil",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      508000,
+      889000,
+      11176000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1156988,
+      1887186,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 16,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      1183801,
+      2571589,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4818289,
+      1604027,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4786100,
+      2332555,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      8380838,
+      1906379,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      8396162,
+      2600016,
+      1503680,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "49",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      3026748,
+      4151486,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 17,
+     "max": 37,
+     "perLine": 18.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2982309,
+      4780489,
+      1503680,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6582687,
+      4309994,
+      487680,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "61",
+     "kind": "label",
+     "chars": 18,
+     "max": 37,
+     "perLine": 18.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      6592206,
+      4900450,
+      1503680,
+      430887
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 48,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Plastik shisha tabiatda yuzlab yil chirimaydi. Uni kamroq ishlatish — tabiatga eng katta yordam.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 62,
+     "max": 62,
+     "perLine": 15.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Qayta ishlatiladigan idish\nMato sumka\nBir martalik buyumlarsiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 37,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'zingiz bilan suv idishi olib yuring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Do'konga mato sumka bilan boring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 25,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Plastikni alohida yig'ing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 46,
+     "max": 46,
+     "perLine": 23,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Bir hafta plastiksiz yashab ko'ring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4574231,
+      2819400,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 90,
+     "max": 90,
+     "perLine": 45,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Chuchuk suv zaxiralari cheklangan. Har tomchi suvni tejash kelajak avlodga g'amxo'rlikdir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 82,
+     "max": 82,
+     "perLine": 20.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Jo'mrakni ochiq qoldirmang\nOqayotgan kranni tuzating\nTomorqani kechqurun sug'oring",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 30,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tish yuvganda jo'mrakni yoping",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 26,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dushni 5 daqiqada tugating",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 22,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yomg'ir suvini yig'ing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 68,
+     "max": 68,
+     "perLine": 22.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Oqayotgan kran yiliga minglab litr suvni behuda sarflaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 93,
+     "max": 93,
+     "perLine": 46.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daraxtlar havoni tozalaydi, soya beradi va qushlarga uy bo'ladi. Bitta daraxt ham ahamiyatli.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 58,
+     "max": 58,
+     "perLine": 14.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Havo tozaroq bo'ladi\nYozda salqin soya\nTuproq yemirilmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 33,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mahallada ekish uchun joy tanlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ko'chatni bahor yoki kuzda eking",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Birinchi yili muntazam sug'oring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 53,
+     "max": 53,
+     "perLine": 26.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Har bir tug'ilgan kunda bitta daraxt eking.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4574231,
+      2819400,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 96,
+     "max": 96,
+     "perLine": 48,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh panellari toza elektr beradi. O'zbekistonda yiliga 300 kundan ortiq quyoshli kun bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 66,
+     "max": 66,
+     "perLine": 16.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Toza va bitmas energiya\nElektr to'lovi kamayadi\nHavo ifloslanmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      15126196,
+      1070069,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      14964594,
+      1948407,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 30,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Keraksiz chiroqlarni o'chiring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 32,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tejamkor lampalardan foydalaning",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 33,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh panellari haqida o'rganing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 51,
+     "max": 51,
+     "perLine": 17,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: Xonadan chiqayotganda chiroqni o'chiring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1320800,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2006600,
+      1905000,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "text",
+     "chars": 93,
+     "max": 93,
+     "perLine": 46.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'rmonlar sayyoramizning o'pkasi. Ular millionlab hayvon va o'simliklar uchun uy hisoblanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2667000,
+      4572000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 72,
+     "max": 72,
+     "perLine": 18,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tabiatda gulxanni ehtiyot qiling\nChiqindini olib qayting\nQog'ozni tejang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4191000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10961867,
+      2216841,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      -10898527,
+      2552668,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2067080,
+      1302030,
+      1524000,
+      430887
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "title",
+     "chars": 18,
+     "max": 25,
+     "perLine": 25.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2030138,
+      1946117,
+      4699000,
+      492443
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 16,
+     "max": 44,
+     "perLine": 44.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qanday qilinadi?",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2046899,
+      2548397,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "1",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2185622,
+      3315572,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "56",
+     "kind": "label",
+     "chars": 35,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sayrdan keyin hech narsa qoldirmang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2845680,
+      3370192,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "2",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2168777,
+      4280625,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 31,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qog'ozning ikki tomoniga yozing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2828835,
+      4335245,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2151932,
+      5245678,
+      508000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 36,
+     "max": 40,
+     "perLine": 40.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eski kitob va daftarlarni topshiring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2811990,
+      5300298,
+      3683000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 72,
+     "max": 72,
+     "perLine": 24,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maslahat: 1 tonna qayta ishlangan qog'oz ko'plab daraxtni saqlab qoladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7268125,
+      4451120,
+      2819400,
+      738664
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      646974,
+      1424327,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      658546,
+      1818786,
+      939800,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2986031,
+      1314732,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2963918,
+      1730997,
+      939800,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5276385,
+      1438024,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5279680,
+      1838154,
+      939800,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7616243,
+      1316218,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7585477,
+      1737564,
+      939800,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      9892574,
+      1424327,
+      304800,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 18,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      9904146,
+      1818786,
+      939800,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "title",
+     "chars": 6,
+     "max": 51,
+     "perLine": 51.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      3429000,
+      10668000,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "text",
+     "chars": 111,
+     "max": 111,
+     "perLine": 27.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tabiatni asrash har birimizdan boshlanadi\nKichik odatlar katta natija beradi\nDo'stlaringizni ham bunga chorlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      4191000,
+      10668000,
+      1036181
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      438269,
+      986181,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 16,
+     "max": 30,
+     "perLine": 14.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Plastiksiz hayot",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      516997,
+      1357347,
+      1033780,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "18"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      9968650,
+      629555,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 12,
+     "max": 15,
+     "perLine": 14.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Suvni tejang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      9887957,
+      1203374,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "28"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      298460,
+      4970868,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 12,
+     "max": 15,
+     "perLine": 14.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Daraxt eking",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      237092,
+      5534975,
+      1033780,
+      184666
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "38"
+     ]
+    },
+    {
+     "id": "36",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10101329,
+      5276757,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 17,
+     "max": 30,
+     "perLine": 14.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10164157,
+      5662586,
+      1033780,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5201920,
+      -3031744,
+      335280,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 18,
+     "max": 30,
+     "perLine": 14.9,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "O'rmonlarni asrang",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5196332,
+      -2726944,
+      1033780,
+      369332
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "58"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "title",
+     "chars": 7,
+     "max": 13,
+     "perLine": 12.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2489200,
+      2921000,
+      615553
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "61",
+     "kind": "label",
+     "chars": 50,
+     "max": 50,
+     "perLine": 16.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiatni asraylik! Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3810000,
+      3251200,
+      2921000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    1,
+    15
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 538,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 960,
+   "h": 636,
+   "slides": [
+    2,
+    3
+   ],
+   "focus": 2
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 720,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 600,
+   "slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "focus": 6
+  }
+ ],
+ "sequence": true
+}
