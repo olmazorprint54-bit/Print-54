@@ -19,6 +19,16 @@ const TPL = {
   "toy-kok": { kind: "toy", bg: "toy-kok.jpg", area: [235, 590, 580, 740], ink: "#2d4770", acc: "#7b98c2", soft: "#56698a" },
   // Canva'dan (matn va arabcha yozuv o'chirilgan fon)
   "toy-yashil-islom": { kind: "toy", bg: "toy-yashil-islom.jpg", h: 1522, area: [150, 250, 780, 1060], ink: "#274957", acc: "#5f8f80", soft: "#395d6c" },
+  "toy-arka-oltin": { kind: "toy", bg: "toy-arka-oltin.jpg", h: 1522, area: [215, 345, 650, 1040], ink: "#493812", acc: "#c9a14a", soft: "#614a18" }, // Canva: 5-varaq 4 DAHbbWUuaP8
+  "toy-lavanda": { kind: "toy", bg: "toy-lavanda.jpg", h: 1080, area: [380, 330, 600, 690], ink: "#ffffff", acc: "#e9ddff", soft: "#e4d9f7", dark: true }, // Canva: 5-varaq 12 DAHbbZibVAE
+  "toy-liliya": { kind: "toy", bg: "toy-liliya.jpg", h: 1522, area: [150, 230, 780, 1080], ink: "#364d22", acc: "#7d9a5c", soft: "#4c6436" }, // Canva: 5-varaq 23 DAHbbb-ykXU
+  "toy-naqsh-arka": { kind: "toy", bg: "toy-naqsh-arka.jpg", h: 1080, area: [240, 265, 600, 590], ink: "#3c3832", acc: "#b49a6c", soft: "#81786a" }, // Canva: 5-varaq 29 DAHbbU3VkRM
+  "toy-ravoq": { kind: "toy", bg: "toy-ravoq.jpg", h: 1350, area: [285, 450, 510, 800], ink: "#7a4a1e", acc: "#c9935a", soft: "#6b5340" }, // Canva: 5-varaq 40 DAHbbW92pnU
+  "toy-nikoh-bogi": { kind: "toy", bg: "toy-nikoh-bogi.jpg", h: 1350, area: [255, 255, 570, 640], ink: "#138161", acc: "#c8a24a", soft: "#2f5d4c" }, // Canva: 5-varaq 52 DAHbbQ4IG3E
+  "toy-oltin-gul": { kind: "toy", bg: "toy-oltin-gul.jpg", h: 1527, area: [210, 380, 660, 900], ink: "#8a5f25", acc: "#b8893c", soft: "#a27432" }, // Canva: 5-varaq 53 DAHbbcZMLtw
+  "toy-yashil-mehrob": { kind: "toy", bg: "toy-yashil-mehrob.jpg", h: 1512, area: [170, 300, 740, 920], ink: "#f5f5dc", acc: "#e4b964", soft: "#e9dfb8", dark: true }, // Canva: 5-varaq 59 DAHbbTI4_eM
+  "toy-firuza": { kind: "toy", bg: "toy-firuza.jpg", h: 1350, area: [275, 390, 530, 770], ink: "#7a4a1e", acc: "#b8893c", soft: "#3d5a55" }, // Canva: 5-varaq 66 DAHbbdr0ifA
+  "toy-oq-oltin": { kind: "toy", bg: "toy-oq-oltin.jpg", h: 1512, area: [160, 270, 760, 800], ink: "#6b5a12", acc: "#bc9c22", soft: "#8a7630" }, // Canva: 5-varaq 84 DAHbbR3RKsU
   "tk-pushti": { kind: "tk", draw: "pushti", area: [150, 300, 780, 1430], ink: "#7a3550", acc: "#d98aa6", soft: "#8c5a6c" },
   "tk-bolalar": { kind: "tk", draw: "bolalar", area: [150, 330, 780, 1360], ink: "#1f4f8a", acc: "#ff8a3d", soft: "#3d6aa3" },
   "tk-oltin": { kind: "tk", draw: "oltin", area: [150, 300, 780, 1430], ink: "#f3d48a", acc: "#d4a94e", soft: "#e8dcc0", dark: true },
