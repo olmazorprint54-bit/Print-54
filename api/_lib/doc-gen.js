@@ -255,7 +255,7 @@ async function generatePaper(service, f) {
     try {
       const T = require("./titul");
       if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
-        titul = { id: d.titul, values: { workType: essay ? "MUSTAQIL ISH" : "REFERAT", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
+        titul = { id: d.titul, values: { lang: d.lang, workType: essay ? "MUSTAQIL ISH" : "REFERAT", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
       }
     } catch (e) { console.error("Titul:", e.message); }
   }
@@ -768,7 +768,7 @@ async function generateKurs(f, tools = {}) {
     try {
       const T = require("./titul");
       if (T.canTitul() && (await T.list()).some((x) => x.id === d.titul)) {
-        titul = { id: d.titul, values: { workType: "KURS ISHI", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
+        titul = { id: d.titul, values: { lang: d.lang, workType: "KURS ISHI", subject: d.subject, topic: d.topic, group: d.group, student: d.student, teacher: d.teacher, faculty: d.faculty, direction: d.direction } };
       }
     } catch (e) { console.error("Titul:", e.message); }
   }
@@ -820,14 +820,41 @@ async function generateKurs(f, tools = {}) {
   };
 }
 
+/* =================== QO'SHIMCHA TILLAR UCHUN YORLIQLAR =================== */
+// fr, de, tr ... uchun L/ART lug'atida inglizcha yorliqlar turadi (langs.withFallback) —
+// hujjat yasashdan oldin ular AI bilan shu tilga bir marta o'giriladi (titul, Kirish, Mundarija ...).
+const EXTRA_TR = require("./langs").EXTRA_NAMES;
+async function localizeLabels(lang) {
+  if (!EXTRA_TR[lang] || L[lang] !== L.en || !hasKey()) return;
+  const flat = [];
+  const walk = (o, pre) => { for (const [k, v] of Object.entries(o)) { if (typeof v === "string") flat.push([pre + k, v]); else if (Array.isArray(v)) v.forEach((x, i) => flat.push([`${pre}${k}.${i}`, x])); else walk(v, `${pre}${k}.`); } };
+  walk({ L: L.en, ART: ART.en }, "");
+  try {
+    const r = await askJson({
+      model: MODEL(), effort: "low", maxTokens: 6000,
+      system: "You translate short labels of student papers and teaching documents.",
+      prompt: `Translate each English label into ${EXTRA_TR[lang]}, keeping the letter case style (ALL CAPS stays ALL CAPS) and punctuation. Return exactly ${flat.length} items in the same order.
+
+${flat.map(([, v], i) => `${i + 1}. ${JSON.stringify(v)}`).join(String.fromCharCode(10))}`,
+      schema: obj({ items: { type: "array", items: STR } }),
+    });
+    const items = r.data.items || [];
+    if (items.length !== flat.length) return;
+    const out = JSON.parse(JSON.stringify({ L: L.en, ART: ART.en }));
+    flat.forEach(([p], i) => { const ks = p.split("."); let o = out; while (ks.length > 1) o = o[ks.shift()]; o[ks[0]] = clean(items[i], 120) || o[ks[0]]; });
+    L[lang] = out.L; ART[lang] = out.ART;
+  } catch (e) { console.error("Yorliq tarjimasi:", e.message); }
+}
+const withLabels = (fn) => async (f, ...a) => { await localizeLabels(langOf(f)); return fn(f, ...a); };
+
 const GENERATORS = {
-  kurs: generateKurs,
-  article: generateArticle,
-  essay: (f) => generatePaper("essay", f),
-  referat: (f) => generatePaper("referat", f),
-  lesson: generateLesson,
-  questions: generateQuestions,
-  crossword: generateCrossword,
+  kurs: withLabels(generateKurs),
+  article: withLabels(generateArticle),
+  essay: withLabels((f) => generatePaper("essay", f)),
+  referat: withLabels((f) => generatePaper("referat", f)),
+  lesson: withLabels(generateLesson),
+  questions: withLabels(generateQuestions),
+  crossword: withLabels(generateCrossword),
 };
 
 module.exports = { makePlan, presPlanText, PLAN_SERVICES, MODEL, AUTO_STYLES, MAX_PAGES, GENERATORS, canAutoDoc, layoutCrossword, units };

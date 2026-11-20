@@ -166,8 +166,58 @@ function valuesFor(v) {
     GURUH: v.group, TALABA: v.student, OQITUVCHI: v.teacher, KAFEDRA: v.department, YONALISH: v.direction, YIL: year,
   };
 }
+/* ---------------- tarjima (mijoz boshqa tilni tanlasa) ---------------- */
+// Titullar o'zbekcha (lotin) yozilgan. Hujjat boshqa tilda bo'lsa — sahifadagi doimiy matn
+// (vazirlik, OTM, fakultet, «Bajardi», «Toshkent» ...) va ish turi AI bilan shu tilga o'giriladi;
+// {BELGI}lar va mijoz yozgan qiymatlar o'zgarmaydi. Natija har OTM+til uchun keshlanadi.
+const TR_LANGS = { uz_cyr: "Uzbek (Cyrillic script)", ru: "Russian", en: "English", ...require("./langs").EXTRA_NAMES };
+const needsTr = (lang) => !!TR_LANGS[lang];
+const trCache = new Map();
+// bir xil formatli ketma-ket matn bo'laklari — bitta segment (qalin yorliq va oddiy ism alohida qoladi)
+function segmentsOf(runs) {
+  const segs = [];
+  let cur = null;
+  for (const r of runs) {
+    if (r.text == null) { cur = null; continue; }
+    const key = ordered(r.rp, R_ORDER);
+    if (cur && cur.key === key) cur.runs.push(r);
+    else { cur = { key, runs: [r] }; segs.push(cur); }
+  }
+  return segs.map((s) => ({ runs: s.runs, text: s.runs.map((r) => r.text).join("") }));
+}
+const trWorthy = (s) => /\p{L}{2,}/u.test(s.replace(/\{\s*[A-Za-z_]+\s*\}/g, "")) && (s.match(/\{/g) || []).length === (s.match(/\}/g) || []).length;
+async function translateTexts(texts, lang, key) {
+  if (trCache.has(key)) return trCache.get(key);
+  const tmp = path.join("/tmp", `titul-tr-${slug(key)}.json`);
+  try { const m = new Map(JSON.parse(fs.readFileSync(tmp, "utf8"))); trCache.set(key, m); return m; } catch (e) { /* yo'q */ }
+  const AI = require("./ai");
+  const r = await AI.askJson({
+    model: AI.modelFor("TEXT_MODEL"),
+    effort: "low",
+    maxTokens: 8000,
+    system: "You translate the fixed text of a student paper title page from an Uzbek university.",
+    prompt: `Translate each item from Uzbek into ${TR_LANGS[lang]}. Rules:
+- Keep every {PLACEHOLDER} in curly braces exactly as it is.
+- Keep tab characters and the letter case style (an ALL-CAPS item stays ALL CAPS).
+- Use the official names of Uzbek ministries, universities, faculties and cities in that language (e.g. Toshkent → Tashkent / Ташкент).
+- Work types: MUSTAQIL ISH = independent work, REFERAT = report/essay, KURS ISHI = course work; «Bajardi» = done by, «Qabul qildi»/«Tekshirdi» = checked by, «Ilmiy rahbar» = supervisor.
+- Return exactly ${texts.length} items in the same order.
+
+Items:
+${texts.map((t, i) => `${i + 1}. ${JSON.stringify(t)}`).join("\n")}`,
+    schema: { type: "object", properties: { items: { type: "array", items: { type: "string" } } }, required: ["items"], additionalProperties: false },
+  });
+  const out = r.data.items || [];
+  if (out.length !== texts.length) throw new Error(`tarjima soni mos emas: ${out.length}/${texts.length}`);
+  const m = new Map(texts.map((t, i) => [t, String(out[i] || t)]));
+  trCache.set(key, m);
+  try { fs.writeFileSync(tmp, JSON.stringify([...m])); } catch (e) { /* /tmp yo'q */ }
+  return m;
+}
+
 // Bitta paragraf: uslublar pishiriladi, {BELGI}lar (bir necha bo'lakka bo'linib ketgan bo'lsa ham) almashtiriladi
-function bakeParagraph(p, S, vals) {
+// tr(text) — segment tarjimasi (yoki null)
+function bakeParagraph(p, S, vals, tr) {
   const pPrXml = el(p, "w:pPr") || "";
   const direct = children(pPrXml);
   const pStyle = /<w:pStyle w:val="([^"]+)"/.exec(pPrXml);
@@ -188,6 +238,24 @@ function bakeParagraph(p, S, vals) {
     const text = drawing ? null : unxml([...r.matchAll(/<w:t(?:\s[^>]*)?>([^<]*)<\/w:t>|<w:tab\/>/g)].map((m) => (m[1] == null ? "\t" : m[1])).join(""));
     return { rp, drawing, br, text };
   });
+  if (tr) {
+    // {BELGI} bir necha formatli bo'lakka bo'lingan bo'lsa — o'sha bo'laklarga tegilmaydi
+    const all = runs.map((r) => r.text || "").join("");
+    const ph = [...all.matchAll(/\{\s*[A-Za-z_]+\s*\}/g)].map((m) => [m.index, m.index + m[0].length]);
+    let at = 0;
+    for (const s of segmentsOf(runs)) {
+      const st = all.indexOf(s.text, at), en = st + s.text.length;
+      at = en;
+      if (ph.some(([a, b]) => a < en && b > st && !(a >= st && b <= en))) continue;
+      const core = s.text.trim();
+      if (!core || !trWorthy(core)) continue;
+      const t = tr(core);
+      if (t == null || t === core) continue;
+      const lead = s.text.match(/^\s*/)[0], tail = s.text.match(/\s*$/)[0];
+      s.runs[0].text = lead + t + tail;
+      for (const r of s.runs.slice(1)) r.text = "";
+    }
+  }
   // {BELGI} almashtirish — matnli bo'laklar ketma-ketligi bo'yicha
   const full = runs.map((r) => r.text || "").join("");
   const reps = [];
@@ -225,7 +293,20 @@ async function pageFor(id, v) {
   const page = P.pages.get(id);
   if (!page) return null;
   const vals = valuesFor(v);
-  const paras = page.paras.map((p) => bakeParagraph(p.replace(/<w:br w:type="page"\/>/g, "").replace(/<w:lastRenderedPageBreak\/>/g, ""), P.S, vals));
+  const raw = page.paras.map((p) => p.replace(/<w:br w:type="page"\/>/g, "").replace(/<w:lastRenderedPageBreak\/>/g, ""));
+  let tr = null;
+  if (needsTr(v.lang)) {
+    // 1) tarjima qilinadigan matnlarni yig'ish, 2) AI (keshlanadi), 3) tarjima bilan qayta pishirish
+    const texts = new Set();
+    raw.forEach((p) => bakeParagraph(p, P.S, vals, (t) => { texts.add(t); return null; }));
+    if (vals.ISH_TURI) texts.add(vals.ISH_TURI);
+    try {
+      const m = await translateTexts([...texts], v.lang, `${id}|${v.lang}|${[...texts].join("\u0001").length}`);
+      tr = (t) => m.get(t) || null;
+      if (vals.ISH_TURI && m.get(vals.ISH_TURI)) vals.ISH_TURI = m.get(vals.ISH_TURI);
+    } catch (e) { console.error("Titul tarjimasi:", e.message); }
+  }
+  const paras = raw.map((p) => bakeParagraph(p, P.S, vals, tr));
   return { P, page, paras };
 }
 
