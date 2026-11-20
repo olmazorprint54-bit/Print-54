@@ -17,11 +17,14 @@ const TPL = {
   "toy-barg": { kind: "toy", bg: "toy-barg.jpg", area: [250, 300, 580, 1320], ink: "#5e3c46", acc: "#9c6b78", soft: "#7d6168" },
   "toy-bordo": { kind: "toy", bg: "toy-bordo.jpg", area: [215, 470, 650, 930], ink: "#f6dc9f", acc: "#d6aa58", soft: "#ecd9b6", dark: true },
   "toy-kok": { kind: "toy", bg: "toy-kok.jpg", area: [235, 590, 580, 740], ink: "#2d4770", acc: "#7b98c2", soft: "#56698a" },
+  // Canva'dan (matn va arabcha yozuv o'chirilgan fon)
+  "toy-yashil-islom": { kind: "toy", bg: "toy-yashil-islom.jpg", h: 1522, area: [150, 250, 780, 1060], ink: "#274957", acc: "#5f8f80", soft: "#395d6c" },
   "tk-pushti": { kind: "tk", draw: "pushti", area: [150, 300, 780, 1430], ink: "#7a3550", acc: "#d98aa6", soft: "#8c5a6c" },
   "tk-bolalar": { kind: "tk", draw: "bolalar", area: [150, 330, 780, 1360], ink: "#1f4f8a", acc: "#ff8a3d", soft: "#3d6aa3" },
   "tk-oltin": { kind: "tk", draw: "oltin", area: [150, 300, 780, 1430], ink: "#f3d48a", acc: "#d4a94e", soft: "#e8dcc0", dark: true },
 };
 const IDS = Object.keys(TPL);
+const hOf = (t) => t.h || H; // Canva fonlari o'z nisbatida (masalan A6 → 1080x1522)
 
 const L = {
   uz_lat: {
@@ -149,6 +152,7 @@ const heart = (c) => `<svg class="orn" viewBox="0 0 300 20"><path d="M10 10H128M
 function html(id, d, origin) {
   const t = TPL[id];
   const [ax, ay, aw, ah] = t.area;
+  const HH = hOf(t);
   const bg = t.bg ? `<img class="bgc" src="${origin}/ai/takl/${t.bg}" alt="">` : drawBg(t.draw);
   const cols = [["date", d.date], ["time", d.time], ["place", d.place]].filter((c) => c[1]);
   const row = cols.length ? `<div class="row">${cols.map(([k, v], i) => `${i ? '<div class="sep"></div>' : ""}<div class="col"><div class="ic">${ICON[k](t.acc)}</div><div class="cv${k === "place" ? " pl" : ""}">${esc(v)}</div><div class="cc">${esc(d.L[k])}</div></div>`).join("")}</div>` : "";
@@ -166,11 +170,11 @@ function html(id, d, origin) {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@500;600&display=block&subset=latin-ext,cyrillic" rel="stylesheet">
 <style>
-@page{ size:${W}px ${H}px; margin:0 }
+@page{ size:${W}px ${HH}px; margin:0 }
 *{ box-sizing:border-box; margin:0; padding:0 }
-html,body{ width:${W}px; height:${H}px; overflow:hidden }
+html,body{ width:${W}px; height:${HH}px; overflow:hidden }
 body{ position:relative; font-family:'Cormorant Garamond',Georgia,serif; color:${t.ink}; --k:1 }
-.bgc{ position:absolute; inset:0; width:${W}px; height:${H}px; object-fit:cover }
+.bgc{ position:absolute; inset:0; width:${W}px; height:${HH}px; object-fit:cover }
 .area{ position:absolute; left:${ax}px; top:${ay}px; width:${aw}px; height:${ah}px; display:flex; align-items:center; justify-content:center }
 .in{ width:100%; display:flex; flex-direction:column; align-items:center; text-align:center; gap:calc(26px*var(--k)) }
 .intro{ font-size:calc(40px*var(--k)); line-height:1.3; font-weight:500; color:${t.ink}; max-width:96% }
@@ -241,7 +245,8 @@ async function generateTaklif(f, { withPage, origin, photoUrl }) {
   const page = html(id, d, origin);
   const pdf = f.format === "pdf";
   const buffer = await withPage(async (p) => {
-    await p.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
+    const HH = hOf(t);
+    await p.setViewport({ width: W, height: HH, deviceScaleFactor: 1 });
     await p.setContent(page, { waitUntil: "networkidle0", timeout: 45000 });
     await p.evaluate(async () => {
       await document.fonts.ready;
@@ -249,12 +254,12 @@ async function generateTaklif(f, { withPage, origin, photoUrl }) {
       window.__fit();
     });
     return pdf
-      ? Buffer.from(await p.pdf({ width: `${W}px`, height: `${H}px`, printBackground: true, pageRanges: "1" }))
-      : Buffer.from(await p.screenshot({ type: "png", clip: { x: 0, y: 0, width: W, height: H } }));
+      ? Buffer.from(await p.pdf({ width: `${W}px`, height: `${HH}px`, printBackground: true, pageRanges: "1" }))
+      : Buffer.from(await p.screenshot({ type: "png", clip: { x: 0, y: 0, width: W, height: HH } }));
   });
   const who = t.kind === "toy" ? `${d.n1} va ${d.n2}` : d.n1;
   const name = `${isTk(f) ? (d.tab ? "Tabrik" : "Taklifnoma") : "To'y taklifnomasi"} - ${who}`.replace(/[\\/:*?"<>|]+/g, "").slice(0, 80);
   return { buffer, name, ext: pdf ? "pdf" : "png", mime: pdf ? "application/pdf" : "image/png", ai: text.ai };
 }
 
-module.exports = { TPL, IDS, html, dataOf, writeText, templateOf, canAutoTaklif, generateTaklif, langOf };
+module.exports = { TPL, IDS, hOf, html, dataOf, writeText, templateOf, canAutoTaklif, generateTaklif, langOf };
