@@ -966,6 +966,7 @@
       { id: "pro-knopka2", name: "📌 Knopkali kartochkalar · probka", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-knopka3", name: "📌 Knopkali kartochkalar · to'q ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-knopka4", name: "📌 Knopkali kartochkalar · yashil", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-qon", name: "🩸 Laboratoriya · qon surtmasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

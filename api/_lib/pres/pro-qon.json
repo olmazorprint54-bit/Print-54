@@ -1,0 +1,1675 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 17,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LABORATORIYA ISHI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      1778000,
+      5842000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 22,
+     "max": 22,
+     "perLine": 11,
+     "lines": 2,
+     "caps": true,
+     "sz": 54,
+     "paras": 1,
+     "text": "PERIFERIK QON SURTMASI",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      2133600,
+      5969000,
+      1661993
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 20,
+     "max": 39,
+     "perLine": 38.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "tayyorlash texnikasi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      812800,
+      4038600,
+      5842000,
+      400110
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 28,
+     "max": 58,
+     "perLine": 58.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      812800,
+      5080000,
+      5334000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 12,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "TAYYORGARLIK",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Kerakli jihozlar",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 27,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "toza ish joyi — aniq natija",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "text",
+     "chars": 105,
+     "max": 105,
+     "perLine": 35,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Surtma toza va yog'sizlantirilgan buyum oynasida tayyorlanadi. Barcha jihozlar oldindan stolga qo'yiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 19,
+     "lines": 5,
+     "caps": false,
+     "sz": 18,
+     "paras": 4,
+     "text": "Buyum oynalari (2 dona)\nPipetka yoki skarifikator\nBo'yoq va fiksator\nMikroskop va immersion moy",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      1338828
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "1-QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "title",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Qon tomchisi",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 26,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "oynaning bir chetiga yaqin",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 45.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Buyum oynasining chetidan 1–2 sm masofaga diametri 2–3 mm bo'lgan kichik tomchi tomiziladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 83,
+     "max": 83,
+     "perLine": 20.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Tomchi kichik va dumaloq bo'lsin\nPipetka oynaga tegmasin\nQon ivib qolmasdan ishlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "2-QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "title",
+     "chars": 17,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Silliqlovchi oyna",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 21,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "30–45° burchak ostida",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 39,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ikkinchi oyna tomchi oldiga qiya qo'yiladi va orqaga tortib tomchiga tekkiziladi. Qon oyna qirrasi bo'ylab tarqaladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 65,
+     "max": 65,
+     "perLine": 16.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Burchak 30–45°\nQon qirra bo'ylab yoyilguncha kuting\nBosim bermang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "3-QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "title",
+     "chars": 15,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Surtmani yoyish",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 24,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "bir tekis va tez harakat",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Silliqlovchi oyna bir tekis, tez harakat bilan oldinga suriladi. To'g'ri surtma «til» shaklida, oxiri ingichka bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 19.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Harakat to'xtamasin\nSurtma oyna chetiga yetmasin\nQatlam yupqa va teng bo'lsin",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 17,
+     "max": 25,
+     "perLine": 25.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Romanovskiy–Gimza",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      4191000,
+      2032000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "4-QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "title",
+     "chars": 7,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Bo'yash",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 31,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "quritish, fiksatsiya va bo'yash",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Surtma havoda quritiladi, metanolda 3–5 daqiqa fiksatsiya qilinadi va Romanovskiy–Gimza bo'yog'i bilan bo'yaladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "text",
+     "chars": 77,
+     "max": 77,
+     "perLine": 19.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Havoda tabiiy quritish\nFiksatsiya: 3–5 daqiqa\nBo'yashdan keyin yuvib quritish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 7,
+     "max": 38,
+     "perLine": 37.9,
+     "lines": 1,
+     "caps": true,
+     "sz": 16,
+     "paras": 1,
+     "text": "5-QADAM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7112000,
+      889000,
+      4572000,
+      246221
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "title",
+     "chars": 12,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Mikroskopiya",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7086600,
+      1219200,
+      4572000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 23,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "immersion obyektiv ×100",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7112000,
+      1930400,
+      4572000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Surtma immersion moyi tomizilib, ×100 obyektivda ko'riladi. Umumiy kattalashtirish ×1000 ga teng.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      2489200,
+      4572000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 22.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Avval ×10 da yupqa joy tanlanadi\nKeyin immersion bilan ×100\nHujayralar 100 tagacha sanaladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3937000,
+      4572000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 5,
+     "max": 7,
+     "perLine": 9.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 72,
+     "paras": 1,
+     "text": "×1000",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      4191000,
+      2794000,
+      3810000,
+      1143000
+     ],
+     "lineH": 1097280,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 23,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KO'RISH MAYDONI · ×1000",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      889000,
+      4191000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 15,
+     "max": 19,
+     "perLine": 19.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Qon hujayralari",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7594600,
+      1219200,
+      4191000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 33,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bo'yalgan surtmada uch xil shaklli element ko'rinadi: eritrotsitlar, leykotsitlar va trombotsitlar.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2032000,
+      4064000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "319",
+     "kind": "text",
+     "chars": 73,
+     "max": 73,
+     "perLine": 18.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Eritrotsitlar — eng ko'p\nLeykotsitlar — yadroli\nTrombotsitlar — eng mayda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3810000,
+      4064000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 15,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 · ERITROTSIT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      889000,
+      4191000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 10,
+     "max": 19,
+     "perLine": 19.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Eritrotsit",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7594600,
+      1219200,
+      4191000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "text",
+     "chars": 91,
+     "max": 91,
+     "perLine": 30.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yadrosiz, ikki tomoni botiq disk. Diametri 7–8 mkm. Gemoglobin yordamida kislorod tashiydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2032000,
+      4064000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "319",
+     "kind": "text",
+     "chars": 69,
+     "max": 69,
+     "perLine": 17.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Erkaklarda 4,5–5,5 ×10¹²/l\nAyollarda 3,7–4,7 ×10¹²/l\n120 kun yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3810000,
+      4064000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 14,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 · NEYTROFIL",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      889000,
+      4191000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 9,
+     "max": 19,
+     "perLine": 19.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Neytrofil",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7594600,
+      1219200,
+      4191000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 46,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yadrosi 3–5 bo'lakka bo'lingan. Bakteriyalarni yutib, organizmni infeksiyadan himoya qiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2032000,
+      4064000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "319",
+     "kind": "text",
+     "chars": 80,
+     "max": 80,
+     "perLine": 20,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Leykotsitlarning 47–72%\nBirinchi bo'lib yallig'lanishga keladi\nFagotsitoz qiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3810000,
+      4064000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 14,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 · LIMFOTSIT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      889000,
+      4191000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 9,
+     "max": 19,
+     "perLine": 19.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Limfotsit",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7594600,
+      1219200,
+      4191000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "text",
+     "chars": 83,
+     "max": 83,
+     "perLine": 41.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Katta dumaloq yadro va ingichka sitoplazma halqasi. Immunitetning asosiy hujayrasi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2032000,
+      4064000,
+      520463
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "319",
+     "kind": "text",
+     "chars": 75,
+     "max": 75,
+     "perLine": 18.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Leykotsitlarning 19–37%\nAntitanachalar hosil qiladi\nImmun xotirani saqlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3810000,
+      4064000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 15,
+     "max": 40,
+     "perLine": 39.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 · TROMBOTSIT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      889000,
+      4191000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 10,
+     "max": 19,
+     "perLine": 19.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Trombotsit",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      7594600,
+      1219200,
+      4191000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 29.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yadrosiz mayda plastinkalar. Qon tomiri shikastlanganda yopishib, qon ivishini boshlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2032000,
+      4064000,
+      791307
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "319",
+     "kind": "text",
+     "chars": 53,
+     "max": 53,
+     "perLine": 13.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 3,
+     "text": "Norma: 180–320 ×10⁹/l\nHajmi 2–4 mkm\n7–10 kun yashaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3810000,
+      4064000,
+      984885
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "316",
+     "kind": "label",
+     "chars": 19,
+     "max": 60,
+     "perLine": 60.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "LEYKOTSITAR FORMULA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      762000,
+      6350000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "317",
+     "kind": "title",
+     "chars": 20,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Leykotsitlar nisbati",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      5308600,
+      1092200,
+      6350000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "318",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Neytrofillar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      2133600,
+      2540000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "321",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "47–72%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10287000,
+      2387600,
+      1397000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "322",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Limfotsitlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      2921000,
+      2540000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "325",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "19–37%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10287000,
+      3175000,
+      1397000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "326",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Monotsitlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      3708400,
+      2540000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "329",
+     "kind": "label",
+     "chars": 5,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "3–11%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10287000,
+      3962400,
+      1397000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "330",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Eozinofillar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      4495800,
+      2540000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "333",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "0,5–5%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10287000,
+      4749800,
+      1397000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "334",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bazofillar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5334000,
+      5283200,
+      2540000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "337",
+     "kind": "label",
+     "chars": 4,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "0–1%",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      10287000,
+      5537200,
+      1397000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "num": true
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 7,
+     "max": 16,
+     "perLine": 16,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      762000,
+      2286000,
+      6096000,
+      1015663
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat. Savollaringiz bo'lsa, marhamat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      812800,
+      3556000,
+      5588000,
+      615553
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [],
+ "sequence": true
+}
