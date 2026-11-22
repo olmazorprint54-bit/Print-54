@@ -651,7 +651,12 @@
   // Botdagi xizmat tugmasi ilovani ?open=<xizmat> bilan ochadi — to'g'ridan-to'g'ri o'sha xizmat formasi
   try {
     const oq = new URLSearchParams(location.search).get("open");
-    if (oq && /^[a-z0-9_]+$/.test(oq)) setTimeout(() => { go("home"); if (window.aiOpenService) window.aiOpenService(oq); }, 400);
+    const tq = new URLSearchParams(location.search).get("tpl");
+    if (oq && /^[a-z0-9_]+$/.test(oq)) setTimeout(() => {
+      go("home");
+      if (tq && /^[a-z0-9-]+$/.test(tq) && window.aiOpenTemplate) window.aiOpenTemplate(oq, tq);
+      else if (window.aiOpenService) window.aiOpenService(oq);
+    }, 400);
   } catch (e) { /* havola parametrsiz */ }
 
   // Botdagi «🎁 Bonuslar» tugmasi ilovani ?view=bonus bilan ochadi

@@ -977,6 +977,38 @@
       { id: "pro-akkordeon", name: "🪗 Akkordeon · dizayn asoslari", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-oltiburchak", name: "🔷 Oltiburchak · yillik reja", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
+    // 💎 PRO shablon toifalari (mini ilova va botdagi galereya uchun). «Yangi» — ro'yxatning oxirgi 12 tasi.
+    // video: /ai/templates/<id>/preview.mp4 (8–10 s, ovozsiz) — galereyada «Shablonni ko'rish»
+    C.proCategories = [
+      { v: "yangi", l: "🆕 Yangi", keys: [] },
+      { v: "talim", l: "🎓 Ta'lim va himoya", keys: ["diplom", "himoya", "kurs ishi", "bitiruv", "dissertat", "magistr", "dars", "maktab", "o'quvchi", "talaba", "ta'lim", "pedagog", "диплом", "защит", "образован"] },
+      { v: "biznes", l: "💼 Biznes va loyiha", keys: ["biznes", "marketing", "startap", "kompaniya", "loyiha", "menejment", "moliya", "iqtisod", "tadbirkor", "brend", "savdo", "бизнес", "маркетинг", "экономик"] },
+      { v: "info", l: "📊 Infografika", keys: ["statistika", "tahlil", "bosqich", "jarayon", "reja", "natija", "swot", "анализ", "этап"] },
+      { v: "rasmli", l: "🎬 Rasmli va kino", keys: ["sayohat", "turizm", "san'at", "kino", "musiqa", "shahar", "sport", "туризм", "искусств"] },
+      { v: "fan", l: "🌍 Fan va tabiat", keys: ["tabiat", "ekolog", "geografiya", "biolog", "kimyo", "fizika", "tibbiyot", "astronom", "kosmos", "energiya", "природ", "биолог", "географ", "медицин"] },
+      { v: "tarix", l: "🏛 Tarix va madaniyat", keys: ["tarix", "temur", "madaniyat", "meros", "adabiyot", "qadimgi", "история", "литератур"] },
+      { v: "ijod", l: "✨ Ijodiy dizayn", keys: ["ijod", "dizayn", "bayram", "tabrik", "kitob", "дизайн"] },
+    ];
+    (function () {
+      var M = {
+        "pro-kok": "biznes info", "pro-qizil": "biznes", "pro-yashil": "biznes info", "pro-diplom": "talim", "pro-menyu": "talim", "pro-zinapoya": "info",
+        "pro-ustunlar": "info", "pro-gear": "info biznes", "pro-kartalar": "biznes", "pro-kalit": "info talim", "pro-halqalar": "info", "pro-xemblema": "biznes",
+        "pro-yoriq": "rasmli", "pro-yirtiq": "rasmli ijod", "pro-alpinizm": "rasmli", "pro-ipak": "rasmli", "pro-swot": "biznes info", "pro-fragment": "rasmli",
+        "pro-asalari": "info rasmli", "pro-fokus": "rasmli", "pro-egri": "biznes", "pro-doiralar": "info", "pro-sana": "tarix", "pro-gazeta": "tarix ijod",
+        "pro-akademik": "talim", "pro-gildirak": "info", "pro-kino": "rasmli", "pro-progress": "info biznes", "pro-spot": "rasmli", "pro-yillar": "tarix",
+        "pro-yer": "fan", "pro-materik": "fan", "pro-osiyo": "fan", "pro-kitob": "ijod tarix", "pro-kundalik": "ijod", "pro-konvert": "ijod",
+        "pro-parallaks": "fan ijod", "pro-smartfon": "biznes", "pro-pazl": "ijod info", "pro-kublar": "info", "pro-romb": "biznes", "pro-parda": "rasmli",
+        "pro-ekran": "rasmli", "pro-keskin": "biznes", "pro-aks": "rasmli", "pro-galereya": "rasmli", "pro-infografika": "info", "pro-orbita": "rasmli",
+        "pro-pult": "info", "pro-jonli": "info", "pro-slayder": "rasmli fan", "pro-nishon": "talim info", "pro-pufak": "rasmli", "pro-qiya": "rasmli",
+        "pro-chontak": "info", "pro-papka": "biznes", "pro-nur": "tarix rasmli", "pro-portlash": "fan", "pro-smart": "biznes talim", "pro-shisha": "biznes",
+        "pro-charx": "info", "pro-moviy": "biznes", "pro-oqromb": "biznes", "pro-poyga": "biznes", "pro-avtosayohat": "rasmli", "pro-sakkiz": "info",
+        "pro-sahna": "rasmli", "pro-yillarpanel": "tarix fan", "pro-knopka": "talim ijod", "pro-knopka2": "ijod", "pro-knopka3": "ijod", "pro-knopka4": "ijod",
+        "pro-qon": "fan", "pro-energiya": "fan", "pro-oltinx": "biznes", "pro-sado": "biznes", "pro-zukko": "talim", "pro-himoya": "talim",
+        "pro-goya": "biznes", "pro-kapsula": "biznes info", "pro-akkordeon": "ijod info", "pro-oltiburchak": "info talim",
+      };
+      var L = C.templates.presentation_pro, n = L.length;
+      L.forEach(function (t, i) { t.cats = (M[t.id] || "info").split(" ").concat(i >= n - 12 ? ["yangi"] : []); t.video = true; });
+    })();
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
     var img = C.services.filter(function (s) { return s.id === "image"; })[0];

@@ -379,11 +379,13 @@ async function deliver(order, file, host) {
   let fileBot = bot; // file_id faqat o'sha botda ishlaydi
   if (order.telegram_user_id) {
     // 🔥 Trend qo'shish: botda tayyorlangan taqdimot ostida — jonli personaj menyusini ochadi (taqdimotni qayta yuklash shart emas)
-    let markup = null;
+    // + ⭐ Baholash / 🛠 Kamchilikni tuzatish / 📞 Bog'lanish (api/_lib/feedback.js)
+    const l = await LB.getLang(order.telegram_user_id).catch(() => "uz");
+    const kb = [];
     if (host && /^presentation/.test(order.service) && file.mime === PPTX && CHARS.list().length) {
-      const l = await LB.getLang(order.telegram_user_id).catch(() => "uz");
-      markup = { inline_keyboard: [[{ text: LB.T(l, "trendBtn"), web_app: { url: appUrl(host, bot) + "&char=" + order.id } }]] };
+      kb.push([{ text: LB.T(l, "trendBtn"), web_app: { url: appUrl(host, bot) + "&char=" + order.id } }]);
     }
+    const markup = { inline_keyboard: kb.concat(require("./_lib/feedback").rows(order.id, l)) };
     const sent = await telegram(bot, "sendDocument", docForm(order.telegram_user_id, file,
       `🎉 <b>${what} tayyor!</b>\n\nFaylni istalgan vaqtda "Buyurtmalarim" bo'limidan ham qayta olishingiz mumkin.${wantsPrint ? "\n\n🖨 Chop etilgan nusxasini do'konimizdan olib ketishingiz mumkin." : ""}`, null, markup));
     if (sent.ok) doc = sent.result.document;
