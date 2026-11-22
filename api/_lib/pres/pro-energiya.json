@@ -1,0 +1,2712 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 20,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TAQDIMOT · EKOLOGIYA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1066800,
+      1320800,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 13,
+     "max": 16,
+     "perLine": 16.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1041400,
+      1676400,
+      5080000,
+      789447
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 9,
+     "max": 16,
+     "perLine": 16.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "manbalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1041400,
+      2489200,
+      5080000,
+      789447
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 53,
+     "max": 53,
+     "perLine": 52.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh, shamol va suv kuchi bilan yashil kelajak sari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      3835400,
+      4826000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 28,
+     "max": 53,
+     "perLine": 52.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1066800,
+      5207000,
+      4826000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 16,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ASOSIY TUSHUNCHA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      914400,
+      736600,
+      5080000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 19,
+     "max": 29,
+     "perLine": 28.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Toza energiya nima?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      889000,
+      1016000,
+      6604000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 44.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tabiatda o'z-o'zidan tiklanadigan, havoni deyarli ifloslantirmaydigan energiya manbalari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      914400,
+      4191000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 6,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Quyosh",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      685800,
+      4572000,
+      2286000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 21,
+     "max": 24,
+     "perLine": 23.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Nur elektrga aylanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      736600,
+      5080000,
+      2184400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 6,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Shamol",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3530600,
+      4572000,
+      2286000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 32,
+     "max": 32,
+     "perLine": 16,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Havo oqimi turbinani aylantiradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3581400,
+      5080000,
+      2184400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 3,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Suv",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6375400,
+      4572000,
+      2286000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 16,
+     "max": 24,
+     "perLine": 23.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oqim kuchi GESda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6426200,
+      5080000,
+      2184400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 9,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Geotermal",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9220200,
+      4572000,
+      2286000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 22,
+     "max": 24,
+     "perLine": 23.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer qa'ridagi issiqlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9271000,
+      5080000,
+      2184400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 9,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "AHAMIYATI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      965200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 14,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Nega bu muhim?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      939800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 94,
+     "max": 94,
+     "perLine": 47,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza energiya iqlimni asraydi, sog'liqni yaxshilaydi va energiya xavfsizligini mustahkamlaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      965200,
+      1905000,
+      5080000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 31,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Issiqxona gazlarini kamaytiradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3136900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Havo sifati va sog'liq yaxshilanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3898900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 41,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tugaydigan yoqilg'iga bog'liqlik kamayadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4660900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 30,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangi ish o'rinlari yaratiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      5422900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1-MANBA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      965200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 17,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Quyosh energiyasi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      939800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 103,
+     "max": 103,
+     "perLine": 51.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh panellari nurni to'g'ridan-to'g'ri elektr energiyasiga aylantiradi. Bu eng tez o'sayotgan manba.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      965200,
+      1879600,
+      5207000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 29,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Panellar quyosh nurini yutadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3035300,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 28,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Uy, maktab va fermalar uchun",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3746500,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 33,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Narxi yildan-yilga arzonlashmoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4457700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "300+",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1193800,
+      5334000,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 36,
+     "max": 36,
+     "perLine": 18,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'zbekistonda yiliga quyoshli kunlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2743200,
+      5384800,
+      3251200,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "2-MANBA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6045200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 17,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Shamol energiyasi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Shamol turbinalarning parraklarini aylantiradi, generator esa harakatni elektr tokiga aylantiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6045200,
+      1879600,
+      5207000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 29,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ochiq dala va tog' oralig'ida",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3035300,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bitta turbina minglab uyni ta'minlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3746500,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ishlash jarayonida chiqindi yo'q",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4457700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "24/7",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6273800,
+      5334000,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 40,
+     "max": 40,
+     "perLine": 20,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "shamol bor joyda kechayu kunduz ishlaydi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7823200,
+      5384800,
+      3251200,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "3-MANBA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      965200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 14,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Suv energiyasi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      939800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 47.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Gidroelektr stansiyalar (GES) daryo va suv omborlaridagi oqim kuchidan elektr ishlab chiqaradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      965200,
+      1879600,
+      5207000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 31,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv oqimi turbinani aylantiradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3035300,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 34,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Barqaror va boshqariladigan quvvat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3746500,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 43,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv omborlari sug'orishga ham xizmat qiladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4457700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "100+",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1193800,
+      5334000,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 37,
+     "max": 35,
+     "perLine": 35.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yil xizmat qila oladigan yirik GESlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2743200,
+      5384800,
+      3251200,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "4-MANBA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6045200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 18,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Geotermal energiya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 92,
+     "max": 92,
+     "perLine": 46,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yer qa'ridagi issiq suv va bug' yordamida elektr ishlab chiqariladi hamda binolar isitiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6045200,
+      1879600,
+      5207000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 36,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yer ostidagi issiqlikdan foydalanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3035300,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 28,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bug' turbinasi elektr beradi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3746500,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 22,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ob-havoga bog'liq emas",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4457700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "365",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6273800,
+      5334000,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 34,
+     "max": 35,
+     "perLine": 35.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "kun davomida uzluksiz ishlay oladi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7823200,
+      5384800,
+      3251200,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 10,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "RAQAMLARDA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      914400,
+      711200,
+      5080000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 30,
+     "max": 45,
+     "perLine": 45.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Dunyo toza energiyaga o'tmoqda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      889000,
+      990600,
+      10414000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "30%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      838200,
+      3987800,
+      3048000,
+      965200
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 61,
+     "max": 61,
+     "perLine": 30.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "dunyo elektr energiyasi qayta tiklanuvchi manbalardan olinadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      863600,
+      5054600,
+      2946400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "90%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4622800,
+      3987800,
+      3048000,
+      965200
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 51,
+     "max": 51,
+     "perLine": 25.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "2010-yildan beri quyosh elektri shuncha arzonlashdi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4648200,
+      5054600,
+      2946400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 8.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "40%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8407400,
+      3987800,
+      3048000,
+      965200
+     ],
+     "lineH": 975360,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 29,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "O'zbekistonning 2030-yilgacha toza energiya ulushi maqsadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8432800,
+      5054600,
+      2946400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "JARAYON",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      914400,
+      3708400,
+      5080000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 30,
+     "max": 48,
+     "perLine": 47.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Quyosh paneli qanday ishlaydi?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      889000,
+      3962400,
+      10414000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Quyosh nuri",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      381000,
+      5588000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Panel tok hosil qiladi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3340100,
+      5588000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 23,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Inverter tokni moslaydi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6299200,
+      5588000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 18,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Uyga elektr keladi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9258300,
+      5588000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "TAHLIL",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      914400,
+      762000,
+      5080000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 29,
+     "max": 45,
+     "perLine": 45.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Afzalliklar va qiyinchiliklar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      889000,
+      1041400,
+      10414000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 12,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Afzalliklari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1219200,
+      2286000,
+      4318000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 15,
+     "max": 31,
+     "perLine": 31.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Qiyinchiliklari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6553200,
+      2286000,
+      4318000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 25,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tabiatni ifloslantirmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1905000,
+      3060700,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 17,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ob-havoga bog'liq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7239000,
+      3060700,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 27,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yoqilg'i uchun pul ketmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4000500,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 32,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Saqlash uchun akkumulyator kerak",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7239000,
+      4000500,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 27,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Manba hech qachon tugamaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4940300,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 27,
+     "max": 36,
+     "perLine": 36.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Boshlang'ich xarajat yuqori",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7239000,
+      4940300,
+      3759200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 15,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "AMALIY MASLAHAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      939800,
+      939800,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 29,
+     "max": 29,
+     "perLine": 9.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Har birimiz nima qila olamiz?",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      914400,
+      1219200,
+      3683000,
+      1666610
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kichik odatlar ham katta tejamga aylanadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      939800,
+      3810000,
+      3556000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 19.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "LED lampalar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5435600,
+      1727200,
+      2667000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 26,
+     "max": 29,
+     "perLine": 29.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kamroq tok, uzoqroq xizmat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5435600,
+      2540000,
+      2667000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 19,
+     "max": 39,
+     "perLine": 19.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Qurilmani o'chirish",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8763000,
+      1727200,
+      2667000,
+      701731
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 27,
+     "max": 29,
+     "perLine": 29.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kutish rejimi ham tok yeydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8763000,
+      2540000,
+      2667000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 19,
+     "max": 39,
+     "perLine": 19.4,
+     "lines": 2,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Quyosh suv isitgich",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5435600,
+      4724400,
+      2667000,
+      701731
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 17,
+     "max": 29,
+     "perLine": 29.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Issiq suv tekinga",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5435600,
+      5537200,
+      2667000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 13,
+     "max": 19,
+     "perLine": 19.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Qayta ishlash",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8763000,
+      4724400,
+      2667000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "label",
+     "chars": 19,
+     "max": 29,
+     "perLine": 29.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Chiqindini saralash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8763000,
+      5537200,
+      2667000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 18,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KELAJAK TRANSPORTI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6045200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Elektromobillar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      6019800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "text",
+     "chars": 86,
+     "max": 86,
+     "perLine": 43,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza elektr bilan quvvatlangan transport shahar havosini sezilarli darajada tozalaydi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6045200,
+      1879600,
+      5207000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 24,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chiqindi gaz chiqarmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3136900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 42,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Uyda yoki shahar stansiyasida quvvatlanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      3949700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 28,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bir km yo'l arzonroq tushadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6731000,
+      4762500,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 96,
+     "paras": 1,
+     "text": "“",
+     "font": "Georgia",
+     "anchor": "t",
+     "box": [
+      2311400,
+      1778000,
+      1016000,
+      1403461
+     ],
+     "lineH": 1463040,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 38,
+     "max": 38,
+     "perLine": 19,
+     "lines": 2,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Toza energiya — sog'lom kelajak garovi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3175000,
+      2413000,
+      6604000,
+      1111073
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 30,
+     "max": 69,
+     "perLine": 69.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "— Barqaror rivojlanish g'oyasi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3200400,
+      4191000,
+      6350000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      965200,
+      889000,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 14,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Asosiy fikrlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      939800,
+      1168400,
+      5334000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 56,
+     "max": 56,
+     "perLine": 28,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Toza energiya — bugungi tanlov va ertangi kunga sarmoya.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      965200,
+      1905000,
+      5080000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Manbalar tugamaydi va tabiatni asraydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      2882900,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 32,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Texnologiya arzonlashib bormoqda",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      3670300,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 31,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Har bir oila hissa qo'sha oladi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      4457700,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 35,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kelajak avlodlar uchun toza sayyora",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1651000,
+      5245100,
+      4521200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 18,
+     "max": 46,
+     "perLine": 45.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "E'TIBORINGIZ UCHUN",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1066800,
+      1320800,
+      4826000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 7,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1041400,
+      1905000,
+      5080000,
+      877163
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 46,
+     "max": 53,
+     "perLine": 52.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, bajonidil javob beraman.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      3454400,
+      4826000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 28,
+     "max": 53,
+     "perLine": 52.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1066800,
+      5207000,
+      4826000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 1024,
+   "h": 708,
+   "slides": [
+    1,
+    15
+   ],
+   "focus": 1
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 1024,
+   "h": 809,
+   "slides": [
+    2
+   ],
+   "focus": 2
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    4
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 605,
+   "slides": [
+    5
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 1024,
+   "h": 768,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 1024,
+   "h": 683,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 1024,
+   "h": 694,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 960,
+   "h": 547,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 1024,
+   "h": 683,
+   "slides": [
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 1024,
+   "h": 682,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 1024,
+   "h": 683,
+   "slides": [
+    13
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    14
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}
