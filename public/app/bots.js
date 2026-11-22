@@ -8,7 +8,7 @@
    contact — "Biz bilan bog'lanish" havolasi.
    ================================================================ */
 window.APP_BOTS = {
-  ai: { name: "AI Yordamchi", logo: "AI", accent: "#4F46E5", accentDark: "#22D3EE", contact: "https://t.me/Print_54" },
+  ai: { name: "AI Yordamchi", logo: "AI", accent: "#0E9E94", accentDark: "#22D3EE", contact: "https://t.me/Print_54" },
 };
 window.APP_BOT_DEFAULT = "ai";
 window.APP_BOT_KEY = (function () {

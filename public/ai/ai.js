@@ -322,7 +322,7 @@
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
           ${hasCode(f) && !f.showIf ? codeBox(f) : ""}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
-          <div class="tpl-row${f.set === "presentation" ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
+          <div class="tpl-row${/^presentation/.test(f.set) ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
       default:
         return "";
