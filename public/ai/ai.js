@@ -153,6 +153,7 @@
     if (!svc || svc.id !== id) return;
     const f = svc.fields.find((x) => x.type === "templates");
     if (!f || !CFG.templates[f.set].some((t) => t.id === tplId)) return;
+    revealTpl(svc, f);
     getValues(svc)[f.id] = tplId;
     const st = getCat(svc); st.tplManual = true; st.manual = true; st.cat = "all";
     refreshLive(svc);
@@ -161,6 +162,20 @@
     if (card) card.scrollIntoView({ inline: "center", block: "nearest" });
   };
   // 🔢 Shablon kodi: mijoz botdagi galereyada ko'rgan raqamni yozadi — shablon o'zi tanlanadi
+  const hasCode = (f) => (CFG.templates[f.set] || []).some((t) => t.code);
+  const codeBox = (f) => `<div class="tpl-code-box"><input class="ai-input tpl-code-in" data-tcode="${f.id}" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="🔢 Shablon kodini yozing (1–${Math.max(...CFG.templates[f.set].map((t) => t.code || 0))})"><div class="tpl-code-msg" data-tcode-msg="${f.id}" hidden></div></div>`;
+  // shu tanlov maydoniga bog'liq (showIf "design=tpl") kodli shablonlar maydoni
+  const tplDep = (svc, f) => svc.fields.find((x) => x.type === "templates" && x.showIf && x.showIf.split("=")[0] === f.id && hasCode(x));
+  // shablonlar maydoni yashirin bo'lsa (oddiy taqdimot: «AI o'zi yaratadi») — «Shablon tanlayman» ni yoqadi
+  function revealTpl(svc, f) {
+    if (!f.showIf) return;
+    const [k, val] = f.showIf.split("=");
+    const want = String(val || "").split("|")[0];
+    if (!want || getValues(svc)[k] === want) return;
+    getValues(svc)[k] = want;
+    root.querySelectorAll(`[data-chips="${k}"] .chip`).forEach((c) => c.classList.toggle("active", c.dataset.v === want));
+    applyShowIf(svc);
+  }
   function pickByCode(svc, fid, raw) {
     const f = svc.fields.find((x) => x.id === fid);
     const msg = root.querySelector(`[data-tcode-msg="${fid}"]`);
@@ -173,6 +188,7 @@
     if (!t) { msg.textContent = "Bunday kodli shablon yo'q"; return; }
     msg.textContent = "✅ " + tplName(t);
     msg.setAttribute("data-no-i18n", "");
+    revealTpl(svc, f);
     getValues(svc)[fid] = t.id;
     const st = getCat(svc); st.tplManual = true; st.manual = true; st.cat = "all";
     refreshLive(svc);
@@ -251,7 +267,7 @@
         }
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}<div class="chips${f.compact ? " compact" : ""}${f.seg ? " seg" : ""}" data-chips="${f.id}">
           ${f.options.map((o) => `<div class="chip${v[f.id] === optV(o) ? " active" : ""}" data-v="${esc(optV(o))}">${esc(optL(o))}</div>`).join("")}
-          </div></div>`;
+          </div>${tplDep(svc, f) ? codeBox(tplDep(svc, f)) : ""}</div>`;
       case "cards":
         return `<div class="ai-field" data-f="${f.id}">${label(f)}<div class="opt-cards${f.look === "style" ? " style" : ""}" data-cards="${f.id}">
           ${f.options.map((o) => `<div class="opt-card${v[f.id] === o.v ? " active" : ""}" data-v="${esc(o.v)}">
@@ -304,7 +320,7 @@
           <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}dan (betiga qarab)` : ""}</div></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
-          ${isProSet(f) ? `<div class="tpl-code-box"><input class="ai-input tpl-code-in" data-tcode="${f.id}" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="🔢 Shablon kodini yozing (1–${CFG.templates[f.set].length})"><div class="tpl-code-msg" data-tcode-msg="${f.id}" hidden></div></div>` : ""}
+          ${hasCode(f) && !f.showIf ? codeBox(f) : ""}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
           <div class="tpl-row${f.set === "presentation" ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
@@ -771,7 +787,8 @@
     }
     const used = new Set(CFG.templates[f.set].map((t) => t.category));
     const hasAuto = CFG.templates[f.set].some((t) => t.auto) && CFG.templates[f.set].some((t) => !t.auto);
-    const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], CFG.categories.filter((c) => used.has(c.v)));
+    const extra = (CFG.presExtraCats || []).filter((c) => CFG.templates[f.set].some((t) => inCat(t, c.v)));
+    const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], extra, CFG.categories.filter((c) => used.has(c.v)));
     const st = getCat(svc);
     return cats.map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)}</div>`).join("");
   }
@@ -788,7 +805,7 @@
       return det ? all.filter((t) => inCat(t, det)).concat(all.filter((t) => !inCat(t, det))) : all;
     }
     if (st.cat === "ai") return all.filter((t) => t.auto);
-    if (st.cat !== "all") return autoFirst(all.filter((t) => t.category === st.cat));
+    if (st.cat !== "all") return autoFirst(all.filter((t) => inCat(t, st.cat)));
     const det = detectCategory(v);
     return det ? autoFirst(all.filter((t) => t.category === det)).concat(autoFirst(all.filter((t) => t.category !== det))) : autoFirst(all);
   }
@@ -821,7 +838,7 @@
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}" aria-label="${esc(tplName(t))}">
-        ${t.code && isProSet(f) ? `<span class="tpl-code" data-no-i18n>${t.code}</span>` : ""}
+        ${t.code && hasCode(f) ? `<span class="tpl-code" data-no-i18n>${t.code}</span>` : ""}
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
       </div>`).join("");
   }
@@ -2000,7 +2017,7 @@
       const caps = tpl.lib ? [] : ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
       const n = tpl.pages || 1;
       const cap = (i) => tpl.page ? (n > 1 ? `${i + 1}-sahifa` : "") : caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
-      pages = (tpl.video ? [`<div class="slide-box"><div class="slide"><video class="el" src="/ai/templates/${tpl.id}/preview.mp4" poster="/ai/templates/${tpl.id}/1.jpg" autoplay muted loop playsinline style="inset:0;width:100%;height:100%;object-fit:cover"></video></div></div><div class="cap">🎬 Animatsiya namunasi</div>`] : []).concat([`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : svc.id === "lesson" ? "Namunadagi matnlar o'rniga sizning darsingiz bo'yicha o'zbekcha matn yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
+      pages = (tpl.video ? [`<div class="slide-box"><div class="slide"><video class="el" src="/ai/templates/${tpl.id}/preview.mp4" poster="/ai/templates/${tpl.id}/1.jpg" autoplay muted loop playsinline style="inset:0;width:100%;height:100%;object-fit:cover"></video></div></div><div class="cap">${/^pro-/.test(tpl.id) ? "🎬 Animatsiya namunasi" : "🎬 Slaydlar namunasi"}</div>`] : []).concat([`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : svc.id === "lesson" ? "Namunadagi matnlar o'rniga sizning darsingiz bo'yicha o'zbekcha matn yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
         .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`)));
     } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
