@@ -23,6 +23,8 @@ const { registerReferral, REF_STEP } = require("./_lib/referral");
 const SRC = require("./_lib/sources");
 const CHAT = require("./_lib/chat");
 const PH = require("./_lib/photo-actions");
+const GAL = require("./_lib/gallery");
+const FB = require("./_lib/feedback");
 const { token: botToken } = require("./_lib/bots");
 const PR = require("../public/ai/prices");
 
@@ -114,6 +116,18 @@ async function handleCallbackQuery(cq, bot, req) {
     await sendKeyboard(cq.from.id, bot, l);
     return;
   }
+  // 💎 Super taqdimot galereyasi (chatda) va tayyor fayl ostidagi ⭐ baholash / 🛠 tuzatish tugmalari
+  if (/^gl:/.test(cq.data || "") && isAiBot(bot)) {
+    const host = req.headers["x-forwarded-host"] || req.headers.host;
+    const l = await LB.getLang(cq.from.id).catch(() => "uz");
+    await GAL.onCallback(cq, bot, l, host, appUrl(host, bot)).catch((e) => console.error("Galereya:", e));
+    return;
+  }
+  if (/^(rt|fx):\d+/.test(cq.data || "")) {
+    const l = await LB.getLang(cq.from.id).catch(() => "uz");
+    await FB.onCallback(cq, bot, l).catch((e) => console.error("Baho/tuzatish:", e));
+    return;
+  }
   if (/^pay(ok|no|cancel|bad):\d+$/.test(cq.data || "")) {
     await handlePayAction(cq, bot, req);
     return;
@@ -141,7 +155,10 @@ async function handleCallbackQuery(cq, bot, req) {
     await callTelegram("answerCallbackQuery", { callback_query_id: cq.id }, bot);
     if (cq.message) await callTelegram("deleteMessage", { chat_id: cq.message.chat.id, message_id: cq.message.message_id }, bot).catch(() => {});
     if (svc === "bonus" && cq.message) { await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&view=bonus"); return; }
-    if (LB.SVC[svc] && cq.message) {
+    if (svc === "presentation_pro" && cq.message) {
+      await GAL.start(bot, cq.message.chat.id, l, req.headers["x-forwarded-host"] || req.headers.host);
+      await require("./_lib/remind").noteView(bot, cq.from, cq.message.chat.id, svc);
+    } else if (LB.SVC[svc] && cq.message) {
       await TOPUP.sendService(bot, cq.message.chat.id, svc, l, appUrl(req.headers["x-forwarded-host"] || req.headers.host, bot) + "&open=" + svc);
       await require("./_lib/remind").noteView(bot, cq.from, cq.message.chat.id, svc);
     }
@@ -576,6 +593,12 @@ async function handleMessage(msg, bot, host, req) {
 
   if (!msg.text) return;
 
+  // «🛠 #id — kamchilikni yozing» xabariga mijoz javobi — egaga yetkaziladi
+  if (msg.reply_to_message && !isOwner(msg.from) && /^🛠 #\d+/.test(msg.reply_to_message.text || "")) {
+    const l = await LB.getLang(msg.from.id).catch(() => "uz");
+    if (await FB.onReply(msg, bot, l).catch((e) => { console.error("Tuzatish so'rovi:", e); return false; })) return;
+  }
+
   // Pastki tugmalar (hamma botda): hisobni to'ldirish, balans, narxlar, bog'lanish; summa javobi
   if (!isOwnerReply(msg) && (await handleKbText(msg, bot, host))) return;
 
@@ -747,7 +770,8 @@ async function handleKbText(msg, bot, host) {
       return true;
     }
     if (svc === "bonus") { await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&view=bonus"); return true; }
-    await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&open=" + svc);
+    if (svc === "presentation_pro") await GAL.start(bot, msg.chat.id, l, host);
+    else await TOPUP.sendService(bot, msg.chat.id, svc, l, appUrl(host, bot) + "&open=" + svc);
     if (!isOwner(msg.from)) await require("./_lib/remind").noteView(bot, msg.from, msg.chat.id, svc);
     return true;
   }

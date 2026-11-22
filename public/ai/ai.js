@@ -146,6 +146,20 @@
   }
   window.aiOpenGrid = openGrid; // umumiy ilova pastki menyusi uchun
   window.aiOpenService = (id) => openService(id);
+  // Botdagi galereyadan «✅ Tanlash»: xizmat formasi shu shablon tanlangan holda ochiladi (?open=<xizmat>&tpl=<id>)
+  window.aiOpenTemplate = (id, tplId) => {
+    openService(id);
+    const svc = current;
+    if (!svc || svc.id !== id) return;
+    const f = svc.fields.find((x) => x.type === "templates");
+    if (!f || !CFG.templates[f.set].some((t) => t.id === tplId)) return;
+    getValues(svc)[f.id] = tplId;
+    const st = getCat(svc); st.tplManual = true; st.manual = true; st.cat = "all";
+    refreshLive(svc);
+    const row = root.querySelector(`[data-tpl="${f.id}"]`);
+    const card = row && row.querySelector(`.tpl-card[data-v="${tplId}"]`);
+    if (card) card.scrollIntoView({ inline: "center", block: "nearest" });
+  };
   // 🔥 Trend qo'shish: botda tayyorlangan taqdimotni qayta yuklamasdan personaj menyusini ochadi
   window.aiOpenCharFrom = (orderId) => {
     const svc = CFG.services.find((x) => x.id === "char_add");
@@ -718,16 +732,23 @@
      --------------------------------------------------------------- */
   const catState = {}; // xizmat id -> { cat, manual, tplManual }
   const getCat = (svc) => (catState[svc.id] = catState[svc.id] || { cat: "all", manual: false, tplManual: false });
-  const hasCategories = (f) => f.set === "presentation" && Array.isArray(CFG.categories);
+  const isProSet = (f) => f.set === "presentation_pro" && Array.isArray(CFG.proCategories);
+  const hasCategories = (f) => (f.set === "presentation" && Array.isArray(CFG.categories)) || isProSet(f);
+  const catsOf = (f) => (isProSet(f) ? CFG.proCategories : CFG.categories);
+  const inCat = (t, c) => (Array.isArray(t.cats) ? t.cats.includes(c) : t.category === c);
 
-  function detectCategory(v) {
+  function detectCategory(v, f) {
     const text = `${v.subject || ""} ${v.topic || ""}`.toLowerCase();
     if (!text.trim()) return null;
-    const hit = CFG.categories.find((c) => c.keys.some((k) => text.includes(k)));
+    const hit = (f ? catsOf(f) : CFG.categories).find((c) => c.keys.some((k) => text.includes(k)));
     return hit ? hit.v : null;
   }
 
   function categoryChips(svc, f) {
+    if (isProSet(f)) {
+      const st = getCat(svc), all = CFG.templates[f.set];
+      return [{ v: "all", l: "Barchasi" }].concat(CFG.proCategories).map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)} <span class="cnt">${c.v === "all" ? all.length : all.filter((t) => inCat(t, c.v)).length}</span></div>`).join("");
+    }
     const used = new Set(CFG.templates[f.set].map((t) => t.category));
     const hasAuto = CFG.templates[f.set].some((t) => t.auto) && CFG.templates[f.set].some((t) => !t.auto);
     const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], CFG.categories.filter((c) => used.has(c.v)));
@@ -741,6 +762,11 @@
     const all = CFG.templates[f.set];
     if (!hasCategories(f)) return all;
     const st = getCat(svc);
+    if (isProSet(f)) {
+      if (st.cat !== "all") return all.filter((t) => inCat(t, st.cat));
+      const det = detectCategory(v, f); // mavzuga mos toifa shablonlari oldinda
+      return det ? all.filter((t) => inCat(t, det)).concat(all.filter((t) => !inCat(t, det))) : all;
+    }
     if (st.cat === "ai") return all.filter((t) => t.auto);
     if (st.cat !== "all") return autoFirst(all.filter((t) => t.category === st.cat));
     const det = detectCategory(v);
@@ -752,7 +778,7 @@
   const isSmartTpl = (id) => id === "ai-dizayn" || /^s-/.test(String(id || ""));
   function autoCategory(svc, f, v) {
     const st = getCat(svc);
-    if (st.manual || isSmartTpl(v[f.id])) return;
+    if (isProSet(f) || st.manual || isSmartTpl(v[f.id])) return;
     const det = detectCategory(v);
     const next = det && CFG.templates[f.set].some((t) => t.category === det) ? det : "all";
     if (next === st.cat) return;
@@ -1323,7 +1349,7 @@
       // mijoz shablonni o'zi tanlamagan bo'lsa — toifaning birinchisini belgilaymiz
       const fid = catChip.parentElement.dataset.cats;
       const set = current.fields.find((x) => x.id === fid)?.set;
-      const first = st.cat !== "all" && !st.tplManual && set && CFG.templates[set].find((t) => t.category === st.cat);
+      const first = st.cat !== "all" && !st.tplManual && set && CFG.templates[set].find((t) => inCat(t, st.cat));
       if (first) v[fid] = first.id;
       const row = root.querySelector(`[data-tpl="${catChip.parentElement.dataset.cats}"]`);
       if (row) row.scrollLeft = 0;
@@ -1952,8 +1978,8 @@
       const caps = tpl.lib ? [] : ["Titul slayd", "Reja", "Matn", "Rasm va matn", "Ikki ustun", "Xulosa", "Yakuniy slayd"];
       const n = tpl.pages || 1;
       const cap = (i) => tpl.page ? (n > 1 ? `${i + 1}-sahifa` : "") : caps[i] || (i === 0 ? "Titul slayd" : i === n - 1 ? "Yakuniy slayd" : `${i + 1}-slayd`);
-      pages = [`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : svc.id === "lesson" ? "Namunadagi matnlar o'rniga sizning darsingiz bo'yicha o'zbekcha matn yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
-        .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`));
+      pages = (tpl.video ? [`<div class="slide-box"><div class="slide"><video class="el" src="/ai/templates/${tpl.id}/preview.mp4" poster="/ai/templates/${tpl.id}/1.jpg" autoplay muted loop playsinline style="inset:0;width:100%;height:100%;object-fit:cover"></video></div></div><div class="cap">🎬 Animatsiya namunasi</div>`] : []).concat([`<div class="cap">${svc.id === "resume" ? "Namunadagi ism, rasm va ma'lumotlar o'rniga sizning ma'lumotlaringiz yoziladi" : svc.id === "lesson" ? "Namunadagi matnlar o'rniga sizning darsingiz bo'yicha o'zbekcha matn yoziladi" : tpl.page ? "Namunadagi savollar va matnlar o'rniga sizning mavzuingiz bo'yicha yangi matn yoziladi" : "Namunadagi matnlar o'rniga sizning mavzuingiz bo'yicha o'zbekcha matn yoziladi"}</div>`]
+        .concat(Array.from({ length: n }, (_, i) => `${canvaImg(tpl, i + 1)}<div class="cap">${cap(i)}</div>`)));
     } else if (f.set === "presentation") {
       pages = [["title", "Titul slayd"], ["content", "Mazmun slaydi"], ["split", "Rasm va matn"]]
         .map(([k, cap]) => `${slideHtml(tpl, k, d)}<div class="cap">${cap}</div>`);
