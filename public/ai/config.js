@@ -967,6 +967,15 @@
       { id: "pro-knopka3", name: "📌 Knopkali kartochkalar · to'q ko'k", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-knopka4", name: "📌 Knopkali kartochkalar · yashil", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-qon", name: "🩸 Laboratoriya · qon surtmasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-energiya", name: "🌿 Shisha panel · toza energiya", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-oltinx", name: "✖️ Oltin X · shaxsiy brend", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-sado", name: "🎧 Neon lenta · audio platforma", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-zukko", name: "📚 Neon lenta 2 · onlayn ta'lim", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-himoya", name: "🎓 Aylanuvchi halqa · diplom himoyasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-goya", name: "🟥 Qizil kartalar · startap", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-kapsula", name: "💊 Kapsulalar · raqamli marketing", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-akkordeon", name: "🪗 Akkordeon · dizayn asoslari", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-oltiburchak", name: "🔷 Oltiburchak · yillik reja", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

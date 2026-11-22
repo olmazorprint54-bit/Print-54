@@ -1,0 +1,3619 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 22,
+     "max": 48,
+     "perLine": 48.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BITIRUV MALAKAVIY ISHI",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      3810000,
+      5080000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 32,
+     "perLine": 31.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "himoyasi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4114800,
+      2540000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 13,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ilmiy rahbar:",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1498600,
+      1524000,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 26,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "f.f.n., dots. Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1498600,
+      1778000,
+      3302000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 10,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Taqrizchi:",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7645400,
+      1524000,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 26,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "p.f.d., prof. Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7391400,
+      1778000,
+      3302000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 39,
+     "max": 39,
+     "perLine": 19.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 40,
+     "paras": 1,
+     "text": "RAQAMLI TEXNOLOGIYALAR VA TA'LIM SIFATI",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2616200,
+      9652000,
+      1169551
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 20,
+     "max": 39,
+     "perLine": 39.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Talaba: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4064000,
+      4292600,
+      4064000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 32,
+     "max": 51,
+     "perLine": 50.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "401-guruh · Pedagogika fakulteti",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4064000,
+      4622800,
+      4064000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 40,
+     "max": 89,
+     "perLine": 88.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Bitiruv malakaviy ishi · Toshkent — 2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2540000,
+      5588000,
+      7112000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 4,
+     "max": 10,
+     "perLine": 10.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 30,
+     "paras": 1,
+     "text": "REJA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4953000,
+      381000,
+      2286000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "1.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      431800,
+      1320800,
+      584200,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Dolzarbligi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      1371600,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "label",
+     "chars": 35,
+     "max": 35,
+     "perLine": 17.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Mavzuning bugungi kundagi ahamiyati",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      1727200,
+      3048000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "2.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      431800,
+      2641600,
+      584200,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muammo",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      2692400,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 34,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Hal qilinishi kerak bo'lgan masala",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      3048000,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "44",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "3.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      431800,
+      3962400,
+      584200,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "45",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Maqsad",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      4013200,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 27,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tadqiqotdan kutilgan natija",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      4368800,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "4.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      431800,
+      5283200,
+      584200,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Vazifalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      5334000,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "49",
+     "kind": "label",
+     "chars": 27,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Maqsadga erishish qadamlari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1066800,
+      5689600,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "5.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      11176000,
+      1320800,
+      635000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 17,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Obyekt va predmet",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7874000,
+      1371600,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 25,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Nima va qanday o'rganildi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8001000,
+      1727200,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "53",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "6.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      11176000,
+      2641600,
+      635000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "54",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Metodlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7874000,
+      2692400,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 30,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qo'llanilgan tadqiqot usullari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8001000,
+      3048000,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "56",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "7.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      11176000,
+      3962400,
+      635000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "57",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Natijalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7874000,
+      4013200,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 24,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Olingan asosiy natijalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8001000,
+      4368800,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 4,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "8.",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      11176000,
+      5283200,
+      635000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "60",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Xulosa",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7874000,
+      5334000,
+      3175000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "61",
+     "kind": "label",
+     "chars": 26,
+     "max": 38,
+     "perLine": 38,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Xulosa va amaliy takliflar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8001000,
+      5689600,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "1-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 21,
+     "max": 21,
+     "perLine": 10.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "MAVZUNING DOLZARBLIGI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      497059
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 24,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1. Mavzuning dolzarbligi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 161,
+     "max": 161,
+     "perLine": 53.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalar ta'lim jarayonining ajralmas qismiga aylandi. Ularning ta'lim sifatiga ta'sirini ilmiy asosda o'rganish bugungi kunning muhim vazifasidir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2. Tadqiqot muammosi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 45,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'plab ta'lim muassasalarida raqamli vositalar mavjud, biroq ulardan samarali foydalanish usullari hali yetarlicha ishlab chiqilmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3. Tadqiqot maqsadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 45.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalarning ta'lim sifatiga ta'sirini aniqlash va ulardan samarali foydalanish bo'yicha amaliy tavsiyalar ishlab chiqish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "2-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 17,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "TADQIQOT MUAMMOSI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 24,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1. Mavzuning dolzarbligi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "40"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 161,
+     "max": 161,
+     "perLine": 53.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalar ta'lim jarayonining ajralmas qismiga aylandi. Ularning ta'lim sifatiga ta'sirini ilmiy asosda o'rganish bugungi kunning muhim vazifasidir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "42"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2. Tadqiqot muammosi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "46"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 45,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'plab ta'lim muassasalarida raqamli vositalar mavjud, biroq ulardan samarali foydalanish usullari hali yetarlicha ishlab chiqilmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3. Tadqiqot maqsadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "52"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 45.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalarning ta'lim sifatiga ta'sirini aniqlash va ulardan samarali foydalanish bo'yicha amaliy tavsiyalar ishlab chiqish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "54"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4. Tadqiqot vazifalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Adabiyotlarni tahlil qilish, so'rovnoma o'tkazish, tajriba-sinov ishlarini tashkil etish va olingan natijalarni baholash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "3-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "TADQIQOT MAQSADI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 24,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1. Mavzuning dolzarbligi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "40"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 161,
+     "max": 161,
+     "perLine": 53.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalar ta'lim jarayonining ajralmas qismiga aylandi. Ularning ta'lim sifatiga ta'sirini ilmiy asosda o'rganish bugungi kunning muhim vazifasidir.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "42"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2. Tadqiqot muammosi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "46"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 45,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'plab ta'lim muassasalarida raqamli vositalar mavjud, biroq ulardan samarali foydalanish usullari hali yetarlicha ishlab chiqilmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "48"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3. Tadqiqot maqsadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "52"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 45.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalarning ta'lim sifatiga ta'sirini aniqlash va ulardan samarali foydalanish bo'yicha amaliy tavsiyalar ishlab chiqish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "54"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4. Tadqiqot vazifalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "58"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Adabiyotlarni tahlil qilish, so'rovnoma o'tkazish, tajriba-sinov ishlarini tashkil etish va olingan natijalarni baholash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "60"
+     ]
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "5. Obyekt va predmet",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti — umumta'lim maktablaridagi o'quv jarayoni. Predmeti — raqamli vositalardan foydalanish shakl va usullari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "4-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 19,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "TADQIQOT VAZIFALARI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2. Tadqiqot muammosi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "46"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 135,
+     "max": 135,
+     "perLine": 45,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ko'plab ta'lim muassasalarida raqamli vositalar mavjud, biroq ulardan samarali foydalanish usullari hali yetarlicha ishlab chiqilmagan.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "48"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3. Tadqiqot maqsadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "52"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 45.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalarning ta'lim sifatiga ta'sirini aniqlash va ulardan samarali foydalanish bo'yicha amaliy tavsiyalar ishlab chiqish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "54"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4. Tadqiqot vazifalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "58"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Adabiyotlarni tahlil qilish, so'rovnoma o'tkazish, tajriba-sinov ishlarini tashkil etish va olingan natijalarni baholash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "60"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "5. Obyekt va predmet",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "64"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti — umumta'lim maktablaridagi o'quv jarayoni. Predmeti — raqamli vositalardan foydalanish shakl va usullari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "66"
+     ]
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 21,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "6. Tadqiqot metodlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 56.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariy tahlil, so'rovnoma, kuzatuv, pedagogik tajriba va matematik-statistik ishlov berish usullari qo'llanildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      526298
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "5-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 17,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "OBYEKT VA PREDMET",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3. Tadqiqot maqsadi",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "52"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 136,
+     "max": 136,
+     "perLine": 45.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli texnologiyalarning ta'lim sifatiga ta'sirini aniqlash va ulardan samarali foydalanish bo'yicha amaliy tavsiyalar ishlab chiqish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "54"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4. Tadqiqot vazifalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "58"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Adabiyotlarni tahlil qilish, so'rovnoma o'tkazish, tajriba-sinov ishlarini tashkil etish va olingan natijalarni baholash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "60"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "5. Obyekt va predmet",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "64"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti — umumta'lim maktablaridagi o'quv jarayoni. Predmeti — raqamli vositalardan foydalanish shakl va usullari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "66"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 21,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "6. Tadqiqot metodlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "64"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 56.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariy tahlil, so'rovnoma, kuzatuv, pedagogik tajriba va matematik-statistik ishlov berish usullari qo'llanildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      526298
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "66"
+     ]
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "7. Asosiy natijalar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tajriba guruhida o'quvchilarning o'zlashtirish ko'rsatkichi nazorat guruhiga nisbatan sezilarli darajada yuqori bo'ldi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "6-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 18,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "TADQIQOT METODLARI",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4. Tadqiqot vazifalari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "58"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Adabiyotlarni tahlil qilish, so'rovnoma o'tkazish, tajriba-sinov ishlarini tashkil etish va olingan natijalarni baholash.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      6,
+      "60"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "5. Obyekt va predmet",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "64"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti — umumta'lim maktablaridagi o'quv jarayoni. Predmeti — raqamli vositalardan foydalanish shakl va usullari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "66"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 21,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "6. Tadqiqot metodlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "64"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 56.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariy tahlil, so'rovnoma, kuzatuv, pedagogik tajriba va matematik-statistik ishlov berish usullari qo'llanildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      526298
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "66"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "7. Asosiy natijalar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "64"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tajriba guruhida o'quvchilarning o'zlashtirish ko'rsatkichi nazorat guruhiga nisbatan sezilarli darajada yuqori bo'ldi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "66"
+     ]
+    },
+    {
+     "id": "64",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "8. Xulosa va takliflar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      18110200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "text",
+     "chars": 150,
+     "max": 150,
+     "perLine": 50,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli vositalardan tizimli foydalanish ta'lim sifatini oshiradi. O'qituvchilar uchun maxsus malaka oshirish kurslarini tashkil etish taklif etiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      18745200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "7-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "ASOSIY NATIJALAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 20,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "5. Obyekt va predmet",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "64"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 123,
+     "max": 123,
+     "perLine": 41,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tadqiqot obyekti — umumta'lim maktablaridagi o'quv jarayoni. Predmeti — raqamli vositalardan foydalanish shakl va usullari.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      7,
+      "66"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 21,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "6. Tadqiqot metodlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "64"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 56.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariy tahlil, so'rovnoma, kuzatuv, pedagogik tajriba va matematik-statistik ishlov berish usullari qo'llanildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      526298
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "66"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "7. Asosiy natijalar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "64"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tajriba guruhida o'quvchilarning o'zlashtirish ko'rsatkichi nazorat guruhiga nisbatan sezilarli darajada yuqori bo'ldi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "66"
+     ]
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "8. Xulosa va takliflar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      10998200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "64"
+     ]
+    },
+    {
+     "id": "60",
+     "kind": "text",
+     "chars": 150,
+     "max": 150,
+     "perLine": 50,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli vositalardan tizimli foydalanish ta'lim sifatini oshiradi. O'qituvchilar uchun maxsus malaka oshirish kurslarini tashkil etish taklif etiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      11633200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "66"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 8,
+     "max": 21,
+     "perLine": 21.5,
+     "lines": 1,
+     "caps": true,
+     "sz": 13,
+     "paras": 1,
+     "text": "8-BO'LIM",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2997200,
+      584200,
+      2108200,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 19,
+     "max": 21,
+     "perLine": 20.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "XULOSA VA TAKLIFLAR",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2616200,
+      838200,
+      2489200,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "40",
+     "kind": "title",
+     "chars": 21,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "6. Tadqiqot metodlari",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -10337800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "64"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 56.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Nazariy tahlil, so'rovnoma, kuzatuv, pedagogik tajriba va matematik-statistik ishlov berish usullari qo'llanildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -9702800,
+      5689600,
+      526298
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "66"
+     ]
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 19,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "7. Asosiy natijalar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      -3225800,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "64"
+     ]
+    },
+    {
+     "id": "48",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tajriba guruhida o'quvchilarning o'zlashtirish ko'rsatkichi nazorat guruhiga nisbatan sezilarli darajada yuqori bo'ldi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      -2590800,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "66"
+     ]
+    },
+    {
+     "id": "52",
+     "kind": "label",
+     "chars": 22,
+     "max": 45,
+     "perLine": 45.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "8. Xulosa va takliflar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5892800,
+      3886200,
+      5740400,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "64"
+     ]
+    },
+    {
+     "id": "54",
+     "kind": "text",
+     "chars": 150,
+     "max": 150,
+     "perLine": 50,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli vositalardan tizimli foydalanish ta'lim sifatini oshiradi. O'qituvchilar uchun maxsus malaka oshirish kurslarini tashkil etish taklif etiladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5918200,
+      4521200,
+      5689600,
+      789447
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "66"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "title",
+     "chars": 20,
+     "max": 41,
+     "perLine": 40.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Natijalar raqamlarda",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1676400,
+      381000,
+      8890000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "87%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      2895600,
+      1778000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tajriba guruhi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4419600,
+      3302000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 26,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "o'zlashtirish ko'rsatkichi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      635000,
+      4775200,
+      3302000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 3,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "64%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5207000,
+      2895600,
+      1778000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0,
+     "num": true
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Nazorat guruhi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4445000,
+      4419600,
+      3302000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 26,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "o'zlashtirish ko'rsatkichi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4445000,
+      4775200,
+      3302000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "+23%",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      9017000,
+      2895600,
+      1778000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 4,
+     "max": 29,
+     "perLine": 28.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Farq",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4419600,
+      3302000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 24,
+     "max": 36,
+     "perLine": 36.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "tajriba guruhi foydasiga",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4775200,
+      3302000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "text",
+     "chars": 74,
+     "max": 111,
+     "perLine": 111,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Natijalar matematik-statistik usulda tekshirildi va ishonchli deb topildi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1016000,
+      5588000,
+      10160000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "19",
+     "kind": "title",
+     "chars": 19,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Xulosa va takliflar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1676400,
+      381000,
+      5334000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      647700,
+      2032000,
+      584200,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 42,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Raqamli vositalar o'zlashtirishni oshiradi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1473200,
+      2032000,
+      5334000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      647700,
+      3149600,
+      584200,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 30,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tizimli foydalanish muhim omil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1473200,
+      3149600,
+      5334000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      647700,
+      4267200,
+      584200,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 35,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'qituvchilar malakasi hal qiluvchi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1473200,
+      4267200,
+      5334000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      647700,
+      5384800,
+      584200,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 39,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Malaka oshirish kurslari taklif etiladi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1473200,
+      5384800,
+      5334000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 26,
+     "max": 39,
+     "perLine": 38.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "E'tiboringiz uchun rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1651000,
+      5308600,
+      8890000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 30,
+     "max": 62,
+     "perLine": 61.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa, marhamat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2921000,
+      6045200,
+      6350000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image12.jpg"
+   ],
+   "w": 960,
+   "h": 675,
+   "slides": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    5,
+    6,
+    7
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image14.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image15.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image16.jpg"
+   ],
+   "w": 960,
+   "h": 648,
+   "slides": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image17.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    10,
+    11,
+    12
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image18.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    14
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}

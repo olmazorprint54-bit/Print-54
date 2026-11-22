@@ -1,0 +1,3139 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 8.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 52,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      3200400,
+      2540000,
+      760208
+     ],
+     "lineH": 792480,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 11,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Yillik reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      3556000,
+      330200,
+      5080000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 25,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Reja  ·  G'oya  ·  Maqsad",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      939800,
+      5080000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 28,
+     "max": 59,
+     "perLine": 59.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3556000,
+      6350000,
+      5080000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 16,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja 2026",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yillik",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1524000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 5,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yangi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4826000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 5,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "g'oya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Asosiy",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8128000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8128000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 31,
+     "max": 50,
+     "perLine": 50.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Yil rejasining uch asosiy qismi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7112000,
+      508000,
+      4318000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "1",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2514600,
+      4315688,
+      762000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'rt yo'nalish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      5207000,
+      3556000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har birida aniq va o'lchanadigan qadam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5588000,
+      3810000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 10,
+     "max": 18,
+     "perLine": 17.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "01 · BILIM",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7810500,
+      2324100,
+      2286000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Yil davomida 12 ta kitob o'qish va bitta yangi kursni tugatish. Har kuni kamida 20 daqiqa o'qishga vaqt ajrating.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      2844800,
+      3378200,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 46,
+     "max": 46,
+     "perLine": 23,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Maslahat: Kitoblar ro'yxatini oldindan tuzing.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4724400,
+      2667000,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1549400,
+      4315688,
+      762000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'rt yo'nalish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      5207000,
+      3556000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har birida aniq va o'lchanadigan qadam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5588000,
+      3810000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 12,
+     "max": 18,
+     "perLine": 17.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "02 · SOG'LIQ",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7810500,
+      2324100,
+      2286000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 31.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Haftada 3 marta sport, kuniga 8 ming qadam va yetarli uyqu. Kichik odatlar katta natija beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      2844800,
+      3378200,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 42,
+     "max": 42,
+     "perLine": 21,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Maslahat: Mashg'ulotlarni taqvimga yozing.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4724400,
+      2667000,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1066800,
+      3479800,
+      762000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'rt yo'nalish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      5207000,
+      3556000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har birida aniq va o'lchanadigan qadam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5588000,
+      3810000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 11,
+     "max": 18,
+     "perLine": 17.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "03 · MOLIYA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7810500,
+      2324100,
+      2286000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 109,
+     "max": 109,
+     "perLine": 36.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har oy daromadning 10 foizini jamg'arish va xarajatlarni yozib borish. Yil oxirida aniq zaxira hosil bo'ladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      2844800,
+      3378200,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 44,
+     "max": 44,
+     "perLine": 22,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Maslahat: Jamg'armani maosh kunida ajrating.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4724400,
+      2667000,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "7"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "4",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1549400,
+      2643912,
+      762000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "To'rt yo'nalish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      5207000,
+      3556000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 38,
+     "max": 44,
+     "perLine": 44.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har birida aniq va o'lchanadigan qadam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5588000,
+      3810000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 9,
+     "max": 18,
+     "perLine": 17.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 17,
+     "paras": 1,
+     "text": "04 · OILA",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      7810500,
+      2324100,
+      2286000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "text",
+     "chars": 95,
+     "max": 95,
+     "perLine": 31.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Yaqinlar bilan ko'proq vaqt: haftada bir oilaviy kechki ovqat va oyiga bir marta birga sayohat.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      2844800,
+      3378200,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 44,
+     "max": 44,
+     "perLine": 22,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Maslahat: Suhbatda telefonni chetga qo'ying.",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      4724400,
+      2667000,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 16,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja 2026",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yillik",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1524000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 5,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yangi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4826000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 5,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "g'oya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "17"
+     ]
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Asosiy",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8128000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "22"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8128000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "23"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yangi g'oya",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01 / 03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 14,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kunlik odatlar",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2527300,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 132,
+     "max": 132,
+     "perLine": 33,
+     "lines": 4,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Har kuni bir xil vaqtda turish, reja tuzish va kunni qisqa xulosa bilan yakunlash. Odat — maqsadga olib boruvchi eng ishonchli yo'l.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3276600,
+      3098800,
+      3606800,
+      877163
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yangi g'oya",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02 / 03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 14,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangi ko'nikma",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2527300,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 117,
+     "max": 117,
+     "perLine": 39,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Yil davomida bitta ko'nikmani chuqur o'rganing: til, dasturlash yoki notiqlik. Har oy kichik natijani o'lchab boring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3276600,
+      3098800,
+      3606800,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 11,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yangi g'oya",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      8,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 17,
+     "perLine": 16.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03 / 03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9906000,
+      508000,
+      1524000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 13,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ijodiy loyiha",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      3810000,
+      2527300,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 113,
+     "max": 113,
+     "perLine": 37.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "O'zingiz uchun kichik loyiha boshlang: blog, kanal yoki qo'lda yasalgan buyumlar. Ijod yangi imkoniyatlar ochadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3276600,
+      3098800,
+      3606800,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 16,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Yillik reja 2026",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yillik",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1524000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "10"
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 4,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1524000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "11"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 5,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Yangi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4826000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "16"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 5,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "g'oya",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "17"
+     ]
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 20.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Asosiy",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8128000,
+      3835400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "22"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 14.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "maqsad",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8128000,
+      4191000,
+      2540000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "23"
+     ]
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 13,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Asosiy maqsad",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2794000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "3 oy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      2971800,
+      2032000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 19.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QISQA MUDDAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2159000,
+      3505200,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 63,
+     "max": 63,
+     "perLine": 15.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Kunlik odatlarni shakllantirish va birinchi natijalarni ko'rish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2260600,
+      3987800,
+      1828800,
+      818686
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5715000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8636000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 13,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Asosiy maqsad",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      12,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "1",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2794000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "title",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "3 oy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      2159000,
+      2971800,
+      2032000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 19.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "QISQA MUDDAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2159000,
+      3505200,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "text",
+     "chars": 63,
+     "max": 63,
+     "perLine": 15.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Kunlik odatlarni shakllantirish va birinchi natijalarni ko'rish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2260600,
+      3987800,
+      1828800,
+      818686
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "2",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5715000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 4,
+     "max": 12,
+     "perLine": 11.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "6 oy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      5080000,
+      2971800,
+      2032000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 12,
+     "max": 19,
+     "perLine": 19.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'RTA MUDDAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5080000,
+      3505200,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 59,
+     "max": 59,
+     "perLine": 14.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Yangi ko'nikmani o'rganish va jamg'armani yarmiga yetkazish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5181600,
+      3987800,
+      1828800,
+      818686
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "3",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8636000,
+      1727200,
+      762000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 5,
+     "max": 12,
+     "perLine": 11.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "12 oy",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8001000,
+      2971800,
+      2032000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 11,
+     "max": 19,
+     "perLine": 19.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "UZOQ MUDDAT",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8001000,
+      3505200,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 58,
+     "max": 58,
+     "perLine": 19.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Yillik maqsadlarga erishish va keyingi yil rejasini tuzish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8102600,
+      3987800,
+      1828800,
+      614014
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 4,
+     "max": 12,
+     "perLine": 9.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "2026",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      393700,
+      571500,
+      685800,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 43,
+     "perLine": 42.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvaffaqiyat formulasi",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      1244600,
+      457200,
+      6350000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 68,
+     "perLine": 68.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      6426200,
+      5080000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 15,
+     "perLine": 15.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      1397000,
+      3429000,
+      2286000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 23,
+     "max": 31,
+     "perLine": 30.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "aniq va yozma maqsadlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1143000,
+      4978400,
+      2794000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 7,
+     "max": 15,
+     "perLine": 15.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4953000,
+      3429000,
+      2286000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "har kungi kichik qadamlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4699000,
+      4978400,
+      2794000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 6,
+     "max": 15,
+     "perLine": 15.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      8509000,
+      3429000,
+      2286000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 21,
+     "max": 31,
+     "perLine": 30.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "yil oxiridagi g'alaba",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8255000,
+      4978400,
+      2794000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 7,
+     "max": 14,
+     "perLine": 13.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Segoe UI Black",
+     "anchor": "t",
+     "box": [
+      4826000,
+      3378200,
+      2540000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "title",
+     "chars": 18,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "E'tiboringiz uchun",
+     "font": "Segoe UI Light",
+     "anchor": "t",
+     "box": [
+      3556000,
+      330200,
+      5080000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 31,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa — marhamat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      939800,
+      5080000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 21,
+     "max": 59,
+     "perLine": 59.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3556000,
+      6350000,
+      5080000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "5"
+     ]
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 541,
+   "slides": [
+    4
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 960,
+   "h": 636,
+   "slides": [
+    5
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image10.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  }
+ ],
+ "sequence": true
+}

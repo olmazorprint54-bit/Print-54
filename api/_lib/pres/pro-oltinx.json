@@ -1,0 +1,2144 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 13,
+     "max": 39,
+     "perLine": 38.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 18,
+     "paras": 1,
+     "text": "SHAXSIY BREND",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3556000,
+      4419600,
+      5080000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 8,
+     "max": 44,
+     "perLine": 43.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "taqdimot",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4191000,
+      4800600,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 13,
+     "max": 17,
+     "perLine": 17.4,
+     "lines": 1,
+     "caps": true,
+     "sz": 22,
+     "paras": 1,
+     "text": "SHAXSIY BREND",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4699000,
+      3831223,
+      2794000,
+      338554
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 12,
+     "max": 29,
+     "perLine": 29.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      4273778,
+      2540000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 23,
+     "max": 23,
+     "perLine": 11.5,
+     "lines": 2,
+     "caps": true,
+     "sz": 50,
+     "paras": 1,
+     "text": "O'ZINGIZNI BREND QILING",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4267200,
+      2108200,
+      6731000,
+      1574800
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 48,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shaxsiy brend yaratish bo'yicha amaliy qo'llanma",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4292600,
+      3810000,
+      6350000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4267200,
+      5334000,
+      2159000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 24.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Lavozim",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6553200,
+      5334000,
+      2159000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 9,
+     "max": 14,
+     "perLine": 13.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "Mundarija",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4533900,
+      3149600,
+      3124200,
+      553998
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3327400,
+      2228850,
+      635000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 11,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Brend nima?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      254000,
+      2120900,
+      2895600,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      254000,
+      2476500,
+      2895600,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3327400,
+      4260850,
+      635000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Auditoriya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      254000,
+      4152900,
+      2895600,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "2-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      254000,
+      4508500,
+      2895600,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8229600,
+      2228850,
+      635000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Kontent",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      2120900,
+      2895600,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "3-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      2476500,
+      2895600,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8229600,
+      4260850,
+      635000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 6,
+     "max": 23,
+     "perLine": 23.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      4152900,
+      2895600,
+      307777
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 28.3,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "4-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9042400,
+      4508500,
+      2895600,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5029200,
+      1701800,
+      609600,
+      261610
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1778000,
+      3556000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 11,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Brend nima?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1117600,
+      2082800,
+      3810000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 28,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Shaxsiy brend — odamlar sizning ismingizni eshitganda xayoliga keladigan taassurot: bilim, uslub va qadriyatlar.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      2997200,
+      4191000,
+      1107996
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 8,
+     "max": 37,
+     "perLine": 37.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "1-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      1422400,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 15,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Brendning asosi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6400800,
+      1727200,
+      4826000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "1",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      2997200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 27,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kim ekaningizni aniq ayting",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      2997200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      3886200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 29,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kuchli tomonlaringizni toping",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      3886200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "3",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      4775200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 31,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qadriyatlaringizga sodiq qoling",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4775200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5029200,
+      1701800,
+      609600,
+      261610
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "2-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1778000,
+      3556000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 10,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Auditoriya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1117600,
+      2082800,
+      3810000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 24.8,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Hammaga yoqishga urinmang. Kimga foyda bera olishingizni aniqlang va o'sha odamlar tilida gapiring.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      2997200,
+      4191000,
+      1107996
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 8,
+     "max": 37,
+     "perLine": 37.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "2-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      1422400,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 19,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Auditoriyani bilish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6400800,
+      1727200,
+      4826000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "1",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      2997200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 23,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ularning muammosi nima?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      2997200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      3886200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 26,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Qayerda vaqt o'tkazishadi?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      3886200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "3",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      4775200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 22,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Sizdan nima kutishadi?",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4775200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5029200,
+      1701800,
+      609600,
+      261610
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "3-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1778000,
+      3556000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 7,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Kontent",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1117600,
+      2082800,
+      3810000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 108,
+     "max": 108,
+     "perLine": 36,
+     "lines": 3,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muntazam va foydali kontent ishonch uyg'otadi. Bilimingizni bo'lishing, jarayonni ko'rsating, hikoya qiling.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      2997200,
+      4191000,
+      830997
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 8,
+     "max": 37,
+     "perLine": 37.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "3-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      1422400,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 14,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Kontent rejasi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6400800,
+      1727200,
+      4826000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "1",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      2997200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 20,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Haftalik reja tuzing",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      2997200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      3886200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 31,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Foydali va qiziqarli aralashsin",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      3886200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "3",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      4775200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 20,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bir xil vizual uslub",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4775200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5029200,
+      1701800,
+      609600,
+      261610
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 8,
+     "max": 35,
+     "perLine": 34.7,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "4-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      1778000,
+      3556000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "title",
+     "chars": 6,
+     "max": 16,
+     "perLine": 16.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Natija",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1117600,
+      2082800,
+      3810000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 29.5,
+     "lines": 4,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kuchli brend yangi imkoniyatlar, hamkorlar va mijozlarni o'zi olib keladi. Natijani o'lchab, yo'lni to'g'rilab boring.",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      2997200,
+      4191000,
+      1107996
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 8,
+     "max": 37,
+     "perLine": 37.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "4-BO'LIM",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      1422400,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 17,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Natijani o'lchash",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6400800,
+      1727200,
+      4826000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "1",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      2997200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 22,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Obunachilar va faollik",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      2997200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      3886200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kelgan takliflar soni",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      3886200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "3",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6426200,
+      4775200,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 16,
+     "max": 36,
+     "perLine": 36.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Fikr-mulohazalar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4775200,
+      4064000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 50,
+     "perLine": 49.6,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "RAQAMLARDA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      635000,
+      5080000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 28,
+     "max": 45,
+     "perLine": 45,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Brend — bu vaqt va izchillik",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      736600,
+      939800,
+      10668000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 3,
+     "max": 11,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "7 s",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      3479800,
+      2286000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 38,
+     "max": 38,
+     "perLine": 19,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "birinchi taassurot shakllanadigan vaqt",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      635000,
+      5435600,
+      3302000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 5,
+     "max": 11,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "80/20",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4953000,
+      3479800,
+      2286000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 34,
+     "max": 34,
+     "perLine": 17,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "foydali kontent va reklama nisbati",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4445000,
+      5435600,
+      3302000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 5,
+     "max": 11,
+     "perLine": 10.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "1 yil",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8763000,
+      3479800,
+      2286000,
+      523220
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "barqaror brend uchun muntazam ish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      5435600,
+      3302000,
+      492443
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 6,
+     "max": 37,
+     "perLine": 37.2,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "XULOSA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2794000,
+      1625600,
+      3810000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "title",
+     "chars": 15,
+     "max": 28,
+     "perLine": 27.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Asosiy qadamlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2768600,
+      1930400,
+      6604000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "1",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2794000,
+      3098800,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 41,
+     "max": 53,
+     "perLine": 53.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'zingizni va qadriyatlaringizni aniqlang",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3505200,
+      3098800,
+      5969000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "2",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2794000,
+      3911600,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 36,
+     "max": 53,
+     "perLine": 53.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Auditoriyangiz uchun foydali bo'ling",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3505200,
+      3911600,
+      5969000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "3",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2794000,
+      4724400,
+      508000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 37,
+     "max": 53,
+     "perLine": 53.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muntazam ishlang va natijani o'lchang",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3505200,
+      4724400,
+      5969000,
+      276999
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "14",
+     "kind": "title",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4508500,
+      3759200,
+      3175000,
+      584775
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 18,
+     "max": 36,
+     "perLine": 36.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "E'tiboringiz uchun",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4508500,
+      4394200,
+      3175000,
+      215444
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    4
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 960,
+   "h": 540,
+   "slides": [
+    5
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  }
+ ],
+ "sequence": true
+}
