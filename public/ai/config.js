@@ -977,9 +977,63 @@
       { id: "pro-akkordeon", name: "🪗 Akkordeon · dizayn asoslari", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-oltiburchak", name: "🔷 Oltiburchak · yillik reja", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
+    // 🔢 SHABLON KODLARI MUZLATILGAN (mijoz botda ko'rgan kodni ilovaga yozadi — kod hech qachon o'zgarmasligi kerak).
+    // Kod = shablon id sining quyidagi ro'yxatdagi o'rni (1 dan). Qoidalar:
+    //   • ro'yxatdan hech narsa O'CHIRILMAYDI va tartibi O'ZGARTIRILMAYDI — shablon olib tashlansa ham id shu yerda qoladi,
+    //     shuning uchun uning kodi boshqa shablonga berilmaydi, qolganlarniki surilmaydi;
+    //   • yangi shablon id si faqat ro'yxat OXIRIGA qo'shiladi;
+    //   • ro'yxatga yozilmay qolgan shablon vaqtincha keyingi bo'sh raqamni oladi (keyin baribir ro'yxat oxiriga yozilsin).
+    function setCodes(list, order) {
+      var max = order.length;
+      list.forEach(function (t) { var k = order.indexOf(t.id); t.code = k >= 0 ? k + 1 : ++max; });
+    }
+    var PRO_CODES = [
+        "pro-kok", "pro-qizil", "pro-yashil", "pro-diplom", "pro-menyu", "pro-zinapoya", "pro-ustunlar", "pro-gear",
+        "pro-kartalar", "pro-kalit", "pro-halqalar", "pro-xemblema", "pro-yoriq", "pro-yirtiq", "pro-alpinizm", "pro-ipak",
+        "pro-swot", "pro-fragment", "pro-asalari", "pro-fokus", "pro-egri", "pro-doiralar", "pro-sana", "pro-gazeta",
+        "pro-akademik", "pro-gildirak", "pro-kino", "pro-progress", "pro-spot", "pro-yillar", "pro-yer", "pro-materik",
+        "pro-osiyo", "pro-kitob", "pro-kundalik", "pro-konvert", "pro-parallaks", "pro-smartfon", "pro-pazl", "pro-kublar",
+        "pro-romb", "pro-parda", "pro-ekran", "pro-keskin", "pro-aks", "pro-galereya", "pro-infografika", "pro-orbita",
+        "pro-pult", "pro-jonli", "pro-slayder", "pro-nishon", "pro-pufak", "pro-qiya", "pro-chontak", "pro-papka", "pro-nur",
+        "pro-portlash", "pro-smart", "pro-shisha", "pro-charx", "pro-moviy", "pro-oqromb", "pro-poyga", "pro-avtosayohat",
+        "pro-sakkiz", "pro-sahna", "pro-yillarpanel", "pro-knopka", "pro-knopka2", "pro-knopka3", "pro-knopka4", "pro-qon",
+        "pro-energiya", "pro-oltinx", "pro-sado", "pro-zukko", "pro-himoya", "pro-goya", "pro-kapsula", "pro-akkordeon",
+        "pro-oltiburchak"
+    ];
+    var PRES_CODES = [
+        "classic", "minimal", "night", "nature", "academic", "gradient", "kids", "cmyk", "p-kok", "p-zumrad", "p-oltin",
+        "p-qizil", "s-minimal", "s-tun", "s-yashil", "s-akademik", "s-binafsha", "s-quyosh", "s-dengiz", "s-qizil", "s-oltin",
+        "s-pastel", "s-texno", "s-tibbiy", "tarix-qolyozma", "tarix-temuriylar", "tarix-yangi", "tabiat-akvarel",
+        "tabiat-okean", "tabiat-toglar", "tabiat-botanika", "tabiat-ekologiya", "kimyo-laboratoriya", "kimyo-tungi",
+        "kimyo-kashfiyot", "biologiya-hujayra", "biologiya-dnk", "biologiya-yashil", "matematika-zamonaviy",
+        "matematika-doska", "matematika-pastel", "adabiyot-kitob", "adabiyot-tarix", "adabiyot-klassik", "umumiy-kok",
+        "umumiy-sinf", "tarix-misr", "tarix-muzey", "tarix-sanoat", "tarix-harbiy", "tabiat-yashil-tabiat", "tabiat-yer",
+        "tabiat-ekologiya2", "tabiat-ferma", "kimyo-metallar", "biologiya-qon", "biologiya-tibbiyot", "biologiya-kasallik",
+        "biologiya-sezgi", "biologiya-klinika", "fizika-elektr", "fizika-energiya", "fizika-muhandislik",
+        "informatika-kompyuter", "informatika-innovatsiya", "informatika-kelajak", "informatika-elektromobil",
+        "informatika-neon", "informatika-gibrid", "informatika-futuristik", "informatika-kibersport", "informatika-oyin",
+        "iqtisod-kompaniya", "iqtisod-marketing", "iqtisod-mahsulot", "iqtisod-ijtimoiy", "iqtisod-moliya", "iqtisod-qizil",
+        "iqtisod-taklif", "iqtisod-startap", "iqtisod-profil", "iqtisod-trening", "iqtisod-avtosalon", "iqtisod-kiyim",
+        "iqtisod-moda", "iqtisod-kouch", "adabiyot-kitobxon", "adabiyot-goyalar", "adabiyot-ertak", "adabiyot-mavzu",
+        "ingliz-learning", "umumiy-neon", "umumiy-loyiha", "umumiy-bolalar", "umumiy-talim", "umumiy-hayot",
+        "umumiy-lahzalar", "umumiy-kawaii", "umumiy-anime", "umumiy-nafis", "umumiy-kumush", "umumiy-akvarel",
+        "umumiy-minimal", "umumiy-bayram", "diplom-yashil", "diplom-bej", "diplom-jigarrang", "diplom-kok",
+        "pedagogika-psixologiya", "pedagogika-pushti", "pedagogika-loyiha", "pedagogika-ruhiy", "huquq-korporativ",
+        "huquq-advokat", "huquq-minimal", "huquq-qonunlar", "geografiya-vintaj", "geografiya-skrapbuk", "geografiya-relyef",
+        "geografiya-xarita", "astronomiya-galaktika", "astronomiya-kosmos", "astronomiya-kok", "astronomiya-tungi",
+        "tibbiyot-skelet", "tibbiyot-mushak", "tibbiyot-anatomiya", "tibbiyot-organlar", "bayram-bahor", "bayram-gullar",
+        "bayram-navroz", "bayram-ustoz", "tarbiya-qadriyat", "tarbiya-oila", "tarbiya-xarakter", "sanat-klassik",
+        "sanat-oltin", "sanat-vintaj", "sport-zamonaviy", "sport-dinamik", "sport-rangli", "rus-daftar", "rus-rangli",
+        "turizm-sayohat", "turizm-minimal", "turizm-yevropa", "qishloq-ferma", "qishloq-dala", "qishloq-yashil",
+        "bogcha-bolalar", "bogcha-dastur", "bogcha-sanash", "ingliz-sinf", "ingliz-dars", "ingliz-doska",
+        "matematika-shakllar", "matematika-geometriya", "fizika-loyiha", "fizika-bolimlar", "fizika-kosmik", "kimyo-sinf",
+        "kimyo-atom", "kimyo-holat", "pp-facet", "pp-gallery", "pp-integral", "pp-ion", "pp-ion-boardroom", "pp-slice",
+        "pp-wisp", "pp-banded", "pp-basis", "pp-berlin", "pp-circuit", "pp-damask", "pp-droplet", "pp-dividend",
+        "pp-parallax"
+    ];
     // 💎 PRO shablon toifalari (mini ilova va botdagi galereya uchun). «Yangi» — ro'yxatning oxirgi 12 tasi.
     // «Eng yaxshi» — AI barcha matn va rasmlarni almashtira oladigan, universal shablonlar (TOP ro'yxati pastda).
-    // code — «Shablon kodi» (1, 2, 3 ...): ro'yxatdagi tartib raqami, yangi shablonlar faqat OXIRIGA qo'shiladi.
+    // code — «Shablon kodi»: PRO_CODES ro'yxatidan (yuqorida, muzlatilgan).
     // video: /ai/templates/<id>/preview.mp4 (8–10 s, ovozsiz) — galereyada «Shablonni ko'rish»
     C.proCategories = [
       { v: "top", l: "🏆 Eng yaxshi", keys: [] },
@@ -1015,11 +1069,12 @@
         "pro-pult", "pro-halqalar", "pro-shisha", "pro-moviy", "pro-romb", "pro-keskin"];
       L.forEach(function (t, i) {
         t.cats = (TOP.indexOf(t.id) >= 0 ? ["top"] : []).concat((M[t.id] || "info").split(" "), i >= n - 12 ? ["yangi"] : []);
-        t.video = true; t.code = i + 1;
+        t.video = true;
       });
+      setCodes(L, PRO_CODES);
     })();
     // 📊 Oddiy taqdimot: «Eng yaxshi» (AI matn va rasmlarni mavzuga moslaydigan: 📷 Premium, aqlli uslublar, toza dizaynlar),
-    // «Yangi» — oxirgi 12 ta; code — «Shablon kodi» (ai-dizayn dan tashqari tartib raqami; yangilari faqat OXIRIGA).
+    // «Yangi» — oxirgi 12 ta; code — «Shablon kodi»: PRES_CODES ro'yxatidan (muzlatilgan).
     // video: /ai/templates/<id>/preview.mp4 — slayd-shou (faqat rasmli, canva shablonlar)
     C.presExtraCats = [{ v: "top", l: "🏆 Eng yaxshi", keys: [] }, { v: "yangi", l: "🆕 Yangi", keys: [] }];
     (function () {
@@ -1028,10 +1083,10 @@
         "pp-circuit", "pp-damask", "pp-parallax", "pp-slice"];
       var P = C.templates.presentation.filter(function (t) { return t.id !== "ai-dizayn"; }), n = P.length;
       P.forEach(function (t, i) {
-        t.code = i + 1;
         t.cats = [t.category].concat(TOP.indexOf(t.id) >= 0 ? ["top"] : [], i >= n - 12 ? ["yangi"] : []);
         if (t.kind === "canva") t.video = true;
       });
+      setCodes(P, PRES_CODES);
     })();
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
