@@ -73,6 +73,7 @@
   function go(view) {
     document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.dataset.view === view));
     document.querySelectorAll("[data-go]").forEach((n) => n.classList.toggle("on", n.dataset.go === view));
+    document.body.classList.toggle("not-home", view !== "home");
     if (view === "home" && window.aiOpenGrid) window.aiOpenGrid();
     if (view === "orders") loadOrders();
     window.scrollTo(0, 0);
@@ -98,6 +99,11 @@
     hero.insertAdjacentHTML("afterend", `<div class="bonus-banner" data-go-bonus="1"><span class="bb-ico">🎁</span><span class="bb-txt"><b>Bepul AI xizmat oling</b><span>«Bonuslar» bo'limida sovg'alar sizni kutmoqda</span></span><span class="bb-arr">›</span></div>`);
   }
   $("aiRoot").addEventListener("click", (e) => { if (e.target.closest("[data-go-bonus]")) { tick(); go("bonus"); } });
+  // ❤️ Sevimlilar: sarlavhadagi tugma alohida sahifani ochadi, ichida — sevimlilar soni
+  const favCnt = () => { const n = window.aiFavCount ? window.aiFavCount() : 0; $("favCnt").textContent = n ? String(n) : ""; };
+  $("favOpen").addEventListener("click", () => { tick(); go("home"); if (window.aiOpenFav) window.aiOpenFav(); });
+  window.addEventListener("ai-fav", () => { favCnt(); const b = $("favOpen"); b.classList.remove("pulse"); void b.offsetWidth; b.classList.add("pulse"); });
+  favCnt();
   new MutationObserver(decorateGrid).observe($("aiRoot"), { childList: true });
   decorateGrid();
   document.addEventListener("input", (e) => {

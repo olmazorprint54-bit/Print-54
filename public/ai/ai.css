@@ -55,6 +55,52 @@ body.ai-mode .ai-root{ display:block; }
   transition: transform .15s ease, box-shadow .2s ease;
 }
 .ai-card:active{ transform: scale(.97); }
+.ai-card{ position:relative; }
+/* ❤️ sevimlilar tugmasi (xizmat va shablon kartalari burchagida) */
+.fav-btn{ position:absolute; top:9px; right:9px; z-index:3; width:30px; height:30px; padding:0; border:none; border-radius:50%; display:grid; place-items:center; cursor:pointer;
+  color: rgba(255,255,255,.75); background: rgba(10,12,20,.38); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: color .2s ease, background .2s ease; }
+.fav-btn svg{ width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.1; stroke-linejoin:round; }
+.fav-btn.on{ color:#FF4D6D; }
+.fav-btn.on svg{ fill:currentColor; }
+.fav-btn.pop svg{ animation: favPop .38s cubic-bezier(.3,1.6,.5,1); }
+@keyframes favPop{ 0%{ transform: scale(.6); } 60%{ transform: scale(1.3); } 100%{ transform: scale(1); } }
+.tpl-card .fav-btn{ top:11px; right:11px; pointer-events:auto; }
+/* PRO belgisi yurakcha yonida (ustma-ust tushmasin) */
+
+/* «❤️ Sevimlilar» sahifasi: ekran eni bo'ylab uzun kartalar */
+.ai-top .fav-ic{ background: linear-gradient(135deg, #FF7A93, #FF4D6D); }
+.ai-top .fav-ic svg{ width:20px; height:20px; fill:#fff; stroke:none; }
+.fav-h{ display:flex; align-items:center; gap:7px; font-size:14px; font-weight:800; margin:18px 2px 10px; }
+.fav-h span{ font-size:11px; font-weight:800; padding:2px 8px; border-radius:999px; background: rgba(127,127,127,.15); color: var(--ink-soft); }
+.fav-list{ display:flex; flex-direction:column; gap:10px; }
+.fav-wide{ position:relative; display:flex; align-items:center; gap:14px; padding:14px 50px 14px 14px; border-radius:22px; cursor:pointer; }
+.fav-wide:active, .fav-tpl:active{ transform: scale(.98); }
+.fav-wide .ic{ width:50px; height:50px; border-radius:15px; display:grid; place-items:center; flex:none; }
+.fav-wide .ic svg{ width:24px; height:24px; stroke:#0B0D12; }
+.fav-wide .fw-body{ min-width:0; }
+.fav-wide .t{ font-size:15px; font-weight:800; }
+.fav-wide .s{ font-size:12px; color: var(--ink-soft); margin-top:2px; }
+.fav-wide .p{ display:inline-block; margin-top:7px; font-size:11px; font-weight:800; padding:2px 9px; border-radius:999px; background: rgba(127,127,127,.14); color: var(--accent); }
+.fav-wide .fav-btn{ top:50%; transform: translateY(-50%); right:12px; }
+.fav-tpl{ position:relative; padding:8px; border-radius:22px; cursor:pointer; }
+.fav-tpl .slide{ border-radius:15px; }
+.fav-tpl .ft-body{ padding:9px 6px 3px; }
+.fav-tpl .t{ font-size:14.5px; font-weight:800; }
+.fav-tpl .s{ font-size:12px; color: var(--ink-soft); margin-top:2px; }
+.fav-tpl .fav-btn{ top:16px; right:16px; }
+.fav-tpl .tpl-code{ top:16px; left:16px; }
+.fav-empty{ margin-top:14px; padding:28px 18px; border-radius:22px; text-align:center; font-size:13.5px; line-height:1.5; color: var(--ink-soft); }
+.fav-empty b{ display:block; font-size:34px; color:#FF4D6D; margin-bottom:6px; }
+/* bosh sahifa: sevimlilar qatori */
+.fav-sec{ margin:12px 0 4px; }
+.fav-sec[hidden]{ display:none; }
+.fav-h{ font-size:13.5px; font-weight:800; margin:0 2px 8px; }
+.fav-row{ display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 8px; }
+.fav-row::-webkit-scrollbar{ display:none; }
+.fav-card{ flex:none; display:flex; align-items:center; gap:9px; padding:7px 14px 7px 7px; border-radius:18px; cursor:pointer; font-size:13px; font-weight:700; }
+.fav-card .ic{ width:32px; height:32px; border-radius:11px; display:grid; place-items:center; flex:none; }
+.fav-card .ic svg{ width:17px; height:17px; stroke:#fff; }
+.fav-card:active{ transform: scale(.96); }
 .ai-card .ic{
   width:42px; height:42px; border-radius:13px; display:grid; place-items:center; margin-bottom:10px;
 }
@@ -365,7 +411,7 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
 body.ai-searching .ai-card.tier-off:not(.hidden){ display:block; }
 body.ai-searching .tier-tabs{ opacity:.45; pointer-events:none; }
 .ai-card.is-pro{ position:relative; }
-.ai-card.is-pro::after{ content:"PRO"; position:absolute; top:10px; right:10px; padding:3px 7px; border-radius:999px; font-size:9.5px; font-weight:900; letter-spacing:.04em; color:#fff; background: linear-gradient(135deg, #7C3AED, #EC4899); }
+.ai-card.is-pro::after{ display:none; content:"PRO"; position:absolute; top:16px; right:46px; padding:3px 7px; border-radius:999px; font-size:9.5px; font-weight:900; letter-spacing:.04em; color:#fff; background: linear-gradient(135deg, #7C3AED, #EC4899); }
 
 /* ---------- PDF vositalari: fayl yuklash ---------- */
 .fl-list{ display:flex; flex-direction:column; gap:8px; }

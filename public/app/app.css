@@ -586,6 +586,24 @@ body.ai-form .ai-fab{ display:none; }
   .app-nav, .app-nav > div svg{ transition:none; }
   .app-nav.hop::after{ animation:none; }
 }
+/* ❤️ yorug' temada: oq tugma, kulrang yurak */
+:root[data-theme="light"] .fav-btn{ background: rgba(255,255,255,.88); color:#9AAFAC; box-shadow: 0 4px 10px -6px rgba(12,96,90,.5); }
+:root[data-theme="light"] .fav-btn.on{ color:#FF4D6D; }
+:root[data-theme="light"] .fav-wide .ic{ background-image: linear-gradient(150deg, rgba(255,255,255,.55), rgba(255,255,255,0) 55%) !important; box-shadow: 0 10px 18px -10px rgba(0,0,0,.35), inset 0 2px 3px rgba(255,255,255,.55); }
+:root[data-theme="light"] .fav-wide .p{ background: rgba(20,170,158,.10); color: var(--teal-b); }
+/* sarlavhadagi «❤️ Sevimlilar» tugmasi */
+.app-fav{ margin-left:auto; position:relative; display:flex; align-items:center; gap:6px; padding:9px 13px 9px 11px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--glass-border); background: var(--glass); color: var(--ink); font: 800 12.5px Manrope, sans-serif; box-shadow: var(--shadow); }
+.app-fav svg{ width:17px; height:17px; fill:#FF4D6D; }
+.app-fav:active{ transform: scale(.95); }
+.app-fav b{ min-width:18px; height:18px; padding:0 5px; border-radius:999px; display:grid; place-items:center; font-size:10.5px; color:#fff; background:#FF4D6D; }
+.app-fav b:empty{ display:none; }
+.app-fav.pulse svg{ animation: favPop .4s cubic-bezier(.3,1.6,.5,1); }
+:root[data-theme="light"] .app-fav{ background: rgba(255,255,255,.85); border-color: rgba(255,255,255,.95); }
+:root[data-theme="light"] .fav-card .ic{ background-image: linear-gradient(150deg, rgba(255,255,255,.55), rgba(255,255,255,0) 55%) !important; }
 /* suzuvchi shar menyu ustiga ~22px chiqadi — AI tugmasi va xabarlar undan yuqorida */
 .ai-fab{ bottom: calc(112px + env(safe-area-inset-bottom)); }
 .toast{ bottom: calc(112px + env(safe-area-inset-bottom)); }
+
+/* ilova sarlavhasi (AI Yordamchi, ❤️ Sevimlilar) — faqat bosh sahifada */
+body.ai-sub .app-top, body.not-home .app-top{ display:none; }

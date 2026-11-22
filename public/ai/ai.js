@@ -71,15 +71,101 @@
   function syncBackButton() {
     // forma ochiq — AI yordamchi tugmasi yashirinadi (yuborish tugmasini to'smasin)
     document.body.classList.toggle("ai-form", !!current);
+    // xizmat, bo'lim yoki Sevimlilar ochiq — ilova sarlavhasi (AI Yordamchi, ❤️) faqat bosh sahifada ko'rinadi
+    document.body.classList.toggle("ai-sub", !!(current || galleryOpen));
     if (!tg || !tg.BackButton) return;
     const inForm = document.body.classList.contains("ai-mode") && (current || galleryOpen);
     inForm ? tg.BackButton.show() : tg.BackButton.hide();
   }
   if (tg && tg.BackButton) tg.BackButton.onClick(() => goBack());
   function goBack() {
+    if (current && favReturn) { openFav(); return; }
     if (current && current.back) { openService(current.back); return; }
     if (current || galleryOpen) openGrid();
   }
+
+  /* ---------------------------------------------------------------
+     ❤️ SEVIMLILAR — xizmatlar (s) va shablonlar (t).
+     Telegram CloudStorage'da saqlanadi (mijoz akkauntida — boshqa telefonda ham yo'qolmaydi),
+     localStorage — zaxira va tez ochilish uchun. Sevimlilar ro'yxatlarda birinchi ko'rsatiladi.
+     --------------------------------------------------------------- */
+  const HEART = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.6-4.6-9.4-9.3C1.4 8.1 3.4 4.8 6.9 4.8c2.1 0 3.6 1.2 5.1 3.1 1.5-1.9 3-3.1 5.1-3.1 3.5 0 5.5 3.3 4.3 6.4-1.8 4.7-9.4 9.3-9.4 9.3z"/></svg>`;
+  const FAV = (() => {
+    let d = { s: [], t: [] };
+    const norm = (x) => ({ s: Array.isArray(x && x.s) ? x.s : [], t: Array.isArray(x && x.t) ? x.t : [] });
+    try { d = norm(JSON.parse(localStorage.getItem("ai-fav") || "{}")); } catch (e) {}
+    const cs = tg && tg.CloudStorage && tg.isVersionAtLeast && tg.isVersionAtLeast("6.9") ? tg.CloudStorage : null;
+    const json = () => JSON.stringify({ s: d.s.slice(0, 60), t: d.t.slice(0, 150) });
+    const save = () => {
+      try { localStorage.setItem("ai-fav", json()); } catch (e) {}
+      if (cs) try { cs.setItem("fav", json(), () => {}); } catch (e) {}
+    };
+    let onLoad = null;
+    if (cs) try {
+      cs.getItem("fav", (err, v) => {
+        if (err || !v) return;
+        try { d = norm(JSON.parse(v)); localStorage.setItem("ai-fav", json()); if (onLoad) onLoad(); } catch (e) {}
+      });
+    } catch (e) {}
+    return {
+      has: (k, id) => d[k].includes(id),
+      list: (k) => d[k].slice(),
+      toggle(k, id) { const i = d[k].indexOf(id); if (i >= 0) d[k].splice(i, 1); else d[k].unshift(id); save(); return i < 0; },
+      ready(fn) { onLoad = fn; },
+    };
+  })();
+  const favBtn = (k, id) => `<button type="button" class="fav-btn${FAV.has(k, id) ? " on" : ""}" data-fav="${k}:${esc(id)}" aria-label="Sevimlilar">${HEART}</button>`;
+  // sevimlilar oldinda (sevimlilar ro'yxatidagi tartibda), qolganlari o'z tartibida
+  const favFirst = (k, list, key = (x) => x.id) => {
+    const f = FAV.list(k);
+    return list.filter((x) => f.includes(key(x))).sort((a, b) => f.indexOf(key(a)) - f.indexOf(key(b))).concat(list.filter((x) => !f.includes(key(x))));
+  };
+  // «❤️ Sevimlilar» sahifasi: avval xizmatlar, keyin shablonlar — har biri ekran eni bo'ylab uzun karta.
+  // Ilova sarlavhasidagi ❤️ tugmasi ochadi (window.aiOpenFav); sevimlilar soni — window.aiFavCount, o'zgarsa «ai-fav» hodisasi.
+  let favPage = false, favReturn = false;
+  const favServices = () => { const soon = soonSet(); return FAV.list("s").map((id) => CFG.services.find((s) => s.id === id)).filter((s) => s && !s.hidden && !soon.has(s.id)); };
+  const favTemplates = () => FAV.list("t").map((id) => {
+    for (const [set, svcId] of [["presentation_pro", "presentation_pro"], ["presentation", "presentation"]]) {
+      const t = (CFG.templates[set] || []).find((x) => x.id === id);
+      if (t) return { t, svc: CFG.services.find((s) => s.id === svcId) };
+    }
+    return null;
+  }).filter((x) => x && x.svc);
+  window.aiFavCount = () => favServices().length + favTemplates().length;
+  const favChanged = () => { try { window.dispatchEvent(new Event("ai-fav")); } catch (e) {} };
+  function openFav() {
+    current = null; galleryOpen = true; favPage = true; favReturn = false;
+    const S = favServices(), T = favTemplates();
+    const back = `<div class="ai-back glass" data-back="1"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></div>`;
+    root.innerHTML = `
+      <div class="ai-top">${back}
+        <div class="ic fav-ic">${HEART}</div>
+        <div><div class="t">Sevimlilar</div><div class="s">Yoqqan xizmat va shablonlaringiz</div></div>
+      </div>
+      ${!S.length && !T.length ? `<div class="fav-empty glass"><b>♡</b>Hali sevimlilar yo'q.<br>Xizmat yoki shablon burchagidagi ♡ belgisini bosing — shu yerda turadi.</div>` : ""}
+      ${S.length ? `<div class="fav-h">Xizmatlar <span>${S.length}</span></div><div class="fav-list">${S.map((s) => `
+        <div class="fav-wide glass" data-open="${s.id}" data-fav-open="1">
+          ${favBtn("s", s.id)}
+          <div class="ic" style="background:${s.color}">${s.icon}</div>
+          <div class="fw-body"><div class="t">${esc(s.title)}</div><div class="s">${esc(s.sub)}</div><div class="p">${s.comingSoon ? "🔜 Tez kunda" : esc(priceText(s.id))}</div></div>
+        </div>`).join("")}</div>` : ""}
+      ${T.length ? `<div class="fav-h">Shablonlar <span>${T.length}</span></div><div class="fav-list">${T.map(({ t, svc }) => `
+        <div class="fav-tpl glass" data-fav-tpl="${svc.id}:${esc(t.id)}">
+          ${favBtn("t", t.id)}
+          ${t.code ? `<span class="tpl-code" data-no-i18n>${t.code}</span>` : ""}
+          <div class="slide-box"><div class="slide"><img class="el" src="/ai/templates/${t.id}/1.jpg" alt="" loading="lazy" style="inset:0;width:100%;height:100%;object-fit:cover"></div></div>
+          <div class="ft-body"><div class="t" data-no-i18n>${esc(tplName(t))}</div><div class="s">${esc(svc.title)}${t.code ? ` · Shablon kodi ${t.code}` : ""}</div></div>
+        </div>`).join("")}</div>` : ""}`;
+    syncBackButton();
+    window.scrollTo(0, 0);
+  }
+  window.aiOpenFav = openFav;
+  FAV.ready(() => {
+    favChanged();
+    if (favPage) openFav();
+    else if (!current && !galleryOpen) { const y = window.scrollY; renderGrid(); window.scrollTo(0, y); }
+    else if (current) refreshLive(current);
+  });
 
   /* ---------------------------------------------------------------
      XIZMATLAR TO'RI
@@ -102,8 +188,7 @@
     if (!T.length) return "";
     if (!T.some((t) => t.id === gridTier)) gridTier = T[0].id;
     return `<div class="tier-tabs">${T.map((t) => {
-      const n = CFG.services.filter((s) => (s.tier || "std") === t.id && !s.hidden).length;
-      return `<button type="button" class="tier-tab t-${t.id}${t.id === gridTier ? " on" : ""}" data-tier-tab="${t.id}"><span class="tt-e">${t.e}</span><span class="tt-l">${esc(t.l)}</span><span class="tt-n">${n}</span></button>`;
+      return `<button type="button" class="tier-tab t-${t.id}${t.id === gridTier ? " on" : ""}" data-tier-tab="${t.id}"><span class="tt-e">${t.e}</span><span class="tt-l">${esc(t.l)}</span></button>`;
     }).join("")}</div>`;
   }
   function setTier(id) {
@@ -121,7 +206,7 @@
   const TOOL_IDS = ["char_add", "word2pdf", "excel2pdf", "pptx2pdf", "pdfmerge", "pdfsplit", "pdf2word", "pdf2pptx"]; // PDF vositalari: AI yo'q, tekin
   function gridCards() {
     const soon = soonSet();
-    const list = [...CFG.services.filter((s) => !soon.has(s.id)), ...CFG.services.filter((s) => soon.has(s.id))].filter((s) => !s.hidden);
+    const list = [...favFirst("s", CFG.services.filter((s) => !soon.has(s.id))), ...CFG.services.filter((s) => soon.has(s.id))].filter((s) => !s.hidden);
     return list.map((s) => soon.has(s.id) ? `
           <div class="ai-card glass soon${CFG.tiers && (s.tier || "std") !== gridTier ? " tier-off" : ""}" data-tier="${s.tier || "std"}">
             <div class="ic" style="background:${s.color}">${s.icon}</div>
@@ -130,6 +215,7 @@
             <div class="p">Tez kunda</div>
           </div>` : `
           <div class="ai-card glass${CFG.tiers && (s.tier || "std") !== gridTier ? " tier-off" : ""}${s.tier === "pro" ? " is-pro" : ""}" data-open="${s.id}" data-tier="${s.tier || "std"}">
+            ${favBtn("s", s.id)}
             <div class="ic" style="background:${s.color}">${s.icon}</div>
             <div class="t">${esc(s.title)}</div>
             <div class="s">${esc(s.sub)}</div>
@@ -139,7 +225,7 @@
 
   function openGrid() {
     current = null;
-    galleryOpen = false;
+    galleryOpen = false; favPage = false; favReturn = false;
     renderGrid();
     syncBackButton();
     window.scrollTo(0, 0);
@@ -783,31 +869,35 @@
   function categoryChips(svc, f) {
     if (isProSet(f)) {
       const st = getCat(svc), all = CFG.templates[f.set];
-      return [{ v: "all", l: "Barchasi" }].concat(CFG.proCategories).map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)} <span class="cnt">${c.v === "all" ? all.length : all.filter((t) => inCat(t, c.v)).length}</span></div>`).join("");
+      return [{ v: "all", l: "Barchasi" }].concat(favCount(f) ? [{ v: "fav", l: "❤️ Sevimlilar" }] : [], CFG.proCategories).map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)} <span class="cnt">${c.v === "all" ? all.length : c.v === "fav" ? favCount(f) : all.filter((t) => inCat(t, c.v)).length}</span></div>`).join("");
     }
     const used = new Set(CFG.templates[f.set].map((t) => t.category));
     const hasAuto = CFG.templates[f.set].some((t) => t.auto) && CFG.templates[f.set].some((t) => !t.auto);
     const extra = (CFG.presExtraCats || []).filter((c) => CFG.templates[f.set].some((t) => inCat(t, c.v)));
-    const cats = [{ v: "all", l: "Barchasi" }].concat(hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], extra, CFG.categories.filter((c) => used.has(c.v)));
+    const fav = f.set === "presentation" && favCount(f) ? [{ v: "fav", l: "❤️ Sevimlilar" }] : [];
+    const cats = [{ v: "all", l: "Barchasi" }].concat(fav, hasAuto ? [{ v: "ai", l: "⚡ AI tayyorlaydi" }] : [], extra, CFG.categories.filter((c) => used.has(c.v)));
     const st = getCat(svc);
     return cats.map((c) => `<div class="chip${st.cat === c.v ? " active" : ""}" data-cat="${c.v}">${esc(c.l)}</div>`).join("");
   }
 
+  const favCount = (f) => CFG.templates[f.set].filter((t) => FAV.has("t", t.id)).length;
   // AI tayyorlaydigan shablonlar (auto) har doim ro'yxat boshida
   const autoFirst = (list) => list.filter((t) => t.auto).concat(list.filter((t) => !t.auto));
   function templateList(svc, f, v) {
     const all = CFG.templates[f.set];
     if (!hasCategories(f)) return all;
     const st = getCat(svc);
+    if (st.cat === "fav") { const fl = favFirst("t", all).filter((t) => FAV.has("t", t.id)); if (fl.length) return fl; st.cat = "all"; }
     if (isProSet(f)) {
       if (st.cat !== "all") return all.filter((t) => inCat(t, st.cat));
       const det = detectCategory(v, f); // mavzuga mos toifa shablonlari oldinda
-      return det ? all.filter((t) => inCat(t, det)).concat(all.filter((t) => !inCat(t, det))) : all;
+      return favFirst("t", det ? all.filter((t) => inCat(t, det)).concat(all.filter((t) => !inCat(t, det))) : all);
     }
     if (st.cat === "ai") return all.filter((t) => t.auto);
     if (st.cat !== "all") return autoFirst(all.filter((t) => inCat(t, st.cat)));
     const det = detectCategory(v);
-    return det ? autoFirst(all.filter((t) => t.category === det)).concat(autoFirst(all.filter((t) => t.category !== det))) : autoFirst(all);
+    const out = det ? autoFirst(all.filter((t) => t.category === det)).concat(autoFirst(all.filter((t) => t.category !== det))) : autoFirst(all);
+    return f.set === "presentation" ? favFirst("t", out) : out;
   }
 
   // Mavzu yoki fan yozilganda mos toifani avtomatik tanlaydi
@@ -839,6 +929,7 @@
     return templateList(svc, f, v).map((t) => `
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}" aria-label="${esc(tplName(t))}">
         ${t.code && hasCode(f) ? `<span class="tpl-code" data-no-i18n>${t.code}</span>` : ""}
+        ${f.set === "presentation" || isProSet(f) ? favBtn("t", t.id) : ""}
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
       </div>`).join("");
   }
@@ -1212,6 +1303,17 @@
     refreshLive(current);
   });
   root.addEventListener("click", (e) => {
+    const fb = e.target.closest("[data-fav]");
+    if (fb) {
+      const [k, id] = fb.dataset.fav.split(":");
+      const on = FAV.toggle(k, id);
+      tick();
+      root.querySelectorAll(`[data-fav="${k}:${CSS.escape(id)}"]`).forEach((b) => { b.classList.toggle("on", on); b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); });
+      favChanged();
+      if (favPage) { const y = window.scrollY; openFav(); window.scrollTo(0, y); }
+      else if (k === "t" && current) refreshLive(current);
+      return;
+    }
     // til menyusi: tugma ochadi/yopadi, tashqariga bosilsa yopiladi
     root.querySelectorAll(".dd.open").forEach((d) => { if (!d.contains(e.target)) d.classList.remove("open"); });
     const ddb = e.target.closest("[data-ddbtn]");
@@ -1231,12 +1333,22 @@
     if (spick && current) { pickSource(current, spick.dataset.srcPick); return; }
     const pick = e.target.closest("[data-pick]");
     if (pick && current) { tick(); setTitul(current, TITULS.find((t) => t.id === pick.dataset.pick)); return; }
+    const ftp = e.target.closest("[data-fav-tpl]");
+    if (ftp) {
+      const [sid, tid] = ftp.dataset.favTpl.split(":");
+      tick(); favPage = false;
+      window.aiOpenTemplate(sid, tid);
+      favReturn = true;
+      return;
+    }
     const open = e.target.closest("[data-open]");
     if (open) {
+      const fromFav = favPage;
       tick();
       const os = CFG.services.find((x) => x.id === open.dataset.open);
       if (os && os.id !== "image") delete os.back;
       openService(open.dataset.open);
+      if (fromFav && current) favReturn = true;
       return;
     }
     if (e.target.closest("[data-back]")) { goBack(); return; }
