@@ -668,3 +668,31 @@
     if (cq && /^\d+$/.test(cq)) setTimeout(() => { go("home"); if (window.aiOpenCharFrom) window.aiOpenCharFrom(cq); }, 400);
   } catch (e) { /* havola parametrsiz */ }
 })();
+
+// Pastki menyu: «suzuvchi shar» — faol bo'lim markazini (--x) va belgining sharga ko'tarilish masofasini (--lift) hisoblaydi.
+// Faol bo'lim (.on) yoki ko'rinadigan bo'limlar (Bonuslar) o'zgarsa, shar sakrab yangi joyga uchadi.
+(function () {
+  var nav = document.querySelector(".app-nav");
+  if (!nav) return;
+  var last = null, hopT = null;
+  function place(animate) {
+    var on = nav.querySelector(":scope > div.on:not([hidden])");
+    if (!on) return;
+    var nr = nav.getBoundingClientRect(), r = on.getBoundingClientRect(), ic = on.querySelector("svg");
+    nav.style.setProperty("--x", (r.left - nr.left + r.width / 2).toFixed(1) + "px");
+    if (ic) {
+      var y0 = ic.getBoundingClientRect(), cur = new DOMMatrixReadOnly(getComputedStyle(ic).transform).m42 || 0;
+      var center = y0.top - cur - nr.top + y0.height / 2; // belgining joyidagi markazi
+      nav.style.setProperty("--lift", (4 - center).toFixed(1) + "px");
+    }
+    if (animate && last && last !== on) {
+      nav.classList.remove("hop"); void nav.offsetWidth; nav.classList.add("hop");
+      clearTimeout(hopT); hopT = setTimeout(function () { nav.classList.remove("hop"); }, 600);
+    }
+    last = on;
+  }
+  place(false);
+  requestAnimationFrame(function () { place(false); requestAnimationFrame(function () { nav.classList.add("ready"); }); });
+  new MutationObserver(function () { place(true); }).observe(nav, { subtree: true, attributes: true, attributeFilter: ["class", "hidden"] });
+  window.addEventListener("resize", function () { place(false); });
+})();
