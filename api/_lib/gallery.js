@@ -1,12 +1,16 @@
 // api/_lib/gallery.js
 // ---------------------------------------------------------------
 // 💎 Super taqdimot shablonlari galereyasi — Telegram chatning o'zida (AI bot).
-// Mijoz «💎 Super taqdimot» tugmasini bossa: toifalar → shablon rasmi (ostida «🎬 Shablonni ko'rish»,
-// «◀️ / ▶️», «✅ Tanlash»). Hammasi BITTA xabarda: editMessageMedia bilan rasm ↔ video almashadi,
-// chat to'lib ketmaydi. «Tanlash» ilovada Super taqdimot formasini shu shablon bilan ochadi.
+// Mijoz «💎 Super taqdimot» tugmasini bossa: matnli xabar + toifalar → shablon kartasi (4 slayd kollaji,
+// ostida «🎬 Shablonni ko'rish», «◀️ / ▶️», «✅ Tanlash»). Karta BITTA xabarda: editMessageMedia bilan
+// rasm ↔ video almashadi, chat to'lib ketmaydi. Toifalar xabari ↔ karta almashganda eskisi o'chiriladi.
+// «Tanlash» ilovada Super taqdimot formasini shu shablon bilan ochadi. Har shablonda «Shablon kodi» (t.code) bor —
+// mijoz ilovada shu kodni yozsa, shablon o'zi tanlanadi.
 // Shablonlar va toifalar public/ai/config.js dan olinadi (alohida ro'yxat yuritilmaydi).
-// Media: https://<host>/ai/templates/<id>/1.jpg va preview.mp4 (ovozsiz — Telegram GIF kabi aylantiradi).
+// Media: https://<host>/ai/templates/<id>/card.jpg (muqova + 3 eng chiroyli slayd, reja slaydisiz; yo'q bo'lsa 1.jpg)
+// va preview.mp4 (ovozsiz — Telegram GIF kabi aylantiradi).
 // Reyting: buyurtmalardagi details.rating (fayl yetkazilgach mijoz qo'ygan baho), 3 ta bahodan keyin ko'rinadi.
+// «⭐ Top reyting» toifasi kamida TOP_MIN shablon 3+ baho olgandan keyin o'zi paydo bo'ladi.
 // ---------------------------------------------------------------
 const fs = require("fs");
 const path = require("path");
@@ -31,15 +35,18 @@ async function load(host) {
 const config = () => CFG || { templates: {}, proCategories: [] };
 const templates = () => config().templates.presentation_pro || [];
 const cats = () => config().proCategories || [];
-const listOf = (c) => (c === "all" ? templates() : templates().filter((t) => (t.cats || []).includes(c)));
+const TOP_MIN = 5;
+const rated = (map) => templates().filter((t) => map[t.id] && map[t.id].n >= 3)
+  .sort((a, b) => map[b.id].sum / map[b.id].n - map[a.id].sum / map[a.id].n || map[b.id].n - map[a.id].n);
+const listOf = (c, map) => (c === "all" ? templates() : c === "reyting" ? rated(map || {}) : templates().filter((t) => (t.cats || []).includes(c)));
 // emoji va bezaksiz nom: «💎 Ochiq kitob · varaq» -> «Ochiq kitob — varaq»
 const cleanName = (n) => String(n || "").replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, "").replace(/\s*[·•|]\s*/g, " — ").replace(/\s+/g, " ").trim();
-const catLabel = (c) => (c === "all" ? "📂 Barchasi" : (cats().find((x) => x.v === c) || {}).l || c);
+const catLabel = (c, l) => (c === "all" ? tx(l).all : c === "reyting" ? tx(l).top : (cats().find((x) => x.v === c) || {}).l || c);
 
 const TX = {
-  uz: { head: "💎 <b>Super taqdimot shablonlari</b>\n\nMorph animatsiyali premium dizaynlar. Toifani tanlang — har bir shablonning rasmini va jonli animatsiyasini shu yerda ko'rasiz 👇", all: "📂 Barchasi", look: "🎬 Shablonni ko'rish", photo: "🖼 Rasmga qaytish", prev: "◀️ Oldingi", next: "Keyingi ▶️", pick: "✅ Shu shablonni tanlash", cats: "📂 Toifalar", rate: "baho", anim: "🎬 Animatsiya namunasi", pickHint: "«Tanlash» bosilsa, mavzuni yozib buyurtma berasiz." },
-  ru: { head: "💎 <b>Шаблоны супер-презентации</b>\n\nПремиум-дизайны с анимацией Morph. Выберите категорию — картинку и живую анимацию каждого шаблона увидите прямо здесь 👇", all: "📂 Все", look: "🎬 Смотреть шаблон", photo: "🖼 К картинке", prev: "◀️ Назад", next: "Далее ▶️", pick: "✅ Выбрать этот шаблон", cats: "📂 Категории", rate: "оценок", anim: "🎬 Пример анимации", pickHint: "Нажмите «Выбрать», укажите тему и оформите заказ." },
-  en: { head: "💎 <b>Super presentation templates</b>\n\nPremium Morph-animated designs. Pick a category — see each template's picture and live animation right here 👇", all: "📂 All", look: "🎬 Watch template", photo: "🖼 Back to picture", prev: "◀️ Previous", next: "Next ▶️", pick: "✅ Choose this template", cats: "📂 Categories", rate: "ratings", anim: "🎬 Animation sample", pickHint: "Tap «Choose», write your topic and order." },
+  uz: { head: "💎 <b>Super taqdimot</b>\n\nTaqdimotingiz uchun o'zingizga mos shablonni tanlang 👇\n\n<i>Har bir shablonning slaydlari va jonli animatsiyasini shu yerda ko'rasiz.</i>", top: "⭐ Top reyting", code: "🔢 Shablon kodi", all: "📂 Barchasi", look: "🎬 Shablonni ko'rish", photo: "🖼 Rasmga qaytish", prev: "◀️ Oldingi", next: "Keyingi ▶️", pick: "✅ Shu shablonni tanlash", cats: "📂 Toifalar", rate: "baho", anim: "🎬 Animatsiya namunasi", pickHint: "«Tanlash» bosilsa, mavzuni yozib buyurtma berasiz." },
+  ru: { head: "💎 <b>Супер-презентация</b>\n\nВыберите подходящий шаблон для вашей презентации 👇\n\n<i>Слайды и живую анимацию каждого шаблона увидите прямо здесь.</i>", top: "⭐ Топ рейтинга", code: "🔢 Код шаблона", all: "📂 Все", look: "🎬 Смотреть шаблон", photo: "🖼 К картинке", prev: "◀️ Назад", next: "Далее ▶️", pick: "✅ Выбрать этот шаблон", cats: "📂 Категории", rate: "оценок", anim: "🎬 Пример анимации", pickHint: "Нажмите «Выбрать», укажите тему и оформите заказ." },
+  en: { head: "💎 <b>Super presentation</b>\n\nChoose the template that suits your presentation 👇\n\n<i>See each template's slides and live animation right here.</i>", top: "⭐ Top rated", code: "🔢 Template code", all: "📂 All", look: "🎬 Watch template", photo: "🖼 Back to picture", prev: "◀️ Previous", next: "Next ▶️", pick: "✅ Choose this template", cats: "📂 Categories", rate: "ratings", anim: "🎬 Animation sample", pickHint: "Tap «Choose», write your topic and order." },
 };
 const tx = (l) => TX[l] || TX.uz;
 
@@ -61,28 +68,35 @@ async function ratings() {
 }
 const stars = (avg) => "⭐ " + avg.toFixed(1).replace(".", ",");
 
-const media = (host, id, kind) => `https://${host}/ai/templates/${id}/${kind === "video" ? "preview.mp4" : "1.jpg"}`;
+const media = (host, id, kind) => `https://${host}/ai/templates/${id}/${kind === "video" ? "preview.mp4" : kind === "card" ? "card.jpg" : "1.jpg"}`;
 // callback_data: gl:<amal>:<toifa>:<tartib>  (64 baytdan qisqa)
 const cb = (a, c, i) => `gl:${a}:${c}:${i}`;
 
-function catKeyboard(l) {
+// toifalar (sonsiz — telefonda sig'maydi); «⭐ Top reyting» yetarli baho to'plangandagina
+async function catKeyboard(l) {
   const t = tx(l);
-  const rows = [[{ text: `${t.all} (${templates().length})`, callback_data: cb("c", "all", 0) }]];
-  const cs = cats().map((c) => ({ text: `${c.l} (${listOf(c.v).length})`, callback_data: cb("c", c.v, 0) }));
+  const top = rated(await ratings()).length >= TOP_MIN;
+  const rows = [[{ text: t.all, callback_data: cb("c", "all", 0) }]];
+  const cs = (top ? [{ text: t.top, callback_data: cb("c", "reyting", 0) }] : [])
+    .concat(cats().filter((c) => listOf(c.v).length).map((c) => ({ text: c.l, callback_data: cb("c", c.v, 0) })));
   for (let i = 0; i < cs.length; i += 2) rows.push(cs.slice(i, i + 2));
   return { inline_keyboard: rows };
 }
 
 async function card(c, i, l, video, appLink) {
   const t = tx(l);
-  const list = listOf(c);
+  const map = await ratings();
+  let list = listOf(c, map);
+  if (!list.length) { c = "all"; list = templates(); }
   const n = list.length;
   i = ((i % n) + n) % n;
   const tpl = list[i];
-  const r = (await ratings())[tpl.id];
-  const caption = `💎 <b>${cleanName(tpl.name)}</b>\n${catLabel(c)} · ${i + 1}/${n}` +
+  const r = map[tpl.id];
+  const caption = `💎 <b>${cleanName(tpl.name)}</b>\n${catLabel(c, l)} · ${i + 1}/${n}` +
     (r && r.n >= 3 ? `\n${stars(r.sum / r.n)} (${r.n} ${t.rate})` : "") +
-    (video ? `\n\n${t.anim}` : `\n\n${t.pickHint}`);
+    (video ? `\n\n${t.anim}` : "") +
+    (tpl.code ? `\n\n${t.code}: <b>${tpl.code}</b>` : "") +
+    (video ? "" : `\n${t.pickHint}`);
   const kb = [
     [video ? { text: t.photo, callback_data: cb("p", c, i) } : { text: t.look, callback_data: cb("v", c, i) }],
     [{ text: t.prev, callback_data: cb("p", c, i - 1) }, { text: `${i + 1} / ${n}`, callback_data: "noop" }, { text: t.next, callback_data: cb("p", c, i + 1) }],
@@ -92,11 +106,24 @@ async function card(c, i, l, video, appLink) {
   return { tpl, caption, reply_markup: { inline_keyboard: kb } };
 }
 
-// Galereyani boshlash: muqova (eng yangi shablon rasmi) + toifalar
+// Galereyani boshlash: matn + toifalar (rasmsiz)
 async function start(bot, chatId, l, host) {
   await load(host);
-  const first = templates()[templates().length - 1];
-  return telegram(bot, "sendPhoto", { chat_id: chatId, photo: media(host, first.id, "photo"), caption: tx(l).head, parse_mode: "HTML", reply_markup: catKeyboard(l) });
+  return telegram(bot, "sendMessage", { chat_id: chatId, text: tx(l).head, parse_mode: "HTML", reply_markup: await catKeyboard(l) });
+}
+
+// karta rasmi: card.jpg (kollaj); yuklanmasa — 1.jpg
+async function sendCard(bot, chatId, k, host) {
+  const p = { chat_id: chatId, caption: k.caption, parse_mode: "HTML", reply_markup: k.reply_markup };
+  const r = await telegram(bot, "sendPhoto", { ...p, photo: media(host, k.tpl.id, "card") });
+  if (r && r.ok === false) return telegram(bot, "sendPhoto", { ...p, photo: media(host, k.tpl.id, "photo") });
+  return r;
+}
+async function editCard(bot, msg, k, host, video) {
+  const e = (kind) => telegram(bot, "editMessageMedia", { ...msg, media: { type: video ? "animation" : "photo", media: media(host, k.tpl.id, kind), caption: k.caption, parse_mode: "HTML" }, reply_markup: k.reply_markup });
+  const r = await e(video ? "video" : "card");
+  if (!video && r && r.ok === false && !/not modified/i.test(r.description || "")) return e("photo");
+  return r;
 }
 
 // gl:* tugmalari
@@ -107,26 +134,28 @@ async function onCallback(cq, bot, l, host, appLink) {
   if (!m || !cq.message) { await answer(); return; }
   const [, a, c, iStr] = m;
   const msg = { chat_id: cq.message.chat.id, message_id: cq.message.message_id };
-  if (c !== "all" && !cats().some((x) => x.v === c)) { await answer(); return; }
-  if (a === "m") {
-    const first = templates()[templates().length - 1];
+  if (c !== "all" && c !== "reyting" && !cats().some((x) => x.v === c)) { await answer(); return; }
+  const isMedia = !!(cq.message.photo || cq.message.animation || cq.message.video || cq.message.document);
+  const drop = () => telegram(bot, "deleteMessage", msg).catch(() => {});
+  if (a === "m") { // kartadan toifalarga: matnli xabar yuboriladi, karta o'chadi
     await answer();
-    await telegram(bot, "editMessageMedia", { ...msg, media: { type: "photo", media: media(host, first.id, "photo"), caption: tx(l).head, parse_mode: "HTML" }, reply_markup: catKeyboard(l) });
+    if (isMedia) { await start(bot, msg.chat_id, l, host); await drop(); }
+    else await telegram(bot, "editMessageText", { ...msg, text: tx(l).head, parse_mode: "HTML", reply_markup: await catKeyboard(l) }).catch(() => {});
     return;
   }
   const video = a === "v";
   const k = await card(c, Number(iStr), l, video, appLink);
   await answer(video ? "🎬" : "");
-  const r = await telegram(bot, "editMessageMedia", {
-    ...msg,
-    media: { type: video ? "animation" : "photo", media: media(host, k.tpl.id, video ? "video" : "photo"), caption: k.caption, parse_mode: "HTML" },
-    reply_markup: k.reply_markup,
-  });
+  if (!isMedia) { // toifalar (matnli) xabaridan — yangi karta, toifalar xabari o'chadi
+    const r = await sendCard(bot, msg.chat_id, k, host);
+    if (r && r.ok !== false) await drop();
+    return;
+  }
+  const r = await editCard(bot, msg, k, host, video);
   // video yo'q yoki yuklanmadi — rasm bilan qoladi
   if (video && r && r.ok === false) {
     console.error("Galereya video:", k.tpl.id, r.description);
-    const p = await card(c, Number(iStr), l, false, appLink);
-    await telegram(bot, "editMessageMedia", { ...msg, media: { type: "photo", media: media(host, p.tpl.id, "photo"), caption: p.caption, parse_mode: "HTML" }, reply_markup: p.reply_markup }).catch(() => {});
+    await editCard(bot, msg, await card(c, Number(iStr), l, false, appLink), host, false).catch(() => {});
   }
 }
 

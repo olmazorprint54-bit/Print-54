@@ -978,8 +978,11 @@
       { id: "pro-oltiburchak", name: "🔷 Oltiburchak · yillik reja", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     // 💎 PRO shablon toifalari (mini ilova va botdagi galereya uchun). «Yangi» — ro'yxatning oxirgi 12 tasi.
+    // «Eng yaxshi» — AI barcha matn va rasmlarni almashtira oladigan, universal shablonlar (TOP ro'yxati pastda).
+    // code — «Shablon kodi» (1, 2, 3 ...): ro'yxatdagi tartib raqami, yangi shablonlar faqat OXIRIGA qo'shiladi.
     // video: /ai/templates/<id>/preview.mp4 (8–10 s, ovozsiz) — galereyada «Shablonni ko'rish»
     C.proCategories = [
+      { v: "top", l: "🏆 Eng yaxshi", keys: [] },
       { v: "yangi", l: "🆕 Yangi", keys: [] },
       { v: "talim", l: "🎓 Ta'lim va himoya", keys: ["diplom", "himoya", "kurs ishi", "bitiruv", "dissertat", "magistr", "dars", "maktab", "o'quvchi", "talaba", "ta'lim", "pedagog", "диплом", "защит", "образован"] },
       { v: "biznes", l: "💼 Biznes va loyiha", keys: ["biznes", "marketing", "startap", "kompaniya", "loyiha", "menejment", "moliya", "iqtisod", "tadbirkor", "brend", "savdo", "бизнес", "маркетинг", "экономик"] },
@@ -1007,7 +1010,13 @@
         "pro-goya": "biznes", "pro-kapsula": "biznes info", "pro-akkordeon": "ijod info", "pro-oltiburchak": "info talim",
       };
       var L = C.templates.presentation_pro, n = L.length;
-      L.forEach(function (t, i) { t.cats = (M[t.id] || "info").split(" ").concat(i >= n - 12 ? ["yangi"] : []); t.video = true; });
+      var TOP = ["pro-energiya", "pro-oltinx", "pro-sado", "pro-zukko", "pro-himoya", "pro-goya", "pro-kapsula", "pro-akkordeon",
+        "pro-oltiburchak", "pro-knopka", "pro-knopka3", "pro-infografika", "pro-chontak", "pro-charx", "pro-progress", "pro-kublar",
+        "pro-pult", "pro-halqalar", "pro-shisha", "pro-moviy", "pro-romb", "pro-keskin"];
+      L.forEach(function (t, i) {
+        t.cats = (TOP.indexOf(t.id) >= 0 ? ["top"] : []).concat((M[t.id] || "info").split(" "), i >= n - 12 ? ["yangi"] : []);
+        t.video = true; t.code = i + 1;
+      });
     })();
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin

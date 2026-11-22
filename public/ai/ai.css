@@ -170,6 +170,12 @@ textarea.ai-input{ min-height:96px; resize:vertical; line-height:1.45; }
   transition: box-shadow .2s ease, border-color .15s ease;
 }
 .tpl-row.doc .tpl-card{ flex-basis:31%; }
+.tpl-card{ position:relative; }
+.tpl-code{ position:absolute; top:11px; left:11px; z-index:2; min-width:22px; padding:2px 7px; border-radius:999px; font-size:11px; font-weight:800; text-align:center; color:#fff; background:rgba(11,13,18,.72); border:1px solid rgba(255,255,255,.25); pointer-events:none; }
+.tpl-code-box{ margin-bottom:10px; }
+.tpl-code-in{ text-align:left; }
+.tpl-code-msg{ margin-top:6px; font-size:12.5px; font-weight:600; color:#4ADE80; }
+.tpl-code-msg.bad{ color:#F87171; }
 .tpl-card .slide-box, .tpl-card .page-box{ pointer-events:none; }
 .tpl-card.active{ border-color: rgba(74,222,128,.6); box-shadow: 0 0 26px -6px rgba(74,222,128,.6); }
 .tpl-name{ margin:8px auto 2px; width:max-content; max-width:100%; padding:4px 12px; border-radius:999px; font-size:12px; font-weight:700; line-height:1.3; text-align:center; color:#fff; background: linear-gradient(135deg,#38BDF8,#6366F1); box-shadow: 0 0 14px -3px rgba(56,189,248,.7); }
