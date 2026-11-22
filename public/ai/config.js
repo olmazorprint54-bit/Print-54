@@ -1018,6 +1018,21 @@
         t.video = true; t.code = i + 1;
       });
     })();
+    // 📊 Oddiy taqdimot: «Eng yaxshi» (AI matn va rasmlarni mavzuga moslaydigan: 📷 Premium, aqlli uslublar, toza dizaynlar),
+    // «Yangi» — oxirgi 12 ta; code — «Shablon kodi» (ai-dizayn dan tashqari tartib raqami; yangilari faqat OXIRIGA).
+    // video: /ai/templates/<id>/preview.mp4 — slayd-shou (faqat rasmli, canva shablonlar)
+    C.presExtraCats = [{ v: "top", l: "🏆 Eng yaxshi", keys: [] }, { v: "yangi", l: "🆕 Yangi", keys: [] }];
+    (function () {
+      var TOP = ["p-kok", "p-zumrad", "p-oltin", "p-qizil", "s-minimal", "s-tun", "s-yashil", "s-akademik", "s-binafsha", "s-quyosh",
+        "s-dengiz", "s-qizil", "s-oltin", "s-pastel", "s-texno", "s-tibbiy", "umumiy-nafis", "informatika-futuristik",
+        "pp-circuit", "pp-damask", "pp-parallax", "pp-slice"];
+      var P = C.templates.presentation.filter(function (t) { return t.id !== "ai-dizayn"; }), n = P.length;
+      P.forEach(function (t, i) {
+        t.code = i + 1;
+        t.cats = [t.category].concat(TOP.indexOf(t.id) >= 0 ? ["top"] : [], i >= n - 12 ? ["yangi"] : []);
+        if (t.kind === "canva") t.video = true;
+      });
+    })();
     C.services.splice(C.services.indexOf(svc), 0, superSvc);
     // Rasm yaratish — rasmli taqdimotdan keyin
     var img = C.services.filter(function (s) { return s.id === "image"; })[0];
