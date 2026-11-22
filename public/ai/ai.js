@@ -160,6 +160,25 @@
     const card = row && row.querySelector(`.tpl-card[data-v="${tplId}"]`);
     if (card) card.scrollIntoView({ inline: "center", block: "nearest" });
   };
+  // 🔢 Shablon kodi: mijoz botdagi galereyada ko'rgan raqamni yozadi — shablon o'zi tanlanadi
+  function pickByCode(svc, fid, raw) {
+    const f = svc.fields.find((x) => x.id === fid);
+    const msg = root.querySelector(`[data-tcode-msg="${fid}"]`);
+    const code = String(raw || "").replace(/\D/g, "");
+    if (!f || !msg) return;
+    if (!code) { msg.hidden = true; return; }
+    const t = CFG.templates[f.set].find((x) => String(x.code) === code);
+    msg.hidden = false;
+    msg.classList.toggle("bad", !t);
+    if (!t) { msg.textContent = "Bunday kodli shablon yo'q"; return; }
+    msg.textContent = "✅ " + tplName(t);
+    msg.setAttribute("data-no-i18n", "");
+    getValues(svc)[fid] = t.id;
+    const st = getCat(svc); st.tplManual = true; st.manual = true; st.cat = "all";
+    refreshLive(svc);
+    const card = root.querySelector(`[data-tpl="${fid}"] .tpl-card[data-v="${t.id}"]`);
+    if (card) card.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }
   // 🔥 Trend qo'shish: botda tayyorlangan taqdimotni qayta yuklamasdan personaj menyusini ochadi
   window.aiOpenCharFrom = (orderId) => {
     const svc = CFG.services.find((x) => x.id === "char_add");
@@ -285,6 +304,7 @@
           <div class="ai-hint">AI ishni shu adabiyotlar asosida yozadi. PDF, Word (.docx), TXT yoki kitob sahifasi rasmi · ${SRC_MAX} tagacha, jami ${SRC_PAGES} bet · faylni botga yuborsangiz ham shu yerda chiqadi${PR && !PR.TRIAL ? ` · +${fmt(PR.SOURCE_FEE)}dan (betiga qarab)` : ""}</div></div>`;
       case "templates":
         return `<div class="ai-field" data-f="${f.id}"${shown(svc, v, f.id) ? "" : " hidden"}>${label(f)}
+          ${isProSet(f) ? `<div class="tpl-code-box"><input class="ai-input tpl-code-in" data-tcode="${f.id}" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="🔢 Shablon kodini yozing (1–${CFG.templates[f.set].length})"><div class="tpl-code-msg" data-tcode-msg="${f.id}" hidden></div></div>` : ""}
           ${hasCategories(f) ? `<div class="chips tpl-cats" data-cats="${f.id}">${categoryChips(svc, f)}</div>` : ""}
           <div class="tpl-row${f.set === "presentation" ? "" : " doc"}" data-tpl="${f.id}">${templateCards(svc, f, v)}</div>
           <div class="tpl-more glass" data-preview="${f.id}">🔍 Kattaroq ko'rish</div></div>`;
@@ -801,6 +821,7 @@
   function templateCards(svc, f, v) {
     return templateList(svc, f, v).map((t) => `
       <div class="tpl-card glass${v[f.id] === t.id ? " active" : ""}" data-v="${t.id}" aria-label="${esc(tplName(t))}">
+        ${t.code && isProSet(f) ? `<span class="tpl-code" data-no-i18n>${t.code}</span>` : ""}
         ${t.kind === "canva" ? canvaImg(t, 1) : f.set === "presentation" ? slideHtml(t, "title", sampleData(svc, v)) : pageHtml(svc.id, t, "main", sampleData(svc, v))}
       </div>`).join("");
   }
@@ -1493,6 +1514,7 @@
 
   root.addEventListener("input", (e) => {
     if (!current) return;
+    if (e.target.dataset.tcode) { pickByCode(current, e.target.dataset.tcode, e.target.value); return; }
     if (e.target.dataset.mcIn) { mcError(e.target.dataset.mcIn, ""); return; }
     const v = getValues(current);
     const ri = e.target.dataset.rin;
