@@ -976,6 +976,9 @@
       { id: "pro-kapsula", name: "💊 Kapsulalar · raqamli marketing", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-akkordeon", name: "🪗 Akkordeon · dizayn asoslari", kind: "canva", category: "umumiy", pages: 7, auto: true },
       { id: "pro-oltiburchak", name: "🔷 Oltiburchak · yillik reja", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-hayot", name: "🍩 Infografika halqa · hayot g'ildiragi", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-yerni", name: "🌍 Infografika halqa 2 · ekologiya", kind: "canva", category: "umumiy", pages: 7, auto: true },
+      { id: "pro-strategiya", name: "🟢 Yashil g'ildirak · biznes strategiyasi", kind: "canva", category: "umumiy", pages: 7, auto: true },
     ];
     // 🔢 SHABLON KODLARI MUZLATILGAN (mijoz botda ko'rgan kodni ilovaga yozadi — kod hech qachon o'zgarmasligi kerak).
     // Kod = shablon id sining quyidagi ro'yxatdagi o'rni (1 dan). Qoidalar:
@@ -998,7 +1001,7 @@
         "pro-portlash", "pro-smart", "pro-shisha", "pro-charx", "pro-moviy", "pro-oqromb", "pro-poyga", "pro-avtosayohat",
         "pro-sakkiz", "pro-sahna", "pro-yillarpanel", "pro-knopka", "pro-knopka2", "pro-knopka3", "pro-knopka4", "pro-qon",
         "pro-energiya", "pro-oltinx", "pro-sado", "pro-zukko", "pro-himoya", "pro-goya", "pro-kapsula", "pro-akkordeon",
-        "pro-oltiburchak"
+        "pro-oltiburchak", "pro-hayot", "pro-yerni", "pro-strategiya"
     ];
     var PRES_CODES = [
         "classic", "minimal", "night", "nature", "academic", "gradient", "kids", "cmyk", "p-kok", "p-zumrad", "p-oltin",
@@ -1062,11 +1065,12 @@
         "pro-sahna": "rasmli", "pro-yillarpanel": "tarix fan", "pro-knopka": "talim ijod", "pro-knopka2": "ijod", "pro-knopka3": "ijod", "pro-knopka4": "ijod",
         "pro-qon": "fan", "pro-energiya": "fan", "pro-oltinx": "biznes", "pro-sado": "biznes", "pro-zukko": "talim", "pro-himoya": "talim",
         "pro-goya": "biznes", "pro-kapsula": "biznes info", "pro-akkordeon": "ijod info", "pro-oltiburchak": "info talim",
+        "pro-hayot": "info talim", "pro-yerni": "info fan", "pro-strategiya": "biznes info",
       };
       var L = C.templates.presentation_pro, n = L.length;
       var TOP = ["pro-energiya", "pro-oltinx", "pro-sado", "pro-zukko", "pro-himoya", "pro-goya", "pro-kapsula", "pro-akkordeon",
         "pro-oltiburchak", "pro-knopka", "pro-knopka3", "pro-infografika", "pro-chontak", "pro-charx", "pro-progress", "pro-kublar",
-        "pro-pult", "pro-halqalar", "pro-shisha", "pro-moviy", "pro-romb", "pro-keskin"];
+        "pro-pult", "pro-halqalar", "pro-shisha", "pro-moviy", "pro-romb", "pro-keskin", "pro-hayot", "pro-yerni", "pro-strategiya"];
       L.forEach(function (t, i) {
         t.cats = (TOP.indexOf(t.id) >= 0 ? ["top"] : []).concat((M[t.id] || "info").split(" "), i >= n - 12 ? ["yangi"] : []);
         t.video = true;

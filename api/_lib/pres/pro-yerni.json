@@ -1,0 +1,5268 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "8",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8010144,
+      2981960,
+      1251712,
+      643253
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 6,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8010144,
+      3630168,
+      1251712,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "title",
+     "chars": 14,
+     "max": 20,
+     "perLine": 19.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 46,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      1905000,
+      4826000,
+      672492
+     ],
+     "lineH": 701040,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 41,
+     "max": 48,
+     "perLine": 48.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Ekologik muammolar va ularning yechimlari",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      2667000,
+      4826000,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 125,
+     "max": 125,
+     "perLine": 41.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Sayyoramiz duch kelayotgan 8 ta asosiy xavf, ularni kamaytirishning uch bosqichi va har birimiz qila oladigan 5 ta oddiy odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      3098800,
+      4572000,
+      657872
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 28,
+     "max": 58,
+     "perLine": 57.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      4724400,
+      4572000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 35,
+     "max": 55,
+     "perLine": 54.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Sayyoramizning 8 ta asosiy muammosi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1778000,
+      304800,
+      8636000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 92,
+     "max": 109,
+     "perLine": 108.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir muammo g'ildirakning bir bo'lagi — ular bir-biri bilan bog'liq va birga hal qilinadi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1524000,
+      838200,
+      9144000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "8",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5100320,
+      3251200,
+      1991360,
+      877163
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 23.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5100320,
+      4135120,
+      1991360,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 17,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Havo ifloslanishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      1549400,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 33,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Zavod tutuni va avtomobil gazlari",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      1866900,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 14,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv tanqisligi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      2717800,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 29,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Toza ichimlik suvi kamaymoqda",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      3035300,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 19,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'rmonlar kesilishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      3886200,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Har yili millionlab gektar o'rmon yo'qoladi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      4203700,
+      3048000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 11,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chiqindilar",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      5054600,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 36,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Plastik va maishiy chiqindi tog'lari",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8559800,
+      5372100,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "54",
+     "kind": "label",
+     "chars": 16,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Iqlim o'zgarishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      5054600,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 37,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Harorat ko'tarilishi va qurg'oqchilik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      5372100,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 18,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tuproq yemirilishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      3886200,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 25,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Unumdor yerlar kamaymoqda",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      4203700,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 12,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Noyob turlar",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      2717800,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 33,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Hayvon va o'simliklar yo'qolmoqda",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      3035300,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 15,
+     "max": 32,
+     "perLine": 32.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Energiya isrofi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      1549400,
+      3048000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "67",
+     "kind": "label",
+     "chars": 27,
+     "max": 41,
+     "perLine": 41.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ko'mir va neftga bog'liqlik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      584200,
+      1866900,
+      3048000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "68",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "69",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "8",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1686560,
+      3009900,
+      2062480,
+      877163
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1686560,
+      3893820,
+      2062480,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 29,
+     "max": 40,
+     "perLine": 40.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Havo, suv, o'rmon va chiqindi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      330200,
+      5969000,
+      409343
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 58,
+     "max": 71,
+     "perLine": 70.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Kundalik hayotimizga eng tez ta'sir qiladigan to'rt muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      787400,
+      5969000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1651000,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 17,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Havo ifloslanishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      1333500,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 116,
+     "max": 116,
+     "perLine": 58,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Zavodlar, avtomobillar va chiqindi yoqish havoni zaharlaydi. Iflos havo nafas yo'llari kasalliklariga sabab bo'ladi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      1638300,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2946400,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 14,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Suv tanqisligi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      2628900,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 57,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Yerdagi suvning atigi 3 foizi chuchuk. Isrofgarchilik va ifloslanish tufayli ko'p hududlarda toza suv yetishmaydi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      2933700,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      4241800,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 19,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'rmonlar kesilishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      3924300,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "text",
+     "chars": 106,
+     "max": 106,
+     "perLine": 53,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "O'rmonlar havoni tozalaydi va hayvonlarga uy bo'ladi. Ularning kesilishi iqlim o'zgarishini tezlashtiradi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      4229100,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      5537200,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 11,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Chiqindilar",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      5219700,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Bitta plastik idish tabiatda 400 yilgacha chirimaydi. Saralanmagan chiqindi tuproq va suvni ifloslantiradi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      5524500,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 6.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 60,
+     "paras": 1,
+     "text": "8",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1686560,
+      3009900,
+      2062480,
+      877163
+     ],
+     "lineH": 914400,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 6,
+     "max": 24,
+     "perLine": 24.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1686560,
+      3893820,
+      2062480,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 33,
+     "max": 40,
+     "perLine": 40.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "Iqlim, tuproq, turlar va energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      330200,
+      5969000,
+      409343
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 51,
+     "max": 71,
+     "perLine": 70.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Butun sayyora kelajagini belgilaydigan to'rt muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      787400,
+      5969000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      1651000,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 16,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Iqlim o'zgarishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      1333500,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Issiqxona gazlari Yerni isitmoqda: muzliklar eriydi, qurg'oqchilik va kuchli bo'ronlar ko'payadi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      1638300,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "06",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      2946400,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 18,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tuproq yemirilishi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      2628900,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 104,
+     "max": 104,
+     "perLine": 52,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Noto'g'ri sug'orish va kimyoviy o'g'itlar tuproqni sho'rlantiradi. Unumdor yer esa oziq-ovqat manbaidir.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      2933700,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "07",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      4241800,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 12,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Noyob turlar",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      3924300,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "text",
+     "chars": 104,
+     "max": 104,
+     "perLine": 52,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Yashash joylari buzilgani sababli ko'p turlar yo'qolish xavfida. Har bir tur tabiat zanjirining halqasi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      4229100,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "08",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5740400,
+      5537200,
+      660400,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 15,
+     "max": 50,
+     "perLine": 50.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Energiya isrofi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      5219700,
+      4775200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 51,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Elektr va yoqilg'ini behuda sarflash resurslarni tugatadi. Quyosh va shamol esa bitmas-tuganmas manba.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6756400,
+      5524500,
+      4775200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "title",
+     "chars": 20,
+     "max": 42,
+     "perLine": 42.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 32,
+     "paras": 1,
+     "text": "Yechim uch bosqichda",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2540000,
+      330200,
+      7112000,
+      467820
+     ],
+     "lineH": 487680,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "text",
+     "chars": 96,
+     "max": 112,
+     "perLine": 111.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bilish, kamaytirish va harakat bir-biriga bog'liq: biri bo'lmasa, qolganlari ham natija bermaydi",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1397000,
+      889000,
+      9398000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2921000,
+      2590800,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 6,
+     "max": 20,
+     "perLine": 19.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Bilish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2540000,
+      4419600,
+      2286000,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 25,
+     "max": 61,
+     "perLine": 30.6,
+     "lines": 2,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Muammoni chuqur o'rganing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2476500,
+      4800600,
+      2413000,
+      438582
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Mahalliy muammolarni aniqlang",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2540000,
+      5359400,
+      2286000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5334000,
+      2590800,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 11,
+     "max": 20,
+     "perLine": 19.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Kamaytirish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4953000,
+      4419600,
+      2286000,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 19,
+     "max": 31,
+     "perLine": 30.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Zararni kamaytiring",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4889500,
+      4800600,
+      2413000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Bir martalik idishdan voz keching",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4953000,
+      5359400,
+      2286000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8,
+     "lines": 1,
+     "caps": false,
+     "sz": 36,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7747000,
+      2590800,
+      1524000,
+      526298
+     ],
+     "lineH": 548640,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 7,
+     "max": 20,
+     "perLine": 19.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7366000,
+      4419600,
+      2286000,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 25,
+     "max": 31,
+     "perLine": 30.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Birgalikda harakat qiling",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7302500,
+      4800600,
+      2413000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 22,
+     "max": 31,
+     "perLine": 31,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Hasharlarda qatnashing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7366000,
+      5359400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      2819400,
+      2540000,
+      964880
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 6,
+     "max": 22,
+     "perLine": 21.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Bilish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      3860800,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      1600200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      4775200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 13,
+     "max": 31,
+     "perLine": 31.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01  ·  Bilish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      596900,
+      2794000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 25,
+     "max": 39,
+     "perLine": 38.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Muammoni chuqur o'rganing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1117600,
+      6096000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 148,
+     "max": 148,
+     "perLine": 49.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ekologik muammoni bilish — yechimning birinchi qadami. Yashash hududingizdagi havo, suv va chiqindi holatini o'rganing va oilangiz bilan bo'lishing.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1676400,
+      6096000,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mahalliy muammolarni aniqlang",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      3124200,
+      2692400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 27,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ishonchli manbalarni o'qing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4038600,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bilimingizni boshqalarga ulashing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4953000,
+      2692400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "06",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      1600200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      2819400,
+      2540000,
+      964880
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 11,
+     "max": 22,
+     "perLine": 21.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Kamaytirish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      3860800,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "11"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      4775200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 18,
+     "max": 31,
+     "perLine": 31.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02  ·  Kamaytirish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      596900,
+      2794000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 19,
+     "max": 39,
+     "perLine": 38.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Zararni kamaytiring",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1117600,
+      6096000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 146,
+     "max": 146,
+     "perLine": 48.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har kungi kichik qarorlar tabiatga katta ta'sir qiladi. Bir martalik buyumlardan voz keching, suv va elektrni tejang, ortiqcha narsa sotib olmang.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1676400,
+      6096000,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 33,
+     "max": 33,
+     "perLine": 16.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bir martalik idishdan voz keching",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      3124200,
+      2692400,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 22,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Suv va elektrni tejang",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4038600,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 27,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ortiqcha xariddan saqlaning",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4953000,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "07",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      1600200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 9.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10998200,
+      4775200,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 66,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      2819400,
+      2540000,
+      964880
+     ],
+     "lineH": 1005840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 7,
+     "max": 22,
+     "perLine": 21.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7772400,
+      3860800,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "16"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 14,
+     "max": 31,
+     "perLine": 31.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03  ·  Harakat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      596900,
+      2794000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 25,
+     "max": 39,
+     "perLine": 38.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Birgalikda harakat qiling",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1117600,
+      6096000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 141,
+     "max": 141,
+     "perLine": 47,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hasharlarda qatnashing, daraxt eking va maktabda yoki mahallada ekologik loyiha boshlang. Birgalikdagi sa'y-harakat tabiatni tezroq tiklaydi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      1676400,
+      6096000,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 22,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hasharlarda qatnashing",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      3124200,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 21,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har yili daraxt eking",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4038600,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 24,
+     "max": 32,
+     "perLine": 32,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ekologik loyiha boshlang",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4165600,
+      4953000,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "08",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "text",
+     "chars": 79,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har birimiz har kuni qila oladigan oddiy ishlar — sayyoramizga eng katta yordam",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2260600,
+      1854200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2006600,
+      3733800,
+      1371600,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      3962400,
+      1854200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      3708400,
+      3733800,
+      1371600,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5664200,
+      1854200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 14,
+     "perLine": 13.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5410200,
+      3733800,
+      1371600,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7366000,
+      1854200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 17,
+     "max": 27,
+     "perLine": 13.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7112000,
+      3733800,
+      1371600,
+      555537
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9067800,
+      1854200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 13,
+     "max": 27,
+     "perLine": 13.7,
+     "lines": 2,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8813800,
+      3733800,
+      1371600,
+      555537
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "09",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 25,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odat 1 / 5 — Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      3086100,
+      1346200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1612900,
+      2082800,
+      3810000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Tish yuvayotganda jo'mrakni yoping, idishni oqar suvda emas, tog'orada yuving. Bu odat oilada kuniga 50 litrgacha suvni tejaydi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1638300,
+      2565400,
+      3759200,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6057900,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5905500,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7302500,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7150100,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8547100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 17,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8394700,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9791700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 13,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9639300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "10",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 25,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odat 2 / 5 — Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1562100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1409700,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4330700,
+      1346200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2857500,
+      2082800,
+      3810000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 128,
+     "max": 128,
+     "perLine": 42.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bitta daraxt yiliga 20 kg gacha karbonat angidridni yutadi va ikki kishiga yetadigan kislorod beradi. Har bahorda ko'chat eking.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2882900,
+      2565400,
+      3759200,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7302500,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 8,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      7150100,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8547100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 17,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8394700,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9791700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 13,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9639300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "11",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odat 3 / 5 — Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1562100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1409700,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2806700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2654300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5575300,
+      1346200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4102100,
+      2082800,
+      3810000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 120,
+     "max": 120,
+     "perLine": 40,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qog'oz, plastik, shisha va oziq-ovqat qoldiqlarini alohida yig'ing. Saralangan chiqindining katta qismi qayta ishlanadi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4127500,
+      2565400,
+      3759200,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8547100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 17,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8394700,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9791700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 13,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9639300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "12",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 30,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odat 4 / 5 — Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1562100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1409700,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2806700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2654300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4051300,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      3898900,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6819900,
+      1346200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 17,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5346700,
+      2082800,
+      3810000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 40.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Qutilar, shisha idishlar va kiyimlarga ikkinchi hayot bering. Bitta matoli sumka yuzlab plastik paketning o'rnini bosadi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5372100,
+      2565400,
+      3759200,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9791700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 13,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      9639300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "13",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 14,
+     "max": 29,
+     "perLine": 28.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yerni asraylik",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8255000,
+      482600,
+      2717800,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 18,
+     "max": 43,
+     "perLine": 43.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "5 ta ekologik odat",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      330200,
+      6858000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 26,
+     "max": 87,
+     "perLine": 87.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Odat 5 / 5 — Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      838200,
+      7366000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "01",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1562100,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Suvni tejash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      1409700,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "02",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2806700,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Daraxt ekish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2654300,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "03",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      4051300,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 8,
+     "max": 13,
+     "perLine": 13.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Saralash",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      3898900,
+      4851400,
+      965200,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "04",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5295900,
+      4241800,
+      660400,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 17,
+     "max": 26,
+     "perLine": 13.1,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Qayta foydalanish",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      5143500,
+      4851400,
+      965200,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "05",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8064500,
+      1346200,
+      863600,
+      330200
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 13,
+     "max": 28,
+     "perLine": 27.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Toza energiya",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6591300,
+      2082800,
+      3810000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 130,
+     "max": 130,
+     "perLine": 43.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Xonadan chiqayotganda chiroqni o'chiring, tejamkor lampalardan foydalaning. Quyosh panellari uyni toza energiya bilan ta'minlaydi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      6616700,
+      2565400,
+      3759200,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 52,
+     "perLine": 51.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      609600,
+      6477000,
+      3810000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 10.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "14",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      10820400,
+      6477000,
+      762000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "8",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8010144,
+      2981960,
+      1251712,
+      643253
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 6,
+     "max": 17,
+     "perLine": 17,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "muammo",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      8010144,
+      3630168,
+      1251712,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "title",
+     "chars": 7,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 50,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      1905000,
+      4826000,
+      730969
+     ],
+     "lineH": 762000,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 28,
+     "max": 48,
+     "perLine": 48.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      2717800,
+      4826000,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 76,
+     "max": 76,
+     "perLine": 38,
+     "lines": 2,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Yer — bizning yagona uyimiz. Uni asrash bugundan, har birimizdan boshlanadi.",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      3149600,
+      4572000,
+      438582
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 58,
+     "perLine": 57.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Times New Roman",
+     "anchor": "t",
+     "box": [
+      2463800,
+      4724400,
+      4572000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 960,
+   "h": 540,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 720,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    13
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 960,
+   "h": 720,
+   "slides": [
+    14
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}
