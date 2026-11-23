@@ -644,7 +644,8 @@ body.ai-sub .app-top, body.not-home .app-top{ display:none; }
     radial-gradient(34% 28% at 30% 30%, rgba(59,107,255,.32), transparent 70%),
     radial-gradient(30% 26% at 72% 62%, rgba(16,185,170,.18), transparent 70%),
     radial-gradient(26% 22% at 60% 20%, rgba(99,102,241,.22), transparent 70%);
-  filter: blur(30px); animation: auroraDrift 22s ease-in-out infinite alternate;
+  animation: auroraDrift 22s ease-in-out infinite alternate;
+  will-change: transform; transform: translateZ(0); backface-visibility: hidden;
 }
 @keyframes auroraDrift{
   0%{ transform: translate3d(0,0,0) scale(1); }
@@ -738,3 +739,18 @@ body.ai-sub .app-top, body.not-home .app-top{ display:none; }
 /* shar endi chiqib turmaydi — AI tugmasi va xabarlar menyuga yaqinroq */
 .ai-fab{ bottom: calc(94px + env(safe-area-inset-bottom)); }
 .toast{ bottom: calc(94px + env(safe-area-inset-bottom)); }
+
+/* ---------- telefonlar: qorong'i temadagi og'ir effektlar yengillashtirildi (2026-11-23) ----------
+   Telefonda bo'lim almashganda qotish bor edi: har bir karta blur filtri bilan animatsiya qilinardi.
+   Sensorli qurilmalarda kartalar filtrsiz (faqat opacity + transform — GPU'da) chiqadi. */
+@media (hover: none), (pointer: coarse){
+  :root[data-theme="dark"] .view.active{ animation: viewIn .32s ease both; }
+  :root[data-theme="dark"] .ai-grid > .ai-card{ animation-name: aiCardIn; animation-duration: .45s; }
+  :root[data-theme="dark"] #aiForm > .ai-field{ animation-name: aiFieldIn; }
+  :root[data-theme="dark"] .ai-top{ animation-name: aiTopIn; }
+  :root[data-theme="dark"] .fav-wide, :root[data-theme="dark"] .fav-tpl, :root[data-theme="dark"] .order,
+  :root[data-theme="dark"] .card.setting{ animation: viewIn .35s ease both; }
+  :root[data-theme="dark"] .app-nav{ filter:none; }
+  :root[data-theme="dark"] .app-nav::before{ box-shadow: 0 14px 26px -14px rgba(0,0,0,.8); }
+  :root[data-theme="dark"] .counting{ text-shadow:none; }
+}
