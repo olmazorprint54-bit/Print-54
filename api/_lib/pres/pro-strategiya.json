@@ -1,0 +1,2917 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 19,
+     "max": 27,
+     "perLine": 27.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Biznes strategiyasi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1524000,
+      2489200,
+      9144000,
+      789447
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 53,
+     "max": 67,
+     "perLine": 66.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Muvaffaqiyatli kompaniyaning 6 tamoyili va 4 bosqichi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2286000,
+      3505200,
+      7620000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 28,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      5740400,
+      5080000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "title",
+     "chars": 10,
+     "max": 15,
+     "perLine": 15.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Strategiya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4191000,
+      3175000,
+      3810000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 19,
+     "max": 33,
+     "perLine": 33.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "6 ta asosiy tamoyil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4191000,
+      3784600,
+      3810000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 5,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "G'oya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8382000,
+      4292600,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 5,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jamoa",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6883400,
+      5918200,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 9,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Marketing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3530600,
+      5918200,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 6,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "O'sish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2032000,
+      4292600,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 9,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Hamkorlik",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3530600,
+      2667000,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "label",
+     "chars": 9,
+     "max": 17,
+     "perLine": 17.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Boshqaruv",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6883400,
+      2667000,
+      1778000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 21.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "01  ·  G'OYA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7962900,
+      1955800,
+      2159000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 12,
+     "max": 23,
+     "perLine": 23.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Kuchli g'oya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6883400,
+      2362200,
+      4318000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 121,
+     "max": 121,
+     "perLine": 30.2,
+     "lines": 4,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir muvaffaqiyatli biznes aniq muammoni hal qiluvchi g'oyadan boshlanadi. G'oyani avval mijozlar bilan sinab ko'ring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7061200,
+      2921000,
+      3962400,
+      935641
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4521200,
+      3810000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "G'oyani bir jumlada tushuntira olish kerak.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      4826000,
+      3556000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "01 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10414000,
+      6565900,
+      1143000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 12,
+     "max": 21,
+     "perLine": 21.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "02  ·  JAMOA",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7962900,
+      1955800,
+      2159000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Ishonchli jamoa",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6883400,
+      2362200,
+      4318000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 119,
+     "max": 119,
+     "perLine": 39.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir a'zo o'z vazifasini biladigan jamoa eng murakkab rejani ham amalga oshiradi. Muloqot va ishonch — asosiy kalit.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7061200,
+      2921000,
+      3962400,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4521200,
+      3810000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "41"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 38,
+     "max": 39,
+     "perLine": 38.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Haftalik qisqa uchrashuvlar o'tkazing.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      4826000,
+      3556000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "02 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10414000,
+      6565900,
+      1143000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "03  ·  MARKETING",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7962900,
+      1955800,
+      2159000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Aqlli marketing",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6883400,
+      2362200,
+      4318000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 37.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mahsulot haqida to'g'ri auditoriyaga, to'g'ri vaqtda gapiring. Ijtimoiy tarmoqlar va tavsiyalar eng arzon kanal.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7061200,
+      2921000,
+      3962400,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4521200,
+      3810000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "41"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 40,
+     "max": 39,
+     "perLine": 38.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Natijani har oy raqamlar bilan o'lchang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      4826000,
+      3556000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "03 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10414000,
+      6565900,
+      1143000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 13,
+     "max": 21,
+     "perLine": 21.1,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "04  ·  O'SISH",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7962900,
+      1955800,
+      2159000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "38",
+     "kind": "title",
+     "chars": 15,
+     "max": 23,
+     "perLine": 23.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Barqaror o'sish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6883400,
+      2362200,
+      4318000,
+      438582
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "text",
+     "chars": 112,
+     "max": 112,
+     "perLine": 37.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Daromad va xarajatni kuzatib, foydani yangi imkoniyatlarga sarmoya qiling. Kichik, ammo doimiy o'sish ishonchli.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7061200,
+      2921000,
+      3962400,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "41",
+     "kind": "label",
+     "chars": 8,
+     "max": 42,
+     "perLine": 41.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7137400,
+      4521200,
+      3810000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "41"
+     ]
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har chorakda reja va natijani solishtiring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7264400,
+      4826000,
+      3556000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "fixed",
+     "chars": 7,
+     "max": 14,
+     "perLine": 14.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "04 / 04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10414000,
+      6565900,
+      1143000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8432800,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 17,
+     "max": 29,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "Rivojlanish yo'li",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      711200,
+      7112000,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 50,
+     "max": 62,
+     "perLine": 62.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Strategiyani hayotga tatbiq etishning to'rt qadami",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1346200,
+      7112000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2467266,
+      2286000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 47,
+     "max": 47,
+     "perLine": 23.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Bozor, raqobatchi va mijoz ehtiyojini o'rganish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1270000,
+      2848266,
+      2286000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 6,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Moliya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3683000,
+      4145237,
+      2286000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 43,
+     "max": 43,
+     "perLine": 21.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Byudjet, xarajat va daromad rejasini tuzish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3683000,
+      4526237,
+      2286000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "22",
+     "kind": "label",
+     "chars": 7,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Jarayon",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6223000,
+      4145237,
+      2286000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 40,
+     "max": 40,
+     "perLine": 20,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ish tizimi va vazifalarni yo'lga qo'yish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6223000,
+      4526237,
+      2286000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "label",
+     "chars": 5,
+     "max": 18,
+     "perLine": 18.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Sifat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8636000,
+      2467266,
+      2286000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 38,
+     "max": 38,
+     "perLine": 19,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Natijani o'lchash va doimiy yaxshilash",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8636000,
+      2848266,
+      2286000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8432800,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Tahlil va moliya",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      762000,
+      5080000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 118,
+     "max": 118,
+     "perLine": 39.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Avval bozor hajmi, raqobatchilar va mijozlar ehtiyoji o'rganiladi. Shu asosda real byudjet va daromad rejasi tuziladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3987800,
+      4826000,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 47,
+     "perLine": 47,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      965200,
+      5384800,
+      4318000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "41"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 46,
+     "max": 49,
+     "perLine": 48.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Xarajatlarni 15–20 foiz zaxira bilan rejalang.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      965200,
+      5664200,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 15,
+     "max": 27,
+     "perLine": 26.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Strategiya 2026",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      838200,
+      2997200,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "8"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 16,
+     "max": 21,
+     "perLine": 21.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Jarayon va sifat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6604000,
+      762000,
+      5080000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "text",
+     "chars": 114,
+     "max": 114,
+     "perLine": 38,
+     "lines": 3,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Har bir vazifaning mas'uli va muddati belgilanadi. Natija muntazam o'lchanib, jarayon doimiy yaxshilanib boriladi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6604000,
+      3987800,
+      4826000,
+      701731
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 8,
+     "max": 47,
+     "perLine": 47,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Eslatma:",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6807200,
+      5384800,
+      4318000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      3,
+      "41"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 42,
+     "max": 49,
+     "perLine": 48.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Mijoz fikri — sifatning eng aniq o'lchovi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6807200,
+      5664200,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 19,
+     "perLine": 18.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Bosqichlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      914400,
+      2540000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "title",
+     "chars": 31,
+     "max": 31,
+     "perLine": 10.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 30,
+     "paras": 1,
+     "text": "Kompaniya rivojining 4 bosqichi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1524000,
+      3556000,
+      1315745
+     ],
+     "lineH": 457200,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1727200,
+      3606800,
+      863600,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 14,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "REJALASHTIRISH",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1143000,
+      4635500,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "label",
+     "chars": 35,
+     "max": 35,
+     "perLine": 17.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Maqsad, bozor va byudjet aniqlanadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1079500,
+      5003800,
+      2159000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4394200,
+      4318000,
+      863600,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 15,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "ISHGA TUSHIRISH",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3810000,
+      5346700,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 29,
+     "max": 29,
+     "perLine": 14.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Birinchi mahsulot va mijozlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3746500,
+      5715000,
+      2159000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7188200,
+      3302000,
+      863600,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "label",
+     "chars": 9,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "KENGAYISH",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6604000,
+      4330700,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 24,
+     "max": 24,
+     "perLine": 12,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Yangi bozor va hamkorlar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6540500,
+      4699000,
+      2159000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9728200,
+      4191000,
+      863600,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 11,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "YETAKCHILIK",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9144000,
+      5219700,
+      2032000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 27,
+     "max": 27,
+     "perLine": 13.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Brend, sifat va innovatsiya",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      9080500,
+      5588000,
+      2159000,
+      467820
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 10,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bosqichlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      787400,
+      2540000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5089696,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4692979,
+      533841,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4919147,
+      -310228,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5664200,
+      2133600,
+      863600,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 24.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH 01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      863600,
+      2540000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 14,
+     "max": 18,
+     "perLine": 17.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Rejalashtirish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1320800,
+      4191000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 36,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Maqsad va yo'nalishni aniq belgilang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      3479800,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 34,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Bozor va raqobatchilarni o'rganing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4521200,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 31,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Byudjet va muddatlarni rejalang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      5562600,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 10,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bosqichlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      787400,
+      2540000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6721304,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5089696,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4692979,
+      533841,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5664200,
+      2133600,
+      863600,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 24.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH 02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      863600,
+      2540000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 15,
+     "max": 18,
+     "perLine": 17.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Ishga tushirish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1320800,
+      4191000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 37,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Birinchi mahsulotni bozorga chiqaring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      3479800,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 34,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Dastlabki mijozlar fikrini yig'ing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4521200,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 29,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kamchiliklarni tezda tuzating",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      5562600,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 10,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bosqichlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      787400,
+      2540000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7118021,
+      533841,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6721304,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5089696,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5664200,
+      2133600,
+      863600,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 24.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH 03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      863600,
+      2540000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 9,
+     "max": 18,
+     "perLine": 17.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Kengayish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1320800,
+      4191000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 33,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yangi bozor va hududlarga chiqing",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      3479800,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 44,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Jamoani malakali xodimlar bilan kengaytiring",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4521200,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 33,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Ishonchli hamkorlar bilan ishlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      5562600,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 10,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "Bosqichlar",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4826000,
+      787400,
+      2540000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      10,
+      "5"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6891854,
+      -310228,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7118021,
+      533841,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6721304,
+      1312442,
+      381000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 5.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5664200,
+      2133600,
+      863600,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 10,
+     "max": 25,
+     "perLine": 24.8,
+     "lines": 1,
+     "caps": true,
+     "sz": 14,
+     "paras": 1,
+     "text": "BOSQICH 04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      863600,
+      2540000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "title",
+     "chars": 11,
+     "max": 18,
+     "perLine": 17.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Yetakchilik",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1320800,
+      4191000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 29,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Brend obro'sini mustahkamlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      3479800,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "label",
+     "chars": 32,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Yuqori sifat standartini saqlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      4521200,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 25,
+     "max": 57,
+     "perLine": 56.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Innovatsiyani to'xtatmang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5588000,
+      5562600,
+      5842000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "title",
+     "chars": 7,
+     "max": 27,
+     "perLine": 27.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 54,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1524000,
+      2540000,
+      9144000,
+      789447
+     ],
+     "lineH": 822960,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 56,
+     "max": 71,
+     "perLine": 71,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur — savollaringizga tayyormiz",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      3556000,
+      8128000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3556000,
+      5740400,
+      5080000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    3
+   ],
+   "focus": 3
+  },
+  {
+   "files": [
+    "ppt/media/image9.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    4
+   ],
+   "focus": 4
+  },
+  {
+   "files": [
+    "ppt/media/image11.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    5
+   ],
+   "focus": 5
+  },
+  {
+   "files": [
+    "ppt/media/image13.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image19.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image20.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    9
+   ],
+   "focus": 9
+  },
+  {
+   "files": [
+    "ppt/media/image21.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image25.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image29.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    13
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image32.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    14
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}

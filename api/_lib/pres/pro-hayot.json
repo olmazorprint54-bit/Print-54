@@ -1,0 +1,5202 @@
+{
+ "size": [
+  12192000,
+  6858000
+ ],
+ "slides": [
+  {
+   "n": 1,
+   "part": "ppt/slides/slide1.xml",
+   "role": "title",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7936992,
+      3032760,
+      1194816,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 4,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.2,
+     "paras": 1,
+     "text": "soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7936992,
+      3622040,
+      1194816,
+      163763
+     ],
+     "lineH": 170688,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "title",
+     "chars": 16,
+     "max": 20,
+     "perLine": 20.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 38,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2717800,
+      2489200,
+      4826000,
+      555537
+     ],
+     "lineH": 579120,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 33,
+     "max": 49,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "Shaxsiy rivojlanish infografikasi",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2717800,
+      3124200,
+      4826000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "label",
+     "chars": 60,
+     "max": 61,
+     "perLine": 61.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Muvozanatli hayotning 8 sohasi va ularni yaxshilash yo'llari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2717800,
+      3530600,
+      4572000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 28,
+     "max": 61,
+     "perLine": 61.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Taqdim etuvchi: Ism Familiya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2717800,
+      4546600,
+      4572000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 2,
+   "part": "ppt/slides/slide2.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "23",
+     "kind": "title",
+     "chars": 30,
+     "max": 44,
+     "perLine": 43.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanatli hayotning 8 sohasi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2540000,
+      381000,
+      7112000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "text",
+     "chars": 84,
+     "max": 95,
+     "perLine": 95.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Har bir soha g'ildirakning bir bo'lagi — biri sustlashsa, butun g'ildirak qiyshayadi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2286000,
+      889000,
+      7620000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "34",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5029200,
+      3176016,
+      2133600,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 4,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 17.92,
+     "paras": 1,
+     "text": "soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5029200,
+      4118864,
+      2133600,
+      261995
+     ],
+     "lineH": 273101,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "label",
+     "chars": 7,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sog'liq",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8890000,
+      1905000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "39",
+     "kind": "label",
+     "chars": 30,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Harakat, uyqu va to'g'ri ovqat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8890000,
+      2197100,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "42",
+     "kind": "label",
+     "chars": 4,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oila",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8890000,
+      2997200,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "43",
+     "kind": "label",
+     "chars": 34,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Yaqinlar bilan vaqt va g'amxo'rlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8890000,
+      3289300,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "46",
+     "kind": "label",
+     "chars": 7,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Karyera",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8890000,
+      4089400,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "47",
+     "kind": "label",
+     "chars": 28,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Kasbiy o'sish va sevimli ish",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8890000,
+      4381500,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "50",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moliya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5181600,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "51",
+     "kind": "label",
+     "chars": 27,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Daromad, jamg'arma, nazorat",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      8890000,
+      5473700,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "54",
+     "kind": "label",
+     "chars": 6,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ta'lim",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      5181600,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "55",
+     "kind": "label",
+     "chars": 26,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Yangi bilim va ko'nikmalar",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      5473700,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "58",
+     "kind": "label",
+     "chars": 8,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Do'stlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      4089400,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "59",
+     "kind": "label",
+     "chars": 27,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ishonchli muloqot va yordam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      4381500,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "62",
+     "kind": "label",
+     "chars": 9,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dam olish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      2997200,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "63",
+     "kind": "label",
+     "chars": 28,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Hordiq va sevimli mashg'ulot",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      3289300,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "66",
+     "kind": "label",
+     "chars": 10,
+     "max": 28,
+     "perLine": 27.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ma'naviyat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      1905000,
+      2540000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "67",
+     "kind": "label",
+     "chars": 29,
+     "max": 37,
+     "perLine": 37,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Qadriyat va ichki xotirjamlik",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      2197100,
+      2540000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "68",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "69",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "02",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 3,
+   "part": "ppt/slides/slide3.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2985516,
+      2133600,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 17.92,
+     "paras": 1,
+     "text": "soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3928364,
+      2133600,
+      261995
+     ],
+     "lineH": 273101,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 12,
+     "max": 34,
+     "perLine": 33.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Sohalar: 1–4",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      431800,
+      5080000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 52,
+     "max": 75,
+     "perLine": 75.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Tana, oila, ish va pul — hayotning tayanch ustunlari",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      863600,
+      5588000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1600200,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Sog'liq",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      1447800,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 104,
+     "max": 104,
+     "perLine": 52,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Kuniga kamida 30 daqiqa harakat, 7–8 soat uyqu va yetarli suv. Sog'lom tana — barcha yutuqlarning asosi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      1752600,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2844800,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 4,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Oila",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      2692400,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 93,
+     "max": 93,
+     "perLine": 46.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Haftada bir oilaviy kechki ovqat, birga sayr va samimiy suhbat. Yaqinlar — eng katta tayanch.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      2997200,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      4089400,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 7,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Karyera",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      3937000,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "text",
+     "chars": 97,
+     "max": 97,
+     "perLine": 48.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Har chorakda bitta yangi vazifa yoki loyiha oling. Ishingizdan zavq olish o'sishni tezlashtiradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      4241800,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      5334000,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 6,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Moliya",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      5181600,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Daromadning 10 foizini jamg'aring va har oy xarajatlarni tahlil qiling. Zaxira xotirjamlik beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      5486400,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "03",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 4,
+   "part": "ppt/slides/slide4.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 5.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1854200,
+      2985516,
+      2133600,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 4,
+     "max": 21,
+     "perLine": 20.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 17.92,
+     "paras": 1,
+     "text": "soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      1854200,
+      3928364,
+      2133600,
+      261995
+     ],
+     "lineH": 273101,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "15",
+     "kind": "title",
+     "chars": 12,
+     "max": 34,
+     "perLine": 33.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 24,
+     "paras": 1,
+     "text": "Sohalar: 5–8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      431800,
+      5080000,
+      350865
+     ],
+     "lineH": 365760,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 54,
+     "max": 75,
+     "perLine": 75.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Bilim, do'stlar, hordiq va ruhiyat — hayotning mazmuni",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5969000,
+      863600,
+      5588000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      1600200,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 6,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ta'lim",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      1447800,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "text",
+     "chars": 86,
+     "max": 86,
+     "perLine": 43,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Har kuni 20 daqiqa o'qish, onlayn kurslar va yangi til. Bilim — eng ishonchli sarmoya.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      1752600,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "06",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      2844800,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 8,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Do'stlar",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      2692400,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 98,
+     "max": 98,
+     "perLine": 49,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Do'stlar bilan muntazam uchrashing va bir-biringizni qo'llab-quvvatlang. Yaxshi muhit kuch beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      2997200,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "07",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      4089400,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "30",
+     "kind": "label",
+     "chars": 9,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Dam olish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      3937000,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "31",
+     "kind": "text",
+     "chars": 89,
+     "max": 89,
+     "perLine": 44.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Sevimli mashg'ulot, sayohat va telefonsiz soatlar kuch-quvvatni tiklaydi va ilhom beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      4241800,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "08",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5969000,
+      5334000,
+      635000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 10,
+     "max": 48,
+     "perLine": 48.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Ma'naviyat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7010400,
+      5181600,
+      4445000,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 111,
+     "max": 111,
+     "perLine": 55.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Qadriyatlaringizni anglang, kitob o'qing va har kuni minnatdorlik bildiring. Ichki tinchlik — muvozanat kaliti.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7010400,
+      5486400,
+      4445000,
+      350865
+     ],
+     "lineH": 182880,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "38",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "04",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 5,
+   "part": "ppt/slides/slide5.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "2",
+     "kind": "title",
+     "chars": 23,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 28,
+     "paras": 1,
+     "text": "O'zgarish uch bosqichda",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2540000,
+      508000,
+      7112000,
+      409343
+     ],
+     "lineH": 426720,
+     "ins": 0
+    },
+    {
+     "id": "3",
+     "kind": "text",
+     "chars": 82,
+     "max": 101,
+     "perLine": 101.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Baholash, reja va harakat bir-biriga bog'liq — biri bo'lmasa, natija ham bo'lmaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2032000,
+      1041400,
+      8128000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3175000,
+      2870200,
+      1524000,
+      497059
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 8,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Baholash",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2857500,
+      4826000,
+      2159000,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "label",
+     "chars": 24,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Hozirgi holatni aniqlang",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2857500,
+      5181600,
+      2159000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5334000,
+      2870200,
+      1524000,
+      497059
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 4,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5016500,
+      4826000,
+      2159000,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "label",
+     "chars": 19,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Aniq maqsad qo'ying",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5016500,
+      5181600,
+      2159000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 7.2,
+     "lines": 1,
+     "caps": false,
+     "sz": 34,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7493000,
+      2870200,
+      1524000,
+      497059
+     ],
+     "lineH": 518160,
+     "ins": 0
+    },
+    {
+     "id": "14",
+     "kind": "label",
+     "chars": 7,
+     "max": 20,
+     "perLine": 19.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7175500,
+      4826000,
+      2159000,
+      277768
+     ],
+     "lineH": 289560,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "label",
+     "chars": 21,
+     "max": 29,
+     "perLine": 29,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Har kuni kichik qadam",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7175500,
+      5181600,
+      2159000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "17",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "05",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 6,
+   "part": "ppt/slides/slide6.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2921000,
+      2540000,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "label",
+     "chars": 8,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Baholash",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3937000,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "6"
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      1714500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      4762500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "01  ·  Baholash",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      723900,
+      2413000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 24,
+     "max": 36,
+     "perLine": 36,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Hozirgi holatni aniqlang",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1270000,
+      5842000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 124,
+     "max": 124,
+     "perLine": 62,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Har bir sohani 1 dan 10 gacha baholang va natijani g'ildirakka belgilang. Qaysi soha e'tibor talab qilishi darhol ko'rinadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1803400,
+      5588000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 17,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Halol baho bering",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      3327400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 22,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Natijani yozib qo'ying",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4089400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Eng past 2 sohani tanlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4851400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "06",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 7,
+   "part": "ppt/slides/slide7.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      1714500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2921000,
+      2540000,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "6",
+     "kind": "label",
+     "chars": 4,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Reja",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3937000,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "10"
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      4762500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 11,
+     "max": 28,
+     "perLine": 28,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "02  ·  Reja",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      723900,
+      2413000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 19,
+     "max": 36,
+     "perLine": 36,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Aniq maqsad qo'ying",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1270000,
+      5842000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 116,
+     "max": 116,
+     "perLine": 58,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Tanlangan sohalar uchun 3 oylik maqsad yozing. Maqsad aniq, o'lchanadigan va real bo'lsa, unga erishish osonlashadi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1803400,
+      5588000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 19,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Har maqsadga muddat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      3327400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Kichik qadamlarga bo'ling",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4089400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 25,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Rejani ko'z oldida tuting",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4851400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "07",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 8,
+   "part": "ppt/slides/slide8.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      1714500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.1,
+     "lines": 1,
+     "caps": false,
+     "sz": 20,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      10922000,
+      4762500,
+      1016000,
+      292388
+     ],
+     "lineH": 304800,
+     "ins": 0
+    },
+    {
+     "id": "7",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.4,
+     "lines": 1,
+     "caps": false,
+     "sz": 64,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7620000,
+      2921000,
+      2540000,
+      935641
+     ],
+     "lineH": 975360,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 24.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7620000,
+      3937000,
+      2540000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      5,
+      "14"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "label",
+     "chars": 14,
+     "max": 28,
+     "perLine": 28,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "03  ·  Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      762000,
+      723900,
+      2413000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "11",
+     "kind": "title",
+     "chars": 21,
+     "max": 36,
+     "perLine": 36,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Har kuni kichik qadam",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      762000,
+      1270000,
+      5842000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 53.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Rejani kundalik odatlarga aylantiring. Har hafta natijani tekshirib, kerak bo'lsa rejani to'g'rilab boring.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      762000,
+      1803400,
+      5588000,
+      409343
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 16,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Kuniga 15 daqiqa",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      3327400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "18",
+     "kind": "label",
+     "chars": 15,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Haftalik tahlil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4089400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 18,
+     "max": 28,
+     "perLine": 28.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 14,
+     "paras": 1,
+     "text": "Yutuqni nishonlang",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      4521200,
+      4851400,
+      2286000,
+      204671
+     ],
+     "lineH": 213360,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "08",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 9,
+   "part": "ppt/slides/slide9.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 60,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Kichik odatlar g'ildirakning har bir sohasini mustahkamlaydi",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3035300,
+      1991360,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2057400,
+      4059425,
+      2794000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4381500,
+      1991360,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3403600,
+      4059425,
+      2794000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5727700,
+      1991360,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4749800,
+      4059425,
+      2794000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7073900,
+      1991360,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 7,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6096000,
+      4059425,
+      2794000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8420100,
+      1991360,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 25,
+     "perLine": 24.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 18,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7442200,
+      4059425,
+      2794000,
+      263149
+     ],
+     "lineH": 274320,
+     "ins": 0
+    },
+    {
+     "id": "26",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "09",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 10,
+   "part": "ppt/slides/slide10.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Odat 1 / 5",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3454400,
+      1407160,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 27,
+     "perLine": 26.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2032000,
+      2159000,
+      3683000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "text",
+     "chars": 108,
+     "max": 108,
+     "perLine": 36,
+     "lines": 3,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Kunni shoshilmasdan boshlang: 10 daqiqa reja, bir stakan suv va yengil mashq. Erta tong — eng samarali vaqt.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2057400,
+      2616200,
+      3632200,
+      570156
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "15",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6273800,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "16",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      6172200,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7340600,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7239000,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8407400,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8305800,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9474200,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9372600,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "10",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 11,
+   "part": "ppt/slides/slide11.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Odat 2 / 5",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1803400,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4521200,
+      1407160,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 27,
+     "perLine": 26.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      3098800,
+      2159000,
+      3683000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "14",
+     "kind": "text",
+     "chars": 102,
+     "max": 102,
+     "perLine": 34,
+     "lines": 3,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Kuniga 20 sahifa — yiliga 20 dan ortiq kitob. O'qish fikrlashni kengaytiradi va yangi g'oyalar beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      3124200,
+      2616200,
+      3632200,
+      570156
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "19",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7340600,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "20",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      7239000,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8407400,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8305800,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9474200,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9372600,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "11",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 12,
+   "part": "ppt/slides/slide12.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Odat 3 / 5",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1803400,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2971800,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2870200,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5588000,
+      1407160,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 7,
+     "max": 27,
+     "perLine": 26.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4165600,
+      2159000,
+      3683000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "18",
+     "kind": "text",
+     "chars": 103,
+     "max": 103,
+     "perLine": 34.3,
+     "lines": 3,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Har kuni 30 daqiqa yurish, sport yoki o'yin. Harakat kayfiyatni ko'taradi va kun bo'yi energiya beradi.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      4191000,
+      2616200,
+      3632200,
+      570156
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "23",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8407400,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "24",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      8305800,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9474200,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9372600,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "12",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 13,
+   "part": "ppt/slides/slide13.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Odat 4 / 5",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1803400,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2971800,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2870200,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4038600,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3937000,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6654800,
+      1407160,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 7,
+     "max": 27,
+     "perLine": 26.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5232400,
+      2159000,
+      3683000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "22",
+     "kind": "text",
+     "chars": 99,
+     "max": 99,
+     "perLine": 49.5,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Do'stlar va yaqinlar bilan jonli suhbat qiling. Telefonni chetga qo'yib, haqiqiy aloqani his eting.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      5257800,
+      2616200,
+      3632200,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "27",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      9474200,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "28",
+     "kind": "label",
+     "chars": 6,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      9372600,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "13",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 14,
+   "part": "ppt/slides/slide14.xml",
+   "role": "content",
+   "slots": [
+    {
+     "id": "3",
+     "kind": "label",
+     "chars": 16,
+     "max": 27,
+     "perLine": 27,
+     "lines": 1,
+     "caps": false,
+     "sz": 16,
+     "paras": 1,
+     "text": "Hayot g'ildiragi",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      8255000,
+      533400,
+      2692400,
+      233910
+     ],
+     "lineH": 243840,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "3"
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "title",
+     "chars": 22,
+     "max": 41,
+     "perLine": 40.7,
+     "lines": 1,
+     "caps": false,
+     "sz": 26,
+     "paras": 1,
+     "text": "Muvozanat uchun 5 odat",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      609600,
+      431800,
+      6604000,
+      380104
+     ],
+     "lineH": 396240,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "4"
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "label",
+     "chars": 10,
+     "max": 96,
+     "perLine": 95.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Odat 5 / 5",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      889000,
+      7112000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "8",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "01",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      1905000,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "9",
+     "kind": "label",
+     "chars": 11,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Erta turish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      1803400,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "9"
+     ]
+    },
+    {
+     "id": "12",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "02",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2971800,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "13",
+     "kind": "label",
+     "chars": 12,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Kitob o'qish",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2870200,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "13"
+     ]
+    },
+    {
+     "id": "16",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "03",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      4038600,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "17",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Harakat",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      3937000,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "17"
+     ]
+    },
+    {
+     "id": "20",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 15,
+     "paras": 1,
+     "text": "04",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      5105400,
+      4445000,
+      635000,
+      219291
+     ],
+     "lineH": 228600,
+     "ins": 0
+    },
+    {
+     "id": "21",
+     "kind": "label",
+     "chars": 7,
+     "max": 13,
+     "perLine": 13.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 11,
+     "paras": 1,
+     "text": "Muloqot",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      5003800,
+      5003800,
+      838200,
+      160813
+     ],
+     "lineH": 167640,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "21"
+     ]
+    },
+    {
+     "id": "24",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 6.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 19.8,
+     "paras": 1,
+     "text": "05",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7721600,
+      1407160,
+      838200,
+      289438
+     ],
+     "lineH": 301752,
+     "ins": 0
+    },
+    {
+     "id": "25",
+     "kind": "label",
+     "chars": 6,
+     "max": 27,
+     "perLine": 26.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 22,
+     "paras": 1,
+     "text": "Tahlil",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      6299200,
+      2159000,
+      3683000,
+      321627
+     ],
+     "lineH": 335280,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      9,
+      "25"
+     ]
+    },
+    {
+     "id": "26",
+     "kind": "text",
+     "chars": 107,
+     "max": 107,
+     "perLine": 35.7,
+     "lines": 3,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Hafta oxirida natijani yozing: nima yaxshi bo'ldi, nimani o'zgartirish kerak. Kichik tahlil — katta o'sish.",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      6324600,
+      2616200,
+      3632200,
+      570156
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "29",
+     "kind": "label",
+     "chars": 21,
+     "max": 55,
+     "perLine": 55.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 12,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      609600,
+      6426200,
+      3810000,
+      175433
+     ],
+     "lineH": 182880,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    },
+    {
+     "id": "30",
+     "kind": "fixed",
+     "chars": 2,
+     "max": 12,
+     "perLine": 8.9,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "14",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      10922000,
+      6400800,
+      660400,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0
+    }
+   ],
+   "photos": []
+  },
+  {
+   "n": 15,
+   "part": "ppt/slides/slide15.xml",
+   "role": "end",
+   "slots": [
+    {
+     "id": "32",
+     "kind": "fixed",
+     "chars": 1,
+     "max": 12,
+     "perLine": 4.8,
+     "lines": 1,
+     "caps": false,
+     "sz": 40,
+     "paras": 1,
+     "text": "8",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      7936992,
+      3032760,
+      1194816,
+      584775
+     ],
+     "lineH": 609600,
+     "ins": 0
+    },
+    {
+     "id": "33",
+     "kind": "label",
+     "chars": 4,
+     "max": 19,
+     "perLine": 18.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 11.2,
+     "paras": 1,
+     "text": "soha",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      7936992,
+      3622040,
+      1194816,
+      163763
+     ],
+     "lineH": 170688,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      1,
+      "33"
+     ]
+    },
+    {
+     "id": "34",
+     "kind": "title",
+     "chars": 7,
+     "max": 18,
+     "perLine": 17.6,
+     "lines": 1,
+     "caps": false,
+     "sz": 44,
+     "paras": 1,
+     "text": "Rahmat!",
+     "font": "Century Gothic",
+     "anchor": "t",
+     "box": [
+      2717800,
+      2413000,
+      4826000,
+      643253
+     ],
+     "lineH": 670560,
+     "ins": 0
+    },
+    {
+     "id": "35",
+     "kind": "label",
+     "chars": 28,
+     "max": 49,
+     "perLine": 49.5,
+     "lines": 1,
+     "caps": false,
+     "sz": 17,
+     "paras": 1,
+     "text": "E'tiboringiz uchun tashakkur",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2717800,
+      3149600,
+      4826000,
+      248530
+     ],
+     "lineH": 259080,
+     "ins": 0
+    },
+    {
+     "id": "36",
+     "kind": "text",
+     "chars": 66,
+     "max": 66,
+     "perLine": 33,
+     "lines": 2,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Savollaringiz bo'lsa — marhamat. G'ildirakni bugundan aylantiring!",
+     "font": "Segoe UI",
+     "anchor": "t",
+     "box": [
+      2717800,
+      3556000,
+      4572000,
+      380104
+     ],
+     "lineH": 198120,
+     "ins": 0
+    },
+    {
+     "id": "37",
+     "kind": "label",
+     "chars": 21,
+     "max": 61,
+     "perLine": 61.3,
+     "lines": 1,
+     "caps": false,
+     "sz": 13,
+     "paras": 1,
+     "text": "Ism Familiya  ·  2026",
+     "font": "Segoe UI Semibold",
+     "anchor": "t",
+     "box": [
+      2717800,
+      4546600,
+      4572000,
+      190052
+     ],
+     "lineH": 198120,
+     "ins": 0,
+     "off": true,
+     "copy": [
+      2,
+      "68"
+     ]
+    }
+   ],
+   "photos": []
+  }
+ ],
+ "media": [
+  {
+   "files": [
+    "ppt/media/image1.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    6
+   ],
+   "focus": 6
+  },
+  {
+   "files": [
+    "ppt/media/image2.jpg"
+   ],
+   "w": 960,
+   "h": 636,
+   "slides": [
+    7
+   ],
+   "focus": 7
+  },
+  {
+   "files": [
+    "ppt/media/image3.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    8
+   ],
+   "focus": 8
+  },
+  {
+   "files": [
+    "ppt/media/image4.jpg"
+   ],
+   "w": 960,
+   "h": 641,
+   "slides": [
+    10
+   ],
+   "focus": 10
+  },
+  {
+   "files": [
+    "ppt/media/image5.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    11
+   ],
+   "focus": 11
+  },
+  {
+   "files": [
+    "ppt/media/image6.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    12
+   ],
+   "focus": 12
+  },
+  {
+   "files": [
+    "ppt/media/image7.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    13
+   ],
+   "focus": 13
+  },
+  {
+   "files": [
+    "ppt/media/image8.jpg"
+   ],
+   "w": 960,
+   "h": 640,
+   "slides": [
+    14
+   ],
+   "focus": 14
+  }
+ ],
+ "sequence": true
+}
