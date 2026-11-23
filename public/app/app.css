@@ -607,3 +607,134 @@ body.ai-form .ai-fab{ display:none; }
 
 /* ilova sarlavhasi (AI Yordamchi, ❤️ Sevimlilar) — faqat bosh sahifada */
 body.ai-sub .app-top, body.not-home .app-top{ display:none; }
+
+/* ================================================================
+   QORONG'I TEMA — «aurora glass» (2026-11-23, egasi yuborgan dashboard reels uslubida):
+   to'q ko'k fon ustida sekin suzuvchi ko'k/firuza nurlar, shaffof shisha panellar,
+   cho'ziluvchi tanlov «pill»i (oldingi cheti tez, orqa cheti sekin — app.js slidePill),
+   kontent xiradan tiniqlashib chiqadi, raqamlar sanalib o'sadi. Yorug' temaga tegmaydi.
+   ================================================================ */
+@property --pl{ syntax:'<length>'; inherits:true; initial-value:0px; }
+@property --pr{ syntax:'<length>'; inherits:true; initial-value:0px; }
+:root[data-theme="dark"]{
+  --bg: #050B1F;
+  --surface: rgba(140,170,255,.055);
+  --surface-2: rgba(140,170,255,.085);
+  --line: rgba(140,170,255,.14);
+  --shadow: 0 14px 34px -20px rgba(0,0,0,.75);
+  --ink: #EEF3FF;
+  --ink-soft: #93A3C9;
+  --accent: #6B9BFF;
+  --accent-glow: rgba(91,140,255,.55);
+  --blue-grad: linear-gradient(135deg, #3E6BFF, #5B8CFF 55%, #38BDF8);
+  --glass: rgba(18,30,68,.55);
+  --glass-border: rgba(140,170,255,.16);
+  --glass-active: rgba(91,140,255,.18);
+  --hero: rgba(18,30,68,.55);
+  --nav: rgba(10,18,44,.86);
+  --body-bg: radial-gradient(520px 380px at 85% -8%, rgba(37,78,220,.55), transparent 65%),
+             radial-gradient(460px 360px at -12% 35%, rgba(14,116,144,.35), transparent 65%),
+             radial-gradient(600px 420px at 50% 110%, rgba(30,58,170,.45), transparent 70%), #050B1F;
+}
+/* suzuvchi nurlar qatlami */
+:root[data-theme="dark"] body.app{ isolation:isolate; }
+:root[data-theme="dark"] body.app::before{
+  content:""; position:fixed; inset:-25%; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(34% 28% at 30% 30%, rgba(59,107,255,.32), transparent 70%),
+    radial-gradient(30% 26% at 72% 62%, rgba(16,185,170,.18), transparent 70%),
+    radial-gradient(26% 22% at 60% 20%, rgba(99,102,241,.22), transparent 70%);
+  filter: blur(30px); animation: auroraDrift 22s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift{
+  0%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(-6%,4%,0) scale(1.08); }
+  100%{ transform: translate3d(5%,-3%,0) scale(1.02); }
+}
+/* shisha panellar */
+:root[data-theme="dark"] .glass, :root[data-theme="dark"] .card{
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.012)), var(--glass);
+  border:1px solid var(--glass-border);
+  box-shadow: 0 16px 36px -22px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.06);
+}
+:root[data-theme="dark"] .app-logo, :root[data-theme="dark"] .ai-fab, :root[data-theme="dark"] .cs-ava{ background: var(--blue-grad); }
+:root[data-theme="dark"] .order-btn{ background: var(--blue-grad); box-shadow: 0 14px 30px -14px rgba(62,107,255,.9), inset 0 1px 0 rgba(255,255,255,.25); }
+:root[data-theme="dark"] .ai-input{ background: rgba(8,16,40,.6); border-color: var(--glass-border); }
+:root[data-theme="dark"] .ai-input:focus{ border-color: #5B8CFF; box-shadow: 0 0 0 4px rgba(91,140,255,.2); }
+:root[data-theme="dark"] .app-hero.solo .app-search{ background: rgba(18,30,68,.6); border-color: var(--glass-border); }
+:root[data-theme="dark"] .chip.active{ background: rgba(91,140,255,.18); border-color: rgba(107,155,255,.55); box-shadow: 0 0 18px -6px rgba(91,140,255,.7); }
+:root[data-theme="dark"] .switch input:checked + .slider{ background: var(--blue-grad); border-color: transparent; }
+:root[data-theme="dark"] .app .ai-card .p{ background: rgba(91,140,255,.14); color:#9DBBFF; }
+:root[data-theme="dark"] .tpl-card.active{ border-color: rgba(107,155,255,.8); box-shadow: 0 0 0 2px rgba(91,140,255,.35), 0 0 26px -6px rgba(91,140,255,.8); }
+:root[data-theme="dark"] .tpl-name{ background: var(--blue-grad); }
+
+/* ---------- cho'ziluvchi tanlov «pill»i ---------- */
+/* app.js slidePill(): --pl/--pr (chap/o'ng chet), --pt/--ph (tepa/balandlik), yo'nalishga qarab
+   oldingi chet 0.36 s (power3.out), orqa chet 0.55 s (power3.inOut) — pill cho'zilib, keyin yig'iladi */
+:root[data-theme="dark"] .tier-tabs, :root[data-theme="dark"] .tpl-cats, :root[data-theme="dark"] .seg{ position:relative; }
+:root[data-theme="dark"] .tier-tabs::before, :root[data-theme="dark"] .tpl-cats::before, :root[data-theme="dark"] .seg::before{
+  content:""; position:absolute; z-index:0; pointer-events:none; opacity:0;
+  left: var(--pl); width: calc(var(--pr) - var(--pl)); top: var(--pt, 4px); height: var(--ph, 36px);
+  border-radius:999px; background: var(--blue-grad);
+  box-shadow: 0 8px 20px -8px rgba(62,107,255,.9), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: --pl var(--pl-d, .45s) var(--pl-e, ease), --pr var(--pr-d, .45s) var(--pr-e, ease), top .3s ease, height .3s ease, opacity .2s ease;
+}
+:root[data-theme="dark"] .pill-on::before{ opacity:1 !important; }
+:root[data-theme="dark"] .pill-snap::before{ transition:none !important; }
+:root[data-theme="dark"] .tier-tabs[data-pk="t-pro"]::before{ background: linear-gradient(135deg, #7C3AED, #EC4899 60%, #F59E0B); }
+:root[data-theme="dark"] .tier-tabs[data-pk="t-free"]::before{ background: linear-gradient(135deg, #10B981, #0EA5E9); }
+:root[data-theme="dark"] .tier-tabs > *, :root[data-theme="dark"] .tpl-cats > *, :root[data-theme="dark"] .seg > *{ position:relative; z-index:1; }
+:root[data-theme="dark"] .tier-tabs.pill-on .tier-tab.on,
+:root[data-theme="dark"] .seg.pill-on div.on{ background: transparent !important; box-shadow:none !important; color:#fff; }
+:root[data-theme="dark"] .tpl-cats.pill-on .chip.active{ background: transparent !important; border-color: transparent !important; box-shadow:none !important; color:#fff; animation:none; }
+:root[data-theme="dark"] .tier-tabs{ border-radius:999px; }
+:root[data-theme="dark"] .tier-tab, :root[data-theme="dark"] .seg div{ border-radius:999px; }
+
+/* pastki menyu: qorong'i temada shar o'rniga cho'ziluvchi pill */
+:root[data-theme="dark"] .app-nav{ filter: drop-shadow(0 14px 24px rgba(0,0,0,.6)); }
+:root[data-theme="dark"] .app-nav::before{ -webkit-mask:none; mask:none; background: rgba(10,18,44,.88); border:1px solid rgba(140,170,255,.16); }
+:root[data-theme="dark"] .app-nav::after{
+  width:auto; height:auto; border-radius:26px; top:7px; bottom:7px;
+  left: var(--pl); right:auto; width: calc(var(--pr) - var(--pl));
+  background: var(--blue-grad); box-shadow: 0 10px 22px -10px rgba(62,107,255,.95), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: --pl var(--pl-d, .45s) var(--pl-e, ease), --pr var(--pr-d, .45s) var(--pr-e, ease);
+}
+:root[data-theme="dark"] .app-nav.hop::after{ animation:none; }
+:root[data-theme="dark"] .app-nav > div.on svg{ transform:none; }
+:root[data-theme="dark"] .app-nav > div, :root[data-theme="dark"] .app-nav .on{ color: var(--ink-soft); }
+:root[data-theme="dark"] .app-nav > div.on{ color:#fff; }
+
+/* ---------- xiradan tiniqlashib chiqish ---------- */
+@keyframes blurIn{ from{ opacity:0; filter: blur(10px); transform: translateY(8px) scale(.985); } to{ opacity:1; filter: blur(0); transform:none; } }
+@keyframes blurCard{ from{ opacity:0; filter: blur(8px); transform: translateY(14px) scale(.96); } to{ opacity:1; filter: blur(0); transform:none; } }
+:root[data-theme="dark"] .view.active{ animation: blurIn .45s cubic-bezier(.22,.8,.2,1) both; }
+:root[data-theme="dark"] .ai-grid > .ai-card{ animation-name: blurCard; animation-duration: .55s; }
+:root[data-theme="dark"] #aiForm > .ai-field, :root[data-theme="dark"] .ai-top{ animation-name: blurIn; }
+:root[data-theme="dark"] .fav-wide, :root[data-theme="dark"] .fav-tpl, :root[data-theme="dark"] .order, :root[data-theme="dark"] .card.setting{ animation: blurCard .5s cubic-bezier(.22,.8,.2,1) both; }
+:root[data-theme="dark"] .fav-list > :nth-child(2), :root[data-theme="dark"] .orders > :nth-child(2){ animation-delay:.05s; }
+:root[data-theme="dark"] .fav-list > :nth-child(3), :root[data-theme="dark"] .orders > :nth-child(3){ animation-delay:.1s; }
+:root[data-theme="dark"] .fav-list > :nth-child(n+4), :root[data-theme="dark"] .orders > :nth-child(n+4){ animation-delay:.15s; }
+/* sanalayotgan raqam yorqinroq */
+:root[data-theme="dark"] .counting{ text-shadow: 0 0 18px rgba(91,140,255,.75); }
+@media (prefers-reduced-motion: reduce){
+  :root[data-theme="dark"] body.app::before{ animation:none; }
+  :root[data-theme="dark"] .view.active, :root[data-theme="dark"] .ai-grid > .ai-card, :root[data-theme="dark"] .fav-wide, :root[data-theme="dark"] .fav-tpl, :root[data-theme="dark"] .order{ animation:none !important; }
+}
+
+/* ---------- pastki menyu: yorug' temada ham cho'ziluvchi pill (shar o'rniga, 2026-11-23 egasi so'radi) ---------- */
+:root[data-theme="light"] .app-nav{ filter: drop-shadow(0 12px 20px rgba(12,96,90,.25)); }
+:root[data-theme="light"] .app-nav::before{ -webkit-mask:none; mask:none; background: rgba(255,255,255,.94); border:1px solid rgba(255,255,255,.95); }
+:root[data-theme="light"] .app-nav::after{
+  width:auto; height:auto; border-radius:26px; top:7px; bottom:7px;
+  left: var(--pl); right:auto; width: calc(var(--pr) - var(--pl));
+  background: var(--teal-grad); box-shadow: 0 10px 22px -10px rgba(14,158,148,.95), inset 0 1px 0 rgba(255,255,255,.35);
+  transition: --pl var(--pl-d, .35s) var(--pl-e, ease), --pr var(--pr-d, .35s) var(--pr-e, ease);
+}
+:root[data-theme="light"] .app-nav.hop::after{ animation:none; }
+:root[data-theme="light"] .app-nav > div.on svg{ transform:none; color:#fff; }
+:root[data-theme="light"] .app-nav > div, :root[data-theme="light"] .app-nav .on{ color: var(--ink-soft); }
+:root[data-theme="light"] .app-nav > div.on{ color:#fff; }
+:root[data-theme="dark"] .app-nav::after{ transition: --pl var(--pl-d, .35s) var(--pl-e, ease), --pr var(--pr-d, .35s) var(--pr-e, ease); }
+/* shar endi chiqib turmaydi — AI tugmasi va xabarlar menyuga yaqinroq */
+.ai-fab{ bottom: calc(94px + env(safe-area-inset-bottom)); }
+.toast{ bottom: calc(94px + env(safe-area-inset-bottom)); }
