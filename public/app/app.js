@@ -702,3 +702,73 @@
   new MutationObserver(function () { place(true); }).observe(nav, { subtree: true, attributes: true, attributeFilter: ["class", "hidden"] });
   window.addEventListener("resize", function () { place(false); });
 })();
+
+
+// Cho'ziluvchi tanlov «pill»i: faol element o'zgarsa, pill yangi joyga cho'zilib o'tadi — harakat tomonidagi (oldingi)
+// chet 0.26 s power3.out, orqa chet 0.4 s power3.inOut bilan yetib keladi. Pastki menyuda ikkala temada (egasi so'radi).
+// Konteyner: --pl/--pr/--pt/--ph; CSS: app.css «aurora glass» bloki (::before yoki menyuda ::after).
+(function () {
+  var OUT = "cubic-bezier(.215,.61,.355,1)", INOUT = "cubic-bezier(.645,.045,.355,1)";
+  var SETS = [[".app-nav", ":scope > div.on:not([hidden])"], [".tier-tabs", ".tier-tab.on"], [".tpl-cats", ".chip.active"], [".seg", ":scope > div.on"]];
+  function place(el, act) {
+    if (!act || !act.offsetWidth) { el.classList.remove("pill-on"); return; }
+    var l = act.offsetLeft, r = l + act.offsetWidth, t = act.offsetTop, h = act.offsetHeight, prev = el._pill;
+    if (prev && prev.l === l && prev.r === r && prev.t === t) return;
+    if (!prev || !el.classList.contains("pill-on")) {
+      el.classList.add("pill-snap");
+      el.style.setProperty("--pl", l + "px"); el.style.setProperty("--pr", r + "px");
+      void el.offsetWidth; el.classList.remove("pill-snap");
+    } else {
+      var right = l > prev.l;
+      el.style.setProperty("--pl-d", right ? ".4s" : ".26s"); el.style.setProperty("--pl-e", right ? INOUT : OUT);
+      el.style.setProperty("--pr-d", right ? ".26s" : ".4s"); el.style.setProperty("--pr-e", right ? OUT : INOUT);
+      el.style.setProperty("--pl", l + "px"); el.style.setProperty("--pr", r + "px");
+    }
+    if (!el.classList.contains("app-nav")) { el.style.setProperty("--pt", t + "px"); el.style.setProperty("--ph", h + "px"); }
+    var m = /\bt-(std|pro|free)\b/.exec(act.className); if (m) el.dataset.pk = "t-" + m[1];
+    el._pill = { l: l, r: r, t: t };
+    el.classList.add("pill-on");
+  }
+  var queued = false;
+  function all() {
+    queued = false;
+    // pastki menyu — ikkala temada; qolgan tanlovlar — faqat qorong'i temada
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    SETS.forEach(function (s) { if (!dark && s[0] !== ".app-nav") return; document.querySelectorAll(s[0]).forEach(function (el) { place(el, el.querySelector(s[1])); }); });
+  }
+  function soon() { if (!queued) { queued = true; requestAnimationFrame(all); } }
+  new MutationObserver(soon).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ["class", "hidden"] });
+  new MutationObserver(function () { document.querySelectorAll(".pill-on").forEach(function (el) { el._pill = null; }); soon(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  window.addEventListener("resize", function () { document.querySelectorAll(".pill-on").forEach(function (el) { el._pill = null; }); soon(); });
+  soon();
+})();
+
+// Sanalib o'sadigan raqamlar (qorong'i tema): narx (forma xulosasi) va balans o'zgarsa, eski qiymatdan yangisiga sanaladi.
+// Xulosa qayta chizilsa ham sanash davom etadi: holat kalit bo'yicha saqlanadi, har kadrda joriy element yangilanadi.
+(function () {
+  var KEYS = { price: ".receipt-total .t-value", bal: ".bal-sum" }, st = {}, writing = false;
+  var fmt = function (n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); };
+  var parse = function (txt) { var m = /^(\D*?)(\d(?:[\d\s ]*\d)?)(.*)$/.exec(txt); return m ? { pre: m[1], n: parseInt(m[2].replace(/[\s ]/g, ""), 10), post: m[3] } : null; };
+  function frame(key) {
+    var o = st[key], k = Math.min(1, (performance.now() - o.t0) / 650), e = 1 - Math.pow(1 - k, 3);
+    o.shown = o.from + (o.to - o.from) * e;
+    writing = true;
+    document.querySelectorAll(KEYS[key]).forEach(function (el) { el.textContent = el._mine = o.pre + fmt(o.shown) + o.post; el.classList.toggle("counting", k < 1); });
+    writing = false;
+    if (k < 1) requestAnimationFrame(function () { frame(key); }); else o.run = false;
+  }
+  new MutationObserver(function () {
+    if (writing) return;
+    Object.keys(KEYS).forEach(function (key) {
+      var el = document.querySelector(KEYS[key]); if (!el || el._mine === el.textContent) return;
+      var p = parse(el.textContent); if (!p) return;
+      var o = st[key];
+      if (!o) { st[key] = { from: p.n, to: p.n, shown: p.n, pre: p.pre, post: p.post, run: false }; return; }
+      o.pre = p.pre; o.post = p.post;
+      if (p.n === o.to) { if (o.run) el.textContent = el._mine = o.pre + fmt(o.shown) + o.post; return; }
+      if (document.documentElement.getAttribute("data-theme") !== "dark") { o.from = o.to = o.shown = p.n; return; }
+      o.from = o.shown; o.to = p.n; o.t0 = performance.now();
+      if (!o.run) { o.run = true; requestAnimationFrame(function () { frame(key); }); }
+    });
+  }).observe(document.body, { subtree: true, childList: true, characterData: true });
+})();

@@ -35,6 +35,7 @@
     ["Narxi kelishiladi", "Цена договорная", "Price on request"],
     ["Asosiy", "Главная", "Home"],
     ["Buyurtmalarim", "Мои заказы", "My orders"],
+    ["Buyurtmalar", "Заказы", "Orders"],
     ["Profil", "Профиль", "Profile"],
     ["Mehmon", "Гость", "Guest"],
     ["Tez kunda", "Скоро", "Coming soon"],
