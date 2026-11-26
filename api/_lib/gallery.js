@@ -83,7 +83,7 @@ async function ratings() {
 const stars = (avg) => "⭐ " + avg.toFixed(1).replace(".", ",");
 
 // MV — shablon rasmlari yangilanganda Telegram eski (keshlangan) rasmni ko'rsatmasligi uchun versiya
-const MV = { "huquq-qonunlar": 2, "iqtisod-profil": 2, "tabiat-akvarel": 2, "pp-slice": 2, "qishloq-ferma": 2, "tarix-qolyozma": 2, "pro-sana": 2, "pro-smartfon": 2 };
+const MV = { "huquq-qonunlar": 2, "iqtisod-profil": 2, "tabiat-akvarel": 2, "pp-slice": 2, "qishloq-ferma": 2, "tarix-qolyozma": 2, "pro-sana": 2, "pro-smartfon": 2, "adabiyot-tarix": 2, "pro-ekran": 2 };
 const media = (host, id, kind) => `https://${host}/ai/templates/${id}/${kind === "video" ? "preview.mp4" : kind === "card" ? "card.jpg" : "1.jpg"}${MV[id] ? "?v=" + MV[id] : ""}`;
 const cb = (s, a, c, i) => `gl:${s}:${a}:${c}:${i}`; // 64 baytdan qisqa
 const svcLink = (appLink, s) => appLink + "&open=" + SETS[s].svc;
