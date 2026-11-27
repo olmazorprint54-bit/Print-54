@@ -701,6 +701,15 @@
         { id: "pp-droplet", name: "Tomchi", kind: "canva", lib: true, category: "powerpoint", pages: 7, file: "PowerPoint/Presentation15.pptx", auto: true },
         { id: "pp-dividend", name: "Bordo", kind: "canva", lib: true, category: "powerpoint", pages: 7, file: "PowerPoint/Presentation16.pptx", auto: true },
         { id: "pp-parallax", name: "Parallaks", kind: "canva", lib: true, category: "powerpoint", pages: 7, file: "PowerPoint/Presentation17.pptx", auto: true },
+        { id: "nur-binafsha", name: "Binafsha tun", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-qahva", name: "Qahva", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-zaytun", name: "Zaytun", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-tun-olov", name: "Tun va olov", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-ormon", name: "O'rmon va oltin", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-okean", name: "Okean va mis", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-shom", name: "Shom", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-kosmik", name: "Kosmik oltin", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
+        { id: "nur-neon", name: "Neon pushti", kind: "canva", lib: true, category: "powerpoint", pages: 7, auto: true },
         { id: "classic", name: "Klassik ko'k", category: "umumiy", bg: "#FFFFFF", title: "#1F3A93", text: "#334155", accent: "#2E6BE6", font: "sans", deco: "bar", auto: true },
         { id: "minimal", name: "Minimal", category: "umumiy", bg: "#FAFAF7", title: "#111111", text: "#444444", accent: "#111111", font: "serif", deco: "line", auto: true },
         { id: "night", name: "Tun", category: "umumiy", bg: "linear-gradient(135deg,#0F172A,#1E293B)", title: "#FFFFFF", text: "#CBD5E1", accent: "#38BDF8", font: "sans", deco: "glow", auto: true },
@@ -1032,7 +1041,7 @@
         "matematika-shakllar", "matematika-geometriya", "fizika-loyiha", "fizika-bolimlar", "fizika-kosmik", "kimyo-sinf",
         "kimyo-atom", "kimyo-holat", "pp-facet", "pp-gallery", "pp-integral", "pp-ion", "pp-ion-boardroom", "pp-slice",
         "pp-wisp", "pp-banded", "pp-basis", "pp-berlin", "pp-circuit", "pp-damask", "pp-droplet", "pp-dividend",
-        "pp-parallax"
+        "pp-parallax", "nur-binafsha", "nur-qahva", "nur-zaytun", "nur-tun-olov", "nur-ormon", "nur-okean", "nur-shom", "nur-kosmik", "nur-neon"
     ];
     // 💎 PRO shablon toifalari (mini ilova va botdagi galereya uchun). «Yangi» — ro'yxatning oxirgi 12 tasi.
     // «Eng yaxshi» — AI barcha matn va rasmlarni almashtira oladigan, universal shablonlar (TOP ro'yxati pastda).
