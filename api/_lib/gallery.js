@@ -83,7 +83,7 @@ async function ratings() {
 const stars = (avg) => "⭐ " + avg.toFixed(1).replace(".", ",");
 
 // MV — shablon rasmlari yangilanganda Telegram eski (keshlangan) rasmni ko'rsatmasligi uchun versiya
-const MV = { "huquq-qonunlar": 2, "iqtisod-profil": 2, "tabiat-akvarel": 2, "pp-slice": 2, "qishloq-ferma": 2, "tarix-qolyozma": 2, "pro-sana": 2, "pro-smartfon": 2, "adabiyot-tarix": 2, "pro-ekran": 2, "tarix-temuriylar": 2, "pp-wisp": 2, "pedagogika-ruhiy": 2, "pedagogika-psixologiya": 2, "kimyo-laboratoriya": 2, "pp-parallax": 2, "pp-gallery": 2 };
+const MV = { "huquq-qonunlar": 2, "iqtisod-profil": 2, "tabiat-akvarel": 2, "pp-slice": 2, "qishloq-ferma": 2, "tarix-qolyozma": 2, "pro-sana": 2, "pro-smartfon": 2, "adabiyot-tarix": 2, "pro-ekran": 2, "tarix-temuriylar": 2, "pp-wisp": 2, "pedagogika-ruhiy": 2, "pedagogika-psixologiya": 2, "kimyo-laboratoriya": 2, "pp-parallax": 2, "pp-gallery": 2, "pp-facet": 2, "pp-integral": 2, "pp-ion": 2, "pp-ion-boardroom": 2, "pp-banded": 2, "pp-basis": 2, "pp-berlin": 2, "pp-circuit": 2, "pp-damask": 2, "pp-droplet": 2, "pp-dividend": 2, "nur-binafsha": 2, "nur-qahva": 2, "nur-zaytun": 2, "nur-tun-olov": 2, "nur-ormon": 2, "nur-okean": 2, "nur-shom": 2, "nur-kosmik": 2, "nur-neon": 2 };
 const media = (host, id, kind) => `https://${host}/ai/templates/${id}/${kind === "video" ? "preview.mp4" : kind === "card" ? "card.jpg" : "1.jpg"}${MV[id] ? "?v=" + MV[id] : ""}`;
 const cb = (s, a, c, i) => `gl:${s}:${a}:${c}:${i}`; // 64 baytdan qisqa
 const svcLink = (appLink, s) => appLink + "&open=" + SETS[s].svc;
